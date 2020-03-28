@@ -1,10 +1,10 @@
 <template>
   <div v-if="isDevelopmentMode" class="DevelopmentModeMark">
-    最新情報は岩手県の
+    開発中（development mode）
     <a
-      href="https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1026260.html"
+      href="https://iwate.stopcovid19.jp/"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
     >
       公開サイトへ
     </a>
