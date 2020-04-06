@@ -29,7 +29,9 @@
 [](18)福井県|https://covid19-fukui.bosai-signal.jp/|丹南ケーブルテレビ株式会社|[westar7/fukui-covid19](https://github.com/westar7/fukui-covid19)|
 [](19)山梨県|https://stopcovid19.yamanashi.dev/|stopcovid19.yamanashi.devチーム|[covid19-yamanashi/covid19](https://github.com/covid19-yamanashi/covid19)|
 [](20)長野県|https://stop-covid19-nagano.netlify.app/|有志|[Stop-COVID19-Nagano/covid19](https://github.com/Stop-COVID19-Nagano/covid19)|
+[](20)長野県|https://covid19-nagano.info/|個人|[kanai3id/covid19](https://github.com/kanai3id/covid19)|
 [](21)岐阜県|https://covid19-gifu.netlify.com/|個人|[CODE-for-GIFU/covid19](https://github.com/CODE-for-GIFU/covid19)|
+[](22)浜松市|https://stopcovid19-hamamatsu.netlify.com/|有志|[code-for-hamamatsu/covid19](https://github.com/code-for-hamamatsu/covid19)|
 [](23)愛知県|https://stopcovid19.code4.nagoya/|有志|[code4nagoya/covid19](https://github.com/code4nagoya/covid19)|
 [](24)三重県|https://mie.stopcovid19.jp/|高専生チーム(有志)|[FlexiblePrintedCircuits/covid19-mie](https://github.com/FlexiblePrintedCircuits/covid19-mie)|
 [](25)滋賀県|https://stopcovid19.pref.shiga.jp/|滋賀県（**公式**)|[Shiga-pref-org/covid19](https://github.com/Shiga-pref-org/covid19)|
@@ -46,6 +48,7 @@
 [](38)愛媛県|https://ehime-covid19.com/|ボランティア(有志)|[ehime-covid19/covid19](https://github.com/ehime-covid19/covid19)|
 [](39)高知県|https://covid19-kochi.netlify.com|学生エンジニア(有志)||
 []()九州|https://dev-covid19-kyusyu.netlify.com|九州(有志)|[Code-for-Kyushu/covid19](https://github.com/Code-for-Kyushu/covid19)|
+[](40)福岡県|https://fukuoka.stopcovid19.jp/|Code for Fukuoka, Code for Kurume|[Code-for-Fukuoka/covid19-fukuoka](https://github.com/Code-for-Fukuoka/covid19-fukuoka)|
 [](40)福岡市|https://stopcovid19.codeforfukuoka.org/|Code for Fukuoka|[Code-for-Fukuoka/covid19](https://github.com/Code-for-Fukuoka/covid19)|
 [](42)長崎県|https://stopcovid19-nagasaki.netlify.com/|Code for Nagasaki|[CodeForNagasaki/covid19](https://github.com/CodeForNagasaki/covid19)|
 [](43)熊本県|https://kumamoto.stopcovid19.jp/|Code for Kumamoto|[codeforkumamoto/covid19](https://github.com/codeforkumamoto/covid19)|
