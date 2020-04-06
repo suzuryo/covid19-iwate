@@ -3,7 +3,7 @@ name: build check
 on:
   push:
     branches:
-      - staging
+      - development
 jobs:
   build:
     runs-on: ubuntu-18.04
