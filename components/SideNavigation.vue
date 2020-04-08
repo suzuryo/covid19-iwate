@@ -17,7 +17,7 @@
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
-              $t('対策サイト非公式')
+              $t('menu/対策サイト')
             }}
           </div>
         </nuxt-link>
