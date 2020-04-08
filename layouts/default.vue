@@ -81,14 +81,26 @@ export default Vue.extend({
     }
   },
   head(): MetaInfo {
-    const { htmlAttrs } = this.$nuxtI18nSeo()
+    const { htmlAttrs, meta } = this.$nuxtI18nSeo()
+    const ogLocale =
+      meta && meta.length > 0
+        ? meta[0]
+        : {
+            hid: 'og:locale',
+            name: 'og:locale',
+            content: this.$i18n.locale
+          }
     return {
       htmlAttrs,
       link: [
         {
           rel: 'canonical',
-          href: `https://covid19-iwate.netlify.com/${this.$route.path}`
+          href: `https://iwate.stopcovid19.jp/${this.$route.path}`
         }
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css'
+        // }
       ],
       meta: [
         {
@@ -113,11 +125,7 @@ export default Vue.extend({
           property: 'og:url',
           content: ``
         },
-        {
-          hid: 'og:locale',
-          property: 'og:locale',
-          content: this.$i18n.locale
-        },
+        ogLocale,
         {
           hid: 'og:title',
           property: 'og:title',
@@ -138,8 +146,8 @@ export default Vue.extend({
         /*  {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$tc('https://covid19-iwate.netlify.com/ogp.png')
-        }, 
+          content: this.$tc('https://iwate.stopcovid19.jp/ogp.png')
+        },
         */
         {
           hid: 'apple-mobile-web-app-title',

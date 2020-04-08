@@ -1,21 +1,24 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
-      :title="$t('【帰国者・接触者相談センター】受付 相談件数')"
+      :title="$t('（帰国者・接触者相談センター）受付 相談件数')"
       :title-id="'number-of-reports-to-covid19-telephone-advisory-center'"
       :chart-id="'time-bar-chart-contacts'"
       :chart-data="contactsGraph"
       :date="Data.contacts.date"
       :unit="$t('件.reports')"
-      :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
     >
       <template v-slot:description>
         <ul>
           <li>
+            {{ $t('（注）開設日 令和2年2月8日') }}
+          </li>
+          <li>
+            {{ $t('（注）各保健所・医療政策室への受付件数の合計') }}
+          </li>
+          <li>
             {{
-              $t(
-                '（注）2/8(土)から3/12(木)までに1097件の相談受付がありました。'
-              )
+              $t('（注）主に「症状がある方からの受診等に関する相談」を計上 ')
             }}
           </li>
         </ul>

@@ -10,7 +10,11 @@
       </v-icon>
       <h1 class="SideNavigation-HeaderTitle">
         <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
-          <h1>岩手県</h1>
+          <img
+            class="SideNavigation-HeaderLogo"
+            src="/logo.svg"
+            :alt="$t('岩手県')"
+          />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
               $t('対策サイト非公式')
@@ -30,16 +34,18 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
-        <div
-          v-if="this.$i18n.locales.length > 1"
-          class="SideNavigation-Language"
-        >
-          <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-            {{ $t('多言語対応選択メニュー') }}
-          </label>
-          <LanguageSelector />
+        <div class="SideNavigation-Language">
+          <div
+            v-if="this.$i18n.locales.length > 1"
+            class="SideNavigation-Language"
+          >
+            <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
+              {{ $t('多言語対応選択メニュー') }}
+            </label>
+            <LanguageSelector />
+          </div>
         </div>
+        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
@@ -47,7 +53,7 @@
           <a
             href="https://twitter.com/phonedropper"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -58,7 +64,7 @@
           <a
             href="https://github.com/MeditationDuck/covid19"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
@@ -122,9 +128,9 @@ export default Vue.extend({
 
         {
           icon: 'mdi-account-multiple',
-          title: this.$t('新型コロナウイルス感染症に関する情報《岩手県》'),
+          title: this.$t('岩手県 - 感染症情報'),
           link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1026260.html'
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/index.html'
         },
 
         {
@@ -298,10 +304,6 @@ export default Vue.extend({
   @include lessThan($small) {
     padding-top: 50px;
   }
-}
-
-.SideNavigation-Language {
-  padding-top: 20px;
 }
 
 .SideNavigation-LanguageLabel {

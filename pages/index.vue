@@ -8,26 +8,27 @@
         <span>{{ $t('最終更新') }} </span>
         <time :datetime="updatedAt">{{ Data.lastUpdate }}</time>
       </div>
-      <div v-if="!['ja', 'ja-basic'].includes($i18n.locale)" class="Annotation">
+      <div
+        v-show="!['ja', 'ja-basic'].includes($i18n.locale)"
+        class="Annotation"
+      >
         <span>{{ $t('注釈') }} </span>
       </div>
     </div>
     <whats-new class="mb-4" :items="newsItems" />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
-      <tested-cases-details-card />
-      <!--<confirmed-cases-attributes-card />
-      <confirmed-cases-number-card /> -->
-
-      <inspection-persons-number-card />
+      <!-- <tested-cases-details-card /> -->
+      <!-- <confirmed-cases-attributes-card /> -->
+      <!-- <confirmed-cases-number-card /> -->
+      <!--<inspection-persons-number-card />-->
       <tested-number-card />
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
-      <!--<metro-card />
-      <agency-card />
-      <shinjuku-visitors-card />
-      <chiyoda-visitors-card /> -->
+      <!-- <metro-card /> -->
+      <!-- <agency-card /> -->
     </v-row>
+    <v-divider />
   </div>
 </template>
 
@@ -39,12 +40,12 @@ import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
-
-import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+// import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 // import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
+// import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
@@ -56,14 +57,16 @@ export default Vue.extend({
     PageHeader,
     WhatsNew,
     // StaticInfo,
-
-    TestedCasesDetailsCard,
+    ConfirmedCasesDetailsCard,
+    // TestedCasesDetailsCard,
     // ConfirmedCasesNumberCard,
     // ConfirmedCasesAttributesCard,
     TestedNumberCard,
-    InspectionPersonsNumberCard,
+    // InspectionPersonsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard
+    // MetroCard,
+    // AgencyCard
   },
   data() {
     const data = {
