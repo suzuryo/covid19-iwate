@@ -51,7 +51,7 @@
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
           <a
-            href="https://twitter.com/phonedropper"
+            href="https://twitter.com/Meditation_Duck"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
