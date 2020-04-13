@@ -764,27 +764,6 @@
             "4\/12"
         ]
     },
-    "inspection_status_summary": {
-        "date": "2020\/03\/28 21:00",
-        "attr": "検査実施人数（累計）",
-        "value": 53,
-        "children": [
-            {
-                "attr": "検査実施件数（累計）",
-                "value": 53,
-                "children": [
-                    {
-                        "attr": "県内発生",
-                        "value": 0
-                    },
-                    {
-                        "attr": "その他（チャーター便・クルーズ船等）",
-                        "value": 0
-                    }
-                ]
-            }
-        ]
-    },
     "lastUpdate": "2020\/04\/04 21:00",
     "main_summary": {
         "attr": "検査実施人数",
