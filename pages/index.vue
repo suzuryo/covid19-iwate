@@ -20,8 +20,8 @@
       <confirmed-cases-details-card />
       <tested-number-card />
       <!-- <tested-cases-details-card /> -->
-      <confirmed-cases-attributes-card />
       <confirmed-cases-number-card />
+      <confirmed-cases-attributes-card />
       <!--<inspection-persons-number-card />-->
       <telephone-advisory-reports-number-card />
       <consultation-desk-reports-number-card />
