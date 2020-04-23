@@ -42,10 +42,10 @@
             <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
               {{ $t('多言語対応選択メニュー') }}
             </label>
-            <LanguageSelector />
+            <language-selector />
           </div>
         </div>
-        <MenuList :items="items" @click="$emit('closeNavi', $event)" />
+        <menu-list :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
@@ -73,7 +73,6 @@
             </picture>
           </a>
         </div>
-
         <small class="SideNavigation-Copyright">
           {{ $t('このサイトの内容物は') }}
           <a
@@ -125,13 +124,11 @@ export default Vue.extend({
           title: this.$t('県内の最新感染動向'),
           link: this.localePath('/')
         },
-
         {
           title: this.$t('新型コロナウイルス感染症関連情報'),
           link:
             'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html'
         },
-
         {
           title: this.$t('知事から県民の皆様へのメッセージ'),
           link:
