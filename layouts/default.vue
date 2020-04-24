@@ -8,7 +8,7 @@
     </v-overlay>
     <div v-if="hasNavigation" class="appContainer">
       <div class="naviContainer">
-        <SideNavigation
+        <side-navigation
           :is-navi-open="isOpenNavigation"
           :class="{ open: isOpenNavigation }"
           @openNavi="openNavigation"
@@ -26,7 +26,7 @@
         <nuxt />
       </v-container>
     </div>
-    <NoScript />
+    <no-script />
     <development-mode-mark />
   </v-app>
 </template>
@@ -184,6 +184,10 @@ export default Vue.extend({
   max-width: 1440px;
   margin: 0 auto;
   background-color: inherit !important;
+}
+
+.v-application--wrap {
+  width: 100%;
 }
 
 .embed {
