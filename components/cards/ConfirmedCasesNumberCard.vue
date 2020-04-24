@@ -7,7 +7,8 @@
       :chart-data="patientsGraph"
       :date="Data.patients_summary.date"
       :unit="$t('人')"
-    />
+    >
+    </time-bar-chart>
   </v-col>
 </template>
 
