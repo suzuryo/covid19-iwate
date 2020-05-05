@@ -95,16 +95,6 @@ $ docker-compose run --rm app yarn install
 $ vagrant up
 ```
 
-#### 2-3-2. トラブルシュート
-
-##### 2-3-2-1. `Cannot find module ****` と怒られた時
-
-プログラムを止め、以下のコマンドを実行します。
-```bash
-# serve with hot reload at localhost:3000
-$ docker-compose run --rm app yarn install
-```
-
 ### 2-4. Visual Studio Code + Remote Containersで開発する場合
 
 #### 2-4-1. 依存関係を構築し、プログラムを実行する
@@ -124,7 +114,7 @@ $ docker-compose run --rm app yarn install
 
 ## 3. 本番環境/その他の判定
 
-`process.env.GENERATE_ENV` の値が、本番の場合は`'production'`に、それ以外の場合は `'development'` になっています。  
+`process.env.GENERATE_ENV` の値が、本番の場合は`'production'`に、それ以外の場合は `'development'` になっています。
 テスト環境のみで実行したい処理がある場合は、こちらの値をご利用ください。
 
 ---
@@ -143,7 +133,7 @@ $ docker-compose run --rm app yarn install
 
 ## 5. ブランチルール
 
-development 以外は、Pull Request は禁止です。  
+development 以外は、Pull Request は禁止です。
 Pull Request を送る際のブランチは、以下のネーミングルールに従ったブランチにしてください。
 
 | 種類 | ブランチのネーミングルール |
@@ -157,12 +147,12 @@ Pull Request を送る際のブランチは、以下のネーミングルール�
 | ---- | ---- | ---- | ---- | ---- |
 | 開発 | development | https://dev-covid19-iwate.netlify.com/ | 全開発者 | base branch。基本は、この`development`ブランチに Pull Requestを送ってください。 |
 | ステージング | staging | https://staging-covid19-iwate.netlify.com/ | 管理者のみ | 本番前の最終確認用。管理者以外の Pull Request は禁止です。 |
-| 本番 | master | https://iwate.stopcovid19.jp/ | 管理者のみ | 管理者以外の Pull Request は禁止です。 |
+| 本番 | master | https://iwate.stopcovid19.jp/  | 管理者のみ | 管理者以外の Pull Request は禁止です。 |
 
 ### 5-2. システムで利用しているブランチ
 
 | 目的 | ブランチ | 確認URL | 備考 |
 | ---- | -------- | ---- | ---- |
 | 本番サイトHTML | production | https://iwate.stopcovid19.jp/ | 静的ビルドされたHTMLが置いてある場所 |
-| ステージングサイト HTML | gh-pages | https://staging-covid19-iwate.netlify.com/| 静的ビルドされたHTMLが置いてある場所 |
+| ステージングサイト HTML | gh-pages | https://staging-covid19-iwate.netlify.com/ | 静的ビルドされたHTMLが置いてある場所 |
 | OGP作業用 | deploy/new_ogp | なし | OGPの更新用 |

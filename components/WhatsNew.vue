@@ -98,7 +98,7 @@ export default Vue.extend({
       border-radius: 4px;
       font-size: 1rem;
       padding: 4px 8px;
-
+      display: inline-flex;
       &:hover {
         background-color: $white;
         border-radius: 4px;
@@ -107,6 +107,8 @@ export default Vue.extend({
       .ExternalLink {
         color: $gray-2 !important;
         text-decoration: none;
+        margin: -10px;
+        padding: 10px;
       }
 
       > span {

@@ -130,7 +130,11 @@
         </p>
         <div :class="[$style.box, $style.bgGray]">
           <h5 :class="$style.boxHeading">
-            {{ $t('新型コロナコールセンター') }}
+            {{
+              $t(
+                '新型コロナコールセンター（対応言語：日本語・英語・中国語・韓国語）'
+              )
+            }}
           </h5>
           <dl :class="$style.contact">
             <dt>{{ $t('午前9時から午後10時（土日祝含む）') }}</dt>
@@ -159,7 +163,11 @@
         </p>
         <div :class="[$style.box, $style.bgGray]">
           <h5 :class="$style.boxHeading">
-            {{ $t('新型コロナコールセンター') }}
+            {{
+              $t(
+                '新型コロナコールセンター（対応言語：日本語・英語・中国語・韓国語）'
+              )
+            }}
           </h5>
           <dl :class="$style.contact">
             <dt>{{ $t('午前9時から午後10時（土日祝含む）') }}</dt>
@@ -220,7 +228,11 @@
           </div>
           <div :class="[$style.box, $style.border]">
             <h5 :class="$style.boxLead">{{ $t('陰性の場合') }}</h5>
-            <p>{{ $t('自宅安静となり、医療機関を受診していただきます') }}</p>
+            <p>
+              {{
+                $t('自宅で安静に過ごし、必要に応じて医療機関を受診してください')
+              }}
+            </p>
             <p :class="[$style.small, $style.grow]">
               {{
                 $t(
