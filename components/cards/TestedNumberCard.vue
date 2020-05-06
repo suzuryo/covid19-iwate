@@ -13,18 +13,29 @@
     >
       <!-- 件.tested = 検査数 -->
       <template v-if="$i18n.locale !== 'ja-basic'" v-slot:additionalNotes>
-        <ol :class="$style.GraphDesc">
-          <li>{{ $t('※1: 疑い例・接触者調査') }}</li>
-          <li>{{ $t('※2: チャーター便・クルーズ船') }}</li>
-        </ol>
+        <ul :class="$style.GraphDesc">
+          <li>
+            {{ $t('（注）同一の対象者について複数の検体を検査する場合あり') }}
+          </li>
+          <li>
+            {{
+              $t(
+                '（注）速報値として公開するものであり、後日確定データとして修正される場合あり'
+              )
+            }}
+          </li>
+        </ul>
       </template>
     </time-stacked-bar-chart>
   </v-col>
 </template>
 
 <script>
+import dayjs from 'dayjs'
+import duration from 'dayjs/plugin/duration'
 import Data from '@/data/data.json'
 import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
+dayjs.extend(duration)
 
 export default {
   components: {

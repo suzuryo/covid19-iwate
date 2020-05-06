@@ -198,7 +198,7 @@
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template v-slot:githubRepo>
             <external-link
-              :url="$t('https://github.com/MeditationDuck/covid19')"
+              url="https://github.com/MeditationDuck/covid19"
               :icon-size="16"
             >
               {{ $t('GitHub リポジトリ') }}
