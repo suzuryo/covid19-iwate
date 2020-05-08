@@ -15,18 +15,10 @@
       <template v-if="$i18n.locale !== 'ja-basic'" v-slot:additionalNotes>
         <ul :class="$style.GraphDesc">
           <li>
-            {{
-              $t(
-                '※1: 疑い例・接触者調査'
-              )
-            }}
+            {{ $t('※1: 疑い例・接触者調査') }}
           </li>
           <li>
-            {{
-              $t(
-                '※2: チャーター便・クルーズ船'
-              )
-            }}
+            {{ $t('※2: チャーター便・クルーズ船') }}
           </li>
         </ul>
       </template>
