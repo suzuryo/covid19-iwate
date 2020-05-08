@@ -25,6 +25,8 @@
     <card-row class="DataBlock">
       <!-- 検査陽性者の状況 -->
       <confirmed-cases-details-card />
+      <!-- 検査実施件数 -->
+      <tested-number-card />
       <!-- 陽性患者数 -->
       <confirmed-cases-number-card />
       <!-- 陽性患者の属性 -->
@@ -35,8 +37,6 @@
       <!-- <tested-cases-details-card /> -->
       <!-- 検査実施人数 -->
       <!-- <inspection-persons-number-card /> -->
-      <!-- 検査実施件数 -->
-      <tested-number-card />
       <!-- 新型コロナコールセンター相談件数 -->
       <telephone-advisory-reports-number-card />
       <!-- 新型コロナ受診相談窓口相談件数 -->
