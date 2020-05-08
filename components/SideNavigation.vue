@@ -72,17 +72,6 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
-          <a
-            href="https://www.youtube.com/user/tokyo/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" alt="YouTube" />
-            </picture>
-          </a>
         </div>
         <small class="SideNavigation-Copyright">
           {{ $t('このサイトの内容物は') }}
@@ -136,14 +125,9 @@ export default Vue.extend({
           link: this.localePath('/')
         },
         {
-          title: this.$t('新型コロナウイルス感染症関連情報'),
+          title: this.$t('岩手県の新型コロナウイルス感染症関連情報'),
           link:
             'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html'
-        },
-        {
-          title: this.$t('知事から県民の皆様へのメッセージ'),
-          link:
-            'https://www.pref.iwate.jp/governor/hatsugen/1019040/1027865.html'
         },
         {
           title: this.$t('当サイトについて'),
