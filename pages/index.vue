@@ -23,16 +23,16 @@
       />
     -->
     <card-row class="DataBlock">
+      <!-- 検査実施件数 -->
+      <tested-number-card />
       <!-- 抗原検査実施件数 -->
       <antigen-tested-number-card />
       <!-- 検査陽性者の状況 -->
       <confirmed-cases-details-card />
-      <!-- 検査実施件数 -->
-      <tested-number-card />
       <!-- 陽性患者数 -->
       <confirmed-cases-number-card />
       <!-- 陽性患者の属性 -->
-      <confirmed-cases-attributes-card />
+      <!-- <confirmed-cases-attributes-card /> -->
       <!-- 区市町村別患者数 -->
       <!-- <confirmed-cases-by-municipalities-card /> -->
       <!-- 検査実施状況 -->
