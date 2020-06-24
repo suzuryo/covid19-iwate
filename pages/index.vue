@@ -23,6 +23,8 @@
       />
     -->
     <card-row class="DataBlock">
+      <!-- 抗原検査実施件数 -->
+      <antigen-tested-number-card />
       <!-- 検査陽性者の状況 -->
       <confirmed-cases-details-card />
       <!-- 検査実施件数 -->
@@ -66,6 +68,7 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+import AntigenTestedNumberCard from '@/components/cards/AntigenTestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
@@ -85,6 +88,7 @@ export default Vue.extend({
     // TestedCasesDetailsCard,
     // InspectionPersonsNumberCard,
     TestedNumberCard,
+    AntigenTestedNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard
     // MetroCard,

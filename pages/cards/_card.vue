@@ -60,6 +60,7 @@ import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvi
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import MetroCard from '@/components/cards/MetroCard.vue'
 import AgencyCard from '@/components/cards/AgencyCard.vue'
+import AntigenTestedNumberCard from '../../components/cards/AntigenTestedNumberCard'
 
 export default {
   components: {
@@ -69,6 +70,7 @@ export default {
     ConfirmedCasesAttributesCard,
     ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
+    AntigenTestedNumberCard,
     InspectionPersonsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard,
@@ -101,6 +103,10 @@ export default {
       case 'number-of-tested':
         title = this.$t('検査実施件数')
         updatedAt = Data.inspections_summary.date
+        break
+      case 'antigen-tested-number-card':
+        title = this.$t('抗原検査件数')
+        updatedAt = Data.antigen_tests_summary.date
         break
       case 'number-of-inspection-persons':
         title = this.$t('検査実施人数')
