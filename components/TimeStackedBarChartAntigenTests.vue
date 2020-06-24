@@ -23,7 +23,7 @@
             :style="{
               textDecoration: displayLegends[i] ? 'none' : 'line-through'
             }"
-          >{{ item }}</span
+            >{{ item }}</span
           >
         </button>
       </li>
@@ -140,7 +140,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Methods,
   Computed,
   Props
-  > = {
+> = {
   created() {
     this.canvas = process.browser
   },
@@ -305,14 +305,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 casesTotal = sumArray[tooltipItem.index!].toLocaleString()
                 cases = data[tooltipItem.datasetIndex!][
                   tooltipItem.index!
-                  ].toLocaleString()
+                ].toLocaleString()
               } else {
                 casesTotal = cumulativeSumArray[
                   tooltipItem.index!
-                  ].toLocaleString()
+                ].toLocaleString()
                 cases = cumulativeData[tooltipItem.datasetIndex!][
                   tooltipItem.index!
-                  ].toLocaleString()
+                ].toLocaleString()
               }
 
               label = `${cases} ${unit}`
@@ -402,8 +402,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       let n = 0
       let max = 0
       for (const i in this.displayData.datasets[0].data) {
-        const current =
-          this.displayData.datasets[0].data[i]
+        const current = this.displayData.datasets[0].data[i]
         if (current > max) {
           max = current
           n = Number(i)

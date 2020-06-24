@@ -29,12 +29,8 @@ export default {
   },
   data() {
     // 検査実施日別状況
-    const antigenTestsGraph = [
-      Data.antigen_tests_summary.data['抗原検査件数']
-    ]
-    const antigenTestsItems = [
-      this.$t('抗原検査件数')
-    ]
+    const antigenTestsGraph = [Data.antigen_tests_summary.data['抗原検査件数']]
+    const antigenTestsItems = [this.$t('抗原検査件数')]
     const antigenTestsLabels = Data.antigen_tests_summary.labels
     const antigenTestsDataLabels = [this.$t('抗原検査件数')]
 
