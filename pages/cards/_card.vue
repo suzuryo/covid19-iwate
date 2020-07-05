@@ -51,6 +51,7 @@
 import Data from '@/data/data.json'
 import AntigenData from '@/data/data.antigen_tests_summary.json'
 import ContactsData from '@/data/data.contacts.json'
+import QuerentsData from '@/data/data.querents.json'
 import MetroData from '@/data/metro.json'
 import agencyData from '@/data/agency.json'
 import patientData from '@/data/patient.json'
@@ -123,7 +124,7 @@ export default {
         break
       case 'number-of-reports-to-covid19-consultation-desk':
         title = this.$t('新型コロナ受診相談窓口相談件数')
-        updatedAt = Data.querents.date
+        updatedAt = QuerentsData.querents.date
         break
       case 'predicted-number-of-toei-subway-passengers':
         title = this.$t('都営地下鉄の利用者数の推移')
