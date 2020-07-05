@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard">
     <time-bar-chart
       :title="$t('抗原検査件数')"
-      :title-id="'antigen-tested-number-card'"
+      :title-id="'number-of-antigen-tested'"
       :chart-id="'antigen-tested-time-bar-chart'"
       :chart-data="antigenTestsGraph"
       :date="Data.antigen_tests_summary.date"

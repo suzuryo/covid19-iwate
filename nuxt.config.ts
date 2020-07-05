@@ -164,6 +164,7 @@ const config: Configuration = {
         '/cards/number-of-confirmed-cases-by-municipalities',
         '/cards/attributes-of-confirmed-cases',
         '/cards/number-of-tested',
+        '/cards/number-of-antigen-tested',
         '/cards/number-of-inspection-persons',
         '/cards/number-of-reports-to-covid19-telephone-advisory-center',
         '/cards/number-of-reports-to-covid19-consultation-desk',
