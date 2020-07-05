@@ -26,7 +26,7 @@
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
     />
-    <telephone-advisory-reports-number-card
+    <contacts-number-card
       v-else-if="
         this.$route.params.card ==
           'number-of-reports-to-covid19-telephone-advisory-center'
@@ -50,6 +50,7 @@
 <script>
 import Data from '@/data/data.json'
 import AntigenData from '@/data/data.antigen_tests_summary.json'
+import ContactsData from '@/data/data.contacts.json'
 import MetroData from '@/data/metro.json'
 import agencyData from '@/data/agency.json'
 import patientData from '@/data/patient.json'
@@ -61,7 +62,7 @@ import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCase
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AntigenTestedNumberCard from '@/components/cards/AntigenTestedNumberCard'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ContactsNumberCard from '@/components/cards/ContactsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 import MetroCard from '@/components/cards/MetroCard.vue'
 import AgencyCard from '@/components/cards/AgencyCard.vue'
@@ -76,7 +77,7 @@ export default {
     TestedNumberCard,
     AntigenTestedNumberCard,
     InspectionPersonsNumberCard,
-    TelephoneAdvisoryReportsNumberCard,
+    ContactsNumberCard,
     ConsultationDeskReportsNumberCard,
     MetroCard,
     AgencyCard
@@ -118,7 +119,7 @@ export default {
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         title = this.$t('新型コロナコールセンター相談件数')
-        updatedAt = Data.contacts.date
+        updatedAt = ContactsData.contacts.date
         break
       case 'number-of-reports-to-covid19-consultation-desk':
         title = this.$t('新型コロナ受診相談窓口相談件数')
