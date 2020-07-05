@@ -40,7 +40,7 @@
       <!-- 検査実施人数 -->
       <!-- <inspection-persons-number-card /> -->
       <!-- 新型コロナコールセンター相談件数 -->
-      <telephone-advisory-reports-number-card />
+      <contacts-number-card />
       <!-- 新型コロナ受診相談窓口相談件数 -->
       <consultation-desk-reports-number-card />
       <!-- 都営地下鉄の利用者数の推移 -->
@@ -69,7 +69,7 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 // import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AntigenTestedNumberCard from '@/components/cards/AntigenTestedNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ContactsNumberCard from '~/components/cards/ContactsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
@@ -89,7 +89,7 @@ export default Vue.extend({
     // InspectionPersonsNumberCard,
     TestedNumberCard,
     AntigenTestedNumberCard,
-    TelephoneAdvisoryReportsNumberCard,
+    ContactsNumberCard,
     ConsultationDeskReportsNumberCard
     // MetroCard,
     // AgencyCard
