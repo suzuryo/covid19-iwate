@@ -21,7 +21,7 @@
       v-else-if="this.$route.params.card == 'number-of-tested'"
     />
     <antigen-tested-number-card
-      v-else-if="this.$route.params.card == 'antigen-number-of-tested'"
+      v-else-if="this.$route.params.card == 'number-of-antigen-tested'"
     />
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
@@ -109,7 +109,7 @@ export default {
         title = this.$t('検査実施件数')
         updatedAt = Data.inspections_summary.date
         break
-      case 'antigen-tested-number-card':
+      case 'number-of-antigen-tested':
         title = this.$t('抗原検査件数')
         updatedAt = AntigenData.antigen_tests_summary.date
         break
