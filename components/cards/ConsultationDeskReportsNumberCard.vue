@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Data from '@/data/data.json'
+import Data from '@/data/data.querents.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
