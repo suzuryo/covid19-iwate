@@ -1,6 +1,11 @@
 {
   "newsItems": [
     {
+      "date": "2020\/07\/29",
+      "url": "https://www3.nhk.or.jp/news/html/20200729/k10012539681000.html",
+      "text": "岩手県で2人の感染確認 岩手県で初 (NHKニュース)"
+    },
+    {
       "date": "2020\/06\/08",
       "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html",
       "text": "岩手県 新型コロナウイルス感染症対策本部 第17回会議"
