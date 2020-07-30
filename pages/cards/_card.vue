@@ -54,7 +54,7 @@ import ContactsData from '@/data/data.contacts.json'
 import QuerentsData from '@/data/data.querents.json'
 import MetroData from '@/data/metro.json'
 import agencyData from '@/data/agency.json'
-import patientData from '@/data/patient.json'
+import patientMunicipalitiesData from '@/data/patient_municipalities.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
@@ -100,7 +100,7 @@ export default {
         break
       case 'number-of-confirmed-cases-by-municipalities':
         title = this.$t('陽性患者数（区市町村別）')
-        updatedAt = patientData.date
+        updatedAt = patientMunicipalitiesData.date
         break
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
