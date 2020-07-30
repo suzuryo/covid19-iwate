@@ -23,9 +23,9 @@
       />
     -->
     <card-row class="DataBlock">
-      <!-- 検査実施件数 -->
+      <!-- PCR検査実施件数 -->
       <tested-number-card />
-      <!-- 抗原検査実施件数 -->
+      <!-- 抗原検査件数 -->
       <antigen-tested-number-card />
       <!-- 検査陽性者の状況 -->
       <confirmed-cases-details-card />
