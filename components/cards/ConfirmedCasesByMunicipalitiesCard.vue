@@ -25,7 +25,7 @@
 
 <script>
 import dayjs from 'dayjs'
-import Data from '@/data/patient.json'
+import Data from '@/data/patient_municipalities.json'
 import ConfirmedCasesByMunicipalitiesTable from '~/components/ConfirmedCasesByMunicipalitiesTable.vue'
 
 export default {

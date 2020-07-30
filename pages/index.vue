@@ -31,9 +31,9 @@
       <confirmed-cases-details-card />
       <!-- 陽性患者数 -->
       <confirmed-cases-number-card />
+      <!-- 陽性患者数（市町村別） -->
+      <confirmed-cases-by-municipalities-card />
       <!-- 陽性患者の属性 -->
-      <!-- 区市町村別患者数 -->
-      <!-- <confirmed-cases-by-municipalities-card /> -->
       <confirmed-cases-attributes-card />
       <!-- 検査実施状況 -->
       <!-- <tested-cases-details-card /> -->
@@ -63,8 +63,8 @@ import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-// import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
+import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 // import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 // import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -83,8 +83,8 @@ export default Vue.extend({
     CardRow,
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
-    // ConfirmedCasesByMunicipalitiesCard,
     ConfirmedCasesAttributesCard,
+    ConfirmedCasesByMunicipalitiesCard,
     // TestedCasesDetailsCard,
     // InspectionPersonsNumberCard,
     TestedNumberCard,
