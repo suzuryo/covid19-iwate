@@ -42,7 +42,9 @@ export default {
     ]
 
     // データをソート
-    Data.datasets.data.sort((a, b) => {return a.code === b.code ? 0 : a.code > b.code ? 1 : -1})
+    Data.datasets.data.sort((a, b) => {
+      return a.code === b.code ? 0 : a.code > b.code ? 1 : -1
+    })
 
     // データを追加
     for (const d of Data.datasets.data) {
