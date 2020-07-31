@@ -18,6 +18,7 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
+            <th class="text-start" v-html="item['通番']"></th>
             <th class="text-start">{{ item['公表日'] }}</th>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
