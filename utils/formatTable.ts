@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 
 const headers = [
+  { text: '通番', value: '通番' },
   { text: '公表日', value: '公表日' },
   { text: '居住地', value: '居住地' },
   { text: '年代', value: '年代' },
@@ -9,15 +10,18 @@ const headers = [
 ]
 
 type DataType = {
+  通番: string
   リリース日: string
   居住地: string | null
   年代: string | null
   性別: '男性' | '女性' | string
   退院: '◯' | null
+  url: string | null
   [key: string]: any
 }
 
 type TableDataType = {
+  通番: DataType['通番']
   公表日: string
   居住地: DataType['居住地']
   年代: DataType['年代']
@@ -42,7 +46,12 @@ export default (data: DataType[]) => {
   }
   data.forEach(d => {
     const releaseDate = dayjs(d['リリース日'])
+    let tsuban = d['通番']
+    if (d.url !== null) {
+      tsuban = `<a href="${d.url}" target="_blank">${d['通番']}</a>`
+    }
     const TableRow: TableDataType = {
+      通番: tsuban ?? '不明',
       公表日: releaseDate.isValid() ? releaseDate.format('M/D') : '不明',
       居住地: d['居住地'] ?? '調査中',
       年代: d['年代'] ?? '不明',

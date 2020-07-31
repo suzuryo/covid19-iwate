@@ -10,7 +10,8 @@
         "性別": "男性",
         "居住地": "盛岡市",
         "退院": null,
-        "date": "2020-07-29"
+        "date": "2020-07-29",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1029637.html"
       },
       {
         "id": 2,
@@ -20,7 +21,8 @@
         "性別": "男性",
         "居住地": "宮古市",
         "退院": null,
-        "date": "2020-07-29"
+        "date": "2020-07-29",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1032440.html"
       }
     ]
   },
