@@ -165,7 +165,7 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | branch | A branch where HTML is built and updated | Website updated |
 | ---- | ---- | ---- |
-|`master`|`production`|The production site https://stopcovid19.metro.tokyo.lg.jp/|
+|`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
 |`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
 
@@ -196,7 +196,7 @@ Por favor, use as seguintes regras para nomeação de branch quando estiver envi
 | Desenvolvimento | development | https://dev-covid19-tokyo.netlify.app/ | All developers | base branch. Basically send a Pull Request here |
 | Hotfix branch | dev-hotfix | Nenhum | Consertos para aplicar diretamente em produção. Utilize se requisitado pelo administrator |
 | Staging | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | Para confirmação final antes de ir para produção. Pull Requests de não-administratores são proibidos |
-| Produção | master | https://stopcovid19.metro.tokyo.lg.jp/ | Only administrators | Pull Requests de não administrator são proibidos |
+| Produção | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull Requests de não administrator são proibidos |
 
 [/PLEASE TRANSLATE ME]
 
@@ -204,6 +204,6 @@ Por favor, use as seguintes regras para nomeação de branch quando estiver envi
 
 | Propósito | Branch | URL de Confirmação | Detalhes |
 | ---- | -------- | ---- | ---- |
-| HTML do site de Produção | production | https://stopcovid19.metro.tokyo.lg.jp/ | Onde se encontram os HTML estáticos |
+| HTML do site de Produção | production | https://iwate.stopcovid19.jp/ | Onde se encontram os HTML estáticos |
 | HTML do site de Staging | gh-pages | https://stg-covid19-tokyo.netlify.app/ | Onde se encontram os HTML estáticos |
 | Para o diretório de trabalho do OGP | deploy / new_ogp | Nenhum | Para atualizar OGP |

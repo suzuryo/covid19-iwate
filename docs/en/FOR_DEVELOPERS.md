@@ -126,7 +126,7 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | branch | A branch where HTML is built and updated | Website updated |
 | ---- | ---- | ---- |
-|`master`|`production`|The production site https://stopcovid19.metro.tokyo.lg.jp/|
+|`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
 |`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
 
@@ -148,12 +148,12 @@ Please use the following naming rules for the branch when sending a Pull Request
 | ---- | ---- | ---- | ---- | ---- |
 | Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | base branch. Basically send a Pull Request here |
 | Staging | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | For final confirmation before production. Non-admin pull requests are prohibited. |
-| Production | master | https://stopcovid19.metro.tokyo.lg.jp/ | Only administrators | Pull Requests other than Administrators are prohibited |
+| Production | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull Requests other than Administrators are prohibited |
 
 ### 5-2. Branch used by the system
 
 | Purpose | Branch | Confirmation URL | Remarks |
 | ---- | -------- | ---- | ---- |
-| Production site HTML | production | https://stopcovid19.metro.tokyo.lg.jp/ | Location where statically built HTML is located |
+| Production site HTML | production | https://iwate.stopcovid19.jp/ | Location where statically built HTML is located |
 | Staging site HTML | gh-pages | https://stg-covid19-tokyo.netlify.app/ | Where to find statically built HTML |
 | For OGP working directory | deploy / new_ogp | None | For updating OGP |

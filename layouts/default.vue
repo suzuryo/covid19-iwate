@@ -116,7 +116,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          href: `https://iwate.stopcovid19.jp${this.$route.path}`,
         },
         ...linksAlternate,
       ],
@@ -148,7 +148,7 @@ export default Vue.extend({
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`,
+          content: `https://iwate.stopcovid19.jp${this.$route.path}`,
         },
         ogLocale,
         {

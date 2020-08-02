@@ -21,7 +21,7 @@ const config: NuxtConfig = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp',
+        content: 'https://iwate.stopcovid19.jp',
       },
       {
         hid: 'twitter:card',
