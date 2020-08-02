@@ -96,7 +96,7 @@
             </picture>
           </a>
           <a
-            href="https://www.youtube.com/user/tokyo/videos"
+            href="https://www.youtube.com/user/prefiwate/videos"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
