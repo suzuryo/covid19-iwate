@@ -1,6 +1,8 @@
 <template>
   <div>
     <site-top-upper />
+    <cards-reference />
+    <!--
     <v-tabs v-model="tab" hide-slider>
       <v-tab
         v-for="(item, i) in items"
@@ -20,29 +22,30 @@
         </v-tab-item>
       </v-tabs-items>
     </v-tabs>
+    -->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import SiteTopUpper from '@/components/SiteTopUpper.vue'
-import CardsMonitoring from '@/components/CardsMonitoring.vue'
+// import CardsMonitoring from '@/components/CardsMonitoring.vue'
 import CardsReference from '@/components/CardsReference.vue'
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus.ts'
 
 export default Vue.extend({
   components: {
     SiteTopUpper,
-    CardsMonitoring,
+    // CardsMonitoring,
     CardsReference,
   },
   data() {
     return {
       tab: null,
-      items: [
-        { label: this.$t('モニタリング項目'), component: CardsMonitoring },
-        { label: this.$t('その他 参考指標'), component: CardsReference },
-      ],
+      // items: [
+      //   { label: this.$t('モニタリング項目'), component: CardsMonitoring },
+      //   { label: this.$t('その他 参考指標'), component: CardsReference },
+      // ],
     }
   },
   methods: {
