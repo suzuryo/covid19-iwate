@@ -8,14 +8,17 @@
       <printer-button :wrapper-class="$style.printerButton" to="/print/flow" />
     </div>
     <div :class="$style.container">
-      <h3 :class="$style.conHeading">
+      <h3 ref="upperTrigger" :class="$style.conHeading">
         {{ $t('新型コロナウイルス感染症にかかる相談窓口について') }}
       </h3>
+      <!--
       <p ref="upperTrigger" :class="$style.anchorLead">
         {{ $t('相談方法は、症状や状況別で3つに分かれます') }}
       </p>
+      -->
       <nav ref="nav" :class="$style.anchor">
         <ul :class="$style.anchorList">
+          <!--
           <li :class="$style.anchorItem">
             <a
               href="#sydr"
@@ -26,13 +29,14 @@
               <fig-cond-sy-dr :class="$style.fig" aria-hidden="true" />
             </a>
           </li>
+          -->
           <li :class="$style.anchorItem">
             <a
               href="#sy"
               :class="$style.anchorLink"
               @click.prevent="onClickAnchor"
             >
-              <span>{{ $t('かかりつけ医がいない症状のある方') }}</span>
+              <span>{{ $t('症状のある方') }}</span>
               <fig-cond-sy :class="$style.fig" aria-hidden="true" />
             </a>
           </li>
@@ -48,6 +52,7 @@
           </li>
         </ul>
       </nav>
+      <!--
       <div id="sydr" :class="$style.section">
         <h4 :class="$style.sxnHeading">
           {{ $t('かかりつけ医がいて、次の症状がある方') }}
@@ -99,9 +104,10 @@
           }}</span>
         </p>
       </div>
+      -->
       <div id="sy" :class="$style.section">
         <h4 :class="$style.sxnHeading">
-          {{ $t('かかりつけ医がいない、次の症状がある方') }}
+          {{ $t('次の症状がある方') }}
         </h4>
         <ul :class="$style.boxes">
           <li :class="[$style.box, $style.border]">
@@ -599,7 +605,7 @@ $margin: 20;
   }
   .anchorItem {
     display: flex;
-    width: (100% / 3);
+    width: (100% / 2);
     padding: 0 6px;
     flex: 0 0 auto;
   }
