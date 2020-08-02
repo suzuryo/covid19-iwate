@@ -74,7 +74,7 @@
             </picture>
           </a>
           <a
-            href="https://www.facebook.com/tochokoho"
+            href="https://www.facebook.com/pref.iwate/"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
