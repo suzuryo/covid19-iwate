@@ -2,7 +2,8 @@
   <v-app class="app">
     <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <img src="/logo.svg" alt="東京都" />
+        <!-- TODO: 東京版を修正 -->
+        <img src="/logo.svg" :alt="$t('岩手県')" />
         <scale-loader color="#00A040" />
       </div>
     </v-overlay>
@@ -121,12 +122,12 @@ export default Vue.extend({
       ],
       // Disable prettier for readability purposes
       // eslint-disable-next-line prettier/prettier
-      titleTemplate: `%s | ${this.$t('東京都')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
+      titleTemplate: `%s | ${this.$t('岩手県')} ${this.$t('新型コロナウイルス感染症')}${this.$t('対策サイト')}`,
       meta: [
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('東京都'),
+          content: this.$tc('岩手県'),
         },
         {
           hid: 'description',
@@ -140,7 +141,7 @@ export default Vue.extend({
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('岩手県')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
@@ -153,7 +154,7 @@ export default Vue.extend({
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('岩手県')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
@@ -174,7 +175,7 @@ export default Vue.extend({
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
-          content: `${this.$t('東京都')} ${this.$t(
+          content: `${this.$t('岩手県')} ${this.$t(
             '新型コロナウイルス感染症'
           )} ${this.$t('対策サイト')}`,
         },
