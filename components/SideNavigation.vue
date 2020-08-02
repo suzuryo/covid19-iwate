@@ -205,9 +205,8 @@ export default Vue.extend({
             'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
         {
-          title: this.$t('都民利用施設・都主催イベントに関する情報'),
-          link:
-            'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event00.html',
+          title: this.$t('イベントカレンダー'),
+          link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
         },
         {
           title: this.$t('東京都における滞在人口の増減'),
