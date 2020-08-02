@@ -67,6 +67,7 @@
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
+            <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
             <picture>
               <source srcset="/twitter.webp" type="image/webp" />
               <img src="/twitter.png" alt="Twitter" />
