@@ -171,13 +171,13 @@ export default Vue.extend({
           link:
             'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
         },
-        {
-          icon: 'MaskTrashIcon',
-          title: this.$t('ご家庭でのマスク等の捨て方'),
-          link:
-            'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
-          divider: true,
-        },
+        // {
+        //   icon: 'MaskTrashIcon',
+        //   title: this.$t('ご家庭でのマスク等の捨て方'),
+        //   link:
+        //     'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
+        //   divider: true,
+        // },
         // {
         //   icon: 'ParentIcon',
         //   title: this.$t('お子様をお持ちの皆様へ'),
