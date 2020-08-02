@@ -62,7 +62,7 @@
             </picture>
           </a>
           <a
-            href="https://twitter.com/tokyo_bousai"
+            href="https://twitter.com/Meditation_Duck"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
