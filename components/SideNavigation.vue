@@ -178,11 +178,11 @@ export default Vue.extend({
             'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
           divider: true,
         },
-        {
-          icon: 'ParentIcon',
-          title: this.$t('お子様をお持ちの皆様へ'),
-          link: this.localePath('/parent'),
-        },
+        // {
+        //   icon: 'ParentIcon',
+        //   title: this.$t('お子様をお持ちの皆様へ'),
+        //   link: this.localePath('/parent'),
+        // },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
