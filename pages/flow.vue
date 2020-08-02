@@ -145,7 +145,7 @@
             }}</span>
           </li>
         </ul>
-        <div :class="[$style.box, $style.bgGray]">
+        <div :class="[$style.box, $style.bgYellow]">
           <h5 :class="$style.boxHeading">
             <!--
               TODO:
