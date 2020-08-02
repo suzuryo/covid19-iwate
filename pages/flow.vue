@@ -322,11 +322,11 @@
     </div>
     <div :class="$style.detail">
       <a
-        href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+        href="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html#callcenter"
         target="_blank"
         :class="$style.detailButton"
         rel="noopener noreferrer"
-        >{{ $t('詳細を見る（東京都福祉保健局）') }}
+        >{{ $t('詳細を見る（岩手県新型コロナウイルス感染症関連情報）') }}
         <v-icon :class="$style.icon" size="2rem">
           mdi-open-in-new
         </v-icon>
