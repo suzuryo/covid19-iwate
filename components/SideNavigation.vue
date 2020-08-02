@@ -195,9 +195,9 @@ export default Vue.extend({
           divider: true,
         },
         {
-          title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
+          title: this.$t('岩手県新型コロナウイルス感染症関連情報'),
           link:
-            'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html',
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html',
         },
         {
           title: this.$t('新型コロナウイルス感染症対策本部'),
