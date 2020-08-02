@@ -12,7 +12,7 @@ import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvi
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
 import MetroCard from '@/components/cards/MetroCard.vue'
-import AgencyCard from '@/components/cards/AgencyCard.vue'
+// import AgencyCard from '@/components/cards/AgencyCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
@@ -37,7 +37,7 @@ export default {
     TestedNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     MetroCard,
-    AgencyCard,
+    // AgencyCard,
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
     ConsultationAboutFeverNumberCard,
@@ -68,9 +68,9 @@ export default {
       case 'predicted-number-of-toei-subway-passengers':
         cardComponent = 'metro-card'
         break
-      case 'agency':
-        cardComponent = 'agency-card'
-        break
+      // case 'agency':
+      //   cardComponent = 'agency-card'
+      //   break
       case 'positive-number-by-diagnosed-date':
         cardComponent = 'positive-number-by-diagnosed-date-card'
         break
