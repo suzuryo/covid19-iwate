@@ -6,15 +6,15 @@
     <static-card>
       <h3>
         <external-link
-          url="https://covid19.supportnavi.metro.tokyo.lg.jp/"
+          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028772.html"
           :icon-size="24"
-          >{{ $t('東京都 新型コロナウイルス感染症 支援情報ナビ') }}
+          >{{ $t('事業者の皆様へのお知らせ') }}
         </external-link>
       </h3>
       <p>
         {{
           $t(
-            '東京都及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。'
+            '岩手県及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。'
           )
         }}
       </p>
