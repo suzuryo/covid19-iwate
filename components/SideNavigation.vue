@@ -208,11 +208,11 @@ export default Vue.extend({
           title: this.$t('イベントカレンダー'),
           link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
         },
-        {
-          title: this.$t('東京都における滞在人口の増減'),
-          link:
-            'https://www.seisakukikaku.metro.tokyo.lg.jp/information/corona-people-flow-analysis.html',
-        },
+        // {
+        //   title: this.$t('東京都における滞在人口の増減'),
+        //   link:
+        //     'https://www.seisakukikaku.metro.tokyo.lg.jp/information/corona-people-flow-analysis.html',
+        // },
         {
           title: this.$t('知事からのメッセージ'),
           link:
