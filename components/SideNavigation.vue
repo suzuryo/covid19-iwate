@@ -50,6 +50,7 @@
 
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
+          <!--
           <a
             href="https://line.me/R/ti/p/%40822sysfc"
             target="_blank"
@@ -61,6 +62,7 @@
               <img src="/line.png" alt="LINE" />
             </picture>
           </a>
+          -->
           <a
             href="https://twitter.com/Meditation_Duck"
             target="_blank"
