@@ -119,7 +119,7 @@
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          &copy; 2020 Tokyo Metropolitan Government
+          &copy; 2020 Meditation Duck
         </small>
       </footer>
     </div>
