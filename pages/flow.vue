@@ -201,6 +201,7 @@
               >
             </dd>
           </dl>
+          <!--
           <p :class="$style.notice">
             {{
               $t(
@@ -208,6 +209,7 @@
               )
             }}
           </p>
+          -->
         </div>
       </div>
       <div id="anx" ref="lowerTrigger" :class="$style.section">
@@ -238,6 +240,7 @@
               >
             </dd>
           </dl>
+          <!--
           <p :class="$style.notice">
             {{
               $t(
@@ -245,6 +248,7 @@
               )
             }}
           </p>
+          -->
         </div>
       </div>
       <!-- TODO: 受診・検査が必要と判断されたときのフローが公式ページに記載されていないため，詳細を確認 -->
