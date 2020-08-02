@@ -247,6 +247,8 @@
           </p>
         </div>
       </div>
+      <!-- TODO: 受診・検査が必要と判断されたときのフローが公式ページに記載されていないため，詳細を確認 -->
+      <!--
       <div :class="[$style.section, $style.yellow]">
         <h4 :class="$style.sxnHeadingSmall">
           {{
@@ -303,6 +305,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
     <div :class="$style.detail">
       <a
