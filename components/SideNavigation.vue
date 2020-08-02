@@ -200,8 +200,9 @@ export default Vue.extend({
             'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html',
         },
         {
-          title: this.$t('東京都 新型コロナウイルス感染症 支援情報ナビ'),
-          link: 'https://covid19.supportnavi.metro.tokyo.lg.jp/',
+          title: this.$t('新型コロナウイルス感染症対策本部'),
+          link:
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
         {
           title: this.$t('都民利用施設・都主催イベントに関する情報'),
