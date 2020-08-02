@@ -2,7 +2,7 @@
   "name": "covid19",
   "version": "1.0.0",
   "description": "岩手県 新型コロナウイルス感染症対策サイト",
-  "author": "東京都",
+  "author": "岩手県内有志",
   "private": true,
   "engines": {
     "node": ">=10.19.0"
