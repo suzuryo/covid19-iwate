@@ -22,15 +22,15 @@
     <static-card>
       <h3>
         <external-link
-          url="https://kyugyo.metro.tokyo.lg.jp/dai2kai/index.html"
+          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/category_guideline.html"
           :icon-size="24"
-          >{{ $t('東京都感染拡大防止協力金（第2回）') }}
+          >{{ $t('業種ごとの感染拡大予防ガイドライン') }}
         </external-link>
       </h3>
       <p>
         {{
           $t(
-            '新型コロナウイルス感染拡大防止のため、都の要請や協力依頼に応じて、施設の使用停止や営業時間の短縮に全面的に協力いただける中小事業者の皆様に対し、協力金を支給いたします（支給額50万円〈2事業所以上で休業等に取り組む事業者は100万円〉）。'
+            '新型コロナウイルス感染拡大防止のため、業種ごとに関係団体の情報を参考としてください。'
           )
         }}
       </p>
