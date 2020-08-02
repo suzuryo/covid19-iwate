@@ -165,12 +165,12 @@ export default Vue.extend({
           title: this.$t('新型コロナウイルス感染症が心配なときに'),
           link: this.localePath('/flow'),
         },
-        {
-          icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルスの感染が判明した方へ'),
-          link:
-            'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
-        },
+        // {
+        //   icon: 'CovidIcon',
+        //   title: this.$t('新型コロナウイルスの感染が判明した方へ'),
+        //   link:
+        //     'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
+        // },
         // {
         //   icon: 'MaskTrashIcon',
         //   title: this.$t('ご家庭でのマスク等の捨て方'),
