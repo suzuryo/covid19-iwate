@@ -19,7 +19,7 @@ import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
-import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
+// import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
@@ -41,7 +41,7 @@ export default {
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
     // ConsultationAboutFeverNumberCard,
-    TokyoRulesApplicationNumberCard,
+    // TokyoRulesApplicationNumberCard,
     // MonitoringItemsOverviewCard,
   },
   data() {
@@ -98,9 +98,9 @@ export default {
       // case 'number-of-reports-to-consultations-about-fever-in-7119':
       //   cardComponent = 'consultation-about-fever-number-card'
       //   break
-      case 'number-of-tokyo-rules-applied':
-        cardComponent = 'tokyo-rules-application-number-card'
-        break
+      // case 'number-of-tokyo-rules-applied':
+      //   cardComponent = 'tokyo-rules-application-number-card'
+      //   break
     }
 
     return {
