@@ -84,6 +84,7 @@
               <img src="/facebook.png" alt="Facebook" />
             </picture>
           </a>
+          <!--
           <a
             href="https://github.com/MeditationDuck/covid19"
             target="_blank"
@@ -95,6 +96,7 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
+          -->
           <a
             href="https://www.youtube.com/user/prefiwate/videos"
             target="_blank"
