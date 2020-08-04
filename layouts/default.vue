@@ -168,6 +168,10 @@ export default Vue.extend({
         },
         */
         {
+          name: 'google-site-verification',
+          content: 'wy96JdzncNSSkhp1c0EjfVdCXy0LQAMup_BHI0Bhb_Q'
+        },
+        {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
           content:
