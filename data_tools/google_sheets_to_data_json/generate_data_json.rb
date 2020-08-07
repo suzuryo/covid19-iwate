@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'google/apis/sheets_v4'
 require 'googleauth'
 require 'googleauth/stores/file_token_store'
@@ -6,21 +9,12 @@ require 'json'
 require 'time'
 require 'date'
 
-OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'.freeze
-APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'.freeze
-CREDENTIALS_PATH = 'credentials.json'.freeze
-# The file token.yaml stores the user's access and refresh tokens, and is
-# created automatically when the authorization flow completes for the first
-# time.
-TOKEN_PATH = 'token.yaml'.freeze
+OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
+APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
+CREDENTIALS_PATH = 'credentials.json'
+TOKEN_PATH = 'token.yaml'
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
-##
-# Ensure valid credentials, either by restoring from the saved credentials
-# files or initiating an OAuth2 authorization. If authorization is required,
-# the user's default browser will be launched to approve the request.
-#
-# @return [Google::Auth::UserRefreshCredentials] OAuth2 credentials
 def authorize
   client_id = Google::Auth::ClientId.from_file CREDENTIALS_PATH
   token_store = Google::Auth::Stores::FileTokenStore.new file: TOKEN_PATH
@@ -44,28 +38,31 @@ service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
+# ここまで Google Sheets API を使うための Quickstart テンプレ
+# https://developers.google.com/sheets/api/quickstart/ruby
+
 ######################################################################
 # Google Sheets から データ取得
 ######################################################################
-SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'.freeze
+SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'
 
-PATIENTS_RANGE = 'output_patients!A2:L'.freeze
+PATIENTS_RANGE = 'output_patients!A2:L'
 output_patients = service.get_spreadsheet_values SPREADSHEET_ID, PATIENTS_RANGE
 raise if output_patients.values.empty?
 
-INSPECTIONS_RANGE = 'input_検査件数!A2:F'.freeze
+INSPECTIONS_RANGE = 'input_検査件数!A2:F'
 output_inspections = service.get_spreadsheet_values SPREADSHEET_ID, INSPECTIONS_RANGE
 raise if output_inspections.values.empty?
 
-CONTACTS_RANGE = 'input_帰国者接触者_相談件数!A2:E'.freeze
+CONTACTS_RANGE = 'input_帰国者接触者_相談件数!A2:E'
 output_contacts = service.get_spreadsheet_values SPREADSHEET_ID, CONTACTS_RANGE
 raise if output_contacts.values.empty?
 
-QUERENTS_RANGE = 'input_一般_相談件数!A2:E'.freeze
+QUERENTS_RANGE = 'input_一般_相談件数!A2:E'
 output_querents = service.get_spreadsheet_values SPREADSHEET_ID, QUERENTS_RANGE
 raise if output_querents.values.empty?
 
-PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'.freeze
+PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'
 output_patient_municipalities = service.get_spreadsheet_values SPREADSHEET_ID, PATIENT_MUNICIPALITIES_RANGE
 raise if output_patient_municipalities.values.empty?
 
@@ -135,7 +132,8 @@ data_json = {
 }
 
 ######################################################################
-# patients
+# data.json
+# patients の生成
 ######################################################################
 # 陽性者
 # A: 0: id
@@ -168,7 +166,8 @@ output_patients.values.each do |row|
 end
 
 ######################################################################
-# patients_summary
+# data.json
+# patients_summary の生成
 ######################################################################
 (Date.new(2020, 2, 15)..Date.today).each do |date|
   output_patients_sum = 0
@@ -187,7 +186,8 @@ end
 end
 
 ######################################################################
-# inspections_summary
+# data.json
+# inspections_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
   data_json[:'inspections_summary'][:'data'][:'県内'].append row[4].to_i
@@ -197,7 +197,8 @@ end
 
 
 ######################################################################
-# main_summary
+# data.json
+# main_summary の生成
 ######################################################################
 # 検査実施件数
 inspection_sum = 0
@@ -250,7 +251,8 @@ data_antigen_tests_summary_json = {
 }
 
 ######################################################################
-# antigen_tests_summary
+# data.antigen_tests_summary.json
+# antigen_tests_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
   data_antigen_tests_summary_json[:'antigen_tests_summary'][:'data'].append(
@@ -275,7 +277,8 @@ data_contacts_json = {
 }
 
 ######################################################################
-# contacts
+# data.contacts.json
+# contacts の生成
 ######################################################################
 output_contacts.values.each do |row|
   data_contacts_json[:'contacts'][:'data'].append(
@@ -301,7 +304,8 @@ data_querents_json = {
 }
 
 ######################################################################
-# querents
+# data.querents.json
+# querents の生成
 ######################################################################
 output_querents.values.each do |row|
   data_querents_json[:'querents'][:'data'].append(
@@ -328,7 +332,8 @@ data_patient_municipalities_json = {
 }
 
 ######################################################################
-# data.patient_municipalities
+# data.patient_municipalities.json
+# datasets の生成
 ######################################################################
 output_patient_municipalities.values.each do |row|
   data_patient_municipalities_json[:'datasets'][:'data'].append(
