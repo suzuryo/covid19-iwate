@@ -257,6 +257,8 @@ $default-boxdiff: 35px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  overflow-wrap: break-word;
+  word-break: break-all;
 
   > span {
     display: block;
