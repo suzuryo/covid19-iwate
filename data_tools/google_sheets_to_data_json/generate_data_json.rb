@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'google/apis/sheets_v4'
 require 'googleauth'
 require 'googleauth/stores/file_token_store'
@@ -7,13 +9,13 @@ require 'json'
 require 'time'
 require 'date'
 
-OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'.freeze
-APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'.freeze
-CREDENTIALS_PATH = 'credentials.json'.freeze
 # The file token.yaml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
-TOKEN_PATH = 'token.yaml'.freeze
+OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
+APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
+CREDENTIALS_PATH = 'credentials.json'
+TOKEN_PATH = 'token.yaml'
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
 ##
@@ -48,25 +50,25 @@ service.authorization = authorize
 ######################################################################
 # Google Sheets から データ取得
 ######################################################################
-SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'.freeze
+SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'
 
-PATIENTS_RANGE = 'output_patients!A2:L'.freeze
+PATIENTS_RANGE = 'output_patients!A2:L'
 output_patients = service.get_spreadsheet_values SPREADSHEET_ID, PATIENTS_RANGE
 raise if output_patients.values.empty?
 
-INSPECTIONS_RANGE = 'input_検査件数!A2:F'.freeze
+INSPECTIONS_RANGE = 'input_検査件数!A2:F'
 output_inspections = service.get_spreadsheet_values SPREADSHEET_ID, INSPECTIONS_RANGE
 raise if output_inspections.values.empty?
 
-CONTACTS_RANGE = 'input_帰国者接触者_相談件数!A2:E'.freeze
+CONTACTS_RANGE = 'input_帰国者接触者_相談件数!A2:E'
 output_contacts = service.get_spreadsheet_values SPREADSHEET_ID, CONTACTS_RANGE
 raise if output_contacts.values.empty?
 
-QUERENTS_RANGE = 'input_一般_相談件数!A2:E'.freeze
+QUERENTS_RANGE = 'input_一般_相談件数!A2:E'
 output_querents = service.get_spreadsheet_values SPREADSHEET_ID, QUERENTS_RANGE
 raise if output_querents.values.empty?
 
-PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'.freeze
+PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'
 output_patient_municipalities = service.get_spreadsheet_values SPREADSHEET_ID, PATIENT_MUNICIPALITIES_RANGE
 raise if output_patient_municipalities.values.empty?
 
