@@ -9,21 +9,12 @@ require 'json'
 require 'time'
 require 'date'
 
-# The file token.yaml stores the user's access and refresh tokens, and is
-# created automatically when the authorization flow completes for the first
-# time.
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
 CREDENTIALS_PATH = 'credentials.json'
 TOKEN_PATH = 'token.yaml'
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
-##
-# Ensure valid credentials, either by restoring from the saved credentials
-# files or initiating an OAuth2 authorization. If authorization is required,
-# the user's default browser will be launched to approve the request.
-#
-# @return [Google::Auth::UserRefreshCredentials] OAuth2 credentials
 def authorize
   client_id = Google::Auth::ClientId.from_file CREDENTIALS_PATH
   token_store = Google::Auth::Stores::FileTokenStore.new file: TOKEN_PATH
@@ -46,6 +37,9 @@ end
 service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
+
+# ここまで Google Sheets API を使うための Quickstart テンプレ
+# https://developers.google.com/sheets/api/quickstart/ruby
 
 ######################################################################
 # Google Sheets から データ取得
@@ -138,7 +132,8 @@ data_json = {
 }
 
 ######################################################################
-# patients
+# data.json
+# patients の生成
 ######################################################################
 # 陽性者
 # A: 0: id
@@ -171,7 +166,8 @@ output_patients.values.each do |row|
 end
 
 ######################################################################
-# patients_summary
+# data.json
+# patients_summary の生成
 ######################################################################
 (Date.new(2020, 2, 15)..Date.today).each do |date|
   output_patients_sum = 0
@@ -190,7 +186,8 @@ end
 end
 
 ######################################################################
-# inspections_summary
+# data.json
+# inspections_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
   data_json[:'inspections_summary'][:'data'][:'県内'].append row[4].to_i
@@ -200,7 +197,8 @@ end
 
 
 ######################################################################
-# main_summary
+# data.json
+# main_summary の生成
 ######################################################################
 # 検査実施件数
 inspection_sum = 0
@@ -253,7 +251,8 @@ data_antigen_tests_summary_json = {
 }
 
 ######################################################################
-# antigen_tests_summary
+# data.antigen_tests_summary.json
+# antigen_tests_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
   data_antigen_tests_summary_json[:'antigen_tests_summary'][:'data'].append(
@@ -278,7 +277,8 @@ data_contacts_json = {
 }
 
 ######################################################################
-# contacts
+# data.contacts.json
+# contacts の生成
 ######################################################################
 output_contacts.values.each do |row|
   data_contacts_json[:'contacts'][:'data'].append(
@@ -304,7 +304,8 @@ data_querents_json = {
 }
 
 ######################################################################
-# querents
+# data.querents.json
+# querents の生成
 ######################################################################
 output_querents.values.each do |row|
   data_querents_json[:'querents'][:'data'].append(
@@ -331,7 +332,8 @@ data_patient_municipalities_json = {
 }
 
 ######################################################################
-# data.patient_municipalities
+# data.patient_municipalities.json
+# datasets の生成
 ######################################################################
 output_patient_municipalities.values.each do |row|
   data_patient_municipalities_json[:'datasets'][:'data'].append(
