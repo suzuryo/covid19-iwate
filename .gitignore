@@ -99,3 +99,7 @@ ogp/*
 
 # Vagrant
 .vagrant
+
+# data_tools
+/data_tools/google_sheets_to_data_json/credentials.json
+/data_tools/google_sheets_to_data_json/token.yaml
