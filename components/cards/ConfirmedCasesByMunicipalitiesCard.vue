@@ -13,11 +13,13 @@
             <li>
               {{ $t('（注）前日までに発生した患者数の累計値') }}
             </li>
+            <!--
             <li>
               {{
                 $t('（注）チャーター機帰国者、クルーズ船乗客等は含まれていない')
               }}
             </li>
+            -->
           </ul>
         </template>
       </confirmed-cases-by-municipalities-table>
