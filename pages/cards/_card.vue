@@ -16,7 +16,7 @@ import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/Moni
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
-import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
+// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
 // import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
@@ -26,7 +26,7 @@ import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 export default {
   components: {
     MonitoringConfirmedCasesNumberCard,
-    SevereCaseCard,
+    // SevereCaseCard,
     MonitoringConsultationDeskReportsNumberCard,
     PositiveRateCard,
     UntrackedRateCard,
@@ -83,9 +83,9 @@ export default {
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'
         break
-      case 'positive-status-severe-case':
-        cardComponent = 'severe-case-card'
-        break
+      // case 'positive-status-severe-case':
+      //   cardComponent = 'severe-case-card'
+      //   break
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
         break

@@ -20,7 +20,7 @@
       <!-- モニタリング項目(6)入院患者数 -->
       <hospitalized-number-card />
       <!-- モニタリング項目(7)重症患者数 -->
-      <severe-case-card />
+      <!-- <severe-case-card /> -->
     </card-row>
   </div>
 </template>

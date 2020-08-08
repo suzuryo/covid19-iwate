@@ -20,7 +20,7 @@
       <!-- モニタリング項目(6)入院患者数 -->
       <hospitalized-number-card />
       <!-- モニタリング項目(7)重症患者数 -->
-      <severe-case-card />
+      <!-- <severe-case-card /> -->
       <!-- 陽性患者の属性 -->
       <confirmed-cases-attributes-card />
       <!-- 区市町村別患者数 -->
@@ -50,7 +50,7 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
-import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
+// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
@@ -70,7 +70,7 @@ export default Vue.extend({
     CardRow,
     MonitoringConfirmedCasesNumberCard,
     UntrackedRateCard,
-    SevereCaseCard,
+    // SevereCaseCard,
     PositiveRateCard,
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
