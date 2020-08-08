@@ -12,6 +12,7 @@
         :added-value="200"
         :table-labels="tableLabels"
       >
+        <!--
         <template v-slot:additionalDescription>
           <ul class="ListStyleNone">
             <li>
@@ -35,6 +36,7 @@
             </li>
           </ul>
         </template>
+        -->
       </dashed-rectangle-time-bar-chart>
     </client-only>
   </v-col>
