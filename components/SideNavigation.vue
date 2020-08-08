@@ -223,10 +223,10 @@ export default Vue.extend({
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
         },
-        {
-          title: this.$t('お問い合わせ先一覧'),
-          link: this.localePath('/contacts'),
-        },
+        // {
+        //   title: this.$t('お問い合わせ先一覧'),
+        //   link: this.localePath('/contacts'),
+        // },
         {
           title: this.$t('岩手県公式ホームページ'),
           link: 'https://www.pref.iwate.jp/',
