@@ -10,7 +10,7 @@
       <!-- モニタリング項目(1)新規陽性者数 -->
       <monitoring-confirmed-cases-number-card />
       <!-- モニタリング項目(2)#7119における発熱等相談件数 -->
-      <consultation-about-fever-number-card />
+      <!-- <consultation-about-fever-number-card /> -->
       <!-- モニタリング項目(3)新規陽性者における接触歴等不明者数 -->
       <untracked-rate-card />
       <!-- モニタリング項目(4)検査の陽性率-->
@@ -54,7 +54,7 @@ import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
-import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
+// import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
 import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
@@ -75,7 +75,7 @@ export default Vue.extend({
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     HospitalizedNumberCard,
-    ConsultationAboutFeverNumberCard,
+    // ConsultationAboutFeverNumberCard,
     TokyoRulesApplicationNumberCard,
     // MonitoringItemsOverviewCard,
     ConfirmedCasesAttributesCard,
