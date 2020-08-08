@@ -3,14 +3,14 @@
     <client-only>
       <positive-rate-mixed-chart
         :title-id="'positive-rate'"
-        :info-titles="[$t('検査の陽性率'), $t('検査人数')]"
+        :info-titles="[$t('検査の陽性率'), $t('検査件数')]"
         :chart-id="'positive-rate-chart'"
         :chart-data="positiveRateGraph"
         :get-formatter="getFormatter"
         :date="PositiveRate.date"
         :labels="positiveRateLabels"
         unit="%"
-        :option-unit="$t('人')"
+        :option-unit="$t('件.reports')"
         :data-labels="positiveRateDataLabels"
         :table-labels="positiveRateTableLabels"
       >
@@ -20,7 +20,7 @@
             <li>
               {{
                 $t(
-                  '陽性率：陽性判明数（PCR・抗原）の移動平均／検査人数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均'
+                  '陽性率：陽性判明数（PCR・抗原）の移動平均／検査件数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均'
                 )
               }}
             </li>
@@ -123,14 +123,14 @@ export default {
       this.$t('抗原検査陽性者数'),
       this.$t('PCR検査陰性者数'),
       this.$t('抗原検査陰性者数'),
-      this.$t('検査人数（７日間移動平均）'),
+      this.$t('検査件数（７日間移動平均）'),
       this.$t('陽性率'),
     ]
     const positiveRateTableLabels = positiveRateDataLabels.map((d) => d)
 
     const getFormatter = (columnIndex) => {
       if (columnIndex === 4) {
-        // 検査人数（７日間移動平均）は小数点第1位まで表示し、整数部分は３桁区切りにする。
+        // 検査件数（７日間移動平均）は小数点第1位まで表示し、整数部分は３桁区切りにする。
         return getCommaSeparatedNumberToFixedFunction(1)
       } else if (columnIndex === 5) {
         // 陽性率は小数点第1位まで表示する。
