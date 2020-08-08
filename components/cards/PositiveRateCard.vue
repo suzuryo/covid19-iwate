@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <positive-rate-mixed-chart
-        :title="$t('モニタリング項目(4)')"
         :title-id="'positive-rate'"
         :info-titles="[$t('検査の陽性率'), $t('検査人数')]"
         :chart-id="'positive-rate-chart'"

@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <monitoring-confirmed-cases-chart
-        :title="$t('モニタリング項目(1)')"
         title-id="monitoring-number-of-confirmed-cases"
         :info-titles="[$t('新規陽性者数')]"
         chart-id="monitoring-confirmed-cases-chart"
