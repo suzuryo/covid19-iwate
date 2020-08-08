@@ -36,7 +36,8 @@
       <!-- 帰国者・接触者相談センター 受付件数 -->
       <!-- （東京：受診相談窓口における相談件数） -->
       <monitoring-consultation-desk-reports-number-card />
-      <!-- 新型コロナコールセンター相談件数 -->
+      <!-- 一般相談 受付件数 -->
+      <!-- （東京：新型コロナコールセンター相談件数） -->
       <telephone-advisory-reports-number-card />
     </card-row>
     <!-- <card-row class="DataBlock"> -->
