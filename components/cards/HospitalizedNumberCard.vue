@@ -9,7 +9,7 @@
         :date="positiveStatus.date"
         :unit="$t('人')"
         :dashed-rectangle-range="'2020-05-11'"
-        :added-value="200"
+        :added-value="0"
         :table-labels="tableLabels"
       >
         <!--
