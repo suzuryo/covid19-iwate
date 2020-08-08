@@ -11,6 +11,7 @@
         :by-date="true"
         :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'"
       >
+        <!--
         <template v-slot:additionalDescription>
           <div class="Description-ExternalLink">
             <external-link
@@ -32,6 +33,7 @@
             </li>
           </ul>
         </template>
+        -->
       </time-bar-chart>
     </client-only>
   </v-col>
@@ -41,12 +43,12 @@
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-import ExternalLink from '@/components/ExternalLink.vue'
+// import ExternalLink from '@/components/ExternalLink.vue'
 
 export default {
   components: {
     TimeBarChart,
-    ExternalLink,
+    // ExternalLink,
   },
   data() {
     // 感染者数グラフ
