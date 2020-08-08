@@ -27,7 +27,7 @@
       <!-- <severe-case-card /> -->
       <!-- 陽性患者の属性 -->
       <confirmed-cases-attributes-card />
-      <!-- 区市町村別患者数 -->
+      <!-- 市町村別患者数 -->
       <confirmed-cases-by-municipalities-card />
       <!-- 確定日別による陽性者数の推移 -->
       <positive-number-by-diagnosed-date-card />
