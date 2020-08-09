@@ -1,9 +1,19 @@
 {
   "newsItems": [
     {
+      "date": "2020\/08\/08",
+      "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html",
+      "text": "新型コロナウイルス感染症の陽性者に関する情報"
+    },
+    {
       "date": "2020\/07\/31",
-      "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html",
-      "text": "岩手県 新型コロナウイルス感染症対策本部 第18回会議"
+      "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1032521.html",
+      "text": "人権に配慮し、差別・偏見・誹謗中傷はやめましょう"
+    },
+    {
+      "date": "2020\/07\/30",
+      "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1031214.html",
+      "text": "新型コロナウイルス感染症対策本部 第18回本部員会議 知事メッセージ（令和2年7月30日）"
     }
   ]
 }

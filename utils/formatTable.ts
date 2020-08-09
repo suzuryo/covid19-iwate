@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import dayjs from 'dayjs'
 
 const headers = [
@@ -6,7 +7,7 @@ const headers = [
   { text: '居住地', value: '居住地' },
   { text: '年代', value: '年代' },
   { text: '性別', value: '性別' },
-  { text: '退院※', value: '退院', align: 'center' }
+  { text: '退院※', value: '退院', align: 'center' },
 ]
 
 type DataType = {
@@ -42,9 +43,9 @@ type TableDateType = {
 export default (data: DataType[]) => {
   const tableDate: TableDateType = {
     headers,
-    datasets: []
+    datasets: [],
   }
-  data.forEach(d => {
+  data.forEach((d) => {
     const releaseDate = dayjs(d['リリース日'])
     let tsuban = d['通番']
     if (d.url !== null) {
@@ -56,12 +57,13 @@ export default (data: DataType[]) => {
       居住地: d['居住地'] ?? '調査中',
       年代: d['年代'] ?? '不明',
       性別: d['性別'] ?? '不明',
-      退院: d['退院']
+      退院: d['退院'],
     }
     tableDate.datasets.push(TableRow)
   })
-  tableDate.datasets
-    .sort((a, b) => dayjs(a.公表日).unix() - dayjs(b.公表日).unix())
-    .reverse()
+  tableDate.datasets.sort(
+    (a, b) => dayjs(a.公表日).unix() - dayjs(b.公表日).unix()
+  )
+  tableDate.datasets.reverse()
   return tableDate
 }

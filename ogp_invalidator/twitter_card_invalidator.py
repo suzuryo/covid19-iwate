@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-o', '--out', action='store_true', help='output screenshots.')
 args = parser.parse_args()
 
-HOST = 'https://stopcovid19.metro.tokyo.lg.jp'
+HOST = 'https://iwate.stopcovid19.jp'
 OUT_DIR = 'out'
 
 PATHS = (
@@ -22,11 +22,8 @@ PATHS = (
     'cards/attributes-of-confirmed-cases',
     'cards/number-of-tested',
     'cards/number-of-reports-to-covid19-telephone-advisory-center',
-    'cards/number-of-reports-to-covid19-consultation-desk',
     'cards/predicted-number-of-toei-subway-passengers',
     'cards/agency',
-    'cards/details-of-tested-cases',
-    'cards/number-of-inspection-persons',
 )
 
 LANGS = (

@@ -6,14 +6,14 @@
     <static-card>
       {{
         $t(
-          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために作成されました。'
+          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。'
         )
       }}<br />
       {{ $t('運営・開発は県内の有志によってボランティアで行われています。') }}
       <br />
       {{
         $t(
-          '非公式に岩手県による公式情報と客観的な数値をわかりやすく伝えることで、岩手県にお住まいの方や、岩手県内に拠点を持つ企業の方、岩手県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
+          '岩手県による公式情報と客観的な数値をわかりやすく伝えることで、岩手県にお住まいの方や、岩手県内に拠点を持つ企業の方、岩手県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
         )
       }}
     </static-card>
@@ -29,7 +29,7 @@
           {{ $t('Google Chrome 最新版（Windows 10以上, Android 8.0以上）') }}
         </li>
         <li>{{ $t('Safari 最新版（macOS, iOS）') }}</li>
-        <li>{{ $t('Opera Software ASA Opera 最新版') }}</li>
+        <li>{{ $t('Opera 最新版') }}</li>
       </ul>
       <p class="StaticCard-Note">
         <span>{{ $t('※') }}</span>
@@ -168,7 +168,7 @@
       <p>
         {{
           $t(
-            '当サイトに掲載されている情報の正確性については万全を期していますが、岩手県や当サイトの運営者は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
+            '当サイトに掲載されている情報の正確性については万全を期していますが、岩手県は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。'
           )
         }}
       </p>
@@ -187,6 +187,25 @@
         }}
       </p>
     </static-card>
+    <!--
+    <static-card>
+      <h3>{{ $t('データについて') }}</h3>
+      <i18n
+        tag="p"
+        path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
+      >
+        <template v-slot:catalogWebsite>
+          <external-link
+            url="https://portal.data.metro.tokyo.lg.jp/"
+            :icon-size="16"
+          >
+            {{ $t('東京都オープンデータカタログサイト') }}
+          </external-link>
+        </template>
+      </i18n>
+    </static-card>
+    -->
+    <!--
     <static-card>
       <h3>{{ $t('ソースコードについて') }}</h3>
       <p>
@@ -207,6 +226,7 @@
         </i18n>
       </p>
     </static-card>
+    -->
   </div>
 </template>
 
@@ -221,12 +241,12 @@ export default Vue.extend({
   components: {
     PageHeader,
     StaticCard,
-    ExternalLink
+    ExternalLink,
   },
   head(): MetaInfo {
     return {
-      title: this.$t('当サイトについて') as string
+      title: this.$t('当サイトについて') as string,
     }
-  }
+  },
 })
 </script>

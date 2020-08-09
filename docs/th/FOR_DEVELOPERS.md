@@ -165,7 +165,7 @@ You can check the program under development by accessing http://localhost:3000 a
 
 ## 3. Detect production/others environment
 
-On the production environment, `'production'` is assigned to `process.env.GENERATE_ENV` variable, on the other case `'development'` is assigned to the variable.  
+On the production environment, `'production'` is assigned to `process.env.GENERATE_ENV` variable, on the other case `'development'` is assigned to the variable.
 Please use the variable to detect which enviroinment is used at the runtime.
 
 [/PLEASE TRANSLATE ME]
@@ -180,9 +180,9 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | branch | A branch where HTML is built and updated | Website updated |
 | ---- | ---- | ---- |
-|`master`|`production`|The production site https://stopcovid19.metro.tokyo.lg.jp/|
-|`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`master`|`production`|The production site https://iwate.stopcovid19.jp/|
+|`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -206,14 +206,14 @@ pull request เปิดรับได้ที่ `development` เท่า�
 
 | จุดประสงค์ | branch | URL | People who can make pull requests | หมายเหตุ |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | branch หลัก ใช้ในการรับ pull request |
-| Staging | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | ใช้สำหรับ staging ทดสอบตัวปรับปรุง ก่อน deploy ลง production - ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
-| Production | master | https://stopcovid19.metro.tokyo.lg.jp/ | Only administrators | ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
+| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | branch หลัก ใช้ในการรับ pull request |
+| Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | ใช้สำหรับ staging ทดสอบตัวปรับปรุง ก่อน deploy ลง production - ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
+| Production | master | https://iwate.stopcovid19.jp/ | Only administrators | ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
 
 ### 5-2. branch ที่ถูกใช้โดยระบบ
 
 | จุดประสงค์ | branch | URL | หมายเหตุ |
 | ---- | ---- | ---- | ---- |
-| Production site HTML | production | https://stopcovid19.metro.tokyo.lg.jp/ | HTML สำหรับ production |
-| Staging site HTML | gh-pages | https://stg-covid19-tokyo.netlify.app/ | HTML สำหรับ staging |
+| Production site HTML | production | https://iwate.stopcovid19.jp/ | HTML สำหรับ production |
+| Staging site HTML | gh-pages | https://staging-covid19-iwate.netlify.app/ | HTML สำหรับ staging |
 | สำหรับ OGP working directory | deploy / new_ogp | None | สำหรับปรับปรุง OGP |

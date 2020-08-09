@@ -31,9 +31,9 @@ This page shows how you can contribute to the development of this site.
 * We also accept suggestions! Please feel free to create new issues.
 
 ## Development information
-* Development site https://dev-covid19-tokyo.netlify.app/
-* Staging site https://stg-covid19-tokyo.netlify.app/
-* Production site https://stopcovid19.metro.tokyo.lg.jp/
+* Development site https://dev-covid19-iwate.netlify.app/
+* Staging site https://staging-covid19-iwate.netlify.app/
+* Production site https://iwate.stopcovid19.jp/
 * [Design](https://www.figma.com/file/V7vt80p2gauhdgTZeVNbgj/UI%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?node-id=121%3A156)
 * [Transifex](https://www.transifex.com/stopcovid19-tokyo/stopcovid19tokyo)
 
