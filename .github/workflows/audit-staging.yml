@@ -22,7 +22,7 @@ jobs:
         with:
           urls: |
             https://iwate.stopcovid19.jp/
-            https://stg-covid19-tokyo.netlify.app/
+            https://staging-covid19-iwate.netlify.app/
           uploadArtifacts: true
 
       - name: Use Node.js

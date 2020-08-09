@@ -118,7 +118,7 @@ $ vagrant up
 
 ## 3. 生產環境/其他環境的判定
 
-關於 `process.env.GENERATE_ENV` 這個值，生產環境為 `'production'` ，除此之外為 `'development'` 。  
+關於 `process.env.GENERATE_ENV` 這個值，生產環境為 `'production'` ，除此之外為 `'development'` 。
 如果只想要在測試環境中執行的話，請利用這個值作為參考。
 
 ---
@@ -130,7 +130,7 @@ $ vagrant up
 | 分支 | HTML 建置與更新的分支 | 網站更新 |
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
-|`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
+|`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
 |`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
 
 ---
@@ -151,7 +151,7 @@ $ vagrant up
 | 目的 | 分支 | 預覽用 URL | 誰可以發 Pull Request | 備註 |
 | ---- | ---- | ---- | ---- | ---- |
 | 開發 | development | https://dev-covid19-tokyo.netlify.app/ | All developers | 基本上請推送 Pull Request 到這裡 |
-| 正式版預覽 | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | 對於正式版釋出前的最終確認，禁止管理員以外的人推送 Pull Request。 |
+| 正式版預覽 | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | 對於正式版釋出前的最終確認，禁止管理員以外的人推送 Pull Request。 |
 | 正式版 | master | https://iwate.stopcovid19.jp/ | Only administrators | 禁止管理員以外的人推送 Pull Request |
 
 
@@ -160,5 +160,5 @@ $ vagrant up
 | 目的 | 分支 | 預覽用 URL | 備註 |
 | ---- | -------- | ---- | ---- |
 | 正式網站 HTML | production | https://iwate.stopcovid19.jp/ | 生成靜態網站 HTML 的位置 |
-| 正式版預覽 HTML | gh-pages | https://stg-covid19-tokyo.netlify.app/ | 生成靜態網站 HTML 的位置 |
+| 正式版預覽 HTML | gh-pages | https://staging-covid19-iwate.netlify.app/ | 生成靜態網站 HTML 的位置 |
 | OGP 工作用 | deploy / new_ogp | 無 | OGP 更新用 |

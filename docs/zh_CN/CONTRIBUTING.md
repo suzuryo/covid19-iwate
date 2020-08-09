@@ -42,7 +42,7 @@
 
 ## 关于本项目开发的相关资讯
 * 开发环境 https://dev-covid19-tokyo.netlify.app/
-* 过渡环境 https://stg-covid19-tokyo.netlify.app/
+* 过渡环境 https://staging-covid19-iwate.netlify.app/
 * 正式环境 https://iwate.stopcovid19.jp/
 * [网页UI设计稿](https://www.figma.com/file/V7vt80p2gauhdgTZeVNbgj/UI%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?node-id=121%3A156)
 
