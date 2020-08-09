@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <mixed-bar-and-line-chart
-        :title="$t('モニタリング項目(2)')"
         title-id="number-of-reports-to-consultations-about-fever-in-7119"
         :info-titles="[$t('#7119における発熱等相談件数')]"
         chart-id="mixed-bar-and-line-chart-fever"

@@ -1,72 +1,59 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
-      <monitoring-consultation-desk-report-chart
-        :title="$t('受診相談窓口における相談件数')"
+      <time-bar-chart
+        :title="$t('帰国者・接触者相談センター 受付件数')"
         title-id="monitoring-number-of-reports-to-covid19-consultation-desk"
         chart-id="monitoring-consultation-desk-report-chart"
-        :chart-data="chartData"
-        :date="date"
-        :labels="labels"
-        :data-labels="dataLabels"
+        :chart-data="querentsGraph"
+        :date="Data.querents.date"
         :unit="$t('件.reports')"
-        url="https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000070"
+        :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
       >
         <template v-slot:additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
-              {{
-                $t(
-                  '曜日などによる数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去７日間の移動平均値を折れ線グラフで示す（例えば、5月7日の移動平均値は、5月1日から5月7日までの実績値を平均したもの）'
-                )
-              }}
+              {{ $t('主に「症状がある方からの受診等に関する相談」を計上') }}
             </li>
+            <li>
+              {{ $t('各保健所・医療政策室への受付件数の合計') }}
+            </li>
+            <li>
+              {{ $t('窓口を開設した2020年2月8日からのデータを表示') }}
+            </li>
+            <!--
             <li>
               {{
                 $t(
-                  '新型コロナ受診相談窓口 （帰国者・接触者電話相談センター）を開設した2月7日から作成'
+                  '曜日などによる数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）'
                 )
               }}
             </li>
+            -->
           </ul>
         </template>
-      </monitoring-consultation-desk-report-chart>
+      </time-bar-chart>
     </client-only>
   </v-col>
 </template>
 
 <script>
-import MonitoringConsultationDeskReportChart from '@/components/MonitoringConsultationDeskReportChart.vue'
 import Data from '@/data/data.json'
+import formatGraph from '@/utils/formatGraph'
+import TimeBarChart from '@/components/TimeBarChart.vue'
 
 export default {
   components: {
-    MonitoringConsultationDeskReportChart,
+    TimeBarChart,
   },
   data() {
-    const [
-      consulationReportsCount,
-      sevendayMoveAverages,
-      labels,
-    ] = Data.querents.data.reduce(
-      (res, data) => {
-        res[0].push(data['小計'])
-        res[1].push(data['７日間平均'])
-        res[2].push(data['日付'])
-        return res
-      },
-      [[], [], []]
-    )
-    const chartData = [consulationReportsCount, sevendayMoveAverages]
-    const dataLabels = [this.$t('相談件数'), this.$t('７日間移動平均')]
-    const date = Data.querents.date
+    // 相談件数
+    const querentsGraph = formatGraph(Data.querents.data)
 
     return {
-      chartData,
-      date,
-      labels,
-      dataLabels,
+      Data,
+      querentsGraph,
     }
   },
 }

@@ -2,16 +2,15 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <positive-rate-mixed-chart
-        :title="$t('モニタリング項目(4)')"
         :title-id="'positive-rate'"
-        :info-titles="[$t('検査の陽性率'), $t('検査人数')]"
+        :info-titles="[$t('検査の陽性率'), $t('検査件数')]"
         :chart-id="'positive-rate-chart'"
         :chart-data="positiveRateGraph"
         :get-formatter="getFormatter"
         :date="PositiveRate.date"
         :labels="positiveRateLabels"
         unit="%"
-        :option-unit="$t('人')"
+        :option-unit="$t('件.reports')"
         :data-labels="positiveRateDataLabels"
         :table-labels="positiveRateTableLabels"
       >
@@ -21,20 +20,21 @@
             <li>
               {{
                 $t(
-                  '陽性率：陽性判明数（PCR・抗原）の移動平均／検査人数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均'
+                  '陽性率：陽性判明数（PCR・抗原）の移動平均／検査件数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均'
                 )
               }}
             </li>
             <li>
               {{
                 $t(
-                  '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値をもとに算出し、折れ線グラフで示す（例えば、5月7日の陽性率は、5月1日から5月7日までの実績平均を用いて算出）'
+                  '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値をもとに算出し、折れ線グラフで示す（例えば、8月7日の陽性率は、8月1日から8月7日までの実績平均を用いて算出）'
                 )
               }}
             </li>
             <li>
               {{ $t('検査結果の判明日を基準とする') }}
             </li>
+            <!--
             <li>
               {{
                 $t(
@@ -59,6 +59,7 @@
                 )
               }}
             </li>
+            -->
             <li>
               {{
                 $t(
@@ -124,14 +125,14 @@ export default {
       this.$t('抗原検査陽性者数'),
       this.$t('PCR検査陰性者数'),
       this.$t('抗原検査陰性者数'),
-      this.$t('検査人数（７日間移動平均）'),
+      this.$t('検査件数（７日間移動平均）'),
       this.$t('陽性率'),
     ]
     const positiveRateTableLabels = positiveRateDataLabels.map((d) => d)
 
     const getFormatter = (columnIndex) => {
       if (columnIndex === 4) {
-        // 検査人数（７日間移動平均）は小数点第1位まで表示し、整数部分は３桁区切りにする。
+        // 検査件数（７日間移動平均）は小数点第1位まで表示し、整数部分は３桁区切りにする。
         return getCommaSeparatedNumberToFixedFunction(1)
       } else if (columnIndex === 5) {
         // 陽性率は小数点第1位まで表示する。

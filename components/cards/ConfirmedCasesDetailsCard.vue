@@ -12,6 +12,7 @@
             <li>
               {{ $t('チャーター機帰国者、クルーズ船乗客等は含まれていない') }}
             </li>
+            <!--
             <li>
               {{
                 $t(
@@ -26,6 +27,7 @@
                 )
               }}
             </li>
+            -->
           </ul>
         </template>
         <confirmed-cases-details-table

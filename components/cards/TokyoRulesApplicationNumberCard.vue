@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <mixed-bar-and-line-chart
-        :title="$t('モニタリング項目(5)')"
         title-id="number-of-tokyo-rules-applied"
         :info-titles="[$t('救急医療の東京ルールの適用件数')]"
         chart-id="mixed-bar-and-line-chart-tokyo-rules"

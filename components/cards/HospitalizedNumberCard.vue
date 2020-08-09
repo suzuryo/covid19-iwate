@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <dashed-rectangle-time-bar-chart
-        :title="$t('モニタリング項目(6)')"
         :title-id="'number-of-hospitalized'"
         :info-titles="[$t('入院患者数')]"
         :chart-id="'dashed-rectangle-time-bar-chart-hospitalized'"
@@ -10,9 +9,10 @@
         :date="positiveStatus.date"
         :unit="$t('人')"
         :dashed-rectangle-range="'2020-05-11'"
-        :added-value="200"
+        :added-value="0"
         :table-labels="tableLabels"
       >
+        <!--
         <template v-slot:additionalDescription>
           <ul class="ListStyleNone">
             <li>
@@ -36,6 +36,7 @@
             </li>
           </ul>
         </template>
+        -->
       </dashed-rectangle-time-bar-chart>
     </client-only>
   </v-col>

@@ -2,7 +2,6 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <monitoring-confirmed-cases-chart
-        :title="$t('モニタリング項目(1)')"
         title-id="monitoring-number-of-confirmed-cases"
         :info-titles="[$t('新規陽性者数')]"
         chart-id="monitoring-confirmed-cases-chart"
@@ -34,7 +33,7 @@
                 <li>
                   {{
                     $t(
-                      '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去７日間の移動平均値を折れ線グラフで示す（例えば、5月7日の移動平均値は、5月1日から5月7日までの実績値を平均したもの）'
+                      '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）'
                     )
                   }}
                 </li>

@@ -6,21 +6,25 @@
       <!-- 新規患者に関する報告件数の推移 -->
       <confirmed-cases-number-card />
       <!-- モニタリング項目 -->
-      <monitoring-items-overview-card />
-      <!-- モニタリング項目(1)新規陽性者数 -->
+      <!-- <monitoring-items-overview-card /> -->
+      <!-- 新規陽性者数 -->
+      <!-- （東京：モニタリング項目(1)新規陽性者数） -->
       <monitoring-confirmed-cases-number-card />
       <!-- モニタリング項目(2)#7119における発熱等相談件数 -->
-      <consultation-about-fever-number-card />
-      <!-- モニタリング項目(3)新規陽性者における接触歴等不明者数 -->
+      <!-- <consultation-about-fever-number-card /> -->
+      <!-- 新規陽性者における接触歴等不明者数 -->
+      <!-- （東京：モニタリング項目(3)新規陽性者における接触歴等不明者数） -->
       <untracked-rate-card />
-      <!-- モニタリング項目(4)検査の陽性率-->
+      <!-- 検査の陽性率・検査件数 -->
+      <!-- （東京：モニタリング項目(4)検査の陽性率） -->
       <positive-rate-card />
       <!-- モニタリング項目(5)救急医療の東京ルールの適用件数 -->
-      <tokyo-rules-application-number-card />
-      <!-- モニタリング項目(6)入院患者数 -->
+      <!-- <tokyo-rules-application-number-card /> -->
+      <!-- 入院患者数 -->
+      <!-- （東京：モニタリング項目(6)入院患者数） -->
       <hospitalized-number-card />
       <!-- モニタリング項目(7)重症患者数 -->
-      <severe-case-card />
+      <!-- <severe-case-card /> -->
     </card-row>
   </div>
 </template>
@@ -35,9 +39,9 @@ import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
-import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
-import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
-import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
+// import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
+// import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
+// import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
 
 export default Vue.extend({
   components: {
@@ -49,9 +53,9 @@ export default Vue.extend({
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     HospitalizedNumberCard,
-    ConsultationAboutFeverNumberCard,
-    TokyoRulesApplicationNumberCard,
-    MonitoringItemsOverviewCard,
+    // ConsultationAboutFeverNumberCard,
+    // TokyoRulesApplicationNumberCard,
+    // MonitoringItemsOverviewCard,
   },
 })
 </script>
