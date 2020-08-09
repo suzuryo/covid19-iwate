@@ -1,28 +1,48 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-stacked-bar-chart
-      :title="$t('PCR検査実施件数')"
-      :title-id="'number-of-tested'"
-      :chart-id="'time-stacked-bar-chart-inspections'"
-      :chart-data="inspectionsGraph"
-      :date="Data.inspections_summary.date"
-      :items="inspectionsItems"
-      :labels="inspectionsLabels"
-      :unit="$t('件.tested')"
-      :data-labels="inspectionsDataLabels"
-    >
-      <!-- 件.tested = 検査数 -->
-      <template v-if="$i18n.locale !== 'ja-basic'" v-slot:additionalNotes>
-        <ul :class="$style.GraphDesc">
-          <li>
-            {{ $t('※1: 疑い例・接触者調査') }}
-          </li>
-          <li>
-            {{ $t('※2: チャーター便・クルーズ船') }}
-          </li>
-        </ul>
-      </template>
-    </time-stacked-bar-chart>
+    <client-only>
+      <time-stacked-bar-chart
+        :title="$t('検査実施件数')"
+        :title-id="'number-of-tested'"
+        :chart-id="'time-stacked-bar-chart-inspections'"
+        :chart-data="inspectionsGraph"
+        :date="Data.inspections_summary.date"
+        :items="inspectionsItems"
+        :labels="inspectionsLabels"
+        :unit="$t('件.tested')"
+        :data-labels="inspectionsDataLabels"
+        :table-labels="inspectionsTableLabels"
+      >
+        <!-- 件.tested = 検査数 -->
+        <template v-slot:additionalDescription>
+          <span>{{ $t('（注）') }}</span>
+          <ul>
+            <!--
+            <li>
+              {{
+                $t(
+                  '検体採取日を基準とする。ただし、一部検査結果判明日に基づくものを含む'
+                )
+              }}
+            </li>
+            -->
+            <li>
+              {{ $t('同一の対象者について複数の検体を検査する場合がある') }}
+            </li>
+            <li>
+              {{ $t('抗原検査は6月19日から実施') }}
+            </li>
+            <li>
+              {{
+                $t(
+                  '速報値として公開するものであり、後日確定データとして修正される場合がある'
+                )
+              }}
+            </li>
+          </ul>
+        </template>
+      </time-stacked-bar-chart>
+    </client-only>
   </v-col>
 </template>
 
@@ -30,47 +50,49 @@
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import Data from '@/data/data.json'
+import { getDayjsObject } from '@/utils/formatDate'
 import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 dayjs.extend(duration)
 
 export default {
   components: {
-    TimeStackedBarChart
+    TimeStackedBarChart,
   },
   data() {
     // 検査実施日別状況
-    const inspectionsGraph = [
-      Data.inspections_summary.data['県内'],
-      Data.inspections_summary.data['その他']
-    ]
-    const inspectionsItems = [
-      this.$t('県内発生（※1）'),
-      this.$t('その他（※2）')
-    ]
-    const inspectionsLabels = Data.inspections_summary.labels
-    const inspectionsDataLabels = [this.$t('県内発生'), this.$t('その他.graph')]
+    const l = Data.inspections_summary.data['PCR検査'].length
+    const pcr = []
+    const antigen = []
+    for (let i = 0; i < l; i++) {
+      pcr.push(Data.inspections_summary.data['PCR検査'][i])
+      antigen.push(Data.inspections_summary.data['抗原検査'][i])
+    }
 
-    const data = {
+    const inspectionsGraph = [pcr, antigen]
+    const inspectionsItems = [
+      this.$t('PCR検査実施件数'),
+      this.$t('抗原検査件数'),
+    ]
+    const inspectionsLabels = Data.inspections_summary.labels.map((d) => {
+      return getDayjsObject(d).format('YYYY-MM-DD')
+    })
+    const inspectionsDataLabels = [
+      this.$t('PCR検査実施件数'),
+      this.$t('抗原検査件数'),
+    ]
+    const inspectionsTableLabels = [
+      this.$t('PCR検査実施件数'),
+      this.$t('抗原検査件数'),
+    ]
+
+    return {
       Data,
       inspectionsGraph,
       inspectionsItems,
       inspectionsLabels,
-      inspectionsDataLabels
+      inspectionsDataLabels,
+      inspectionsTableLabels,
     }
-    return data
-  }
+  },
 }
 </script>
-
-<style module lang="scss">
-.Graph {
-  &Desc {
-    margin: 0;
-    margin-top: 1rem;
-    padding-left: 0 !important;
-    font-size: 12px;
-    color: $gray-3;
-    list-style: none;
-  }
-}
-</style>

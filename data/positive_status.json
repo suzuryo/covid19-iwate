@@ -1,0 +1,815 @@
+{
+    "date": "2020\/8\/8 10:00",
+    "data": [
+        {
+            "date": "2020-02-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-02-29",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-01",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-02",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-03",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-04",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-05",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-06",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-07",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-08",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-09",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-10",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-11",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-12",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-13",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-14",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-15",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-16",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-17",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-18",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-19",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-20",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-21",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-22",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-23",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-24",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-25",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-26",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-27",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-29",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-30",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-03-31",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-01",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-02",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-03",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-04",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-05",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-06",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-07",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-08",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-09",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-10",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-11",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-12",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-13",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-14",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-15",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-16",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-17",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-18",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-19",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-20",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-21",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-22",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-23",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-24",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-25",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-26",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-27",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-29",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-04-30",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-01",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-02",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-03",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-04",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-05",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-06",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-07",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-08",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-09",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-10",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-11",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-12",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-13",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-14",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-15",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-16",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-17",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-18",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-19",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-20",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-21",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-22",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-23",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-24",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-25",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-26",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-27",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-29",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-30",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-05-31",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-01",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-02",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-03",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-04",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-05",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-06",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-07",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-08",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-09",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-10",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-11",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-12",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-13",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-14",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-15",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-16",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-17",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-18",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-19",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-20",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-21",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-22",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-23",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-24",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-25",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-26",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-27",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-29",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-06-30",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-01",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-02",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-03",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-04",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-05",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-06",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-07",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-08",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-09",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-10",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-11",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-12",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-13",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-14",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-15",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-16",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-17",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-18",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-19",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-20",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-21",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-22",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-23",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-24",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-25",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-26",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-27",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-28",
+            "hospitalized": 0,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-29",
+            "hospitalized": 2,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-30",
+            "hospitalized": 3,
+            "severe_case": null
+        },
+        {
+            "date": "2020-07-31",
+            "hospitalized": 4,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-01",
+            "hospitalized": 4,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-02",
+            "hospitalized": 4,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-03",
+            "hospitalized": 4,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-04",
+            "hospitalized": 3,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-05",
+            "hospitalized": 4,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-06",
+            "hospitalized": 5,
+            "severe_case": null
+        },
+        {
+            "date": "2020-08-07",
+            "hospitalized": 6,
+            "severe_case": null
+        }
+    ]
+}

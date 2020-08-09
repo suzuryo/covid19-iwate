@@ -1,0 +1,113 @@
+<template>
+  <div>
+    <card-row class="DataBlock">
+      <!-- 検査陽性者の状況 -->
+      <confirmed-cases-details-card />
+      <!-- 新規患者に関する報告件数の推移 -->
+      <confirmed-cases-number-card />
+      <!-- モニタリング項目 -->
+      <!-- <monitoring-items-overview-card /> -->
+      <!-- 新規陽性者数 -->
+      <!-- （東京：モニタリング項目(1)新規陽性者数） -->
+      <monitoring-confirmed-cases-number-card />
+      <!-- モニタリング項目(2)#7119における発熱等相談件数 -->
+      <!-- <consultation-about-fever-number-card /> -->
+      <!-- 新規陽性者における接触歴等不明者数 -->
+      <!-- （東京：モニタリング項目(3)新規陽性者における接触歴等不明者数） -->
+      <untracked-rate-card />
+      <!-- 検査の陽性率・検査件数 -->
+      <!-- （東京：モニタリング項目(4)検査の陽性率） -->
+      <positive-rate-card />
+      <!-- モニタリング項目(5)救急医療の東京ルールの適用件数 -->
+      <!-- <tokyo-rules-application-number-card /> -->
+      <!-- 入院患者数 -->
+      <!-- （東京：モニタリング項目(6)入院患者数） -->
+      <hospitalized-number-card />
+      <!-- モニタリング項目(7)重症患者数 -->
+      <!-- <severe-case-card /> -->
+      <!-- 陽性患者の属性 -->
+      <confirmed-cases-attributes-card />
+      <!-- 市町村別患者数 -->
+      <confirmed-cases-by-municipalities-card />
+      <!-- 確定日別による陽性者数の推移 -->
+      <positive-number-by-diagnosed-date-card />
+      <!-- 検査実施件数 -->
+      <tested-number-card />
+      <!-- 帰国者・接触者相談センター 受付件数 -->
+      <!-- （東京：受診相談窓口における相談件数） -->
+      <monitoring-consultation-desk-reports-number-card />
+      <!-- 一般相談 受付件数 -->
+      <!-- （東京：新型コロナコールセンター相談件数） -->
+      <telephone-advisory-reports-number-card />
+    </card-row>
+    <!-- <card-row class="DataBlock"> -->
+    <!-- 都営地下鉄の利用者数の推移 -->
+    <!-- <metro-card /> -->
+    <!-- 都庁来庁者数の推移 -->
+    <!-- <agency-card /> -->
+    <!-- </card-row> -->
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import CardRow from '@/components/cards/CardRow.vue'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
+import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
+// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
+import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
+import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
+// import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
+// import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
+// import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
+import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
+import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
+import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+// import MetroCard from '@/components/cards/MetroCard.vue'
+// import AgencyCard from '@/components/cards/AgencyCard.vue'
+import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
+import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
+
+export default Vue.extend({
+  components: {
+    CardRow,
+    MonitoringConfirmedCasesNumberCard,
+    UntrackedRateCard,
+    // SevereCaseCard,
+    PositiveRateCard,
+    ConfirmedCasesDetailsCard,
+    ConfirmedCasesNumberCard,
+    HospitalizedNumberCard,
+    // ConsultationAboutFeverNumberCard,
+    // TokyoRulesApplicationNumberCard,
+    // MonitoringItemsOverviewCard,
+    ConfirmedCasesAttributesCard,
+    ConfirmedCasesByMunicipalitiesCard,
+    TestedNumberCard,
+    MonitoringConsultationDeskReportsNumberCard,
+    TelephoneAdvisoryReportsNumberCard,
+    // MetroCard,
+    // AgencyCard,
+    PositiveNumberByDiagnosedDateCard,
+  },
+})
+</script>
+
+<style lang="scss" scoped>
+.DataBlock {
+  margin: 20px -8px;
+
+  .DataCard {
+    @include largerThan($medium) {
+      padding: 10px;
+    }
+
+    @include lessThan($small) {
+      padding: 4px 8px;
+    }
+  }
+}
+</style>

@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <h2 class="pageTitle">
-      <!--<v-icon v-if="icon" size="40" class="mr-2">
+      <v-icon v-if="icon" size="4rem" class="mr-2">
         {{ icon }}
-      </v-icon> -->
+      </v-icon>
       <slot />
     </h2>
   </div>
@@ -15,9 +15,11 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     icon: {
-      type: String
-    }
-  }
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
 })
 </script>
 
