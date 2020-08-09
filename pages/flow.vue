@@ -8,14 +8,17 @@
       <printer-button :wrapper-class="$style.printerButton" to="/print/flow" />
     </div>
     <div :class="$style.container">
-      <h3 :class="$style.conHeading">
+      <h3 ref="upperTrigger" :class="$style.conHeading">
         {{ $t('新型コロナウイルス感染症にかかる相談窓口について') }}
       </h3>
+      <!--
       <p ref="upperTrigger" :class="$style.anchorLead">
         {{ $t('相談方法は、症状や状況別で3つに分かれます') }}
       </p>
+      -->
       <nav ref="nav" :class="$style.anchor">
         <ul :class="$style.anchorList">
+          <!--
           <li :class="$style.anchorItem">
             <a
               href="#sydr"
@@ -26,13 +29,14 @@
               <fig-cond-sy-dr :class="$style.fig" aria-hidden="true" />
             </a>
           </li>
+          -->
           <li :class="$style.anchorItem">
             <a
               href="#sy"
               :class="$style.anchorLink"
               @click.prevent="onClickAnchor"
             >
-              <span>{{ $t('かかりつけ医がいない症状のある方') }}</span>
+              <span>{{ $t('症状のある方') }}</span>
               <fig-cond-sy :class="$style.fig" aria-hidden="true" />
             </a>
           </li>
@@ -48,6 +52,7 @@
           </li>
         </ul>
       </nav>
+      <!--
       <div id="sydr" :class="$style.section">
         <h4 :class="$style.sxnHeading">
           {{ $t('かかりつけ医がいて、次の症状がある方') }}
@@ -99,9 +104,10 @@
           }}</span>
         </p>
       </div>
+      -->
       <div id="sy" :class="$style.section">
         <h4 :class="$style.sxnHeading">
-          {{ $t('かかりつけ医がいない、次の症状がある方') }}
+          {{ $t('次の症状がある方') }}
         </h4>
         <ul :class="$style.boxes">
           <li :class="[$style.box, $style.border]">
@@ -139,66 +145,73 @@
             }}</span>
           </li>
         </ul>
-        <div :class="[$style.box, $style.bgGray]">
+        <div :class="[$style.box, $style.bgYellow]">
           <h5 :class="$style.boxHeading">
-            {{ $t('新型コロナ受診相談窓口は、24時間対応しています') }}
+            <!--
+              TODO:
+                (A)「帰国者・接触者相談センター（コールセンター）」 （24時間受付，019-651-3175）
+                (B)「新型コロナウイルス感染症相談窓口（コールセンター）」（9時～21時，019-629-6085）
+                の2つの区別を言葉の上ではっきりさせる．
+                また，「帰国者・接触者相談センター」という名称は実態を正確に反映していないと思われるため，要検討．
+                (A) を「受診相談窓口」，(B) を「一般相談窓口」とするのがよいのではないか．
+            -->
+            {{ $t('コールセンターは、24時間対応しています') }}
           </h5>
           <dl :class="$style.contact">
             <div>
-              <dt>{{ $t('平日（日中）:') }}</dt>
-              <dd :class="$style.overrideExternalLink">
-                <i18n path="{publicHealthCenter}に掲載しています">
-                  <template v-slot:publicHealthCenter>
-                    <external-link
-                      url="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
-                    >
-                      {{ $t('各保健所の電話番号は福祉保健局HP') }}
-                    </external-link>
-                  </template>
-                </i18n>
-              </dd>
-            </div>
-            <div>
               <dt>
-                {{ $t('平日（夜間）: 午後5時から翌朝午前9時/土日祝 終日') }}
+                {{ $t('24時間 全日（土日・祝日を含む）') }}
               </dt>
               <dd>
-                <a :class="$style.tel" href="tel:03-5320-4592">
+                <a :class="$style.tel" href="tel:019-651-3175">
                   <icon-phone :class="$style.icon" aria-hidden="true" />
-                  03-5320-4592</a
+                  019-651-3175</a
                 >
               </dd>
             </div>
           </dl>
+          <p :class="$style.notice">
+            {{
+              $t(
+                '聴覚に障害のある方をはじめ電話でのご相談が難しい方に向けてファクス (019-626-0837) でも受付をしています。'
+              )
+            }}
+          </p>
         </div>
         <p :class="[$style.sxnText, $style.hr]">
           {{
             $t(
-              '上記の症状に当てはまらない方は、新型コロナコールセンターにご相談ください。'
+              '上記の症状に当てはまらない方は、新型コロナウイルス感染症相談窓口にご相談ください。'
             )
           }}
         </p>
         <div :class="[$style.box, $style.bgGray]">
           <h5 :class="$style.boxHeading">
-            {{
-              $t(
-                '新型コロナコールセンター（対応言語：日本語・英語・中国語・韓国語）'
-              )
-            }}
+            <!-- TODO: 対応言語を確認 -->
+            {{ $t('新型コロナウイルス感染症相談窓口') }}
           </h5>
           <dl :class="$style.contact">
-            <dt>{{ $t('午前9時から午後10時（土日祝含む）') }}</dt>
+            <dt>{{ $t('9時～21時（土日祝含む）') }}</dt>
             <dd>
-              <a :class="$style.tel" href="tel:0570-550571">
+              <a :class="$style.tel" href="tel:019-629-6085">
                 <icon-phone :class="$style.icon" aria-hidden="true" />
-                0570-550571</a
+                019-629-6085</a
               >
             </dd>
           </dl>
+          <!--
           <p :class="$style.notice">
             {{
               $t(
                 '電話のおかけ間違いが多くなっております。発信の際は今一度電話番号をお確かめの上、お間違えのないようお願いいたします。'
+              )
+            }}
+          </p>
+          -->
+          <p :class="$style.notice">
+            {{
+              $t(
+                '聴覚に障害のある方をはじめ電話でのご相談が難しい方に向けてファクス (019-626-0837) でも受付をしています。'
               )
             }}
           </p>
@@ -211,27 +224,25 @@
         <p :class="$style.sxnText">
           {{
             $t(
-              '感染したかもしれないと不安に思う方、感染予防法を知りたい方などは、下記、新型コロナコールセンターにご相談ください。'
+              '感染したかもしれないと不安に思う方、感染予防法を知りたい方などは、下記、新型コロナウイルス感染症相談窓口にご相談ください。'
             )
           }}
         </p>
         <div :class="[$style.box, $style.bgGray]">
           <h5 :class="$style.boxHeading">
-            {{
-              $t(
-                '新型コロナコールセンター（対応言語：日本語・英語・中国語・韓国語）'
-              )
-            }}
+            <!-- TODO: 対応言語を確認 -->
+            {{ $t('新型コロナウイルス感染症相談窓口') }}
           </h5>
           <dl :class="$style.contact">
-            <dt>{{ $t('午前9時から午後10時（土日祝含む）') }}</dt>
+            <dt>{{ $t('9時～21時（土日祝含む）') }}</dt>
             <dd>
-              <a :class="$style.tel" href="tel:0570-550571">
+              <a :class="$style.tel" href="tel:019-629-6085">
                 <icon-phone :class="$style.icon" aria-hidden="true" />
-                0570-550571</a
+                019-629-6085</a
               >
             </dd>
           </dl>
+          <!--
           <p :class="$style.notice">
             {{
               $t(
@@ -239,8 +250,18 @@
               )
             }}
           </p>
+          -->
+          <p :class="$style.notice">
+            {{
+              $t(
+                '聴覚に障害のある方をはじめ電話でのご相談が難しい方に向けてファクス (019-626-0837) でも受付をしています。'
+              )
+            }}
+          </p>
         </div>
       </div>
+      <!-- TODO: 受診・検査が必要と判断されたときのフローが公式ページに記載されていないため，詳細を確認 -->
+      <!--
       <div :class="[$style.section, $style.yellow]">
         <h4 :class="$style.sxnHeadingSmall">
           {{
@@ -297,14 +318,15 @@
           </div>
         </div>
       </div>
+      -->
     </div>
     <div :class="$style.detail">
       <a
-        href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+        href="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html#callcenter"
         target="_blank"
         :class="$style.detailButton"
         rel="noopener noreferrer"
-        >{{ $t('詳細を見る（東京都福祉保健局）') }}
+        >{{ $t('詳細を見る（岩手県新型コロナウイルス感染症関連情報）') }}
         <v-icon :class="$style.icon" size="2rem">
           mdi-open-in-new
         </v-icon>
@@ -599,7 +621,7 @@ $margin: 20;
   }
   .anchorItem {
     display: flex;
-    width: (100% / 3);
+    width: (100% / 2);
     padding: 0 6px;
     flex: 0 0 auto;
   }
