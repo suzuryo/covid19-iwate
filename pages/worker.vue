@@ -6,15 +6,15 @@
     <static-card>
       <h3>
         <external-link
-          url="https://covid19.supportnavi.metro.tokyo.lg.jp/"
+          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028772.html"
           :icon-size="24"
-          >{{ $t('東京都 新型コロナウイルス感染症 支援情報ナビ') }}
+          >{{ $t('事業者の皆様へのお知らせ') }}
         </external-link>
       </h3>
       <p>
         {{
           $t(
-            '東京都及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。'
+            '岩手県及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。'
           )
         }}
       </p>
@@ -22,15 +22,15 @@
     <static-card>
       <h3>
         <external-link
-          url="https://kyugyo.metro.tokyo.lg.jp/dai2kai/index.html"
+          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/category_guideline.html"
           :icon-size="24"
-          >{{ $t('東京都感染拡大防止協力金（第2回）') }}
+          >{{ $t('業種ごとの感染拡大予防ガイドライン') }}
         </external-link>
       </h3>
       <p>
         {{
           $t(
-            '新型コロナウイルス感染拡大防止のため、都の要請や協力依頼に応じて、施設の使用停止や営業時間の短縮に全面的に協力いただける中小事業者の皆様に対し、協力金を支給いたします（支給額50万円〈2事業所以上で休業等に取り組む事業者は100万円〉）。'
+            '新型コロナウイルス感染拡大防止のため、業種ごとに関係団体の情報を参考としてください。'
           )
         }}
       </p>
@@ -38,17 +38,19 @@
     <static-card>
       <h3>
         <external-link
-          url="https://smooth-biz.metro.tokyo.lg.jp/"
+          url="https://www.pref.iwate.jp/kurashikankyou/iryou/seido/1031487.html"
           :icon-size="24"
           >{{
-            $t('新しいワークスタイルや企業活動の東京モデル「スムーズビズ」')
+            $t(
+              '岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ'
+            )
           }}
         </external-link>
       </h3>
       <p>
         {{
           $t(
-            'テレワーク・時差出勤などスムーズビズの取組は、新型コロナウイルス感染症の対策としても効果的です。感染症対策として、東京2020大会時の交通混雑緩和に向けた取組の前倒しをお願いします。'
+            '新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。'
           )
         }}
       </p>
