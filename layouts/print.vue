@@ -1,14 +1,14 @@
 <template>
   <v-app class="app-print">
     <div v-if="loading" class="loader">
-      <img src="#" :alt="$t('')" />
+      <img src="/logo.svg" :alt="$t('岩手県')" />
       <scale-loader color="#00A040" />
     </div>
     <div v-else class="print-container">
       <div class="PrintMeta">
         <div class="PrintMeta-HeadingWrapper">
           <div class="PrintMeta-Logo">
-            <!--<img src="" :alt="$t('岩手県')" /> -->
+            <img src="/logo.svg" :alt="$t('岩手県')" />
           </div>
           <h1 class="PrintMeta-Heading">
             {{ $t('新型コロナウイルス感染症') }}
@@ -39,11 +39,11 @@ import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default Vue.extend({
   components: {
-    ScaleLoader
+    ScaleLoader,
   },
   data() {
     return {
-      loading: true
+      loading: true,
     }
   },
   mounted() {
@@ -56,7 +56,7 @@ export default Vue.extend({
   methods: {
     print() {
       window.print()
-    }
+    },
   },
   head(): MetaInfo {
     return {
@@ -64,17 +64,17 @@ export default Vue.extend({
         {
           hid: 'robots',
           name: 'robots',
-          content: 'noindex'
-        }
+          content: 'noindex',
+        },
       ],
       link: [
         {
           rel: 'canonical',
-          href: `https://iwate.stopcovid19.jp/${this.$route.path}`
-        }
-      ]
+          href: `https://iwate.stopcovid19.jp${this.$route.path}`,
+        },
+      ],
     }
-  }
+  },
 })
 </script>
 <style lang="scss">
@@ -143,10 +143,10 @@ export default Vue.extend({
   }
 
   &-Heading {
-    font-size: 13px;
     color: #898989;
     padding: 0.5em 0;
     text-decoration: none;
+    @include font-size(13);
   }
 
   &-QRWrapper {
@@ -166,18 +166,18 @@ export default Vue.extend({
   }
 
   &-Text {
-    font-size: 13px;
     color: gray;
     margin-bottom: 0;
     padding-top: 1em;
     width: max-content;
+    @include font-size(13);
   }
 
   &-Link {
-    font-size: 13px;
     color: gray;
     margin-bottom: 0;
     width: max-content;
+    @include font-size(13);
   }
 }
 </style>
