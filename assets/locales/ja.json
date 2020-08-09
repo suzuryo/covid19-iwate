@@ -21,7 +21,7 @@
   "陽性の場合": "陽性の場合",
   "陰性の場合": "陰性の場合",
   "ただし、症状が良くならない場合は再度受診相談窓口またはかかりつけ医に相談してください": "ただし、症状が良くならない場合は再度受診相談窓口またはかかりつけ医に相談してください",
-  "都内の最新感染動向": "都内の最新感染動向",
+  "県内の最新感染動向": "県内の最新感染動向",
   "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ",
   "相談の手順を見る": "相談の手順を見る",
   "検査陽性者の状況": "検査陽性者の状況",
@@ -130,11 +130,11 @@
   "埋め込み用コードをコピーしました": "埋め込み用コードをコピーしました",
   "{range}の利用者数*の平均値を基準としたときの相対値": "{range}の利用者数*の平均値を基準としたときの相対値",
   "都営地下鉄4路線の自動改札出場数": "都営地下鉄4路線の自動改札出場数",
-  "東京都": "東京都",
+  "岩手県": "岩手県",
   "新型コロナウイルス感染症": "新型コロナウイルス感染症",
   "menu/新型コロナウイルス感染症": "新型コロナウイルス感染症",
-  "対策サイト": "対策サイト",
-  "menu/対策サイト": "対策サイト",
+  "対策サイト": "対策サイト（非公式）",
+  "menu/対策サイト": "対策サイト（非公式）",
   "最終更新": "最終更新",
   "注釈": "This is a provisional translation. Please be aware that there may be mistranslations.",
   "print": "印刷",
@@ -165,7 +165,7 @@
   "※最新の情報はWebページをご覧ください": "※最新の情報はWebページをご覧ください",
   "〇": "〇",
   "ogp": {
-    "og:image": "https://stopcovid19.metro.tokyo.lg.jp/ogp.png"
+    "og:image": "https://iwate.stopcovid19.jp/ogp.png"
   },
   "https://marketingplatform.google.com/about/analytics/terms/jp/": "https://marketingplatform.google.com/about/analytics/terms/jp/",
   "https://policies.google.com/privacy?hl=ja": "https://policies.google.com/privacy?hl=ja",

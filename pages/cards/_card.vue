@@ -110,7 +110,7 @@ export default {
     }
   },
   head() {
-    const url = 'https://stopcovid19.metro.tokyo.lg.jp'
+    const url = 'https://iwate.stopcovid19.jp'
     const timestamp = new Date().getTime()
     const ogpImage =
       this.$i18n.locale === 'ja'
@@ -119,7 +119,7 @@ export default {
     const description = `${this.$t(
       '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。'
     )}`
-    const defaultTitle = `${this.$t('東京都')} ${this.$t(
+    const defaultTitle = `${this.$t('岩手県')} ${this.$t(
       '新型コロナウイルス感染症'
     )}${this.$t('対策サイト')}`
 

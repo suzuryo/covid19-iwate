@@ -21,7 +21,7 @@
   "陽性の場合": "Test positive",
   "陰性の場合": "Test negative",
   "ただし、症状が良くならない場合は再度受診相談窓口またはかかりつけ医に相談してください": "If your symptoms do not improve, consult your doctor or the Tokyo COVID-19 Consultation Hotline.",
-  "都内の最新感染動向": "Updates on COVID-19 in Tokyo",
+  "県内の最新感染動向": "Updates on COVID-19 in Iwate",
   "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "Please call us first If you have any concerns about symptom in you or your family.",
   "相談の手順を見る": "See this flowchart",
   "検査陽性者の状況": "Status of test positives",
@@ -130,11 +130,11 @@
   "埋め込み用コードをコピーしました": " Copied the embeded code",
   "{range}の利用者数*の平均値を基準としたときの相対値": "Relative value based on the average number of users",
   "都営地下鉄4路線の自動改札出場数": "Total number of passengers passing through the ticket gates of the Toei subway 4 lines",
-  "東京都": "Tokyo Metropolitan Government",
+  "岩手県": "Iwate Prefecture",
   "新型コロナウイルス感染症": " COVID-19",
   "menu/新型コロナウイルス感染症": "COVID-19",
-  "対策サイト": "COVID-19",
-  "menu/対策サイト": "The Information website",
+  "対策サイト": "COVID-19 (Unofficial)",
+  "menu/対策サイト": "The Information website (Unofficial)",
   "最終更新": "Last update",
   "注釈": " This is a provisional translation. Please be aware that there may be mistranslations.",
   "print": " Print",
@@ -165,7 +165,7 @@
   "※最新の情報はWebページをご覧ください": "* Please check the latest information from the website.",
   "〇": "✔",
   "ogp": {
-    "og:image": "https://stopcovid19.metro.tokyo.lg.jp/ogp/en/ogp-image.png"
+    "og:image": "https://iwate.stopcovid19.jp/ogp/en/ogp-image.png"
   },
   "https://marketingplatform.google.com/about/analytics/terms/jp/": "https://marketingplatform.google.com/about/analytics/terms/us/",
   "https://policies.google.com/privacy?hl=ja": "https://policies.google.com/privacy?hl=en",

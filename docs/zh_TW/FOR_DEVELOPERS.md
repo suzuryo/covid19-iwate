@@ -129,7 +129,7 @@ $ vagrant up
 
 | 分支 | HTML 建置與更新的分支 | 網站更新 |
 | ---- | ---- | ---- |
-|`master`|`production`|The production site https://stopcovid19.metro.tokyo.lg.jp/|
+|`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
 |`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
 
@@ -152,13 +152,13 @@ $ vagrant up
 | ---- | ---- | ---- | ---- | ---- |
 | 開發 | development | https://dev-covid19-tokyo.netlify.app/ | All developers | 基本上請推送 Pull Request 到這裡 |
 | 正式版預覽 | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | 對於正式版釋出前的最終確認，禁止管理員以外的人推送 Pull Request。 |
-| 正式版 | master | https://stopcovid19.metro.tokyo.lg.jp/ | Only administrators | 禁止管理員以外的人推送 Pull Request |
+| 正式版 | master | https://iwate.stopcovid19.jp/ | Only administrators | 禁止管理員以外的人推送 Pull Request |
 
 
 ### 5-2. 系統所使用的分支
 
 | 目的 | 分支 | 預覽用 URL | 備註 |
 | ---- | -------- | ---- | ---- |
-| 正式網站 HTML | production | https://stopcovid19.metro.tokyo.lg.jp/ | 生成靜態網站 HTML 的位置 |
+| 正式網站 HTML | production | https://iwate.stopcovid19.jp/ | 生成靜態網站 HTML 的位置 |
 | 正式版預覽 HTML | gh-pages | https://stg-covid19-tokyo.netlify.app/ | 生成靜態網站 HTML 的位置 |
 | OGP 工作用 | deploy / new_ogp | 無 | OGP 更新用 |

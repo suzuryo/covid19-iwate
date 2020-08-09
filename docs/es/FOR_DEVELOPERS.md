@@ -127,7 +127,7 @@ Cuando se actualiza alguna rama en la columna izquierda de la tabla inferior, la
 
 | Rama | Una rama donde el HTML es construido y actualizado | Sitio web actualizado |
 | ---- | ---- | ---- |
-|`master`|`production`|El sitio de producción https://stopcovid19.metro.tokyo.lg.jp/|
+|`master`|`production`|El sitio de producción https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|El sitio de staging https://stg-covid19-tokyo.netlify.app/|
 |`development`|`dev-pages`|El sitio de desarrollo https://dev-covid19-tokyo.netlify.app/|
 
@@ -149,12 +149,12 @@ Por favor usa las siguientes reglas de nombrado para la rama al enviar un Pull R
 | ---- | ---- | ---- | ---- | ---- |
 | Desarrollo | development | https://dev-covid19-tokyo.netlify.app/ | Todos los desarrolladores | Rama base. Envía los Pull Request aquí |
 | Staging | staging | https://stg-covid19-tokyo.netlify.app/ | Sólo administradores | Para confirmación final antes de producción. Prohibidos los Pull Request de quien no sea administrador |
-| Producción | master | https://stopcovid19.metro.tokyo.lg.jp/ | Sólo administradores | Prohibidos los Pull Request de quien no sea administrador |
+| Producción | master | https://iwate.stopcovid19.jp/ | Sólo administradores | Prohibidos los Pull Request de quien no sea administrador |
 
 ### 5-2. Rama usada por el sistema
 
 | Propósito | Rama | URL de confirmación | Observaciones |
 | ---- | -------- | ---- | ---- |
-| HTML del sitio de producción | production | https://stopcovid19.metro.tokyo.lg.jp/ | Ubicación donde se localiza el HTML generado estáticamente |
+| HTML del sitio de producción | production | https://iwate.stopcovid19.jp/ | Ubicación donde se localiza el HTML generado estáticamente |
 | Sitio HTML de staging | gh-pages | https://stg-covid19-tokyo.netlify.app/ | Dónde encontrar el HTML generado estáticamente |
 | Para el directorio de trabajo OGP | deploy / new_ogp | Ninguna | Para actualizar OGP |
