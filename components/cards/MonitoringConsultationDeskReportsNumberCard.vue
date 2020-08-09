@@ -1,16 +1,14 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
-      <monitoring-consultation-desk-report-chart
+      <time-bar-chart
         :title="$t('帰国者・接触者相談センター 受付件数')"
         title-id="monitoring-number-of-reports-to-covid19-consultation-desk"
         chart-id="monitoring-consultation-desk-report-chart"
-        :chart-data="chartData"
-        :date="date"
-        :labels="labels"
-        :data-labels="dataLabels"
+        :chart-data="querentsGraph"
+        :date="Data.querents.date"
         :unit="$t('件.reports')"
-        url="https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000070"
+        :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
       >
         <template v-slot:additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -35,42 +33,27 @@
             -->
           </ul>
         </template>
-      </monitoring-consultation-desk-report-chart>
+      </time-bar-chart>
     </client-only>
   </v-col>
 </template>
 
 <script>
-import MonitoringConsultationDeskReportChart from '@/components/MonitoringConsultationDeskReportChart.vue'
 import Data from '@/data/data.json'
+import formatGraph from '@/utils/formatGraph'
+import TimeBarChart from '@/components/TimeBarChart.vue'
 
 export default {
   components: {
-    MonitoringConsultationDeskReportChart,
+    TimeBarChart,
   },
   data() {
-    const [
-      consulationReportsCount,
-      sevendayMoveAverages,
-      labels,
-    ] = Data.querents.data.reduce(
-      (res, data) => {
-        res[0].push(data['小計'])
-        res[1].push(data['７日間平均'])
-        res[2].push(data['日付'])
-        return res
-      },
-      [[], [], []]
-    )
-    const chartData = [consulationReportsCount, sevendayMoveAverages]
-    const dataLabels = [this.$t('相談件数'), this.$t('７日間移動平均')]
-    const date = Data.querents.date
+    // 相談件数
+    const querentsGraph = formatGraph(Data.querents.data)
 
     return {
-      chartData,
-      date,
-      labels,
-      dataLabels,
+      Data,
+      querentsGraph,
     }
   },
 }
