@@ -20,7 +20,9 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
-            <th class="text-start" scope="row" v-html="item['通番']" />
+            <!-- eslint-disable -->
+            <th class="text-start" scope="row" v-html="item['通番']" /><!-- TODO: XSS 対策 -->
+            <!-- eslint-enable -->
             <td class="text-start">{{ item['公表日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>

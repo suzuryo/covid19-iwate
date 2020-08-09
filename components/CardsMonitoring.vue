@@ -36,7 +36,7 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
-import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
+// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
@@ -48,7 +48,7 @@ export default Vue.extend({
     CardRow,
     MonitoringConfirmedCasesNumberCard,
     UntrackedRateCard,
-    SevereCaseCard,
+    // SevereCaseCard,
     PositiveRateCard,
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,

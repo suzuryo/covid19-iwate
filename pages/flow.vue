@@ -342,12 +342,12 @@ import VueScrollTo from 'vue-scrollto'
 import CovidIcon from '@/static/covid.svg'
 import PrinterButton from '@/components/PrinterButton.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import ExternalLink from '@/components/ExternalLink.vue'
-import FigCondSyDr from '@/static/flow/cond_sydr.svg'
+// import ExternalLink from '@/components/ExternalLink.vue'
+// import FigCondSyDr from '@/static/flow/cond_sydr.svg'
 import FigCondSy from '@/static/flow/cond_sy.svg'
 import FigCondAnx from '@/static/flow/cond_anx.svg'
 import IconPhone from '@/static/flow/phone.svg'
-import IconBed from '@/static/flow/bed.svg'
+// import IconBed from '@/static/flow/bed.svg'
 
 type LocalData = {
   nav: HTMLElement | null // アンカーリンクコンテナ（フローティング対象）
@@ -370,12 +370,12 @@ export default Vue.extend({
     CovidIcon,
     PrinterButton,
     PageHeader,
-    ExternalLink,
-    FigCondSyDr,
+    // ExternalLink,
+    // FigCondSyDr,
     FigCondSy,
     FigCondAnx,
     IconPhone,
-    IconBed,
+    // IconBed,
   },
   data(): LocalData {
     const nav = null
