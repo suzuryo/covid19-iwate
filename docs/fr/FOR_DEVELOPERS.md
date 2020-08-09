@@ -152,7 +152,7 @@ You can check the program under development by accessing http://localhost:3000 a
 
 ## 3. Detecter le type d'environnement
 
-Dans l'environnement de production, la valeur `'production'` est attribuée à la variable `process.env.GENERATE_ENV`, le reste du temps la valeur assignée est `'development'`.  
+Dans l'environnement de production, la valeur `'production'` est attribuée à la variable `process.env.GENERATE_ENV`, le reste du temps la valeur assignée est `'development'`.
 Veuillez utiliser cette variable pour détecter quel type d'environnement est executé.
 
 ---
@@ -165,9 +165,9 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | branch | A branch where HTML is built and updated | Website updated |
 | ---- | ---- | ---- |
-|`master`|`production`|The production site https://stopcovid19.metro.tokyo.lg.jp/|
-|`staging`|`gh-pages`|The staging site https://stg-covid19-tokyo.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`master`|`production`|The production site https://iwate.stopcovid19.jp/|
+|`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -191,9 +191,9 @@ Veuillez utiliser le schema suivant pour nommer vos Pull Request.
 
 | But | Branche | URL | People who can make pull requests | Notes |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | Branche de base. Faites votre Pull Request ici. |
-| Staging | staging | https://stg-covid19-tokyo.netlify.app/ | Only administrators | Pour confirmation avant production. Pull request d'utilisateurs non-admin sont defendues. |
-| Production | master | https://stopcovid19.metro.tokyo.lg.jp/ | Only administrators | Pull request d'utilisateurs non-admin sont defendues. |
+| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | Branche de base. Faites votre Pull Request ici. |
+| Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | Pour confirmation avant production. Pull request d'utilisateurs non-admin sont defendues. |
+| Production | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull request d'utilisateurs non-admin sont defendues. |
 
 [/PLEASE TRANSLATE ME]
 
@@ -201,6 +201,6 @@ Veuillez utiliser le schema suivant pour nommer vos Pull Request.
 
 | But | Branche | URL | Notes |
 | ---- | -------- | ---- | ---- |
-| Production site HTML | production | https://stopcovid19.metro.tokyo.lg.jp/ | Place ou les pages HTML statiques sont stockees. |
-| Staging site HTML | gh-pages | https://stg-covid19-tokyo.netlify.app/ | Ou trouver l'HTML statiquement construit. |
+| Production site HTML | production | https://iwate.stopcovid19.jp/ | Place ou les pages HTML statiques sont stockees. |
+| Staging site HTML | gh-pages | https://staging-covid19-iwate.netlify.app/ | Ou trouver l'HTML statiquement construit. |
 | Dossier de travail OGP | deploy / new_ogp | None | Pour mettre a jour OGP |

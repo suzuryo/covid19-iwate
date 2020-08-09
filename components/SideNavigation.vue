@@ -35,6 +35,7 @@
 
       <nav class="SideNavigation-Menu">
         <div class="SideNavigation-Language">
+          <!--
           <div
             v-if="this.$i18n.locales.length > 1"
             class="SideNavigation-Language"
@@ -44,6 +45,7 @@
             </label>
             <language-selector />
           </div>
+          -->
         </div>
         <menu-list :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
@@ -51,16 +53,40 @@
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
           <a
-            href="https://twitter.com/Meditation_Duck"
+            href="https://line.me/R/ti/p/%40566kxdol"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
             <picture>
+              <source srcset="/line.webp" type="image/webp" />
+              <img src="/line.png" alt="LINE" />
+            </picture>
+          </a>
+          <a
+            href="https://twitter.com/Meditation_Duck"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="SideNavigation-SocialLink"
+          >
+            <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
+            <picture>
               <source srcset="/twitter.webp" type="image/webp" />
               <img src="/twitter.png" alt="Twitter" />
             </picture>
           </a>
+          <a
+            href="https://www.facebook.com/pref.iwate/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/facebook.webp" type="image/webp" />
+              <img src="/facebook.png" alt="Facebook" />
+            </picture>
+          </a>
+          <!--
           <a
             href="https://github.com/MeditationDuck/covid19"
             target="_blank"
@@ -72,20 +98,32 @@
               <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
+          -->
+          <a
+            href="https://www.youtube.com/user/prefiwate/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/youtube.webp" type="image/webp" />
+              <img src="/youtube.png" alt="YouTube" />
+            </picture>
+          </a>
         </div>
         <small class="SideNavigation-Copyright">
           {{ $t('このサイトの内容物は') }}
           <a
             :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
             target="_blank"
-            rel="license"
+            rel="noopener noreferrer license"
             class="SideNavigation-LicenseLink"
           >
             {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
           </a>
           {{ $t('の下に提供されています。') }}
           <br />
-          Meditation Duck
+          &copy; 2020 Meditation Duck
         </small>
       </footer>
     </div>
@@ -108,13 +146,13 @@ type Item = {
 export default Vue.extend({
   components: {
     LanguageSelector,
-    MenuList
+    MenuList,
   },
   props: {
     isNaviOpen: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     items(): Item[] {
@@ -122,22 +160,84 @@ export default Vue.extend({
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
-          link: this.localePath('/')
+          link: this.localePath('/'),
         },
         {
-          title: this.$t('岩手県の新型コロナウイルス感染症関連情報'),
+          icon: 'CovidIcon',
+          title: this.$t('新型コロナウイルス感染症が心配なときに'),
+          link: this.localePath('/flow'),
+        },
+        // {
+        //   icon: 'CovidIcon',
+        //   title: this.$t('新型コロナウイルスの感染が判明した方へ'),
+        //   link:
+        //     'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
+        // },
+        // {
+        //   icon: 'MaskTrashIcon',
+        //   title: this.$t('ご家庭でのマスク等の捨て方'),
+        //   link:
+        //     'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
+        //   divider: true,
+        // },
+        // {
+        //   icon: 'ParentIcon',
+        //   title: this.$t('お子様をお持ちの皆様へ'),
+        //   link: this.localePath('/parent'),
+        // },
+        {
+          icon: 'mdi-account-multiple',
+          title: this.$t('県民の皆様へ'),
           link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html'
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028768.html',
+        },
+        {
+          icon: 'mdi-domain',
+          title: this.$t('企業の皆様・はたらく皆様へ'),
+          link: this.localePath('/worker'),
+          divider: true,
+        },
+        {
+          title: this.$t('岩手県新型コロナウイルス感染症関連情報'),
+          link:
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html',
+        },
+        {
+          title: this.$t('新型コロナウイルス感染症対策本部'),
+          link:
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
+        },
+        {
+          title: this.$t('イベントカレンダー'),
+          link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
+        },
+        // {
+        //   title: this.$t('東京都における滞在人口の増減'),
+        //   link:
+        //     'https://www.seisakukikaku.metro.tokyo.lg.jp/information/corona-people-flow-analysis.html',
+        // },
+        {
+          title: this.$t('知事からのメッセージ'),
+          link:
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1031214.html',
         },
         {
           title: this.$t('当サイトについて'),
-          link: this.localePath('/about')
-        }
+          link: this.localePath('/about'),
+        },
+        // {
+        //   title: this.$t('お問い合わせ先一覧'),
+        //   link: this.localePath('/contacts'),
+        // },
+        {
+          title: this.$t('岩手県公式ホームページ'),
+          link: 'https://www.pref.iwate.jp/',
+        },
       ]
-    }
+    },
   },
   watch: {
-    $route: 'handleChageRoute'
+    $route: 'handleChageRoute',
   },
   methods: {
     handleChageRoute() {
@@ -148,8 +248,8 @@ export default Vue.extend({
           $Side.focus()
         }
       })
-    }
-  }
+    },
+  },
 })
 </script>
 
@@ -211,8 +311,8 @@ export default Vue.extend({
 
 .SideNavigation-HeaderTitle {
   width: 100%;
-  font-size: 13px;
   color: #707070;
+  @include font-size(13);
   @include largerThan($small) {
     margin: 0;
     margin-top: 10px;
@@ -300,7 +400,7 @@ export default Vue.extend({
 .SideNavigation-LanguageLabel {
   display: block;
   margin-bottom: 5px;
-  font-size: 0.85rem;
+  @include font-size(14);
 }
 
 .SideNavigation-Footer {
@@ -344,9 +444,9 @@ export default Vue.extend({
   display: block;
   margin-top: 15px;
   color: $gray-1;
-  font-size: 10px;
   line-height: 1.3;
   font-weight: bold;
+  @include font-size(10);
 }
 
 .SideNavigation-LicenseLink {

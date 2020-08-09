@@ -19,7 +19,7 @@
           aria-hidden="false"
           :aria-label="$t('別タブで開く')"
           class="MenuList-ExternalIcon"
-          size="12"
+          size="1.2rem"
         >
           mdi-open-in-new
         </v-icon>
@@ -45,13 +45,13 @@ export default Vue.extend({
   components: {
     CovidIcon,
     MaskTrashIcon,
-    ParentIcon
+    ParentIcon,
   },
   props: {
     items: {
       type: Array as PropType<MenuItem[]>,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     linkTag(link: MenuItem['link']) {
@@ -63,12 +63,12 @@ export default Vue.extend({
             href: link,
             target: '_blank',
             rel: 'noopener noreferrer',
-            class: 'MenuList-Link'
+            class: 'MenuList-Link',
           }
         : {
             to: link,
             router: true,
-            class: 'MenuList-Link'
+            class: 'MenuList-Link',
           }
     },
     iconTag(icon: MenuItem['icon']) {
@@ -78,19 +78,19 @@ export default Vue.extend({
       return icon
         ? icon.startsWith('mdi')
           ? {
-              size: 20,
-              class: 'MenuList-MdIcon'
+              size: '2rem',
+              class: 'MenuList-MdIcon',
             }
           : {
               'aria-hidden': true,
-              class: 'MenuList-SvgIcon'
+              class: 'MenuList-SvgIcon',
             }
         : null
     },
     isExternal(path: MenuItem['link']): boolean {
       return /^https?:\/\//.test(path)
-    }
-  }
+    },
+  },
 })
 </script>
 
@@ -107,12 +107,12 @@ export default Vue.extend({
 
 .MenuList-Item {
   list-style: none;
-  font-size: 0.85rem;
   line-height: 1.2;
   white-space: normal;
+  @include font-size(14);
   @include lessThan($small) {
-    font-size: 0.9rem;
     font-weight: bold;
+    @include font-size(14.5);
   }
 
   &.-border {
@@ -190,7 +190,7 @@ export default Vue.extend({
   margin-left: 5px;
   color: $gray-3;
   @include lessThan($small) {
-    font-size: 14px !important;
+    @include font-size(14, true);
   }
 }
 </style>
