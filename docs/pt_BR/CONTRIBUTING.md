@@ -31,7 +31,7 @@ Esta página exemplifica como você pode contribuir para o desenvolvimento deste
 * Nós também aceitamos sugestões! Sinta-se à vontade para criar novas Issues.
 
 ## Informação de desenvolvimento
-* Site de desenvolvimento https://dev-covid19-tokyo.netlify.app/
+* Site de desenvolvimento https://dev-covid19-iwate.netlify.app/
 * Ambiente de Staging https://staging-covid19-iwate.netlify.app/
 * Ambiente de Produção https://iwate.stopcovid19.jp/
 * [Design](https://www.figma.com/file/V7vt80p2gauhdgTZeVNbgj/UI%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?node-id=121%3A156)

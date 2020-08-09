@@ -167,7 +167,7 @@ When the branch listed in the left column of the table below is updated, the bra
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -191,7 +191,7 @@ Veuillez utiliser le schema suivant pour nommer vos Pull Request.
 
 | But | Branche | URL | People who can make pull requests | Notes |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | Branche de base. Faites votre Pull Request ici. |
+| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | Branche de base. Faites votre Pull Request ici. |
 | Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | Pour confirmation avant production. Pull request d'utilisateurs non-admin sont defendues. |
 | Production | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull request d'utilisateurs non-admin sont defendues. |
 

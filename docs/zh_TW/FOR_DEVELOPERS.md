@@ -131,7 +131,7 @@ $ vagrant up
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 ---
 
@@ -150,7 +150,7 @@ $ vagrant up
 
 | 目的 | 分支 | 預覽用 URL | 誰可以發 Pull Request | 備註 |
 | ---- | ---- | ---- | ---- | ---- |
-| 開發 | development | https://dev-covid19-tokyo.netlify.app/ | All developers | 基本上請推送 Pull Request 到這裡 |
+| 開發 | development | https://dev-covid19-iwate.netlify.app/ | All developers | 基本上請推送 Pull Request 到這裡 |
 | 正式版預覽 | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | 對於正式版釋出前的最終確認，禁止管理員以外的人推送 Pull Request。 |
 | 正式版 | master | https://iwate.stopcovid19.jp/ | Only administrators | 禁止管理員以外的人推送 Pull Request |
 

@@ -129,7 +129,7 @@ Cuando se actualiza alguna rama en la columna izquierda de la tabla inferior, la
 | ---- | ---- | ---- |
 |`master`|`production`|El sitio de producción https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|El sitio de staging https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|El sitio de desarrollo https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|El sitio de desarrollo https://dev-covid19-iwate.netlify.app/|
 
 ---
 
@@ -147,7 +147,7 @@ Por favor usa las siguientes reglas de nombrado para la rama al enviar un Pull R
 
 | Propósito | Rama | URL de confirmación | Personas que pueden hace Pull Request | Observaciones |
 | ---- | ---- | ---- | ---- | ---- |
-| Desarrollo | development | https://dev-covid19-tokyo.netlify.app/ | Todos los desarrolladores | Rama base. Envía los Pull Request aquí |
+| Desarrollo | development | https://dev-covid19-iwate.netlify.app/ | Todos los desarrolladores | Rama base. Envía los Pull Request aquí |
 | Staging | staging | https://staging-covid19-iwate.netlify.app/ | Sólo administradores | Para confirmación final antes de producción. Prohibidos los Pull Request de quien no sea administrador |
 | Producción | master | https://iwate.stopcovid19.jp/ | Sólo administradores | Prohibidos los Pull Request de quien no sea administrador |
 

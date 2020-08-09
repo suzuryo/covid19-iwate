@@ -128,7 +128,7 @@ When the branch listed in the left column of the table below is updated, the bra
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 ---
 
@@ -146,7 +146,7 @@ Please use the following naming rules for the branch when sending a Pull Request
 
 | Purpose | Branch | Confirmation URL | People who can make pull requests | Remarks |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | base branch. Basically send a Pull Request here |
+| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | base branch. Basically send a Pull Request here |
 | Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | For final confirmation before production. Non-admin pull requests are prohibited. |
 | Production | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull Requests other than Administrators are prohibited |
 

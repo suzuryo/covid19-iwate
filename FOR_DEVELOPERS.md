@@ -127,7 +127,7 @@ $ vagrant up
 | ---- | ---- | ---- |
 |`master`|`production`|本番サイト https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|ステージングサイト https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|開発用サイト https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|開発用サイト https://dev-covid19-iwate.netlify.app/|
 
 ---
 
@@ -145,7 +145,7 @@ Pull Request を送る際のブランチは、以下のネーミングルール�
 
 | 目的 | ブランチ | 確認URL | Pull requestsを出せる人 | 備考 |
 | ---- | ---- | ---- | ---- | ---- |
-| 開発 | development | https://dev-covid19-tokyo.netlify.app/ | 全開発者 | base branch。基本は、この`development`ブランチに Pull Requestを送ってください。 |
+| 開発 | development | https://dev-covid19-iwate.netlify.app/ | 全開発者 | base branch。基本は、この`development`ブランチに Pull Requestを送ってください。 |
 | ステージング | staging | https://staging-covid19-iwate.netlify.app/ | 管理者のみ | 本番前の最終確認用。管理者以外の Pull Request は禁止です。 |
 | 本番 | master | https://iwate.stopcovid19.jp/ | 管理者のみ | 管理者以外の Pull Request は禁止です。 |
 

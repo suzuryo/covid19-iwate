@@ -182,7 +182,7 @@ When the branch listed in the left column of the table below is updated, the bra
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -206,7 +206,7 @@ pull request เปิดรับได้ที่ `development` เท่า�
 
 | จุดประสงค์ | branch | URL | People who can make pull requests | หมายเหตุ |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-tokyo.netlify.app/ | All developers | branch หลัก ใช้ในการรับ pull request |
+| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | branch หลัก ใช้ในการรับ pull request |
 | Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | ใช้สำหรับ staging ทดสอบตัวปรับปรุง ก่อน deploy ลง production - ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
 | Production | master | https://iwate.stopcovid19.jp/ | Only administrators | ห้ามสร้าง pull request ยกเว้นจาก admin เอง |
 

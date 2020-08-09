@@ -176,7 +176,7 @@ When the branch listed in the left column of the table below is updated, the bra
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -202,7 +202,7 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | 目的 | 分支 | 预览用 URL | People who can make pull requests | 备注 |
 | ---- | ---- | ---- | ---- | ---- |
-| 开发 | development | https://dev-covid19-tokyo.netlify.app/ | All developers | 基本上请推送 Pull Request 到这里 |
+| 开发 | development | https://dev-covid19-iwate.netlify.app/ | All developers | 基本上请推送 Pull Request 到这里 |
 | 紧急修复 | dev-hotfix | 无 | 对正式版的紧急修复。在管理员的要求下使用。 |
 | 正式版预览 | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | 对于正式版发布前的最终确认，禁止管理员以外的人推送 Pull Request。 |
 | 正式版 | master | https://iwate.stopcovid19.jp/ | Only administrators | 禁止管理员以外的人推送 Pull Request |

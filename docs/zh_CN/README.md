@@ -105,7 +105,7 @@ $ docker-compose run --rm app yarn install
 
 `staging` 分支更新时，自动将 `gh-pages` 分支中的HTML类(build)后发布到Staging版 https://staging-covid19-iwate.netlify.app/
 
-`development` 分支更新时，自动将 `dev-pages` 分支中的HTML类(build)后发布到开发版 https://dev-covid19-tokyo.netlify.app/
+`development` 分支更新时，自动将 `dev-pages` 分支中的HTML类(build)后发布到开发版 https://dev-covid19-iwate.netlify.app/
 
 ### 规则
 
@@ -118,7 +118,7 @@ Hotfix: hotfix/#{ISSUE_ID}-{branch_title_name}
 #### 基本分支
 | 目的 | 分支 | 预览用 URL | 备注 |
 | ---- | -------- | ---- | ---- |
-| 开发 | development | https://dev-covid19-tokyo.netlify.app/ | 基本上请推送 Pull Request 到这里 |
+| 开发 | development | https://dev-covid19-iwate.netlify.app/ | 基本上请推送 Pull Request 到这里 |
 | 紧急修复 | dev-hotfix | 无 | 对正式版的紧急修复。在管理员的要求下使用。 |
 | 正式版预览 | staging | https://staging-covid19-iwate.netlify.app/ | 对于正式版发布前的最终确认，禁止管理员以外的人推送 Pull Request。 |
 | 正式版 | master | https://iwate.stopcovid19.jp/ | 禁止管理员以外的人推送 Pull Request |

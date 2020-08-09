@@ -175,7 +175,7 @@ When the branch listed in the left column of the table below is updated, the bra
 | ---- | ---- | ---- |
 |`master`|`production`|The production site https://iwate.stopcovid19.jp/|
 |`staging`|`gh-pages`|The staging site https://staging-covid19-iwate.netlify.app/|
-|`development`|`dev-pages`|The development site https://dev-covid19-tokyo.netlify.app/|
+|`development`|`dev-pages`|The development site https://dev-covid19-iwate.netlify.app/|
 
 [/PLEASE TRANSLATE ME]
 
@@ -201,7 +201,7 @@ When the branch listed in the left column of the table below is updated, the bra
 
 | 목적 | 브랜치 | 확인 URL | People who can make pull requests | 비고 |
 | ---- | ---- | ---- | ---- | ---- |
-| 개발 | development | https://dev-covid19-tokyo.netlify.app/ | All developers | 기본 브랜치(branch). 기본은 여기로 풀 리퀘스트를 전달하세요.|
+| 개발 | development | https://dev-covid19-iwate.netlify.app/ | All developers | 기본 브랜치(branch). 기본은 여기로 풀 리퀘스트를 전달하세요.|
 | 스테이징(Staging) | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | 프로덕션(production) 적용 전에 최종 확인용 브랜치입니다. 관리자가 아닌 풀 리퀘스트(Pull Request)는 금지입니다. |
 | 프로덕션(Production) | master | https://iwate.stopcovid19.jp/ | Only administrators | 관리자 이외의 풀 리퀘스트(Pull Request)는 금지입니다. |
 
