@@ -70,6 +70,10 @@ POSITIVE_BY_DIAGNOSED_RANGE = 'output_positive_by_diagnosed!A2:I'
 output_positive_by_diagnosed = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_BY_DIAGNOSED_RANGE
 raise if output_positive_by_diagnosed.values.empty?
 
+POSITIVE_RATE_RANGE = 'output_positive_rate!A2:I'
+output_positive_rate = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_RATE_RANGE
+raise if output_positive_rate.values.empty?
+
 
 ######################################################################
 # データ生成 テンプレート
@@ -372,6 +376,37 @@ output_positive_by_diagnosed.values.each do |row|
   )
 end
 
+######################################################################
+# データ生成 テンプレート
+# positive_rate.json
+######################################################################
+data_positive_rate_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_rate.json
+# data の生成
+######################################################################
+output_positive_rate.values.each do |row|
+  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
+  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_f
+  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_f
+  data_positive_rate_json[:'data'].append(
+    {
+      "diagnosed_date": Time.parse(row[0]).iso8601,
+      "positive_count": row[1].to_i,
+      "negative_count": row[2].to_i,
+      "pcr_positive_count": row[3].to_i,
+      "antigen_positive_count": nil, # 未使用
+      "pcr_negative_count": row[5].to_i,
+      "antigen_negative_count": row6,
+      "weekly_average_diagnosed_count": row7,
+      "positive_rate": row8
+    }
+  )
+end
 
 ######################################################################
 # write json
@@ -393,3 +428,6 @@ File.open(File.join(__dir__, '../../data/', 'daily_positive_detail.json'), 'w') 
   f.write JSON.pretty_generate(data_daily_positive_detail_json)
 end
 
+File.open(File.join(__dir__, '../../data/', 'positive_rate.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_rate_json)
+end
