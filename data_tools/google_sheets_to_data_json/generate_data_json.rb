@@ -92,8 +92,8 @@ data_json = {
   'inspections_summary': {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': {
-      '県内': [],
-      'その他': []
+      'PCR検査': [],
+      '抗原検査': []
     },
     'labels': []
   },
@@ -198,8 +198,8 @@ end
 # inspections_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
-  data_json[:'inspections_summary'][:'data'][:'県内'].append row[4].to_i
-  data_json[:'inspections_summary'][:'data'][:'その他'].append 0
+  data_json[:'inspections_summary'][:'data'][:'PCR検査'].append row[4].to_i
+  data_json[:'inspections_summary'][:'data'][:'抗原検査'].append row[3].to_i
   data_json[:'inspections_summary'][:'labels'].append Time.parse(row[0]).strftime('%-m/%d')
 end
 
