@@ -77,6 +77,10 @@ data_json = {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': []
   },
+  'querents': {
+    'date': now.strftime('%Y/%m/%d %H:%M'),
+    'data': []
+  },
   'patients': {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': []
@@ -286,22 +290,11 @@ output_contacts.values.each do |row|
 end
 
 ######################################################################
-# データ生成 テンプレート
-# data.querents.json
-######################################################################
-data_querents_json = {
-  'querents': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
 # data.querents.json
 # querents の生成
 ######################################################################
 output_querents.values.each do |row|
-  data_querents_json[:'querents'][:'data'].append(
+  data_json[:'querents'][:'data'].append(
     {
       '日付': Time.parse(row[0]).iso8601,
       'コールセンター': row[1].to_i,
@@ -350,10 +343,6 @@ end
 
 File.open(File.join(__dir__, '../../data/', 'data.antigen_tests_summary.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_antigen_tests_summary_json)
-end
-
-File.open(File.join(__dir__, '../../data/', 'data.querents.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_querents_json)
 end
 
 File.open(File.join(__dir__, '../../data/', 'patient_municipalities.json'), 'w') do |f|
