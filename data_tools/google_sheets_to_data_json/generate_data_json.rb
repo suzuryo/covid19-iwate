@@ -73,6 +73,10 @@ raise if output_patient_municipalities.values.empty?
 ######################################################################
 now = Time.now
 data_json = {
+  'contacts': {
+    'date': now.strftime('%Y/%m/%d %H:%M'),
+    'data': []
+  },
   'patients': {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': []
@@ -266,22 +270,11 @@ end
 
 
 ######################################################################
-# データ生成 テンプレート
-# data.contacts.json
-######################################################################
-data_contacts_json = {
-  'contacts': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
-# data.contacts.json
+# data.json
 # contacts の生成
 ######################################################################
 output_contacts.values.each do |row|
-  data_contacts_json[:'contacts'][:'data'].append(
+  data_json[:'contacts'][:'data'].append(
     {
       '日付': Time.parse(row[0]).iso8601,
       'コールセンター': row[1].to_i,
@@ -357,10 +350,6 @@ end
 
 File.open(File.join(__dir__, '../../data/', 'data.antigen_tests_summary.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_antigen_tests_summary_json)
-end
-
-File.open(File.join(__dir__, '../../data/', 'data.contacts.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_contacts_json)
 end
 
 File.open(File.join(__dir__, '../../data/', 'data.querents.json'), 'w') do |f|
