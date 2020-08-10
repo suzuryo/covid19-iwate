@@ -170,13 +170,13 @@ output_patients.values.each do |row|
     {
       'id': row[0].to_i,
       'リリース日': Time.parse(row[1]).iso8601,
-      '通番': row[9],
+      '通番': row[11],
       '年代': row[3],
       '性別': row[4],
       '居住地': row[5],
-      '退院': row[10] != '' ? row[10] : nil,
+      '退院': row[12] != '' ? row[12] : nil,
       'date': Time.parse(row[2]).strftime('%Y-%m-%d'),
-      'url': row[8] != '' ? row[8] : nil,
+      'url': row[9] != '' ? row[9] : nil,
     }
   )
 end
@@ -409,6 +409,50 @@ output_positive_rate.values.each do |row|
 end
 
 ######################################################################
+# データ生成 テンプレート
+# positive_status.json
+######################################################################
+data_positive_status_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_status.json
+# data の生成
+######################################################################
+(Date.new(2020, 2, 15)..Date.today).each do |date|
+  hospitalized_sum = 0
+  not_hospitalized_sum = 0
+
+  output_patients.values.each do |row|
+    if Date.parse(row[7]) <= date && row[8] == ""
+      # 入院日がその日より過去 かつ 退院日が空
+      # その日は入院中
+      hospitalized_sum += 1
+    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) >= date
+      # 入院日がその日より過去 かつ 退院日がその日より未来
+      # その日は入院中
+      hospitalized_sum += 1
+    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) < date
+      # 入院日がその日以降 かつ 退院日がその日より過去
+      # 退院した
+      not_hospitalized_sum += 1
+    end
+  end
+
+  data_positive_status_json[:'data'].append(
+    {
+      "date": date.strftime('%Y/%m/%d'),
+      "hospitalized": hospitalized_sum,
+      "severe_case": nil # SevereCaseCard.vue を使っていないので未使用
+    }
+  )
+end
+
+# pp data_positive_status_json
+
+######################################################################
 # write json
 ######################################################################
 
@@ -430,4 +474,8 @@ end
 
 File.open(File.join(__dir__, '../../data/', 'positive_rate.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_positive_rate_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'positive_status.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_status_json)
 end
