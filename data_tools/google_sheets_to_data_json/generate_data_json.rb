@@ -66,6 +66,10 @@ PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'
 output_patient_municipalities = service.get_spreadsheet_values SPREADSHEET_ID, PATIENT_MUNICIPALITIES_RANGE
 raise if output_patient_municipalities.values.empty?
 
+POSITIVE_BY_DIAGNOSED_RANGE = 'output_positive_by_diagnosed!A2:I'
+output_positive_by_diagnosed = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_BY_DIAGNOSED_RANGE
+raise if output_positive_by_diagnosed.values.empty?
+
 
 ######################################################################
 # データ生成 テンプレート
@@ -336,6 +340,38 @@ data_positive_by_diagnosed_json = {
   )
 end
 
+######################################################################
+# データ生成 テンプレート
+# data_daily_positive_detail.json
+######################################################################
+data_daily_positive_detail_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# data_daily_positive_detail.json
+# data の生成
+######################################################################
+output_positive_by_diagnosed.values.each do |row|
+  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
+  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_i
+  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_i
+  data_daily_positive_detail_json[:'data'].append(
+    {
+      "diagnosed_date": Time.parse(row[0]).iso8601,
+      "count": row[1].to_i,
+      "missing_count": row[2].to_i,
+      "reported_count": row[3].to_i,
+      "weekly_gain_ratio": nil, # 未使用
+      "untracked_percent": nil, # 未使用
+      "weekly_average_count": row6,
+      "weekly_average_untracked_count": row7,
+      "weekly_average_untracked_increse_percent": row8
+    }
+  )
+end
+
 
 ######################################################################
 # write json
@@ -352,3 +388,8 @@ end
 File.open(File.join(__dir__, '../../data/', 'positive_by_diagnosed.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_positive_by_diagnosed_json)
 end
+
+File.open(File.join(__dir__, '../../data/', 'daily_positive_detail.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_daily_positive_detail_json)
+end
+
