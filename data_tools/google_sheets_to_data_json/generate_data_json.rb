@@ -308,6 +308,36 @@ output_patient_municipalities.values.each do |row|
 end
 
 ######################################################################
+# データ生成 テンプレート
+# positive_by_diagnosed.json
+######################################################################
+data_positive_by_diagnosed_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_by_diagnosed.json
+# data の生成
+######################################################################
+(Date.new(2020, 2, 15)..Date.today).each do |date|
+  positive_by_diagnosed_sum = 0
+  output_patients.values.each do |row|
+    if row[2] === date.strftime('%Y/%m/%d')
+      positive_by_diagnosed_sum += 1
+    end
+  end
+
+  data_positive_by_diagnosed_json[:'data'].append(
+    {
+      'diagnosed_date': Time.new(date.year, date.month, date.day, 0, 0, 0).iso8601,
+      'count': positive_by_diagnosed_sum
+    }
+  )
+end
+
+
+######################################################################
 # write json
 ######################################################################
 
@@ -317,4 +347,8 @@ end
 
 File.open(File.join(__dir__, '../../data/', 'patient_municipalities.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_patient_municipalities_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'positive_by_diagnosed.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_by_diagnosed_json)
 end
