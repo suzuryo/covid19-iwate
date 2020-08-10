@@ -248,32 +248,6 @@ msc0c[2][:'value'] = patients_status[:'死亡']
 
 
 ######################################################################
-# データ生成 テンプレート
-# data.antigen_tests_summary.json
-######################################################################
-data_antigen_tests_summary_json = {
-  'antigen_tests_summary': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
-# data.antigen_tests_summary.json
-# antigen_tests_summary の生成
-######################################################################
-output_inspections.values.each do |row|
-  data_antigen_tests_summary_json[:'antigen_tests_summary'][:'data'].append(
-    {
-      '日付': Time.parse(row[0]).iso8601,
-      '抗原検査件数': row[3].to_i,
-      '小計': row[3].to_i,
-    }
-  )
-end
-
-
-######################################################################
 # data.json
 # contacts の生成
 ######################################################################
@@ -339,10 +313,6 @@ end
 
 File.open(File.join(__dir__, '../../data/', 'data.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_json)
-end
-
-File.open(File.join(__dir__, '../../data/', 'data.antigen_tests_summary.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_antigen_tests_summary_json)
 end
 
 File.open(File.join(__dir__, '../../data/', 'patient_municipalities.json'), 'w') do |f|
