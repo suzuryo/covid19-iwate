@@ -66,6 +66,14 @@ PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'
 output_patient_municipalities = service.get_spreadsheet_values SPREADSHEET_ID, PATIENT_MUNICIPALITIES_RANGE
 raise if output_patient_municipalities.values.empty?
 
+POSITIVE_BY_DIAGNOSED_RANGE = 'output_positive_by_diagnosed!A2:I'
+output_positive_by_diagnosed = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_BY_DIAGNOSED_RANGE
+raise if output_positive_by_diagnosed.values.empty?
+
+POSITIVE_RATE_RANGE = 'output_positive_rate!A2:I'
+output_positive_rate = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_RATE_RANGE
+raise if output_positive_rate.values.empty?
+
 
 ######################################################################
 # データ生成 テンプレート
@@ -73,6 +81,14 @@ raise if output_patient_municipalities.values.empty?
 ######################################################################
 now = Time.now
 data_json = {
+  'contacts': {
+    'date': now.strftime('%Y/%m/%d %H:%M'),
+    'data': []
+  },
+  'querents': {
+    'date': now.strftime('%Y/%m/%d %H:%M'),
+    'data': []
+  },
   'patients': {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': []
@@ -84,8 +100,8 @@ data_json = {
   'inspections_summary': {
     'date': now.strftime('%Y/%m/%d %H:%M'),
     'data': {
-      '県内': [],
-      'その他': []
+      'PCR検査': [],
+      '抗原検査': []
     },
     'labels': []
   },
@@ -154,13 +170,13 @@ output_patients.values.each do |row|
     {
       'id': row[0].to_i,
       'リリース日': Time.parse(row[1]).iso8601,
-      '通番': row[9],
+      '通番': row[11],
       '年代': row[3],
       '性別': row[4],
       '居住地': row[5],
-      '退院': row[10] != '' ? row[10] : nil,
+      '退院': row[12] != '' ? row[12] : nil,
       'date': Time.parse(row[2]).strftime('%Y-%m-%d'),
-      'url': row[8] != '' ? row[8] : nil,
+      'url': row[9] != '' ? row[9] : nil,
     }
   )
 end
@@ -190,8 +206,8 @@ end
 # inspections_summary の生成
 ######################################################################
 output_inspections.values.each do |row|
-  data_json[:'inspections_summary'][:'data'][:'県内'].append row[4].to_i
-  data_json[:'inspections_summary'][:'data'][:'その他'].append 0
+  data_json[:'inspections_summary'][:'data'][:'PCR検査'].append row[4].to_i
+  data_json[:'inspections_summary'][:'data'][:'抗原検査'].append row[3].to_i
   data_json[:'inspections_summary'][:'labels'].append Time.parse(row[0]).strftime('%-m/%d')
 end
 
@@ -240,48 +256,11 @@ msc0c[2][:'value'] = patients_status[:'死亡']
 
 
 ######################################################################
-# データ生成 テンプレート
-# data.antigen_tests_summary.json
-######################################################################
-data_antigen_tests_summary_json = {
-  'antigen_tests_summary': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
-# data.antigen_tests_summary.json
-# antigen_tests_summary の生成
-######################################################################
-output_inspections.values.each do |row|
-  data_antigen_tests_summary_json[:'antigen_tests_summary'][:'data'].append(
-    {
-      '日付': Time.parse(row[0]).iso8601,
-      '抗原検査件数': row[3].to_i,
-      '小計': row[3].to_i,
-    }
-  )
-end
-
-
-######################################################################
-# データ生成 テンプレート
-# data.contacts.json
-######################################################################
-data_contacts_json = {
-  'contacts': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
-# data.contacts.json
+# data.json
 # contacts の生成
 ######################################################################
 output_contacts.values.each do |row|
-  data_contacts_json[:'contacts'][:'data'].append(
+  data_json[:'contacts'][:'data'].append(
     {
       '日付': Time.parse(row[0]).iso8601,
       'コールセンター': row[1].to_i,
@@ -293,22 +272,11 @@ output_contacts.values.each do |row|
 end
 
 ######################################################################
-# データ生成 テンプレート
-# data.querents.json
-######################################################################
-data_querents_json = {
-  'querents': {
-    'date': now.strftime('%Y/%m/%d %H:%M'),
-    'data': []
-  }
-}
-
-######################################################################
 # data.querents.json
 # querents の生成
 ######################################################################
 output_querents.values.each do |row|
-  data_querents_json[:'querents'][:'data'].append(
+  data_json[:'querents'][:'data'].append(
     {
       '日付': Time.parse(row[0]).iso8601,
       'コールセンター': row[1].to_i,
@@ -348,6 +316,143 @@ output_patient_municipalities.values.each do |row|
 end
 
 ######################################################################
+# データ生成 テンプレート
+# positive_by_diagnosed.json
+######################################################################
+data_positive_by_diagnosed_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_by_diagnosed.json
+# data の生成
+######################################################################
+(Date.new(2020, 2, 15)..Date.today).each do |date|
+  positive_by_diagnosed_sum = 0
+  output_patients.values.each do |row|
+    if row[2] === date.strftime('%Y/%m/%d')
+      positive_by_diagnosed_sum += 1
+    end
+  end
+
+  data_positive_by_diagnosed_json[:'data'].append(
+    {
+      'diagnosed_date': Time.new(date.year, date.month, date.day, 0, 0, 0).iso8601,
+      'count': positive_by_diagnosed_sum
+    }
+  )
+end
+
+######################################################################
+# データ生成 テンプレート
+# data_daily_positive_detail.json
+######################################################################
+data_daily_positive_detail_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# data_daily_positive_detail.json
+# data の生成
+######################################################################
+output_positive_by_diagnosed.values.each do |row|
+  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
+  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_i
+  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_i
+  data_daily_positive_detail_json[:'data'].append(
+    {
+      "diagnosed_date": Time.parse(row[0]).iso8601,
+      "count": row[1].to_i,
+      "missing_count": row[2].to_i,
+      "reported_count": row[3].to_i,
+      "weekly_gain_ratio": nil, # 未使用
+      "untracked_percent": nil, # 未使用
+      "weekly_average_count": row6,
+      "weekly_average_untracked_count": row7,
+      "weekly_average_untracked_increse_percent": row8
+    }
+  )
+end
+
+######################################################################
+# データ生成 テンプレート
+# positive_rate.json
+######################################################################
+data_positive_rate_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_rate.json
+# data の生成
+######################################################################
+output_positive_rate.values.each do |row|
+  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
+  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_f
+  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_f
+  data_positive_rate_json[:'data'].append(
+    {
+      "diagnosed_date": Time.parse(row[0]).iso8601,
+      "positive_count": row[1].to_i,
+      "negative_count": row[2].to_i,
+      "pcr_positive_count": row[3].to_i,
+      "antigen_positive_count": nil, # 未使用
+      "pcr_negative_count": row[5].to_i,
+      "antigen_negative_count": row6,
+      "weekly_average_diagnosed_count": row7,
+      "positive_rate": row8
+    }
+  )
+end
+
+######################################################################
+# データ生成 テンプレート
+# positive_status.json
+######################################################################
+data_positive_status_json = {
+  'date': now.strftime('%Y/%m/%d %H:%M'),
+  'data': []
+}
+
+######################################################################
+# positive_status.json
+# data の生成
+######################################################################
+(Date.new(2020, 2, 15)..Date.today).each do |date|
+  hospitalized_sum = 0
+  not_hospitalized_sum = 0
+
+  output_patients.values.each do |row|
+    if Date.parse(row[7]) <= date && row[8] == ""
+      # 入院日がその日より過去 かつ 退院日が空
+      # その日は入院中
+      hospitalized_sum += 1
+    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) >= date
+      # 入院日がその日より過去 かつ 退院日がその日より未来
+      # その日は入院中
+      hospitalized_sum += 1
+    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) < date
+      # 入院日がその日以降 かつ 退院日がその日より過去
+      # 退院した
+      not_hospitalized_sum += 1
+    end
+  end
+
+  data_positive_status_json[:'data'].append(
+    {
+      "date": date.strftime('%Y/%m/%d'),
+      "hospitalized": hospitalized_sum,
+      "severe_case": nil # SevereCaseCard.vue を使っていないので未使用
+    }
+  )
+end
+
+# pp data_positive_status_json
+
+######################################################################
 # write json
 ######################################################################
 
@@ -355,18 +460,22 @@ File.open(File.join(__dir__, '../../data/', 'data.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_json)
 end
 
-File.open(File.join(__dir__, '../../data/', 'data.antigen_tests_summary.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_antigen_tests_summary_json)
-end
-
-File.open(File.join(__dir__, '../../data/', 'data.contacts.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_contacts_json)
-end
-
-File.open(File.join(__dir__, '../../data/', 'data.querents.json'), 'w') do |f|
-  f.write JSON.pretty_generate(data_querents_json)
-end
-
 File.open(File.join(__dir__, '../../data/', 'patient_municipalities.json'), 'w') do |f|
   f.write JSON.pretty_generate(data_patient_municipalities_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'positive_by_diagnosed.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_by_diagnosed_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'daily_positive_detail.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_daily_positive_detail_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'positive_rate.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_rate_json)
+end
+
+File.open(File.join(__dir__, '../../data/', 'positive_status.json'), 'w') do |f|
+  f.write JSON.pretty_generate(data_positive_status_json)
 end
