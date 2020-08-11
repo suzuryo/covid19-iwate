@@ -184,6 +184,11 @@ export default Vue.extend({
           name: 'twitter:image',
           content: this.$tc('ogp.og:image'),
         },
+        {
+          hid: 'google-site-verification',
+          name: 'google-site-verification',
+          content: 'wy96JdzncNSSkhp1c0EjfVdCXy0LQAMup_BHI0Bhb_Q',
+        },
       ],
     }
   },
