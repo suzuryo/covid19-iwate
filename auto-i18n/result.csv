@@ -715,3 +715,6 @@ TAG_ADD,おおふなとし
 TAG_ADD,一関市
 TAG_ADD,○
 TAG_ADD,その他.graph
+RUN,2020/08/11 13:04
+TAG_ADD,新規陽性者数の7日間平均
+TAG_ADD,PCR検査の7日間平均
