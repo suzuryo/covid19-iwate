@@ -1,5 +1,5 @@
 {
-  "date": "2020/08/11 12:13",
+  "date": "2020/08/11 13:03",
   "data": [
     {
       "diagnosed_date": "2020-02-13T00:00:00+09:00",
@@ -63,8 +63,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -74,8 +74,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -85,8 +85,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -96,8 +96,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -107,8 +107,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -118,8 +118,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -129,8 +129,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -140,8 +140,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -151,8 +151,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -162,8 +162,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -173,8 +173,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -184,8 +184,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -195,8 +195,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -206,8 +206,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -217,8 +217,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -228,8 +228,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -239,8 +239,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -250,8 +250,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -261,8 +261,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -272,8 +272,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -283,8 +283,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -294,8 +294,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -305,8 +305,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -316,8 +316,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -327,8 +327,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -338,8 +338,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -349,8 +349,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -360,8 +360,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -371,8 +371,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -382,8 +382,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -393,8 +393,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -404,8 +404,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -415,8 +415,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -426,8 +426,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -437,8 +437,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -448,8 +448,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -459,8 +459,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -470,8 +470,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -481,8 +481,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -492,8 +492,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -503,8 +503,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -514,8 +514,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -525,8 +525,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -536,8 +536,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -547,8 +547,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -558,8 +558,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -569,8 +569,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -580,8 +580,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -591,8 +591,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -602,8 +602,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -613,8 +613,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -624,8 +624,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -635,8 +635,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -646,8 +646,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -657,8 +657,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -668,8 +668,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -679,8 +679,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -690,8 +690,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -701,8 +701,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -712,8 +712,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -723,8 +723,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -734,8 +734,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -745,8 +745,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -756,8 +756,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -767,8 +767,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -778,8 +778,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -789,8 +789,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -800,8 +800,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -811,8 +811,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -822,8 +822,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -833,8 +833,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -844,8 +844,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -855,8 +855,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -866,8 +866,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -877,8 +877,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -888,8 +888,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -899,8 +899,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -910,8 +910,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -921,8 +921,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -932,8 +932,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -943,8 +943,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -954,8 +954,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -965,8 +965,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -976,8 +976,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -987,8 +987,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -998,8 +998,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1009,8 +1009,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1020,8 +1020,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1031,8 +1031,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1042,8 +1042,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1053,8 +1053,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1064,8 +1064,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1075,8 +1075,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1086,8 +1086,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1097,8 +1097,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1108,8 +1108,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1119,8 +1119,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1130,8 +1130,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1141,8 +1141,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1152,8 +1152,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1163,8 +1163,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1174,8 +1174,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1185,8 +1185,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1196,8 +1196,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1207,8 +1207,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1218,8 +1218,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1229,8 +1229,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1240,8 +1240,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1251,8 +1251,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1262,8 +1262,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1273,8 +1273,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1284,8 +1284,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1295,8 +1295,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1306,8 +1306,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1317,8 +1317,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1328,8 +1328,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1339,8 +1339,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1350,8 +1350,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1361,8 +1361,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1372,8 +1372,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1383,8 +1383,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1394,8 +1394,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1405,8 +1405,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1416,8 +1416,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1427,8 +1427,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1438,8 +1438,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1449,8 +1449,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1460,8 +1460,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1471,8 +1471,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1482,8 +1482,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1493,8 +1493,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1504,8 +1504,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1515,8 +1515,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1526,8 +1526,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1537,8 +1537,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1548,8 +1548,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1559,8 +1559,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1570,8 +1570,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1581,8 +1581,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1592,8 +1592,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1603,8 +1603,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1614,8 +1614,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1625,8 +1625,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1636,8 +1636,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1647,8 +1647,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1658,8 +1658,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1669,8 +1669,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1680,8 +1680,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1691,8 +1691,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1702,8 +1702,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1713,8 +1713,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1724,8 +1724,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1735,8 +1735,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1746,8 +1746,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1757,8 +1757,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1768,8 +1768,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1779,8 +1779,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1790,8 +1790,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1801,8 +1801,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1812,8 +1812,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1823,8 +1823,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1834,8 +1834,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.0,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1845,8 +1845,8 @@
       "reported_count": 2,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.29,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1856,8 +1856,8 @@
       "reported_count": 1,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1867,8 +1867,8 @@
       "reported_count": 1,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.57,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1878,8 +1878,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.57,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1889,8 +1889,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.57,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1900,8 +1900,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.57,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1911,8 +1911,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.57,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1922,8 +1922,8 @@
       "reported_count": 1,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1933,8 +1933,8 @@
       "reported_count": 1,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1944,8 +1944,8 @@
       "reported_count": 1,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1955,8 +1955,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1966,8 +1966,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     },
     {
@@ -1977,8 +1977,8 @@
       "reported_count": 0,
       "weekly_gain_ratio": null,
       "untracked_percent": null,
-      "weekly_average_count": 0,
-      "weekly_average_untracked_count": 0,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.0,
       "weekly_average_untracked_increse_percent": 0
     }
   ]
