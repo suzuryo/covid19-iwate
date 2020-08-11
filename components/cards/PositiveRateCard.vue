@@ -3,7 +3,7 @@
     <client-only>
       <positive-rate-mixed-chart
         :title-id="'positive-rate'"
-        :info-titles="[$t('検査の陽性率'), $t('検査件数')]"
+        :info-titles="[$t('検査の陽性率'), $t('PCR検査の7日間平均')]"
         :chart-id="'positive-rate-chart'"
         :chart-data="positiveRateGraph"
         :get-formatter="getFormatter"
