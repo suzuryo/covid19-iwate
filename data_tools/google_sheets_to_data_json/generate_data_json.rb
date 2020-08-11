@@ -358,8 +358,8 @@ data_daily_positive_detail_json = {
 # data の生成
 ######################################################################
 output_positive_by_diagnosed.values.each do |row|
-  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
-  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_i
+  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_f
+  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_f
   row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_i
   data_daily_positive_detail_json[:'data'].append(
     {
