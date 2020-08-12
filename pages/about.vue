@@ -205,7 +205,6 @@
       </i18n>
     </static-card>
     -->
-    <!--
     <static-card>
       <h3>{{ $t('ソースコードについて') }}</h3>
       <p>
@@ -226,7 +225,6 @@
         </i18n>
       </p>
     </static-card>
-    -->
   </div>
 </template>
 
