@@ -64,7 +64,7 @@
             </picture>
           </a>
           <a
-            href="https://twitter.com/Meditation_Duck"
+            href="https://twitter.com/iwatevscovid19"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
@@ -86,19 +86,6 @@
               <img src="/facebook.png" alt="Facebook" />
             </picture>
           </a>
-          <!--
-          <a
-            href="https://github.com/MeditationDuck/covid19"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/github.webp" type="image/webp" />
-              <img src="/github.png" alt="GitHub" />
-            </picture>
-          </a>
-          -->
           <a
             href="https://www.youtube.com/user/prefiwate/videos"
             target="_blank"
@@ -108,6 +95,17 @@
             <picture>
               <source srcset="/youtube.webp" type="image/webp" />
               <img src="/youtube.png" alt="YouTube" />
+            </picture>
+          </a>
+          <a
+            href="https://github.com/MeditationDuck/covid19"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/github.webp" type="image/webp" />
+              <img src="/github.png" alt="GitHub" />
             </picture>
           </a>
         </div>
