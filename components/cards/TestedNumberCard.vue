@@ -60,14 +60,13 @@ export default {
   },
   data() {
     // 検査実施日別状況
-    const l = Data.inspections_summary.data['PCR検査'].length
-    const pcr = []
-    const antigen = []
-    for (let i = 0; i < l; i++) {
-      pcr.push(Data.inspections_summary.data['PCR検査'][i])
-      antigen.push(Data.inspections_summary.data['抗原検査'][i])
-    }
-
+    const { data } = Data.inspections_summary
+    const pcr = Array.from(data['PCR検査'].keys()).map(
+      (i) => data['PCR検査'][i]
+    )
+    const antigen = Array.from(data['抗原検査'].keys()).map(
+      (i) => data['抗原検査'][i]
+    )
     const inspectionsGraph = [pcr, antigen]
     const inspectionsItems = [
       this.$t('PCR検査実施件数'),

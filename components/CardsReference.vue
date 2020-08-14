@@ -25,14 +25,18 @@
       <hospitalized-number-card />
       <!-- モニタリング項目(7)重症患者数 -->
       <!-- <severe-case-card /> -->
-      <!-- 陽性患者の属性 -->
+      <!-- 陽性者の属性 -->
       <confirmed-cases-attributes-card />
       <!-- 市町村別患者数 -->
       <confirmed-cases-by-municipalities-card />
+      <!-- 発症日別による陽性者数の推移 -->
+      <!-- <positive-number-by-developed-date-card /> -->
       <!-- 確定日別による陽性者数の推移 -->
       <positive-number-by-diagnosed-date-card />
       <!-- 検査実施件数 -->
       <tested-number-card />
+    </card-row>
+    <card-row class="DataBlock">
       <!-- 帰国者・接触者相談センター 受付件数 -->
       <!-- （東京：受診相談窓口における相談件数） -->
       <monitoring-consultation-desk-reports-number-card />
@@ -70,6 +74,7 @@ import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvi
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
+// import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 
 export default Vue.extend({
   components: {
@@ -92,6 +97,7 @@ export default Vue.extend({
     // MetroCard,
     // AgencyCard,
     PositiveNumberByDiagnosedDateCard,
+    // PositiveNumberByDevelopedDateCard,
   },
 })
 </script>
