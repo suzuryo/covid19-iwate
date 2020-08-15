@@ -46,7 +46,7 @@ service.authorization = authorize
 ######################################################################
 SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'
 
-PATIENTS_RANGE = 'output_patients!A2:L'
+PATIENTS_RANGE = 'output_patients!A2:N'
 output_patients = service.get_spreadsheet_values SPREADSHEET_ID, PATIENTS_RANGE
 raise if output_patients.values.empty?
 
@@ -159,11 +159,13 @@ data_json = {
 # E: 4: 性別
 # F: 5: 居住地
 # G: 6: 陽性者の状況
-# H: 7: 退院日
-# I: 8: url
-# J: 9: 通番
-# K:10: 退院
-# L:11: 確定からの経過日数
+# H: 7: 入院日
+# I: 8: 退院日
+# J: 9: url
+# K:10: 接触歴
+# L:11: 通番
+# K:12: 退院
+# L:13: 確定からの経過日数
 
 output_patients.values.each do |row|
   data_json[:'patients'][:'data'].append(

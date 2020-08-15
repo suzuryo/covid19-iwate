@@ -1,6 +1,5 @@
 import { LinkPropertyHref } from 'vue-meta'
-// TODO: ESLint のエラーの原因を調査
-import { NuxtVueI18n } from 'nuxt-i18n' // eslint-disable-line
+import type { NuxtVueI18n } from 'nuxt-i18n'
 
 export const getLinksLanguageAlternative = (
   routeBaseName: string,

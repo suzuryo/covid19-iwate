@@ -1,6 +1,13 @@
+import Vue from 'vue'
 import dayjs from 'dayjs'
 
-const headers = [
+type Header = {
+  text: string
+  value: string
+  align?: string
+}
+
+const headers: Header[] = [
   { text: '通番', value: '通番' },
   { text: '公表日', value: '公表日' },
   { text: '居住地', value: '居住地' },
@@ -16,7 +23,6 @@ type DataType = {
   年代: string | null
   性別: '男性' | '女性' | string
   退院: '◯' | null
-  url: string | null
   [key: string]: any
 }
 
@@ -30,7 +36,7 @@ type TableDataType = {
 }
 
 type TableDateType = {
-  headers: typeof headers
+  headers: Header[]
   datasets: TableDataType[]
 }
 
@@ -39,30 +45,35 @@ type TableDateType = {
  *
  * @param data - Raw data
  */
-export default (data: DataType[]) => {
-  const tableDate: TableDateType = {
+export default function (data: DataType[]): TableDateType {
+  const datasets = data
+    .map((d) => {
+      const { url } = d
+      const tsuban =
+        url !== null
+          ? `<a href="${url}" target="_blank">${d['通番']}</a>`
+          : '不明'
+      const releaseDate = formatDateString(d['リリース日']) ?? '不明'
+      return {
+        通番: tsuban,
+        公表日: releaseDate,
+        居住地: d['居住地'] ?? '調査中',
+        年代: d['年代'] ?? '不明',
+        性別: d['性別'] ?? '不明',
+        退院: d['退院'],
+      }
+    })
+    .sort((a, b) => dayjs(a.公表日).unix() - dayjs(b.公表日).unix())
+    .reverse()
+  return {
     headers,
-    datasets: [],
+    datasets,
   }
-  data.forEach((d) => {
-    const releaseDate = dayjs(d['リリース日'])
-    let tsuban = d['通番']
-    if (d.url !== null) {
-      tsuban = `<a href="${d.url}" target="_blank">${d['通番']}</a>`
-    }
-    const TableRow: TableDataType = {
-      通番: tsuban ?? '不明',
-      公表日: releaseDate.isValid() ? releaseDate.format('M/D') : '不明',
-      居住地: d['居住地'] ?? '調査中',
-      年代: d['年代'] ?? '不明',
-      性別: d['性別'] ?? '不明',
-      退院: d['退院'],
-    }
-    tableDate.datasets.push(TableRow)
-  })
-  tableDate.datasets.sort(
-    (a, b) => dayjs(a.公表日).unix() - dayjs(b.公表日).unix()
-  )
-  tableDate.datasets.reverse()
-  return tableDate
+}
+
+function formatDateString(date: string): string | undefined {
+  const day = dayjs(date)
+  if (day.isValid()) {
+    return Vue.prototype.$nuxt.$options.i18n.d(day.toDate(), 'dateWithoutYear')
+  }
 }
