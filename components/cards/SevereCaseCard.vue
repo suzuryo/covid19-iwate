@@ -10,25 +10,19 @@
         :unit="$t('人')"
       >
         <template v-slot:additionalDescription>
-          <ul class="ListStyleNone">
+          <span>{{ $t('（注）') }}</span>
+          <ul>
             <li>
-              {{ $t('（注）') }}
-              <ul>
-                <li>
-                  {{
-                    $t(
-                      '入院患者数のうち、人工呼吸器管理（ECMOを含む）が必要な患者数を計上'
-                    )
-                  }}
-                </li>
-                <li>
-                  {{
-                    $t(
-                      '上記の考え方で重症患者数の計上を開始した4月27日から作成'
-                    )
-                  }}
-                </li>
-              </ul>
+              {{
+                $t(
+                  '入院患者数のうち、人工呼吸器管理（ECMOを含む）が必要な患者数を計上'
+                )
+              }}
+            </li>
+            <li>
+              {{
+                $t('上記の考え方で重症患者数の計上を開始した4月27日から作成')
+              }}
             </li>
           </ul>
         </template>
@@ -47,18 +41,13 @@ export default {
     SevereCaseBarChart,
   },
   data() {
-    const graphData = []
-    Data.data
+    const graphData = Data.data
       .filter((d) => new Date(d.date) > new Date('2020-04-26'))
-      .forEach((d) => {
-        const subTotal = d.severe_case
-        if (!isNaN(subTotal)) {
-          graphData.push({
-            label: convertDateToISO8601Format(d.date),
-            transition: subTotal,
-          })
-        }
-      })
+      .filter((d) => !isNaN(d.severe_case))
+      .map((d) => ({
+        label: convertDateToISO8601Format(d.date),
+        transition: d.severe_case,
+      }))
     return {
       Data,
       graphData,
