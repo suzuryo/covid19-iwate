@@ -45,36 +45,28 @@ export default {
     // ヘッダーを設定
     if (this.$i18n.locale === 'ja') {
       municipalitiesTable.headers = [
-        { text: this.$t('地域'), value: 'area' },
-        { text: this.$t('ふりがな'), value: 'ruby' },
         { text: this.$t('市町村'), value: 'label' },
+        { text: this.$t('ふりがな'), value: 'ruby' },
         { text: this.$t('陽性者数'), value: 'count', align: 'end' },
       ]
     } else {
       municipalitiesTable.headers = [
-        { text: this.$t('地域'), value: 'area' },
         { text: this.$t('市町村'), value: 'label' },
         { text: this.$t('陽性者数'), value: 'count', align: 'end' },
       ]
     }
 
     // データをソート
-    const areaOrder = ['特別区', '多摩地域', '島しょ地域', null]
-    Data.datasets.data
-      .sort((a, b) => {
-        // 全体をふりがなでソート
-        if (a.ruby === b.ruby) {
-          return 0
-        } else if (a.ruby > b.ruby) {
-          return 1
-        } else {
-          return -1
-        }
-      })
-      .sort((a, b) => {
-        // '特別区' -> '多摩地域' -> '島しょ地域' -> その他 の順にソート
-        return areaOrder.indexOf(a.area) - areaOrder.indexOf(b.area)
-      })
+    Data.datasets.data.sort((a, b) => {
+      // 全体をcodeでソート
+      if (a.code === b.code) {
+        return 0
+      } else if (a.code > b.code) {
+        return 1
+      } else {
+        return -1
+      }
+    })
 
     // データを追加
     municipalitiesTable.datasets = Data.datasets.data
