@@ -8,6 +8,7 @@ type Header = {
 }
 
 const headers: Header[] = [
+  { text: '通番', value: '通番' },
   { text: '公表日', value: '公表日' },
   { text: '居住地', value: '居住地' },
   { text: '年代', value: '年代' },
@@ -16,6 +17,7 @@ const headers: Header[] = [
 ]
 
 type DataType = {
+  通番: string
   リリース日: string
   居住地: string | null
   年代: string | null
@@ -25,6 +27,7 @@ type DataType = {
 }
 
 type TableDataType = {
+  通番: DataType['通番']
   公表日: string
   居住地: DataType['居住地']
   年代: DataType['年代']
