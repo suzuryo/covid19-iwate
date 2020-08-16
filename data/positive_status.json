@@ -1,5 +1,5 @@
 {
-  "date": "2020/08/15 18:32",
+  "date": "2020/08/16 19:13",
   "data": [
     {
       "date": "2020/02/15",
@@ -914,6 +914,11 @@
     {
       "date": "2020/08/15",
       "hospitalized": 7,
+      "severe_case": null
+    },
+    {
+      "date": "2020/08/16",
+      "hospitalized": 8,
       "severe_case": null
     }
   ]
