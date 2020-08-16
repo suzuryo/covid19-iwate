@@ -52,7 +52,7 @@ export default function (data: DataType[]): TableDateType {
       const tsuban =
         url !== null
           ? `<a href="${url}" target="_blank">${d['通番']}</a>`
-          : '不明'
+          : `${d['通番']}`
       const releaseDate = formatDateString(d['リリース日']) ?? '不明'
       return {
         通番: tsuban,
