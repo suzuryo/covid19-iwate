@@ -74,6 +74,9 @@ POSITIVE_RATE_RANGE = 'output_positive_rate!A2:I'
 output_positive_rate = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_RATE_RANGE
 raise if output_positive_rate.values.empty?
 
+HOSPITALIZED_NUMBER_RANGE = 'output_hospitalized_numbers!A2:E'
+output_hospitalized_numbers = service.get_spreadsheet_values SPREADSHEET_ID, HOSPITALIZED_NUMBER_RANGE
+raise if output_hospitalized_numbers.values.empty?
 
 ######################################################################
 # データ生成 テンプレート
@@ -124,21 +127,37 @@ data_json = {
                 'value': 0
               },
               {
-                'attr': '重症',
+                'attr': '重症', # 岩手県がまだ発表していないので未使用
                 'value': 0
               },
               {
-                'attr': '不明',
+                'attr': '不明', # 岩手県がまだ発表していないので未使用
                 'value': 0
               }
             ]
+          },
+          {
+            'attr': '宿泊療養', # 岩手県がまだ発表していないので未使用
+            'value': 0
+          },
+          {
+            'attr': '自宅療養', # 岩手県がまだ発表していないので未使用
+            'value': 0
+          },
+          {
+            'attr': '調査中', # 岩手県がまだ発表していないので未使用
+            'value': 0
+          },
+          {
+            'attr': '入院・療養等調整中', # 岩手県がまだ発表していないので未使用
+            'value': 0
           },
           {
             'attr': '退院',
             'value': 0
           },
           {
-            'attr': '死亡',
+            'attr': '死亡', # 岩手県がまだ発表していないので未使用
             'value': 0
           }
         ]
@@ -228,33 +247,49 @@ data_json[:'main_summary'][:'value'] = inspection_sum
 # 陽性患者数
 data_json[:'main_summary'][:'children'][0][:'value'] = output_patients.values.size
 
-# 症状ごとのカウント
-patients_status = {
-  '軽症・中等症': 0,
-  '重症': 0,
-  '宿泊療養': 0,
-  '自宅療養': 0,
-  '入院・療養等調整中': 0,
-  '死亡': 0,
-  '退院等（要領期間経過も含む）': 0,
-}
-output_patients.values.each do |row|
-  patients_status[row[6].to_sym] += 1
-end
+# 岩手県が個別の症状（軽症・中症・重症）を発表していないのでカウントできない
+# 岩手県が個別の退院日を公表していないので Google Sheets の output_patients から
+# カウントできないので、 Google Sheets の output_hospitalized_numbers で
+# 手動管理する値を採用する
+# 個別の退院日が発表され、個別の症状が発表されるならコメントアウトしているコードを利用できるようになる。
 
-msc0c = data_json[:'main_summary'][:'children'][0][:'children']
+# # 症状ごとのカウント
+# patients_status = {
+#   '軽症・中等症': 0,
+#   '重症': 0,
+#   '宿泊療養': 0,
+#   '自宅療養': 0,
+#   '入院・療養等調整中': 0,
+#   '死亡': 0,
+#   '退院等（要領期間経過も含む）': 0,
+# }
+# output_patients.values.each do |row|
+#   patients_status[row[6].to_sym] += 1
+# end
+
+# msc0c = data_json[:'main_summary'][:'children'][0][:'children']
+# # 入院中
+# msc0c[0][:'value'] = patients_status[:'軽症・中等症'] + patients_status[:'重症']
+# # 軽症・中等症
+# msc0c[0][:'children'][0][:'value'] = patients_status[:'軽症・中等症']
+# # 重症
+# msc0c[0][:'children'][1][:'value'] = patients_status[:'重症']
+# # 不明
+# msc0c[0][:'children'][2][:'value'] = patients_status[:'入院・療養等調整中']
+# # 退院
+# msc0c[5][:'value'] = patients_status[:'退院等（要領期間経過も含む）']
+# # 死亡
+# msc0c[6][:'value'] = patients_status[:'死亡']
+
 # 入院中
-msc0c[0][:'value'] = patients_status[:'軽症・中等症'] + patients_status[:'重症']
-# 軽症・中等症
-msc0c[0][:'children'][0][:'value'] = patients_status[:'軽症・中等症']
-# 重症
-msc0c[0][:'children'][1][:'value'] = patients_status[:'重症']
-# 不明
-msc0c[0][:'children'][2][:'value'] = patients_status[:'入院・療養等調整中']
+data_json[:'main_summary'][:'children'][0][:'children'][0][:'value'] = output_hospitalized_numbers.values.last[2].to_i
+# 軽症・中等症 : 未発表なのでカウントできない
+# 重症 : 未発表なのでカウントできない
+# 不明 : 未発表なのでカウントできない
 # 退院
-msc0c[1][:'value'] = patients_status[:'退院等（要領期間経過も含む）']
+data_json[:'main_summary'][:'children'][0][:'children'][5][:'value'] = output_hospitalized_numbers.values.last[4].to_i
 # 死亡
-msc0c[2][:'value'] = patients_status[:'死亡']
+data_json[:'main_summary'][:'children'][0][:'children'][6][:'value'] = output_hospitalized_numbers.values.last[3].to_i
 
 
 ######################################################################
@@ -423,36 +458,49 @@ data_positive_status_json = {
 # positive_status.json
 # data の生成
 ######################################################################
-(Date.new(2020, 2, 15)..Date.today).each do |date|
-  hospitalized_sum = 0
-  not_hospitalized_sum = 0
+# 岩手県が個別事例の退院日を公表してくれたら Google Sheets の
+# input_検査陽性者の状況 と output_hospitalized_numbers が必要なくなり、
+# 個別事例の退院日で自動計算できる。けど今はできないから Google Sheetsで管理する。
+# https://github.com/MeditationDuck/covid19/issues/485
+#
+# (Date.new(2020, 2, 15)..Date.today).each do |date|
+#   hospitalized_sum = 0
+#   not_hospitalized_sum = 0
+#
+#   output_patients.values.each do |row|
+#     if Date.parse(row[7]) <= date && row[8] == ""
+#       # 入院日がその日より過去 かつ 退院日が空
+#       # その日は入院中
+#       hospitalized_sum += 1
+#     elsif Date.parse(row[7]) <= date && Date.parse(row[8]) >= date
+#       # 入院日がその日より過去 かつ 退院日がその日より未来
+#       # その日は入院中
+#       hospitalized_sum += 1
+#     elsif Date.parse(row[7]) <= date && Date.parse(row[8]) < date
+#       # 入院日がその日以降 かつ 退院日がその日より過去
+#       # 退院した
+#       not_hospitalized_sum += 1
+#     end
+#   end
+#
+#   data_positive_status_json[:'data'].append(
+#     {
+#       "date": date.strftime('%Y/%m/%d'),
+#       "hospitalized": hospitalized_sum,
+#       "severe_case": nil # SevereCaseCard.vue を使っていないので未使用
+#     }
+#   )
+# end
 
-  output_patients.values.each do |row|
-    if Date.parse(row[7]) <= date && row[8] == ""
-      # 入院日がその日より過去 かつ 退院日が空
-      # その日は入院中
-      hospitalized_sum += 1
-    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) >= date
-      # 入院日がその日より過去 かつ 退院日がその日より未来
-      # その日は入院中
-      hospitalized_sum += 1
-    elsif Date.parse(row[7]) <= date && Date.parse(row[8]) < date
-      # 入院日がその日以降 かつ 退院日がその日より過去
-      # 退院した
-      not_hospitalized_sum += 1
-    end
-  end
-
+output_hospitalized_numbers.values.each do |row|
   data_positive_status_json[:'data'].append(
     {
-      "date": date.strftime('%Y/%m/%d'),
-      "hospitalized": hospitalized_sum,
+      "date": Time.parse(row[0]).iso8601,
+      "hospitalized": row[2].to_i,
       "severe_case": nil # SevereCaseCard.vue を使っていないので未使用
     }
   )
 end
-
-# pp data_positive_status_json
 
 ######################################################################
 # write json
