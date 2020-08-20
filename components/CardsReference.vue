@@ -14,7 +14,7 @@
       <!-- <consultation-about-fever-number-card /> -->
       <!-- 新規陽性者における接触歴等不明者数 -->
       <!-- （東京：モニタリング項目(3)新規陽性者における接触歴等不明者数） -->
-      <untracked-rate-card />
+      <!-- <untracked-rate-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査の陽性率・検査件数 -->
       <!-- （東京：モニタリング項目(4)検査の陽性率） -->
       <positive-rate-card />
@@ -32,7 +32,7 @@
       <!-- 発症日別による陽性者数の推移 -->
       <!-- <positive-number-by-developed-date-card /> -->
       <!-- 確定日別による陽性者数の推移 -->
-      <positive-number-by-diagnosed-date-card />
+      <!-- <positive-number-by-diagnosed-date-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査実施件数 -->
       <tested-number-card />
     </card-row>
@@ -61,7 +61,7 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
-import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
+// import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
@@ -72,7 +72,7 @@ import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
-import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
+// import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 
@@ -80,7 +80,7 @@ export default Vue.extend({
   components: {
     CardRow,
     MonitoringConfirmedCasesNumberCard,
-    UntrackedRateCard,
+    // UntrackedRateCard,
     // SevereCaseCard,
     PositiveRateCard,
     ConfirmedCasesDetailsCard,
@@ -96,7 +96,7 @@ export default Vue.extend({
     TelephoneAdvisoryReportsNumberCard,
     // MetroCard,
     // AgencyCard,
-    PositiveNumberByDiagnosedDateCard,
+    // PositiveNumberByDiagnosedDateCard,
     // PositiveNumberByDevelopedDateCard,
   },
 })
