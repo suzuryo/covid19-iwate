@@ -17,11 +17,11 @@ from bs4 import BeautifulSoup
 CHECK_DIR = ["pages", "components", "layouts", "data", "utils"]
 
 # チェックするjsonファイルのリスト
-JSON_FILES = ["data.json", "patient.json", "monitoring_items.json"]
+JSON_FILES = ["data.json", "patient.json", "monitoring_items.json", "patient_municipalities.json"]
 
 # チェックするTypeScriptファイルのリスト
 # 現状はformatTable.tsしかないが、のちに表追加や、データ追加により必要になった場合は追加しなければならない。
-TS_FILES = ["formatTable.ts"]
+TS_FILES = ["formatTable.ts", "formatConfirmedCases.ts"]
 
 # タグの正規表現パターン
 tag_pattern_t = re.compile("\$t\([ ]*?['|`][^']*?['|`]")
@@ -156,6 +156,11 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
                             for key in json_content["data"]:
                                 if isinstance(json_content["data"][key], dict):
                                     tags.append(json_content["data"][key]["label"])
+                        elif file_name == JSON_FILES[3]:  # patient_municipalities.jsonの場合
+                            for data in json_content["datasets"]["data"]:
+                                tags.append(data["area"])
+                                tags.append(data["label"])
+                                tags.append(data["ruby"])
                         # タグを統合し、重複分を取り除く
                         all_tags = list(set(all_tags + tags))
             # Noneが混じっているので、取り除く
