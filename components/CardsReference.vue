@@ -14,7 +14,7 @@
       <!-- <consultation-about-fever-number-card /> -->
       <!-- 新規陽性者における接触歴等不明者数 -->
       <!-- （東京：モニタリング項目(3)新規陽性者における接触歴等不明者数） -->
-      <untracked-rate-card />
+      <!-- <untracked-rate-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査の陽性率・検査件数 -->
       <!-- （東京：モニタリング項目(4)検査の陽性率） -->
       <positive-rate-card />
@@ -61,7 +61,7 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
-import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
+// import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
@@ -80,7 +80,7 @@ export default Vue.extend({
   components: {
     CardRow,
     MonitoringConfirmedCasesNumberCard,
-    UntrackedRateCard,
+    // UntrackedRateCard,
     // SevereCaseCard,
     PositiveRateCard,
     ConfirmedCasesDetailsCard,
