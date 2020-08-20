@@ -32,7 +32,7 @@
       <!-- 発症日別による陽性者数の推移 -->
       <!-- <positive-number-by-developed-date-card /> -->
       <!-- 確定日別による陽性者数の推移 -->
-      <positive-number-by-diagnosed-date-card />
+      <!-- <positive-number-by-diagnosed-date-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査実施件数 -->
       <tested-number-card />
     </card-row>
@@ -72,7 +72,7 @@ import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 // import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
-import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
+// import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 
@@ -96,7 +96,7 @@ export default Vue.extend({
     TelephoneAdvisoryReportsNumberCard,
     // MetroCard,
     // AgencyCard,
-    PositiveNumberByDiagnosedDateCard,
+    // PositiveNumberByDiagnosedDateCard,
     // PositiveNumberByDevelopedDateCard,
   },
 })
