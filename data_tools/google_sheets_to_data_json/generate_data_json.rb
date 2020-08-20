@@ -249,46 +249,41 @@ data_json[:'main_summary'][:'children'][0][:'value'] = output_patients.values.si
 # 手動管理する値を採用する
 # 個別の退院日が発表され、個別の症状が発表されるならコメントアウトしているコードを利用できるようになる。
 
-# # 症状ごとのカウント
-# patients_status = {
-#   '軽症・中等症': 0,
-#   '重症': 0,
-#   '宿泊療養': 0,
-#   '自宅療養': 0,
-#   '入院・療養等調整中': 0,
-#   '死亡': 0,
-#   '退院等（要領期間経過も含む）': 0,
-# }
-# output_patients.values.each do |row|
-#   patients_status[row[6].to_sym] += 1
-# end
-
-# msc0c = data_json[:'main_summary'][:'children'][0][:'children']
-# # 入院中
-# msc0c[0][:'value'] = patients_status[:'軽症・中等症'] + patients_status[:'重症']
-# # 軽症・中等症
-# msc0c[0][:'children'][0][:'value'] = patients_status[:'軽症・中等症']
-# # 重症
-# msc0c[0][:'children'][1][:'value'] = patients_status[:'重症']
-# # 不明
-# msc0c[0][:'children'][2][:'value'] = patients_status[:'入院・療養等調整中']
-# # 退院
-# msc0c[5][:'value'] = patients_status[:'退院等（要領期間経過も含む）']
-# # 死亡
-# msc0c[6][:'value'] = patients_status[:'死亡']
+# 症状ごとのカウント
+patients_status = {
+  '軽症・中等症': 0,
+  '重症': 0,
+  '宿泊療養': 0,
+  '自宅療養': 0,
+  '入院・療養等調整中': 0,
+  '死亡': 0,
+  '退院等（要領期間経過も含む）': 0,
+}
+output_patients.values.each do |row|
+  patients_status[row[6].to_sym] += 1
+end
 
 # 入院中
 data_json[:'main_summary'][:'children'][0][:'children'][0][:'value'] = output_hospitalized_numbers.values.last[2].to_i
+
 # 軽症・中等症 : 未発表なのでカウントできない
 # 重症 : 未発表なのでカウントできない
 # 不明 : 未発表なのでカウントできない
+
+# 宿泊療養
+data_json[:'main_summary'][:'children'][0][:'children'][1][:'value'] = patients_status[:'宿泊療養']
+
+# 自宅療養
+data_json[:'main_summary'][:'children'][0][:'children'][2][:'value'] = patients_status[:'自宅療養']
+
 # 入院療養等調整中
 data_json[:'main_summary'][:'children'][0][:'children'][3][:'value'] = patients_status[:'入院・療養等調整中']
 
+# 死亡
+data_json[:'main_summary'][:'children'][0][:'children'][4][:'value'] = output_hospitalized_numbers.values.last[3].to_i
+
 # 退院
 data_json[:'main_summary'][:'children'][0][:'children'][5][:'value'] = output_hospitalized_numbers.values.last[4].to_i
-# 死亡
-data_json[:'main_summary'][:'children'][0][:'children'][6][:'value'] = output_hospitalized_numbers.values.last[3].to_i
 
 
 ######################################################################

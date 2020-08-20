@@ -125,14 +125,19 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
+    軽症中等症: {
+      type: Number,
+      required: true,
+    },
+    不明: {
+      type: Number,
+      required: true,
+    },
     宿泊療養: {
       type: Number,
       required: true,
     },
     自宅療養: {
-      type: Number,
-      required: true,
-    },
       type: Number,
       required: true,
     },
