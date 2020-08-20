@@ -21,7 +21,7 @@ JSON_FILES = ["data.json", "patient.json", "monitoring_items.json", "patient_mun
 
 # チェックするTypeScriptファイルのリスト
 # 現状はformatTable.tsしかないが、のちに表追加や、データ追加により必要になった場合は追加しなければならない。
-TS_FILES = ["formatTable.ts"]
+TS_FILES = ["formatTable.ts", "formatConfirmedCases.ts"]
 
 # タグの正規表現パターン
 tag_pattern_t = re.compile("\$t\([ ]*?['|`][^']*?['|`]")
