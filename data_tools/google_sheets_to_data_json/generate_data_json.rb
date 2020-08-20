@@ -145,11 +145,7 @@ data_json = {
             'value': 0
           },
           {
-            'attr': '調査中', # 岩手県がまだ発表していないので未使用
-            'value': 0
-          },
-          {
-            'attr': '入院・療養等調整中', # 岩手県がまだ発表していないので未使用
+            'attr': '入院・療養等調整中',
             'value': 0
           },
           {
@@ -286,6 +282,9 @@ data_json[:'main_summary'][:'children'][0][:'children'][0][:'value'] = output_ho
 # 軽症・中等症 : 未発表なのでカウントできない
 # 重症 : 未発表なのでカウントできない
 # 不明 : 未発表なのでカウントできない
+# 入院療養等調整中
+data_json[:'main_summary'][:'children'][0][:'children'][3][:'value'] = patients_status[:'入院・療養等調整中']
+
 # 退院
 data_json[:'main_summary'][:'children'][0][:'children'][5][:'value'] = output_hospitalized_numbers.values.last[4].to_i
 # 死亡
