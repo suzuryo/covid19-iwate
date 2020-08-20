@@ -79,7 +79,7 @@
           <div :class="$style.content">
             <span>{{ $t('入院・療養等調整中') }}</span>
             <span>
-              <strong>{{ 調査中.toLocaleString() }}</strong>
+              <strong>{{ 入院療養等調整中.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
             </span>
           </div>
@@ -125,6 +125,14 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
+    軽症中等症: {
+      type: Number,
+      required: true,
+    },
+    不明: {
+      type: Number,
+      required: true,
+    },
     宿泊療養: {
       type: Number,
       required: true,
@@ -133,11 +141,7 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    調査中: {
-      type: Number,
-      required: true,
-    },
-    不明: {
+    入院療養等調整中: {
       type: Number,
       required: true,
     },
