@@ -8,6 +8,7 @@ require 'fileutils'
 require 'json'
 require 'time'
 require 'date'
+require 'csv'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
@@ -42,41 +43,33 @@ service.authorization = authorize
 # https://developers.google.com/sheets/api/quickstart/ruby
 
 ######################################################################
-# Google Sheets から データ取得
+# Google Sheets から データを取得して CSV::Table にする
 ######################################################################
 SPREADSHEET_ID = '1VjxD8YTwEngvkfYOLD-4JG1tA5AnzTlgnzDO1lkTlNc'
 
-PATIENTS_RANGE = 'output_patients!A2:N'
-output_patients = service.get_spreadsheet_values SPREADSHEET_ID, PATIENTS_RANGE
-raise if output_patients.values.empty?
+PATIENTS_CSV = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'output_patients').values.map(&:to_csv).join, headers: true)
+raise if PATIENTS_CSV.empty?
 
-INSPECTIONS_RANGE = 'input_検査件数!A2:F'
-output_inspections = service.get_spreadsheet_values SPREADSHEET_ID, INSPECTIONS_RANGE
-raise if output_inspections.values.empty?
+INSPECTIONS_CSV = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'input_検査件数').values.map(&:to_csv).join, headers: true)
+raise if INSPECTIONS_CSV.empty?
 
-CONTACTS_RANGE = 'input_帰国者接触者_相談件数!A2:E'
-output_contacts = service.get_spreadsheet_values SPREADSHEET_ID, CONTACTS_RANGE
-raise if output_contacts.values.empty?
+CONTACTS_CSV = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'input_帰国者接触者_相談件数').values.map(&:to_csv).join, headers: true)
+raise if CONTACTS_CSV.empty?
 
-QUERENTS_RANGE = 'input_一般_相談件数!A2:E'
-output_querents = service.get_spreadsheet_values SPREADSHEET_ID, QUERENTS_RANGE
-raise if output_querents.values.empty?
+QUERENTS_CSV = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'input_一般_相談件数').values.map(&:to_csv).join, headers: true)
+raise if QUERENTS_CSV.empty?
 
-PATIENT_MUNICIPALITIES_RANGE = 'output_patient_municipalities!A2:G'
-output_patient_municipalities = service.get_spreadsheet_values SPREADSHEET_ID, PATIENT_MUNICIPALITIES_RANGE
-raise if output_patient_municipalities.values.empty?
+PATIENT_MUNICIPALITIES = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'output_patient_municipalities').values.map(&:to_csv).join, headers: true)
+raise if PATIENT_MUNICIPALITIES.empty?
 
-POSITIVE_BY_DIAGNOSED_RANGE = 'output_positive_by_diagnosed!A2:I'
-output_positive_by_diagnosed = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_BY_DIAGNOSED_RANGE
-raise if output_positive_by_diagnosed.values.empty?
+POSITIVE_BY_DIAGNOSED = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'output_positive_by_diagnosed').values.map(&:to_csv).join, headers: true)
+raise if POSITIVE_BY_DIAGNOSED.empty?
 
-POSITIVE_RATE_RANGE = 'output_positive_rate!A2:I'
-output_positive_rate = service.get_spreadsheet_values SPREADSHEET_ID, POSITIVE_RATE_RANGE
-raise if output_positive_rate.values.empty?
+POSITIVE_RATE = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'output_positive_rate').values.map(&:to_csv).join, headers: true)
+raise if POSITIVE_RATE.empty?
 
-HOSPITALIZED_NUMBER_RANGE = 'output_hospitalized_numbers!A2:E'
-output_hospitalized_numbers = service.get_spreadsheet_values SPREADSHEET_ID, HOSPITALIZED_NUMBER_RANGE
-raise if output_hospitalized_numbers.values.empty?
+HOSPITALIZED_NUMBERS = CSV.parse(service.get_spreadsheet_values(SPREADSHEET_ID, 'output_hospitalized_numbers').values.map(&:to_csv).join, headers: true)
+raise if HOSPITALIZED_NUMBERS.empty?
 
 ######################################################################
 # データ生成 テンプレート
@@ -166,34 +159,18 @@ data_json = {
 # data.json
 # patients の生成
 ######################################################################
-# 陽性者
-# A: 0: id
-# B: 1: リリース日
-# C: 2: 陽性確定日
-# D: 3: 年代
-# E: 4: 性別
-# F: 5: 居住地
-# G: 6: 陽性者の状況
-# H: 7: 入院日
-# I: 8: 退院日
-# J: 9: url
-# K:10: 接触歴
-# L:11: 通番
-# K:12: 退院
-# L:13: 確定からの経過日数
-
-output_patients.values.each do |row|
+PATIENTS_CSV.each do |row|
   data_json[:'patients'][:'data'].append(
     {
-      'id': row[0].to_i,
-      'リリース日': Time.parse(row[1]).iso8601,
-      '通番': row[11],
-      '年代': row[3],
-      '性別': row[4],
-      '居住地': row[5],
-      '退院': row[12] != '' ? row[12] : nil,
-      'date': Time.parse(row[2]).strftime('%Y-%m-%d'),
-      'url': row[9] != '' ? row[9] : nil,
+      'id': row['id'].to_i,
+      'リリース日': Time.parse(row['リリース日']).iso8601,
+      '通番': row['通番'],
+      '年代': row['年代'],
+      '性別': row['性別'],
+      '居住地': row['居住地'],
+      '退院': row['退院'] != '' ? row['退院'] : nil,
+      'date': Time.parse(row['陽性確定日']).strftime('%Y-%m-%d'),
+      'url': row['url'] != '' ? row['url'] : nil,
     }
   )
 end
@@ -204,8 +181,8 @@ end
 ######################################################################
 (Date.new(2020, 2, 15)..Date.today).each do |date|
   output_patients_sum = 0
-  output_patients.values.each do |row|
-    if row[1] === date.strftime('%Y/%m/%d')
+  PATIENTS_CSV.each do |row|
+    if row['リリース日'] === date.strftime('%Y/%m/%d')
       output_patients_sum += 1
     end
   end
@@ -222,10 +199,10 @@ end
 # data.json
 # inspections_summary の生成
 ######################################################################
-output_inspections.values.each do |row|
-  data_json[:'inspections_summary'][:'data'][:'PCR検査'].append row[4].to_i
-  data_json[:'inspections_summary'][:'data'][:'抗原検査'].append row[3].to_i
-  data_json[:'inspections_summary'][:'labels'].append Time.parse(row[0]).strftime('%-m/%d')
+INSPECTIONS_CSV.each do |row|
+  data_json[:'inspections_summary'][:'data'][:'PCR検査'].append row['PCR検査件数'].to_i
+  data_json[:'inspections_summary'][:'data'][:'抗原検査'].append row['抗原検査件数'].to_i
+  data_json[:'inspections_summary'][:'labels'].append Time.parse(row['date']).strftime('%-m/%d')
 end
 
 
@@ -235,13 +212,13 @@ end
 ######################################################################
 # 検査実施件数
 inspection_sum = 0
-output_inspections.values.each do |row|
-  inspection_sum += row[5].to_i
+INSPECTIONS_CSV.each do |row|
+  inspection_sum += row['検査件数合計'].to_i
 end
 data_json[:'main_summary'][:'value'] = inspection_sum
 
 # 陽性患者数
-data_json[:'main_summary'][:'children'][0][:'value'] = output_patients.values.size
+data_json[:'main_summary'][:'children'][0][:'value'] = PATIENTS_CSV.size
 
 # 岩手県が個別の症状（軽症・中症・重症）を発表していないのでカウントできない
 # 岩手県が個別の退院日を公表していないので Google Sheets の output_patients から
@@ -259,12 +236,12 @@ patients_status = {
   '死亡': 0,
   '退院等（要領期間経過も含む）': 0,
 }
-output_patients.values.each do |row|
-  patients_status[row[6].to_sym] += 1
+PATIENTS_CSV.each do |row|
+  patients_status[row['陽性者の状況'].to_sym] += 1
 end
 
 # 入院中
-data_json[:'main_summary'][:'children'][0][:'children'][0][:'value'] = output_hospitalized_numbers.values.last[2].to_i
+data_json[:'main_summary'][:'children'][0][:'children'][0][:'value'] = HOSPITALIZED_NUMBERS[-1]['うち入院中'].to_i
 
 # 軽症・中等症 : 未発表なのでカウントできない
 # 重症 : 未発表なのでカウントできない
@@ -280,24 +257,24 @@ data_json[:'main_summary'][:'children'][0][:'children'][2][:'value'] = patients_
 data_json[:'main_summary'][:'children'][0][:'children'][3][:'value'] = patients_status[:'入院・療養等調整中']
 
 # 死亡
-data_json[:'main_summary'][:'children'][0][:'children'][4][:'value'] = output_hospitalized_numbers.values.last[3].to_i
+data_json[:'main_summary'][:'children'][0][:'children'][4][:'value'] = HOSPITALIZED_NUMBERS[-1]['うち死亡'].to_i
 
 # 退院
-data_json[:'main_summary'][:'children'][0][:'children'][5][:'value'] = output_hospitalized_numbers.values.last[4].to_i
+data_json[:'main_summary'][:'children'][0][:'children'][5][:'value'] = HOSPITALIZED_NUMBERS[-1]['うち退院'].to_i
 
 
 ######################################################################
 # data.json
 # contacts の生成
 ######################################################################
-output_contacts.values.each do |row|
+CONTACTS_CSV.each do |row|
   data_json[:'contacts'][:'data'].append(
     {
-      '日付': Time.parse(row[0]).iso8601,
-      'コールセンター': row[1].to_i,
-      '各保健所': row[2].to_i,
-      '医療政策室': row[3].to_i,
-      '小計': row[4].to_i,
+      '日付': Time.parse(row['date']).iso8601,
+      'コールセンター': row['コールセンター'].to_i,
+      '各保健所': row['各保健所'].to_i,
+      '医療政策室': row['医療政策室'].to_i,
+      '小計': row['小計'].to_i,
     }
   )
 end
@@ -306,14 +283,14 @@ end
 # data.querents.json
 # querents の生成
 ######################################################################
-output_querents.values.each do |row|
+QUERENTS_CSV.each do |row|
   data_json[:'querents'][:'data'].append(
     {
-      '日付': Time.parse(row[0]).iso8601,
-      'コールセンター': row[1].to_i,
-      '各保健所': row[2].to_i,
-      '医療政策室': row[3].to_i,
-      '小計': row[4].to_i,
+      '日付': Time.parse(row['date']).iso8601,
+      'コールセンター': row['コールセンター'].to_i,
+      '各保健所': row['各保健所'].to_i,
+      '医療政策室': row['医療政策室'].to_i,
+      '小計': row['小計'].to_i,
     }
   )
 end
@@ -334,14 +311,14 @@ data_patient_municipalities_json = {
 # data.patient_municipalities.json
 # datasets の生成
 ######################################################################
-output_patient_municipalities.values.each do |row|
+PATIENT_MUNICIPALITIES.each do |row|
   data_patient_municipalities_json[:'datasets'][:'data'].append(
     {
-      'code': row[0],
-      'area': row[1],
-      'label': row[2],
-      'ruby': row[3],
-      'count': row[5].to_i
+      'code': row['code'],
+      'area': row['area'],
+      'label': row['label'],
+      'ruby': row['ruby'],
+      'count': row['count'].to_i
     }
   )
 end
@@ -361,8 +338,8 @@ data_positive_by_diagnosed_json = {
 ######################################################################
 (Date.new(2020, 2, 15)..Date.today).each do |date|
   positive_by_diagnosed_sum = 0
-  output_patients.values.each do |row|
-    if row[2] === date.strftime('%Y/%m/%d')
+  PATIENTS_CSV.each do |row|
+    if row['陽性確定日'] === date.strftime('%Y/%m/%d')
       positive_by_diagnosed_sum += 1
     end
   end
@@ -388,16 +365,16 @@ data_daily_positive_detail_json = {
 # data_daily_positive_detail.json
 # data の生成
 ######################################################################
-output_positive_by_diagnosed.values.each do |row|
-  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_f
-  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_f
-  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_i
+POSITIVE_BY_DIAGNOSED.each do |row|
+  row['weekly_average_count'].nil? || row['weekly_average_count'].empty? ? row6 = nil : row6 = row['weekly_average_count'].to_f
+  row['weekly_average_untracked_count'].nil? || row['weekly_average_untracked_count'].empty? ? row7 = nil : row7 = row['weekly_average_untracked_count'].to_f
+  row['weekly_average_untracked_increse_percent'].nil? || row['weekly_average_untracked_increse_percent'].empty? ? row8 = nil : row8 = row['weekly_average_untracked_increse_percent'].to_i
   data_daily_positive_detail_json[:'data'].append(
     {
-      "diagnosed_date": Time.parse(row[0]).iso8601,
-      "count": row[1].to_i,
-      "missing_count": row[2].to_i,
-      "reported_count": row[3].to_i,
+      "diagnosed_date": Time.parse(row['diagnosed_date']).iso8601,
+      "count": row['count'].to_i,
+      "missing_count": row['missing_count'].to_i,
+      "reported_count": row['reported_count'].to_i,
       "weekly_gain_ratio": nil, # 未使用
       "untracked_percent": nil, # 未使用
       "weekly_average_count": row6,
@@ -420,18 +397,18 @@ data_positive_rate_json = {
 # positive_rate.json
 # data の生成
 ######################################################################
-output_positive_rate.values.each do |row|
-  row[6].nil? || row[6].empty? ? row6 = nil : row6 = row[6].to_i
-  row[7].nil? || row[7].empty? ? row7 = nil : row7 = row[7].to_f
-  row[8].nil? || row[8].empty? ? row8 = nil : row8 = row[8].to_f
+POSITIVE_RATE.each do |row|
+  row['antigen_negative_count'].nil? || row['antigen_negative_count'].empty? ? row6 = nil : row6 = row['antigen_negative_count'].to_i
+  row['weekly_average_diagnosed_count'].nil? || row['weekly_average_diagnosed_count'].empty? ? row7 = nil : row7 = row['weekly_average_diagnosed_count'].to_f
+  row['positive_rate'].nil? || row['positive_rate'].empty? ? row8 = nil : row8 = row['positive_rate'].to_f
   data_positive_rate_json[:'data'].append(
     {
-      "diagnosed_date": Time.parse(row[0]).iso8601,
-      "positive_count": row[1].to_i,
-      "negative_count": row[2].to_i,
-      "pcr_positive_count": row[3].to_i,
+      "diagnosed_date": Time.parse(row['diagnosed_date']).iso8601,
+      "positive_count": row['positive_count'].to_i,
+      "negative_count": row['negative_count'].to_i,
+      "pcr_positive_count": row['pcr_positive_count'].to_i,
       "antigen_positive_count": nil, # 未使用
-      "pcr_negative_count": row[5].to_i,
+      "pcr_negative_count": row['pcr_negative_count'].to_i,
       "antigen_negative_count": row6,
       "weekly_average_diagnosed_count": row7,
       "positive_rate": row8
@@ -461,16 +438,16 @@ data_positive_status_json = {
 #   hospitalized_sum = 0
 #   not_hospitalized_sum = 0
 #
-#   output_patients.values.each do |row|
-#     if Date.parse(row[7]) <= date && row[8] == ""
+#   OUTPUT_PATIENTS.values.each do |row|
+#     if Date.parse(row['入院日']) <= date && row['退院日'] == ""
 #       # 入院日がその日より過去 かつ 退院日が空
 #       # その日は入院中
 #       hospitalized_sum += 1
-#     elsif Date.parse(row[7]) <= date && Date.parse(row[8]) >= date
+#     elsif Date.parse(row['入院日']) <= date && Date.parse(row['退院日']) >= date
 #       # 入院日がその日より過去 かつ 退院日がその日より未来
 #       # その日は入院中
 #       hospitalized_sum += 1
-#     elsif Date.parse(row[7]) <= date && Date.parse(row[8]) < date
+#     elsif Date.parse(row['入院日']) <= date && Date.parse(row['退院日']) < date
 #       # 入院日がその日以降 かつ 退院日がその日より過去
 #       # 退院した
 #       not_hospitalized_sum += 1
@@ -486,11 +463,11 @@ data_positive_status_json = {
 #   )
 # end
 
-output_hospitalized_numbers.values.each do |row|
+HOSPITALIZED_NUMBERS.each do |row|
   data_positive_status_json[:'data'].append(
     {
-      "date": Time.parse(row[0]).iso8601,
-      "hospitalized": row[2].to_i,
+      "date": Time.parse(row['date']).iso8601,
+      "hospitalized": row['うち入院中'].to_i,
       "severe_case": nil # SevereCaseCard.vue を使っていないので未使用
     }
   )
