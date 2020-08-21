@@ -9,6 +9,7 @@ require 'json'
 require 'time'
 require 'date'
 require 'csv'
+require 'active_support/core_ext/object/blank'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
@@ -366,9 +367,6 @@ data_daily_positive_detail_json = {
 # data の生成
 ######################################################################
 POSITIVE_BY_DIAGNOSED.each do |row|
-  row['weekly_average_count'].nil? || row['weekly_average_count'].empty? ? row6 = nil : row6 = row['weekly_average_count'].to_f
-  row['weekly_average_untracked_count'].nil? || row['weekly_average_untracked_count'].empty? ? row7 = nil : row7 = row['weekly_average_untracked_count'].to_f
-  row['weekly_average_untracked_increse_percent'].nil? || row['weekly_average_untracked_increse_percent'].empty? ? row8 = nil : row8 = row['weekly_average_untracked_increse_percent'].to_i
   data_daily_positive_detail_json[:'data'].append(
     {
       "diagnosed_date": Time.parse(row['diagnosed_date']).iso8601,
@@ -377,9 +375,9 @@ POSITIVE_BY_DIAGNOSED.each do |row|
       "reported_count": row['reported_count'].to_i,
       "weekly_gain_ratio": nil, # 未使用
       "untracked_percent": nil, # 未使用
-      "weekly_average_count": row6,
-      "weekly_average_untracked_count": row7,
-      "weekly_average_untracked_increse_percent": row8
+      "weekly_average_count": row['weekly_average_count'].blank? ? nil : row['weekly_average_count'].to_f,
+      "weekly_average_untracked_count": row['weekly_average_untracked_count'].blank? ? nil : row['weekly_average_untracked_count'].to_f,
+      "weekly_average_untracked_increse_percent": row['weekly_average_untracked_increse_percent'].blank? ? nil : row['weekly_average_untracked_increse_percent'].to_i
     }
   )
 end
@@ -398,9 +396,6 @@ data_positive_rate_json = {
 # data の生成
 ######################################################################
 POSITIVE_RATE.each do |row|
-  row['antigen_negative_count'].nil? || row['antigen_negative_count'].empty? ? row6 = nil : row6 = row['antigen_negative_count'].to_i
-  row['weekly_average_diagnosed_count'].nil? || row['weekly_average_diagnosed_count'].empty? ? row7 = nil : row7 = row['weekly_average_diagnosed_count'].to_f
-  row['positive_rate'].nil? || row['positive_rate'].empty? ? row8 = nil : row8 = row['positive_rate'].to_f
   data_positive_rate_json[:'data'].append(
     {
       "diagnosed_date": Time.parse(row['diagnosed_date']).iso8601,
@@ -409,9 +404,9 @@ POSITIVE_RATE.each do |row|
       "pcr_positive_count": row['pcr_positive_count'].to_i,
       "antigen_positive_count": nil, # 未使用
       "pcr_negative_count": row['pcr_negative_count'].to_i,
-      "antigen_negative_count": row6,
-      "weekly_average_diagnosed_count": row7,
-      "positive_rate": row8
+      "antigen_negative_count": row['antigen_negative_count'].blank? ? nil : row['antigen_negative_count'].to_i,
+      "weekly_average_diagnosed_count": row['weekly_average_diagnosed_count'].blank? ? nil : row['weekly_average_diagnosed_count'].to_f,
+      "positive_rate": row['positive_rate'].blank? ? nil : row['positive_rate'].to_f
     }
   )
 end
