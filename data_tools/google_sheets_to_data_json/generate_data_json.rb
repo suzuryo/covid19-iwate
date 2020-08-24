@@ -401,11 +401,11 @@ POSITIVE_RATE.each do |row|
   data_positive_rate_json[:data].append(
     {
       diagnosed_date: Time.parse(row['diagnosed_date']).iso8601,
-      positive_count: row['positive_count'].to_i,
-      negative_count: row['negative_count'].to_i,
-      pcr_positive_count: row['pcr_positive_count'].to_i,
-      pcr_negative_count: row['pcr_negative_count'].to_i,
+      positive_count: row['positive_count'].blank? ? nil : row['positive_count'].to_i,
+      negative_count: row['negative_count'].blank? ? nil : row['negative_count'].to_i,
+      pcr_positive_count: row['pcr_positive_count'].blank? ? nil : row['pcr_positive_count'].to_i,
       antigen_positive_count: row['antigen_positive_count'].blank? ? nil : row['antigen_positive_count'].to_i,
+      pcr_negative_count: row['pcr_negative_count'].blank? ? nil : row['pcr_negative_count'].to_i,
       antigen_negative_count: row['antigen_negative_count'].blank? ? nil : row['antigen_negative_count'].to_i,
       weekly_average_diagnosed_count: row['weekly_average_diagnosed_count'].blank? ? nil : row['weekly_average_diagnosed_count'].to_f,
       positive_rate: row['positive_rate'].blank? ? nil : row['positive_rate'].to_f
