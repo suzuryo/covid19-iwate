@@ -1,6 +1,6 @@
 {
   "contacts": {
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "data": [
       {
         "日付": "2020-02-15T00:00:00+09:00",
@@ -1349,7 +1349,7 @@
     ]
   },
   "querents": {
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "data": [
       {
         "日付": "2020-02-15T00:00:00+09:00",
@@ -2698,7 +2698,7 @@
     ]
   },
   "patients": {
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "data": [
       {
         "id": 1,
@@ -2852,7 +2852,7 @@
         "居住地": "盛岡市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1029832/1032217/1032421.html"
       },
       {
         "id": 15,
@@ -2863,7 +2863,7 @@
         "居住地": "遠野市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1032918.html"
       },
       {
         "id": 16,
@@ -2874,7 +2874,7 @@
         "居住地": "遠野市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1032999.html"
       },
       {
         "id": 17,
@@ -2885,7 +2885,7 @@
         "居住地": "遠野市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1033000.html"
       },
       {
         "id": 18,
@@ -2896,7 +2896,7 @@
         "居住地": "遠野市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1033001.html"
       },
       {
         "id": 19,
@@ -2907,12 +2907,12 @@
         "居住地": "遠野市",
         "退院": null,
         "date": "2020-08-26",
-        "url": null
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/1033002.html"
       }
     ]
   },
   "patients_summary": {
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "data": [
       {
         "日付": "2020-02-15T08:00:00+09:00",
@@ -3697,7 +3697,7 @@
     ]
   },
   "inspections_summary": {
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "data": {
       "PCR検査": [
         1,
@@ -4092,8 +4092,8 @@
         4,
         1,
         13,
-        0,
-        13
+        1,
+        12
       ]
     },
     "labels": [
@@ -4295,10 +4295,10 @@
       "8/26"
     ]
   },
-  "lastUpdate": "2020-08-27 00:06:38 +0900",
+  "lastUpdate": "2020-08-27 14:05:00 +0900",
   "main_summary": {
     "attr": "検査実施件数",
-    "date": "2020/08/27 00:06",
+    "date": "2020/08/27 14:05",
     "value": 2813,
     "children": [
       {
@@ -4307,7 +4307,7 @@
         "children": [
           {
             "attr": "入院中",
-            "value": 6,
+            "value": 12,
             "children": [
               {
                 "attr": "軽症・中等症",
@@ -4333,7 +4333,7 @@
           },
           {
             "attr": "入院・療養等調整中",
-            "value": 6
+            "value": 0
           },
           {
             "attr": "死亡",
