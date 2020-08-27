@@ -14,8 +14,8 @@ require 'active_support/core_ext/object/blank'
 
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Sheets API Ruby Quickstart'
-CREDENTIALS_PATH = 'credentials.json'
-TOKEN_PATH = 'token.yaml'
+CREDENTIALS_PATH = File.join(__dir__, 'credentials.json')
+TOKEN_PATH = File.join(__dir__, 'token.yaml')
 SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
 
 def authorize
