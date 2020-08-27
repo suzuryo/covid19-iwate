@@ -62,7 +62,11 @@
                 <external-link
                   url="https://www.mhlw.go.jp/content/10900000/000641696.pdf"
                 >
-                  {{ $t('厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]') }}
+                  {{
+                    $t(
+                      '厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]'
+                    )
+                  }}
                 </external-link>
               </div>
             </div>
