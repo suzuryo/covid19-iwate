@@ -7,7 +7,6 @@
       :ref="'displayedTable'"
       :headers="chartData.headers"
       :items="chartData.datasets"
-      :height="240"
       fixed-header
       :mobile-breakpoint="0"
       :custom-sort="customSort"
