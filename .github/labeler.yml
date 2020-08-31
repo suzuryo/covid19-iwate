@@ -1,4 +1,2 @@
 locales:
   - assets/locales/*.json
-data:
-  - data/*.json
