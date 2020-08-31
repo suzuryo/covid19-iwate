@@ -9,6 +9,7 @@
       :height="480"
       :fixed-header="true"
       :mobile-breakpoint="0"
+      :custom-sort="customSort"
       class="cardTable"
     />
     <template v-slot:additionalDescription>
@@ -62,6 +63,22 @@ export default Vue.extend({
     nodes.forEach((table: HTMLElement) => {
       table.setAttribute('tabindex', '0')
     })
+  },
+  methods: {
+    customSort(items: Object[], index: string[], isDesc: boolean[]) {
+      items.sort((a: any, b: any) => {
+        let comparison: number
+        if (index[0] === 'label') {
+          // 「市町村(label)」(漢字)でソートすると、実は「ふりがな(ruby)」(ひらがな)でソートされる
+          comparison = a.ruby < b.ruby ? -1 : 1
+        } else {
+          // 市町村(label)以外は、それ自身でソート
+          comparison = a[index[0]] < b[index[0]] ? -1 : 1
+        }
+        return isDesc[0] ? comparison * -1 : comparison
+      })
+      return items
+    },
   },
 })
 </script>
