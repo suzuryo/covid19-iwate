@@ -9,7 +9,6 @@
       :height="480"
       :fixed-header="true"
       :mobile-breakpoint="0"
-      :disable-sort="true"
       class="cardTable"
     />
     <template v-slot:additionalDescription>
