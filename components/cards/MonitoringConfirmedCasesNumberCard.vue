@@ -3,7 +3,7 @@
     <client-only>
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
-        :info-titles="[$t('新規陽性者数の7日間平均')]"
+        :info-titles="[$t('新規陽性者数の7日間移動平均')]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
@@ -39,7 +39,7 @@
                 <strong>
                   {{
                     $t(
-                      '陽性者数が4.4人/日 (31人/週) (実効再生算数 R1.7) の状態が 3日間 続いたら、社会への協力要請'
+                      '陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請'
                     )
                   }}
                 </strong>
