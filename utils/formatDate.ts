@@ -46,6 +46,17 @@ export const convertDateToSimpleFormat = (dateString: string): string => {
 }
 
 /**
+ * Get date string formatted YYYY年M月D日
+ *
+ * @param dateString- Parsable string by dayjs
+ */
+export const convertDateToJapaneseKanjiFormat = (
+  dateString: string
+): string => {
+  return dayjs(dateString).format('YYYY年M月D日')
+}
+
+/**
  * Get date string complemented year
  *
  * @param dateString- Parsable string by dayjs
