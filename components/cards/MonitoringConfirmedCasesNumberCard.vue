@@ -3,7 +3,7 @@
     <client-only>
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
-        :info-titles="[$t('新規陽性者数の7日間平均')]"
+        :info-titles="[$t('新規陽性者数の7日間移動平均')]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
