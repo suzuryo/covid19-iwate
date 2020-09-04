@@ -23,6 +23,10 @@ import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vu
 // import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
+import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
+import Data from '@/data/data.json'
+import PositiveRate from '@/data/positive_rate.json'
+import PositiveStatus from '@/data/positive_status.json'
 
 export default {
   components: {
@@ -120,9 +124,19 @@ export default {
       this.$i18n.locale === 'ja'
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
-    const description = `${this.$t(
-      '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。'
-    )}`
+    const description = `${this.$t('{date}', {
+      date: convertDateToJapaneseKanjiFormat(
+        PositiveRate.data.slice(-1)[0].diagnosed_date
+      ),
+    })}${this.$t('の岩手県新型コロナウィルス最新状況は、陽性件数が')}${
+      PositiveRate.data.slice(-1)[0].positive_count
+    }${this.$t('件・PCR検査が')}${
+      Data.inspections_summary.data.PCR検査.slice(-1)[0]
+    }${this.$t('件・抗原検査が')}${
+      Data.inspections_summary.data.抗原検査.slice(-1)[0]
+    }${this.$t('件・現在の入院患者は')}${
+      PositiveStatus.data.slice(-1)[0].hospitalized
+    }${this.$t('人です。')}`
     const defaultTitle = `${this.$t('岩手県')} ${this.$t(
       '新型コロナウイルス感染症'
     )}${this.$t('対策サイト')}`
