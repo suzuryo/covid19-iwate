@@ -128,7 +128,7 @@ export default {
       date: convertDateToJapaneseKanjiFormat(
         PositiveRate.data.slice(-1)[0].diagnosed_date
       ),
-    })}${this.$t('の岩手県新型コロナウィルス最新状況は、陽性件数が')}${
+    })}${this.$t('は陽性件数が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・PCR検査が')}${
       Data.inspections_summary.data.PCR検査.slice(-1)[0]
@@ -136,7 +136,9 @@ export default {
       Data.inspections_summary.data.抗原検査.slice(-1)[0]
     }${this.$t('件・現在の入院患者は')}${
       PositiveStatus.data.slice(-1)[0].hospitalized
-    }${this.$t('人です。')}`
+    }${this.$t(
+      '人です。陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
+    )}`
     const defaultTitle = `${this.$t('岩手県')} ${this.$t(
       '新型コロナウイルス感染症'
     )}${this.$t('対策サイト')}`
