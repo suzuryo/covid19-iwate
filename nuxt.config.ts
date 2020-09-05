@@ -1,4 +1,6 @@
 import { NuxtConfig } from '@nuxt/types'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import i18n from './nuxt-i18n.config'
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
@@ -29,19 +31,9 @@ const config: NuxtConfig = {
         content: 'summary_large_image',
       },
       {
-        hid: 'twitter:site',
-        name: 'twitter:site',
-        content: '@tokyo_bousai',
-      },
-      {
-        hid: 'twitter:creator',
-        name: 'twitter:creator',
-        content: '@tokyo_bousai',
-      },
-      {
         hid: 'fb:app_id',
         property: 'fb:app_id',
-        content: '2879625188795443',
+        content: '320122459207066',
       },
       {
         hid: 'note:card',
@@ -100,6 +92,7 @@ const config: NuxtConfig = {
     'nuxt-svg-loader',
     'nuxt-purgecss',
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
+    '@nuxtjs/sitemap',
   ],
   /*
    ** vuetify module configuration
@@ -200,6 +193,102 @@ const config: NuxtConfig = {
   watchers: {
     webpack: {
       poll: true,
+    },
+  },
+  sitemap: {
+    hostname: 'https://iwate.stopcovid19.jp/',
+    gzip: true,
+    exclude: [],
+    routes() {
+      dayjs.extend(utc)
+      const now = dayjs().utc().format()
+      return [
+        {
+          url: '/',
+          changefreq: 'daily',
+          priority: 1.0,
+          lastmod: now,
+        },
+        {
+          url: '/cards/details-of-confirmed-cases',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/cards/monitoring-number-of-confirmed-cases',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/cards/attributes-of-confirmed-cases',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/cards/number-of-confirmed-cases-by-municipalities',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/cards/number-of-tested',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url:
+            '/cards/monitoring-number-of-reports-to-covid19-consultation-desk',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/cards/number-of-reports-to-covid19-telephone-advisory-center',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/about',
+          changefreq: 'monthly',
+          priority: 0.5,
+          lastmod: now,
+        },
+        {
+          url: '/contacts',
+          changefreq: 'monthly',
+          priority: 0.5,
+          lastmod: now,
+        },
+        {
+          url: '/flow',
+          changefreq: 'monthly',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/worker',
+          changefreq: 'monthly',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
+          url: '/contacts',
+          changefreq: 'monthly',
+          priority: 0.7,
+          lastmod: now,
+        },
+        {
+          url: '/print/flow',
+          changefreq: 'monthly',
+          priority: 0.5,
+          lastmod: now,
+        },
+      ]
     },
   },
 }
