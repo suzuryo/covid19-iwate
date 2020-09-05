@@ -30,6 +30,8 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn run test
       - run: yarn run generate:deploy --fail-on-page-error
+        env:
+          TZ: Asia/Tokyo
 
       - name: archive dist
         uses: actions/upload-artifact@v1
