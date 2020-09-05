@@ -33,7 +33,7 @@ jobs:
       - run: yarn run test
       - run: yarn run generate:deploy
         env:
-          TZ: 'Asia/Tokyo'
+          TZ: Asia/Tokyo
       - run: pip install selenium
       - run: (python -m http.server --directory ./dist 8000 &)  ; python ./ui-test/screenshot.py
       - name: Upload screenshot

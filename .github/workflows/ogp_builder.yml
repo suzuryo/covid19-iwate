@@ -35,7 +35,7 @@ jobs:
       - run: yarn run test
       - run: yarn run generate:deploy
         env:
-          TZ: 'Asia/Tokyo'
+          TZ: Asia/Tokyo
       - run: pip3 install selenium
       - run: (python3 -m http.server --directory ./dist 8000 &)  ; python3 ./ui-test/ogp_screenshot.py
       - name: Upload screenshot
