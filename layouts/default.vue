@@ -37,10 +37,12 @@ import Vue from 'vue'
 import { MetaInfo, LinkPropertyHref } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 import Data from '@/data/data.json'
+import PositiveRate from '@/data/positive_rate.json'
+import PositiveStatus from '@/data/positive_status.json'
 import SideNavigation from '@/components/SideNavigation.vue'
 import NoScript from '@/components/NoScript.vue'
 import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
-import { convertDateToSimpleFormat } from '@/utils/formatDate'
+import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 type LocalData = {
@@ -110,6 +112,19 @@ export default Vue.extend({
         this.$i18n.defaultLocale
       )
     }
+    const description = `${this.$t('{date}', {
+      date: convertDateToJapaneseKanjiFormat(
+        PositiveRate.data.slice(-1)[0].diagnosed_date
+      ),
+    })}${this.$t('の岩手県新型コロナウィルス最新状況は、陽性件数が')}${
+      PositiveRate.data.slice(-1)[0].positive_count
+    }${this.$t('件・PCR検査が')}${
+      Data.inspections_summary.data.PCR検査.slice(-1)[0]
+    }${this.$t('件・抗原検査が')}${
+      Data.inspections_summary.data.抗原検査.slice(-1)[0]
+    }${this.$t('件・現在の入院患者は')}${
+      PositiveStatus.data.slice(-1)[0].hospitalized
+    }${this.$t('人です。')}`
 
     return {
       htmlAttrs,
@@ -127,16 +142,12 @@ export default Vue.extend({
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('岩手県'),
+          content: this.$tc('岩手のCOVID-19が気になる有志'),
         },
         {
           hid: 'description',
           name: 'description',
-          content: `${this.$t('{date} 更新', {
-            date: convertDateToSimpleFormat(Data.lastUpdate),
-          })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。'
-          )}`,
+          content: description,
         },
         {
           hid: 'og:site_name',
@@ -161,11 +172,7 @@ export default Vue.extend({
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `${this.$t('{date} 更新', {
-            date: convertDateToSimpleFormat(Data.lastUpdate),
-          })}: ${this.$tc(
-            '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。'
-          )}`,
+          content: description,
         },
         {
           hid: 'og:image',
