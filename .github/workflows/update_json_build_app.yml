@@ -51,3 +51,19 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
+      - name: ogp_build
+        run: |
+          curl -X POST \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.everest-preview+json" \
+              -H "Content-Type: application/json" \
+              https://api.github.com/repos/MeditationDuck/covid19/dispatches --data '{"event_type": "ogp_build"}' \
+            || true
+      - name: production deploy
+        run: |
+          curl -X POST \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.everest-preview+json" \
+              -H "Content-Type: application/json" \
+              https://api.github.com/repos/MeditationDuck/covid19/dispatches --data '{"event_type": "production_deploy"}' \
+            || true
