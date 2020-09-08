@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-  repository_dispatch:
-    types: [ogp_build]
+  schedule:
+    - cron:  '*/5 * * * *'
 
 jobs:
   build:
