@@ -1,0 +1,53 @@
+name: update json
+
+on:
+  repository_dispatch:
+    types: [build_application]
+
+jobs:
+  development:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: development
+      - name: Copy data.json
+        run: |
+          curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
+          curl -o data/data.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/data.json
+          curl -o data/patient_municipalities.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/patient_municipalities.json
+          curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
+          curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
+          curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+      - name: Commit files
+        run: |
+          git config --local user.name "data bot"
+          git status | grep modified && git add . && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
+      - name: Push changes to development
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: development
+  master:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Copy data.json
+        run: |
+          curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
+          curl -o data/data.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/data.json
+          curl -o data/patient_municipalities.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/patient_municipalities.json
+          curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
+          curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
+          curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+      - name: Commit files
+        run: |
+          git config --local user.name "data bot"
+          git status | grep modified && git add . && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
+      - name: Push changes to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
