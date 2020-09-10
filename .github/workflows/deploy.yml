@@ -47,3 +47,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: production
+
+      - name: sitemap ping to google
+        run: |
+          curl "https://www.google.com/ping?sitemap=https://iwate.stopcovid19.jp/sitemap.xml"
