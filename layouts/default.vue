@@ -44,6 +44,7 @@ import NoScript from '@/components/NoScript.vue'
 import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
+import dayjs from 'dayjs'
 
 type LocalData = {
   hasNavigation: boolean
@@ -112,10 +113,9 @@ export default Vue.extend({
         this.$i18n.defaultLocale
       )
     }
-    const description = `${this.$t('{date}', {
-      date: convertDateToJapaneseKanjiFormat(
-        PositiveRate.data.slice(-1)[0].diagnosed_date
-      ),
+    const diagnosedDate = PositiveRate.data.slice(-1)[0].diagnosed_date
+    const descriptionToday = `${this.$t('{date}', {
+      date: convertDateToJapaneseKanjiFormat(diagnosedDate),
     })}${this.$t('は陽性件数が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・PCR検査が')}${
@@ -124,12 +124,56 @@ export default Vue.extend({
       Data.inspections_summary.data.抗原検査.slice(-1)[0]
     }${this.$t('件・現在の入院患者は')}${
       PositiveStatus.data.slice(-1)[0].hospitalized
-    }${this.$t(
-      '人です。陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
+    }${this.$t('人です。')}`
+    const description = `${descriptionToday}${this.$t(
+      '陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
     )}`
 
     return {
       htmlAttrs,
+      script: [
+        {
+          type: 'application/ld+json',
+          json: {
+            '@context': 'http://schema.org',
+            '@type': 'SpecialAnnouncement',
+            datePosted: dayjs(diagnosedDate).toISOString(),
+            expires: dayjs(diagnosedDate).add(3, 'day').toISOString(),
+            name: `岩手県の${this.$t('{date}', {
+              date: convertDateToJapaneseKanjiFormat(diagnosedDate),
+            })}の陽性件数・検査件数・入院患者数`,
+            text: descriptionToday,
+            category: 'https://www.wikidata.org/wiki/Q81068910',
+            url: 'https://iwate.stopcovid19.jp/',
+            newsUpdatesAndGuidelines: 'https://iwate.stopcovid19.jp/',
+            inLanguage: 'ja',
+            diseaseSpreadStatistics: [
+              {
+                '@type': 'URL',
+                url: 'https://iwate.stopcovid19.jp/',
+              },
+            ],
+            spatialCoverage: [
+              {
+                '@type': 'AdministrativeArea',
+                name: 'Iwate',
+                geo: {
+                  '@type': 'GeoCircle',
+                  name: 'Iwate, Japan',
+                  geoMidpoint: {
+                    '@type': 'GeoCoordinates',
+                    latitude: '39.648460',
+                    longitude: '141.250707',
+                    addressCountry: 'JP',
+                    address: 'Iwate, Japan',
+                  },
+                  geoRadius: '100000',
+                },
+              },
+            ],
+          },
+        },
+      ],
       link: [
         {
           rel: 'canonical',
