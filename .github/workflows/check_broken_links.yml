@@ -1,0 +1,57 @@
+name: check broken links
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  check_broken_links:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.1'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: yarn Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: yarn install
+        run: yarn install --frozen-lockfile
+      - name: Set bundle cache directory path
+        id: bundle-cache-dir-path
+        run: |
+          bundle config path vendor/bundle
+          echo "::set-output name=dir::vendor/bundle"
+      - name: bundle Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.bundle-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-bundle-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bundle-
+      - name: bundle install
+        run: bundle install --jobs 4 --retry 3
+      - name: generate site
+        run: |
+          yarn run generate:deploy --fail-on-page-error
+        env:
+          TZ: Asia/Tokyo
+      - name: run localhost:3000
+        run: |
+          yarn run start &
+      - name: rspec
+        run: |
+          bundle exec rspec
