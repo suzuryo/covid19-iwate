@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - development
+  repository_dispatch:
+    types: [check_broken_links]
 
 jobs:
   check_broken_links:
