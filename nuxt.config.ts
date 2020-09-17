@@ -282,12 +282,6 @@ const config: NuxtConfig = {
           priority: 0.7,
           lastmod: now,
         },
-        {
-          url: '/print/flow',
-          changefreq: 'monthly',
-          priority: 0.5,
-          lastmod: now,
-        },
       ]
     },
   },
