@@ -198,7 +198,7 @@ const config: NuxtConfig = {
   sitemap: {
     hostname: 'https://iwate.stopcovid19.jp/',
     gzip: true,
-    exclude: [],
+    exclude: ['/about', '/contacts', '/flow', '/worker', '/print/flow'],
     routes() {
       dayjs.extend(utc)
       const now = dayjs().utc().format()
@@ -210,7 +210,7 @@ const config: NuxtConfig = {
           lastmod: now,
         },
         {
-          url: '/cards/details-of-confirmed-cases',
+          url: '/cards/details-of-confirmed-cases/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
@@ -234,68 +234,68 @@ const config: NuxtConfig = {
           lastmod: now,
         },
         {
-          url: '/cards/monitoring-number-of-confirmed-cases',
+          url: '/cards/number-of-hospitalized/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/cards/attributes-of-confirmed-cases',
+          url: '/cards/attributes-of-confirmed-cases/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/cards/number-of-confirmed-cases-by-municipalities',
+          url: '/cards/number-of-confirmed-cases-by-municipalities/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/cards/number-of-tested',
+          url: '/cards/number-of-tested/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
           url:
-            '/cards/monitoring-number-of-reports-to-covid19-consultation-desk',
+            '/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/cards/number-of-reports-to-covid19-telephone-advisory-center',
+          url: '/cards/number-of-reports-to-covid19-telephone-advisory-center/',
           changefreq: 'daily',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/about',
+          url: '/about/',
           changefreq: 'monthly',
           priority: 0.5,
           lastmod: now,
         },
         {
-          url: '/contacts',
+          url: '/contacts/',
           changefreq: 'monthly',
           priority: 0.5,
           lastmod: now,
         },
         {
-          url: '/flow',
+          url: '/flow/',
           changefreq: 'monthly',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/worker',
+          url: '/worker/',
           changefreq: 'monthly',
           priority: 0.8,
           lastmod: now,
         },
         {
-          url: '/contacts',
+          url: '/contacts/',
           changefreq: 'monthly',
           priority: 0.7,
           lastmod: now,
