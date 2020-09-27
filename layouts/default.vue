@@ -147,12 +147,7 @@ export default Vue.extend({
             url: 'https://iwate.stopcovid19.jp/',
             newsUpdatesAndGuidelines: 'https://iwate.stopcovid19.jp/',
             inLanguage: 'ja',
-            diseaseSpreadStatistics: [
-              {
-                '@type': 'URL',
-                url: 'https://iwate.stopcovid19.jp/',
-              },
-            ],
+            diseaseSpreadStatistics: 'https://iwate.stopcovid19.jp/',
             spatialCoverage: [
               {
                 '@type': 'AdministrativeArea',
@@ -169,6 +164,76 @@ export default Vue.extend({
                   },
                   geoRadius: '100000',
                 },
+              },
+            ],
+          },
+        },
+        {
+          type: 'application/ld+json',
+          json: {
+            '@context': 'http://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: '最新情報まとめ',
+                item: 'https://iwate.stopcovid19.jp/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '陽性者の状況',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/details-of-confirmed-cases/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '日別陽性者数',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/number-of-confirmed-cases/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '陽性者数グラフ',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/monitoring-number-of-confirmed-cases/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '検査の陽性率',
+                item: 'https://iwate.stopcovid19.jp/cards/positive-rate/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '入院患者数',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/number-of-hospitalized/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '陽性者の属性',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '接触者相談件数',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '一般相談件数',
+                item:
+                  'https://iwate.stopcovid19.jp/cards/number-of-reports-to-covid19-telephone-advisory-center/',
               },
             ],
           },
