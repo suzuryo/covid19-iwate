@@ -147,12 +147,7 @@ export default Vue.extend({
             url: 'https://iwate.stopcovid19.jp/',
             newsUpdatesAndGuidelines: 'https://iwate.stopcovid19.jp/',
             inLanguage: 'ja',
-            diseaseSpreadStatistics: [
-              {
-                '@type': 'URL',
-                url: 'https://iwate.stopcovid19.jp/',
-              },
-            ],
+            diseaseSpreadStatistics: 'https://iwate.stopcovid19.jp/',
             spatialCoverage: [
               {
                 '@type': 'AdministrativeArea',
