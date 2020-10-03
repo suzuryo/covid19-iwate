@@ -14,7 +14,7 @@ describe "iPhone 6/7/8", type: :feature do
     # data.json の 陽性事例の 個別ページのURL は直接読み込む
     data_json = JSON.load(File.open(File.join(__dir__, '../../data/data.json')))
     data_json['patients']['data'].each do |item|
-      urls << URI(item['url'])
+      urls << URI(item['url']) unless item['url'].nil?
     end
 
     before do
