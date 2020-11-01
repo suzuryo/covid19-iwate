@@ -178,44 +178,6 @@
             }}
           </p>
         </div>
-        <p :class="[$style.sxnText, $style.hr]">
-          {{
-            $t(
-              '上記の症状に当てはまらない方は、新型コロナウイルス感染症相談窓口にご相談ください。'
-            )
-          }}
-        </p>
-        <div :class="[$style.box, $style.bgGray]">
-          <h5 :class="$style.boxHeading">
-            <!-- TODO: 対応言語を確認 -->
-            {{ $t('新型コロナウイルス感染症相談窓口') }}
-          </h5>
-          <dl :class="$style.contact">
-            <dt>{{ $t('9時～21時（土日祝含む）') }}</dt>
-            <dd>
-              <a :class="$style.tel" href="tel:019-629-6085">
-                <icon-phone :class="$style.icon" aria-hidden="true" />
-                019-629-6085</a
-              >
-            </dd>
-          </dl>
-          <!--
-          <p :class="$style.notice">
-            {{
-              $t(
-                '電話のおかけ間違いが多くなっております。発信の際は今一度電話番号をお確かめの上、お間違えのないようお願いいたします。'
-              )
-            }}
-          </p>
-          -->
-          <p :class="$style.notice">
-            {{
-              $t(
-                '聴覚に障害のある方をはじめ電話でのご相談が難しい方に向けてファクス (019-626-0837) でも受付をしています。'
-              )
-            }}
-          </p>
-        </div>
       </div>
       <div id="anx" ref="lowerTrigger" :class="$style.section">
         <h4 :class="$style.sxnHeading">
