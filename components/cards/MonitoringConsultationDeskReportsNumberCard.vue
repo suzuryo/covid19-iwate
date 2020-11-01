@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <time-bar-chart
-        :title="$t('帰国者・接触者相談センター 受付件数')"
+        :title="$t('受診・相談センター 受付件数')"
         title-id="monitoring-number-of-reports-to-covid19-consultation-desk"
         chart-id="monitoring-consultation-desk-report-chart"
         :chart-data="querentsGraph"

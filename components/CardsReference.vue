@@ -37,7 +37,7 @@
       <tested-number-card />
     </card-row>
     <card-row class="DataBlock">
-      <!-- 帰国者・接触者相談センター 受付件数 -->
+      <!-- 受診・相談センター 受付件数 -->
       <!-- （東京：受診相談窓口における相談件数） -->
       <monitoring-consultation-desk-reports-number-card />
       <!-- 一般相談 受付件数 -->
