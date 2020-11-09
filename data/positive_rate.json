@@ -1,5 +1,5 @@
 {
-  "date": "2020/11/01 19:49",
+  "date": "2020/11/09 21:18",
   "data": [
     {
       "diagnosed_date": "2020-02-13T00:00:00+09:00",
@@ -2893,6 +2893,94 @@
       "antigen_negative_count": 0,
       "weekly_average_diagnosed_count": 17.4,
       "positive_rate": 0.0
+    },
+    {
+      "diagnosed_date": "2020-11-02T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 60,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 54,
+      "antigen_negative_count": 6,
+      "weekly_average_diagnosed_count": 21.7,
+      "positive_rate": 0.0
+    },
+    {
+      "diagnosed_date": "2020-11-03T00:00:00+09:00",
+      "positive_count": 2,
+      "negative_count": 9,
+      "pcr_positive_count": 2,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 6,
+      "antigen_negative_count": 3,
+      "weekly_average_diagnosed_count": 21.3,
+      "positive_rate": 1.14
+    },
+    {
+      "diagnosed_date": "2020-11-04T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 136,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 121,
+      "antigen_negative_count": 15,
+      "weekly_average_diagnosed_count": 35.9,
+      "positive_rate": 0.7
+    },
+    {
+      "diagnosed_date": "2020-11-05T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 87,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 81,
+      "antigen_negative_count": 6,
+      "weekly_average_diagnosed_count": 41.6,
+      "positive_rate": 0.62
+    },
+    {
+      "diagnosed_date": "2020-11-06T00:00:00+09:00",
+      "positive_count": 1,
+      "negative_count": 21,
+      "pcr_positive_count": 1,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 16,
+      "antigen_negative_count": 5,
+      "weekly_average_diagnosed_count": 42.0,
+      "positive_rate": 0.91
+    },
+    {
+      "diagnosed_date": "2020-11-07T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 48,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 44,
+      "antigen_negative_count": 4,
+      "weekly_average_diagnosed_count": 46.4,
+      "positive_rate": 0.82
+    },
+    {
+      "diagnosed_date": "2020-11-08T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 16,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 16,
+      "antigen_negative_count": 0,
+      "weekly_average_diagnosed_count": 48.7,
+      "positive_rate": 0.79
+    },
+    {
+      "diagnosed_date": "2020-11-09T00:00:00+09:00",
+      "positive_count": 0,
+      "negative_count": 6,
+      "pcr_positive_count": 0,
+      "antigen_positive_count": 0,
+      "pcr_negative_count": 4,
+      "antigen_negative_count": 2,
+      "weekly_average_diagnosed_count": 41.6,
+      "positive_rate": 0.92
     }
   ]
 }
