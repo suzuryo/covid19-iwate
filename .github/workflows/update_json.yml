@@ -22,6 +22,7 @@ jobs:
           curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
           curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
           curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+          curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
       - name: Commit files
         run: |
           git config --local user.name "data bot"
@@ -48,6 +49,7 @@ jobs:
           curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
           curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
           curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+          curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
       - name: Commit files
         run: |
           git config --local user.name "data bot"
