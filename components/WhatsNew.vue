@@ -118,17 +118,17 @@ export default Vue.extend({
 
     &-item {
       &-anchor {
+        display: flex;
         text-decoration: none;
         margin: 5px;
         @include font-size(14);
 
         @include lessThan($medium) {
-          display: flex;
           flex-wrap: wrap;
         }
 
         &-time {
-          flex: 0 0 90px;
+          flex: 0 0 13rem;
 
           @include lessThan($medium) {
             flex: 0 0 100%;
