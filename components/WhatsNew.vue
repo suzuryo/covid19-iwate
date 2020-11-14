@@ -132,6 +132,7 @@ export default Vue.extend({
 
           @include lessThan($medium) {
             flex: 0 0 100%;
+            font-weight: bold;
           }
 
           color: $gray-1;
