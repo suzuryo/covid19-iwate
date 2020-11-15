@@ -67,10 +67,12 @@ export default Vue.extend({
       return !/^https?:\/\//.test(path)
     },
     formattedDate(dateString: string) {
-      return convertDateToISO8601Format(dateString)
+      return Date.parse(dateString)
+        ? convertDateToISO8601Format(dateString)
+        : ''
     },
     formattedDateForDisplay(dateString: string) {
-      return this.$d(new Date(dateString), 'date')
+      return Date.parse(dateString) ? this.$d(new Date(dateString), 'date') : ''
     },
   },
 })
@@ -128,7 +130,8 @@ export default Vue.extend({
         }
 
         &-time {
-          flex: 0 0 13rem;
+          flex: 0 0 140px;
+          margin-bottom: 0.8rem;
 
           @include lessThan($medium) {
             flex: 0 0 100%;
@@ -140,11 +143,16 @@ export default Vue.extend({
 
         &-link {
           flex: 0 1 auto;
+          padding-left: 1rem;
+          text-indent: -2rem;
+          margin-bottom: 0.8rem;
 
           @include text-link();
 
           @include lessThan($medium) {
-            padding-left: 8px;
+            padding-left: 3rem;
+            text-indent: -2.2rem;
+            margin-bottom: 1rem;
           }
         }
 
