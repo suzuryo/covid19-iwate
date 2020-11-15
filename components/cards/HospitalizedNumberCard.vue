@@ -3,7 +3,7 @@
     <client-only>
       <dashed-rectangle-time-bar-chart
         :title-id="'number-of-hospitalized'"
-        :info-titles="[$t('入院患者数')]"
+        :info-titles="[$t('入院と宿泊療養の患者数')]"
         :chart-id="'dashed-rectangle-time-bar-chart-hospitalized'"
         :chart-data="patientsGraph"
         :date="positiveStatus.date"
@@ -120,7 +120,7 @@ export default {
       }))
     // 入院患者数グラフ
     const patientsGraph = formatGraph(formatData)
-    const tableLabels = [this.$t('入院患者数')]
+    const tableLabels = [this.$t('入院と宿泊療養の患者数')]
 
     return {
       positiveStatus,
