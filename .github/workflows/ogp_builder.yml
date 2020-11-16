@@ -5,7 +5,7 @@ on:
     branches:
       - master
   repository_dispatch:
-    types: [update_json]
+    types: [generate_ogp]
 
 jobs:
   build:
