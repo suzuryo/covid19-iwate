@@ -1,7 +1,7 @@
 name: OGP Builder
 
 on:
-  push:
+  pull_request:
     branches:
       - master
   repository_dispatch:
@@ -66,7 +66,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add static
-          git commit -m "Add changes"
+          git commit -m "Add OGP changes"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
