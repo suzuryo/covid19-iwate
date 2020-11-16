@@ -11,13 +11,9 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
       - uses: actions/checkout@v2
         with:
-          ref: ${{ steps.extract_branch.outputs.branch }}
+          ref: master
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -49,13 +45,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
       - uses: actions/checkout@v2
         with:
-          ref: ${{ steps.extract_branch.outputs.branch }}
+          ref: master
       - name: Download ogp images
         uses: actions/download-artifact@v1
         with:
