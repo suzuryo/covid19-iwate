@@ -37,11 +37,11 @@ jobs:
           branch: development
   generate_ogp:
     runs-on: macos-latest
-    needs: update_json_master
+    needs: update_json_development
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: development
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -95,6 +95,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: development
       - name: Setup Node
         uses: actions/setup-node@v1
         with:

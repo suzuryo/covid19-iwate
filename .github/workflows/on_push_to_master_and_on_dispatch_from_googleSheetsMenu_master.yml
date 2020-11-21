@@ -72,8 +72,8 @@ jobs:
           name: ogp
           path: ogp
   commit_ogp_master:
-    needs: generate_ogp
     runs-on: ubuntu-18.04
+    needs: generate_ogp
     steps:
       - name: Setup Timezone
         run: |
@@ -136,9 +136,9 @@ jobs:
         with:
           name: dist
           path: dist
-  deploy:
+  deploy_production:
     runs-on: ubuntu-18.04
-    needs: commit_ogp_master
+    needs: build_master
     steps:
       - name: Setup Timezone
         run: |
