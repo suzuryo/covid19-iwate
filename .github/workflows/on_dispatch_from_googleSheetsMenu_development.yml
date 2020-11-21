@@ -1,9 +1,6 @@
 name: googleSheetMenu_development
 
 on:
-  push:
-    branches:
-      - development
   repository_dispatch:
     types: [googleSheetMenu]
 

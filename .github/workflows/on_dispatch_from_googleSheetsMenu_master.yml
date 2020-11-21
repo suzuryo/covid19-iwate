@@ -1,9 +1,6 @@
 name: googleSheetMenu_master
 
 on:
-  push:
-    branches:
-      - master
   repository_dispatch:
     types: [googleSheetMenu]
 
