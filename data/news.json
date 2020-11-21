@@ -1,13 +1,18 @@
 {
   "newsItems": [
     {
+      "date": "2020/11/20",
+      "url": "https://www.youtube.com/watch?v=3fW7iHhhEOA",
+      "text": "📺 記者会見 (2020/11/20 事例98-112)"
+    },
+    {
       "date": "2020/11/19",
-      "url": "https://www.youtube.com/watch?v=Z2WwYLG4UC8&t=4633",
-      "text": "📺 記者会見 (岩手県知事・盛岡市市長)"
+      "url": "https://www.youtube.com/watch?v=Z2WwYLG4UC8",
+      "text": "📺 記者会見 (岩手県知事・盛岡市長)「クラスター調査への協力と、感染防止の徹底を」のみ"
     },
     {
       "date": "",
-      "url": "https://www.youtube.com/watch?v=aqMIv1Vt0eE&t=3373",
+      "url": "https://www.youtube.com/watch?v=aqMIv1Vt0eE",
       "text": "📺 記者会見 (2020/11/19 事例90-97)"
     },
     {
@@ -18,7 +23,7 @@
     {
       "date": "2020/11/17",
       "url": "https://datastudio.google.com/reporting/8224d512-a76e-4d38-91c1-935ba119eb8f",
-      "text": "😷 Googleの機械学習モデル予測、地図から岩手県を選択して表示"
+      "text": "😷 Googleの機械学習モデル予測、岩手県を選択して表示"
     },
     {
       "date": "",
