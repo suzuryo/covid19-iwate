@@ -34,7 +34,7 @@ jobs:
           branch: master
   deploy_production:
     runs-on: ubuntu-18.04
-    needs: build_master
+    needs: update_json_master
     steps:
       - name: Setup Timezone
         run: |
