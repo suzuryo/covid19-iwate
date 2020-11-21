@@ -1,0 +1,181 @@
+name: googleSheetMenu_master
+
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+    types: [googleSheetMenu]
+
+jobs:
+  update_json_master:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
+      - name: Copy data.json to master
+        run: |
+          curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
+          curl -o data/data.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/data.json
+          curl -o data/patient_municipalities.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/patient_municipalities.json
+          curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
+          curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
+          curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+          curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
+      - name: Commit JSON files to master
+        run: |
+          git config --local user.name "data bot"
+          git status | grep modified && git add . && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
+      - name: Push changes to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+  generate_ogp:
+    runs-on: macos-latest
+    needs: update_json_master
+    steps:
+      - name: Setup Timezone
+        run: |
+          sudo systemsetup -settimezone Asia/Tokyo
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test
+      - run: yarn run generate:deploy
+        env:
+          TZ: Asia/Tokyo
+      - run: pip3 install selenium
+      - run: (python3 -m http.server --directory ./dist 8000 &)  ; python3 ./ui-test/ogp_screenshot.py
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v2
+        with:
+          name: ogp
+          path: ogp
+  commit_ogp_master:
+    needs: generate_ogp
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Download ogp images
+        uses: actions/download-artifact@v2
+        with:
+          name: ogp
+      - name: Commit files
+        run: |
+          cp -rp ogp static/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static
+          git commit -m "Add OGP changes"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+  build_master:
+    runs-on: ubuntu-18.04
+    needs: commit_ogp_master
+    steps:
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test
+      - name: build master
+        run: |
+          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
+          cat .env.production
+          yarn run generate:deploy --fail-on-page-error
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          TZ: Asia/Tokyo
+      - name: archive dist
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
+  deploy:
+    runs-on: ubuntu-18.04
+    needs: commit_ogp_master
+    steps:
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
+      - run: yarn run test
+      - name: generate
+        run: |
+          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
+          cat .env.production
+          yarn run generate:deploy --fail-on-page-error
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          TZ: Asia/Tokyo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: production
+      - name: sitemap ping to google
+        run: |
+          curl "https://www.google.com/ping?sitemap=https://iwate.stopcovid19.jp/sitemap.xml"
