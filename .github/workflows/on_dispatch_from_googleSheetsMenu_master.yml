@@ -92,48 +92,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-  build_master:
+  build_and_deploy_production:
     runs-on: ubuntu-18.04
-    needs: commit_ogp_master
-    steps:
-      - name: Setup Timezone
-        run: |
-          sudo timedatectl set-timezone Asia/Tokyo
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
-      - run: yarn run test
-      - name: build master
-        run: |
-          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
-          cat .env.production
-          yarn run generate:deploy --fail-on-page-error
-        env:
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
-          TZ: Asia/Tokyo
-      - name: archive dist
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
-          path: dist
-  deploy_production:
-    runs-on: ubuntu-18.04
-    needs: build_master
+    needs: generate_ogp_master
     steps:
       - name: Setup Timezone
         run: |
