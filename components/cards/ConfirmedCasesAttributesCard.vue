@@ -52,7 +52,6 @@ export default {
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])
-      row['性別'] = this.getTranslatedWording(row['性別'])
       // row['退院'] = this.getTranslatedWording(row['退院'])
 
       if (row['年代'].substr(-1, 1) === '代') {

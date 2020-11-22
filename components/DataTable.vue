@@ -25,7 +25,6 @@
             <td class="text-start">{{ item['公表日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
-            <td class="text-start">{{ item['性別'] }}</td>
             <!-- <td class="text-center">{{ item['退院'] }}</td> -->
           </tr>
         </tbody>
