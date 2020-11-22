@@ -52,7 +52,6 @@ export default {
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])
-      row['性別'] = this.getTranslatedWording(row['性別'])
       // row['退院'] = this.getTranslatedWording(row['退院'])
 
       if (row['年代'].substr(-1, 1) === '代') {
@@ -119,7 +118,7 @@ export default {
         }
 
         // 公表日のソートを正しくする
-        if (index[0] === '公表日') {
+        if (index[0] === '陽性確定日') {
           // 2/29と3/1が正しくソートできないため、以下は使えない。
           // 公表日に年まで含む場合は以下が使用可能になり、逆に今使用しているコードが使用不可能となる。
           // comparison = new Date(a[index[0]]) < new Date(b[index[0]]) ? -1 : 1
