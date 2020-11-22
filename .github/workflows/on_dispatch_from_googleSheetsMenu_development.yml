@@ -2,7 +2,7 @@ name: googleSheetMenu_development
 
 on:
   repository_dispatch:
-    types: [googleSheetMenu]
+    types: [googleSheetMenu, googleSheetMenuWithoutOGP]
 
 jobs:
   update_json_development:
