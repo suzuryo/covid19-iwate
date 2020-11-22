@@ -232,16 +232,6 @@ export default Vue.extend({
       }
     }
 
-    .ListStyleNone {
-      list-style: none;
-      padding-left: 0;
-
-      li {
-        margin-left: 0;
-        text-indent: 0;
-      }
-    }
-
     &--Additional {
       margin-bottom: 10px;
     }
