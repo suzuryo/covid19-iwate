@@ -23,6 +23,7 @@
             <th class="text-start" scope="row" v-html="item['通番']" /><!-- TODO: XSS 対策 -->
             <!-- eslint-enable -->
             <td class="text-start">{{ item['陽性確定日'] }}</td>
+            <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
             <!-- <td class="text-center">{{ item['退院'] }}</td> -->
