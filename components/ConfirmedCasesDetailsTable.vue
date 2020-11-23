@@ -56,23 +56,25 @@
             </span>
           </div>
         </li>
-        <li :class="[$style.box]">
+        <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
-            <span>{{ $t('死亡') }}</span>
-            <span>
-              <strong>{{ 死亡.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-            </span>
-          </div>
-        </li>
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('退院等（療養期間経過を含む）') }}</span>
+            <span>{{ $t('退院等') }}</span>
             <span>
               <strong>{{ 退院.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
             </span>
           </div>
+          <ul :class="[$style.group]">
+            <li :class="[$style.box]">
+              <div :class="$style.content">
+                <span>{{ $t('死亡') }}</span>
+                <span>
+                  <strong>{{ 死亡.toLocaleString() }}</strong>
+                  <span :class="$style.unit">{{ $t('人') }}</span>
+                </span>
+              </div>
+            </li>
+          </ul>
         </li>
       </ul>
     </li>
