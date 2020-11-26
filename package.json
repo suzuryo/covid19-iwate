@@ -63,13 +63,11 @@
     "@types/chart.js": "2.9.23",
     "@vue/test-utils": "1.0.3",
     "autoprefixer": "9.8.6",
-    "babel-jest": "26.3.0",
     "eslint": "7.6.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-tsdoc": "0.2.6",
     "husky": "4.2.5",
-    "jest": "26.4.0",
     "lint-staged": "10.2.11",
     "nodemon": "2.0.4",
     "nuxt-purgecss": "1.0.0",
@@ -82,7 +80,6 @@
     "ts-loader": "8.0.2",
     "typescript": "3.9.7",
     "vue-axe": "2.4.0",
-    "vue-jest": "4.0.0-beta.5",
     "vue-template-compiler": "2.6.11"
   }
 }
