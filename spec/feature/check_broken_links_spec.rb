@@ -28,9 +28,9 @@ describe "iPhone 6/7/8", type: :feature do
     it 'has no broken links' do
       # すべての href に対して
       urls.uniq.each do |url|
-        p res.code, url.to_s
         # redirect をフォローしつつステータスコードを確認
         res = fetch_url_with_redirect(url)
+        p res.code, url.to_s
         expect(res.code).to eq '200' # ページが存在している
         sleep 1
       end
