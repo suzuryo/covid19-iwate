@@ -30,8 +30,6 @@
       <!-- <positive-number-by-diagnosed-date-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査実施件数 -->
       <tested-number-card />
-    </card-row>
-    <card-row class="DataBlock">
       <!-- 受診・相談センター 受付件数 -->
       <monitoring-consultation-desk-reports-number-card />
       <!-- 一般相談 受付件数 -->
