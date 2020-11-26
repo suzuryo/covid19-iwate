@@ -14,11 +14,13 @@
             <li>
               {{ $t('前日までに報告された陽性者数の累計値') }}
             </li>
-            <!--
             <li>
-              {{ $t('チャーター機帰国者、クルーズ船乗客等は含まれていない') }}
+              {{
+                $t(
+                  '陽性者数/人口 は市町村の人口(令和2年10月1日現在)に対する陽性者数の割合'
+                )
+              }}
             </li>
-            -->
           </ul>
         </template>
       </confirmed-cases-by-municipalities-table>
@@ -43,18 +45,16 @@ export default {
     }
 
     // ヘッダーを設定
-    if (this.$i18n.locale === 'ja') {
-      municipalitiesTable.headers = [
-        { text: this.$t('市町村'), value: 'label' },
-        { text: this.$t('ふりがな'), value: 'ruby' },
-        { text: this.$t('陽性者数'), value: 'count', align: 'end' },
-      ]
-    } else {
-      municipalitiesTable.headers = [
-        { text: this.$t('市町村'), value: 'label' },
-        { text: this.$t('陽性者数'), value: 'count', align: 'end' },
-      ]
-    }
+    municipalitiesTable.headers = [
+      { text: this.$t('市町村'), value: 'label' },
+      { text: this.$t('ふりがな'), value: 'ruby' },
+      { text: this.$t('陽性者数'), value: 'count', align: 'end' },
+      {
+        text: this.$t('陽性者数/人口'),
+        value: 'count_per_population',
+        align: 'end',
+      },
+    ]
 
     // データをソート
     Data.datasets.data.sort((a, b) => {
@@ -68,23 +68,24 @@ export default {
       }
     })
 
+    const getCountPerPopulation = (d) => {
+      if (d === null) {
+        return ''
+      } else {
+        return `${d}%`
+      }
+    }
+
     // データを追加
     municipalitiesTable.datasets = Data.datasets.data
       .filter((d) => d.label !== '小計')
       .map((d) => {
-        if (this.$i18n.locale === 'ja') {
-          return {
-            area: this.$t(d.area),
-            ruby: this.$t(d.ruby),
-            label: this.$t(d.label),
-            count: d.count,
-          }
-        } else {
-          return {
-            area: this.$t(d.area),
-            label: this.$t(d.label),
-            count: d.count,
-          }
+        return {
+          area: this.$t(d.area),
+          ruby: this.$t(d.ruby),
+          label: this.$t(d.label),
+          count: d.count,
+          count_per_population: getCountPerPopulation(d.count_per_population),
         }
       })
 
