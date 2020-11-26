@@ -34,6 +34,7 @@ jobs:
           branch: development
   check_broken_links:
     runs-on: ubuntu-18.04
+    needs: update_json_development
     steps:
       - uses: actions/checkout@v2
         with:
