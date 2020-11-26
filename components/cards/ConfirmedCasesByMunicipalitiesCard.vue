@@ -43,18 +43,11 @@ export default {
     }
 
     // ヘッダーを設定
-    if (this.$i18n.locale === 'ja') {
-      municipalitiesTable.headers = [
-        { text: this.$t('市町村'), value: 'label' },
-        { text: this.$t('ふりがな'), value: 'ruby' },
-        { text: this.$t('陽性者数'), value: 'count', align: 'end' },
-      ]
-    } else {
-      municipalitiesTable.headers = [
-        { text: this.$t('市町村'), value: 'label' },
-        { text: this.$t('陽性者数'), value: 'count', align: 'end' },
-      ]
-    }
+    municipalitiesTable.headers = [
+      { text: this.$t('市町村'), value: 'label' },
+      { text: this.$t('ふりがな'), value: 'ruby' },
+      { text: this.$t('陽性者数'), value: 'count', align: 'end' },
+    ]
 
     // データをソート
     Data.datasets.data.sort((a, b) => {
@@ -72,19 +65,11 @@ export default {
     municipalitiesTable.datasets = Data.datasets.data
       .filter((d) => d.label !== '小計')
       .map((d) => {
-        if (this.$i18n.locale === 'ja') {
-          return {
-            area: this.$t(d.area),
-            ruby: this.$t(d.ruby),
-            label: this.$t(d.label),
-            count: d.count,
-          }
-        } else {
-          return {
-            area: this.$t(d.area),
-            label: this.$t(d.label),
-            count: d.count,
-          }
+        return {
+          area: this.$t(d.area),
+          ruby: this.$t(d.ruby),
+          label: this.$t(d.label),
+          count: d.count,
         }
       })
 
