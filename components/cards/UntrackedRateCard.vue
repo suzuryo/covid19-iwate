@@ -3,7 +3,7 @@
     <client-only>
       <untracked-rate-mixed-chart
         :title-id="'untracked-rate'"
-        :info-titles="[$t('新規陽性者における接触歴等不明者数(7日間移動平均)'), $t('増加比')]"
+        :info-titles="[$t('接触歴等不明者数(7日間移動平均)'), $t('増加比')]"
         :chart-id="'untracked-rate-chart'"
         :chart-data="graphData"
         :get-formatter="getFormatter"
