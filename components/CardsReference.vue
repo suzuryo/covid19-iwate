@@ -8,20 +8,15 @@
       <!-- モニタリング項目 -->
       <!-- <monitoring-items-overview-card /> -->
       <!-- 新規陽性者数 -->
-      <!-- （東京：モニタリング項目(1)新規陽性者数） -->
       <monitoring-confirmed-cases-number-card />
-      <!-- モニタリング項目(2)#7119における発熱等相談件数 -->
       <!-- <consultation-about-fever-number-card /> -->
       <!-- 新規陽性者における接触歴等不明者数 -->
-      <!-- （東京：モニタリング項目(3)新規陽性者における接触歴等不明者数） -->
       <!-- <untracked-rate-card /> --><!-- 1日あたりの感染者が増えたら機能するが現在はあまり意味のない数字なので非表示 -->
       <!-- 検査の陽性率・検査件数 -->
-      <!-- （東京：モニタリング項目(4)検査の陽性率） -->
       <positive-rate-card />
       <!-- モニタリング項目(5)救急医療の東京ルールの適用件数 -->
       <!-- <tokyo-rules-application-number-card /> -->
       <!-- 入院患者数 -->
-      <!-- （東京：モニタリング項目(6)入院患者数） -->
       <hospitalized-number-card />
       <!-- モニタリング項目(7)重症患者数 -->
       <!-- <severe-case-card /> -->
@@ -38,10 +33,8 @@
     </card-row>
     <card-row class="DataBlock">
       <!-- 受診・相談センター 受付件数 -->
-      <!-- （東京：受診相談窓口における相談件数） -->
       <monitoring-consultation-desk-reports-number-card />
       <!-- 一般相談 受付件数 -->
-      <!-- （東京：新型コロナコールセンター相談件数） -->
       <telephone-advisory-reports-number-card />
     </card-row>
     <!-- <card-row class="DataBlock"> -->
