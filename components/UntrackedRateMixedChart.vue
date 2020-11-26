@@ -92,12 +92,14 @@
         :s-text="displayInfo[0].sText"
         :unit="displayInfo[0].unit"
       />
+      <!--
       <data-view-data-set-panel
         :title="infoTitles[1]"
         :l-text="displayInfo[1].lText"
         :s-text="displayInfo[1].sText"
         :unit="displayInfo[1].unit"
       />
+      -->
     </template>
   </data-view>
 </template>
