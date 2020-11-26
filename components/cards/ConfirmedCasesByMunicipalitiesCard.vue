@@ -47,6 +47,11 @@ export default {
       { text: this.$t('市町村'), value: 'label' },
       { text: this.$t('ふりがな'), value: 'ruby' },
       { text: this.$t('陽性者数'), value: 'count', align: 'end' },
+      {
+        text: this.$t('陽性者数/人口'),
+        value: 'count_per_population',
+        align: 'end',
+      },
     ]
 
     // データをソート
@@ -61,6 +66,14 @@ export default {
       }
     })
 
+    const getCountPerPopulation = (d) => {
+      if (d === null) {
+        return ''
+      } else {
+        return `${d}%`
+      }
+    }
+
     // データを追加
     municipalitiesTable.datasets = Data.datasets.data
       .filter((d) => d.label !== '小計')
@@ -70,6 +83,7 @@ export default {
           ruby: this.$t(d.ruby),
           label: this.$t(d.label),
           count: d.count,
+          count_per_population: getCountPerPopulation(d.count_per_population),
         }
       })
 
