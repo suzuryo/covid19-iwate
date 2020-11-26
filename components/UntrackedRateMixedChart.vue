@@ -29,9 +29,9 @@
           <div
             v-else-if="i === 3"
             :style="{
-              backgroundColor: colors[i].fillColor,
+              background: `repeating-linear-gradient(90deg, ${colors[i].fillColor}, ${colors[i].fillColor} 2px, #fff 2px, #fff 4px)`,
               border: 0,
-              height: '3px',
+              height: '1px',
             }"
           />
           <div
@@ -254,7 +254,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       getGraphSeriesColor('A'),
       getGraphSeriesColor('C'),
       getGraphSeriesColor('E'),
-      getGraphSeriesColor('E'),
+      getGraphSeriesColor('H'),
     ],
     canvas: true,
   }),
@@ -296,7 +296,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         getGraphSeriesColor('A'),
         getGraphSeriesColor('C'),
         getGraphSeriesColor('E'),
-        getGraphSeriesColor('E'),
+        getGraphSeriesColor('H'),
       ]
       return {
         labels: this.labels,
@@ -343,7 +343,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             pointBackgroundColor: 'rgba(0,0,0,0)',
             pointBorderColor: 'rgba(0,0,0,0)',
             borderColor: graphSeries[3].strokeColor,
-            borderWidth: 3,
+            borderWidth: 1,
+            borderDash: [2],
             fill: false,
             order: 1,
             lineTension: 0,
