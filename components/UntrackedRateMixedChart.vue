@@ -253,8 +253,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   data: () => ({
     displayLegends: [true, true, true, true],
     colors: [
-      getGraphSeriesColor('A'),
       getGraphSeriesColor('C'),
+      getGraphSeriesColor('A'),
       getGraphSeriesColor('E'),
       getGraphSeriesColor('H'),
     ],
@@ -295,8 +295,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     displayData() {
       const graphSeries = [
-        getGraphSeriesColor('A'),
         getGraphSeriesColor('C'),
+        getGraphSeriesColor('A'),
         getGraphSeriesColor('E'),
         getGraphSeriesColor('H'),
       ]
