@@ -18,6 +18,8 @@ Capybara.app_host = 'http://localhost:3000'
 
 # Following Redirection
 def fetch_url_with_redirect(uri, limit = 10)
+  p uri.to_s
+  p limit
   # You should choose a better exception.
   raise ArgumentError, 'too many HTTP redirects' if limit == 0
   response = Net::HTTP.get_response(uri)
