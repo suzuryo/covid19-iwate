@@ -29,9 +29,9 @@
           <div
             v-else-if="i === 3"
             :style="{
-              backgroundColor: colors[i].fillColor,
+              background: `repeating-linear-gradient(90deg, ${colors[i].fillColor}, ${colors[i].fillColor} 2px, #fff 2px, #fff 4px)`,
               border: 0,
-              height: '3px',
+              height: '1px',
             }"
           />
           <div
@@ -92,12 +92,14 @@
         :s-text="displayInfo[0].sText"
         :unit="displayInfo[0].unit"
       />
+      <!--
       <data-view-data-set-panel
         :title="infoTitles[1]"
         :l-text="displayInfo[1].lText"
         :s-text="displayInfo[1].sText"
         :unit="displayInfo[1].unit"
       />
+      -->
     </template>
   </data-view>
 </template>
@@ -251,10 +253,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   data: () => ({
     displayLegends: [true, true, true, true],
     colors: [
-      getGraphSeriesColor('A'),
       getGraphSeriesColor('C'),
+      getGraphSeriesColor('A'),
       getGraphSeriesColor('E'),
-      getGraphSeriesColor('E'),
+      getGraphSeriesColor('H'),
     ],
     canvas: true,
   }),
@@ -293,10 +295,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     displayData() {
       const graphSeries = [
-        getGraphSeriesColor('A'),
         getGraphSeriesColor('C'),
+        getGraphSeriesColor('A'),
         getGraphSeriesColor('E'),
-        getGraphSeriesColor('E'),
+        getGraphSeriesColor('H'),
       ]
       return {
         labels: this.labels,
@@ -343,7 +345,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             pointBackgroundColor: 'rgba(0,0,0,0)',
             pointBorderColor: 'rgba(0,0,0,0)',
             borderColor: graphSeries[3].strokeColor,
-            borderWidth: 3,
+            borderWidth: 1,
+            borderDash: [2],
             fill: false,
             order: 1,
             lineTension: 0,
