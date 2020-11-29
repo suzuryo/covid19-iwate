@@ -1,17 +1,19 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
-      <dashed-rectangle-time-bar-chart
+      <hospitalized-time-stacked-bar-chart
+        :title="$t('入院と宿泊療養の推移')"
         :title-id="'number-of-hospitalized'"
-        :info-titles="[$t('入院と宿泊療養の患者数')]"
-        :chart-id="'dashed-rectangle-time-bar-chart-hospitalized'"
-        :chart-data="patientsGraph"
-        :date="positiveStatus.date"
+        :chart-id="'time-stacked-bar-chart-hospitalized'"
+        :chart-data="hospitalizedGraph"
+        :date="PositiveStatus.date"
+        :items="hospitalizedItems"
+        :labels="hospitalizedLabels"
         :unit="$t('人')"
-        :dashed-rectangle-range="'2020-05-11'"
-        :added-value="0"
-        :table-labels="tableLabels"
+        :data-labels="hospitalizedDataLabels"
+        :table-labels="hospitalizedTableLabels"
       >
+        <!-- 件.tested = 検査数 -->
         <template v-slot:additionalDescription>
           <span>{{ $t('（参考）') }}</span>
           <table :class="$style.beds">
@@ -95,37 +97,48 @@
             </div>
           </div>
         </template>
-      </dashed-rectangle-time-bar-chart>
+      </hospitalized-time-stacked-bar-chart>
     </client-only>
   </v-col>
 </template>
 
 <script>
-import positiveStatus from '@/data/positive_status.json'
-import formatGraph from '@/utils/formatGraph'
-import DashedRectangleTimeBarChart from '@/components/DashedRectangleTimeBarChart.vue'
+import PositiveStatus from '@/data/positive_status.json'
+import HospitalizedTimeStackedBarChart from '@/components/HospitalizedTimeStackedBarChart.vue'
+import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters.ts'
 import ExternalLink from '@/components/ExternalLink.vue'
 
 export default {
   components: {
-    DashedRectangleTimeBarChart,
+    HospitalizedTimeStackedBarChart,
     ExternalLink,
   },
   data() {
-    const formatData = positiveStatus.data
-      .filter((d) => new Date(d.date) >= new Date('2020-03-06'))
-      .map((d) => ({
-        日付: new Date(d.date),
-        小計: d.hospitalized,
-      }))
-    // 入院患者数グラフ
-    const patientsGraph = formatGraph(formatData)
-    const tableLabels = [this.$t('入院と宿泊療養の患者数')]
+    const { data } = PositiveStatus
+    const hospital = data.map((data) => data.hospital)
+    const hotel = data.map((data) => data.hotel)
+
+    const hospitalizedGraph = [hospital, hotel]
+
+    const hospitalizedItems = [this.$t('入院'), this.$t('宿泊療養')]
+
+    const hospitalizedLabels = data.map((data) => data.date)
+
+    const hospitalizedDataLabels = hospitalizedItems.map((d) => d)
+    const hospitalizedTableLabels = hospitalizedItems.map((d) => d)
+
+    const getFormatter = () => {
+      return getNumberToLocaleStringFunction()
+    }
 
     return {
-      positiveStatus,
-      patientsGraph,
-      tableLabels,
+      PositiveStatus,
+      hospitalizedGraph,
+      hospitalizedItems,
+      hospitalizedLabels,
+      hospitalizedDataLabels,
+      hospitalizedTableLabels,
+      getFormatter,
     }
   },
 }
