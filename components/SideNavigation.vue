@@ -14,6 +14,8 @@
             class="SideNavigation-HeaderLogo"
             src="/logo.svg"
             :alt="$t('岩手県')"
+            width="111"
+            height="28"
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
@@ -34,19 +36,6 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <div class="SideNavigation-Language">
-          <!--
-          <div
-            v-if="this.$i18n.locales.length > 1"
-            class="SideNavigation-Language"
-          >
-            <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-              {{ $t('多言語対応選択メニュー') }}
-            </label>
-            <language-selector />
-          </div>
-          -->
-        </div>
         <menu-list :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
@@ -60,7 +49,7 @@
           >
             <picture>
               <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" alt="LINE" />
+              <img src="/line.png" alt="LINE" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -72,7 +61,7 @@
             <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
             <picture>
               <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" alt="Twitter" />
+              <img src="/twitter.png" alt="Twitter" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -83,7 +72,7 @@
           >
             <picture>
               <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" />
+              <img src="/facebook.png" alt="Facebook" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -94,7 +83,7 @@
           >
             <picture>
               <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" alt="YouTube" />
+              <img src="/youtube.png" alt="YouTube" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -105,7 +94,7 @@
           >
             <picture>
               <source srcset="/github.webp" type="image/webp" />
-              <img src="/github.png" alt="GitHub" />
+              <img src="/github.png" alt="GitHub" width="30" height="30" />
             </picture>
           </a>
         </div>
@@ -131,7 +120,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
-import LanguageSelector from '@/components/LanguageSelector.vue'
 import MenuList from '@/components/MenuList.vue'
 
 type Item = {
@@ -143,7 +131,6 @@ type Item = {
 
 export default Vue.extend({
   components: {
-    LanguageSelector,
     MenuList,
   },
   props: {
@@ -393,12 +380,6 @@ export default Vue.extend({
   @include lessThan($small) {
     padding-top: 50px;
   }
-}
-
-.SideNavigation-LanguageLabel {
-  display: block;
-  margin-bottom: 5px;
-  @include font-size(14);
 }
 
 .SideNavigation-Footer {
