@@ -313,10 +313,6 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss">
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-}
 .app {
   max-width: 1440px;
   margin: 0 auto;
