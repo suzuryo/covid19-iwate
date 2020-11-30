@@ -14,6 +14,8 @@
             class="SideNavigation-HeaderLogo"
             src="/logo.svg"
             :alt="$t('岩手県')"
+            width="111"
+            height="28"
           />
           <div class="SideNavigation-HeaderText">
             {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
@@ -60,7 +62,7 @@
           >
             <picture>
               <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" alt="LINE" />
+              <img src="/line.png" alt="LINE" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -72,7 +74,7 @@
             <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
             <picture>
               <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" alt="Twitter" />
+              <img src="/twitter.png" alt="Twitter" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -83,7 +85,7 @@
           >
             <picture>
               <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" />
+              <img src="/facebook.png" alt="Facebook" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -94,7 +96,7 @@
           >
             <picture>
               <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" alt="YouTube" />
+              <img src="/youtube.png" alt="YouTube" width="30" height="30" />
             </picture>
           </a>
           <a
@@ -105,7 +107,7 @@
           >
             <picture>
               <source srcset="/github.webp" type="image/webp" />
-              <img src="/github.png" alt="GitHub" />
+              <img src="/github.png" alt="GitHub" width="30" height="30" />
             </picture>
           </a>
         </div>
