@@ -1,6 +1,21 @@
 {
   "newsItems": [
     {
+      "date": "2020/11/30",
+      "url": "https://www.youtube.com/watch?v=XmUqI5SE-bU",
+      "text": "📺 記者会見 (2020/11/30 事例192-194)"
+    },
+    {
+      "date": "2020/11/29",
+      "url": "https://www.youtube.com/watch?v=ewGUZq-Ku-c",
+      "text": "📺 記者会見 (2020/11/29 盛岡市保健所 矢野所長 メッセージ)"
+    },
+    {
+      "date": "",
+      "url": "https://www.youtube.com/watch?v=nSZGsokkLYU",
+      "text": "📺 記者会見 (2020/11/29 事例184-191)"
+    },
+    {
       "date": "2020/11/28",
       "url": "http://www.morioka.jrc.or.jp/",
       "text": "📄 自主公表（盛岡赤十字病院）"
@@ -53,7 +68,7 @@
     {
       "date": "2020/11/19",
       "url": "https://www.youtube.com/watch?v=Z2WwYLG4UC8",
-      "text": "📺 記者会見 (岩手県知事・盛岡市長)「クラスター調査への協力と、感染防止の徹底を」のみ"
+      "text": "📺 記者会見 (岩手県知事・盛岡市長)「クラスター調査への協力と、感染防止の徹底を」"
     },
     {
       "date": "",
