@@ -1206,3 +1206,7 @@ TAG_REMOVE,入院と宿泊療養の患者数
 TAG_REMOVE,個別事例の症状などは公表されないので、重症などは公表された場合は更新
 RUN,2020/12/01 19:45
 TAG_ADD,県内
+RUN,2020/12/01 19:50
+TAG_REMOVE,多言語対応選択メニュー
+TAG_REMOVE,男性
+TAG_REMOVE,女性
