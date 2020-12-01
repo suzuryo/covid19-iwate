@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
@@ -53,6 +54,10 @@ export default {
     for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])
       // row['退院'] = this.getTranslatedWording(row['退院'])
+
+      row['陽性確定日'] = dayjs(date).isValid()
+        ? this.$d(dayjs(row['陽性確定日']).toDate(), 'dateWithoutYear')
+        : '不明'
 
       if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
