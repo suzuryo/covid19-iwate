@@ -53,9 +53,7 @@ export default function (data: DataType[]): TableDateType {
         url !== null
           ? `<a href="${url}" target="_blank">${d['通番']}</a>`
           : `${d['通番']}`
-      const positiveConfirmedDate = d['陽性確定日']
-        ? `${formatDateString(d['陽性確定日'])}`
-        : '不明'
+      const positiveConfirmedDate = d['陽性確定日'] ? d['陽性確定日'] : '不明'
       const occurrenceConfirmedDateDiff = () => {
         if (d['無症状病原体保有者'] === true && d['発症日'] === null) {
           return '無症状'
@@ -79,12 +77,5 @@ export default function (data: DataType[]): TableDateType {
   return {
     headers,
     datasets,
-  }
-}
-
-function formatDateString(date: string): string | undefined {
-  const day = dayjs(date)
-  if (day.isValid()) {
-    return Vue.prototype.$nuxt.$options.i18n.d(day.toDate(), 'dateWithoutYear')
   }
 }
