@@ -141,7 +141,7 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
                                 # 年代を取得
                                 tags.append(patients["年代"])
                                 # 性別を取得
-                                tags.append(patients["性別"])
+                                # tags.append(patients["性別"]) # 性別は表示しないので利用しない
                         elif file_name == JSON_FILES[1]:  # patient_municipalities.jsonの場合
                             for city in json_content["datasets"]["data"]:
                                 # エリアを取得
