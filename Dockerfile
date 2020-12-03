@@ -1,4 +1,6 @@
-FROM node:10.19-alpine
+FROM node:14.15-alpine
+
+RUN apk add g++ make python
 
 ENV PROJECT_ROOTDIR /app/
 
