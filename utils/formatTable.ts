@@ -49,10 +49,6 @@ export default function (data: DataType[]): TableDateType {
   const datasets = data
     .map((d) => {
       const { url } = d
-      const tsuban =
-        url !== null
-          ? `<a href="${url}" target="_blank">${d['通番']}</a>`
-          : `${d['通番']}`
       const positiveConfirmedDate = d['陽性確定日'] ? d['陽性確定日'] : '不明'
       const occurrenceConfirmedDateDiff = () => {
         if (d['無症状病原体保有者'] === true && d['発症日'] === null) {
@@ -64,7 +60,8 @@ export default function (data: DataType[]): TableDateType {
         }
       }
       return {
-        通番: tsuban,
+        通番: d['通番'],
+        通番URL: url,
         陽性確定日: positiveConfirmedDate,
         発症日: occurrenceConfirmedDateDiff(),
         居住地: d['居住地'] ?? '調査中',
