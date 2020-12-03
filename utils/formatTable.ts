@@ -16,6 +16,7 @@ const headers: Header[] = [
 
 type DataType = {
   通番: string
+  通番URL: string | null
   陽性確定日: string
   発症日: string
   居住地: string | null
@@ -25,6 +26,7 @@ type DataType = {
 
 type TableDataType = {
   通番: DataType['通番']
+  通番URL: DataType['通番URL']
   陽性確定日: DataType['陽性確定日']
   発症日: DataType['発症日']
   居住地: DataType['居住地']
