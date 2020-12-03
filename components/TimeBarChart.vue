@@ -54,9 +54,7 @@
       />
       <slot v-if="dataKind === 'cumulative'" name="additionalInfoPanel" />
     </template>
-    <template v-slot:footer>
-      <open-data-link v-show="url" :url="url" />
-    </template>
+    <template v-slot:footer />
   </data-view>
 </template>
 
@@ -74,7 +72,6 @@ import DataViewTable, {
   TableItem,
 } from '@/components/DataViewTable.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
-import OpenDataLink from '@/components/OpenDataLink.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 
 import { getGraphSeriesStyle } from '@/utils/colors'
@@ -133,7 +130,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataViewBasicInfoPanel,
     DataViewTable,
     ScrollableChart,
-    OpenDataLink,
   },
   props: {
     title: {
