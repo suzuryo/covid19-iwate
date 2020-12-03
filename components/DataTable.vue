@@ -31,6 +31,12 @@
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
+            <td class="text-start" v-if="item['会見URL']">
+              <external-link :url="item['会見URL']" :icon="false">
+                📺
+              </external-link>
+            </td>
+            <td v-else />
           </tr>
         </tbody>
       </template>
