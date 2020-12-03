@@ -7,7 +7,6 @@ const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
 
 const config: NuxtConfig = {
-  mode: 'universal',
   target: 'static',
   /*
    ** Headers of the page
