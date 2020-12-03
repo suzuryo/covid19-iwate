@@ -2,6 +2,7 @@
   <a class="ExternalLink" :href="url" target="_blank" rel="noopener noreferrer">
     <slot />
     <v-icon
+      v-if="icon"
       class="ExternalLinkIcon"
       :size="`${iconSize / 10}rem`"
       :aria-label="this.$t('別タブで開く')"
@@ -33,6 +34,10 @@ export default Vue.extend({
     iconSize: {
       type: Number,
       default: 15,
+    },
+    icon: {
+      type: Boolean,
+      default: true,
     },
   },
 })
