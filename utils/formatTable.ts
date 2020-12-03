@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import dayjs from 'dayjs'
 
 type Header = {
@@ -13,7 +12,6 @@ const headers: Header[] = [
   { text: '発症日', value: '発症日' },
   { text: '居住地', value: '居住地' },
   { text: '年代', value: '年代' },
-  // { text: '退院※', value: '退院', align: 'center' },
 ]
 
 type DataType = {
@@ -22,7 +20,6 @@ type DataType = {
   発症日: string
   居住地: string | null
   年代: string | null
-  // 退院: '◯' | null
   [key: string]: any
 }
 
@@ -32,7 +29,6 @@ type TableDataType = {
   発症日: DataType['発症日']
   居住地: DataType['居住地']
   年代: DataType['年代']
-  // 退院: DataType['退院']
 }
 
 type TableDateType = {
@@ -66,7 +62,6 @@ export default function (data: DataType[]): TableDateType {
         発症日: occurrenceConfirmedDateDiff(),
         居住地: d['居住地'] ?? '調査中',
         年代: d['年代'] ?? '不明',
-        // 退院: d['退院'],
       }
     })
     .sort((a, b) => dayjs(a.陽性確定日).unix() - dayjs(b.陽性確定日).unix())
