@@ -49,9 +49,6 @@
         :unit="displayInfo[0].unit"
       />
     </template>
-    <template v-slot:footer>
-      <open-data-link v-show="url" :url="url" />
-    </template>
   </data-view>
 </template>
 
@@ -69,7 +66,6 @@ import DataViewTable, {
 } from '@/components/DataViewTable.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
-import OpenDataLink from '@/components/OpenDataLink.vue'
 import {
   DisplayData,
   DataSets,
@@ -140,7 +136,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataViewTable,
     DataViewDataSetPanel,
     ScrollableChart,
-    OpenDataLink,
   },
   props: {
     title: {
