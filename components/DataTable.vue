@@ -29,7 +29,9 @@
                 {{ item['通番'] }}
               </template>
             </th>
-            <td class="text-start">{{ item['公表日'] }}</td>
+            <td class="text-start">
+              {{ positiveConfirmedDate(item['確定日']) }}
+            </td>
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
@@ -146,6 +148,7 @@
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import { getDayjsObject } from '@/utils/formatDate'
 import ExternalLink from '~/components/ExternalLink.vue'
 
 export default Vue.extend({
@@ -195,6 +198,11 @@ export default Vue.extend({
         })
         return items
       },
+    },
+  },
+  methods: {
+    positiveConfirmedDate(day: string) {
+      return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
     },
   },
   mounted() {
