@@ -19,14 +19,24 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
-            <!-- eslint-disable -->
-            <th class="text-start" scope="row" v-html="item['通番']" /><!-- TODO: XSS 対策 -->
-            <!-- eslint-enable -->
+            <th v-if="item['通番URL']" class="text-start" scope="row">
+              <external-link :url="item['通番URL']" :icon="false">
+                {{ item['通番'] }}
+              </external-link>
+            </th>
+            <th v-else class="text-start" scope="row">
+              {{ item['通番'] }}
+            </th>
             <td class="text-start">{{ item['陽性確定日'] }}</td>
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
-            <!-- <td class="text-center">{{ item['退院'] }}</td> -->
+            <td v-if="item['会見URL']" class="text-start">
+              <external-link :url="item['会見URL']" :icon="false">
+                📺
+              </external-link>
+            </td>
+            <td v-else />
           </tr>
         </tbody>
       </template>
@@ -133,9 +143,10 @@
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import ExternalLink from '~/components/ExternalLink.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewBasicInfoPanel },
+  components: { DataView, DataViewBasicInfoPanel, ExternalLink },
   props: {
     title: {
       type: String,
