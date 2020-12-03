@@ -19,24 +19,27 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
-            <th v-if="item['通番URL']" class="text-start" scope="row">
-              <external-link :url="item['通番URL']" :icon="false">
+            <th class="text-start" scope="row">
+              <template v-if="item['通番URL']">
+                <external-link :url="item['通番URL']" :icon="false">
+                  {{ item['通番'] }}
+                </external-link>
+              </template>
+              <template v-else>
                 {{ item['通番'] }}
-              </external-link>
+              </template>
             </th>
-            <th v-else class="text-start" scope="row">
-              {{ item['通番'] }}
-            </th>
-            <td class="text-start">{{ item['陽性確定日'] }}</td>
+            <td class="text-start">{{ item['公表日'] }}</td>
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
-            <td v-if="item['会見URL']" class="text-start">
-              <external-link :url="item['会見URL']" :icon="false">
-                📺
-              </external-link>
+            <td class="text-start">
+              <template v-if="item['会見URL']">
+                <external-link :url="item['会見URL']" :icon="false">
+                  📺
+                </external-link>
+              </template>
             </td>
-            <td v-else />
           </tr>
         </tbody>
       </template>
