@@ -49,7 +49,6 @@
         :unit="displayInfo[0].unit"
       />
     </template>
-    <template v-slot:footer />
   </data-view>
 </template>
 
