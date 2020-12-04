@@ -28,7 +28,6 @@
       </v-container>
     </div>
     <no-script />
-    <development-mode-mark />
   </v-app>
 </template>
 
@@ -41,7 +40,6 @@ import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import SideNavigation from '@/components/SideNavigation.vue'
 import NoScript from '@/components/NoScript.vue'
-import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import dayjs from 'dayjs'
@@ -53,7 +51,6 @@ type LocalData = {
 }
 export default Vue.extend({
   components: {
-    DevelopmentModeMark,
     ScaleLoader,
     SideNavigation,
     NoScript,
