@@ -152,15 +152,6 @@ export default Vue.extend({
             'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
         {
-          title: this.$t('イベントカレンダー'),
-          link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
-        },
-        {
-          title: this.$t('知事からのメッセージ'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1032441.html',
-        },
-        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
         },
