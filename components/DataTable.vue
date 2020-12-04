@@ -21,7 +21,7 @@
           <tr v-for="item in items" :key="item.text">
             <th class="text-start" scope="row">
               <template v-if="item['通番URL']">
-                <app-link :to="item['通番URL']" :showIcon="false">
+                <app-link :to="item['通番URL']" :show-icon="false">
                   {{ item['通番'] }}
                 </app-link>
               </template>
@@ -37,7 +37,7 @@
             <td class="text-start">{{ item['年代'] }}</td>
             <td class="text-start">
               <template v-if="item['会見URL']">
-                <app-link :to="item['会見URL']" :showIcon="false">
+                <app-link :to="item['会見URL']" :show-icon="false">
                   📺
                 </app-link>
               </template>
