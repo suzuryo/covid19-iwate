@@ -81,7 +81,7 @@
           path="このサイトの内容物は{creativeCommons}の下に提供されています。"
           class="SideNavigation-Copyright"
         >
-          <template v-slot:creativeCommons>
+          <template #creativeCommons>
             <app-link
               :to="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
               :icon-size="12"
