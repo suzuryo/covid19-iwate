@@ -119,8 +119,8 @@
       </p>
       <ul>
         <li>
-          <external-link
-            :url="
+          <app-link
+            :to="
               $t(
                 'https://marketingplatform.google.com/about/analytics/terms/jp/'
               )
@@ -128,25 +128,25 @@
             :icon-size="16"
           >
             {{ $t('Google Analytics利用規約') }}
-          </external-link>
+          </app-link>
         </li>
         <li>
-          <external-link
-            :url="$t('https://policies.google.com/privacy?hl=ja')"
+          <app-link
+            :to="$t('https://policies.google.com/privacy?hl=ja')"
             :icon-size="16"
           >
             {{ $t('Googleのプライバシーポリシー') }}
-          </external-link>
+          </app-link>
         </li>
         <li>
-          <external-link
-            :url="
+          <app-link
+            :to="
               $t('https://support.google.com/analytics/answer/6004245?hl=ja')
             "
             :icon-size="16"
           >
             {{ $t('Google Analyticsに関する詳細情報') }}
-          </external-link>
+          </app-link>
         </li>
       </ul>
       <i18n
@@ -154,12 +154,12 @@
         path="Google Analyticsによる情報送信を回避する場合は、Google がサポートする{addon}をご利用ください。"
       >
         <template v-slot:addon>
-          <external-link
-            :url="$t('https://tools.google.com/dlpage/gaoptout?hl=ja')"
+          <app-link
+            :to="$t('https://tools.google.com/dlpage/gaoptout?hl=ja')"
             :icon-size="16"
           >
             {{ $t('測定を無効にするブラウザ アドオン') }}
-          </external-link>
+          </app-link>
         </template>
       </i18n>
     </static-card>
@@ -195,12 +195,12 @@
         path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
       >
         <template v-slot:catalogWebsite>
-          <external-link
-            url="https://portal.data.metro.tokyo.lg.jp/"
+          <app-link
+            to="https://portal.data.metro.tokyo.lg.jp/"
             :icon-size="16"
           >
             {{ $t('東京都オープンデータカタログサイト') }}
-          </external-link>
+          </app-link>
         </template>
       </i18n>
     </static-card>
@@ -215,12 +215,12 @@
         }}
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template v-slot:githubRepo>
-            <external-link
-              url="https://github.com/MeditationDuck/covid19"
+            <app-link
+              to="https://github.com/MeditationDuck/covid19"
               :icon-size="16"
             >
               {{ $t('GitHub リポジトリ') }}
-            </external-link>
+            </app-link>
           </template>
         </i18n>
       </p>
@@ -233,13 +233,13 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import StaticCard from '@/components/StaticCard.vue'
-import ExternalLink from '@/components/ExternalLink.vue'
+import AppLink from '@/components/AppLink.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
     StaticCard,
-    ExternalLink,
+    AppLink,
   },
   head(): MetaInfo {
     return {

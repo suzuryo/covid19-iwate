@@ -21,9 +21,9 @@
           <tr v-for="item in items" :key="item.text">
             <th class="text-start" scope="row">
               <template v-if="item['通番URL']">
-                <external-link :url="item['通番URL']" :icon="false">
+                <app-link :to="item['通番URL']" :show-icon="false">
                   {{ item['通番'] }}
-                </external-link>
+                </app-link>
               </template>
               <template v-else>
                 {{ item['通番'] }}
@@ -37,9 +37,9 @@
             <td class="text-start">{{ item['年代'] }}</td>
             <td class="text-start">
               <template v-if="item['会見URL']">
-                <external-link :url="item['会見URL']" :icon="false">
+                <app-link :to="item['会見URL']" :show-icon="false">
                   📺
-                </external-link>
+                </app-link>
               </template>
             </td>
           </tr>
@@ -72,6 +72,80 @@
     </template>
   </data-view>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import DataView from '@/components/DataView.vue'
+import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import { getDayjsObject } from '@/utils/formatDate'
+import AppLink from '@/components/AppLink.vue'
+
+export default Vue.extend({
+  components: { DataView, DataViewBasicInfoPanel, AppLink },
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    titleId: {
+      type: String,
+      default: '',
+    },
+    chartData: {
+      type: Object,
+      default: () => {},
+    },
+    date: {
+      type: String,
+      default: '',
+    },
+    info: {
+      type: Object,
+      default: () => {},
+    },
+    url: {
+      type: String,
+      default: '',
+    },
+    customSort: {
+      type: Function,
+      default(items: Object[], index: string[], isDesc: boolean[]) {
+        items.sort((a: any, b: any) => {
+          let comparison = 0
+          if (String(a[index[0]]) < String(b[index[0]])) {
+            comparison = -1
+          } else if (String(b[index[0]]) < String(a[index[0]])) {
+            comparison = 1
+          }
+          // a と b が等しい場合は上記のif文を両方とも通過するので 0 のままとなる
+
+          // 降順指定の場合は符号を反転
+          if (comparison !== 0) {
+            comparison = isDesc[0] ? comparison * -1 : comparison
+          }
+          return comparison
+        })
+        return items
+      },
+    },
+  },
+  methods: {
+    positiveConfirmedDate(day: string) {
+      return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
+    },
+  },
+  mounted() {
+    const vTables = this.$refs.displayedTable as Vue
+    const vTableElement = vTables.$el
+    const tables = vTableElement.querySelectorAll('table')
+    // NodeListをIE11でforEachするためのワークアラウンド
+    const nodes = Array.prototype.slice.call(tables, 0)
+    nodes.forEach((table: HTMLElement) => {
+      table.setAttribute('tabindex', '0')
+    })
+  },
+})
+</script>
 
 <style lang="scss">
 .cardTable {
@@ -143,77 +217,3 @@
   font-size: 1.5rem;
 }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-import DataView from '@/components/DataView.vue'
-import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-import { getDayjsObject } from '@/utils/formatDate'
-import ExternalLink from '~/components/ExternalLink.vue'
-
-export default Vue.extend({
-  components: { DataView, DataViewBasicInfoPanel, ExternalLink },
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    titleId: {
-      type: String,
-      default: '',
-    },
-    chartData: {
-      type: Object,
-      default: () => {},
-    },
-    date: {
-      type: String,
-      default: '',
-    },
-    info: {
-      type: Object,
-      default: () => {},
-    },
-    url: {
-      type: String,
-      default: '',
-    },
-    customSort: {
-      type: Function,
-      default(items: Object[], index: string[], isDesc: boolean[]) {
-        items.sort((a: any, b: any) => {
-          let comparison = 0
-          if (String(a[index[0]]) < String(b[index[0]])) {
-            comparison = -1
-          } else if (String(b[index[0]]) < String(a[index[0]])) {
-            comparison = 1
-          }
-          // a と b が等しい場合は上記のif文を両方とも通過するので 0 のままとなる
-
-          // 降順指定の場合は符号を反転
-          if (comparison !== 0) {
-            comparison = isDesc[0] ? comparison * -1 : comparison
-          }
-          return comparison
-        })
-        return items
-      },
-    },
-  },
-  methods: {
-    positiveConfirmedDate(day: string) {
-      return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
-    },
-  },
-  mounted() {
-    const vTables = this.$refs.displayedTable as Vue
-    const vTableElement = vTables.$el
-    const tables = vTableElement.querySelectorAll('table')
-    // NodeListをIE11でforEachするためのワークアラウンド
-    const nodes = Array.prototype.slice.call(tables, 0)
-    nodes.forEach((table: HTMLElement) => {
-      table.setAttribute('tabindex', '0')
-    })
-  },
-})
-</script>

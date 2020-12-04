@@ -24,11 +24,11 @@
         </template>
         <template v-slot:additionalDescription>
           <div class="Description-ExternalLink">
-            <external-link
-              url="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/todokedehcyouseisya.html"
+            <app-link
+              to="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/todokedehcyouseisya.html"
             >
               {{ $t('届出保健所別の内訳') }}
-            </external-link>
+            </app-link>
           </div>
           <span>{{ $t('（注）') }}</span>
           <ul>
@@ -53,12 +53,12 @@
 import Data from '@/data/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-// import ExternalLink from '@/components/ExternalLink.vue'
+// import AppLink from '@/components/AppLink.vue'
 
 export default {
   components: {
     TimeBarChart,
-    // ExternalLink,
+    // AppLink,
   },
   data() {
     // 感染者数グラフ

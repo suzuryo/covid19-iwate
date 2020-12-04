@@ -82,18 +82,18 @@
           </table>
           <div :class="$style.bedExternalLink">
             <div>
-              <external-link
-                url="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=3"
+              <app-link
+                to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=3"
               >
                 {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
-              </external-link>
+              </app-link>
             </div>
             <div>
-              <external-link
-                url="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
+              <app-link
+                to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
               >
                 {{ $t('岩手県 / 第19回本部員会議資料【資料4-1】[PDF]') }}
-              </external-link>
+              </app-link>
             </div>
           </div>
         </template>
@@ -106,12 +106,12 @@
 import PositiveStatus from '@/data/positive_status.json'
 import HospitalizedTimeStackedBarChart from '@/components/HospitalizedTimeStackedBarChart.vue'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters.ts'
-import ExternalLink from '@/components/ExternalLink.vue'
+import AppLink from '@/components/AppLink.vue'
 
 export default {
   components: {
     HospitalizedTimeStackedBarChart,
-    ExternalLink,
+    AppLink,
   },
   data() {
     const { data } = PositiveStatus
