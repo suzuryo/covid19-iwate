@@ -1,13 +1,15 @@
 <template>
   <div ref="Side" class="SideNavigation" tabindex="-1">
     <header class="SideNavigation-Header">
-      <v-icon
+      <span
         class="SideNavigation-OpenIcon"
         :aria-label="$t('サイドメニュー項目を開く')"
-      >
-        mdi-menu
         @click="$emit('open-navigation', $event)"
-      </v-icon>
+      >
+        <v-icon>
+          {{ mdiMenu }}
+        </v-icon>
+      </span>
       <h1 class="SideNavigation-HeaderTitle">
         <app-link :to="localePath('/')" class="SideNavigation-HeaderLink">
           <img
@@ -27,13 +29,15 @@
     </header>
 
     <div :class="['SideNavigation-Body', { '-opened': isNaviOpen }]">
-      <v-icon
+      <span
         class="SideNavigation-CloseIcon"
         :aria-label="$t('サイドメニュー項目を閉じる')"
         @click="$emit('close-navigation', $event)"
       >
-        mdi-close
-      </v-icon>
+        <v-icon>
+          {{ mdiClose }}
+        </v-icon>
+      </span>
 
       <nav class="SideNavigation-Menu">
         <menu-list :items="items" @click="$emit('close-navigation', $event)" />
@@ -221,10 +225,13 @@ export default Vue.extend({
 
 .SideNavigation-OpenIcon {
   position: absolute;
+  width: 52px;
+  height: 64px;
   top: 0;
   left: 0;
-  padding: 18px 8px 18px 16px;
-  font-size: 28px;
+  padding: 20px 14px;
+  font-size: 24px;
+  line-height: 1;
   @include lessThan($tiny) {
     font-size: 24px;
     padding: 20px 10px;
@@ -238,8 +245,9 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   left: 0;
-  padding: 18px 8px 18px 16px;
-  font-size: 28px;
+  padding: 20px 14px;
+  font-size: 24px;
+  line-height: 1;
   @include lessThan($tiny) {
     font-size: 24px;
     padding: 20px 10px;
