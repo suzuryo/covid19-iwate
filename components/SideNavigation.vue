@@ -1,15 +1,17 @@
 <template>
   <div ref="Side" class="SideNavigation" tabindex="-1">
     <header class="SideNavigation-Header">
-      <v-icon
+      <span
         class="SideNavigation-OpenIcon"
         :aria-label="$t('サイドメニュー項目を開く')"
-        @click="$emit('openNavi', $event)"
+        @click="$emit('open-navigation', $event)"
       >
-        mdi-menu
-      </v-icon>
+        <v-icon>
+          {{ mdiMenu }}
+        </v-icon>
+      </span>
       <h1 class="SideNavigation-HeaderTitle">
-        <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
+        <app-link :to="localePath('/')" class="SideNavigation-HeaderLink">
           <img
             class="SideNavigation-HeaderLogo"
             src="/logo.svg"
@@ -22,94 +24,75 @@
               $t('menu/対策サイト')
             }}
           </div>
-        </nuxt-link>
+        </app-link>
       </h1>
     </header>
 
     <div :class="['SideNavigation-Body', { '-opened': isNaviOpen }]">
-      <v-icon
+      <span
         class="SideNavigation-CloseIcon"
         :aria-label="$t('サイドメニュー項目を閉じる')"
-        @click="$emit('closeNavi', $event)"
+        @click="$emit('close-navigation', $event)"
       >
-        mdi-close
-      </v-icon>
+        <v-icon>
+          {{ mdiClose }}
+        </v-icon>
+      </span>
 
       <nav class="SideNavigation-Menu">
-        <menu-list :items="items" @click="$emit('closeNavi', $event)" />
+        <menu-list :items="items" @click="$emit('close-navigation', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
-          <a
-            href="https://line.me/R/ti/p/%40566kxdol"
-            target="_blank"
-            rel="noopener noreferrer"
+          <app-link
+            to="https://line.me/R/ti/p/%40566kxdol"
+            :show-icon="false"
             class="SideNavigation-SocialLink"
           >
             <picture>
               <source srcset="/line.webp" type="image/webp" />
               <img src="/line.png" alt="LINE" width="30" height="30" />
             </picture>
-          </a>
-          <a
-            href="https://twitter.com/iwatevscovid19"
-            target="_blank"
-            rel="noopener noreferrer"
+          </app-link>
+          <app-link
+            to="https://twitter.com/iwatevscovid19"
+            :show-icon="false"
             class="SideNavigation-SocialLink"
           >
-            <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
             <picture>
               <source srcset="/twitter.webp" type="image/webp" />
               <img src="/twitter.png" alt="Twitter" width="30" height="30" />
             </picture>
-          </a>
-          <a
-            href="https://www.facebook.com/pref.iwate/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" width="30" height="30" />
-            </picture>
-          </a>
-          <a
-            href="https://www.youtube.com/user/prefiwate/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" alt="YouTube" width="30" height="30" />
-            </picture>
-          </a>
-          <a
-            href="https://github.com/MeditationDuck/covid19"
-            target="_blank"
-            rel="noopener noreferrer"
+          </app-link>
+          <app-link
+            to="https://github.com/MeditationDuck/covid19"
+            :show-icon="false"
             class="SideNavigation-SocialLink"
           >
             <picture>
               <source srcset="/github.webp" type="image/webp" />
               <img src="/github.png" alt="GitHub" width="30" height="30" />
             </picture>
-          </a>
+          </app-link>
         </div>
+        <i18n
+          tag="small"
+          path="このサイトの内容物は{creativeCommons}の下に提供されています。"
+          class="SideNavigation-Copyright"
+        >
+          <template #creativeCommons>
+            <app-link
+              :to="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
+              :icon-size="12"
+              class="SideNavigation-LicenseLink"
+            >
+              {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
+            </app-link>
+          </template>
+        </i18n>
+        <br />
         <small class="SideNavigation-Copyright">
-          {{ $t('このサイトの内容物は') }}
-          <a
-            :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
-            target="_blank"
-            rel="noopener noreferrer license"
-            class="SideNavigation-LicenseLink"
-          >
-            {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
-          </a>
-          {{ $t('の下に提供されています。') }}
-          <br />
           &copy; 2020 Meditation Duck
         </small>
       </footer>
@@ -118,12 +101,21 @@
 </template>
 
 <script lang="ts">
+import {
+  mdiAccountMultiple,
+  mdiChartTimelineVariant,
+  mdiClose,
+  mdiDomain,
+  mdiMenu,
+} from '@mdi/js'
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
+import AppLink from '@/components/AppLink.vue'
 import MenuList from '@/components/MenuList.vue'
 
 type Item = {
-  icon?: string
+  iconPath?: string
+  svg?: string
   title: TranslateResult
   link: string
   divider?: boolean
@@ -132,6 +124,7 @@ type Item = {
 export default Vue.extend({
   components: {
     MenuList,
+    AppLink,
   },
   props: {
     isNaviOpen: {
@@ -139,45 +132,33 @@ export default Vue.extend({
       required: true,
     },
   },
+  data() {
+    return {
+      mdiClose,
+      mdiMenu,
+    }
+  },
   computed: {
     items(): Item[] {
       return [
         {
-          icon: 'mdi-chart-timeline-variant',
+          iconPath: mdiChartTimelineVariant,
           title: this.$t('岩手の最新感染動向'),
           link: this.localePath('/'),
         },
         {
-          icon: 'CovidIcon',
+          svg: 'CovidIcon',
           title: this.$t('新型コロナウイルス感染症が心配なときに'),
           link: this.localePath('/flow'),
         },
-        // {
-        //   icon: 'CovidIcon',
-        //   title: this.$t('新型コロナウイルスの感染が判明した方へ'),
-        //   link:
-        //     'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
-        // },
-        // {
-        //   icon: 'MaskTrashIcon',
-        //   title: this.$t('ご家庭でのマスク等の捨て方'),
-        //   link:
-        //     'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
-        //   divider: true,
-        // },
-        // {
-        //   icon: 'ParentIcon',
-        //   title: this.$t('お子様をお持ちの皆様へ'),
-        //   link: this.localePath('/parent'),
-        // },
         {
-          icon: 'mdi-account-multiple',
+          iconPath: mdiAccountMultiple,
           title: this.$t('県民の皆様へ'),
           link:
             'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028768.html',
         },
         {
-          icon: 'mdi-domain',
+          iconPath: mdiDomain,
           title: this.$t('企業の皆様・はたらく皆様へ'),
           link: this.localePath('/worker'),
           divider: true,
@@ -193,30 +174,8 @@ export default Vue.extend({
             'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
         {
-          title: this.$t('イベントカレンダー'),
-          link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
-        },
-        // {
-        //   title: this.$t('東京都における滞在人口の増減'),
-        //   link:
-        //     'https://www.seisakukikaku.metro.tokyo.lg.jp/information/corona-people-flow-analysis.html',
-        // },
-        {
-          title: this.$t('知事からのメッセージ'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1032441.html',
-        },
-        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
-        },
-        // {
-        //   title: this.$t('お問い合わせ先一覧'),
-        //   link: this.localePath('/contacts'),
-        // },
-        {
-          title: this.$t('岩手県公式ホームページ'),
-          link: 'https://www.pref.iwate.jp/',
         },
       ]
     },
@@ -266,10 +225,13 @@ export default Vue.extend({
 
 .SideNavigation-OpenIcon {
   position: absolute;
+  width: 52px;
+  height: 64px;
   top: 0;
   left: 0;
-  padding: 18px 8px 18px 16px;
-  font-size: 28px;
+  padding: 20px 14px;
+  font-size: 24px;
+  line-height: 1;
   @include lessThan($tiny) {
     font-size: 24px;
     padding: 20px 10px;
@@ -283,8 +245,9 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   left: 0;
-  padding: 18px 8px 18px 16px;
-  font-size: 28px;
+  padding: 20px 14px;
+  font-size: 24px;
+  line-height: 1;
   @include lessThan($tiny) {
     font-size: 24px;
     padding: 20px 10px;
@@ -394,6 +357,7 @@ export default Vue.extend({
   border: 1px dotted transparent;
   border-radius: 30px;
   color: $gray-3;
+  margin-bottom: 15px;
 
   &:link,
   &:hover,
@@ -420,8 +384,7 @@ export default Vue.extend({
 }
 
 .SideNavigation-Copyright {
-  display: block;
-  margin-top: 15px;
+  display: inline-block;
   color: $gray-1;
   line-height: 1.3;
   font-weight: bold;

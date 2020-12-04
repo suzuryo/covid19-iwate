@@ -23,14 +23,12 @@
           })
         }}
       </p>
-      <v-icon color="#D9D9D9">mdi-chevron-right</v-icon>
-      <a
-        href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/monitoring.html"
-        target="_blank"
-        rel="noopener noreferrer"
+      <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
+      <app-link
+        to="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/monitoring.html"
       >
         {{ $t('最新のモニタリング項目の分析・総括コメントについて') }}
-      </a>
+      </app-link>
     </div>
     <div class="MonitoringComment-comments">
       <v-row>
@@ -57,14 +55,18 @@
 import Vue from 'vue'
 import MonitoringCommentFrame from '@/components/MonitoringCommentFrame.vue'
 import monitoringItems from '@/data/monitoring_items.json'
+import { mdiChevronRight } from '@mdi/js'
+import AppLink from './AppLink'
 
 export default Vue.extend({
   components: {
     MonitoringCommentFrame,
+    AppLink,
   },
   data() {
     return {
       monitoringItems,
+      mdiChevronRight,
     }
   },
   methods: {

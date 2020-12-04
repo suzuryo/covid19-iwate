@@ -1,7 +1,9 @@
 <template>
   <div class="MainPage">
     <div class="Header mb-3">
-      <page-header :icon="headerItem.icon">{{ headerItem.title }}</page-header>
+      <page-header :icon-path="headerItem.iconPath">{{
+        headerItem.title
+      }}</page-header>
       <div class="UpdatedAt">
         <span>{{ $t('最終更新') }}</span>
         <time :datetime="updatedAt">{{ formattedDateForDisplay }}</time>
@@ -39,6 +41,7 @@ import Data from '@/data/data.json'
 import News from '@/data/news.json'
 import TokyoAlert from '@/data/tokyo_alert.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+import { mdiChartTimelineVariant } from '@mdi/js'
 
 export default Vue.extend({
   components: {
@@ -53,7 +56,7 @@ export default Vue.extend({
       Data,
       TokyoAlert,
       headerItem: {
-        icon: 'mdi-chart-timeline-variant',
+        iconPath: mdiChartTimelineVariant,
         title: this.$t('岩手の最新感染動向'),
       },
       newsItems: News.newsItems,

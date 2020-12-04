@@ -298,16 +298,13 @@
       -->
     </div>
     <div :class="$style.detail">
-      <a
-        href="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html#callcenter"
-        target="_blank"
+      <app-link
+        to="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html#callcenter"
+        :icon-size="20"
+        :icon-class="$style.icon"
         :class="$style.detailButton"
-        rel="noopener noreferrer"
         >{{ $t('詳細を見る（岩手県新型コロナウイルス感染症関連情報）') }}
-        <v-icon :class="$style.icon" size="2rem">
-          mdi-open-in-new
-        </v-icon>
-      </a>
+      </app-link>
     </div>
   </div>
 </template>
@@ -319,12 +316,13 @@ import VueScrollTo from 'vue-scrollto'
 import CovidIcon from '@/static/covid.svg'
 import PrinterButton from '@/components/PrinterButton.vue'
 import PageHeader from '@/components/PageHeader.vue'
-// import ExternalLink from '@/components/ExternalLink.vue'
 // import FigCondSyDr from '@/static/flow/cond_sydr.svg'
+import AppLink from '@/components/AppLink.vue'
 import FigCondSy from '@/static/flow/cond_sy.svg'
 import FigCondAnx from '@/static/flow/cond_anx.svg'
 import IconPhone from '@/static/flow/phone.svg'
 // import IconBed from '@/static/flow/bed.svg'
+import { mdiOpenInNew } from '@mdi/js'
 
 type LocalData = {
   nav: HTMLElement | null // アンカーリンクコンテナ（フローティング対象）
@@ -340,6 +338,7 @@ type LocalData = {
   floatingOffset: number // フローティング時のオフセット量
   forceFloating: boolean // ボタン押下時の強制フローティングフラグ
   timerId: number // scrollイベントのdebounce用タイマーID
+  mdiOpenInNew: string
 }
 
 export default Vue.extend({
@@ -347,8 +346,8 @@ export default Vue.extend({
     CovidIcon,
     PrinterButton,
     PageHeader,
-    // ExternalLink,
     // FigCondSyDr,
+    AppLink,
     FigCondSy,
     FigCondAnx,
     IconPhone,
@@ -383,6 +382,7 @@ export default Vue.extend({
       floatingOffset,
       forceFloating,
       timerId,
+      mdiOpenInNew,
     }
   },
   mounted() {
