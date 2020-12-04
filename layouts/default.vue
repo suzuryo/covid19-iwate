@@ -2,7 +2,6 @@
   <v-app class="app">
     <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <!-- TODO: 東京版を修正 -->
         <img src="/logo.svg" :alt="$t('岩手県')" />
         <scale-loader color="#00A040" />
       </div>
