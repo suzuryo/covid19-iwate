@@ -2,7 +2,6 @@
   <v-app class="app">
     <v-overlay :value="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
-        <!-- TODO: 東京版を修正 -->
         <img src="/logo.svg" :alt="$t('岩手県')" />
         <scale-loader color="#00A040" />
       </div>
@@ -12,8 +11,8 @@
         <side-navigation
           :is-navi-open="isOpenNavigation"
           :class="{ open: isOpenNavigation }"
-          @openNavi="openNavigation"
-          @closeNavi="hideNavigation"
+          @open-navigation="openNavigation"
+          @close-navigation="closeNavigation"
         />
       </div>
       <main class="mainContainer" :class="{ open: isOpenNavigation }">
@@ -28,7 +27,6 @@
       </v-container>
     </div>
     <no-script />
-    <development-mode-mark />
   </v-app>
 </template>
 
@@ -41,7 +39,6 @@ import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import SideNavigation from '@/components/SideNavigation.vue'
 import NoScript from '@/components/NoScript.vue'
-import DevelopmentModeMark from '@/components/DevelopmentModeMark.vue'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import dayjs from 'dayjs'
@@ -53,7 +50,6 @@ type LocalData = {
 }
 export default Vue.extend({
   components: {
-    DevelopmentModeMark,
     ScaleLoader,
     SideNavigation,
     NoScript,
@@ -76,16 +72,16 @@ export default Vue.extend({
   },
   mounted() {
     this.loading = false
-    this.getMatchMedia().addListener(this.hideNavigation)
+    this.getMatchMedia().addListener(this.closeNavigation)
   },
   beforeDestroy() {
-    this.getMatchMedia().removeListener(this.hideNavigation)
+    this.getMatchMedia().removeListener(this.closeNavigation)
   },
   methods: {
     openNavigation(): void {
       this.isOpenNavigation = true
     },
-    hideNavigation(): void {
+    closeNavigation(): void {
       this.isOpenNavigation = false
     },
     getMatchMedia(): MediaQueryList {

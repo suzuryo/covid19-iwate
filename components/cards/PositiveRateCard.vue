@@ -60,11 +60,11 @@
             </div>
             <div :class="$style.newScenarioExternalLink">
               <div>
-                <external-link
-                  url="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=5"
+                <app-link
+                  to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=5"
                 >
                   {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
-                </external-link>
+                </app-link>
               </div>
             </div>
           </div>
@@ -84,13 +84,13 @@ import {
   getNumberToLocaleStringFunction,
   getCommaSeparatedNumberToFixedFunction,
 } from '@/utils/monitoringStatusValueFormatters'
-import ExternalLink from '@/components/ExternalLink'
+import AppLink from '@/components/AppLink.vue'
 dayjs.extend(duration)
 
 export default {
   components: {
     PositiveRateMixedChart,
-    ExternalLink,
+    AppLink,
   },
   data() {
     // 検査実施日別状況

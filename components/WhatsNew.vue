@@ -2,8 +2,8 @@
   <div class="WhatsNew">
     <div class="WhatsNew-heading">
       <h3 class="WhatsNew-title">
-        <v-icon size="2.4rem" class="WhatsNew-title-icon">
-          mdi-information
+        <v-icon size="24" class="WhatsNew-title-icon">
+          {{ mdiInformation }}
         </v-icon>
         {{ $t('最新のお知らせ') }}
       </h3>
@@ -30,9 +30,9 @@
             <v-icon
               v-if="!isInternalLink(item.url)"
               class="WhatsNew-item-ExternalLinkIcon"
-              size="1.2rem"
+              size="12"
             >
-              mdi-open-in-new
+              {{ mdiOpenInNew }}
             </v-icon>
           </span>
         </a>
@@ -44,12 +44,19 @@
 <script lang="ts">
 import Vue from 'vue'
 import LinkToInformationAboutEmergencyMeasure from '@/components/LinkToInformationAboutEmergencyMeasure.vue'
+import { mdiInformation, mdiOpenInNew } from '@mdi/js'
 
 import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
   components: {
     LinkToInformationAboutEmergencyMeasure,
+  },
+  data() {
+    return {
+      mdiInformation,
+      mdiOpenInNew,
+    }
   },
   props: {
     items: {
