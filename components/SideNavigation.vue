@@ -65,28 +65,6 @@
             </picture>
           </a>
           <a
-            href="https://www.facebook.com/pref.iwate/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" width="30" height="30" />
-            </picture>
-          </a>
-          <a
-            href="https://www.youtube.com/user/prefiwate/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" alt="YouTube" width="30" height="30" />
-            </picture>
-          </a>
-          <a
             href="https://github.com/MeditationDuck/covid19"
             target="_blank"
             rel="noopener noreferrer"
