@@ -58,7 +58,6 @@
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
-            <!-- 岩手県広聴広報課 Twitter: https://twitter.com/pref_iwate -->
             <picture>
               <source srcset="/twitter.webp" type="image/webp" />
               <img src="/twitter.png" alt="Twitter" width="30" height="30" />
@@ -130,24 +129,6 @@ export default Vue.extend({
           title: this.$t('新型コロナウイルス感染症が心配なときに'),
           link: this.localePath('/flow'),
         },
-        // {
-        //   icon: 'CovidIcon',
-        //   title: this.$t('新型コロナウイルスの感染が判明した方へ'),
-        //   link:
-        //     'https://www.fukushihoken.metro.tokyo.lg.jp/oshirase/corona_0401.html',
-        // },
-        // {
-        //   icon: 'MaskTrashIcon',
-        //   title: this.$t('ご家庭でのマスク等の捨て方'),
-        //   link:
-        //     'https://www.kankyo.metro.tokyo.lg.jp/resource/500200a20200221162304660.files/200327_chirashi.pdf',
-        //   divider: true,
-        // },
-        // {
-        //   icon: 'ParentIcon',
-        //   title: this.$t('お子様をお持ちの皆様へ'),
-        //   link: this.localePath('/parent'),
-        // },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
@@ -174,11 +155,6 @@ export default Vue.extend({
           title: this.$t('イベントカレンダー'),
           link: 'https://www.pref.iwate.jp/cgi-evt/event.cgi',
         },
-        // {
-        //   title: this.$t('東京都における滞在人口の増減'),
-        //   link:
-        //     'https://www.seisakukikaku.metro.tokyo.lg.jp/information/corona-people-flow-analysis.html',
-        // },
         {
           title: this.$t('知事からのメッセージ'),
           link:
@@ -188,10 +164,6 @@ export default Vue.extend({
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
         },
-        // {
-        //   title: this.$t('お問い合わせ先一覧'),
-        //   link: this.localePath('/contacts'),
-        // },
         {
           title: this.$t('岩手県公式ホームページ'),
           link: 'https://www.pref.iwate.jp/',
