@@ -2,8 +2,6 @@ import { NuxtConfig } from '@nuxt/types'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import i18n from './nuxt-i18n.config'
-const purgecss = require('@fullhuman/postcss-purgecss')
-const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
 
 const config: NuxtConfig = {
@@ -53,7 +51,7 @@ const config: NuxtConfig = {
   /*
    ** Global CSS
    */
-  css: ['~assets/global.scss'],
+  css: ['@/assets/global.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -66,10 +64,6 @@ const config: NuxtConfig = {
       src: '@/plugins/axe',
       ssr: true,
     },
-    {
-      src: '@/plugins/vuetify.ts',
-      ssr: true,
-    },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -79,6 +73,7 @@ const config: NuxtConfig = {
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics',
+    'nuxt-purgecss',
   ],
   /*
    ** Nuxt.js modules
@@ -89,7 +84,6 @@ const config: NuxtConfig = {
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
-    'nuxt-purgecss',
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
     '@nuxtjs/sitemap',
     'nuxt-webfontloader',
@@ -99,7 +93,8 @@ const config: NuxtConfig = {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['@/assets/variables.scss'],
+    optionsPath: './plugins/vuetify.options.ts',
     treeShake: true,
     defaultAssets: false,
   },
@@ -131,30 +126,28 @@ const config: NuxtConfig = {
   ], */
   build: {
     postcss: {
-      plugins: [
-        autoprefixer({ grid: 'autoplace' }),
-        purgecss({
-          content: [
-            './pages/**/*.vue',
-            './layouts/**/*.vue',
-            './components/**/*.vue',
-            './node_modules/vuetify/dist/vuetify.js',
-            './node_modules/vue-spinner/src/ScaleLoader.vue',
-          ],
-          whitelist: ['html', 'body', 'nuxt-progress', 'DataCard'],
-          whitelistPatterns: [/(col|row)/],
-        }),
-      ],
+      preset: {
+        autoprefixer: {
+          // Built-in since nuxt@2.14.5
+          grid: 'autoplace',
+        },
+      },
     },
     extend(config) {
       // default externals option is undefined
       config.externals = [{ moment: 'moment' }]
     },
-    // https://ja.nuxtjs.org/api/configuration-build/#hardsource
-    // hardSource: process.env.NODE_ENV === 'development'
+  },
+  purgeCSS: {
+    paths: [
+      './node_modules/vuetify/dist/vuetify.js',
+      './node_modules/vue-spinner/src/ScaleLoader.vue',
+    ],
+    whitelist: ['DataCard', 'GraphLegend'],
+    whitelistPatterns: [/(col|row)/],
   },
   manifest: {
-    name: '岩手県 新型コロナウイルス感染症対策サイト',
+    name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
     theme_color: '#00a040',
     background_color: '#ffffff',
     display: 'standalone',

@@ -21,9 +21,9 @@
           <tr v-for="item in items" :key="item.text">
             <th class="text-start" scope="row">
               <template v-if="item['通番URL']">
-                <external-link :url="item['通番URL']" :icon="false">
+                <app-link :to="item['通番URL']" :showIcon="false">
                   {{ item['通番'] }}
-                </external-link>
+                </app-link>
               </template>
               <template v-else>
                 {{ item['通番'] }}
@@ -37,9 +37,9 @@
             <td class="text-start">{{ item['年代'] }}</td>
             <td class="text-start">
               <template v-if="item['会見URL']">
-                <external-link :url="item['会見URL']" :icon="false">
+                <app-link :to="item['会見URL']" :showIcon="false">
                   📺
-                </external-link>
+                </app-link>
               </template>
             </td>
           </tr>
@@ -149,10 +149,10 @@ import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { getDayjsObject } from '@/utils/formatDate'
-import ExternalLink from '~/components/ExternalLink.vue'
+import AppLink from '@/components/AppLink.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewBasicInfoPanel, ExternalLink },
+  components: { DataView, DataViewBasicInfoPanel, AppLink },
   props: {
     title: {
       type: String,

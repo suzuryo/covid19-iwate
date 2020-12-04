@@ -5,11 +5,11 @@
     </page-header>
     <static-card>
       <h3>
-        <external-link
-          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028772.html"
+        <app-link
+          to="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028772.html"
           :icon-size="24"
           >{{ $t('事業者の皆様へのお知らせ') }}
-        </external-link>
+        </app-link>
       </h3>
       <p>
         {{
@@ -21,11 +21,11 @@
     </static-card>
     <static-card>
       <h3>
-        <external-link
-          url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/category_guideline.html"
+        <app-link
+          to="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/category_guideline.html"
           :icon-size="24"
           >{{ $t('業種ごとの感染拡大予防ガイドライン') }}
-        </external-link>
+        </app-link>
       </h3>
       <p>
         {{
@@ -37,15 +37,15 @@
     </static-card>
     <static-card>
       <h3>
-        <external-link
-          url="https://www.pref.iwate.jp/kurashikankyou/iryou/seido/1031487.html"
+        <app-link
+          to="https://www.pref.iwate.jp/kurashikankyou/iryou/seido/1031487.html"
           :icon-size="24"
           >{{
             $t(
               '岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ'
             )
           }}
-        </external-link>
+        </app-link>
       </h3>
       <p>
         {{
@@ -63,13 +63,13 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import StaticCard from '@/components/StaticCard.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import ExternalLink from '@/components/ExternalLink.vue'
+import AppLink from '@/components/AppLink.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
     StaticCard,
-    ExternalLink,
+    AppLink,
   },
   head(): MetaInfo {
     return {

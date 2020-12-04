@@ -52,22 +52,22 @@
             </div>
             <div :class="$style.newScenarioExternalLink">
               <div>
-                <external-link
-                  url="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf"
+                <app-link
+                  to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf"
                 >
                   {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
-                </external-link>
+                </app-link>
               </div>
               <div>
-                <external-link
-                  url="https://www.mhlw.go.jp/content/10900000/000641696.pdf"
+                <app-link
+                  to="https://www.mhlw.go.jp/content/10900000/000641696.pdf"
                 >
                   {{
                     $t(
                       '厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]'
                     )
                   }}
-                </external-link>
+                </app-link>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
 <script>
 import MonitoringConfirmedCasesChart from '@/components/MonitoringConfirmedCasesChart.vue'
 import Data from '@/data/daily_positive_detail.json'
-import ExternalLink from '@/components/ExternalLink.vue'
+import AppLink from '@/components/AppLink.vue'
 import {
   getNumberToFixedFunction,
   getNumberToLocaleStringFunction,
@@ -89,7 +89,7 @@ import {
 export default {
   components: {
     MonitoringConfirmedCasesChart,
-    ExternalLink,
+    AppLink,
   },
   data() {
     const [patientsCount, sevenDayMoveAverages, labels] = Data.data.reduce(
