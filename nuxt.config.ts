@@ -170,6 +170,7 @@ const config: NuxtConfig = {
         '/cards/details-of-confirmed-cases',
         '/cards/number-of-confirmed-cases',
         '/cards/monitoring-number-of-confirmed-cases',
+        '/cards/untracked-rate',
         '/cards/positive-rate',
         '/cards/number-of-hospitalized',
         '/cards/attributes-of-confirmed-cases',
