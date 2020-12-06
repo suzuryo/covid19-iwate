@@ -73,7 +73,7 @@ const config: NuxtConfig = {
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics',
-    // 'nuxt-purgecss',
+    'nuxt-purgecss',
   ],
   /*
    ** Nuxt.js modules
@@ -139,12 +139,43 @@ const config: NuxtConfig = {
     },
   },
   purgeCSS: {
+    enabled: true,
     paths: [
       './node_modules/vuetify/dist/vuetify.js',
       './node_modules/vue-spinner/src/ScaleLoader.vue',
     ],
     whitelist: ['DataCard', 'GraphLegend'],
     whitelistPatterns: [/(col|row)/],
+
+    // This is nuxt-purgecss 1.0.0 default settings
+    // https://github.com/Developmint/nuxt-purgecss#defaults
+    // This extractor purge <style module>
+    // <style scoped> is not purged by default whitelistPatterns
+    //
+    // extractors: [
+    //   {
+    //     extractor: (content: string) => {
+    //       const contentWithoutStyleBlocks = content.replace(
+    //         /<style[^]+?<\/style>/gi,
+    //         ''
+    //       ) // Remove inline vue styles
+    //       return contentWithoutStyleBlocks.match(/[\w-.:/]+(?<!:)/g) || []
+    //     },
+    //     extensions: ['html', 'vue', 'js'],
+    //   },
+    // ],
+    //
+
+    // so override extractors
+    // https://github.com/Developmint/nuxt-purgecss#use-custom-extractors
+    extractors: () => [
+      {
+        extractor(content: string): RegExpMatchArray | null {
+          return content.match(/[A-z0-9-:\\/]+/g)
+        },
+        extensions: ['html', 'vue', 'js'],
+      },
+    ],
   },
   manifest: {
     name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
@@ -219,6 +250,12 @@ const config: NuxtConfig = {
           lastmod: now,
         },
         {
+          url: '/cards/untracked-rate/',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
           url: '/cards/positive-rate/',
           changefreq: 'daily',
           priority: 0.8,
@@ -283,12 +320,6 @@ const config: NuxtConfig = {
           url: '/worker/',
           changefreq: 'monthly',
           priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/contacts/',
-          changefreq: 'monthly',
-          priority: 0.7,
           lastmod: now,
         },
       ]
