@@ -250,6 +250,12 @@ const config: NuxtConfig = {
           lastmod: now,
         },
         {
+          url: '/cards/untracked-rate/',
+          changefreq: 'daily',
+          priority: 0.8,
+          lastmod: now,
+        },
+        {
           url: '/cards/positive-rate/',
           changefreq: 'daily',
           priority: 0.8,
@@ -314,12 +320,6 @@ const config: NuxtConfig = {
           url: '/worker/',
           changefreq: 'monthly',
           priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/contacts/',
-          changefreq: 'monthly',
-          priority: 0.7,
           lastmod: now,
         },
       ]
