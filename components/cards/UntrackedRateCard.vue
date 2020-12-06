@@ -3,7 +3,7 @@
     <client-only>
       <untracked-rate-mixed-chart
         :title-id="'untracked-rate'"
-        :info-titles="[$t('接触歴等不明者数(7日間移動平均)'), $t('増加比')]"
+        :info-titles="[$t('接触歴等不明者数(7日間移動平均)'), $t('前週比')]"
         :chart-id="'untracked-rate-chart'"
         :chart-data="graphData"
         :get-formatter="getFormatter"
@@ -40,7 +40,7 @@
             <li>
               {{
                 $t(
-                  '増加比は１週間前の接触歴等不明者数（移動平均値）との比較、サンプル数が少ないので断続的'
+                  '前週比は１週間前の接触歴等不明者数（移動平均値）との比較、サンプル数が少ないので断続的'
                 )
               }}
             </li>
@@ -86,17 +86,17 @@ export default {
       this.$t('接触歴等判明者数'),
       this.$t('接触歴等不明者数'),
       this.$t('接触歴等不明者数（７日間移動平均）'),
-      this.$t('増加比'),
+      this.$t('前週比'),
     ]
     const tableLabels = [
       this.$t('接触歴等判明者数'),
       this.$t('接触歴等不明者数'),
       this.$t('接触歴等不明者数（７日間移動平均）'),
-      this.$t('増加比'),
+      this.$t('前週比'),
     ]
 
     const getFormatter = (columnIndex) => {
-      // 7日間移動平均と増加比は小数点第1位まで表示する。
+      // 7日間移動平均と前週比は小数点第1位まで表示する。
       if (columnIndex >= 2) {
         return getNumberToFixedFunction(1)
       }
