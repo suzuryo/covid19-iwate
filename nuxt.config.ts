@@ -139,6 +139,7 @@ const config: NuxtConfig = {
     },
   },
   purgeCSS: {
+    enabled: true,
     paths: [
       './node_modules/vuetify/dist/vuetify.js',
       './node_modules/vue-spinner/src/ScaleLoader.vue',
