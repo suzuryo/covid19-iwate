@@ -285,12 +285,6 @@ const config: NuxtConfig = {
           priority: 0.8,
           lastmod: now,
         },
-        {
-          url: '/contacts/',
-          changefreq: 'monthly',
-          priority: 0.7,
-          lastmod: now,
-        },
       ]
     },
   },
