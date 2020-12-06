@@ -73,7 +73,7 @@ const config: NuxtConfig = {
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics',
-    // 'nuxt-purgecss',
+    'nuxt-purgecss',
   ],
   /*
    ** Nuxt.js modules
