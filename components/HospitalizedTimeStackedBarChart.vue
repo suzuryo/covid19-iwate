@@ -90,9 +90,6 @@ import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
 import { getComplementedDate, getDayjsObject } from '@/utils/formatDate'
 
-interface HTMLElementEvent<T extends HTMLElement> extends MouseEvent {
-  currentTarget: T
-}
 type Data = {
   dataKind: 'transition'
   canvas: boolean
@@ -248,6 +245,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         ...(this.tableLabels as string[]).map((text, i) => {
           return { text, value: String(i), align: 'end' }
         }),
+        { text: '合計', value: '2', align: 'end' },
       ]
     },
     tableData() {
@@ -256,6 +254,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           return Object.assign(
             { text: label },
             ...this.chartData.map((_, j) => {
+              // j=0が入院, j=1が宿泊療養
               const data = this.chartData[j]
               if (data[i] === null) {
                 return {
@@ -265,7 +264,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               return {
                 [j]: this.getFormatter(j)(data[i]),
               }
-            })
+            }),
+            {
+              // j=2で合計を計算
+              2: this.chartData[0][i] + this.chartData[1][i],
+            }
           )
         })
         .sort((a, b) => dayjs(a.text).unix() - dayjs(b.text).unix())
