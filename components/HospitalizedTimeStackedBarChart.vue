@@ -90,9 +90,6 @@ import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
 import { getComplementedDate, getDayjsObject } from '@/utils/formatDate'
 
-interface HTMLElementEvent<T extends HTMLElement> extends MouseEvent {
-  currentTarget: T
-}
 type Data = {
   dataKind: 'transition'
   canvas: boolean
