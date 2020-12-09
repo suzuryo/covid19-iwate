@@ -36,6 +36,9 @@ jobs:
     runs-on: ubuntu-20.04
     needs: update_json_development
     steps:
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
       - uses: actions/checkout@v2
         with:
           ref: development
