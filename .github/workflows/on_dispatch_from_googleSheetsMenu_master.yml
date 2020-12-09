@@ -94,7 +94,7 @@ jobs:
           branch: master
   build_and_deploy_production:
     runs-on: ubuntu-18.04
-    needs: generate_ogp_master
+    needs: commit_ogp_master
     steps:
       - name: Setup Timezone
         run: |
