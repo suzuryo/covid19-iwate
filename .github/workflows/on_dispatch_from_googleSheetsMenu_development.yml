@@ -7,7 +7,6 @@ on:
 jobs:
   check_broken_links:
     runs-on: ubuntu-20.04
-    needs: update_json_development
     steps:
       - name: Setup Timezone
         run: |
