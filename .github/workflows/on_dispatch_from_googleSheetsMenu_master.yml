@@ -72,11 +72,8 @@ jobs:
           branch: master
       - name: yarn run generate:deploy with OGP for production
         run: |
-          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
-          cat .env.production
           yarn run generate:deploy --fail-on-page-error
         env:
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
           TZ: Asia/Tokyo
       - name: production deploy
         uses: peaceiris/actions-gh-pages@v3
