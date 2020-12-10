@@ -5,33 +5,6 @@ on:
     types: [googleSheetMenu, googleSheetMenuWithoutOGP]
 
 jobs:
-  update_json_development:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: development
-      - name: Setup Timezone
-        run: |
-          sudo timedatectl set-timezone Asia/Tokyo
-      - name: Copy data.json to development
-        run: |
-          curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
-          curl -o data/data.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/data.json
-          curl -o data/patient_municipalities.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/patient_municipalities.json
-          curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
-          curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
-          curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
-          curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
-      - name: Commit JSON files to development
-        run: |
-          git config --local user.name "data bot"
-          git status | grep modified && git add . && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
-      - name: Push changes to development
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: development
   check_broken_links:
     runs-on: ubuntu-20.04
     needs: update_json_development
@@ -51,22 +24,30 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14'
+      - name: restore node_modules
+        uses: actions/cache@v2
+        id: node-modules-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-node-14-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: restore yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-14-yarn-${{ hashFiles('**/yarn.lock') }}
+      - name: yarn install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7'
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: yarn Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: yarn install
-        run: yarn install --frozen-lockfile
       - name: Set bundle cache directory path
         id: bundle-cache-dir-path
         run: |
@@ -77,10 +58,17 @@ jobs:
         with:
           path: ${{ steps.bundle-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-bundle-${{ hashFiles('Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bundle-
       - name: bundle install
         run: bundle install --jobs 4 --retry 3
+      - name: Copy data.json to master
+        run: |
+          curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
+          curl -o data/data.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/data.json
+          curl -o data/patient_municipalities.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/patient_municipalities.json
+          curl -o data/positive_by_diagnosed.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_by_diagnosed.json
+          curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
+          curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
+          curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
       - name: generate site
         run: |
           yarn run generate:deploy --fail-on-page-error
@@ -92,4 +80,3 @@ jobs:
       - name: rspec
         run: |
           bundle exec rspec
-
