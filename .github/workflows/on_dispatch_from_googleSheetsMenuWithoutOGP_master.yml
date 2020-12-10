@@ -5,15 +5,39 @@ on:
     types: [googleSheetMenuWithoutOGP]
 
 jobs:
-  update_json_master:
-    runs-on: ubuntu-20.04
+  deploy_production:
+    runs-on: macos-latest
     steps:
+      - name: Setup Timezone
+        run: |
+          sudo systemsetup -settimezone Asia/Tokyo
       - uses: actions/checkout@v2
         with:
           ref: master
-      - name: Setup Timezone
-        run: |
-          sudo timedatectl set-timezone Asia/Tokyo
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: restore node_modules
+        uses: actions/cache@v2
+        id: node-modules-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-node-14-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: restore yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-14-yarn-${{ hashFiles('**/yarn.lock') }}
+      - name: yarn install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
       - name: Copy data.json to master
         run: |
           curl -o data/daily_positive_detail.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/daily_positive_detail.json
@@ -23,42 +47,7 @@ jobs:
           curl -o data/positive_rate.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_rate.json
           curl -o data/positive_status.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/positive_status.json
           curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
-      - name: Commit JSON files to master
-        run: |
-          git config --local user.name "data bot"
-          git status | grep modified && git add . && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
-      - name: Push changes to master
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-  deploy_production:
-    runs-on: ubuntu-20.04
-    needs: update_json_master
-    steps:
-      - name: Setup Timezone
-        run: |
-          sudo timedatectl set-timezone Asia/Tokyo
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn install --frozen-lockfile
-      - run: yarn run test
-      - name: generate
+      - name: yarn run generate:deploy for generate OGP
         run: |
           echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
           cat .env.production
@@ -66,7 +55,17 @@ jobs:
         env:
           GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
           TZ: Asia/Tokyo
-      - name: Deploy
+      - name: Commit JSON files to master
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status | grep modified && git add data && git commit -v -m "[Bot] update data/*.json and static/ogp at $(date +'%Y-%m-%dT%H:%M:%S%z')"
+      - name: Push changes to master
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+      - name: production deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
