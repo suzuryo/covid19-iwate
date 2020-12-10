@@ -18,6 +18,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14'
+      - name: restore node_modules
+        uses: actions/cache@v2
+        id: node-modules-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-node-14-node_modules-${{ hashFiles('yarn.lock') }}
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -30,6 +38,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: yarn install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: Copy data.json to master
         run: |
