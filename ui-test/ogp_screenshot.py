@@ -7,15 +7,15 @@ if not os.path.exists("ogp"):
     os.mkdir("ogp")
 
 PATHS = {
-    "/cards/details-of-confirmed-cases": (959, 500),
+    "/cards/details-of-confirmed-cases": (959, 520),
     "/cards/number-of-confirmed-cases": (959, 500),
     "/cards/monitoring-number-of-confirmed-cases": (959, 500),
-    "/cards/positive-rate": (959, 730),
     "/cards/untracked-rate": (959, 500),
+    "/cards/positive-rate": (959, 500),
     "/cards/number-of-hospitalized": (959, 500),
     "/cards/attributes-of-confirmed-cases": (959, 480),
     "/cards/number-of-confirmed-cases-by-municipalities": (959, 480),
-    "/cards/number-of-tested": (959, 540),
+    "/cards/number-of-tested": (959, 520),
     "/cards/monitoring-number-of-reports-to-covid19-consultation-desk": (959, 500),
     "/cards/number-of-reports-to-covid19-telephone-advisory-center": (959, 500),
 }
