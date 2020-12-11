@@ -69,6 +69,7 @@ const config: NuxtConfig = {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
@@ -79,7 +80,6 @@ const config: NuxtConfig = {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],
