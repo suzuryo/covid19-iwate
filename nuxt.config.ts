@@ -177,14 +177,15 @@ const config: NuxtConfig = {
       },
     ],
   },
-  manifest: {
-    name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
-    theme_color: '#00a040',
-    background_color: '#ffffff',
-    display: 'standalone',
-    Scope: '/',
-    start_url: '/',
-    splash_pages: null,
+  pwa: {
+    meta: {
+      theme_color: '#00a040',
+      lang: 'ja',
+    },
+    manifest: {
+      name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
+      short_name: '岩手COVID19',
+    },
   },
   generate: {
     fallback: true,
