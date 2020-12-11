@@ -1,7 +1,7 @@
 {
   "name": "covid19",
   "version": "1.0.0",
-  "description": "岩手県 新型コロナウイルス感染症対策サイト",
+  "description": "岩手県 新型コロナウイルス感染症対策サイト 非公式",
   "author": "岩手県内有志",
   "private": true,
   "engines": {
@@ -36,7 +36,6 @@
     "@nuxt/types": "2.14.11",
     "@nuxt/typescript-runtime": "2.0.0",
     "@nuxtjs/dotenv": "1.4.1",
-    "@nuxtjs/pwa": "3.3.2",
     "@nuxtjs/sitemap": "2.4.0",
     "chart.js": "2.9.4",
     "cross-env": "7.0.3",
@@ -57,6 +56,7 @@
     "@nuxtjs/eslint-config": "5.0.0",
     "@nuxtjs/eslint-config-typescript": "5.0.0",
     "@nuxtjs/google-analytics": "2.4.0",
+    "@nuxtjs/pwa": "3.3.2",
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/vuetify": "1.11.2",
     "@types/chart.js": "2.9.28",
