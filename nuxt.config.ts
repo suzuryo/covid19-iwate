@@ -69,6 +69,7 @@ const config: NuxtConfig = {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
@@ -79,7 +80,6 @@ const config: NuxtConfig = {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],
@@ -177,14 +177,15 @@ const config: NuxtConfig = {
       },
     ],
   },
-  manifest: {
-    name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
-    theme_color: '#00a040',
-    background_color: '#ffffff',
-    display: 'standalone',
-    Scope: '/',
-    start_url: '/',
-    splash_pages: null,
+  pwa: {
+    meta: {
+      theme_color: '#00a040',
+      lang: 'ja',
+    },
+    manifest: {
+      name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
+      short_name: '岩手COVID19',
+    },
   },
   generate: {
     fallback: true,
