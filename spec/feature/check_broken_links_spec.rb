@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'json'
-require 'net/http'
+require 'typhoeus'
 
 # 1. Vue.js を chrome (mobile emulation iPhone 6/7/8) で解釈する
 # 2. ページ上の a href を 全部探す
@@ -26,14 +26,20 @@ describe "iPhone 6/7/8", type: :feature do
     end
 
     it 'has no broken links' do
+      hydra = Typhoeus::Hydra.new(max_concurrency: 10)
+
       # すべての href に対して
-      urls.uniq.each do |url|
-        p url.to_s
-        # redirect をフォローしつつステータスコードを確認
-        res = fetch_url_with_redirect(url)
-        p res.code
-        expect(res.code).to eq '200' # ページが存在している
-        sleep 1
+      requests = urls.uniq.map do |url|
+        request = Typhoeus::Request.new(url, method: :head, followlocation: true)
+        hydra.queue(request)
+        request
+      end
+
+      hydra.run
+
+      responses = requests.map do |request|
+        p "#{request.response.response_code} #{request.response.redirect_count} #{request.base_url}"
+        expect(request.response.response_code).to eq 200
       end
     end
 
