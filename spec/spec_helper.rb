@@ -15,23 +15,3 @@ end
 
 Capybara.default_driver = :emulated_chrome_ios
 Capybara.app_host = 'http://localhost:3000'
-
-# Following Redirection
-def fetch_url_with_redirect(uri, limit = 10)
-  p uri.to_s
-  p limit
-  # You should choose a better exception.
-  raise ArgumentError, 'too many HTTP redirects' if limit == 0
-  response = Net::HTTP.get_response(uri)
-
-  case response
-  when Net::HTTPSuccess then
-    response
-  when Net::HTTPRedirection then
-    location = response['location']
-    warn "redirected to #{location}"
-    fetch_url_with_redirect(URI("#{uri.scheme}://#{uri.hostname}:#{uri.port}#{location}"), limit - 1)
-  else
-    response.value
-  end
-end
