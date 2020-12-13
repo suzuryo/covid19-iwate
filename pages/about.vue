@@ -187,24 +187,6 @@
         }}
       </p>
     </static-card>
-    <!--
-    <static-card>
-      <h3>{{ $t('データについて') }}</h3>
-      <i18n
-        tag="p"
-        path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
-      >
-        <template v-slot:catalogWebsite>
-          <app-link
-            to="https://portal.data.metro.tokyo.lg.jp/"
-            :icon-size="16"
-          >
-            {{ $t('東京都オープンデータカタログサイト') }}
-          </app-link>
-        </template>
-      </i18n>
-    </static-card>
-    -->
     <static-card>
       <h3>{{ $t('ソースコードについて') }}</h3>
       <p>
