@@ -73,21 +73,21 @@ export default Vue.extend({
   props: {
     累計人数: {
       type: Number,
-      required: true
+      required: true,
     },
     合計件数: {
       type: Number,
-      required: true
+      required: true,
     },
     県内発生件数: {
       type: Number,
-      required: true
+      required: true,
     },
     その他件数: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
