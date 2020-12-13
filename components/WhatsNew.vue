@@ -44,17 +44,17 @@ import { mdiInformation, mdiOpenInNew } from '@mdi/js'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
-  data() {
-    return {
-      mdiInformation,
-      mdiOpenInNew,
-    }
-  },
   props: {
     items: {
       type: Array,
       required: true,
     },
+  },
+  data() {
+    return {
+      mdiInformation,
+      mdiOpenInNew,
+    }
   },
   methods: {
     isInternalLink(path: string): boolean {

@@ -385,6 +385,14 @@ export default Vue.extend({
       mdiOpenInNew,
     }
   },
+  head(): any {
+    const title: TranslateResult = this.$t(
+      '新型コロナウイルス感染症が心配なときに'
+    )
+    return {
+      title,
+    }
+  },
   mounted() {
     const self = this
     this.nav = this.$refs.nav as HTMLElement
@@ -516,14 +524,6 @@ export default Vue.extend({
         }
       })
     },
-  },
-  head(): any {
-    const title: TranslateResult = this.$t(
-      '新型コロナウイルス感染症が心配なときに'
-    )
-    return {
-      title,
-    }
   },
 })
 </script>

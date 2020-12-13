@@ -129,11 +129,6 @@ export default Vue.extend({
       },
     },
   },
-  methods: {
-    positiveConfirmedDate(day: string) {
-      return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
-    },
-  },
   mounted() {
     const vTables = this.$refs.displayedTable as Vue
     const vTableElement = vTables.$el
@@ -143,6 +138,11 @@ export default Vue.extend({
     nodes.forEach((table: HTMLElement) => {
       table.setAttribute('tabindex', '0')
     })
+  },
+  methods: {
+    positiveConfirmedDate(day: string) {
+      return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
+    },
   },
 })
 </script>
