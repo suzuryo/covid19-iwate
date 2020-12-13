@@ -9,7 +9,6 @@
 import Vue from 'vue'
 import SiteTopUpper from '@/components/SiteTopUpper.vue'
 import CardsReference from '@/components/CardsReference.vue'
-import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus.ts'
 import { mdiChartTimelineVariant } from '@mdi/js'
 
 export default Vue.extend({
@@ -19,14 +18,8 @@ export default Vue.extend({
   },
   data() {
     return {
-      tab: null,
       mdiChartTimelineVariant,
     }
-  },
-  methods: {
-    change() {
-      EventBus.$emit(TOGGLE_EVENT)
-    },
   },
 })
 </script>

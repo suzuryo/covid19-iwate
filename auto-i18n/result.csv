@@ -1306,3 +1306,28 @@ TAG_REMOVE,適用件数
 TAG_REMOVE,救急医療の東京ルールの適用件数
 RUN,2020/12/13 21:00
 TAG_REMOVE,その他 参考指標
+RUN,2020/12/13 21:04
+TAG_REMOVE,速報値として公表するものであり、後日修正する場合がある
+TAG_REMOVE,(1)新規陽性者数
+TAG_REMOVE,モニタリング項目
+TAG_REMOVE,増加比
+TAG_REMOVE,検査人数
+TAG_REMOVE,受入体制
+TAG_REMOVE,感染状況
+TAG_REMOVE,(5)救急医療の東京ルールの適用件数
+TAG_REMOVE,救急医療の東京ルールの適用件数：救急隊による5医療機関への受入要請又は選定開始から20分以上経過しても搬送先が決定しない事案の件数
+TAG_REMOVE,(3)新規陽性者における接触歴等不明者
+TAG_REMOVE,(4)PCR・抗原検査
+TAG_REMOVE,(2)(5)は土曜日、日曜日、祝日は更新しない。(4)は日曜日、祝日は更新しない
+TAG_REMOVE,医療提供体制
+TAG_REMOVE,人数
+TAG_REMOVE,(7)重症患者数
+TAG_REMOVE,検査体制
+TAG_REMOVE,潜在・市中感染
+TAG_REMOVE,(2)#7119（東京消防庁救急相談センター）における発熱等相談件数 
+TAG_REMOVE,最新のモニタリング項目の分析・総括コメントについて
+TAG_REMOVE,(6)入院患者数
+TAG_REMOVE,(2)(4)(5)は報告日の前日時点の数値
+TAG_REMOVE,(1)～(5)は7日間移動平均で算出
+TAG_REMOVE,(6)の確保病床数には、(7)の確保病床数を含む
+TAG_REMOVE,{number}：急病やけがの際に、緊急受診の必要性や診察可能な医療機関をアドバイスする電話相談窓口

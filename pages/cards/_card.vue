@@ -17,7 +17,6 @@ import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
-// import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
@@ -41,7 +40,6 @@ export default {
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
     // ConsultationAboutFeverNumberCard,
-    // MonitoringItemsOverviewCard,
     // PositiveNumberByDevelopedDateCard,
   },
   data() {
@@ -86,9 +84,6 @@ export default {
       case 'monitoring-number-of-reports-to-covid19-consultation-desk':
         cardComponent = 'monitoring-consultation-desk-reports-number-card'
         break
-      // case 'monitoring-items-overview':
-      //   cardComponent = 'monitoring-items-overview-card'
-      //   break
       // case 'number-of-reports-to-consultations-about-fever-in-7119':
       //   cardComponent = 'consultation-about-fever-number-card'
       //   break

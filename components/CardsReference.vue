@@ -5,8 +5,6 @@
       <confirmed-cases-details-card />
       <!-- 新規患者に関する報告件数の推移 -->
       <confirmed-cases-number-card />
-      <!-- モニタリング項目 -->
-      <!-- <monitoring-items-overview-card /> -->
       <!-- 新規陽性者数 -->
       <monitoring-confirmed-cases-number-card />
       <!-- <consultation-about-fever-number-card /> -->
@@ -48,7 +46,6 @@ import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
-// import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
@@ -69,7 +66,6 @@ export default Vue.extend({
     ConfirmedCasesNumberCard,
     HospitalizedNumberCard,
     // ConsultationAboutFeverNumberCard,
-    // MonitoringItemsOverviewCard,
     ConfirmedCasesAttributesCard,
     ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
