@@ -14,7 +14,7 @@
         :data-labels="positiveRateDataLabels"
         :table-labels="positiveRateTableLabels"
       >
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <div :class="$style.newScenario">
             <span>{{ $t('（注）') }}</span>
             <ul>

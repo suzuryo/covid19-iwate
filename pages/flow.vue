@@ -11,25 +11,8 @@
       <h3 ref="upperTrigger" :class="$style.conHeading">
         {{ $t('新型コロナウイルス感染症にかかる相談窓口について') }}
       </h3>
-      <!--
-      <p ref="upperTrigger" :class="$style.anchorLead">
-        {{ $t('相談方法は、症状や状況別で3つに分かれます') }}
-      </p>
-      -->
       <nav ref="nav" :class="$style.anchor">
         <ul :class="$style.anchorList">
-          <!--
-          <li :class="$style.anchorItem">
-            <a
-              href="#sydr"
-              :class="$style.anchorLink"
-              @click.prevent="onClickAnchor"
-            >
-              <span>{{ $t('かかりつけ医がいて症状のある方') }}</span>
-              <fig-cond-sy-dr :class="$style.fig" aria-hidden="true" />
-            </a>
-          </li>
-          -->
           <li :class="$style.anchorItem">
             <a
               href="#sy"
@@ -52,59 +35,6 @@
           </li>
         </ul>
       </nav>
-      <!--
-      <div id="sydr" :class="$style.section">
-        <h4 :class="$style.sxnHeading">
-          {{ $t('かかりつけ医がいて、次の症状がある方') }}
-        </h4>
-        <ul :class="$style.boxes">
-          <li :class="[$style.box, $style.border]">
-            <i18n
-              path="発熱や咳などの{minorSymptom}がある"
-              :class="$style.boxLead"
-            >
-              <template v-slot:minorSymptom>
-                <span :class="$style.underline">
-                  {{ $t('比較的軽い風邪の症状') }}
-                </span>
-              </template>
-            </i18n>
-            <span :class="$style.alignLeft">{{
-              $t(
-                '妊娠中の方、重症化しやすい方（高齢者、糖尿病、心不全、呼吸器疾患（COPD等）等の基礎疾患がある方や透析を受けている方、免疫抑制剤や抗がん剤等を用いている方）はすぐに、それ以外の方は症状が４日以上続いた場合は必ず、相談してください。'
-              )
-            }}</span>
-          </li>
-          <li :class="[$style.box, $style.border]">
-            <i18n
-              path="息苦しさ（呼吸困難）、強いだるさ（倦怠感）、高熱等の{majorSymptom}がある"
-              :class="$style.boxLead"
-            >
-              <template v-slot:majorSymptom>
-                <span :class="$style.underline">
-                  {{ $t('強い症状') }}
-                </span>
-              </template>
-            </i18n>
-            <span :class="$style.alignLeft">{{
-              $t(
-                '症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。'
-              )
-            }}</span>
-          </li>
-        </ul>
-        <p :class="[$style.box, $style.bgYellow]">
-          <span :class="$style.large">{{
-            $t('日ごろ受診されている医療機関に電話でご相談ください。')
-          }}</span>
-          <span :class="$style.small">{{
-            $t(
-              '（上記の症状がない場合も、不安に思う方は、日ごろ受診されている医療機関に電話でご相談ください。）'
-            )
-          }}</span>
-        </p>
-      </div>
-      -->
       <div id="sy" :class="$style.section">
         <h4 :class="$style.sxnHeading">
           {{ $t('次の症状がある方') }}
@@ -115,7 +45,7 @@
               path="発熱や咳などの{minorSymptom}がある"
               :class="$style.boxLead"
             >
-              <template v-slot:minorSymptom>
+              <template #minorSymptom>
                 <span :class="$style.underline">
                   {{ $t('比較的軽い風邪の症状') }}
                 </span>
@@ -132,7 +62,7 @@
               path="息苦しさ（呼吸困難）、強いだるさ（倦怠感）、高熱等の{majorSymptom}がある"
               :class="$style.boxLead"
             >
-              <template v-slot:majorSymptom>
+              <template #majorSymptom>
                 <span :class="$style.underline">
                   {{ $t('強い症状') }}
                 </span>
@@ -219,15 +149,6 @@
               >
             </dd>
           </dl>
-          <!--
-          <p :class="$style.notice">
-            {{
-              $t(
-                '電話のおかけ間違いが多くなっております。発信の際は今一度電話番号をお確かめの上、お間違えのないようお願いいたします。'
-              )
-            }}
-          </p>
-          -->
           <p :class="$style.notice">
             {{
               $t(
@@ -237,65 +158,6 @@
           </p>
         </div>
       </div>
-      <!-- TODO: 受診・検査が必要と判断されたときのフローが公式ページに記載されていないため，詳細を確認 -->
-      <!--
-      <div :class="[$style.section, $style.yellow]">
-        <h4 :class="$style.sxnHeadingSmall">
-          {{
-            $t(
-              '新型コロナ受診相談窓口、またはかかりつけ医によって新型コロナ外来（帰国者・接触者外来）またはPCR検査センターの受診が必要だと判断された方'
-            )
-          }}
-        </h4>
-        <p :class="[$style.box, $style.bgGray]">
-          <span :class="$style.large">{{
-            $t('医師が検査の必要性を判断いたします。')
-          }}</span>
-          <span>{{
-            $t(
-              'マスクをして公共交通機関をできるだけ使わずに受診をしてください。'
-            )
-          }}</span>
-        </p>
-        <h4 :class="[$style.sxnHeadingSmall]">
-          {{
-            $t(
-              '医師により検査が必要だと判断されPCR検査（東京都健康安全研究センター等）を受けた結果'
-            )
-          }}
-        </h4>
-        <div :class="$style.boxes">
-          <div :class="[$style.box, $style.border]">
-            <h5 :class="$style.boxLead">{{ $t('陽性の場合') }}</h5>
-            <p>
-              {{
-                $t(
-                  '感染症指定医療機関等への入院、又は宿泊施設等での療養となります'
-                )
-              }}
-            </p>
-            <div :class="$style.grow" aria-hidden="true">
-              <icon-bed :class="[$style.iconBed]" />
-            </div>
-          </div>
-          <div :class="[$style.box, $style.border]">
-            <h5 :class="$style.boxLead">{{ $t('陰性の場合') }}</h5>
-            <p>
-              {{
-                $t('自宅で安静に過ごし、必要に応じて医療機関を受診してください')
-              }}
-            </p>
-            <p :class="[$style.small, $style.grow]">
-              {{
-                $t(
-                  'ただし、症状が良くならない場合は再度受診相談窓口またはかかりつけ医に相談してください'
-                )
-              }}
-            </p>
-          </div>
-        </div>
-      </div>
-      -->
     </div>
     <div :class="$style.detail">
       <app-link
@@ -316,12 +178,10 @@ import VueScrollTo from 'vue-scrollto'
 import CovidIcon from '@/static/covid.svg'
 import PrinterButton from '@/components/PrinterButton.vue'
 import PageHeader from '@/components/PageHeader.vue'
-// import FigCondSyDr from '@/static/flow/cond_sydr.svg'
 import AppLink from '@/components/AppLink.vue'
 import FigCondSy from '@/static/flow/cond_sy.svg'
 import FigCondAnx from '@/static/flow/cond_anx.svg'
 import IconPhone from '@/static/flow/phone.svg'
-// import IconBed from '@/static/flow/bed.svg'
 import { mdiOpenInNew } from '@mdi/js'
 
 type LocalData = {
@@ -346,12 +206,10 @@ export default Vue.extend({
     CovidIcon,
     PrinterButton,
     PageHeader,
-    // FigCondSyDr,
     AppLink,
     FigCondSy,
     FigCondAnx,
     IconPhone,
-    // IconBed,
   },
   data(): LocalData {
     const nav = null
@@ -383,6 +241,14 @@ export default Vue.extend({
       forceFloating,
       timerId,
       mdiOpenInNew,
+    }
+  },
+  head(): any {
+    const title: TranslateResult = this.$t(
+      '新型コロナウイルス感染症が心配なときに'
+    )
+    return {
+      title,
     }
   },
   mounted() {
@@ -516,14 +382,6 @@ export default Vue.extend({
         }
       })
     },
-  },
-  head(): any {
-    const title: TranslateResult = this.$t(
-      '新型コロナウイルス感染症が心配なときに'
-    )
-    return {
-      title,
-    }
   },
 })
 </script>

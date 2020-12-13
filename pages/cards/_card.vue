@@ -11,16 +11,11 @@ import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
-// import MetroCard from '@/components/cards/MetroCard.vue'
-// import AgencyCard from '@/components/cards/AgencyCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
-// import ConsultationAboutFeverNumberCard from '@/components/cards/ConsultationAboutFeverNumberCard.vue'
-// import TokyoRulesApplicationNumberCard from '@/components/cards/TokyoRulesApplicationNumberCard.vue'
-// import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
@@ -41,13 +36,8 @@ export default {
     ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
     TelephoneAdvisoryReportsNumberCard,
-    // MetroCard,
-    // AgencyCard,
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
-    // ConsultationAboutFeverNumberCard,
-    // TokyoRulesApplicationNumberCard,
-    // MonitoringItemsOverviewCard,
     // PositiveNumberByDevelopedDateCard,
   },
   data() {
@@ -71,12 +61,6 @@ export default {
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         cardComponent = 'telephone-advisory-reports-number-card'
         break
-      // case 'predicted-number-of-toei-subway-passengers':
-      //   cardComponent = 'metro-card'
-      //   break
-      // case 'agency':
-      //   cardComponent = 'agency-card'
-      //   break
       case 'positive-number-by-diagnosed-date':
         cardComponent = 'positive-number-by-diagnosed-date-card'
         break
@@ -98,15 +82,6 @@ export default {
       case 'monitoring-number-of-reports-to-covid19-consultation-desk':
         cardComponent = 'monitoring-consultation-desk-reports-number-card'
         break
-      // case 'monitoring-items-overview':
-      //   cardComponent = 'monitoring-items-overview-card'
-      //   break
-      // case 'number-of-reports-to-consultations-about-fever-in-7119':
-      //   cardComponent = 'consultation-about-fever-number-card'
-      //   break
-      // case 'number-of-tokyo-rules-applied':
-      //   cardComponent = 'tokyo-rules-application-number-card'
-      //   break
       case 'positive-number-by-developed-date':
         cardComponent = 'positive-number-by-developed-date-card'
     }

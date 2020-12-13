@@ -9,7 +9,7 @@
         :date="Data.date"
         :unit="$t('人')"
       >
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
@@ -17,11 +17,6 @@
                 $t(
                   '入院患者数のうち、人工呼吸器管理（ECMOを含む）が必要な患者数を計上'
                 )
-              }}
-            </li>
-            <li>
-              {{
-                $t('上記の考え方で重症患者数の計上を開始した4月27日から作成')
               }}
             </li>
           </ul>
