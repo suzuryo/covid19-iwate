@@ -153,7 +153,7 @@
         tag="p"
         path="Google Analyticsによる情報送信を回避する場合は、Google がサポートする{addon}をご利用ください。"
       >
-        <template v-slot:addon>
+        <template #addon>
           <app-link
             :to="$t('https://tools.google.com/dlpage/gaoptout?hl=ja')"
             :icon-size="16"
@@ -214,7 +214,7 @@
           )
         }}
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
-          <template v-slot:githubRepo>
+          <template #githubRepo>
             <app-link
               to="https://github.com/MeditationDuck/covid19"
               :icon-size="16"

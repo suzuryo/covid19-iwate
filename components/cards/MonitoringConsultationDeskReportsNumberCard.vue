@@ -10,7 +10,7 @@
         :unit="$t('件.reports')"
         :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
       >
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>

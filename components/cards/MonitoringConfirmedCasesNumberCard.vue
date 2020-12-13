@@ -13,7 +13,7 @@
         :table-labels="tableLabels"
         :unit="$t('人')"
       >
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <div :class="$style.newScenario">
             <span>{{ $t('（注）') }}</span>
             <ul>

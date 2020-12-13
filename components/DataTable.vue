@@ -1,6 +1,6 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
-    <template v-slot:button>
+    <template #button>
       <span />
     </template>
     <v-data-table
@@ -16,7 +16,7 @@
       }"
       class="cardTable"
     >
-      <template v-slot:body="{ items }">
+      <template #body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
             <th class="text-start" scope="row">
@@ -55,7 +55,7 @@
         }}
       </template>
     </v-data-table>
-    <template v-slot:additionalDescription>
+    <template #additionalDescription>
       <span>{{ $t('（注）') }}</span>
       <ul>
         <li>
@@ -63,7 +63,7 @@
         </li>
       </ul>
     </template>
-    <template v-slot:infoPanel>
+    <template #infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
         :s-text="info.sText"

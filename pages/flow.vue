@@ -115,7 +115,7 @@
               path="発熱や咳などの{minorSymptom}がある"
               :class="$style.boxLead"
             >
-              <template v-slot:minorSymptom>
+              <template #minorSymptom>
                 <span :class="$style.underline">
                   {{ $t('比較的軽い風邪の症状') }}
                 </span>
@@ -132,7 +132,7 @@
               path="息苦しさ（呼吸困難）、強いだるさ（倦怠感）、高熱等の{majorSymptom}がある"
               :class="$style.boxLead"
             >
-              <template v-slot:majorSymptom>
+              <template #majorSymptom>
                 <span :class="$style.underline">
                   {{ $t('強い症状') }}
                 </span>
