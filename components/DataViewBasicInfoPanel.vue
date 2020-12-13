@@ -9,6 +9,29 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    lText: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    sText: {
+      type: String,
+      required: true,
+    },
+    unit: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
+})
+</script>
+
 <style lang="scss">
 .DataView {
   &-DataInfo {
@@ -43,26 +66,3 @@
   }
 }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    lText: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    sText: {
-      type: String,
-      required: true,
-    },
-    unit: {
-      type: String,
-      required: false,
-      default: '',
-    },
-  },
-})
-</script>
