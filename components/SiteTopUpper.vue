@@ -15,11 +15,7 @@
         <span>{{ $t('注釈') }}</span>
       </div>
     </div>
-    <whats-new class="mb-4" :items="newsItems" :is-emergency="false" />
-    <!--
-    <monitoring-comment-card />
-    <tokyo-alert-card v-if="TokyoAlert.alert" />
-    -->
+    <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
       :url="localePath('/flow')"
@@ -35,11 +31,8 @@ import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
-// import TokyoAlertCard from '@/components/TokyoAlertCard.vue'
-// import MonitoringCommentCard from '@/components/MonitoringCommentCard.vue'
 import Data from '@/data/data.json'
 import News from '@/data/news.json'
-import TokyoAlert from '@/data/tokyo_alert.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 import { mdiChartTimelineVariant } from '@mdi/js'
 
@@ -48,18 +41,20 @@ export default Vue.extend({
     PageHeader,
     WhatsNew,
     StaticInfo,
-    // TokyoAlertCard,
-    // MonitoringCommentCard,
   },
   data() {
     return {
       Data,
-      TokyoAlert,
       headerItem: {
         iconPath: mdiChartTimelineVariant,
         title: this.$t('岩手の最新感染動向'),
       },
       newsItems: News.newsItems,
+    }
+  },
+  head(): MetaInfo {
+    return {
+      title: this.$t('岩手の最新感染動向') as string,
     }
   },
   computed: {
@@ -69,11 +64,6 @@ export default Vue.extend({
     formattedDateForDisplay() {
       return `${this.$d(new Date(Data.lastUpdate), 'dateTime')} JST`
     },
-  },
-  head(): MetaInfo {
-    return {
-      title: this.$t('岩手の最新感染動向') as string,
-    }
   },
 })
 </script>

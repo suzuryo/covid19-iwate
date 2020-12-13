@@ -2,7 +2,7 @@
 <!--TimeStackedBarChartから データテーブル表示で「件数（日別）」のみを表示し「件数（累計）」は表示しない-->
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
-    <template v-slot:description>
+    <template #description>
       <slot name="description" />
     </template>
     <ul
@@ -30,7 +30,7 @@
       {{ $t(`{title}のグラフ`, { title }) }}
     </h4>
     <scrollable-chart v-show="canvas" :display-data="displayData">
-      <template v-slot:chart="{ chartWidth }">
+      <template #chart="{ chartWidth }">
         <bar
           :ref="'barChart'"
           :chart-id="chartId"
@@ -41,7 +41,7 @@
           :width="chartWidth"
         />
       </template>
-      <template v-slot:sticky-chart>
+      <template #sticky-chart>
         <bar
           class="sticky-legend"
           :chart-id="`${chartId}-header`"
@@ -53,15 +53,15 @@
         />
       </template>
     </scrollable-chart>
-    <template v-slot:dataTable>
+    <template #dataTable>
       <client-only>
         <data-view-table :headers="tableHeaders" :items="tableData" />
       </client-only>
     </template>
-    <template v-slot:additionalDescription>
+    <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
-    <template v-slot:infoPanel>
+    <template #infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"

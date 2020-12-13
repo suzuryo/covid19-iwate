@@ -11,7 +11,7 @@
         :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000071'"
       >
         <!-- 件.reports = 窓口相談件数 -->
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
@@ -34,15 +34,6 @@
                 )
               }}
             </li>
-            <!--
-            <li>
-              {{
-                $t(
-                  '曜日などによる数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）'
-                )
-              }}
-            </li>
-            -->
           </ul>
         </template>
       </time-bar-chart>

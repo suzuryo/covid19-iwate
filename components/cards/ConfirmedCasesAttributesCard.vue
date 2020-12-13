@@ -8,8 +8,6 @@
         :chart-option="{}"
         :date="Data.patients.date"
         :info="sumInfoOfPatients"
-        :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'"
-        :source="$t('オープンデータを入手')"
         :custom-sort="customSort"
       />
     </client-only>
@@ -45,11 +43,6 @@ export default {
       unit: this.$t('人'),
     }
 
-    // 陽性者の属性 ヘッダー翻訳
-    // for (const header of patientsTable.headers) {
-    //   header.text =
-    //     header.value === '退院' ? this.$t('退院※') : this.$t(header.value)
-    // }
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])

@@ -9,7 +9,7 @@
         :date="data.date"
         :unit="$t('人')"
       >
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>

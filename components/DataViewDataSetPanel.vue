@@ -12,6 +12,34 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  props: {
+    title: {
+      type: String,
+      required: true,
+      default: '',
+    },
+    lText: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    sText: {
+      type: String,
+      required: true,
+    },
+    unit: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
+})
+</script>
+
 <style lang="scss">
 .DataView {
   &-DataSet {
@@ -55,31 +83,3 @@
   }
 }
 </style>
-
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    title: {
-      type: String,
-      required: true,
-      default: '',
-    },
-    lText: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    sText: {
-      type: String,
-      required: true,
-    },
-    unit: {
-      type: String,
-      required: false,
-      default: '',
-    },
-  },
-})
-</script>

@@ -70,24 +70,6 @@ export default Vue.extend({
       isOpenNavigation: false,
     }
   },
-  mounted() {
-    this.loading = false
-    this.getMatchMedia().addListener(this.closeNavigation)
-  },
-  beforeDestroy() {
-    this.getMatchMedia().removeListener(this.closeNavigation)
-  },
-  methods: {
-    openNavigation(): void {
-      this.isOpenNavigation = true
-    },
-    closeNavigation(): void {
-      this.isOpenNavigation = false
-    },
-    getMatchMedia(): MediaQueryList {
-      return window.matchMedia('(min-width: 601px)')
-    },
-  },
   head(): MetaInfo {
     const { htmlAttrs, meta } = this.$nuxtI18nSeo()
     const ogLocale =
@@ -305,6 +287,24 @@ export default Vue.extend({
         },
       ],
     }
+  },
+  mounted() {
+    this.loading = false
+    this.getMatchMedia().addListener(this.closeNavigation)
+  },
+  beforeDestroy() {
+    this.getMatchMedia().removeListener(this.closeNavigation)
+  },
+  methods: {
+    openNavigation(): void {
+      this.isOpenNavigation = true
+    },
+    closeNavigation(): void {
+      this.isOpenNavigation = false
+    },
+    getMatchMedia(): MediaQueryList {
+      return window.matchMedia('(min-width: 601px)')
+    },
   },
 })
 </script>
