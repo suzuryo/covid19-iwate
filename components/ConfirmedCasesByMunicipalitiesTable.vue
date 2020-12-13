@@ -12,10 +12,10 @@
       :custom-sort="customSort"
       class="cardTable"
     />
-    <template v-slot:additionalDescription>
+    <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
-    <template v-slot:infoPanel>
+    <template #infoPanel>
       <data-view-basic-info-panel
         :l-text="info.lText"
         :s-text="info.sText"

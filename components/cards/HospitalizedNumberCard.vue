@@ -13,8 +13,7 @@
         :data-labels="hospitalizedDataLabels"
         :table-labels="hospitalizedTableLabels"
       >
-        <!-- 件.tested = 検査数 -->
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（参考）') }}</span>
           <table :class="$style.beds">
             <caption>

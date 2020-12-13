@@ -14,24 +14,9 @@
         :table-labels="inspectionsTableLabels"
       >
         <!-- 件.tested = 検査数 -->
-        <template v-slot:additionalDescription>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
-            <!--
-            <li>
-              {{
-                $t(
-                  '検体採取日を基準とする。ただし、一部検査結果判明日に基づくものを含む'
-                )
-              }}
-            </li>
-            -->
-            <li>
-              {{ $t('同一の対象者について複数の検体を検査する場合がある') }}
-            </li>
-            <li>
-              {{ $t('抗原検査は6月19日から実施') }}
-            </li>
             <li>
               {{
                 $t(

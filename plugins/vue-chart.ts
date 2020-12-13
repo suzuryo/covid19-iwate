@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue'
-import { ChartData, ChartOptions } from 'chart.js'
+import { Chart, ChartData, ChartOptions } from 'chart.js'
 import { Doughnut, Bar, Line, mixins } from 'vue-chartjs'
 import { Plugin } from '@nuxt/types'
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus.ts'
@@ -42,7 +42,8 @@ const createCustomChart = () => {
     ChartVCMethod,
     ChartVCComputed,
     ChartVCProps
-  >('general-chart', {
+    // eslint-disable-next-line vue/one-component-per-file
+  >('GeneralChart', {
     mixins: [reactiveProp],
     props: {
       displayLegends: {
@@ -74,21 +75,24 @@ const createCustomChart = () => {
   })
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'line-chart',
+    'LineChart',
+    // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Line, generalChart],
     }
   )
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'bar',
+    'Bar',
+    // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Bar, generalChart],
     }
   )
 
   Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
-    'doughnut-chart',
+    'DoughnutChart',
+    // eslint-disable-next-line vue/one-component-per-file
     {
       mixins: [reactiveProp, Doughnut, generalChart],
     }
