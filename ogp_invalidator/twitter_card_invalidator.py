@@ -29,9 +29,6 @@ PATHS = (
 LANGS = (
     'ja',
     'en',
-    'zh-cn',
-    'zh-tw',
-    'ko',
     'ja-basic',
 )
 
