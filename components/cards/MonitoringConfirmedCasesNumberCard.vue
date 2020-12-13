@@ -12,7 +12,6 @@
         :data-labels="dataLabels"
         :table-labels="tableLabels"
         :unit="$t('人')"
-        url="https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068"
       >
         <template v-slot:additionalDescription>
           <div :class="$style.newScenario">
@@ -107,7 +106,7 @@ export default {
     const date = Data.date
 
     const getFormatter = (columnIndex) => {
-      // モニタリング指標(1)新規陽性者数の7日間移動平均は小数点第1位まで表示する。
+      // 新規陽性者数の7日間移動平均は小数点第1位まで表示する。
       if (columnIndex === 1) {
         return getNumberToFixedFunction(1)
       }
