@@ -71,9 +71,6 @@ export default {
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         cardComponent = 'telephone-advisory-reports-number-card'
         break
-      // case 'predicted-number-of-toei-subway-passengers':
-      //   cardComponent = 'metro-card'
-      //   break
       // case 'agency':
       //   cardComponent = 'agency-card'
       //   break

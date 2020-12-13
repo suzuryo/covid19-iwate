@@ -37,7 +37,6 @@
     </card-row>
     <!-- <card-row class="DataBlock"> -->
     <!-- 都営地下鉄の利用者数の推移 -->
-    <!-- <metro-card /> -->
     <!-- 都庁来庁者数の推移 -->
     <!-- <agency-card /> -->
     <!-- </card-row> -->
@@ -61,7 +60,6 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
-// import MetroCard from '@/components/cards/MetroCard.vue'
 // import AgencyCard from '@/components/cards/AgencyCard.vue'
 // import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
