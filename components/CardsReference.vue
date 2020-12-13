@@ -30,8 +30,6 @@
       <!-- 一般相談 受付件数 -->
       <telephone-advisory-reports-number-card />
     </card-row>
-    <!-- <card-row class="DataBlock"> -->
-    <!-- </card-row> -->
   </div>
 </template>
 
@@ -68,8 +66,8 @@ export default Vue.extend({
     TestedNumberCard,
     MonitoringConsultationDeskReportsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
-    // PositiveNumberByDiagnosedDateCard,
-    // PositiveNumberByDevelopedDateCard,
+    // PositiveNumberByDiagnosedDateCard,//
+    // PositiveNumberByDevelopedDateCard,//
   },
 })
 </script>
