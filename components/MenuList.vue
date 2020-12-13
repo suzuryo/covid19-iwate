@@ -28,8 +28,6 @@
 import Vue, { PropType } from 'vue'
 import AppLink from '@/components/AppLink.vue'
 import CovidIcon from '@/static/covid.svg'
-import MaskTrashIcon from '@/static/masktrash.svg'
-import ParentIcon from '@/static/parent.svg'
 
 type MenuItem = {
   iconPath?: string
@@ -43,8 +41,6 @@ export default Vue.extend({
   components: {
     AppLink,
     CovidIcon,
-    MaskTrashIcon,
-    ParentIcon,
   },
   props: {
     items: {
