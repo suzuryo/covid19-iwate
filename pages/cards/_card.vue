@@ -11,8 +11,6 @@ import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
-// import MetroCard from '@/components/cards/MetroCard.vue'
-// import AgencyCard from '@/components/cards/AgencyCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
@@ -41,8 +39,6 @@ export default {
     ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
     TelephoneAdvisoryReportsNumberCard,
-    // MetroCard,
-    // AgencyCard,
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
     // ConsultationAboutFeverNumberCard,
@@ -71,9 +67,6 @@ export default {
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         cardComponent = 'telephone-advisory-reports-number-card'
         break
-      // case 'agency':
-      //   cardComponent = 'agency-card'
-      //   break
       case 'positive-number-by-diagnosed-date':
         cardComponent = 'positive-number-by-diagnosed-date-card'
         break
