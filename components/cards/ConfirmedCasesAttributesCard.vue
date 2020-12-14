@@ -9,7 +9,19 @@
         :date="Data.patients.date"
         :info="sumInfoOfPatients"
         :custom-sort="customSort"
-      />
+      >
+        <template #additionalDescription>
+          <span>{{ $t('（注）') }}</span>
+          <ul>
+            <li
+              v-for="note in $t('ConfirmedCasesAttributesCard.notes')"
+              :key="note"
+            >
+              {{ note }}
+            </li>
+          </ul>
+        </template>
+      </data-table>
     </client-only>
   </v-col>
 </template>
@@ -43,15 +55,34 @@ export default {
       unit: this.$t('人'),
     }
 
+    // 陽性者の属性 ヘッダー翻訳
+    for (const header of patientsTable.headers) {
+      header.text = this.$t(header.value)
+    }
+
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
-      row['居住地'] = this.getTranslatedWording(row['居住地'])
-      // row['退院'] = this.getTranslatedWording(row['退院'])
+      // 通番
+      row['通番'] = this.$t('事例{tsuban}', { tsuban: row['通番'] })
 
       row['陽性確定日'] = dayjs(date).isValid()
         ? this.$d(dayjs(row['陽性確定日']).toDate(), 'dateWithoutYear')
         : '不明'
 
+      // 相対発症日・無症状・不明
+      if (row['発症日'] === '無症状') {
+        row['発症日'] = this.$t('無症状')
+      } else if (row['発症日'] === '不明') {
+        row['発症日'] = this.$t('不明')
+      } else {
+        const d = row['発症日'].replace('日前', '')
+        row['発症日'] = this.$tc('day', d, { d })
+      }
+
+      // 居住地
+      row['居住地'] = this.getTranslatedWording(row['居住地'])
+
+      // 年代
       if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
         row['年代'] = this.$t('{age}代', { age })
