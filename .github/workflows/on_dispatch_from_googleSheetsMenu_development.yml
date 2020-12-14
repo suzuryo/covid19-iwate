@@ -70,7 +70,8 @@ jobs:
           curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
       - name: Commit JSON files to development
         run: |
-          git config --local user.name "data bot"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git status | grep modified && git add data && git commit -v -m "[Bot] update data/*.json at $(date +'%Y-%m-%dT%H:%M:%S%z')"
       - name: Push changes to development
         uses: ad-m/github-push-action@master
