@@ -231,7 +231,7 @@ export default Vue.extend({
         {
           hid: 'author',
           name: 'author',
-          content: this.$tc('岩手のCOVID-19が気になる有志'),
+          content: `${this.$t('岩手のCOVID-19が気になる有志')}`,
         },
         {
           hid: 'description',
@@ -266,7 +266,7 @@ export default Vue.extend({
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$tc('ogp.og:image'),
+          content: `${this.$t('ogp.og:image')}`,
         },
         {
           hid: 'apple-mobile-web-app-title',
@@ -278,7 +278,7 @@ export default Vue.extend({
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.$tc('ogp.og:image'),
+          content: `${this.$t('ogp.og:image')}`,
         },
         {
           hid: 'google-site-verification',

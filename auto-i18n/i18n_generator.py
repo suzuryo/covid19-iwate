@@ -187,7 +187,9 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
                     found = True
                     many_tag[2] = found
             # ogp.og:imageに関しては一つしかない例外なので、特例として処理する
-            if tag_splitted[0] == "ogp":
+            # QUICKFIX: ConfirmedCasesAttributesCard のような配列型も、特例として処理する
+            # TODO: 配列型に対するまともな実装
+            if tag_splitted[0] in ["ogp", "ConfirmedCasesAttributesCard"]:
                 found = True
             has_many_tags.append(tag_splitted + [found])
         else:
