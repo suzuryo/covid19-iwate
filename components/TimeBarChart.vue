@@ -104,7 +104,6 @@ type Props = {
   chartData: GraphDataType[]
   date: string
   unit: string
-  url: string
   yAxesBgPlugin: Chart.PluginServiceRegistrationOptions[]
   byDate: boolean
 }
@@ -152,10 +151,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       required: true,
     },
     unit: {
-      type: String,
-      default: '',
-    },
-    url: {
       type: String,
       default: '',
     },

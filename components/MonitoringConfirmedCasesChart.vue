@@ -138,7 +138,6 @@ type Props = {
   dataLabels: string[] | TranslateResult[]
   tableLabels: string[] | TranslateResult[]
   unit: string
-  url: string
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
@@ -189,10 +188,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     date: {
       type: String,
       required: true,
-      default: '',
-    },
-    url: {
-      type: String,
       default: '',
     },
     labels: {
