@@ -16,6 +16,7 @@ const headers: Header[] = [
 ]
 
 type DataType = {
+  id: number
   通番: string
   通番URL: string | null
   確定日: string
@@ -27,6 +28,7 @@ type DataType = {
 }
 
 type TableDataType = {
+  id: DataType['id']
   通番: DataType['通番']
   通番URL: DataType['通番URL']
   確定日: DataType['確定日']
@@ -62,7 +64,8 @@ export default function (data: DataType[]): TableDateType {
         }
       }
       return {
-        通番: d['通番'],
+        id: d.id,
+        通番: `${d.id}`.padStart(4, '0'),
         通番URL: d.url,
         確定日: positiveConfirmedDate,
         発症日: occurrenceConfirmedDateDiff(),
@@ -71,7 +74,7 @@ export default function (data: DataType[]): TableDateType {
         会見URL: d['会見'],
       }
     })
-    .sort((a, b) => dayjs(a['確定日']).unix() - dayjs(b['確定日']).unix())
+    .sort((a, b) => a.id - b.id)
     .reverse()
   return {
     headers,
