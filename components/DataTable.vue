@@ -103,10 +103,6 @@ export default Vue.extend({
       type: Object,
       default: () => {},
     },
-    url: {
-      type: String,
-      default: '',
-    },
     customSort: {
       type: Function,
       default(items: Object[], index: string[], isDesc: boolean[]) {
