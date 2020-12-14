@@ -221,7 +221,13 @@ const config: NuxtConfig = {
   sitemap: {
     hostname: 'https://iwate.stopcovid19.jp/',
     gzip: true,
-    exclude: ['/about', '/contacts', '/flow', '/worker', '/print/flow'],
+    exclude: [
+      '**/about',
+      '**/contacts',
+      '**/flow',
+      '**/worker',
+      '**/print/flow',
+    ],
     routes() {
       dayjs.extend(utc)
       const now = dayjs().utc().format()
@@ -296,30 +302,6 @@ const config: NuxtConfig = {
         {
           url: '/cards/number-of-reports-to-covid19-telephone-advisory-center/',
           changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/about/',
-          changefreq: 'monthly',
-          priority: 0.5,
-          lastmod: now,
-        },
-        {
-          url: '/contacts/',
-          changefreq: 'monthly',
-          priority: 0.5,
-          lastmod: now,
-        },
-        {
-          url: '/flow/',
-          changefreq: 'monthly',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/worker/',
-          changefreq: 'monthly',
           priority: 0.8,
           lastmod: now,
         },
