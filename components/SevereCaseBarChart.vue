@@ -62,7 +62,6 @@ import DataViewTable, {
 } from '@/components/DataViewTable.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
-import OpenDataLink from '@/components/OpenDataLink.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesStyle } from '@/utils/colors'
 import { calcDayBeforeRatio } from '@/utils/formatDayBeforeRatio'
@@ -114,7 +113,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataViewTable,
     DataViewDataSetPanel,
     ScrollableChart,
-    OpenDataLink,
   },
   props: {
     title: {
