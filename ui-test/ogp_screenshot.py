@@ -23,6 +23,7 @@ PATHS = {
 options = webdriver.ChromeOptions()
 options.headless=True
 options.add_argument("--hide-scrollbars")
+options.add_argument("--incognito")
 
 driver = webdriver.Chrome(options=options)
 
