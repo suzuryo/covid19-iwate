@@ -245,14 +245,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         ...(this.tableLabels as string[]).map((text, i) => {
           return { text, value: String(i), align: 'end' }
         }),
-        { text: '合計', value: '2', align: 'end' },
+        { text: this.$t('計'), value: '2', align: 'end' },
       ]
     },
     tableData() {
       return this.labels
         .map((label, i) => {
           return Object.assign(
-            { text: label },
+            {
+              text: this.$d(getDayjsObject(label).toDate(), 'dateWithoutYear'),
+            },
             ...this.chartData.map((_, j) => {
               // j=0が入院, j=1が宿泊療養
               const data = this.chartData[j]

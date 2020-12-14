@@ -56,12 +56,7 @@
       </template>
     </v-data-table>
     <template #additionalDescription>
-      <span>{{ $t('（注）') }}</span>
-      <ul>
-        <li>
-          {{ $t('発症日は陽性確定日からの相対日数') }}
-        </li>
-      </ul>
+      <slot name="additionalDescription" />
     </template>
     <template #infoPanel>
       <data-view-basic-info-panel
