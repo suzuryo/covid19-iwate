@@ -38,8 +38,6 @@ for lang in ("ja", "en", "ja-basic"):
             )
         )
         path = path.replace("/cards/", "").replace("/", "_")
-        if ('heatmap' in path):
-            time.sleep(20)
         driver.save_screenshot(
             "ogp/{}.png".format(
                 path if lang == "ja" else "{}/{}".format(lang, path)
