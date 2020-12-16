@@ -4,7 +4,7 @@
       <v-icon v-if="iconPath" size="40" class="mr-2">
         {{ iconPath }}
       </v-icon>
-      <slot />
+      <slot name="pageHeader" />
     </h2>
   </div>
 </template>

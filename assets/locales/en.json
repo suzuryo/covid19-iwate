@@ -12,43 +12,87 @@
     "reports": "cases"
   },
   "企業の皆様・はたらく皆様へ": "For all companies and those working in Tokyo",
-  "当サイトについて": "About this site",
-  "ブラウザ環境について": "About browser preferences",
-  "当サイトは以下の環境でご覧いただくことを推奨いたします。": "This site is recommended to view in following browsers",
-  "Microsoft Edge 最新版": " Microsoft Edge (Latest version)",
-  "Mozilla Firefox 最新版": " Mozilla Firefox (Latest version)",
-  "Google Chrome 最新版（Windows 10以上, Android 8.0以上）": "Google Chrome latest version (Windows 10 or later, Android 8.0 or later)",
-  "Safari 最新版（macOS, iOS）": "Safari latest version (macOS, iOS)",
-  "※ 推奨環境以外で利用された場合や、推奨環境下でもご利用のブラウザの設定等によっては、正しく表示されない場合がありますのでご了承ください。": "Please understand that this website may not display correctly when using a browser that is not recommended, or when browser settings are incompatible.",
-  "当サイトへのリンクについて": "About linking to our website",
-  "当サイトへのリンクは自由です。": "For free about linking to our website.",
-  "JavaScriptについて": " About JavaScript",
-  "当サイトではJavaScriptを使用しております。": "JavaScript is used in this site ",
-  "JavaScriptを無効にして使用された場合、各ページが正常に動作しない、または、表示されない場合がございます。": "If you don't allow JavaScript in this site,the content or functionality of it can be limited or unavailable.",
-  "当サイトをご利用の際には、JavaScriptを有効にして頂きますようお願いいたします。": "Please run JavaScript when you're browsing this site.",
-  "クッキー (Cookie) について": "About cookies",
-  "当サイトの一部ではクッキーを使用しています。": " This site uses cookies.",
-  "クッキーとは、Webコンテンツからの要求で利用者の手元の端末に一時的に保存されるデータのことで、当サイトでは利用状況の把握のためにクッキーを使用する場合があります。": "A cookie is data sent from a website and temporarily stored on the user's computer. Here, cookies may be used to track website activity.",
-  "ブラウザに関する情報の収集を希望しない場合は、インターネット閲覧ソフト（ブラウザ）をご自身で設定することにより、クッキーの機能が働かないようにすることも可能です。": "If you do not wish your browsing data to be collected, you can disable cookies from your web browser.",
-  "ただし、クッキーを受け入れない設定をされている場合は、当サイトの機能が正常に動作しない場合がございます。": "However, If you do not accept cookies, the functions of this site might not work.",
-  "Google Analyticsの利用について": "About the using of Google Analytics",
-  "当サイトでは、サービス向上やサイトの改善のためにGoogle LLCの提供するアクセス分析のツールであるGoogle Analyticsを利用した計測を行っております。": "This site uses Google Analytics, an analytics service provided by Google LLC, to track website activity for site improvement and provision of better services.",
-  "Google Analyticsでは、当サイトが発行するクッキー (Cookie) 等を利用して、Webサイトの利用データ（アクセス状況、トラフィック、閲覧環境、IPアドレスなど）を収集しております。クッキーの利用に関してはGoogleのプライバシーポリシーと規約に基づいております。": "Google Analytics uses Cookies to collect anonymous usage data(page views, traffic, used OS/browser information and so on). We use {Cookies based on Google's privacy policy and terms.",
-  "取得したデータはWebサイト利用状況を分析しサービスの改善につなげるため、またはサイト運営者へのレポートを作成するため、その他のサービスの提供に関わる目的に限り、これを使用します。（サイト運営者へのレポートでは、クッキーはブラウザ単位で本サイトのユーザー数をカウントするため、IPアドレスはGoogle Analyticsの分析機能を通じてアクセス元の地域分布（国、州・都道府県、都市）を把握するために利用されています。）": "The collected data will be used only to analyze website usage and services improvement, or to create reports for publishers, and only to provide other services. (In the report to publishers, cookies count the number of users of this site on a browser-by-browser basis. Google Analytics uses the IP address analysis function to determine the geographical distribution of the access source (country, state / prefecture, city)",
-  "Google Analyticsの利用規約及びプライバシーポリシーに関する説明については、Google Analyticsのサイトをご覧ください。": "For more about Google Analytics Terms of Service and Privacy Policy, please visit the Google Analytics site.",
-  "Google Analytics利用規約": " Google Analytics Terms of Service",
-  "Googleのプライバシーポリシー": " Google's Privacy Policy",
-  "Google Analyticsに関する詳細情報": "About Details of Google Analytics",
-  "Google Analyticsによる情報送信を回避する場合は、Google がサポートする{addon}をご利用ください。": "If you want to avoid sending information by Google Analytics, please use {addon} supported by Google.",
-  "https://tools.google.com/dlpage/gaoptout?hl=ja": "https://tools.google.com/dlpage/gaoptout?hl=en",
-  "測定を無効にするブラウザ アドオン": "Add-on which disables data collection",
-  "免責事項": "Disclaimers",
-  "また、利用者が当サイトを利用したことにより発生した利用者の損害及び利用者が第三者に与えた損害に対して、責任を負うものではありません。": "The Tokyo Metropolitan Government will not be responsible for any damage that may occur to a user or damage that the user may cause to a third party, as a result of using this website.",
-  "当サイトに掲載されている情報は、予告なしに変更又は削除することがあります。": "The Information on this site will be subject to change or delete without notice",
-  "ソースコードについて": "About the source code",
-  "当サイトのソースコードはMITライセンスで公開されており、誰でも自由に利用することができます。": "The source code of this site is MIT licensed code and can be used by anyone for free.",
-  "詳しくは、{githubRepo}をご確認ください。": " For details: See {githubRepo}.",
-  "GitHub リポジトリ": " the GitHub repository",
+  "About": {
+    "h2": "About this site",
+    "a": [
+      "This website was opened by the volunteer in Iwate to provide the latest information of COVID-19. The operation and development of the project is done by volunteers from within the Iwate Prefecture.",
+      "By conveying official information of the Iwate Gov and objective data in an easy-to-understand way, this site aims to allow Iwate residents, companies with offices in Iwate, and visitors to Iwate to grasp the current situation and take measures and precautions accordingly."
+    ],
+    "b": [
+      "About browser preferences",
+      "This site is recommended to view in following browsers",
+      [
+        "Microsoft Edge (Latest version)",
+        "Mozilla Firefox (Latest version)",
+        "Google Chrome latest version (Windows 10 or later, Android 8.0 or later)",
+        "Safari latest version (macOS, iOS)"
+      ],
+      "Please understand that this website may not display correctly when using a browser that is not recommended, or when browser settings are incompatible."
+    ],
+    "c": [
+      "About linking to our website",
+      "For free about linking to our website."
+    ],
+    "d": [
+      "About JavaScript",
+      [
+        "JavaScript is used in this site ",
+        "If you don't allow JavaScript in this site,the content or functionality of it can be limited or unavailable.",
+        "Please run JavaScript when you're browsing this site."
+      ]
+    ],
+    "e": [
+      "About cookies",
+      [
+        "This site uses cookies.",
+        "A cookie is data sent from a website and temporarily stored on the user's computer. Here, cookies may be used to track website activity.",
+        "If you do not wish your browsing data to be collected, you can disable cookies from your web browser.",
+        "However, If you do not accept cookies, the functions of this site might not work."
+      ]
+    ],
+    "f": [
+      "About the using of Google Analytics",
+      [
+        "This site uses Google Analytics, an analytics service provided by Google LLC, to track website activity for site improvement and provision of better services.",
+        "Google Analytics uses Cookies to collect anonymous usage data(page views, traffic, used OS/browser information and so on). We use {Cookies based on Google's privacy policy and terms.",
+        "The collected data will be used only to analyze website usage and services improvement, or to create reports for publishers, and only to provide other services. (In the report to publishers, cookies count the number of users of this site on a browser-by-browser basis. Google Analytics uses the IP address analysis function to determine the geographical distribution of the access source (country, state / prefecture, city)",
+        "For more about Google Analytics Terms of Service and Privacy Policy, please visit the Google Analytics site."
+      ],
+      [
+        [
+          "Google Analytics Terms of Service",
+          "https://marketingplatform.google.com/about/analytics/terms/us/"
+        ],
+        [
+          "Google's Privacy Policy",
+          "https://policies.google.com/privacy?hl=en"
+        ],
+        [
+          "About Details of Google Analytics",
+          "https://support.google.com/analytics/answer/6004245?hl=en"
+        ]
+      ],
+      [
+        "If you want to avoid sending information by Google Analytics, please use {addon} supported by Google.",
+        "https://tools.google.com/dlpage/gaoptout?hl=en",
+        "Add-on which disables data collection"
+      ]
+    ],
+    "g": [
+      "Disclaimers",
+      [
+        "Although every effort has been made to ensure the accuracy of the information posted on this site, Anyone will not be responsible for any actions taken by users using the information on this site.",
+        "The Tokyo Metropolitan Government will not be responsible for any damage that may occur to a user or damage that the user may cause to a third party, as a result of using this website.",
+        "The Information on this site will be subject to change or delete without notice"
+      ]
+    ],
+    "h": [
+      "About the source code",
+      "The source code of this site is MIT licensed code and can be used by anyone for free.",
+      "For details: See {githubRepo}.",
+      "the GitHub repository"
+    ]
+  },
   "このページはご利用いただけません": "This page is unavailable.",
   "現在ご利用できません": "Currently unavailable.",
   "アクセスしようとしたページが見つかりませんでした。": "The page you tried to access could not be found.",
@@ -82,16 +126,12 @@
   "{date}の合計": " Total of %{date}",
   "最新のお知らせ": "What's new",
   "新型コロナウイルス感染症にかかる相談窓口について": "Detail of The Tokyo COVID-19 Consultation Hotline",
-  "※": "*",
   "別タブで開く": " Open the new tab",
   "2次元コード": "QR Code",
   "※最新の情報はWebページをご覧ください": "* Please check the latest information from the website.",
   "ogp": {
     "og:image": "https://iwate.stopcovid19.jp/ogp/en/ogp-image.png"
   },
-  "https://marketingplatform.google.com/about/analytics/terms/jp/": "https://marketingplatform.google.com/about/analytics/terms/us/",
-  "https://policies.google.com/privacy?hl=ja": "https://policies.google.com/privacy?hl=en",
-  "https://support.google.com/analytics/answer/6004245?hl=ja": "https://support.google.com/analytics/answer/6004245?hl=en",
   "{title}のグラフをシェア": "Share the graph of {title}",
   "閉じる": "Close",
   "クリップボードにコピー": "Copy to clipboard",
@@ -100,7 +140,6 @@
   "facebookで{title}のグラフをシェア": "Share the graph of {title} on Facebook",
   "日付": "Date",
   "{title}のグラフ": "Chart of {title}",
-  "Opera 最新版": "latest version of Opera",
   "強い症状": "Severe symptoms",
   "妊娠中の方、重症化しやすい方（高齢者、糖尿病、心不全、呼吸器疾患（COPD等）等の基礎疾患がある方や透析を受けている方、免疫抑制剤や抗がん剤等を用いている方）はすぐに、それ以外の方は症状が４日以上続いた場合は必ず、相談してください。": "If you are pregnant or at higher risk for serious illness (elderly, receiving dialysis, taking immunosuppressive or anti-cancer medication, or have an underlying medical condition such as diabetes, heart disease, or respiratory disease such as COPD), call immediately. For others, call after 4 days of continued symptoms.",
   "症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。": "If you think your symptoms are severe, or you are taking and need to remain on an antipyretic, call immediately.",
@@ -138,7 +177,6 @@
   "入院患者数のうち、人工呼吸器管理（ECMOを含む）が必要な患者数を計上": "Within hospitalized patients, \"serious symptoms\" are considered to be those patients who need ventilators or ECMO.",
   "新型コロナウイルス感染症対策本部": "COVID-19 Measures HQ",
   "業種ごとの感染拡大予防ガイドライン": "業種ごとの感染拡大予防ガイドライン",
-  "岩手県による公式情報と客観的な数値をわかりやすく伝えることで、岩手県にお住まいの方や、岩手県内に拠点を持つ企業の方、岩手県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。": "岩手県による公式情報と客観的な数値をわかりやすく伝えることで、岩手県にお住まいの方や、岩手県内に拠点を持つ企業の方、岩手県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。",
   "感染したかもしれないと不安に思う方、感染予防法を知りたい方などは、下記、新型コロナウイルス感染症相談窓口にご相談ください。": "If you are worried that you may be infected, or would like to learn about preventative measures, call the Tokyo COVID-19 Call Center.",
   "新型コロナウイルス感染症相談窓口": "Number of calls in The COVID-19 Consultation Hotline",
   "岩手県新型コロナウイルス感染症関連情報": "岩手県新型コロナウイルス感染症関連情報",
@@ -147,7 +185,6 @@
   "陽性率：陽性判明数（PCR・抗原）の移動平均／検査件数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均": "Rate of Test Positives : Moving average of test positive patients /Moving average of Tested people (as test positive + negative cases)",
   "「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上": "「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上",
   "ふりがな": "Furigana",
-  "運営・開発は県内の有志によってボランティアで行われています。": "運営・開発は県内の有志によってボランティアで行われています。",
   "24時間 全日（土日・祝日を含む）": "24/7 service",
   "主に「症状がある方からの受診等に関する相談」を計上": "主に「症状がある方からの受診等に関する相談」を計上",
   "集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を不明者数として算出（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）": "The positive rate here is a 7-day moving average that evens out the day-to-day variation caused by mass infections and other factors, for the purpose of overall trend analysis with line graph (e.g. the positive rate of Aug 7th is calculated by the average during the 1st to 7th of Aug.) ",
@@ -159,7 +196,6 @@
   "対策サイト非公式": "The Information website (Unofficial)",
   "集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値をもとに算出し、折れ線グラフで示す（例えば、8月7日の陽性率は、8月1日から8月7日までの実績平均を用いて算出）": "The positive rate here is a 7-day moving average that evens out the day-to-day variation caused by mass infections and other factors, for the purpose of overall trend analysis with line graph(e.g. the positive rate of 7th Aug is calculated by the average during 1st to 7th Aug.) ",
   "県民の皆様へ": "県民の皆様へ",
-  "当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、岩手県内の有志が開設したものです。": "This website was opened by the volunteer in Iwate to provide the latest information of COVID-19.",
   "集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）": "The positive rate here is a 7-day moving average that evens out the day-to-day variation caused by mass infections and other factors, for the purpose of overall trend analysis with line graph(e.g. the positive rate of 7th Aug is calculated by the average during 1st to 7th Aug.) ",
   "窓口を開設した2020年2月8日からのデータを表示": "窓口を開設した2020年2月8日からのデータを表示",
   "新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。": "新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。",
@@ -317,7 +353,6 @@
   "陽性者数/人口": "Number of test positives/Population",
   "入院と宿泊療養の推移": "Changes in hospitalized and in lodging facilities patients",
   "県内": "Inside Iwate",
-  "当サイトに掲載されている情報の正確性については万全を期していますが、利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。": "Although every effort has been made to ensure the accuracy of the information posted on this site, Anyone will not be responsible for any actions taken by users using the information on this site.",
   "前日までに報告された陽性者の居住地を元にした累計値": "前日までに報告された陽性者の居住地を元にした累計値",
   "例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある": "例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある",
   "意向により居住地が公表されない場合は累計に含まれない": "意向により居住地が公表されない場合は累計に含まれない",
