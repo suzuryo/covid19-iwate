@@ -21,17 +21,9 @@
         }
       </style>
       <div class="noscript-body">
-        {{ $t('当サイトではJavaScriptを使用しております。') }}<br />
-        {{
-          $t(
-            'JavaScriptを無効にして使用された場合、各ページが正常に動作しない、または、表示されない場合がございます。'
-          )
-        }}<br />
-        {{
-          $t(
-            '当サイトをご利用の際には、JavaScriptを有効にして頂きますようお願いいたします。'
-          )
-        }}
+        {{ $t('About.d[1][0]') }}<br />
+        {{ $t('About.d[1][1]') }}<br />
+        {{ $t('About.d[1][2]') }}
       </div>
     </div>
   </noscript>
