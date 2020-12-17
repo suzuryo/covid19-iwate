@@ -51,7 +51,7 @@ type TableDateType = {
 export default function (data: DataType[]): TableDateType {
   const datasets = data
     .map((d) => {
-      const positiveConfirmedDate = d['陽性確定日'] ? d['陽性確定日'] : '不明'
+      const positiveConfirmedDate = d['確定日'] ? d['確定日'] : '不明'
       const occurrenceConfirmedDateDiff = () => {
         if (d['無症状'] === true && d['発症日'] === null) {
           return '無症状'
@@ -60,7 +60,7 @@ export default function (data: DataType[]): TableDateType {
         } else if (d['確定日'] === null || d['発症日'] == null) {
           return '不明'
         } else {
-          return `${dayjs(d['陽性確定日']).diff(d['発症日'], 'day')}日前`
+          return `${dayjs(d['確定日']).diff(d['発症日'], 'day')}日前`
         }
       }
       return {
