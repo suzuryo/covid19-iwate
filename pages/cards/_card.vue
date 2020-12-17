@@ -103,11 +103,10 @@ export default {
       date: convertDateToJapaneseKanjiFormat(
         PositiveRate.data.slice(-1)[0].diagnosed_date
       ),
-    })}${this.$t('は陽性件数が')}${
+    })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
-    }${this.$t('件・PCR検査が')}${
-      Data.inspections_summary.data.PCR検査.slice(-1)[0]
-    }${this.$t('件・抗原検査が')}${
+    }${this.$t('件・検査が')}${
+      Data.inspections_summary.data.PCR検査.slice(-1)[0] +
       Data.inspections_summary.data.抗原検査.slice(-1)[0]
     }${this.$t('件・現在の入院患者は')}${
       PositiveStatus.data.slice(-1)[0].hospitalized
@@ -142,15 +141,13 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          template: (updatedAt) =>
-            `${this.updatedAt || updatedAt} | ${description}`,
+          template: () => `${description}`,
           content: '',
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          template: (updatedAt) =>
-            `${this.updatedAt || updatedAt} | ${description}`,
+          template: () => `${description}`,
           content: '',
         },
         {
