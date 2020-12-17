@@ -53,9 +53,9 @@ export default function (data: DataType[]): TableDateType {
     .map((d) => {
       const positiveConfirmedDate = d['陽性確定日'] ? d['陽性確定日'] : '不明'
       const occurrenceConfirmedDateDiff = () => {
-        if (d['無症状病原体保有者'] === true && d['発症日'] === null) {
+        if (d['無症状'] === true && d['発症日'] === null) {
           return '無症状'
-        } else if (d['無症状病原体保有者'] === false && d['発症日'] === null) {
+        } else if (d['無症状'] === false && d['発症日'] === null) {
           return '不明'
         } else if (d['確定日'] === null || d['発症日'] == null) {
           return '不明'
