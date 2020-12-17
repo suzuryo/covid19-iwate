@@ -141,15 +141,13 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          template: (updatedAt) =>
-            `${this.updatedAt || updatedAt} | ${description}`,
+          template: () => `${description}`,
           content: '',
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          template: (updatedAt) =>
-            `${this.updatedAt || updatedAt} | ${description}`,
+          template: () => `${description}`,
           content: '',
         },
         {
