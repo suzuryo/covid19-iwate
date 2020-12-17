@@ -337,9 +337,9 @@
   "不明": "Unknown",
   "調査中": "Investigating",
   "day": "Zero-day|{d} day before|{d} days before",
-  "10歳未満": "< 10's",
+  "10歳未満": "Under 10's",
   "{age}代": " {age}'s",
-  "100歳以上": "Over 100 years old",
+  "90歳以上": "Over 90's",
   "ConfirmedCasesAttributesCard": {
     "notes": [
       "Outbreak date is the number of relative days to the confirmed date."
