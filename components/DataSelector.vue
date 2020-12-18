@@ -20,7 +20,7 @@
       value="cumulative"
       class="DataSelector-Button"
     >
-      {{ $t('累計') }}
+      {{ $t('Common.累計') }}
     </v-btn>
   </v-btn-toggle>
 </template>

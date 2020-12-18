@@ -2,24 +2,13 @@
   <v-col cols="12" md="6" class="DataCard">
     <client-only>
       <data-view
-        :title="$t('検査陽性者の状況')"
+        :title="$t('Details.a[0]')"
         :title-id="'details-of-confirmed-cases'"
         :date="updatedAt"
       >
-        <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
-          <ul>
-            <li>
-              {{
-                $t(
-                  '個別事例の症状は公表されないので、重症などは公表された場合は更新'
-                )
-              }}
-            </li>
-          </ul>
-        </template>
+        <template #additionalDescription />
         <confirmed-cases-details-table
-          :aria-label="$t('検査陽性者の状況')"
+          :aria-label="$t('Details.a[0]')"
           v-bind="confirmedCases"
         />
       </data-view>

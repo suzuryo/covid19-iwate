@@ -401,7 +401,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               )
               let label = `${
                 this.dataLabels[tooltipItem.datasetIndex!]
-              } : ${cases} ${this.$t('人')}`
+              } : ${cases} ${this.$t('Common.人')}`
               if (tooltipItem.datasetIndex! >= 5) {
                 label = `${
                   this.dataLabels[tooltipItem.datasetIndex!]

@@ -7,7 +7,7 @@
         :chart-id="'positive-number-by-diagnosed-date'"
         :chart-data="graphData"
         :date="data.date"
-        :unit="$t('人')"
+        :unit="$t('Common.人')"
       >
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>

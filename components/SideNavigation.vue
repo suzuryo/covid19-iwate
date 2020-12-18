@@ -171,7 +171,7 @@ export default Vue.extend({
             'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
         {
-          title: this.$t('About.h2'),
+          title: this.$t('Common.当サイトについて'),
           link: this.localePath('/about'),
         },
       ]
