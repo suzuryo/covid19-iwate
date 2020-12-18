@@ -1395,3 +1395,5 @@ TAG_ADD,は陽性が
 TAG_REMOVE,件・PCR検査が
 TAG_REMOVE,件・抗原検査が
 TAG_REMOVE,は陽性件数が
+RUN,2020/12/18 17:26
+TAG_ADD,岩手県の発表漏れによりデータの存在しない日がある
