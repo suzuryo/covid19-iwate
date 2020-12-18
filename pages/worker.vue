@@ -1,7 +1,9 @@
 <template>
   <div class="Worker">
-    <page-header class="mb-3">
-      {{ $t('企業の皆様・はたらく皆様へ') }}
+    <page-header class="mb-3" :icon-path="headerItem.iconPath">
+      <template #pageHeader>
+        {{ headerItem.title }}
+      </template>
     </page-header>
     <static-card>
       <h3>
@@ -64,6 +66,7 @@ import { MetaInfo } from 'vue-meta'
 import StaticCard from '@/components/StaticCard.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import AppLink from '@/components/AppLink.vue'
+import { mdiDomain } from '@mdi/js'
 
 export default Vue.extend({
   components: {
@@ -71,9 +74,17 @@ export default Vue.extend({
     StaticCard,
     AppLink,
   },
+  data() {
+    return {
+      headerItem: {
+        iconPath: mdiDomain,
+        title: this.$t('SideNavigation.a[6]') as string,
+      },
+    }
+  },
   head(): MetaInfo {
     return {
-      title: this.$t('企業の皆様・はたらく皆様へ') as string,
+      title: this.$t('SideNavigation.a[6]') as string,
     }
   },
 })
