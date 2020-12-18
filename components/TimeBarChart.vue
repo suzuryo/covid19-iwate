@@ -492,7 +492,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .map((d, _) => {
           return {
             text: d.label,
-            transition: d.transition.toLocaleString(),
+            transition:
+              d.transition === null ? undefined : d.transition.toLocaleString(),
             cumulative: d.cumulative.toLocaleString(),
           }
         })
