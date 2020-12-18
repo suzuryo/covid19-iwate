@@ -115,7 +115,7 @@ type Item = {
   iconPath?: string
   svg?: string
   title: TranslateResult
-  link: string
+  link: string | TranslateResult
   divider?: boolean
 }
 
