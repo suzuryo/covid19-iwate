@@ -49,10 +49,10 @@
           </app-link>
         </li>
       </ul>
-      <i18n tag="p" :path="$t('About.f[3][0]')">
+      <i18n tag="p" path="GA{addon}">
         <template #addon>
-          <app-link :to="$t('About.f[3][1]')" :icon-size="16">
-            {{ $t('About.f[3][2]') }}
+          <app-link :to="$t('About.f[3][0]')" :icon-size="16">
+            {{ $t('About.f[3][1]') }}
           </app-link>
         </template>
       </i18n>
@@ -67,13 +67,13 @@
       <h3>{{ $t('About.h[0]') }}</h3>
       <p>
         {{ $t('About.h[1]') }}
-        <i18n :path="$t('About.h[2]')">
+        <i18n path="GH{githubRepo}">
           <template #githubRepo>
             <app-link
               to="https://github.com/MeditationDuck/covid19"
               :icon-size="16"
             >
-              {{ $t('About.h[3]') }}
+              {{ $t('About.h[2]') }}
             </app-link>
           </template>
         </i18n>

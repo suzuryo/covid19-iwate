@@ -1,9 +1,11 @@
 <template>
   <div class="MainPage">
     <div class="Header mb-3">
-      <page-header :icon-path="headerItem.iconPath">{{
-        headerItem.title
-      }}</page-header>
+      <page-header :icon-path="headerItem.iconPath">
+        <template #pageHeader>
+          {{ headerItem.title }}
+        </template>
+      </page-header>
       <div class="UpdatedAt">
         <span>{{ $t('最終更新') }}</span>
         <time :datetime="updatedAt">{{ formattedDateForDisplay }}</time>
