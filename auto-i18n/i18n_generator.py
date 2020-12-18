@@ -261,6 +261,7 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
 
 with open(JA_JSON_PATH, mode="w", encoding=ENCODING) as file:
     json.dump(made_json, file, ensure_ascii=False, indent=2)
+    file.write("\n")
 
 # 以下、リザルト
 # タグ総数
