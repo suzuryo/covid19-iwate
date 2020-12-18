@@ -73,7 +73,6 @@
         ]
       ],
       [
-        "If you want to avoid sending information by Google Analytics, please use {addon} supported by Google.",
         "https://tools.google.com/dlpage/gaoptout?hl=en",
         "Add-on which disables data collection"
       ]
@@ -89,10 +88,11 @@
     "h": [
       "About the source code",
       "The source code of this site is MIT licensed code and can be used by anyone for free.",
-      "For details: See {githubRepo}.",
       "the GitHub repository"
     ]
   },
+  "GA{addon}": "If you want to avoid sending information by Google Analytics, please use {addon} supported by Google.",
+  "GH{githubRepo}": "For details: See {githubRepo}.",
   "このページはご利用いただけません": "This page is unavailable.",
   "現在ご利用できません": "Currently unavailable.",
   "アクセスしようとしたページが見つかりませんでした。": "The page you tried to access could not be found.",
