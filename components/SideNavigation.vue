@@ -3,7 +3,7 @@
     <header class="SideNavigation-Header">
       <span
         class="SideNavigation-OpenIcon"
-        :aria-label="$t('サイドメニュー項目を開く')"
+        :aria-label="$t('SideNavigation.a[0]')"
         @click="$emit('open-navigation', $event)"
       >
         <v-icon>
@@ -20,9 +20,7 @@
             height="28"
           />
           <div class="SideNavigation-HeaderText">
-            {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
-              $t('menu/対策サイト')
-            }}
+            {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト') }}
           </div>
         </app-link>
       </h1>
@@ -31,7 +29,7 @@
     <div :class="['SideNavigation-Body', { '-opened': isNaviOpen }]">
       <span
         class="SideNavigation-CloseIcon"
-        :aria-label="$t('サイドメニュー項目を閉じる')"
+        :aria-label="$t('SideNavigation.a[1]')"
         @click="$emit('close-navigation', $event)"
       >
         <v-icon>
@@ -83,11 +81,11 @@
         >
           <template #creativeCommons>
             <app-link
-              :to="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
+              :to="$t('SideNavigation.a[2]')"
               :icon-size="12"
               class="SideNavigation-LicenseLink"
             >
-              {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
+              {{ $t('SideNavigation.a[3]') }}
             </app-link>
           </template>
         </i18n>
@@ -117,7 +115,7 @@ type Item = {
   iconPath?: string
   svg?: string
   title: TranslateResult
-  link: string
+  link: string | TranslateResult
   divider?: boolean
 }
 
@@ -148,28 +146,27 @@ export default Vue.extend({
         },
         {
           svg: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症が心配なときに'),
+          title: this.$t('SideNavigation.a[4]'),
           link: this.localePath('/flow'),
         },
         {
           iconPath: mdiAccountMultiple,
-          title: this.$t('県民の皆様へ'),
+          title: this.$t('SideNavigation.a[5]'),
           link:
             'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028768.html',
         },
         {
           iconPath: mdiDomain,
-          title: this.$t('企業の皆様・はたらく皆様へ'),
+          title: this.$t('SideNavigation.a[6]'),
           link: this.localePath('/worker'),
           divider: true,
         },
         {
-          title: this.$t('岩手県新型コロナウイルス感染症関連情報'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html',
+          title: this.$t('SideNavigation.a[7]'),
+          link: this.$t('SideNavigation.a[8]'),
         },
         {
-          title: this.$t('新型コロナウイルス感染症対策本部'),
+          title: this.$t('SideNavigation.a[9]'),
           link:
             'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
         },
