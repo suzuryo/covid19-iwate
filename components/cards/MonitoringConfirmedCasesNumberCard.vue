@@ -11,7 +11,7 @@
         :labels="labels"
         :data-labels="dataLabels"
         :table-labels="tableLabels"
-        :unit="$t('人')"
+        :unit="$t('Common.人')"
       >
         <template #additionalDescription>
           <div :class="$style.newScenario">
@@ -101,8 +101,8 @@ export default {
       [[], [], []]
     )
     const chartData = [patientsCount, sevenDayMoveAverages]
-    const dataLabels = [this.$t('陽性者数'), this.$t('７日間移動平均')]
-    const tableLabels = [this.$t('陽性者数'), this.$t('７日間移動平均')]
+    const dataLabels = [this.$t('Common.陽性者数'), this.$t('７日間移動平均')]
+    const tableLabels = [this.$t('Common.陽性者数'), this.$t('７日間移動平均')]
     const date = Data.date
 
     const getFormatter = (columnIndex) => {

@@ -395,7 +395,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               const cases = formatter(parseFloat(tooltipItem.value!))
               let label = `${
                 this.dataLabels[tooltipItem.datasetIndex!]
-              } : ${cases} ${this.$t('人')}`
+              } : ${cases} ${this.$t('Common.人')}`
               if (tooltipItem.datasetIndex! >= 3) {
                 label = `${
                   this.dataLabels[tooltipItem.datasetIndex!]

@@ -52,7 +52,7 @@ export default {
         patientsGraph.length - 1
       ].cumulative.toLocaleString(),
       sText: this.$t('{date}の累計', { date }),
-      unit: this.$t('人'),
+      unit: this.$t('Common.人'),
     }
 
     // 陽性者の属性 ヘッダー翻訳

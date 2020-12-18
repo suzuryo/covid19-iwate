@@ -481,7 +481,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           align: 'end',
         },
         {
-          text: `${this.title} (${this.$t('累計')})`,
+          text: `${this.title} (${this.$t('Common.累計')})`,
           value: 'cumulative',
           align: 'end',
         },

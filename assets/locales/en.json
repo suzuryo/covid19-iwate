@@ -1,17 +1,32 @@
 {
   "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "Please call us first If you have any concerns about symptom in you or your family.",
   "相談の手順を見る": "See this flowchart",
-  "検査陽性者の状況": "Status of test positives",
+  "Common": {
+    "当サイトについて": "About this site",
+    "陽性者数": "Test positives",
+    "累計": "Cumulative",
+    "人": " persons",
+    "入院": "Hospitalized",
+    "重症": "Serious symptoms",
+    "宿泊療養": "Receiving treatment at lodging facilities"
+  },
+  "Details": {
+    "a": [
+      "Status of test positives",
+      "Recuperating at home",
+      "Hospitalization / Medical treatment, etc.",
+      "Discharged,etc.",
+      "Passed away"
+    ]
+  },
   "PCR検査実施件数": "Number of PCR tests",
   "テーブルを表示": "Show the table",
   "{date}の累計": " Cumulative {date}",
-  "人": " persons",
   "件": {
     "tested": "cases",
     "reports": "cases"
   },
   "About": {
-    "h2": "About this site",
     "a": [
       "This website was opened by the volunteer in Iwate to provide the latest information of COVID-19. The operation and development of the project is done by volunteers from within the Iwate Prefecture.",
       "By conveying official information of the Iwate Gov and objective data in an easy-to-understand way, this site aims to allow Iwate residents, companies with offices in Iwate, and visitors to Iwate to grasp the current situation and take measures and precautions accordingly."
@@ -97,8 +112,6 @@
   "ページが移動または削除されたか、URLの入力間違いの可能性があります。": "The page may have been moved or deleted, or you might have typed the wrong URL.",
   "トップページへ戻る": "Return to the top page.",
   "陽性者数": "Test positives",
-  "重症": "Serious symptoms",
-  "死亡": "Passed away",
   "日別": "By day",
   "累計": "Cumulative",
   "{date} 更新": "Last update: {date}",
@@ -156,9 +169,6 @@
   "発熱や咳などの{minorSymptom}がある": "{minorSymptom} such as a fever or cough",
   "日別値": "as a day",
   "陽性率": "Positive rate",
-  "入院": "Hospitalized",
-  "自宅療養": "Recuperating at home",
-  "宿泊療養": "Receiving treatment at lodging facilities",
   "1ページ当たり": "Items per page",
   "{itemsLength} 項目中 {pageStart} - {pageStop} ": "{pageStart} - {pageStop} of {itemsLength} indexes",
   "現在判明している人数であり、後日修正される場合がある": "This number of people has been confirmed; might be modified later",
@@ -167,7 +177,6 @@
   "接触歴等判明者数": "Number of positive tests in definite route of infection",
   "接触歴等不明者数": "Number of test positives in the unknown route of infection ",
   "重症患者数": "Number of patients with serious symptoms",
-  "入院・療養等調整中": "Hospitalization / Medical treatment, etc.",
   "確定日別による陽性者数の推移": "確定日別による陽性者数の推移",
   "速報値として公表するものであり、後日確定データとして修正される場合がある": "Preliminary value. May be modified later",
   "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
@@ -329,7 +338,6 @@
   "相談する医療機関に迷う場合や「かかりつけ医」がない場合「受診・相談センター」": "相談する医療機関に迷う場合や「かかりつけ医」がない場合「受診・相談センター」",
   "または、かかりつけ医の紹介先で受診・検査となります": "または、かかりつけ医の紹介先で受診・検査となります",
   "かかりつけ医にて受診・検査をおこないます（診療・検査医療機関の場合）": "かかりつけ医にて受診・検査をおこないます（診療・検査医療機関の場合）",
-  "個別事例の症状は公表されないので、重症などは公表された場合は更新": "個別事例の症状は公表されないので、重症などは公表された場合は更新",
   "通番": "Case Number",
   "事例{tsuban}": "Case {tsuban}",
   "確定日": "Confirmed date",
@@ -349,7 +357,6 @@
       "Outbreak date is the number of relative days to the confirmed date."
     ]
   },
-  "退院等": "Discharged,etc.",
   "新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである": "新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである",
   "接触歴等不明者数(7日間移動平均)": "Number of test positives with an unknown route of infection (7-day moving average)",
   "公表時点での接触歴の有無であり、公表後の追加調査で判明する場合があるが、それは反映されていない": "公表時点での接触歴の有無であり、公表後の追加調査で判明する場合があるが、それは反映されていない",

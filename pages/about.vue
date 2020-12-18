@@ -2,7 +2,7 @@
   <div class="About">
     <page-header class="mb-3">
       <template #pageHeader>
-        {{ $t('About.h2') }}
+        {{ $t('Common.当サイトについて') }}
       </template>
     </page-header>
     <static-card>
@@ -97,7 +97,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('About.h2') as string,
+      title: this.$t('Common.当サイトについて') as string,
     }
   },
 })

@@ -9,7 +9,7 @@
         :date="PositiveStatus.date"
         :items="hospitalizedItems"
         :labels="hospitalizedLabels"
-        :unit="$t('人')"
+        :unit="$t('Common.人')"
         :data-labels="hospitalizedDataLabels"
         :table-labels="hospitalizedTableLabels"
       >
@@ -48,19 +48,19 @@
                 <td>{{ $t('確保病床') }}</td>
                 <td>
                   <div>150{{ $t('床') }}</div>
-                  <span>({{ $t('軽中症') }} 130 / {{ $t('重症') }} 20)</span>
+                  <span>({{ $t('軽中症') }} 130 / {{ $t('Common.重症') }} 20)</span>
                 </td>
                 <td>
                   <div>150{{ $t('床') }}</div>
-                  <span>({{ $t('軽中症') }} 130 / {{ $t('重症') }} 20)</span>
+                  <span>({{ $t('軽中症') }} 130 / {{ $t('Common.重症') }} 20)</span>
                 </td>
                 <td>
                   <div>250{{ $t('床') }}</div>
-                  <span>({{ $t('軽中症') }} 220 / {{ $t('重症') }} 30)</span>
+                  <span>({{ $t('軽中症') }} 220 / {{ $t('Common.重症') }} 30)</span>
                 </td>
                 <td>
                   <div>350{{ $t('床') }}</div>
-                  <span>({{ $t('軽中症') }} 305 / {{ $t('重症') }} 45)</span>
+                  <span>({{ $t('軽中症') }} 305 / {{ $t('Common.重症') }} 45)</span>
                 </td>
               </tr>
               <tr>
@@ -119,7 +119,7 @@ export default {
 
     const hospitalizedGraph = [hospital, hotel]
 
-    const hospitalizedItems = [this.$t('入院'), this.$t('宿泊療養')]
+    const hospitalizedItems = [this.$t('Common.入院'), this.$t('Common.宿泊療養')]
 
     const hospitalizedLabels = data.map((data) => data.date)
 
