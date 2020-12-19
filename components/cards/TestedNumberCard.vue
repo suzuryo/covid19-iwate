@@ -15,7 +15,7 @@
       >
         <!-- 件.tested = 検査数 -->
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li>
               {{

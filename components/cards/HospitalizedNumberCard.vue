@@ -89,17 +89,13 @@
           </table>
           <div :class="$style.bedExternalLink">
             <div>
-              <app-link
-                to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=3"
-              >
-                {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
+              <app-link :to="$t('ExtLink.岩手県17_2.url')">
+                {{ $t('ExtLink.岩手県17_2.text') }}
               </app-link>
             </div>
             <div>
-              <app-link
-                to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
-              >
-                {{ $t('岩手県 / 第19回本部員会議資料【資料4-1】[PDF]') }}
+              <app-link :to="$t('ExtLink.岩手県19_41.url')">
+                {{ $t('ExtLink.岩手県19_41.text') }}
               </app-link>
             </div>
           </div>

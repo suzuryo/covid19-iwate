@@ -16,7 +16,7 @@
       >
         <template #additionalDescription>
           <div :class="$style.newScenario">
-            <span>{{ $t('（注）') }}</span>
+            <span>{{ $t('Common.注') }}</span>
             <ul>
               <li>
                 {{
@@ -26,14 +26,10 @@
                 }}
               </li>
               <li>
-                {{
-                  $t(
-                    '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値をもとに算出し、折れ線グラフで示す（例えば、8月7日の陽性率は、8月1日から8月7日までの実績平均を用いて算出）'
-                  )
-                }}
+                {{ $t('Common.7MA') }}
               </li>
               <li>
-                {{ $t('検査結果の判明日を基準とする') }}
+                {{ $t('Common.検査結果の判明日を基準とする') }}
               </li>
               <li>
                 {{
@@ -60,10 +56,8 @@
             </div>
             <div :class="$style.newScenarioExternalLink">
               <div>
-                <app-link
-                  to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf#page=5"
-                >
-                  {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
+                <app-link :to="$t('ExtLink.岩手県17_2.url')">
+                  {{ $t('ExtLink.岩手県17_2.text') }}
                 </app-link>
               </div>
             </div>
