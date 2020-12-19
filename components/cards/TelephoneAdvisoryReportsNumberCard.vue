@@ -11,7 +11,7 @@
       >
         <!-- 件.reports = 窓口相談件数 -->
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li>
               {{
