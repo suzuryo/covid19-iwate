@@ -270,7 +270,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         ...(this.tableLabels as string[])
           .reduce((arr, text) => {
             arr.push(
-              ...[this.$t('日別'), this.$t('累計')].map(
+              ...[this.$t('日別'), this.$t('Common.累計')].map(
                 (label) => `${text} (${label})`
               )
             )

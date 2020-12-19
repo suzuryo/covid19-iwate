@@ -7,7 +7,7 @@
         chart-id="time-bar-chart-positive-status-severe-case"
         :chart-data="graphData"
         :date="Data.date"
-        :unit="$t('人')"
+        :unit="$t('Common.人')"
       >
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
