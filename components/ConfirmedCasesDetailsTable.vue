@@ -69,6 +69,9 @@
           <div :class="$style.content">
             <span>{{ $t('Details.a[4]') }}</span>
             <span>
+              <span :class="$style.perTestPositive">
+                ({{ perTestPositive(this.死亡) }}{{ $t('Common.%') }})
+              </span>
               <strong>{{ 死亡.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
@@ -128,6 +131,11 @@ export default Vue.extend({
     退院: {
       type: Number,
       required: true,
+    },
+  },
+  methods: {
+    perTestPositive(a: number): number {
+      return Math.round((a / this.陽性者数) * 100 * 10) / 10
     },
   },
 })
@@ -196,6 +204,10 @@ $default-boxdiff: 35px;
 
   strong {
     @include font-size(16);
+  }
+
+  span.perTestPositive {
+    margin-right: 0.5rem;
   }
 
   span.unit {
