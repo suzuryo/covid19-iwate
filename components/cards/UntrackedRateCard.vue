@@ -9,7 +9,7 @@
         :get-formatter="getFormatter"
         :date="updated"
         :labels="dateList"
-        :unit="[$t('人'), '%']"
+        :unit="[$t('Common.人'), '%']"
         :data-labels="dataLabels"
         :table-labels="tableLabels"
       >

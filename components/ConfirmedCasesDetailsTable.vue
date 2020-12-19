@@ -2,28 +2,28 @@
   <ul :class="$style.container">
     <li :class="[$style.box, $style.parent]">
       <div :class="$style.content">
-        <span> {{ $t('陽性者数') }} ({{ $t('累計') }}) </span>
+        <span> {{ $t('Common.陽性者数') }} ({{ $t('Common.累計') }}) </span>
         <span>
           <strong>{{ 陽性者数.toLocaleString() }}</strong>
-          <span :class="$style.unit">{{ $t('人') }}</span>
+          <span :class="$style.unit">{{ $t('Common.人') }}</span>
         </span>
       </div>
       <ul :class="$style.group">
         <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
-            <span>{{ $t('入院') }}</span>
+            <span>{{ $t('Common.入院') }}</span>
             <span>
               <strong>{{ 入院中.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
           <ul :class="$style.group">
             <li :class="[$style.box]">
               <div :class="$style.content">
-                <span>{{ $t('重症') }}</span>
+                <span>{{ $t('Common.重症') }}</span>
                 <span>
                   <strong>{{ 重症.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('人') }}</span>
+                  <span :class="$style.unit">{{ $t('Common.人') }}</span>
                 </span>
               </div>
             </li>
@@ -31,46 +31,49 @@
         </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
-            <span>{{ $t('宿泊療養') }}</span>
+            <span>{{ $t('Common.宿泊療養') }}</span>
             <span>
               <strong>{{ 宿泊療養.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
         </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
-            <span>{{ $t('自宅療養') }}</span>
+            <span>{{ $t('Details.a[1]') }}</span>
             <span>
               <strong>{{ 自宅療養.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
         </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
-            <span>{{ $t('入院・療養等調整中') }}</span>
+            <span>{{ $t('Details.a[2]') }}</span>
             <span>
               <strong>{{ 入院療養等調整中.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
         </li>
         <li :class="$style.box">
           <div :class="$style.content">
-            <span>{{ $t('退院等') }}</span>
+            <span>{{ $t('Details.a[3]') }}</span>
             <span>
               <strong>{{ 退院.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
         </li>
         <li :class="$style.box">
           <div :class="$style.content">
-            <span>{{ $t('死亡') }}</span>
+            <span>{{ $t('Details.a[4]') }}</span>
             <span>
+              <span :class="$style.perTestPositive">
+                ({{ perTestPositive(this.死亡) }}{{ $t('Common.%') }})
+              </span>
               <strong>{{ 死亡.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
           </div>
         </li>
@@ -128,6 +131,11 @@ export default Vue.extend({
     退院: {
       type: Number,
       required: true,
+    },
+  },
+  methods: {
+    perTestPositive(a: number): number {
+      return Math.round((a / this.陽性者数) * 100 * 10) / 10
     },
   },
 })
@@ -196,6 +204,10 @@ $default-boxdiff: 35px;
 
   strong {
     @include font-size(16);
+  }
+
+  span.perTestPositive {
+    margin-right: 0.5rem;
   }
 
   span.unit {

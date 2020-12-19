@@ -58,7 +58,7 @@ export default {
     municipalitiesTable.headers = [
       { text: this.$t('市町村'), value: 'label' },
       { text: this.$t('ふりがな'), value: 'ruby' },
-      { text: this.$t('陽性者数'), value: 'count', align: 'end' },
+      { text: this.$t('Common.陽性者数'), value: 'count', align: 'end' },
       {
         text: this.$t('陽性者数/人口'),
         value: 'count_per_population',
