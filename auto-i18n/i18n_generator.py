@@ -179,8 +179,10 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
     for tag in all_tags:
         # "."で区切られている特殊なもの("件.tested"や"件.reports"のような翻訳が複数あるもの)を判別する
         # 普通のものに関しては、なにもせず代入する
-        tag_splitted = tag.split(".")
-        if len(tag_splitted) == 2:
+        # TODO: まともな実装 / tagの中に数字の小数点があるとsplitされてしまう
+        if tag != "感染ピーク時の1日あたりの検査件数は、陽性率 10.4% と想定すると、実効再生産数 R1.7 の場合は 444 件、実効再生産数 R2.0 の場合は 829件 として検査態勢を整備している。":
+            tag_splitted = tag.split(".")
+        if len(tag_splitted) > 1:
             found = False
             for many_tag in has_many_tags:
                 if tag_splitted[0] == many_tag[0] and tag_splitted[1] != many_tag[1]:
