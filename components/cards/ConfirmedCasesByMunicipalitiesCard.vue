@@ -9,7 +9,7 @@
         :info="info"
       >
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li>
               {{ $t('前日までに報告された陽性者の居住地を元にした累計値') }}

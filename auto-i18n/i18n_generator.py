@@ -179,8 +179,9 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
     for tag in all_tags:
         # "."で区切られている特殊なもの("件.tested"や"件.reports"のような翻訳が複数あるもの)を判別する
         # 普通のものに関しては、なにもせず代入する
+        # TODO: まともな実装 / tagの中に数字の小数点があるとsplitされてしまう
         tag_splitted = tag.split(".")
-        if len(tag_splitted) == 2:
+        if len(tag_splitted) > 1:
             found = False
             for many_tag in has_many_tags:
                 if tag_splitted[0] == many_tag[0] and tag_splitted[1] != many_tag[1]:
@@ -189,7 +190,7 @@ with open(os.path.join(os.pardir, OUTPUT_DIR, CHECK_RESULT), mode="a", encoding=
             # ogp.og:imageに関しては一つしかない例外なので、特例として処理する
             # QUICKFIX: ConfirmedCasesAttributesCard のような配列型も、特例として処理する
             # TODO: 配列型に対するまともな実装
-            if tag_splitted[0] in ["ogp", "ConfirmedCasesAttributesCard", "About", "SideNavigation"]:
+            if tag_splitted[0] in ["ogp", "ConfirmedCasesAttributesCard"]:
                 found = True
             has_many_tags.append(tag_splitted + [found])
         else:

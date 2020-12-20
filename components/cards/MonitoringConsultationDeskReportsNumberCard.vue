@@ -10,7 +10,7 @@
         :unit="$t('件.reports')"
       >
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li>
               {{ $t('主に「症状がある方からの受診等に関する相談」を計上') }}

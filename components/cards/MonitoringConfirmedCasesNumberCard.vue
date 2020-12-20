@@ -3,7 +3,7 @@
     <client-only>
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
-        :info-titles="[$t('新規陽性者数の7日間移動平均')]"
+        :info-titles="[$t('ConfirmedCasesNumberCard.title')]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
@@ -15,57 +15,36 @@
       >
         <template #additionalDescription>
           <div :class="$style.newScenario">
-            <span>{{ $t('（注）') }}</span>
+            <span>{{ $t('Common.注') }}</span>
             <ul>
               <li>
-                {{ $t('検査結果の判明日を基準とする') }}
+                {{ $t('Common.検査結果の判明日を基準とする') }}
+              </li>
+              <li
+                v-for="(item, i) in $t('ConfirmedCasesNumberCard.a')"
+                :key="i"
+              >
+                {{ item }}
               </li>
               <li>
-                {{ $t('医療機関等が行った検査も含む') }}
-              </li>
-              <li>
-                {{
-                  $t(
-                    '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）'
-                  )
-                }}
+                {{ $t('Common.7MA') }}
               </li>
             </ul>
             <hr />
             <div :class="$style.newScenarioSummarry">
-              <p>
-                {{ $t('岩手県の場合、') }}
-                <strong>
-                  {{
-                    $t(
-                      '陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請'
-                    )
-                  }}
-                </strong>
-                {{
-                  $t(
-                    '（外出自粛要請、営業自粛要請、学校の休校等）をおこない、その20日後に入院患者数のピークが266人となり、計画している病床数 (フェーズ3にて軽中症305床) に収まるという「新たな流行シナリオ」に基づいて医療提供体制等を整備している'
-                  )
-                }}
+              <p v-for="(item, i) in $t('ConfirmedCasesNumberCard.b')" :key="i">
+                {{ item }}
               </p>
             </div>
             <div :class="$style.newScenarioExternalLink">
               <div>
-                <app-link
-                  to="https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf"
-                >
-                  {{ $t('岩手県 / 第17回本部員会議資料【資料2】[PDF]') }}
+                <app-link :to="$t('ExtLink.岩手県17_2.url')">
+                  {{ $t('ExtLink.岩手県17_2.text') }}
                 </app-link>
               </div>
               <div>
-                <app-link
-                  to="https://www.mhlw.go.jp/content/10900000/000641696.pdf"
-                >
-                  {{
-                    $t(
-                      '厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]'
-                    )
-                  }}
+                <app-link :to="$t('ExtLink.厚生労働省x696.url')">
+                  {{ $t('ExtLink.厚生労働省x696.text') }}
                 </app-link>
               </div>
             </div>
@@ -101,8 +80,14 @@ export default {
       [[], [], []]
     )
     const chartData = [patientsCount, sevenDayMoveAverages]
-    const dataLabels = [this.$t('Common.陽性者数'), this.$t('７日間移動平均')]
-    const tableLabels = [this.$t('Common.陽性者数'), this.$t('７日間移動平均')]
+    const dataLabels = [
+      this.$t('Common.陽性者数'),
+      this.$t('Common.７日間移動平均'),
+    ]
+    const tableLabels = [
+      this.$t('Common.陽性者数'),
+      this.$t('Common.７日間移動平均'),
+    ]
     const date = Data.date
 
     const getFormatter = (columnIndex) => {

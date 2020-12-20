@@ -9,7 +9,25 @@
     "%": "%",
     "入院": "Hospitalized",
     "重症": "Serious symptoms",
-    "宿泊療養": "Receiving treatment at lodging facilities"
+    "宿泊療養": "Receiving treatment at lodging facilities",
+    "７日間移動平均": "7 Day Moving Average",
+    "7MA": "7-MA : Since daily results fluctuate due to outbreaks of mass infections and variations in values depending on the day of the week, the results are calculated based on the Moving Average of the past 7 days in order to equalize such variations and see the overall trend (for example, Aug 7 is the average of the values from Aug 1 to Aug 7).",
+    "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
+    "注": "(Note)"
+  },
+  "ExtLink": {
+    "厚生労働省x696": {
+      "text": "Ministry of Health, Labour and Welfare / Healthcare delivery system in medical institutions [3] [JA/PDF]",
+      "url": "https://www.mhlw.go.jp/content/10900000/000641696.pdf"
+    },
+    "岩手県17_2": {
+      "text": "Iwate Pref 17th HQ Members Meeting Document. [2] [JA/PDF]",
+      "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200710_03.pdf"
+    },
+    "岩手県19_41": {
+      "text": "Iwate Pref 19th HQ Members Meeting Document. [4-1] [JA/PDF]",
+      "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
+    }
   },
   "Details": {
     "a": [
@@ -112,7 +130,6 @@
   "アクセスしようとしたページが見つかりませんでした。": "The page you tried to access could not be found.",
   "ページが移動または削除されたか、URLの入力間違いの可能性があります。": "The page may have been moved or deleted, or you might have typed the wrong URL.",
   "トップページへ戻る": "Return to the top page.",
-  "陽性者数": "Test positives",
   "日別": "By day",
   "累計": "Cumulative",
   "{date} 更新": "Last update: {date}",
@@ -169,27 +186,38 @@
   "比較的軽い風邪の症状": "Relatively mild cold-like symptoms",
   "発熱や咳などの{minorSymptom}がある": "{minorSymptom} such as a fever or cough",
   "日別値": "as a day",
-  "陽性率": "Positive rate",
   "1ページ当たり": "Items per page",
   "{itemsLength} 項目中 {pageStart} - {pageStop} ": "{pageStart} - {pageStop} of {itemsLength} indexes",
   "現在判明している人数であり、後日修正される場合がある": "This number of people has been confirmed; might be modified later",
-  "７日間移動平均": "A 7-day moving average",
   "{date} の数値": "Statistics for {date}",
   "接触歴等判明者数": "Number of positive tests in definite route of infection",
   "接触歴等不明者数": "Number of test positives in the unknown route of infection ",
   "重症患者数": "Number of patients with serious symptoms",
   "確定日別による陽性者数の推移": "確定日別による陽性者数の推移",
-  "速報値として公表するものであり、後日確定データとして修正される場合がある": "Preliminary value. May be modified later",
-  "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
   "（注）": "(Note)",
   "医療機関等が行った検査も含む": "Including examinations at medical institutions",
   "速報値として公開するものであり、後日確定データとして修正される場合がある": "Preliminary value. May be modified later",
   "接触歴等不明者数（７日間移動平均）": "Number of test positives with an unknown route of infection (7-day moving average)",
-  "PCR検査陰性者数": "Negative PCR Test Count",
-  "抗原検査陽性者数": "Positive Antigen Test Count",
-  "PCR検査陽性者数": "Positive PCR Test Count",
-  "抗原検査陰性者数": "Negative Antigen Test Count",
-  "検査の陽性率": "Positive Test Percentage",
+  "PositiveRateCard": {
+    "a": [
+      "Positive Test Percentage",
+      "Number of PCR tests (7-MA)",
+      "Positive PCR Test Count",
+      "Positive Antigen Test Count",
+      "Negative PCR Test Count",
+      "Negative Antigen Test Count",
+      "Number of tests (a 7-day moving average)",
+      "Positive rate"
+    ],
+    "b": [
+      "Rate of Test Positives : Moving average of test positive patients /Moving average of Tested people (as test positive + negative cases)",
+      "Preliminary value. May be modified later"
+    ],
+    "c": [
+      "The number of PCR tests available per day in Iwate Pref is 864.",
+      "As an estimate of the number of tests per day at the peak of infection, assuming a positivity rate of 10.4%, there would be 444 tests if the effective reproduction rate is 1.7, and 829 tests if the effective reproduction rate is 2.0."
+    ]
+  },
   "確保病床": "Number of beds for serious patients",
   "入院患者数のうち、人工呼吸器管理（ECMOを含む）が必要な患者数を計上": "Within hospitalized patients, \"serious symptoms\" are considered to be those patients who need ventilators or ECMO.",
   "業種ごとの感染拡大予防ガイドライン": "業種ごとの感染拡大予防ガイドライン",
@@ -197,7 +225,6 @@
   "新型コロナウイルス感染症相談窓口": "Number of calls in The COVID-19 Consultation Hotline",
   "9時～21時（土日祝含む）": "9:00 am - 10:00 pm (including weekends and holidays)",
   "一般相談 受付件数": "Number of calls to the COVID-19 Call Center",
-  "陽性率：陽性判明数（PCR・抗原）の移動平均／検査件数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均": "Rate of Test Positives : Moving average of test positive patients /Moving average of Tested people (as test positive + negative cases)",
   "「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上": "「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上",
   "ふりがな": "Furigana",
   "24時間 全日（土日・祝日を含む）": "24/7 service",
@@ -209,15 +236,12 @@
   "次の症状がある方": "次の症状がある方",
   "症状のある方": "症状のある方",
   "対策サイト非公式": "The Information website (Unofficial)",
-  "集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値をもとに算出し、折れ線グラフで示す（例えば、8月7日の陽性率は、8月1日から8月7日までの実績平均を用いて算出）": "The positive rate here is a 7-day moving average that evens out the day-to-day variation caused by mass infections and other factors, for the purpose of overall trend analysis with line graph(e.g. the positive rate of 7th Aug is calculated by the average during 1st to 7th Aug.) ",
-  "集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を折れ線グラフで示す（例えば、8月7日の移動平均値は、8月1日から8月7日までの実績値を平均したもの）": "The positive rate here is a 7-day moving average that evens out the day-to-day variation caused by mass infections and other factors, for the purpose of overall trend analysis with line graph(e.g. the positive rate of 7th Aug is calculated by the average during 1st to 7th Aug.) ",
   "窓口を開設した2020年2月8日からのデータを表示": "窓口を開設した2020年2月8日からのデータを表示",
   "新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。": "新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。",
   "岩手県及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。": "岩手県及び国の新型コロナウイルス感染症に関する支援策の情報をまとめています。",
   "窓口を開設した2020年1月21日からのデータを表示": "窓口を開設した2020年1月21日からのデータを表示",
   "岩手県の発表漏れによりデータの存在しない日がある": "岩手県の発表漏れによりデータの存在しない日がある",
   "岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ": "岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ",
-  "検査件数（７日間移動平均）": "Number of tests (a 7-day moving average)",
   "抗原検査件数": "Number of antigen tests",
   "詳細を見る（岩手県新型コロナウイルス感染症関連情報）": "詳細を見る（岩手県新型コロナウイルス感染症関連情報）",
   "検査実施件数": "Number of tests",
@@ -306,11 +330,9 @@
   "まん延期": "Spread stage",
   "岩手県の病床確保計画": "Iwate Prefecture's plan to secure hospital beds",
   "発生初期": "Early stage of outbreak",
-  "厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]": "厚生労働省 / 医療機関での医療提供体制について （別紙３）[PDF]",
   "発生拡大期": "Expanded stage",
   "岩手県の場合、": "岩手県の場合、",
   "未発生期": "Non-outbreak stage",
-  "岩手県 / 第17回本部員会議資料【資料2】[PDF]": "Iwate Prefecture's 17th HQ Members Meeting Document. [2] [JA/PDF]",
   "重点医療機関等の病床の利用が進んだ": "Utilization of beds in priority medical institutions increased.",
   "一部の医療機関の感染症病床が満床": "Infectious disease beds in some medical institutions are full.",
   "全ての医療機関の感染症病床が満床": "Infectious disease beds in all medical institutions are full.",
@@ -319,11 +341,16 @@
   "感染症病床に余裕がある": "Infectious disease beds are almost available in all medical institutions.",
   "岩手の最新感染動向": "Updates on COVID-19 in Iwate",
   "陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請": "陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請",
-  "PCR検査の7日間移動平均": "Number of PCR tests (a 7-day moving average)",
-  "新規陽性者数の7日間移動平均": "Number of new test positives (a 7-day moving average)",
-  "感染ピーク時の1日あたりの検査件数は、陽性率 10.4% と想定すると、実効再生産数 R1.7 の場合は 444 件、実効再生産数 R2.0 の場合は 829件 として検査態勢を整備している。": "感染ピーク時の1日あたりの検査件数は、陽性率 10.4% と想定すると、実効再生産数 R1.7 の場合は 444 件、実効再生産数 R2.0 の場合は 829件 として検査態勢を整備している。",
-  "岩手県 / 第19回本部員会議資料【資料4-1】[PDF]": "Iwate Prefecture's 19th HQ Members Meeting Document. [4-1] [JA/PDF]",
-  "岩手県の1日あたりの検査可能件数は864件": "岩手県の1日あたりの検査可能件数は864件",
+  "ConfirmedCasesNumberCard": {
+    "title": "Number of new test positives (7-MA)",
+    "a": [
+      "Including examinations at medical institutions"
+    ],
+    "b": [
+      "The medical care delivery system, etc. in Iwate Prefecture has been developed based on the \"new epidemic scenario\" of the Ministry of Health, Labor and Welfare.",
+      "In the case of Iwate Prefecture, If the number of positive cases continues to be 4.4 persons/day (31 persons/week) (effective reproduction number R1.7) for 3 days, request for cooperation from society (request to refrain from going out, request to refrain from business, request to close schools, etc.)."
+    ]
+  },
   "岩手のCOVID-19が気になる有志": "Volunteers who are interested in COVID-19 in Iwate",
   "人です。": "人です。",
   "{date}": "{date}",
