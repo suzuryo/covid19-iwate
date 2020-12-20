@@ -10,7 +10,7 @@
         :unit="$t('Common.人')"
       >
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li>
               {{

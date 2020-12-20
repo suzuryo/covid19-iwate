@@ -11,7 +11,7 @@
         :custom-sort="customSort"
       >
         <template #additionalDescription>
-          <span>{{ $t('（注）') }}</span>
+          <span>{{ $t('Common.注') }}</span>
           <ul>
             <li
               v-for="note in $t('ConfirmedCasesAttributesCard.notes')"
