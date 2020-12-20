@@ -3,7 +3,10 @@
     <client-only>
       <positive-rate-mixed-chart
         :title-id="'positive-rate'"
-        :info-titles="[$t('検査の陽性率'), $t('PCR検査の7日間移動平均')]"
+        :info-titles="[
+          $t('PositiveRateCard.a[0]'),
+          $t('PositiveRateCard.a[1]'),
+        ]"
         :chart-id="'positive-rate-chart'"
         :chart-data="positiveRateGraph"
         :get-formatter="getFormatter"
@@ -19,11 +22,7 @@
             <span>{{ $t('Common.注') }}</span>
             <ul>
               <li>
-                {{
-                  $t(
-                    '陽性率：陽性判明数（PCR・抗原）の移動平均／検査件数（＝陽性判明数（PCR・抗原）＋陰性判明数（PCR・抗原））の移動平均'
-                  )
-                }}
+                {{ $t('PositiveRateCard.b[0]') }}
               </li>
               <li>
                 {{ $t('Common.7MA') }}
@@ -32,26 +31,18 @@
                 {{ $t('Common.検査結果の判明日を基準とする') }}
               </li>
               <li>
-                {{
-                  $t(
-                    '速報値として公表するものであり、後日確定データとして修正される場合がある'
-                  )
-                }}
+                {{ $t('PositiveRateCard.b[1]') }}
               </li>
             </ul>
             <hr />
             <div :class="$style.newScenarioSummarry">
               <p>
                 <strong>
-                  {{ $t('岩手県の1日あたりの検査可能件数は864件') }}
+                  {{ $t('PositiveRateCard.c[0]') }}
                 </strong>
               </p>
               <p>
-                {{
-                  $t(
-                    '感染ピーク時の1日あたりの検査件数は、陽性率 10.4% と想定すると、実効再生産数 R1.7 の場合は 444 件、実効再生産数 R2.0 の場合は 829件 として検査態勢を整備している。'
-                  )
-                }}
+                {{ $t('PositiveRateCard.c[1]') }}
               </p>
             </div>
             <div :class="$style.newScenarioExternalLink">
@@ -107,12 +98,12 @@ export default {
       positiveRates,
     ]
     const positiveRateDataLabels = [
-      this.$t('PCR検査陽性者数'),
-      this.$t('抗原検査陽性者数'),
-      this.$t('PCR検査陰性者数'),
-      this.$t('抗原検査陰性者数'),
-      this.$t('検査件数（７日間移動平均）'),
-      this.$t('陽性率'),
+      this.$t('PositiveRateCard.a[2]'),
+      this.$t('PositiveRateCard.a[3]'),
+      this.$t('PositiveRateCard.a[4]'),
+      this.$t('PositiveRateCard.a[5]'),
+      this.$t('PositiveRateCard.a[6]'),
+      this.$t('PositiveRateCard.a[7]'),
     ]
     const positiveRateTableLabels = positiveRateDataLabels.map((d) => d)
 
