@@ -1,13 +1,19 @@
 <template>
   <div class="DataView-DataSet">
-    <span class="DataView-DataSet-title">{{ title }}</span>
+    <h3 class="DataView-DataSet-title">
+      {{ title }}
+    </h3>
     <div class="DataView-DataSet-DataInfo">
       <span v-if="lText !== ''" class="DataView-DataSet-DataInfo-summary">
         {{ lText }}
-        <small class="DataView-DataSet-DataInfo-summary-unit">{{ unit }}</small>
+        <small class="DataView-DataSet-DataInfo-summary-unit">
+          {{ unit }}
+        </small>
       </span>
       <br v-if="lText !== ''" />
-      <small class="DataView-DataSet-DataInfo-date">{{ sText }}</small>
+      <small v-if="sText !== ''" class="DataView-DataSet-DataInfo-date">
+        {{ sText }}
+      </small>
     </div>
   </div>
 </template>
@@ -29,7 +35,8 @@ export default Vue.extend({
     },
     sText: {
       type: String,
-      required: true,
+      required: false,
+      default: '',
     },
     unit: {
       type: String,
@@ -49,6 +56,8 @@ export default Vue.extend({
 
     &-title {
       font-size: 2rem;
+      font-weight: normal;
+      color: $gray-2;
       flex: 1 1 auto;
     }
 
@@ -78,6 +87,11 @@ export default Vue.extend({
         line-height: initial;
         text-align: right;
         @include font-size(12);
+
+        @include largerThan($large) {
+          white-space: nowrap;
+          text-align: right;
+        }
       }
     }
   }

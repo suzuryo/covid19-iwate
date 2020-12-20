@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
-export default DataViewBasicInfoPanel.extend({
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+export default DataViewDataSetPanel.extend({
   props: {
     lText: {
       type: String,
