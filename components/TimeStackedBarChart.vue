@@ -66,8 +66,9 @@
     <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
-    <template #infoPanel>
-      <data-view-basic-info-panel
+    <template #dataSetPanel>
+      <data-view-data-set-panel
+        :title="title"
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
@@ -88,7 +89,7 @@ import DataViewTable, {
   TableHeader,
   TableItem,
 } from '@/components/DataViewTable.vue'
-import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
@@ -158,7 +159,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataView,
     DataSelector,
     DataViewTable,
-    DataViewBasicInfoPanel,
+    DataViewDataSetPanel,
     ScrollableChart,
   },
   props: {

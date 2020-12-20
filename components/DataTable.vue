@@ -58,8 +58,9 @@
     <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
-    <template #infoPanel>
-      <data-view-basic-info-panel
+    <template #dataSetPanel>
+      <data-view-data-set-panel
+        :title="title"
         :l-text="info.lText"
         :s-text="info.sText"
         :unit="info.unit"
@@ -71,12 +72,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
-import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import { getDayjsObject } from '@/utils/formatDate'
 import AppLink from '@/components/AppLink.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewBasicInfoPanel, AppLink },
+  components: { DataView, DataViewDataSetPanel, AppLink },
   props: {
     title: {
       type: String,
