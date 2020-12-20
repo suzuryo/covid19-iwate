@@ -95,11 +95,7 @@ const config: NuxtConfig = {
     customVariables: ['@/assets/variables.scss'],
     optionsPath: './plugins/vuetify.options.ts',
     treeShake: true,
-    defaultAssets: {
-      font: {
-        size: 10,
-      },
-    },
+    defaultAssets: false,
   },
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID, // .env.production などに設定してください。
