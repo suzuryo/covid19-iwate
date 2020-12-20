@@ -46,8 +46,9 @@
         <data-view-table :headers="tableHeaders" :items="tableData" />
       </client-only>
     </template>
-    <template #infoPanel>
-      <data-view-basic-info-panel
+    <template #dataSetPanel>
+      <data-view-data-set-panel
+        :title="title"
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
@@ -65,7 +66,7 @@ import dayjs from 'dayjs'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
-import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataViewTable, {
   TableHeader,
   TableItem,
@@ -125,7 +126,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   components: {
     DataView,
     DataSelector,
-    DataViewBasicInfoPanel,
+    DataViewDataSetPanel,
     DataViewTable,
     ScrollableChart,
   },
