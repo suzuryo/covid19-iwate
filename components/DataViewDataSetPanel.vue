@@ -5,7 +5,9 @@
     </h3>
     <div class="DataView-DataSet-DataInfo">
       <span v-if="lText !== ''" class="DataView-DataSet-DataInfo-summary">
-        {{ lText }}
+        <strong>
+          {{ lText }}
+        </strong>
         <small class="DataView-DataSet-DataInfo-summary-unit">
           {{ unit }}
         </small>
@@ -69,10 +71,13 @@ export default Vue.extend({
         display: inline-block;
         color: $gray-2;
         white-space: nowrap;
-        font-family: Hiragino Sans, sans-serif;
         font-style: normal;
         line-height: 30px;
         @include font-size(30);
+
+        strong {
+          font-weight: 600;
+        }
 
         &-unit {
           width: 100%;
@@ -85,13 +90,7 @@ export default Vue.extend({
         width: 100%;
         color: $gray-3;
         line-height: initial;
-        text-align: right;
         @include font-size(12);
-
-        @include largerThan($large) {
-          white-space: nowrap;
-          text-align: right;
-        }
       }
     }
   }
