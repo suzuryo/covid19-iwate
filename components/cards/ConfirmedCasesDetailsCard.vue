@@ -11,6 +11,9 @@
           :aria-label="$t('Details.a[0]')"
           v-bind="confirmedCases"
         />
+        <template #dataSetPanel>
+          <data-view-data-set-panel :title="$t('Details.a[0]')" />
+        </template>
       </data-view>
     </client-only>
   </v-col>
@@ -21,11 +24,13 @@ import dayjs from 'dayjs'
 import Data from '@/data/data.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import DataView from '@/components/DataView.vue'
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
 
 export default {
   components: {
     DataView,
+    DataViewDataSetPanel,
     ConfirmedCasesDetailsTable,
   },
   data() {
