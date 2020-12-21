@@ -175,6 +175,7 @@ const config: NuxtConfig = {
     manifest: {
       name: '岩手県 新型コロナウイルス感染症対策サイト 非公式',
       short_name: '岩手COVID19',
+      lang: 'ja',
     },
   },
   generate: {
