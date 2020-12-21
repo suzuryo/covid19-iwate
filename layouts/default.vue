@@ -34,7 +34,6 @@
 import Vue from 'vue'
 import { MetaInfo, LinkPropertyHref } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
-import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import SideNavigation from '@/components/SideNavigation.vue'
@@ -97,8 +96,10 @@ export default Vue.extend({
     })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・検査が')}${
-      Data.inspections_summary.data.PCR検査.slice(-1)[0] +
-      Data.inspections_summary.data.抗原検査.slice(-1)[0]
+      (PositiveRate.data.slice(-1)[0].pcr_positive_count ?? 0) +
+      (PositiveRate.data.slice(-1)[0].pcr_negative_count ?? 0) +
+      (PositiveRate.data.slice(-1)[0].antigen_positive_count ?? 0) +
+      (PositiveRate.data.slice(-1)[0].antigen_negative_count ?? 0)
     }${this.$t('件・現在の入院患者は')}${
       PositiveStatus.data.slice(-1)[0].hospitalized
     }${this.$t('人です。')}`
