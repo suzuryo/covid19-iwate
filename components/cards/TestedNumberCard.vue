@@ -6,7 +6,7 @@
         :title-id="'number-of-tested'"
         :chart-id="'time-stacked-bar-chart-inspections'"
         :chart-data="inspectionsGraph"
-        :date="Data.inspections_summary.date"
+        :date="PositiveRate.date"
         :items="inspectionsItems"
         :labels="inspectionsLabels"
         :unit="$t('件.tested')"
@@ -34,7 +34,7 @@
 <script>
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
-import Data from '@/data/data.json'
+import PositiveRate from '@/data/positive_rate.json'
 import { getDayjsObject } from '@/utils/formatDate'
 import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 dayjs.extend(duration)
@@ -45,20 +45,19 @@ export default {
   },
   data() {
     // 検査実施日別状況
-    const { data } = Data.inspections_summary
-    const pcr = Array.from(data['PCR検査'].keys()).map(
-      (i) => data['PCR検査'][i]
-    )
-    const antigen = Array.from(data['抗原検査'].keys()).map(
-      (i) => data['抗原検査'][i]
-    )
+    const pcr = PositiveRate.data.map((d) => {
+      return (d.pcr_positive_count ?? 0) + (d.pcr_negative_count ?? 0)
+    })
+    const antigen = PositiveRate.data.map((d) => {
+      return (d.antigen_positive_count ?? 0) + (d.antigen_negative_count ?? 0)
+    })
     const inspectionsGraph = [pcr, antigen]
     const inspectionsItems = [
       this.$t('PCR検査実施件数'),
       this.$t('抗原検査件数'),
     ]
-    const inspectionsLabels = Data.inspections_summary.labels.map((d) => {
-      return getDayjsObject(d).format('YYYY-MM-DD')
+    const inspectionsLabels = PositiveRate.data.map((d) => {
+      return getDayjsObject(d.diagnosed_date).format('YYYY-MM-DD')
     })
     const inspectionsDataLabels = [
       this.$t('PCR検査実施件数'),
@@ -70,7 +69,7 @@ export default {
     ]
 
     return {
-      Data,
+      PositiveRate,
       inspectionsGraph,
       inspectionsItems,
       inspectionsLabels,
