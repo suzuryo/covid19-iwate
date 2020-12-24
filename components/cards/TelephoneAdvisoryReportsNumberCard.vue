@@ -1,5 +1,10 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard">
+  <v-col
+    id="TelephoneAdvisoryReportsNumberCard"
+    cols="12"
+    md="6"
+    class="DataCard"
+  >
     <client-only>
       <time-bar-chart
         :title="$t('一般相談 受付件数')"

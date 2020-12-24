@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard">
+  <v-col id="HospitalizedNumberCard" cols="12" md="6" class="DataCard">
     <client-only>
       <hospitalized-time-stacked-bar-chart
         :title="$t('入院と宿泊療養の推移')"
