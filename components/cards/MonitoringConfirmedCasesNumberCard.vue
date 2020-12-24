@@ -1,5 +1,10 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard">
+  <v-col
+    id="MonitoringConfirmedCasesNumberCard"
+    cols="12"
+    md="6"
+    class="DataCard"
+  >
     <client-only>
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
