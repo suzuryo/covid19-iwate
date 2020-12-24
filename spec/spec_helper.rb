@@ -1,6 +1,10 @@
+require 'active_support/all'
 require 'capybara/rspec'
 require 'capybara/dsl'
+require 'json'
 require 'selenium-webdriver'
+
+include ActiveSupport::NumberHelper
 
 Capybara.register_driver :emulated_chrome_ios do |app|
   options = Selenium::WebDriver::Chrome::Options.new
