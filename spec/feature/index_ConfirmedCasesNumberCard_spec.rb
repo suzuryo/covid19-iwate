@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '報告日別による陽性者数の推移'
 
         # 日付
-        d = Date.parse(data_json['patients_summary']['date']).strftime("%m月%d日")
+        d = Date.parse(data_json['patients_summary']['data'].last['日付']).strftime("%m月%d日")
         expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} 日別値"
 
         # 陽性者数
