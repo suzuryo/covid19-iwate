@@ -29,7 +29,6 @@
 <script>
 import dayjs from 'dayjs'
 import Data from '@/data/data.json'
-import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import { getDayjsObject } from '@/utils/formatDate'
 import DataTable from '@/components/DataTable.vue'
@@ -39,18 +38,14 @@ export default {
     DataTable,
   },
   data() {
-    // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
     const patientsTable = formatTable(Data.patients.data)
     // 日付
-    const lastDay = patientsGraph[patientsGraph.length - 1].label
+    const lastDay = Data.patients.data[Data.patients.data.length - 1].確定日
     const date = this.$d(getDayjsObject(lastDay).toDate(), 'dateWithoutYear')
 
     const sumInfoOfPatients = {
-      lText: patientsGraph[
-        patientsGraph.length - 1
-      ].cumulative.toLocaleString(),
+      lText: `${Data.patients.data[Data.patients.data.length - 1].id}`,
       sText: this.$t('{date}の累計', { date }),
       unit: this.$t('Common.人'),
     }
