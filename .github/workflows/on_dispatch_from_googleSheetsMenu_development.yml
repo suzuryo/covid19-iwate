@@ -5,7 +5,7 @@ on:
     types: [googleSheetMenu, googleSheetMenuWithoutOGP]
 
 jobs:
-  check_broken_links:
+  rspec:
     runs-on: ubuntu-20.04
     steps:
       - name: Setup Timezone
