@@ -1,5 +1,5 @@
 {
-  "date": "2020-12-25T20:03:54+09:00",
+  "date": "2020-12-30T18:56:33+09:00",
   "data": [
     {
       "date": "2020-02-13T00:00:00+09:00",
@@ -1902,6 +1902,36 @@
       "hospital": 59,
       "hotel": 11,
       "hospitalized": 70
+    },
+    {
+      "date": "2020-12-26T00:00:00+09:00",
+      "hospital": 59,
+      "hotel": 4,
+      "hospitalized": 63
+    },
+    {
+      "date": "2020-12-27T00:00:00+09:00",
+      "hospital": 62,
+      "hotel": 3,
+      "hospitalized": 65
+    },
+    {
+      "date": "2020-12-28T00:00:00+09:00",
+      "hospital": 65,
+      "hotel": 5,
+      "hospitalized": 70
+    },
+    {
+      "date": "2020-12-29T00:00:00+09:00",
+      "hospital": 61,
+      "hotel": 7,
+      "hospitalized": 68
+    },
+    {
+      "date": "2020-12-30T00:00:00+09:00",
+      "hospital": 56,
+      "hotel": 12,
+      "hospitalized": 68
     }
   ]
 }
