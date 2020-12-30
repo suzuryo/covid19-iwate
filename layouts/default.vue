@@ -41,6 +41,7 @@ import NoScript from '@/components/NoScript.vue'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import dayjs from 'dayjs'
+import { WorkboxUpdatableEvent } from 'workbox-window'
 
 type LocalData = {
   hasNavigation: boolean
@@ -286,6 +287,21 @@ export default Vue.extend({
           content: 'wy96JdzncNSSkhp1c0EjfVdCXy0LQAMup_BHI0Bhb_Q',
         },
       ],
+    }
+  },
+  async created() {
+    if (process.client) {
+      const workbox = await window.$workbox
+      if (workbox) {
+        workbox.addEventListener(
+          'installed',
+          (event: WorkboxUpdatableEvent) => {
+            if (event.isUpdate) {
+              location.reload()
+            }
+          }
+        )
+      }
     }
   },
   mounted() {
