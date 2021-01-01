@@ -19,7 +19,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
 
         # 陽性者の合計の日付
-        d = Date.parse(data_json['patients']['data'].last['確定日']).strftime("%m月%d日")
+        d = Date.parse(data_json['patients']['data'].last['確定日']).strftime("%-m月%-d日")
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の累計"
 
         # テーブルの上から1行目をチェックする(通番)
@@ -33,7 +33,7 @@ describe "iPhone 6/7/8", type: :feature do
         end
 
         # テーブルの上から1行目をチェックする(確定日)
-        d = Date.parse(data_json['patients']['data'].last['確定日']).strftime("%m月%d日")
+        d = Date.parse(data_json['patients']['data'].last['確定日']).strftime("%-m月%-d日")
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
 
         # テーブルの上から1行目をチェックする(発症日)

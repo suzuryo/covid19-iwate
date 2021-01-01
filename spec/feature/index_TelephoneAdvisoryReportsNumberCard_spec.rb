@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '一般相談 受付件数'
 
         # 日付
-        d = Date.parse(data_json['contacts']['data'].last['日付']).strftime("%m月%d日")
+        d = Date.parse(data_json['contacts']['data'].last['日付']).strftime("%-m月%-d日")
         expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} 実績値"
 
         # 一般相談 受付件数
@@ -26,7 +26,7 @@ describe "iPhone 6/7/8", type: :feature do
         find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
 
         # テーブルの上から1行目をチェックする(日付)
-        d = Date.parse(data_json['contacts']['data'].last['日付']).strftime("%m月%d日")
+        d = Date.parse(data_json['contacts']['data'].last['日付']).strftime("%-m月%-d日")
         expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
 
         # テーブルの上から1行目をチェックする(一般相談 受付件数・日別)

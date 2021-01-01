@@ -16,7 +16,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '新規陽性者数の7日間移動平均'
 
         # 日付
-        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
         # 新規陽性者数の7日間移動平均
@@ -27,7 +27,7 @@ describe "iPhone 6/7/8", type: :feature do
         find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
 
         # テーブルの上から2番目の値を確認(日付)
-        d = Date.parse(positive_rate_json['data'][-2]['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'][-2]['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > th').text).to eq "#{d}"
 
         # テーブルの上から2番目の値を確認(陽性者数)
