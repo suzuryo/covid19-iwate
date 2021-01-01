@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
+import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
@@ -24,6 +26,8 @@ import PositiveStatus from '@/data/positive_status.json'
 
 export default {
   components: {
+    WhatsNewCard,
+    SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
     // SevereCaseCard,
     MonitoringConsultationDeskReportsNumberCard,
@@ -42,6 +46,12 @@ export default {
   data() {
     let title, updatedAt, cardComponent
     switch (this.$route.params.card) {
+      case 'whats-new':
+        cardComponent = 'whats-new-card'
+        break
+      case 'self-disclosures':
+        cardComponent = 'self-disclosures-card'
+        break
       case 'details-of-confirmed-cases':
         cardComponent = 'confirmed-cases-details-card'
         break

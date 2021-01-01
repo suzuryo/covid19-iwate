@@ -162,6 +162,18 @@ export default Vue.extend({
               {
                 '@type': 'ListItem',
                 position: 2,
+                name: '最新のお知らせ',
+                item: 'https://iwate.stopcovid19.jp/cards/whats-new/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '自主公表',
+                item: 'https://iwate.stopcovid19.jp/cards/self-disclosures/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
                 name: '陽性者の状況',
                 item:
                   'https://iwate.stopcovid19.jp/cards/details-of-confirmed-cases/',
