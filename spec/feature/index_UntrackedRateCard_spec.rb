@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3').text).to eq '接触歴等不明者数(7日間移動平均)'
 
         # 日付
-        d = Date.parse(daily_positive_detail_json['data'].last['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(daily_positive_detail_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
         # 接触歴等不明者数(7日間移動平均)
@@ -30,7 +30,7 @@ describe "iPhone 6/7/8", type: :feature do
         find('#UntrackedRateCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
 
         # テーブルの上から3番目の値(日別)
-        d = Date.parse(daily_positive_detail_json['data'][-3]['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(daily_positive_detail_json['data'][-3]['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#UntrackedRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(3) > th').text).to eq "#{d}"
 
         # テーブルの上から3番目の値を確認(接触歴等判明者数)
