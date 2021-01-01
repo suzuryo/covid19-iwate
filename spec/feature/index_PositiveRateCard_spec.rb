@@ -17,7 +17,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq 'PCR検査の7日間移動平均'
 
         # 日付
-        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > small').text).to match "^#{d} の数値"
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > small').text).to match "^#{d} の数値"
 
@@ -39,7 +39,7 @@ describe "iPhone 6/7/8", type: :feature do
         find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
 
         # テーブルの上から4行目をチェックする(日付)
-        d = Date.parse(positive_rate_json['data'][-4]['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'][-4]['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > th').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(PCR検査陽性者数)

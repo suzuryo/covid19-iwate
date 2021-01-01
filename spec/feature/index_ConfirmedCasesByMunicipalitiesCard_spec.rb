@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3').text).to eq '陽性患者数（市町村別）'
 
         # 日付
-        d = Date.parse(patient_municipalities_json['date']).strftime("%m月%d日")
+        d = Date.parse(patient_municipalities_json['date']).strftime("%-m月%-d日")
         expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の累計"
 
         # テーブルの上から1行目をチェックする(市町村)
