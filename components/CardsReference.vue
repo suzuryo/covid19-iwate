@@ -3,6 +3,8 @@
     <card-row class="DataBlock">
       <!-- 最新のお知らせ -->
       <whats-new-card />
+      <!-- 自主公表 -->
+      <self-disclosures-card />
       <!-- 検査陽性者の状況 -->
       <confirmed-cases-details-card />
       <!-- 新規患者に関する報告件数の推移 -->
@@ -39,6 +41,7 @@
 import Vue from 'vue'
 import CardRow from '@/components/cards/CardRow.vue'
 import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
+import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
@@ -58,6 +61,7 @@ export default Vue.extend({
   components: {
     CardRow,
     WhatsNewCard,
+    SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
     UntrackedRateCard,
     PositiveRateCard,
