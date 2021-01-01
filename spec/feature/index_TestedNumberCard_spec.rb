@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '検査実施件数'
 
         # 日付
-        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の合計"
 
         # 検査実施件数
@@ -26,7 +26,7 @@ describe "iPhone 6/7/8", type: :feature do
         find('#TestedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
 
         # テーブルの上から2行目をチェックする(日付)
-        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%m月%d日")
+        d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
         expect(find('#TestedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
 
         # テーブルの上から2行目をチェックする(PCR検査実施件数・日別)
