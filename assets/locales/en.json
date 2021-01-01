@@ -163,6 +163,15 @@
   "合計": " Total",
   "{date}の合計": " Total of %{date}",
   "最新のお知らせ": "What's new",
+  "SelfDisclosures": {
+    "a": [
+      "Self Disclosures"
+    ],
+    "notes": [
+      "うわさや風評被害への不安・個人情報の保護・組織としての社会的責任・リスクマネジメントとBCP・あとから発覚することによる評判の低下・事実の迅速な情報開示による顧客や地域への安心の提供、その狭間で、勇気を持って自主的に各ホームページで公表された情報 👏",
+      "判明分のみ"
+    ]
+  },
   "新型コロナウイルス感染症にかかる相談窓口について": "Detail of The Tokyo COVID-19 Consultation Hotline",
   "別タブで開く": " Open the new tab",
   "2次元コード": "QR Code",
