@@ -23,23 +23,23 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の合計"
 
         # テーブルを表示をクリック
-        find('#HospitalizedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
+        find('#HospitalizedNumberCard > div > div > div.DataView-ExpansionPanel > div > div > button').click
 
         # テーブルの上から1行目をチェックする(日付)
         d = Date.parse(positive_status_json['data'].last['date']).strftime("%-m月%-d日")
-        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
 
         # テーブルの上から1行目をチェックする(入院)
         d = number_to_delimited(positive_status_json['data'].last['hospital'].to_i)
-        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
 
         # テーブルの上から1行目をチェックする(宿泊療養)
         d = number_to_delimited(positive_status_json['data'].last['hotel'].to_i)
-        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
 
         # テーブルの上から1行目をチェックする(計)
         d = number_to_delimited(positive_status_json['data'].last['hospitalized'].to_i)
-        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq "#{d}"
+        expect(find('#HospitalizedNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq "#{d}"
       end
     end
 

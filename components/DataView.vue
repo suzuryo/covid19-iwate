@@ -27,12 +27,12 @@
         <slot name="additionalDescription" />
       </div>
 
-      <data-view-expantion-panel
+      <data-view-expansion-panel
         v-if="this.$slots.dataTable"
-        class="DataView-ExpantionPanel"
+        class="DataView-ExpansionPanel"
       >
         <slot name="dataTable" />
-      </data-view-expantion-panel>
+      </data-view-expansion-panel>
 
       <div class="DataView-Space" />
 
@@ -63,11 +63,11 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import DataViewExpantionPanel from '@/components/DataViewExpantionPanel.vue'
+import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
 import DataViewShare from '@/components/DataViewShare.vue'
 
 export default Vue.extend({
-  components: { DataViewExpantionPanel, DataViewShare },
+  components: { DataViewExpansionPanel, DataViewShare },
   props: {
     title: {
       type: String,
@@ -219,7 +219,7 @@ export default Vue.extend({
     }
   }
 
-  &-ExpantionPanel {
+  &-ExpansionPanel {
     margin-bottom: 10px;
   }
 

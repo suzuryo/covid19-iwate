@@ -24,19 +24,19 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
 
         # テーブルを表示をクリック
-        find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
+        find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > button').click
 
         # テーブルの上から2番目の値を確認(日付)
         d = Date.parse(positive_rate_json['data'][-2]['diagnosed_date']).strftime("%-m月%-d日")
-        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > th').text).to eq "#{d}"
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > th').text).to eq "#{d}"
 
         # テーブルの上から2番目の値を確認(陽性者数)
         d = number_to_delimited(positive_rate_json['data'][-2]['positive_count'].to_i)
-        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2)').text).to eq "#{d}"
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2)').text).to eq "#{d}"
 
         # テーブルの上から2番目の値を確認(7日間移動平均)
         d = number_to_delimited((positive_rate_json['data'][-8..-2].reduce(0){|sum, n| sum + n['positive_count'].to_i} / 7.0).round(1))
-        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(3)').text).to eq "#{d}"
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(3)').text).to eq "#{d}"
       end
     end
 

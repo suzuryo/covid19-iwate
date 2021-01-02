@@ -23,23 +23,23 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
 
         # テーブルを表示をクリック
-        find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
+        find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > button').click
 
         # テーブルの最上部の値(日付)
         d = Date.parse(data_json['patients_summary']['data'].last['日付']).strftime("%-m月%-d日")
-        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
 
         # テーブルの最上部の値(陽性者・日別)
         d = number_to_delimited(data_json['patients_summary']['data'].last['小計'])
-        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
 
         # テーブルの最上部の値(陽性者・累計)
         d = number_to_delimited(data_json['patients_summary']['data'].reduce(0){|sum, n| sum + n['小計'].to_i})
-        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
 
         # テーブルの最上部の値(陽性者・累計)(idからチェック)
         d = number_to_delimited(data_json['patients']['data'].last['id'].to_i)
-        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+        expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
       end
     end
 

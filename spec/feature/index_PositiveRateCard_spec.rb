@@ -36,35 +36,35 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq "#{d}"
 
         # テーブルを表示をクリック
-        find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > button').click
+        find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > button').click
 
         # テーブルの上から4行目をチェックする(日付)
         d = Date.parse(positive_rate_json['data'][-4]['diagnosed_date']).strftime("%-m月%-d日")
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > th').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > th').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(PCR検査陽性者数)
         d = number_to_delimited(positive_rate_json['data'][-4]['pcr_positive_count'].to_i)
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(2)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(2)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(抗原検査陽性者数)
         d = number_to_delimited(positive_rate_json['data'][-4]['antigen_positive_count'].to_i)
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(3)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(3)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(PCR検査陰性者数)
         d = number_to_delimited(positive_rate_json['data'][-4]['pcr_negative_count'].to_i)
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(4)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(4)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(抗原検査陰性者数)
         d = number_to_delimited(positive_rate_json['data'][-4]['antigen_negative_count'].to_i)
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(5)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(5)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(検査件数 7-MA)
         d = number_to_delimited(positive_rate_json['data'][-4]['weekly_average_diagnosed_count'].to_f)
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(6)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(6)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(陽性率)
         d = number_to_delimited(positive_rate_json['data'][-4]['positive_rate'].round(1))
-        expect(find('#PositiveRateCard > div > div > div.DataView-ExpantionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(7)').text).to eq "#{d}"
+        expect(find('#PositiveRateCard > div > div > div.DataView-ExpansionPanel > div > div > div > div > div > div > table > tbody > tr:nth-child(4) > td:nth-child(7)').text).to eq "#{d}"
       end
     end
 
