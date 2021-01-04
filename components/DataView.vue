@@ -24,15 +24,21 @@
       </div>
 
       <div class="DataView-Description DataView-Description--Additional">
-        <slot name="additionalDescription" />
+        <data-view-expansion-panel
+          v-if="this.$slots.dataTable"
+          class="DataView-ExpansionPanel"
+        >
+          <slot name="dataTable" />
+        </data-view-expansion-panel>
       </div>
 
-      <data-view-expansion-panel
-        v-if="this.$slots.dataTable"
-        class="DataView-ExpansionPanel"
-      >
-        <slot name="dataTable" />
-      </data-view-expansion-panel>
+      <div class="DataView-Description DataView-Description--Additional">
+        <slot name="notes" />
+      </div>
+
+      <div class="DataView-Description DataView-Description--Additional">
+        <slot name="additionalDescription" />
+      </div>
 
       <div class="DataView-Space" />
 
@@ -178,7 +184,7 @@ export default Vue.extend({
   }
 
   &-Content {
-    margin: 16px 0;
+    margin: 10px 0;
   }
 
   &-Space {
@@ -186,7 +192,7 @@ export default Vue.extend({
   }
 
   &-Description {
-    margin-top: 10px;
+    margin-bottom: 10px;
     color: $gray-3;
     @include font-size(12);
 
@@ -199,10 +205,6 @@ export default Vue.extend({
         margin-left: 1.5em;
         text-indent: -1.5em;
       }
-    }
-
-    &--Additional {
-      margin-bottom: 10px;
     }
   }
 
@@ -217,10 +219,6 @@ export default Vue.extend({
         white-space: nowrap;
       }
     }
-  }
-
-  &-ExpansionPanel {
-    margin-bottom: 10px;
   }
 
   &-Footer {
