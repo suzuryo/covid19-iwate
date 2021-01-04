@@ -14,8 +14,7 @@
         :date="data.date"
         :unit="$t('Common.人')"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{
