@@ -14,8 +14,7 @@
         :table-labels="inspectionsTableLabels"
       >
         <!-- 件.tested = 検査数 -->
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{

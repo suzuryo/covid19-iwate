@@ -39,6 +39,25 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th.text-start.sortable.active.asc'
         expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq '一関市'
         expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq 'いちのせきし'
+
+        # 注釈を表示ボタンの文言
+        expect(find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq '注釈'
+
+        # 注釈を表示ボタンをクリックすると開く
+        expect(page).not_to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
+        find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel button.v-expansion-panel-header').click
+        expect(page).to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
+
+        # 注釈の中身をチェック
+        expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)").text).to eq '前日までに報告された陽性者の居住地を元にした累計値'
+        expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)").text).to eq '意向により居住地が公表されない場合は累計に含まれない'
+        expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)").text).to eq '例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある'
+        expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)").text).to eq '陽性者数/人口 は市町村の人口(令和2年10月1日現在)に対する陽性者数の割合'
+
+        # 注釈を表示ボタンをクリックすると閉じる
+        expect(page).to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
+        find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel button.v-expansion-panel-header').click
+        expect(page).not_to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
       end
     end
 

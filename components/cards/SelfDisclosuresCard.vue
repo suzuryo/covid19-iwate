@@ -7,8 +7,7 @@
         :date="date"
         :items="newsItems.newsItems"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li v-for="note in $t('SelfDisclosures.notes')" :key="note">
               {{ note }}

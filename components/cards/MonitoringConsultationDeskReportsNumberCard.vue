@@ -14,8 +14,7 @@
         :date="Data.querents.date"
         :unit="$t('件.reports')"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{ $t('主に「症状がある方からの受診等に関する相談」を計上') }}

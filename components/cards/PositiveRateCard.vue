@@ -17,9 +17,8 @@
         :data-labels="positiveRateDataLabels"
         :table-labels="positiveRateTableLabels"
       >
-        <template #additionalDescription>
+        <template #notes>
           <div :class="$style.newScenario">
-            <span>{{ $t('Common.注') }}</span>
             <ul>
               <li>
                 {{ $t('PositiveRateCard.b[0]') }}
