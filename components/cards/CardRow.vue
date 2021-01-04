@@ -60,10 +60,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       self.dataset.height = self.dataset.height || `${self.offsetHeight}`
       side.dataset.height = side.dataset.height || `${side.offsetHeight}`
 
-      self.style.height =
-        self.style.height === 'auto' ? `${self.dataset.height}px` : 'auto'
-      side.style.height =
-        side.style.height === 'auto' ? 'auto' : `${side.dataset.height}px`
+      // self.style.height =
+      //   self.style.height === '100%' ? `${self.dataset.height}px` : '100%'
+      // side.style.height =
+      //   side.style.height === '100%' ? '100%' : `${side.dataset.height}px`
     },
   },
   computed: {

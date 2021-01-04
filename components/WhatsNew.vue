@@ -31,8 +31,15 @@
         </tbody>
       </template>
     </v-data-table>
-    <template #additionalDescription>
-      <slot name="additionalDescription" />
+    <template #notes>
+      <notes-expansion-panel
+        class="DataView-ExpansionPanel"
+        :expansion-panel-text="$t('Common.注')"
+      >
+        <template #notes>
+          <slot name="notes" />
+        </template>
+      </notes-expansion-panel>
     </template>
     <template #dataSetPanel>
       <data-view-data-set-panel :title="title" />
@@ -46,7 +53,8 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import AppLink from '@/components/AppLink.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import DataViewExpansionPanel from '~/components/DataViewExpansionPanel.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
+import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
 
 type Data = {}
 type Methods = {}
@@ -70,6 +78,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataView,
     DataViewDataSetPanel,
     DataViewExpansionPanel,
+    NotesExpansionPanel,
   },
   props: {
     title: {
