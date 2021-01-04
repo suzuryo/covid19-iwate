@@ -13,8 +13,7 @@
         :data-labels="dataLabels"
         :table-labels="tableLabels"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{
