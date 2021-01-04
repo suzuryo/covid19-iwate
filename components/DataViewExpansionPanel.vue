@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="DataViewExpansionPanel">
     <v-expansion-panels v-if="showDetails" flat>
       <v-expansion-panel>
         <v-expansion-panel-header
@@ -7,12 +7,14 @@
           :style="{ transition: 'none' }"
           @click="toggleDetails"
         >
-          <div class="v-expansion-panel-header__icon">
+          <div class="v-expansion-panel-header__icon grey--text text--darken-2">
             <v-icon left size="24">{{ mdiChevronRight }}</v-icon>
           </div>
-          <span class="expansion-panel-text">{{ $t('テーブルを表示') }}</span>
+          <span class="expansion-panel-text grey--text text--darken-2">
+            {{ $t('Common.データを表示') }}
+          </span>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        <v-expansion-panel-content class="grey--text text--darken-2">
           <slot />
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -47,6 +49,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+.v-expansion-panels {
+  color: $gray-2;
+}
+
+.v-expansion-panel-header {
+  padding: 5px 0;
+}
+
 .v-expansion-panel-header__icon {
   margin-left: -5px !important;
 
@@ -60,7 +70,6 @@ export default Vue.extend({
 }
 
 .expansion-panel-text {
-  color: $gray-1;
-  @include font-size(14);
+  @include font-size(12);
 }
 </style>

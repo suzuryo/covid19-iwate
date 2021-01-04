@@ -13,7 +13,7 @@
         :data-labels="hospitalizedDataLabels"
         :table-labels="hospitalizedTableLabels"
       >
-        <template #additionalDescription>
+        <template #notes>
           <span>{{ $t('（参考）') }}</span>
           <table :class="$style.beds">
             <caption>

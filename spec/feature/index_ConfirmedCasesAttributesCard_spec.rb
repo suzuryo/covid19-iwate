@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 data_json = JSON.parse(File.read(File.join(__dir__, '../../data/data.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
@@ -69,6 +70,24 @@ describe "iPhone 6/7/8", type: :feature do
         # 次のページの先頭は16番目の要素
         d = "事例#{data_json['patients']['data'][-16]['id'].to_s.rjust(4, '0')}"
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+
+        # 注釈を表示ボタンの文言
+        expect(find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq '注釈'
+
+        # 注釈を表示ボタンをクリックすると開く
+        expect(page).not_to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
+        find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').click
+        expect(page).to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
+
+        # 注釈の中身をチェック
+        ja_json['ConfirmedCasesAttributesCard']['notes'].each_with_index do |d, i |
+          expect(find("#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1+i})").text).to eq d
+        end
+
+        # 注釈を表示ボタンをクリックすると閉じる
+        expect(page).to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
+        find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').click
+        expect(page).not_to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
       end
     end
 
