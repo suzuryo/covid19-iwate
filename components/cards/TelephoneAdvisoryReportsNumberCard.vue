@@ -15,8 +15,7 @@
         :unit="$t('件.reports')"
       >
         <!-- 件.reports = 窓口相談件数 -->
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{
