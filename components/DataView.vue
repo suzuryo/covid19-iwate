@@ -24,15 +24,21 @@
       </div>
 
       <div class="DataView-Description DataView-Description--Additional">
-        <slot name="additionalDescription" />
+        <data-view-expansion-panel
+          v-if="this.$slots.dataTable"
+          class="DataView-ExpansionPanel"
+        >
+          <slot name="dataTable" />
+        </data-view-expansion-panel>
       </div>
 
-      <data-view-expantion-panel
-        v-if="this.$slots.dataTable"
-        class="DataView-ExpantionPanel"
-      >
-        <slot name="dataTable" />
-      </data-view-expantion-panel>
+      <div class="DataView-Description DataView-Description--Additional">
+        <slot name="notes" />
+      </div>
+
+      <div class="DataView-Description DataView-Description--Additional">
+        <slot name="additionalDescription" />
+      </div>
 
       <div class="DataView-Space" />
 
@@ -63,11 +69,11 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import DataViewExpantionPanel from '@/components/DataViewExpantionPanel.vue'
+import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
 import DataViewShare from '@/components/DataViewShare.vue'
 
 export default Vue.extend({
-  components: { DataViewExpantionPanel, DataViewShare },
+  components: { DataViewExpansionPanel, DataViewShare },
   props: {
     title: {
       type: String,
@@ -178,7 +184,7 @@ export default Vue.extend({
   }
 
   &-Content {
-    margin: 16px 0;
+    margin: 10px 0;
   }
 
   &-Space {
@@ -186,7 +192,7 @@ export default Vue.extend({
   }
 
   &-Description {
-    margin-top: 10px;
+    margin-bottom: 10px;
     color: $gray-3;
     @include font-size(12);
 
@@ -199,10 +205,6 @@ export default Vue.extend({
         margin-left: 1.5em;
         text-indent: -1.5em;
       }
-    }
-
-    &--Additional {
-      margin-bottom: 10px;
     }
   }
 
@@ -217,10 +219,6 @@ export default Vue.extend({
         white-space: nowrap;
       }
     }
-  }
-
-  &-ExpantionPanel {
-    margin-bottom: 10px;
   }
 
   &-Footer {

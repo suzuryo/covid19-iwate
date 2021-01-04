@@ -18,23 +18,19 @@
         :table-labels="tableLabels"
         :unit="$t('Common.人')"
       >
-        <template #additionalDescription>
+        <template #notes>
+          <ul>
+            <li>
+              {{ $t('Common.検査結果の判明日を基準とする') }}
+            </li>
+            <li v-for="(item, i) in $t('ConfirmedCasesNumberCard.a')" :key="i">
+              {{ item }}
+            </li>
+            <li>
+              {{ $t('Common.7MA') }}
+            </li>
+          </ul>
           <div :class="$style.newScenario">
-            <span>{{ $t('Common.注') }}</span>
-            <ul>
-              <li>
-                {{ $t('Common.検査結果の判明日を基準とする') }}
-              </li>
-              <li
-                v-for="(item, i) in $t('ConfirmedCasesNumberCard.a')"
-                :key="i"
-              >
-                {{ item }}
-              </li>
-              <li>
-                {{ $t('Common.7MA') }}
-              </li>
-            </ul>
             <hr />
             <div :class="$style.newScenarioSummarry">
               <p v-for="(item, i) in $t('ConfirmedCasesNumberCard.b')" :key="i">

@@ -6,7 +6,6 @@
         :title-id="'details-of-confirmed-cases'"
         :date="updatedAt"
       >
-        <template #additionalDescription />
         <confirmed-cases-details-table
           :aria-label="$t('Details.a[0]')"
           v-bind="confirmedCases"

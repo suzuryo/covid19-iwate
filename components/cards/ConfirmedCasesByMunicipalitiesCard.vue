@@ -13,8 +13,7 @@
         :date="date"
         :info="info"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li>
               {{ $t('前日までに報告された陽性者の居住地を元にした累計値') }}

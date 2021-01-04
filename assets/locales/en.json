@@ -13,7 +13,8 @@
     "７日間移動平均": "7 Day Moving Average",
     "7MA": "7-MA : Since daily results fluctuate due to outbreaks of mass infections and variations in values depending on the day of the week, the results are calculated based on the Moving Average of the past 7 days in order to equalize such variations and see the overall trend (for example, Aug 7 is the average of the values from Aug 1 to Aug 7).",
     "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
-    "注": "(Note)"
+    "注": "Notes",
+    "データを表示": "Show Data Table"
   },
   "ExtLink": {
     "厚生労働省x696": {
@@ -39,7 +40,6 @@
     ]
   },
   "PCR検査実施件数": "Number of PCR tests",
-  "テーブルを表示": "Show the table",
   "{date}の累計": " Cumulative {date}",
   "件": {
     "tested": "cases",

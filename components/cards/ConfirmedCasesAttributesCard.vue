@@ -10,8 +10,7 @@
         :info="sumInfoOfPatients"
         :custom-sort="customSort"
       >
-        <template #additionalDescription>
-          <span>{{ $t('Common.注') }}</span>
+        <template #notes>
           <ul>
             <li
               v-for="note in $t('ConfirmedCasesAttributesCard.notes')"

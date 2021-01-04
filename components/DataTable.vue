@@ -55,8 +55,15 @@
         }}
       </template>
     </v-data-table>
-    <template #additionalDescription>
-      <slot name="additionalDescription" />
+    <template #notes>
+      <notes-expansion-panel
+        class="DataView-ExpansionPanel"
+        :expansion-panel-text="$t('Common.注')"
+      >
+        <template #notes>
+          <slot name="notes" />
+        </template>
+      </notes-expansion-panel>
     </template>
     <template #dataSetPanel>
       <data-view-data-set-panel
@@ -75,9 +82,10 @@ import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import { getDayjsObject } from '@/utils/formatDate'
 import AppLink from '@/components/AppLink.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewDataSetPanel, AppLink },
+  components: { DataView, DataViewDataSetPanel, AppLink, NotesExpansionPanel },
   props: {
     title: {
       type: String,
