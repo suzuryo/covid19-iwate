@@ -60,7 +60,6 @@
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/vuetify": "1.11.2",
     "@types/chart.js": "2.9.29",
-    "@types/workbox-window": "^4.3.3",
     "axe-core": "4.1.1",
     "core-js": "3.8.1",
     "eslint": "7.16.0",
