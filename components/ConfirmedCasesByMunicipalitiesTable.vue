@@ -6,14 +6,21 @@
       :items="chartData.datasets"
       :items-per-page="-1"
       :hide-default-footer="true"
-      :height="480"
+      :height="580"
       :fixed-header="true"
       :mobile-breakpoint="0"
       :custom-sort="customSort"
       class="cardTable"
     />
-    <template #additionalDescription>
-      <slot name="additionalDescription" />
+    <template #notes>
+      <notes-expansion-panel
+        class="DataView-ExpansionPanel"
+        :expansion-panel-text="$t('Common.注')"
+      >
+        <template #notes>
+          <slot name="notes" />
+        </template>
+      </notes-expansion-panel>
     </template>
     <template #dataSetPanel>
       <data-view-data-set-panel
@@ -30,9 +37,10 @@
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewDataSetPanel },
+  components: { DataView, DataViewDataSetPanel, NotesExpansionPanel },
   props: {
     title: {
       type: String,
