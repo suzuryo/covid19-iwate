@@ -58,6 +58,16 @@
         />
       </template>
     </scrollable-chart>
+    <template #notes>
+      <notes-expansion-panel
+        class="DataView-ExpansionPanel"
+        :expansion-panel-text="$t('Common.注')"
+      >
+        <template #notes>
+          <slot name="notes" />
+        </template>
+      </notes-expansion-panel>
+    </template>
     <template #dataTable>
       <client-only>
         <data-view-table :headers="tableHeaders" :items="tableData" />
@@ -90,6 +100,7 @@ import DataViewTable, {
   TableItem,
 } from '@/components/DataViewTable.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
@@ -160,6 +171,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataSelector,
     DataViewTable,
     DataViewDataSetPanel,
+    NotesExpansionPanel,
     ScrollableChart,
   },
   props: {
