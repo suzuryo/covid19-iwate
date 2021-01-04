@@ -309,7 +309,9 @@ export default Vue.extend({
           'installed',
           (event: WorkboxUpdatableEvent) => {
             if (event.isUpdate) {
-              location.reload()
+              if (window.matchMedia('(display-mode: standalone)').matches) {
+                location.reload()
+              }
             }
           }
         )
