@@ -38,6 +38,16 @@
         />
       </template>
     </scrollable-chart>
+    <template #notes>
+      <notes-expansion-panel
+        class="DataView-ExpansionPanel"
+        :expansion-panel-text="$t('Common.注')"
+      >
+        <template #notes>
+          <slot name="notes" />
+        </template>
+      </notes-expansion-panel>
+    </template>
     <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
@@ -71,6 +81,7 @@ import DataViewTable, {
   TableHeader,
   TableItem,
 } from '@/components/DataViewTable.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 
@@ -128,6 +139,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataSelector,
     DataViewDataSetPanel,
     DataViewTable,
+    NotesExpansionPanel,
     ScrollableChart,
   },
   props: {
