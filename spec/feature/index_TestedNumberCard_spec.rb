@@ -76,9 +76,10 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).not_to have_selector('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
         expect(page).not_to have_selector('#TestedNumberCard .NotesExpansionPanel .v-expansion-panel--active')
         find('#TestedNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').click
+        sleep 1
         find('#TestedNumberCard .NotesExpansionPanel button.v-expansion-panel-header').click
         expect(page).to have_selector('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
-        expect(page).not_to have_selector('#TestedNumberCard .NotesExpansionPanel .v-expansion-panel--active')
+        expect(page).to have_selector('#TestedNumberCard .NotesExpansionPanel .v-expansion-panel--active')
       end
     end
 
