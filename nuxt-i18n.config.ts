@@ -34,7 +34,6 @@ const options: NuxtVueI18n.Options.AllOptionsInterface = {
     dateTimeFormats: {
       ja: dateTimeFormatsCommon,
       en: dateTimeFormatsCommon,
-      'ja-basic': dateTimeFormatsCommon,
     },
     formatFallbackMessages: true,
   },
@@ -55,13 +54,6 @@ const options: NuxtVueI18n.Options.AllOptionsInterface = {
       iso: 'en-US',
       file: 'en.json',
       description: 'English',
-    },
-    {
-      code: 'ja-basic',
-      name: 'やさしい にほんご',
-      iso: 'ja-JP',
-      file: 'ja-Hira.json',
-      description: 'Easy Japanese',
     },
   ],
   seo: false,

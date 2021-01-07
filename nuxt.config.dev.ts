@@ -186,7 +186,7 @@ const config: NuxtConfig = {
   generate: {
     fallback: true,
     routes() {
-      const locales = ['en', 'ja-basic']
+      const locales = ['en']
       const pages = [
         '/cards/whats-new',
         '/cards/self-disclosures',
