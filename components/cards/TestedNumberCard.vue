@@ -33,9 +33,10 @@
 <script>
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
+
+import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import { getDayjsObject } from '@/utils/formatDate'
-import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 dayjs.extend(duration)
 
 export default {

@@ -5,6 +5,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     before do
       visit '/'
+      render_lazy_contents
     end
 
     it 'h1/h2' do

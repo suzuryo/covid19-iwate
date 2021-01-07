@@ -29,7 +29,7 @@ options.add_argument("--incognito")
 
 driver = webdriver.Chrome(options=options)
 
-for lang in ("ja", "en", "ja-basic"):
+for lang in ("ja", "en"):
     if not os.path.exists("ogp/{}".format(lang)):
         os.mkdir("ogp/{}".format(lang))
     for path, size in PATHS.items():

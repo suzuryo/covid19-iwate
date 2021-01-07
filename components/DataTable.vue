@@ -78,11 +78,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+import AppLink from '@/components/AppLink.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import { getDayjsObject } from '@/utils/formatDate'
-import AppLink from '@/components/AppLink.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
+import { getDayjsObject } from '@/utils/formatDate'
 
 export default Vue.extend({
   components: { DataView, DataViewDataSetPanel, AppLink, NotesExpansionPanel },

@@ -61,14 +61,16 @@
 </template>
 
 <script lang="ts">
+import { mdiDomain } from '@mdi/js'
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
-import StaticCard from '@/components/StaticCard.vue'
-import PageHeader from '@/components/PageHeader.vue'
+
 import AppLink from '@/components/AppLink.vue'
-import { mdiDomain } from '@mdi/js'
+import PageHeader from '@/components/PageHeader.vue'
+import StaticCard from '@/components/StaticCard.vue'
 
 export default Vue.extend({
+  name: 'Worker',
   components: {
     PageHeader,
     StaticCard,

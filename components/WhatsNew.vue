@@ -1,36 +1,38 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
-    <v-data-table
-      :ref="'displayedTable'"
-      :items="items"
-      :height="350"
-      :items-per-page="100"
-      :mobile-breakpoint="0"
-      hide-default-header
-      hide-default-footer
-      class="cardTable"
-    >
-      <template #body="{ items }">
-        <tbody>
-          <tr v-for="(item, i) in items" :key="i">
-            <td class="text-start">
-              <template v-if="item.url">
-                <app-link :to="item.url" :show-icon="false">
-                  {{ item.icon }}
+    <div class="WhatsNew-Content">
+      <v-data-table
+        :ref="'displayedTable'"
+        :items="items"
+        :height="350"
+        :items-per-page="100"
+        :mobile-breakpoint="0"
+        hide-default-header
+        hide-default-footer
+        class="cardTable"
+      >
+        <template #body="{ items }">
+          <tbody>
+            <tr v-for="(item, i) in items" :key="i">
+              <td class="text-start">
+                <template v-if="item.url">
+                  <app-link :to="item.url" :show-icon="false">
+                    {{ item.icon }}
+                    {{ item.text }}
+                  </app-link>
+                </template>
+                <template v-else>
                   {{ item.text }}
-                </app-link>
-              </template>
-              <template v-else>
-                {{ item.text }}
-              </template>
-            </td>
-            <td class="text-end text-no-wrap">
-              <span>{{ item.date }}</span>
-            </td>
-          </tr>
-        </tbody>
-      </template>
-    </v-data-table>
+                </template>
+              </td>
+              <td class="text-end text-no-wrap">
+                <span>{{ item.date }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </template>
+      </v-data-table>
+    </div>
     <template #notes>
       <notes-expansion-panel
         class="DataView-ExpansionPanel"
@@ -50,11 +52,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
 import AppLink from '@/components/AppLink.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 type Data = {}
 type Methods = {}
@@ -115,3 +118,22 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 
 export default Vue.extend(options)
 </script>
+
+<style lang="scss">
+.WhatsNew {
+  &-Content {
+    .cardTable {
+      table {
+        tbody {
+          tr {
+            td {
+              padding: 10px 0 !important;
+              @include font-size(12);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

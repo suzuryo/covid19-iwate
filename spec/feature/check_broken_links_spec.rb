@@ -20,6 +20,7 @@ describe "iPhone 6/7/8", type: :feature do
     before do
       # chromeで / にアクセスして a タグを全部探す
       visit '/'
+      render_lazy_contents
       page.all('a').each do |a|
         urls << URI(a['href'])
       end

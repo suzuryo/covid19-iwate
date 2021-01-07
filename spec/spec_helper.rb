@@ -19,3 +19,10 @@ end
 
 Capybara.default_driver = :emulated_chrome_ios
 Capybara.app_host = 'http://localhost:3000'
+
+def render_lazy_contents
+  [0, 300, 600, 1200, 2400, 6000, 10000, 0, 10000].each do |i|
+    sleep 0.1
+    page.evaluate_script "window.scroll(0,#{i})"
+  end
+end
