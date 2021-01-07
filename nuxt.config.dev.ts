@@ -10,6 +10,7 @@ const config: NuxtConfig = {
     host: '0.0.0.0',
   },
   target: 'static',
+  components: true,
   /*
    ** Headers of the page
    */
@@ -42,10 +43,16 @@ const config: NuxtConfig = {
         content: 'summary_large_image',
       },
     ],
-
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
+    ],
+    script: [
+      {
+        src:
+          'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
+        defer: true,
+      },
     ],
   },
   /*

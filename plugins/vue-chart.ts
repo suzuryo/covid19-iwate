@@ -59,18 +59,11 @@ const createCustomChart = () => {
       displayLegends: watchDisplayLegends,
       width() {
         setTimeout(() => this.$data._chart.resize())
+        this.$parent.$emit('update-width')
       },
     },
     mounted() {
       setTimeout(() => this.renderChart(this.chartData, this.options))
-
-      // タブ変更時にグラフの`height`を再計算する
-      EventBus.$on(TOGGLE_EVENT, () => {
-        setTimeout(() => this.renderChart(this.chartData, this.options))
-      })
-    },
-    beforeDestroy() {
-      EventBus.$off(TOGGLE_EVENT)
     },
   })
 

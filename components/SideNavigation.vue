@@ -26,8 +26,11 @@
       </h1>
     </header>
 
-    <div :class="['SideNavigation-Body', { '-opened': isNaviOpen }]">
       <span
+    <div
+      v-if="isNaviOpen || $vuetify.breakpoint.smAndUp"
+      :class="['SideNavigation-Body', { '-opened': isNaviOpen }]"
+    >
         class="SideNavigation-CloseIcon"
         :aria-label="$t('SideNavigation.a[1]')"
         @click="$emit('close-navigation', $event)"
