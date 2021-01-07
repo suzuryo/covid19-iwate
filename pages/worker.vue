@@ -70,6 +70,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import StaticCard from '@/components/StaticCard.vue'
 
 export default Vue.extend({
+  name: 'Worker',
   components: {
     PageHeader,
     StaticCard,

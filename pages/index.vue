@@ -25,6 +25,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Computed,
   Props
 > = {
+  name: 'Index',
   data() {
     return {
       showCardsTab: false,

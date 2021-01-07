@@ -205,6 +205,7 @@ type LocalData = {
 }
 
 export default Vue.extend({
+  name: 'Flow',
   components: {
     CovidIcon,
     PrinterButton,
