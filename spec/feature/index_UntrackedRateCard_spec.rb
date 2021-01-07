@@ -8,6 +8,8 @@ describe "iPhone 6/7/8", type: :feature do
 
     before do
       visit '/'
+      render_lazy_contents
+      page.scroll_to('#UntrackedRateCard')
     end
 
     describe '接触歴等不明者数(7日間移動平均)(UntrackedRateCard)' do

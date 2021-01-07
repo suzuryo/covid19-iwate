@@ -7,6 +7,8 @@ describe "iPhone 6/7/8", type: :feature do
 
     before do
       visit '/'
+      render_lazy_contents
+      page.scroll_to('#HospitalizedNumberCard')
     end
 
     describe '入院と宿泊療養の推移(HospitalizedNumberCard)' do
