@@ -14,7 +14,6 @@
         :table-labels="hospitalizedTableLabels"
       >
         <template #notes>
-          <span>{{ $t('（参考）') }}</span>
           <table :class="$style.beds">
             <caption>
               {{
