@@ -138,7 +138,7 @@ export default Vue.extend({
     display: flex;
     align-items: flex-start;
     flex-flow: column;
-    padding: 0 10px 0 0;
+    padding: 0 10px;
 
     @include largerThan($medium) {
       padding: 0 5px;
@@ -160,6 +160,9 @@ export default Vue.extend({
     flex-flow: column;
     padding: 22px;
     height: 100%;
+    @include lessThan($small) {
+      padding: 20px 15px;
+    }
   }
 
   &-Title {
