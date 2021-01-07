@@ -42,14 +42,14 @@ export default Vue.extend({
     return {
       headerItem: {
         iconPath: mdiChartTimelineVariant,
-        title: this.$t('岩手の最新感染動向'),
+        title: this.$t('Common.岩手の最新感染動向'),
       },
       lastUpdate,
     }
   },
   head(): MetaInfo {
     return {
-      title: this.$t('岩手の最新感染動向') as string,
+      title: this.$t('Common.岩手の最新感染動向') as string,
     }
   },
   computed: {

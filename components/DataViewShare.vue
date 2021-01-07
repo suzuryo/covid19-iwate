@@ -192,9 +192,11 @@ export default Vue.extend({
     twitter() {
       const url = `https://twitter.com/intent/tweet?text=${
         this.title
-      } / ${this.$t('岩手県')}${this.$t('新型コロナウイルス感染症')}${this.$t(
-        '対策サイト'
-      )}&url=${this.permalink(true)}&hashtags=StopCovid19JP`
+      } / ${this.$t('Common.岩手県')}
+      ${this.$t('Common.新型コロナウイルス感染症')}
+      ${this.$t('Common.対策サイト')}&url=${this.permalink(
+        true
+      )}&hashtags=StopCovid19JP`
       window.open(url)
     },
     facebook() {

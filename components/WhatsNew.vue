@@ -127,7 +127,7 @@ export default Vue.extend(options)
         tbody {
           tr {
             td {
-              padding: 10px 0 !important;
+              padding: 10px !important;
               @include font-size(12);
             }
           }
