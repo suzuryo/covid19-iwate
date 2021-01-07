@@ -35,6 +35,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'

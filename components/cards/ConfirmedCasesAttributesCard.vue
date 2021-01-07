@@ -27,10 +27,11 @@
 
 <script>
 import dayjs from 'dayjs'
-import Data from '@/data/data.json'
-import formatTable from '@/utils/formatTable'
-import { getDayjsObject } from '@/utils/formatDate'
+
 import DataTable from '@/components/DataTable.vue'
+import Data from '@/data/data.json'
+import { getDayjsObject } from '@/utils/formatDate'
+import formatTable from '@/utils/formatTable'
 
 export default {
   components: {

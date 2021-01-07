@@ -20,11 +20,12 @@
 
 <script>
 import dayjs from 'dayjs'
-import Data from '@/data/data.json'
-import formatConfirmedCases from '@/utils/formatConfirmedCases'
+
+import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
+import Data from '@/data/data.json'
+import formatConfirmedCases from '@/utils/formatConfirmedCases'
 
 export default {
   components: {

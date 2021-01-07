@@ -12,11 +12,12 @@
 </template>
 
 <script lang="ts">
+import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
 import WhatsNew from '@/components/WhatsNew.vue'
 import Data from '@/data/news.json'
-import dayjs from 'dayjs'
 
 type NewsItem = {
   date: string

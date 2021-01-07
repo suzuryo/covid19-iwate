@@ -2,7 +2,7 @@
 
 source ../.env # you have to set FB_ACCESS_TOKEN='{your access token}' in the .env file
 
-LANGS="en ja-basic"
+LANGS="en"
 
 PAGES=$(cat <<EOT
 details-of-confirmed-cases

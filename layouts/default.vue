@@ -31,16 +31,17 @@
 </template>
 
 <script lang="ts">
+import dayjs from 'dayjs'
 import Vue from 'vue'
-import { MetaInfo, LinkPropertyHref } from 'vue-meta'
+import { LinkPropertyHref, MetaInfo } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
+
+import NoScript from '@/components/NoScript.vue'
+import SideNavigation from '@/components/SideNavigation.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
-import SideNavigation from '@/components/SideNavigation.vue'
-import NoScript from '@/components/NoScript.vue'
 import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
-import dayjs from 'dayjs'
 
 type LocalData = {
   hasNavigation: boolean

@@ -1,25 +1,37 @@
 <template>
   <div>
-    <site-top-upper />
-    <cards-reference />
+    <LazySiteTopUpper />
+    <LazyCardsTab />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import SiteTopUpper from '@/components/SiteTopUpper.vue'
-import CardsReference from '@/components/CardsReference.vue'
-import { mdiChartTimelineVariant } from '@mdi/js'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
-export default Vue.extend({
-  components: {
-    SiteTopUpper,
-    CardsReference,
-  },
+type Data = {
+  showCardsTab: boolean
+}
+type Methods = {
+  onScroll: () => void
+}
+type Computed = {}
+type Props = {}
+
+const options: ThisTypedComponentOptionsWithRecordProps<
+  Vue,
+  Data,
+  Methods,
+  Computed,
+  Props
+> = {
+  name: 'Index',
   data() {
     return {
-      mdiChartTimelineVariant,
+      showCardsTab: false,
     }
   },
-})
+}
+
+export default options
 </script>
