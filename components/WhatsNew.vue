@@ -50,11 +50,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
 import AppLink from '@/components/AppLink.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
+import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 type Data = {}
 type Methods = {}

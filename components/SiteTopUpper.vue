@@ -27,13 +27,14 @@
 </template>
 
 <script lang="ts">
+import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
+
 import PageHeader from '@/components/PageHeader.vue'
 import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import { mdiChartTimelineVariant } from '@mdi/js'
 
 export default Vue.extend({
   components: {

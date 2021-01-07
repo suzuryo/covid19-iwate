@@ -106,10 +106,10 @@
 </template>
 
 <script>
-import PositiveStatus from '@/data/positive_status.json'
-import HospitalizedTimeStackedBarChart from '@/components/HospitalizedTimeStackedBarChart.vue'
-import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters.ts'
 import AppLink from '@/components/AppLink.vue'
+import HospitalizedTimeStackedBarChart from '@/components/HospitalizedTimeStackedBarChart.vue'
+import PositiveStatus from '@/data/positive_status.json'
+import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters.ts'
 
 export default {
   components: {

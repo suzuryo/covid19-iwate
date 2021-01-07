@@ -68,9 +68,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+
 import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
 import DataViewShare from '@/components/DataViewShare.vue'
+import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
   components: { DataViewExpansionPanel, DataViewShare },

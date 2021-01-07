@@ -1,9 +1,10 @@
+import 'dayjs/locale/en'
+import 'dayjs/locale/ja'
+
+import { NuxtAppOptions } from '@nuxt/types/app'
 import { _adapters } from 'chart.js'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import 'dayjs/locale/en'
-import 'dayjs/locale/ja'
-import { NuxtAppOptions } from '@nuxt/types/app'
 
 const DEFAULT_FORMATS = {
   datetime: 'MMM D, YYYY, h:mm:ss a',

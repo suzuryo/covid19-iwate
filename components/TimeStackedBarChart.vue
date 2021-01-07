@@ -88,18 +88,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
-import { TranslateResult } from 'vue-i18n'
 import { Chart } from 'chart.js'
 import dayjs from 'dayjs'
-import DataView from '@/components/DataView.vue'
+import Vue from 'vue'
+import { TranslateResult } from 'vue-i18n'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
 import DataSelector from '@/components/DataSelector.vue'
+import DataView from '@/components/DataView.vue'
+import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataViewTable, {
   TableHeader,
   TableItem,
 } from '@/components/DataViewTable.vue'
-import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import ScrollableChart from '@/components/ScrollableChart.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'

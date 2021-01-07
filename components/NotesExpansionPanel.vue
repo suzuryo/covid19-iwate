@@ -26,10 +26,10 @@
 </template>
 
 <script lang="ts">
+import { mdiChevronRight } from '@mdi/js'
 import Vue from 'vue'
 
 import { EventBus, TOGGLE_EVENT } from '@/utils/card-event-bus'
-import { mdiChevronRight } from '@mdi/js'
 
 export default Vue.extend({
   props: {

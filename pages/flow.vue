@@ -174,17 +174,18 @@
 </template>
 
 <script lang="ts">
+import { mdiOpenInNew } from '@mdi/js'
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
 import VueScrollTo from 'vue-scrollto'
-import CovidIcon from '@/static/covid.svg'
-import PrinterButton from '@/components/PrinterButton.vue'
-import PageHeader from '@/components/PageHeader.vue'
+
 import AppLink from '@/components/AppLink.vue'
-import FigCondSy from '@/static/flow/cond_sy.svg'
+import PageHeader from '@/components/PageHeader.vue'
+import PrinterButton from '@/components/PrinterButton.vue'
+import CovidIcon from '@/static/covid.svg'
 import FigCondAnx from '@/static/flow/cond_anx.svg'
+import FigCondSy from '@/static/flow/cond_sy.svg'
 import IconPhone from '@/static/flow/phone.svg'
-import { mdiOpenInNew } from '@mdi/js'
 
 type LocalData = {
   nav: HTMLElement | null // アンカーリンクコンテナ（フローティング対象）
