@@ -3,26 +3,26 @@
 </template>
 
 <script>
-import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
-import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
+import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
 import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
+import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
+import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
+import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
-// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
-import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
-// import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
-import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
-import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
+import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
+import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
+// import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
+import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 export default {
   components: {

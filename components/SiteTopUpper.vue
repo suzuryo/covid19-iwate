@@ -10,14 +10,11 @@
         <span>{{ $t('最終更新') }}</span>
         <time :datetime="updatedAt">{{ formattedDateForDisplay }}</time>
       </div>
-      <div
-        v-show="!['ja', 'ja-basic'].includes($i18n.locale)"
-        class="Annotation"
-      >
+      <div v-show="!['ja'].includes($i18n.locale)" class="Annotation">
         <span>{{ $t('注釈') }}</span>
       </div>
     </div>
-    <static-info
+    <lazy-static-info
       class="mb-4"
       :url="localePath('/flow')"
       :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
@@ -27,26 +24,27 @@
 </template>
 
 <script lang="ts">
+import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
+
 import PageHeader from '@/components/PageHeader.vue'
-import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import { mdiChartTimelineVariant } from '@mdi/js'
 
 export default Vue.extend({
   components: {
     PageHeader,
-    StaticInfo,
   },
   data() {
+    const { lastUpdate } = Data
+
     return {
-      Data,
       headerItem: {
         iconPath: mdiChartTimelineVariant,
         title: this.$t('岩手の最新感染動向'),
       },
+      lastUpdate,
     }
   },
   head(): MetaInfo {
@@ -56,10 +54,10 @@ export default Vue.extend({
   },
   computed: {
     updatedAt() {
-      return convertDatetimeToISO8601Format(this.$data.Data.lastUpdate)
+      return convertDatetimeToISO8601Format(this.$data.lastUpdate)
     },
     formattedDateForDisplay() {
-      return `${this.$d(new Date(Data.lastUpdate), 'dateTime')} JST`
+      return `${this.$d(new Date(this.$data.lastUpdate), 'dateTime')} JST`
     },
   },
 })

@@ -1,11 +1,13 @@
 import { NuxtConfig } from '@nuxt/types'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+
 import i18n from './nuxt-i18n.config'
 const environment = process.env.NODE_ENV || 'development'
 
 const config: NuxtConfig = {
   target: 'static',
+  components: true,
   /*
    ** Headers of the page
    */
@@ -38,10 +40,16 @@ const config: NuxtConfig = {
         content: 'summary_large_image',
       },
     ],
-
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
+    ],
+    script: [
+      {
+        src:
+          'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
+        defer: true,
+      },
     ],
   },
   /*
@@ -182,7 +190,7 @@ const config: NuxtConfig = {
   generate: {
     fallback: true,
     routes() {
-      const locales = ['en', 'ja-basic']
+      const locales = ['en']
       const pages = [
         '/cards/whats-new',
         '/cards/self-disclosures',

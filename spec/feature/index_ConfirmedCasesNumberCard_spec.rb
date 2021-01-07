@@ -7,6 +7,8 @@ describe "iPhone 6/7/8", type: :feature do
 
     before do
       visit '/'
+      render_lazy_contents
+      page.scroll_to('#ConfirmedCasesNumberCard')
     end
 
     describe '報告日別による陽性者数の推移(ConfirmedCasesNumberCard)' do
