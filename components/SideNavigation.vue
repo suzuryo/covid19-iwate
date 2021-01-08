@@ -13,12 +13,13 @@
           <img
             class="SideNavigation-HeaderLogo"
             src="/logo.svg"
-            :alt="$t('岩手県')"
+            :alt="$t('Common.岩手県')"
             width="111"
             height="28"
           />
           <div class="SideNavigation-HeaderText">
-            {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト') }}
+            {{ $t('Common.新型コロナウイルス感染症') }}<br />
+            {{ $t('Common.対策サイト') }}
           </div>
         </app-link>
       </h1>
@@ -154,7 +155,7 @@ export default Vue.extend({
       return [
         {
           iconPath: mdiChartTimelineVariant,
-          title: this.$t('岩手の最新感染動向'),
+          title: this.$t('Common.岩手の最新感染動向'),
           link: this.localePath('/'),
         },
         {
