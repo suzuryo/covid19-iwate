@@ -2,7 +2,7 @@
   <v-col id="WhatsNewCard" cols="12" md="6" class="DataCard">
     <client-only>
       <whats-new
-        :title="$t('最新のお知らせ')"
+        :title="$t('WhatsNew.title')"
         :title-id="'whats-new'"
         :date="date"
         :items="newsItems.newsItems"
