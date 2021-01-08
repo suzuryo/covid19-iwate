@@ -124,9 +124,9 @@ export default {
     }${this.$t(
       '人です。陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
     )}`
-    const defaultTitle = `${this.$t('岩手県')} ${this.$t(
-      '新型コロナウイルス感染症'
-    )}${this.$t('対策サイト')}`
+    const defaultTitle = `${this.$t('Common.岩手県')} ${this.$t(
+      'Common.新型コロナウイルス感染症'
+    )}${this.$t('Common.対策サイト')}`
 
     return {
       titleTemplate: (title) => `${this.title || title} | ${defaultTitle}`,
