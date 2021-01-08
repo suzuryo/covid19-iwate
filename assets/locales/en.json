@@ -165,7 +165,9 @@
   "前日比": "Day-over-day change",
   "合計": " Total",
   "{date}の合計": " Total of %{date}",
-  "最新のお知らせ": "What's new",
+  "WhatsNew": {
+    "title": "What's new"
+  },
   "SelfDisclosures": {
     "a": [
       "Self Disclosures"
