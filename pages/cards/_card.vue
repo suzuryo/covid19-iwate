@@ -20,7 +20,7 @@ import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
-import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate.ts'
+import {convertDateToJapaneseKanjiFormat, getDayjsObject} from '@/utils/formatDate.ts'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
@@ -108,10 +108,9 @@ export default {
       this.$i18n.locale === 'ja'
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
+    const diagnosedDate = PositiveRate.data.slice(-1)[0].diagnosed_date
     const description = `${this.$t('{date}', {
-      date: convertDateToJapaneseKanjiFormat(
-        PositiveRate.data.slice(-1)[0].diagnosed_date
-      ),
+      date: this.$d(getDayjsObject(diagnosedDate).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・検査が')}${
