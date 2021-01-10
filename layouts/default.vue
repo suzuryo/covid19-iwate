@@ -40,8 +40,10 @@ import NoScript from '@/components/NoScript.vue'
 import SideNavigation from '@/components/SideNavigation.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
-import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
-import { getDayjsObject } from '@/utils/formatDate'
+import {
+  convertDateToJapaneseKanjiFormat,
+  getDayjsObject,
+} from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 type LocalData = {
