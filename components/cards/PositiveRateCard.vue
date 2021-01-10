@@ -1,5 +1,5 @@
 <template>
-  <v-col id="PositiveRateCard" cols="12" md="6" class="DataCard">
+  <v-col id="PositiveRateCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <positive-rate-mixed-chart
         :title-id="'positive-rate'"
@@ -76,6 +76,12 @@ export default {
   components: {
     PositiveRateMixedChart,
     AppLink,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 検査実施日別状況

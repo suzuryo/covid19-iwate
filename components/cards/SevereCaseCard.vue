@@ -1,5 +1,5 @@
 <template>
-  <v-col id="SevereCaseCard" cols="12" md="6" class="DataCard">
+  <v-col id="SevereCaseCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <severe-case-bar-chart
         title-id="positive-status-severe-case"
@@ -33,6 +33,12 @@ import { convertDateToISO8601Format } from '@/utils/formatDate.ts'
 export default {
   components: {
     SevereCaseBarChart,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     const graphData = Data.data

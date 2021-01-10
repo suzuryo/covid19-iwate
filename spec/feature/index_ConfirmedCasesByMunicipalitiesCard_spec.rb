@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 patient_municipalities_json = JSON.parse(File.read(File.join(__dir__, '../../data/patient_municipalities.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
@@ -18,7 +19,7 @@ describe "iPhone 6/7/8", type: :feature do
 
         # 日付
         d = Date.parse(patient_municipalities_json['date']).strftime("%-m月%-d日")
-        expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の累計"
+        expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq ja_json['Common']['{date}の累計'].gsub('{date}', d)
 
         # テーブルの上から1行目をチェックする(市町村)
         d = patient_municipalities_json['datasets']['data'].first['label']

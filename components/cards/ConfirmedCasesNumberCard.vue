@@ -1,5 +1,5 @@
 <template>
-  <v-col id="ConfirmedCasesNumberCard" cols="12" md="6" class="DataCard">
+  <v-col id="ConfirmedCasesNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <time-bar-chart
         :title="$t('報告日別による陽性者数の推移')"
@@ -22,6 +22,12 @@ import formatGraph from '@/utils/formatGraph'
 export default {
   components: {
     TimeBarChart,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 感染者数グラフ

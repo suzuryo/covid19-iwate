@@ -40,7 +40,10 @@ import NoScript from '@/components/NoScript.vue'
 import SideNavigation from '@/components/SideNavigation.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
-import { convertDateToJapaneseKanjiFormat } from '@/utils/formatDate'
+import {
+  convertDateToJapaneseKanjiFormat,
+  getDayjsObject,
+} from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 type LocalData = {
@@ -93,7 +96,7 @@ export default Vue.extend({
     }
     const diagnosedDate = PositiveRate.data.slice(-1)[0].diagnosed_date
     const descriptionToday = `${this.$t('{date}', {
-      date: convertDateToJapaneseKanjiFormat(diagnosedDate),
+      date: this.$d(getDayjsObject(diagnosedDate).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・検査が')}${

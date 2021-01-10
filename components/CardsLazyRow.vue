@@ -11,7 +11,12 @@
       min-width="50%"
     >
       <lazy-card-row v-if="actives[i]">
-        <component :is="component" v-for="(component, j) in row" :key="j" />
+        <component
+          :is="component"
+          v-for="(component, j) in row"
+          :key="j"
+          md="6"
+        />
       </lazy-card-row>
     </v-lazy>
   </div>
