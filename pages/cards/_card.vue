@@ -1,5 +1,5 @@
 <template>
-  <component :is="cardComponent" />
+  <component :is="cardComponent" md="12" />
 </template>
 
 <script>

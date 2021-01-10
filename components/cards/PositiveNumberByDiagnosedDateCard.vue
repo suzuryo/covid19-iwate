@@ -2,7 +2,7 @@
   <v-col
     id="PositiveNumberByDiagnosedDateCard"
     cols="12"
-    md="6"
+    :md="md"
     class="DataCard"
   >
     <client-only>
@@ -63,6 +63,12 @@ export default {
           }
         },
       },
+    },
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
     },
   },
   data() {

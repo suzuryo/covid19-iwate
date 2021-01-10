@@ -2,7 +2,7 @@
   <v-col
     id="ConfirmedCasesByMunicipalitiesCard"
     cols="12"
-    md="6"
+    :md="md"
     class="DataCard"
   >
     <client-only>
@@ -51,6 +51,12 @@ import ConfirmedCasesByMunicipalitiesTable from '~/components/ConfirmedCasesByMu
 export default {
   components: {
     ConfirmedCasesByMunicipalitiesTable,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 市町村ごとの陽性患者数

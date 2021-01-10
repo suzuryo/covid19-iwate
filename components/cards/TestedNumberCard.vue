@@ -1,5 +1,5 @@
 <template>
-  <v-col id="TestedNumberCard" cols="12" md="6" class="DataCard">
+  <v-col id="TestedNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <time-stacked-bar-chart
         :title="$t('検査実施件数')"
@@ -42,6 +42,12 @@ dayjs.extend(duration)
 export default {
   components: {
     TimeStackedBarChart,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 検査実施日別状況

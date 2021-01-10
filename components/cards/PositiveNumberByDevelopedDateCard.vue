@@ -2,7 +2,7 @@
   <v-col
     id="PositiveNumberByDevelopedDateCard"
     cols="12"
-    md="6"
+    :md="md"
     class="DataCard"
   >
     <client-only>
@@ -82,6 +82,12 @@ export default {
       },
     },
     DataViewCustomInfoPanel,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     const formatData = positiveByDeveloped.data.map((data) => {

@@ -1,5 +1,5 @@
 <template>
-  <v-col id="UntrackedRateCard" cols="12" md="6" class="DataCard">
+  <v-col id="UntrackedRateCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <untracked-rate-mixed-chart
         :title-id="'untracked-rate'"
@@ -57,6 +57,12 @@ import {
 export default {
   components: {
     UntrackedRateMixedChart,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     const data = Data.data.filter(

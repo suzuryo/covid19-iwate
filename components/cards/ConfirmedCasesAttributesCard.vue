@@ -1,5 +1,5 @@
 <template>
-  <v-col id="ConfirmedCasesAttributesCard" cols="12" md="6" class="DataCard">
+  <v-col id="ConfirmedCasesAttributesCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <data-table
         :title="$t('ConfirmedCasesAttributesCard.title')"
@@ -36,6 +36,12 @@ import formatTable from '@/utils/formatTable'
 export default {
   components: {
     DataTable,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 感染者数
