@@ -2,7 +2,7 @@
   <v-col id="ConfirmedCasesAttributesCard" cols="12" md="6" class="DataCard">
     <client-only>
       <data-table
-        :title="$t('陽性者の属性')"
+        :title="$t('ConfirmedCasesAttributesCard.title')"
         :title-id="'attributes-of-confirmed-cases'"
         :chart-data="patientsTable"
         :chart-option="{}"
@@ -46,7 +46,7 @@ export default {
 
     const sumInfoOfPatients = {
       lText: `${Data.patients.data[Data.patients.data.length - 1].id}`,
-      sText: this.$t('{date}の累計', { date }),
+      sText: this.$t('Common.{date}の累計', { date }),
       unit: this.$t('Common.人'),
     }
 
@@ -58,7 +58,9 @@ export default {
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
       // 通番
-      row['通番'] = this.$t('事例{tsuban}', { tsuban: row['通番'] })
+      row['通番'] = this.$t('ConfirmedCasesAttributesCard.table.事例{tsuban}', {
+        tsuban: row['通番'],
+      })
 
       row['陽性確定日'] = dayjs(date).isValid()
         ? this.$d(dayjs(row['陽性確定日']).toDate(), 'dateWithoutYear')
@@ -66,12 +68,14 @@ export default {
 
       // 相対発症日・無症状・不明
       if (row['発症日'] === '無症状') {
-        row['発症日'] = this.$t('無症状')
+        row['発症日'] = this.$t('ConfirmedCasesAttributesCard.table.無症状')
       } else if (row['発症日'] === '不明') {
-        row['発症日'] = this.$t('不明')
+        row['発症日'] = this.$t('ConfirmedCasesAttributesCard.table.不明')
       } else {
         const d = row['発症日'].replace('日前', '')
-        row['発症日'] = this.$tc('day', d, { d })
+        row[
+          '発症日'
+        ] = this.$tc('ConfirmedCasesAttributesCard.table.daysbefore', d, { d })
       }
 
       // 居住地
@@ -80,9 +84,13 @@ export default {
       // 年代
       if (row['年代'].substr(-1, 1) === '代') {
         const age = row['年代'].substring(0, 2)
-        row['年代'] = this.$t('{age}代', { age })
+        row['年代'] = this.$t('ConfirmedCasesAttributesCard.table.{age}代', {
+          age,
+        })
       } else {
-        row['年代'] = this.$t(row['年代'])
+        row['年代'] = this.$t(
+          `ConfirmedCasesAttributesCard.table.${row['年代']}`
+        )
       }
     }
 
@@ -113,10 +121,18 @@ export default {
       return this.$t(value)
     },
     customSort(items, index, isDesc) {
-      const lt10 = this.$t('10歳未満').toString()
-      const lt90 = this.$t('90歳以上').toString()
-      const unknown = this.$t('不明').toString()
-      const investigating = this.$t('調査中').toString()
+      const lt10 = this.$t(
+        'ConfirmedCasesAttributesCard.table.10歳未満'
+      ).toString()
+      const lt90 = this.$t(
+        'ConfirmedCasesAttributesCard.table.90歳以上'
+      ).toString()
+      const unknown = this.$t(
+        'ConfirmedCasesAttributesCard.table.不明'
+      ).toString()
+      const investigating = this.$t(
+        'ConfirmedCasesAttributesCard.table.調査中'
+      ).toString()
       items.sort((a, b) => {
         // 両者が等しい場合は 0 を返す
         if (a[index[0]] === b[index[0]]) {

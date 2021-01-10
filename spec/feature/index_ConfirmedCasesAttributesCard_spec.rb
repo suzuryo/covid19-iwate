@@ -15,7 +15,7 @@ describe "iPhone 6/7/8", type: :feature do
     describe '陽性者の属性(ConfirmedCasesAttributesCard)' do
       it '項目の値' do
         # h3
-        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > h3').text).to eq '陽性者の属性'
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > h3').text).to eq ja_json['ConfirmedCasesAttributesCard']['title']
 
         # 陽性者の合計
         d = data_json['patients']['data'].size
@@ -23,11 +23,19 @@ describe "iPhone 6/7/8", type: :feature do
 
         # 陽性者の合計の日付
         d = Date.parse(data_json['patients']['data'].last['確定日']).strftime("%-m月%-d日")
-        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の累計"
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq ja_json['Common']['{date}の累計'].gsub('{date}', d)
 
         # テーブルの上から1行目をチェックする(通番)
         d = "事例#{data_json['patients']['data'].last['id'].to_s.rjust(4, '0')}"
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+
+        # テーブルのヘッダーをチェックする
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(1)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['通番']
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(2)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['確定日']
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(3)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['発症日']
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(4)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['居住地']
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(5)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['年代']
+        expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(6)').text).to eq ja_json['ConfirmedCasesAttributesCard']['table']['📺']
 
         # テーブルの上から1行目をチェックする(url)
         d = data_json['patients']['data'].last['url']
@@ -41,11 +49,11 @@ describe "iPhone 6/7/8", type: :feature do
 
         # テーブルの上から1行目をチェックする(発症日)
         if data_json['patients']['data'].last&.[]('無症状')
-          d = "無症状"
+          d = ja_json['ConfirmedCasesAttributesCard']['table']['無症状']
         elsif data_json['patients']['data'].last&.[]('発症日')
           d = "#{(Date.parse(data_json['patients']['data'].last&.[]('確定日')) - Date.parse(data_json['patients']['data'].last&.[]('発症日'))).to_i}日前"
         else
-          d = "不明"
+          d = ja_json['ConfirmedCasesAttributesCard']['table']['不明']
         end
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
 
@@ -74,7 +82,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
 
         # 注釈を表示ボタンの文言
-        expect(find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq '注釈'
+        expect(find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq ja_json['Common']['注']
 
         # 注釈を表示ボタンをクリックすると開く
         expect(page).not_to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')

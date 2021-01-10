@@ -107,7 +107,7 @@ export default {
     const date = dayjs(Data.date).format('YYYY/MM/DD HH:mm')
 
     const info = {
-      sText: this.$t('{date}の累計', {
+      sText: this.$t('Common.{date}の累計', {
         date: this.$d(new Date(Data.datasets.date), 'dateWithoutYear'),
       }),
     }
