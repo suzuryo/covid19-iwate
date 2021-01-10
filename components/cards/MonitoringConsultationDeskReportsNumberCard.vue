@@ -2,7 +2,7 @@
   <v-col
     id="MonitoringConsultationDeskReportsNumberCard"
     cols="12"
-    md="6"
+    :md="md"
     class="DataCard"
   >
     <client-only>
@@ -43,6 +43,12 @@ import formatGraph from '@/utils/formatGraph'
 export default {
   components: {
     TimeBarChart,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 相談件数

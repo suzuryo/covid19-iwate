@@ -1,5 +1,5 @@
 <template>
-  <v-col id="SelfDisclosuresCard" cols="12" md="6" class="DataCard">
+  <v-col id="SelfDisclosuresCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <whats-new
         :title="$t('SelfDisclosures.a[0]')"
@@ -51,6 +51,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   components: {
     WhatsNew,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 日付の新しいものが上

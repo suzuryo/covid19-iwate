@@ -1,5 +1,5 @@
 <template>
-  <v-col id="HospitalizedNumberCard" cols="12" md="6" class="DataCard">
+  <v-col id="HospitalizedNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <hospitalized-time-stacked-bar-chart
         :title="$t('入院と宿泊療養の推移')"
@@ -114,6 +114,12 @@ export default {
   components: {
     HospitalizedTimeStackedBarChart,
     AppLink,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     const { data } = PositiveStatus

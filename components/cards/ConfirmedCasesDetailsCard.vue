@@ -1,5 +1,5 @@
 <template>
-  <v-col id="ConfirmedCasesDetailsCard" cols="12" md="6" class="DataCard">
+  <v-col id="ConfirmedCasesDetailsCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <data-view
         :title="$t('Details.a[0]')"
@@ -32,6 +32,12 @@ export default {
     DataView,
     DataViewDataSetPanel,
     ConfirmedCasesDetailsTable,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     // 検査陽性者の状況
