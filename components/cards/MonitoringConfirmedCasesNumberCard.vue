@@ -2,7 +2,7 @@
   <v-col
     id="MonitoringConfirmedCasesNumberCard"
     cols="12"
-    md="6"
+    :md="md"
     class="DataCard"
   >
     <client-only>
@@ -69,6 +69,12 @@ export default {
   components: {
     MonitoringConfirmedCasesChart,
     AppLink,
+  },
+  props: {
+    md: {
+      type: String,
+      default: '6',
+    },
   },
   data() {
     const [patientsCount, sevenDayMoveAverages, labels] = Data.data.reduce(
