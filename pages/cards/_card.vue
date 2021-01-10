@@ -20,7 +20,7 @@ import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
-import {convertDateToJapaneseKanjiFormat, getDayjsObject} from '@/utils/formatDate.ts'
+import { getDayjsObject } from '@/utils/formatDate.ts'
 // import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 

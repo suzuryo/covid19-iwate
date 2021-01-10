@@ -7,12 +7,12 @@ type Header = {
 }
 
 const headers: Header[] = [
-  { text: '通番', value: '通番' },
-  { text: '確定日', value: '確定日' },
-  { text: '発症日', value: '発症日' },
-  { text: '居住地', value: '居住地' },
-  { text: '年代', value: '年代' },
-  { text: '📺', value: '📺' },
+  { text: '通番', value: 'ConfirmedCasesAttributesCard.table.通番' },
+  { text: '確定日', value: 'ConfirmedCasesAttributesCard.table.確定日' },
+  { text: '発症日', value: 'ConfirmedCasesAttributesCard.table.発症日' },
+  { text: '居住地', value: 'ConfirmedCasesAttributesCard.table.居住地' },
+  { text: '年代', value: 'ConfirmedCasesAttributesCard.table.年代' },
+  { text: '📺', value: 'ConfirmedCasesAttributesCard.table.📺' },
 ]
 
 type DataType = {
