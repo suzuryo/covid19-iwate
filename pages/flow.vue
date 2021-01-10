@@ -161,6 +161,18 @@
         </div>
       </div>
     </div>
+    <div v-show="!['ja'].includes($i18n.locale)">
+      <div :class="$style.detail">
+        <app-link
+          to="https://www.pref.iwate.jp/kyouikubunka/kokusai/1006971/1027622/1027623.html"
+          :icon-size="20"
+          :icon-class="$style.icon"
+          :class="$style.detailButton"
+        >
+          See details (Iwate COVID-19 related information) [EN]
+        </app-link>
+      </div>
+    </div>
     <div :class="$style.detail">
       <app-link
         to="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/index.html#callcenter"
