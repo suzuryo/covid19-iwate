@@ -16,7 +16,8 @@ describe "iPhone 6/7/8", type: :feature do
     describe '新規陽性者数の7日間移動平均(MonitoringConfirmedCasesNumberCard)' do
       it '項目の値' do
         # h3
-        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '新規陽性者数の7日間移動平均'
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '新規陽性者数の7日間移動平均'
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
 
         # 日付
         d = Date.parse(positive_rate_json['data'].last['diagnosed_date']).strftime("%-m月%-d日")
@@ -24,7 +25,11 @@ describe "iPhone 6/7/8", type: :feature do
 
         # 新規陽性者数の7日間移動平均
         d = number_to_delimited((data_json['patients_summary']['data'][-7..-1].reduce(0){|sum, n| sum + n['小計'].to_i} / 7.0).round(1))
-        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
+
+        # 直近1週間の新規患者数（対人口10万人）
+        d = number_to_delimited((data_json['patients_summary']['data'][-7..-1].reduce(0){|sum, n| sum + n['小計'].to_i} * 100000.0 / 1212201.0).round(1))
+        expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq "#{d}"
 
         # データを表示ボタンの文言
         expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
