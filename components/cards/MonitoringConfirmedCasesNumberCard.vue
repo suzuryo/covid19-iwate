@@ -8,7 +8,10 @@
     <client-only>
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
-        :info-titles="[$t('ConfirmedCasesNumberCard.title')]"
+        :info-titles="[
+          $t('ConfirmedCasesNumberCard.title[0]'),
+          $t('ConfirmedCasesNumberCard.title[1]'),
+        ]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
