@@ -87,6 +87,11 @@
         :s-text="displayInfo[0].sText"
         :unit="displayInfo[0].unit"
       />
+      <data-view-data-set-panel
+        :title="infoTitles[1]"
+        :l-text="displayInfo[1].lText"
+        :unit="displayInfo[1].unit"
+      />
     </template>
   </data-view>
 </template>
@@ -126,6 +131,10 @@ type Computed = {
     {
       lText: string
       sText: string
+      unit: string
+    },
+    {
+      lText: string
       unit: string
     }
   ]
@@ -239,12 +248,20 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         dataIndex: 1,
         digit: 1,
       })
+      const lastDayDataPer100k =
+        // 1週間あたりの対10万人を計算する 岩手県の人口は 1212201
+        Math.round(((parseFloat(lastDayData) * 7.0 * 100000) / 1212201) * 10) /
+        10
       return [
         {
           lText: lastDayData,
           sText: `${this.$t('{date} の数値', {
             date: this.$d(lastDay, 'dateWithoutYear'),
           })}（${this.$t('前日比')}: ${dayBeforeRatio} ${this.unit}）`,
+          unit: this.unit,
+        },
+        {
+          lText: `${lastDayDataPer100k}`,
           unit: this.unit,
         },
       ]
