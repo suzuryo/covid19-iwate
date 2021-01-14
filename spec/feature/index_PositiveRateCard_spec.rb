@@ -67,11 +67,11 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(5)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(検査件数 7-MA)
-        d = number_to_delimited(positive_rate_json['data'][-4]['weekly_average_diagnosed_count'].to_f)
+        d = number_to_delimited(page.evaluate_script("#{positive_rate_json['data'][-4]['weekly_average_diagnosed_count']}.toFixed(1)"))
         expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(6)').text).to eq "#{d}"
 
         # テーブルの上から4行目をチェックする(陽性率)
-        d = number_to_delimited(positive_rate_json['data'][-4]['positive_rate'].round(1))
+        d = number_to_delimited(page.evaluate_script("#{positive_rate_json['data'][-4]['positive_rate']}.toFixed(1)"))
         expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(7)').text).to eq "#{d}"
 
         # データを表示ボタンをクリックすると閉じる
