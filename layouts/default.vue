@@ -38,6 +38,7 @@ import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 
 import NoScript from '@/components/NoScript.vue'
 import SideNavigation from '@/components/SideNavigation.vue'
+import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import {
@@ -94,9 +95,9 @@ export default Vue.extend({
         this.$i18n.defaultLocale
       )
     }
-    const diagnosedDate = PositiveRate.data.slice(-1)[0].diagnosed_date
+    const date = Data.patients_summary.data.slice(-1)[0].日付
     const descriptionToday = `${this.$t('{date}', {
-      date: this.$d(getDayjsObject(diagnosedDate).toDate(), 'date'),
+      date: this.$d(getDayjsObject(date).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・検査が')}${
@@ -119,10 +120,10 @@ export default Vue.extend({
           json: {
             '@context': 'http://schema.org',
             '@type': 'SpecialAnnouncement',
-            datePosted: dayjs(diagnosedDate).toISOString(),
-            expires: dayjs(diagnosedDate).add(3, 'day').toISOString(),
+            datePosted: dayjs(date).toISOString(),
+            expires: dayjs(date).add(1, 'day').toISOString(),
             name: `岩手県の${this.$t('{date}', {
-              date: convertDateToJapaneseKanjiFormat(diagnosedDate),
+              date: convertDateToJapaneseKanjiFormat(date),
             })}の陽性件数・検査件数・入院患者数`,
             text: descriptionToday,
             category: 'https://www.wikidata.org/wiki/Q81068910',
@@ -159,13 +160,13 @@ export default Vue.extend({
               {
                 '@type': 'ListItem',
                 position: 1,
-                name: '最新情報まとめ',
+                name: 'まとめTOP',
                 item: 'https://iwate.stopcovid19.jp/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
-                name: '最新のお知らせ',
+                name: 'お知らせ',
                 item: 'https://iwate.stopcovid19.jp/cards/whats-new/',
               },
               {
@@ -214,20 +215,6 @@ export default Vue.extend({
                 name: '陽性者の属性',
                 item:
                   'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: '接触者相談件数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: '一般相談件数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/number-of-reports-to-covid19-telephone-advisory-center/',
               },
             ],
           },
