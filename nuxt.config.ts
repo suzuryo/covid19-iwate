@@ -309,14 +309,14 @@ const config: NuxtConfig = {
         {
           url:
             '/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
-          changefreq: 'daily',
-          priority: 0.8,
+          changefreq: 'weekly',
+          priority: 0.3,
           lastmod: now,
         },
         {
           url: '/cards/number-of-reports-to-covid19-telephone-advisory-center/',
-          changefreq: 'daily',
-          priority: 0.8,
+          changefreq: 'weekly',
+          priority: 0.3,
           lastmod: now,
         },
       ]
