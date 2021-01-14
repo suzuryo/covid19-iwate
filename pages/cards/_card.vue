@@ -18,6 +18,7 @@ import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvi
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
+import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import { getDayjsObject } from '@/utils/formatDate.ts'
@@ -108,9 +109,9 @@ export default {
       this.$i18n.locale === 'ja'
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
-    const diagnosedDate = PositiveRate.data.slice(-1)[0].diagnosed_date
+    const date = Data.patients_summary.data.slice(-1)[0].日付
     const description = `${this.$t('{date}', {
-      date: this.$d(getDayjsObject(diagnosedDate).toDate(), 'date'),
+      date: this.$d(getDayjsObject(date).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
       PositiveRate.data.slice(-1)[0].positive_count
     }${this.$t('件・検査が')}${
