@@ -22,7 +22,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
         # 接触歴等不明者数(7日間移動平均)
-        d = number_to_delimited((daily_positive_detail_json['data'].last['weekly_average_untracked_count']).round(1))
+        d = number_to_delimited(page.evaluate_script("#{daily_positive_detail_json['data'].last['weekly_average_untracked_count']}.toFixed(1)"))
         expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
 
         # 接触歴等不明者数(7日間移動平均)(実際に計算してみる)
