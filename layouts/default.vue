@@ -159,13 +159,13 @@ export default Vue.extend({
               {
                 '@type': 'ListItem',
                 position: 1,
-                name: '最新情報まとめ',
+                name: 'まとめTOP',
                 item: 'https://iwate.stopcovid19.jp/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
-                name: '最新のお知らせ',
+                name: 'お知らせ',
                 item: 'https://iwate.stopcovid19.jp/cards/whats-new/',
               },
               {
@@ -214,20 +214,6 @@ export default Vue.extend({
                 name: '陽性者の属性',
                 item:
                   'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: '接触者相談件数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: '一般相談件数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/number-of-reports-to-covid19-telephone-advisory-center/',
               },
             ],
           },
