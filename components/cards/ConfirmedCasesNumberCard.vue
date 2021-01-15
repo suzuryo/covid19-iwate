@@ -10,6 +10,7 @@
         :unit="$t('Common.人')"
         :by-date="true"
       />
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>

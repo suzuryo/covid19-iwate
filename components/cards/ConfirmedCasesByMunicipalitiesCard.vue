@@ -38,6 +38,7 @@
           </ul>
         </template>
       </confirmed-cases-by-municipalities-table>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>

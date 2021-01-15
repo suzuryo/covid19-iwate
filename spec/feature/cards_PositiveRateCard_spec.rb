@@ -5,10 +5,10 @@ daily_positive_detail_json = JSON.parse(File.read(File.join(__dir__, '../../data
 ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/]' do
+  context 'page [/cards/positive-rate]' do
 
     before do
-      visit '/'
+      visit '/cards/positive-rate'
       render_lazy_contents
       page.scroll_to('#PositiveRateCard')
     end
@@ -112,8 +112,10 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel--active')
         expect(page).to have_selector('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel--active')
 
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#PositiveRateCard nav ul.v-breadcrumbs')
+        # cards の 個別ページでは breadcrumbs が表示される
+        expect(page).to have_selector('#PositiveRateCard nav ul.v-breadcrumbs')
+        expect(find('#PositiveRateCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
+        expect(find('#PositiveRateCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '検査の陽性率'
       end
     end
   end

@@ -4,10 +4,10 @@ patient_municipalities_json = JSON.parse(File.read(File.join(__dir__, '../../dat
 ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/]' do
+  context 'page [/cards/number-of-confirmed-cases-by-municipalities]' do
 
     before do
-      visit '/'
+      visit '/cards/number-of-confirmed-cases-by-municipalities'
       render_lazy_contents
       page.scroll_to('#ConfirmedCasesByMunicipalitiesCard')
     end
@@ -62,8 +62,10 @@ describe "iPhone 6/7/8", type: :feature do
         find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel button.v-expansion-panel-header').click
         expect(page).not_to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
 
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#ConfirmedCasesByMunicipalitiesCard nav ul.v-breadcrumbs')
+        # cards の 個別ページでは breadcrumbs が表示される
+        expect(page).to have_selector('#ConfirmedCasesByMunicipalitiesCard nav ul.v-breadcrumbs')
+        expect(find('#ConfirmedCasesByMunicipalitiesCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
+        expect(find('#ConfirmedCasesByMunicipalitiesCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '陽性患者数（市町村別）'
       end
     end
 

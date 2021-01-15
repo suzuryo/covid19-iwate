@@ -1,8 +1,13 @@
 <template>
-  <component :is="cardComponent" md="12" />
+  <component :is="cardComponent" md="12">
+    <template #breadCrumb>
+      <breadcrumb :items="breadCrumb.items" />
+    </template>
+  </component>
 </template>
 
 <script>
+import Breadcrumb from '@/components/Breadcrumb.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
@@ -27,6 +32,7 @@ import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 export default {
   components: {
+    Breadcrumb,
     WhatsNewCard,
     SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
@@ -45,61 +51,92 @@ export default {
     // PositiveNumberByDevelopedDateCard,
   },
   data() {
-    let title, updatedAt, cardComponent
+    let title, updatedAt, cardComponent, cardTitle
     switch (this.$route.params.card) {
       case 'whats-new':
         cardComponent = 'whats-new-card'
+        cardTitle = this.$t('WhatsNew.title')
         break
       case 'self-disclosures':
         cardComponent = 'self-disclosures-card'
+        cardTitle = this.$t('SelfDisclosures.a')
         break
       case 'details-of-confirmed-cases':
         cardComponent = 'confirmed-cases-details-card'
+        cardTitle = this.$t('Details.a[0]')
         break
       case 'number-of-confirmed-cases':
         cardComponent = 'confirmed-cases-number-card'
+        cardTitle = this.$t('報告日別による陽性者数の推移')
         break
       case 'number-of-confirmed-cases-by-municipalities':
         cardComponent = 'confirmed-cases-by-municipalities-card'
+        cardTitle = this.$t('陽性患者数（市町村別）')
         break
       case 'attributes-of-confirmed-cases':
         cardComponent = 'confirmed-cases-attributes-card'
+        cardTitle = this.$t('ConfirmedCasesAttributesCard.title')
         break
       case 'number-of-tested':
         cardComponent = 'tested-number-card'
+        cardTitle = this.$t('検査実施件数')
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         cardComponent = 'telephone-advisory-reports-number-card'
+        cardTitle = this.$t('一般相談 受付件数')
         break
       case 'positive-number-by-diagnosed-date':
         cardComponent = 'positive-number-by-diagnosed-date-card'
+        cardTitle = this.$t('確定日別による陽性者数の推移')
         break
       case 'positive-rate':
         cardComponent = 'positive-rate-card'
+        cardTitle = this.$t('PositiveRateCard.a[0]')
         break
       case 'monitoring-number-of-confirmed-cases':
         cardComponent = 'monitoring-confirmed-cases-number-card'
+        cardTitle = this.$t('ConfirmedCasesNumberCard.title[0]')
         break
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'
+        cardTitle = this.$t('接触歴等不明者数(7日間移動平均)')
         break
       // case 'positive-status-severe-case':
       //   cardComponent = 'severe-case-card'
       //   break
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
+        cardTitle = this.$t('入院と宿泊療養の推移')
         break
       case 'monitoring-number-of-reports-to-covid19-consultation-desk':
         cardComponent = 'monitoring-consultation-desk-reports-number-card'
+        cardTitle = this.$t('受診・相談センター 受付件数')
         break
       case 'positive-number-by-developed-date':
         cardComponent = 'positive-number-by-developed-date-card'
+        cardTitle = this.$t('発症日別による陽性者数の推移')
+    }
+
+    const breadCrumb = {
+      items: [
+        {
+          text: this.$t('Common.ホーム'),
+          disabled: false,
+          href: this.localePath('/'),
+        },
+        {
+          text: cardTitle,
+          disabled: false,
+          href: this.$route.path,
+        },
+      ],
     }
 
     return {
       cardComponent,
       title,
       updatedAt,
+      breadCrumb,
     }
   },
   head() {

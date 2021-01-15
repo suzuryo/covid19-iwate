@@ -4,10 +4,10 @@ daily_positive_detail_json = JSON.parse(File.read(File.join(__dir__, '../../data
 ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/]' do
+  context 'page [/cards/untracked-rate]' do
 
     before do
-      visit '/'
+      visit '/cards/untracked-rate'
       render_lazy_contents
       page.scroll_to('#UntrackedRateCard')
     end
@@ -87,8 +87,10 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel--active')
         expect(page).to have_selector('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel--active')
 
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#UntrackedRateCard nav ul.v-breadcrumbs')
+        # cards の 個別ページでは breadcrumbs が表示される
+        expect(page).to have_selector('#UntrackedRateCard nav ul.v-breadcrumbs')
+        expect(find('#UntrackedRateCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
+        expect(find('#UntrackedRateCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '接触歴等不明者数(7日間移動平均)'
       end
     end
 

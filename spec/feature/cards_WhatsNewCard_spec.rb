@@ -7,12 +7,11 @@ news_json = JSON.parse(File.read(File.join(__dir__, '../../data/news.json')))
 news_items = news_json['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/]' do
+  context 'page [/cards/whats-new]' do
     before do
-      visit '/'
-      page.scroll_to('.v-tabs')
-      find('#app .v-tabs .v-slide-group__content a[href="#tab-1"]').click
+      visit '/cards/whats-new'
       render_lazy_contents
+      page.scroll_to('#WhatsNewCard')
     end
 
     describe '最新のお知らせ(WhatsNewCard)' do
@@ -29,8 +28,10 @@ describe "iPhone 6/7/8", type: :feature do
           expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1+index}) > td:nth-child(2)").text).to eq "#{Date.parse(d['date']).strftime("%-m月%-d日")}"
         end
 
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#WhatsNewCard nav ul.v-breadcrumbs')
+        # cards の 個別ページでは breadcrumbs が表示される
+        expect(page).to have_selector('#WhatsNewCard nav ul.v-breadcrumbs')
+        expect(find('#WhatsNewCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
+        expect(find('#WhatsNewCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq ja_json['WhatsNew']["title"]
       end
     end
   end

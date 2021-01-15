@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 data_json = JSON.parse(File.read(File.join(__dir__, '../../data/data.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/]' do
+  context 'page [/cards/monitoring-number-of-reports-to-covid19-consultation-desk]' do
 
     before do
-      visit '/'
+      visit '/cards/monitoring-number-of-reports-to-covid19-consultation-desk'
       render_lazy_contents
       page.scroll_to('#MonitoringConsultationDeskReportsNumberCard')
     end
@@ -49,8 +50,10 @@ describe "iPhone 6/7/8", type: :feature do
         find('#MonitoringConsultationDeskReportsNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').click
         expect(page).not_to have_selector('#MonitoringConsultationDeskReportsNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
 
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#MonitoringConsultationDeskReportsNumberCard nav ul.v-breadcrumbs')
+        # cards の 個別ページでは breadcrumbs が表示される
+        expect(page).to have_selector('#MonitoringConsultationDeskReportsNumberCard nav ul.v-breadcrumbs')
+        expect(find('#MonitoringConsultationDeskReportsNumberCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
+        expect(find('#MonitoringConsultationDeskReportsNumberCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '受診・相談センター 受付件数'
       end
     end
 
