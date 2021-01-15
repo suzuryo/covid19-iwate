@@ -1,13 +1,12 @@
 require 'spec_helper'
 
-positive_status_json = JSON.parse(File.read(File.join(__dir__, '../../data/positive_status.json')))
-ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
+positive_status_json = JSON.parse(File.read(File.join(__dir__, '../../../data/positive_status.json')))
 
 describe "iPhone 6/7/8", type: :feature do
-  context 'page [/cards/number-of-hospitalized]' do
+  context 'page [/]' do
 
     before do
-      visit '/cards/number-of-hospitalized'
+      visit '/'
       render_lazy_contents
       page.scroll_to('#HospitalizedNumberCard')
     end
@@ -80,10 +79,8 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
         expect(page).to have_selector('#HospitalizedNumberCard .NotesExpansionPanel .v-expansion-panel--active')
 
-        # cards の 個別ページでは breadcrumbs が表示される
-        expect(page).to have_selector('#HospitalizedNumberCard nav ul.v-breadcrumbs')
-        expect(find('#HospitalizedNumberCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq ja_json['Common']['ホーム']
-        expect(find('#HospitalizedNumberCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '入院と宿泊療養の推移'
+        # index の card 一覧では breadcrumbs は表示されない
+        expect(page).not_to have_selector('#HospitalizedNumberCard nav ul.v-breadcrumbs')
       end
     end
 

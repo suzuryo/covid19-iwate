@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-daily_positive_detail_json = JSON.parse(File.read(File.join(__dir__, '../../data/daily_positive_detail.json')))
-ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
+daily_positive_detail_json = JSON.parse(File.read(File.join(__dir__, '../../../data/daily_positive_detail.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do

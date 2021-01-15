@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
-news_json = JSON.parse(File.read(File.join(__dir__, '../../data/news.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))
+news_json = JSON.parse(File.read(File.join(__dir__, '../../../data/news.json')))
 
 # news.json.newsItemsを日付でstable sort(比較結果が同じ要素は元の順序通りに並ぶ)して降順
 news_items = news_json['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse

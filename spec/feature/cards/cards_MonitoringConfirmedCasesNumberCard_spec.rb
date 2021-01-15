@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-data_json = JSON.parse(File.read(File.join(__dir__, '../../data/data.json')))
-positive_rate_json = JSON.parse(File.read(File.join(__dir__, '../../data/positive_rate.json')))
-ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
+data_json = JSON.parse(File.read(File.join(__dir__, '../../../data/data.json')))
+positive_rate_json = JSON.parse(File.read(File.join(__dir__, '../../../data/positive_rate.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/cards/monitoring-number-of-confirmed-cases]' do
