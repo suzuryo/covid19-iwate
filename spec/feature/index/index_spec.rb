@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-ja_json = JSON.parse(File.read(File.join(__dir__, '../../assets/locales/ja.json')))
+ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do

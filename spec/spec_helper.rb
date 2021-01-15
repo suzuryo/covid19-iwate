@@ -26,3 +26,15 @@ def render_lazy_contents
     page.evaluate_script "window.scroll(0,#{i})"
   end
 end
+
+DAILY_POSITIVE_DETAIL_JSON = JSON.parse(File.read(File.join(__dir__, '../data/daily_positive_detail.json')))
+DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
+JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
+NEWS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/news.json')))
+PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
+POSITIVE_RATE_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_rate.json')))
+POSITIVE_STATUS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_status.json')))
+SELF_DISCLOSURES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/self_disclosures.json')))
+
+NEWS_ITEMS = NEWS_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
+SELF_DISCLOSURES_ITEMS = SELF_DISCLOSURES_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse

@@ -21,6 +21,7 @@
           </ul>
         </template>
       </data-table>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>

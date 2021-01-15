@@ -14,6 +14,7 @@
           <data-view-data-set-panel :title="$t('Details.a[0]')" />
         </template>
       </data-view>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>
