@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def positive_rate_card
+def has_positive_rate_card
   # h3
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '検査の陽性率'
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq 'PCR検査の7日間移動平均'

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def confirmed_cases_number_card
+def has_confirmed_cases_number_card
   # h3
   expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '報告日別による陽性者数の推移'
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def monitoring_consultation_desk_reports_number_card
+def has_monitoring_consultation_desk_reports_number_card
   # h3
   expect(find('#MonitoringConsultationDeskReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '受診・相談センター 受付件数'
 

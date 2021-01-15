@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def confirmed_cases_details_card
+def has_confirmed_cases_details_card
   # h3
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Header > div > div > h3').text).to eq '検査陽性者の状況'
 

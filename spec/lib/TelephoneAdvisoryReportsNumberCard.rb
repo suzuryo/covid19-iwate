@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def telephone_advisory_reports_number_card
+def has_telephone_advisory_reports_number_card
   # h3
   expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '一般相談 受付件数'
 

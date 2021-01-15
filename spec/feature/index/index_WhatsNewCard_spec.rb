@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '最新のお知らせ(WhatsNewCard)' do
       it '項目の値' do
-        whats_new_card
+        has_whats_new_card
         has_no_breadcrumbs(id: '#WhatsNewCard')
       end
     end

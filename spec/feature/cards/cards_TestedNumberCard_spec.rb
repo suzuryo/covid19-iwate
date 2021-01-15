@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '検査実施件数(TestedNumberCard)' do
       it '項目の値' do
-        tested_number_card
+        has_tested_number_card
         has_breadcrumbs(id: '#TestedNumberCard', title: '検査実施件数')
       end
     end

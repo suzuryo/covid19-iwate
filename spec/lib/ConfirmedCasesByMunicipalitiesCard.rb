@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def confirmed_cases_by_municipalities_card
+def has_confirmed_cases_by_municipalities_card
   # h3
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3').text).to eq '陽性患者数（市町村別）'
 

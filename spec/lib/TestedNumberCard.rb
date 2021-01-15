@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def tested_number_card
+def has_tested_number_card
   # h3
   expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '検査実施件数'
 

@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '新規陽性者数の7日間移動平均(MonitoringConfirmedCasesNumberCard)' do
       it '項目の値' do
-        monitoring_confirmed_cases_number_card
+        has_monitoring_confirmed_cases_number_card
         has_breadcrumbs(id: '#MonitoringConfirmedCasesNumberCard', title: '新規陽性者数の7日間移動平均')
       end
     end

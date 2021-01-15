@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '接触歴等不明者数(7日間移動平均)(UntrackedRateCard)' do
       it '項目の値' do
-        untracked_rate_card
+        has_untracked_rate_card
         has_no_breadcrumbs(id: '#UntrackedRateCard')
       end
     end

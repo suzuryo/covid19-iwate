@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '一般相談 受付件数(TelephoneAdvisoryReportsNumberCard)' do
       it '項目の値' do
-        telephone_advisory_reports_number_card
+        has_telephone_advisory_reports_number_card
         has_no_breadcrumbs(id: '#TelephoneAdvisoryReportsNumberCard')
       end
     end

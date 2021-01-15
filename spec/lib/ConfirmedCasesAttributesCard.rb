@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def confirmed_case_attributes_card
+def has_confirmed_case_attributes_card
   # h3
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > h3').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['title']
 

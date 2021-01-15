@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def untracked_rate_card
+def has_untracked_rate_card
   # h3
   expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3').text).to eq '接触歴等不明者数(7日間移動平均)'
 

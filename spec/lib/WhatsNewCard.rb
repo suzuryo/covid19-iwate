@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def whats_new_card
+def has_whats_new_card
   # h3
   expect(find('#WhatsNewCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['WhatsNew']["title"].to_s
 

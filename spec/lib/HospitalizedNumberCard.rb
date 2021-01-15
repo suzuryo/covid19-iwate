@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def hospitalized_number_card
+def has_hospitalized_number_card
   # h3
   expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '入院と宿泊療養の推移'
 

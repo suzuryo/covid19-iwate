@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '検査の陽性率(PositiveRateCard)' do
       it '項目の値' do
-        positive_rate_card
+        has_positive_rate_card
         has_breadcrumbs(id: '#PositiveRateCard', title: '検査の陽性率')
       end
     end

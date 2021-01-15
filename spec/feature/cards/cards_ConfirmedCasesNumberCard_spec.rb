@@ -13,7 +13,7 @@ describe "iPhone 6/7/8", type: :feature do
 
     describe '報告日別による陽性者数の推移(ConfirmedCasesNumberCard)' do
       it '項目の値' do
-        confirmed_cases_number_card
+        has_confirmed_cases_number_card
         has_breadcrumbs(id: '#ConfirmedCasesNumberCard', title: '報告日別による陽性者数の推移')
       end
     end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-def monitoring_confirmed_cases_number_card
+def has_monitoring_confirmed_cases_number_card
   # h3
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '新規陽性者数の7日間移動平均'
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
