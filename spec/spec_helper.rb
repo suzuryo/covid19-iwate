@@ -27,6 +27,7 @@ def render_lazy_contents
   end
 end
 
+DAILY_POSITIVE_DETAIL_JSON = JSON.parse(File.read(File.join(__dir__, '../data/daily_positive_detail.json')))
 DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
 JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
 PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
