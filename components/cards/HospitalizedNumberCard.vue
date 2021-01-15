@@ -100,6 +100,7 @@
           </div>
         </template>
       </hospitalized-time-stacked-bar-chart>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>

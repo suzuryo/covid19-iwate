@@ -15,6 +15,7 @@
           </ul>
         </template>
       </whats-new>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>
