@@ -26,3 +26,6 @@ def render_lazy_contents
     page.evaluate_script "window.scroll(0,#{i})"
   end
 end
+
+DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
+JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
