@@ -12,10 +12,17 @@ describe "iPhone 6/7/8", type: :feature do
     urls = []
 
     # data.json の 陽性事例の 個別ページのURL は直接読み込む
-    data_json = JSON.load(File.open(File.join(__dir__, '../../data/data.json')))
-    data_json['patients']['data'].each do |item|
-      urls << URI(item['url']) unless item['url'].nil?
+    DATA_JSON['patients']['data'].each do |item|
+      urls << URI(item['url']) unless item['url'].blank?
     end
+
+    # news.json の 個別ページのURL は直接読み込む
+    NEWS_JSON['newsItems'].each do |item|
+      urls << URI(item['url']['ja']) unless item['url']['ja'].blank?
+      urls << URI(item['url']['en']) unless item['url']['en'].blank?
+    end
+
+    # SELF_DISCLOSURES_JSON.url は、ページが削除されても記録として 404になってもよいとする
 
     before do
       # chromeで / にアクセスして a タグを全部探す
