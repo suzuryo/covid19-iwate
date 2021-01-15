@@ -64,7 +64,7 @@ export default Vue.extend({
 }
 
 .v-slide-group__content {
-  border-bottom: 1px solid $gray-2;
+  border-bottom: 1px solid $green-1;
   background: $gray-5;
 }
 
@@ -74,30 +74,34 @@ export default Vue.extend({
   border-style: solid;
   border-radius: 4px 4px 0 0;
   font-weight: bold !important;
+  background: $gray-5;
   @include font-size(16, true);
-
-  &:focus {
-    outline: dotted $gray-3 1px;
+  &:hover {
+    background-color: $green-1;
+    color: $white !important;
+  }
+  &::before {
+    background-color: transparent !important;
   }
 
   &--active {
-    color: $gray-2 !important;
-    background: $gray-5;
-    border-color: $gray-2 $gray-2 $gray-5 $gray-2;
-    border-width: 1px 1px 2px 1px;
+    color: $green-1 !important;
+    border-color: $green-1 $green-1 $gray-5 $green-1;
+    border-width: 1px 1px 0 1px;
+    &:hover {
+      border-color: $green-1 $green-1 $gray-5 $green-1;
+    }
     &::before {
       background-color: transparent;
     }
   }
 
   &:not(.v-tab--active) {
-    color: $green-1 !important;
-    background: $white;
-    border-color: $green-1 $green-1 $gray-2 $green-1;
-    border-width: 1px;
+    color: $gray-3 !important;
+    border-color: $gray-3 $gray-3 $green-1 $gray-3;
+    border-width: 1px 1px 1px 1px;
     &:hover {
       color: $white !important;
-      background: $green-1;
     }
     .TabIcon {
       color: inherit !important;
