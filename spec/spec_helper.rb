@@ -30,6 +30,9 @@ end
 DAILY_POSITIVE_DETAIL_JSON = JSON.parse(File.read(File.join(__dir__, '../data/daily_positive_detail.json')))
 DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
 JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
+NEWS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/news.json')))
 PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
 POSITIVE_RATE_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_rate.json')))
 POSITIVE_STATUS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_status.json')))
+
+NEWS_ITEMS = NEWS_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
