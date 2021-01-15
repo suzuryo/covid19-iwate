@@ -25,7 +25,7 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > small').text).to match "^#{d} の数値"
 
         # 検査の陽性率
-        d = number_to_delimited(positive_rate_json['data'].last['positive_rate'].round(1))
+        d = number_to_delimited(page.evaluate_script("#{positive_rate_json['data'].last['positive_rate']}.toFixed(1)"))
         expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
 
         # 検査の陽性率(実際に計算する)
