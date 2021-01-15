@@ -22,6 +22,8 @@ describe "iPhone 6/7/8", type: :feature do
       urls << URI(item['url']['en']) unless item['url']['en'].blank?
     end
 
+    # SELF_DISCLOSURES_JSON.url は、ページが削除されても記録として 404になってもよいとする
+
     before do
       # chromeで / にアクセスして a タグを全部探す
       visit '/'
