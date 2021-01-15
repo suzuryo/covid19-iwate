@@ -16,6 +16,12 @@ describe "iPhone 6/7/8", type: :feature do
       urls << URI(item['url']) unless item['url'].blank?
     end
 
+    # news.json の 個別ページのURL は直接読み込む
+    NEWS_JSON['newsItems'].each do |item|
+      urls << URI(item['url']['ja']) unless item['url']['ja'].blank?
+      urls << URI(item['url']['en']) unless item['url']['en'].blank?
+    end
+
     before do
       # chromeで / にアクセスして a タグを全部探す
       visit '/'
