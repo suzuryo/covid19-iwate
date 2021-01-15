@@ -98,6 +98,9 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
         find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').click
         expect(page).not_to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
+
+        # index の card 一覧では breadcrumbs は表示されない
+        expect(page).not_to have_selector('#ConfirmedCasesAttributesCard nav ul.v-breadcrumbs')
       end
     end
 

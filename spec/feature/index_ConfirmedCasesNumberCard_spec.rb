@@ -52,6 +52,9 @@ describe "iPhone 6/7/8", type: :feature do
         expect(page).to have_selector('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
         find('#ConfirmedCasesNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').click
         expect(page).not_to have_selector('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
+
+        # index の card 一覧では breadcrumbs は表示されない
+        expect(page).not_to have_selector('#ConfirmedCasesNumberCard nav ul.v-breadcrumbs')
       end
     end
 

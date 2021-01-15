@@ -48,6 +48,9 @@ describe "iPhone 6/7/8", type: :feature do
         # 死亡
         d = number_to_delimited(data_json['main_summary']['children'][0]['children'][4]['value'])
         expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(2) > strong').text).to eq "#{d}"
+
+        # index の card 一覧では breadcrumbs は表示されない
+        expect(page).not_to have_selector('#ConfirmedCasesDetailsCard nav ul.v-breadcrumbs')
       end
     end
 

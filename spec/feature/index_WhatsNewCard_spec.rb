@@ -28,6 +28,9 @@ describe "iPhone 6/7/8", type: :feature do
           # テーブルの上からi行目をチェックする(日付)
           expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1+index}) > td:nth-child(2)").text).to eq "#{Date.parse(d['date']).strftime("%-m月%-d日")}"
         end
+
+        # index の card 一覧では breadcrumbs は表示されない
+        expect(page).not_to have_selector('#WhatsNewCard nav ul.v-breadcrumbs')
       end
     end
   end
