@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/UntrackedRateCard'
 
 describe "iPhone 6/7/8", type: :feature do
@@ -13,9 +14,7 @@ describe "iPhone 6/7/8", type: :feature do
     describe '接触歴等不明者数(7日間移動平均)(UntrackedRateCard)' do
       it '項目の値' do
         untracked_rate_card
-
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#UntrackedRateCard nav ul.v-breadcrumbs')
+        has_no_breadcrumbs(id: '#UntrackedRateCard')
       end
     end
 

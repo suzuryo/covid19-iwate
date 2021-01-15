@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/PositiveRateCard'
 
 describe "iPhone 6/7/8", type: :feature do
@@ -13,9 +14,7 @@ describe "iPhone 6/7/8", type: :feature do
     describe '検査の陽性率(PositiveRateCard)' do
       it '項目の値' do
         positive_rate_card
-
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#PositiveRateCard nav ul.v-breadcrumbs')
+        has_no_breadcrumbs(id: '#PositiveRateCard')
       end
     end
   end

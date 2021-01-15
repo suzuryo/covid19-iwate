@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/ConfirmedCasesDetailsCard'
 
 describe "iPhone 6/7/8", type: :feature do
@@ -13,11 +14,7 @@ describe "iPhone 6/7/8", type: :feature do
     describe '検査陽性者の状況(ConfirmedCasesDetailsCard)' do
       it '項目の値' do
         confirmed_cases_details_card
-
-        # cards の 個別ページでは breadcrumbs が表示される
-        expect(page).to have_selector('#ConfirmedCasesDetailsCard nav ul.v-breadcrumbs')
-        expect(find('#ConfirmedCasesDetailsCard > nav > ul.v-breadcrumbs > li:nth-child(1) > a').text).to eq JA_JSON['Common']['ホーム']
-        expect(find('#ConfirmedCasesDetailsCard > nav > ul.v-breadcrumbs > li:nth-child(3) > a').text).to eq '検査陽性者の状況'
+        has_breadcrumbs(id: '#ConfirmedCasesDetailsCard', title: '検査陽性者の状況')
       end
     end
 

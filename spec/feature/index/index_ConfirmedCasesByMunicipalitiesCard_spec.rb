@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/ConfirmedCasesByMunicipalitiesCard'
 
 describe "iPhone 6/7/8", type: :feature do
@@ -13,9 +14,7 @@ describe "iPhone 6/7/8", type: :feature do
     describe '陽性患者数(市町村別)(ConfirmedCasesByMunicipalitiesCard)' do
       it '項目の値' do
         confirmed_cases_by_municipalities_card
-
-        # index の card 一覧では breadcrumbs は表示されない
-        expect(page).not_to have_selector('#ConfirmedCasesByMunicipalitiesCard nav ul.v-breadcrumbs')
+        has_no_breadcrumbs(id: '#ConfirmedCasesByMunicipalitiesCard')
       end
     end
 
