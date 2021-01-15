@@ -7,6 +7,7 @@
         :date="date"
         :items="newsItems.newsItems"
       />
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>

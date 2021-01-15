@@ -21,6 +21,7 @@
           </ul>
         </template>
       </severe-case-bar-chart>
+      <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>
