@@ -28,5 +28,6 @@ def render_lazy_contents
 end
 
 DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
-PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
 JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
+PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
+POSITIVE_STATUS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_status.json')))
