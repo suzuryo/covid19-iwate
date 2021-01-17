@@ -52,13 +52,16 @@
       "Deaths"
     ]
   },
-  "PCR検査実施件数": "Number of PCR tests",
   "件": {
     "tested": "cases",
     "reports": "cases"
   },
   "TestedNumberCard": {
     "title": "Number of Tests",
+    "legends": [
+      "PCR tests",
+      "Antigen tests"
+    ],
     "notes": [
       "Preliminary value. May be modified later"
     ]
@@ -264,7 +267,6 @@
   "窓口を開設した2020年1月21日からのデータを表示": "Data since the establishment of the consultation service (Jan 21, 2020)",
   "岩手県の発表漏れによりデータの存在しない日がある": "Due to an omission in Iwate Prefecture's announcement, there are days for which no data exist.",
   "岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ": "Notice of the Iwate Prefectural Consolation Grant Program for Workers Responding to New Coronavirus Infections",
-  "抗原検査件数": "Number of antigen tests",
   "詳細を見る（岩手県新型コロナウイルス感染症関連情報）": "See details (Iwate COVID-19 related information) [JA]",
   "新型コロナウイルス感染拡大防止のため、業種ごとに関係団体の情報を参考としてください。": "In order to prevent the spread of the new coronavirus infection, please refer to the information provided by the relevant organizations for each industry.",
   "事業者の皆様へのお知らせ": "Notice to Businesses",

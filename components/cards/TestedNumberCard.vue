@@ -55,19 +55,19 @@ export default {
     })
     const inspectionsGraph = [pcr, antigen]
     const inspectionsItems = [
-      this.$t('PCR検査実施件数'),
-      this.$t('抗原検査件数'),
+      this.$t('TestedNumberCard.legends[0]'),
+      this.$t('TestedNumberCard.legends[1]'),
     ]
     const inspectionsLabels = PositiveRate.data.map((d) => {
       return getDayjsObject(d.diagnosed_date).format('YYYY-MM-DD')
     })
     const inspectionsDataLabels = [
-      this.$t('PCR検査実施件数'),
-      this.$t('抗原検査件数'),
+      this.$t('TestedNumberCard.legends[0]'),
+      this.$t('TestedNumberCard.legends[1]'),
     ]
     const inspectionsTableLabels = [
-      this.$t('PCR検査実施件数'),
-      this.$t('抗原検査件数'),
+      this.$t('TestedNumberCard.legends[0]'),
+      this.$t('TestedNumberCard.legends[1]'),
     ]
 
     return {
