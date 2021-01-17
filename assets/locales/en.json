@@ -1,6 +1,4 @@
 {
-  "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "Please call us first If you have any concerns about symptom in you or your family.",
-  "相談の手順を見る": "See this flowchart",
   "Common": {
     "岩手県": "Iwate Prefecture",
     "新型コロナウイルス感染症": "COVID-19",
@@ -24,6 +22,12 @@
     "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
     "注": "Notes",
     "データを表示": "Show Data Table"
+  },
+  "SiteTopUpper": {
+    "最終更新": "Last update",
+    "注釈": "This is a provisional translation. Please be aware that there may be mistranslations.",
+    "電話相談をどうぞ": "Please call us first If you have any concerns about symptom in you or your family.",
+    "相談の手順を見る": "See this flowchart"
   },
   "ExtLink": {
     "厚生労働省x696": {
@@ -144,8 +148,6 @@
   "情報をシェアする": "Share",
   "埋め込み用コード": " Embed Code",
   "埋め込み用コードをコピーしました": " Copied the embed code",
-  "最終更新": "Last update",
-  "注釈": "This is a provisional translation. Please be aware that there may be mistranslations.",
   "print": " Print",
   "SideNavigation": {
     "a": [
