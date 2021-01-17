@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable simple-import-sort/sort -- ブラウザでの表示順に合わせて各 card の component を import する */
+/* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 import Vue from 'vue'
 
 // 検査陽性者の状況
@@ -45,7 +45,7 @@ const TelephoneAdvisoryReportsNumberCard = () =>
 // // 確定日別による陽性者数の推移
 // const PositiveNumberByDiagnosedDateCard = () =>
 //   import('@/components/cards/PositiveNumberByDiagnosedDateCard.vue')
-/* eslint-enable simple-import-sort/sort */
+/* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
   data() {
