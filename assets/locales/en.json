@@ -57,6 +57,12 @@
     "tested": "cases",
     "reports": "cases"
   },
+  "TestedNumberCard": {
+    "title": "Number of Tests",
+    "notes": [
+      "Preliminary value. May be modified later"
+    ]
+  },
   "About": {
     "a": [
       "This website was opened by the volunteer in Iwate to provide the latest information of COVID-19. The operation and development of the project is done by volunteers from within the Iwate Prefecture.",
@@ -213,7 +219,6 @@
   "確定日別による陽性者数の推移": "確定日別による陽性者数の推移",
   "（注）": "(Note)",
   "医療機関等が行った検査も含む": "Including examinations at medical institutions",
-  "速報値として公開するものであり、後日確定データとして修正される場合がある": "Preliminary value. May be modified later",
   "接触歴等不明者数（７日間移動平均）": "Unlinked 7-MA",
   "PositiveRateCard": {
     "a": [
@@ -261,7 +266,6 @@
   "岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ": "Notice of the Iwate Prefectural Consolation Grant Program for Workers Responding to New Coronavirus Infections",
   "抗原検査件数": "Number of antigen tests",
   "詳細を見る（岩手県新型コロナウイルス感染症関連情報）": "See details (Iwate COVID-19 related information) [JA]",
-  "検査実施件数": "Number of Tests",
   "新型コロナウイルス感染拡大防止のため、業種ごとに関係団体の情報を参考としてください。": "In order to prevent the spread of the new coronavirus infection, please refer to the information provided by the relevant organizations for each industry.",
   "事業者の皆様へのお知らせ": "Notice to Businesses",
   "コールセンター・各保健所等への受付件数の合計": "Total number of cases received at call centers, health centers, etc.",
