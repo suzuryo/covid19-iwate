@@ -61,6 +61,13 @@ def has_confirmed_case_attributes_card
   # 最初は1ページあたり15件なので16番目のtrは無い
   expect(page.all('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(16)').empty?).to eq true
 
+  # １ページあたり
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__select').text).to eq "#{JA_JSON['ConfirmedCasesAttributesCard']['footer'][0]}\n15"
+
+  # 項目中
+  d = DATA_JSON['patients']['data'].last['id'].to_s
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq "#{JA_JSON['ConfirmedCasesAttributesCard']['footer'][1]}".gsub('{itemsLength}', d).gsub('{pageStart}', '1').gsub('{pageStop}', '15').rstrip
+
   # 次のページ
   find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 

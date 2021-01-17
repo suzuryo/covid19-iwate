@@ -212,8 +212,6 @@
   "比較的軽い風邪の症状": "Relatively mild cold-like symptoms",
   "発熱や咳などの{minorSymptom}がある": "{minorSymptom} such as a fever or cough",
   "日別値": "as a day",
-  "1ページ当たり": "Items per page",
-  "{itemsLength} 項目中 {pageStart} - {pageStop} ": "{pageStart} - {pageStop} of {itemsLength} indexes",
   "現在判明している人数であり、後日修正される場合がある": "This number of people has been confirmed; might be modified later",
   "{date} の数値": "Statistics for {date}",
   "接触歴等判明者数": "Linked",
@@ -409,7 +407,11 @@
       "不明": "Unknown",
       "daysbefore": "Zero-day|{d} day before|{d} days before",
       "{age}代": " {age}'s"
-    }
+    },
+    "footer": [
+      "Items per page",
+      "{pageStart} - {pageStop} of {itemsLength} indexes"
+    ]
   },
   "新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである": "The new positive cases are classified into those with unlink (unknown contact history) or with link (known contact history) as of the date of publication.",
   "接触歴等不明者数(7日間移動平均)": "Number of Unlinked 7-MA (Positive cases with unknown routes of infection) ",
