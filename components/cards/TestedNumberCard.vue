@@ -2,7 +2,7 @@
   <v-col id="TestedNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <time-stacked-bar-chart
-        :title="$t('検査実施件数')"
+        :title="$t('TestedNumberCard.title')"
         :title-id="'number-of-tested'"
         :chart-id="'time-stacked-bar-chart-inspections'"
         :chart-data="inspectionsGraph"
@@ -13,15 +13,10 @@
         :data-labels="inspectionsDataLabels"
         :table-labels="inspectionsTableLabels"
       >
-        <!-- 件.tested = 検査数 -->
         <template #notes>
           <ul>
-            <li>
-              {{
-                $t(
-                  '速報値として公開するものであり、後日確定データとして修正される場合がある'
-                )
-              }}
+            <li v-for="(note, i) in $t('TestedNumberCard.notes')" :key="i">
+              {{ note }}
             </li>
           </ul>
         </template>
