@@ -7,18 +7,18 @@
         </template>
       </page-header>
       <div class="UpdatedAt">
-        <span>{{ $t('最終更新') }}</span>
+        <span>{{ $t('SiteTopUpper.最終更新') }}</span>
         <time :datetime="updatedAt">{{ formattedDateForDisplay }}</time>
       </div>
       <div v-show="!['ja'].includes($i18n.locale)" class="Annotation">
-        <span>{{ $t('注釈') }}</span>
+        <span>{{ $t('SiteTopUpper.注釈') }}</span>
       </div>
     </div>
     <lazy-static-info
       class="mb-4"
       :url="localePath('/flow')"
-      :text="$t('自分や家族の症状に不安や心配があればまずは電話相談をどうぞ')"
-      :btn-text="$t('相談の手順を見る')"
+      :text="$t('SiteTopUpper.電話相談をどうぞ')"
+      :btn-text="$t('SiteTopUpper.相談の手順を見る')"
     />
     <lazy-static-info
       class="mb-4"
