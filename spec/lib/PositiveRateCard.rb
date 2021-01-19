@@ -17,7 +17,7 @@ def has_positive_rate_card
   # 検査の陽性率(実際に計算する)
   a = (DAILY_POSITIVE_DETAIL_JSON['data'][-7..-1].reduce(0){|sum, n| sum + n['count'].to_i} / 7.0)
   b = (POSITIVE_RATE_JSON['data'][-7..-1].reduce(0){|sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i} / 7.0)
-  d = number_to_delimited((a / b * 100).round(1))
+  d = number_to_delimited(page.evaluate_script("#{(a / b * 100).round(2)}.toFixed(1)"))
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
 
   # PCR検査の7日間移動平均(実際に計算する)
