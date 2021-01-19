@@ -12,7 +12,7 @@
       :custom-sort="customSort"
       :footer-props="{
         'items-per-page-options': [15, 30, 50, 100, 200, 300, -1],
-        'items-per-page-text': $t('1ページ当たり'),
+        'items-per-page-text': $t('ConfirmedCasesAttributesCard.footer[0]'),
       }"
       class="cardTable"
     >
@@ -47,7 +47,7 @@
       </template>
       <template slot="footer.page-text" slot-scope="props">
         {{
-          $t('{itemsLength} 項目中 {pageStart} - {pageStop} ', {
+          $t('ConfirmedCasesAttributesCard.footer[1]', {
             itemsLength: props.itemsLength,
             pageStart: props.pageStart,
             pageStop: props.pageStop,
