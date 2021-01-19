@@ -12,6 +12,11 @@ def has_tested_number_card
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].last['pcr_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['antigen_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['pcr_negative_count'].to_i + POSITIVE_RATE_JSON['data'].last['antigen_negative_count'].to_i)
   expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
 
+  # グラフの凡例
+  JA_JSON['TestedNumberCard']['legends'].each_with_index do |legend, i|
+    expect(find("#TestedNumberCard > div > div > div.DataView-Content > ul[class^=GraphLegend] > li:nth-child(#{i+1}) > button > span").text).to eq legend
+  end
+
   # データを表示ボタンの文言
   expect(find('#TestedNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
 
