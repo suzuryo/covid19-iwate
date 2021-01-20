@@ -22,7 +22,8 @@
     />
     <lazy-static-info
       class="mb-4"
-      text="「理容 いこい」(盛岡市西青山)を1月6日(水)〜1月17日(日)に利用した方は盛岡市保健所(019-603-8308)に連絡を"
+      text="「理容 いこい」（盛岡市西青山）を1月6日(水)〜1月17日(日)に利用した方は盛岡市保健所(019-603-8308)に連絡を"
+      url="http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1033980.html"
     />
     <lazy-static-info
       class="mb-4"
