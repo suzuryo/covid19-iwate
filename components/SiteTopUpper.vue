@@ -21,23 +21,23 @@
       :btn-text="$t('SiteTopUpper.相談の手順を見る')"
     />
     <lazy-static-info
+      v-for="(item, i) in alertItems"
+      :key="i"
       class="mb-4"
-      text="「理容 いこい」（盛岡市西青山）を1月6日(水)〜1月17日(日)に利用した方は盛岡市保健所(019-603-8308)に連絡を"
-      url="http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1033980.html"
-    />
-    <lazy-static-info
-      class="mb-4"
-      text="日本国内の感染者数は34万人、これは盛岡市と宮古市の人口の合計とほぼ同じ"
+      :url="item.url"
+      :text="item.text"
     />
   </div>
 </template>
 
 <script lang="ts">
 import { mdiChartTimelineVariant } from '@mdi/js'
+import dayjs from 'dayjs'
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 
 import PageHeader from '@/components/PageHeader.vue'
+import Alert from '@/data/alert.json'
 import Data from '@/data/data.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
@@ -48,12 +48,29 @@ export default Vue.extend({
   data() {
     const { lastUpdate } = Data
 
+    // 日付の新しいものが上
+    const alertItems = Alert.alertItems
+      .sort((a, b) => {
+        return dayjs(a.date).isBefore(dayjs(b.date)) ? 1 : -1
+      })
+      .map((d: any) => {
+        const _locale: string = this.$i18n.locale
+        const _text: string = d.text[_locale] ?? d.text.ja
+        const _url: string = d.url[_locale] ?? d.url.ja
+
+        return {
+          text: _text,
+          url: _url,
+        }
+      })
+
     return {
       headerItem: {
         iconPath: mdiChartTimelineVariant,
         title: this.$t('Common.岩手の最新感染動向'),
       },
       lastUpdate,
+      alertItems,
     }
   },
   head(): MetaInfo {
