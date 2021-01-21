@@ -44,19 +44,10 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
-      - name: Set bundle cache directory path
-        id: bundle-cache-dir-path
-        run: |
-          bundle config path vendor/bundle
-          echo "::set-output name=dir::vendor/bundle"
-      - name: bundle Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.bundle-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-bundle-${{ hashFiles('Gemfile.lock') }}
+          bundler-cache: true
       - name: bundle install
         run: bundle install --jobs 4 --retry 3
       - name: Copy data.json to master
