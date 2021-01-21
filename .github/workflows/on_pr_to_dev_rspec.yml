@@ -44,8 +44,6 @@ jobs:
         with:
           ruby-version: '3.0'
           bundler-cache: true
-      - name: bundle install
-        run: bundle install --jobs 4 --retry 3
       - name: yarn run generate:deploy for rspec
         run: |
           yarn run generate:deploy --fail-on-page-error
