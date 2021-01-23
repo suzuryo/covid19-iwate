@@ -248,10 +248,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         dataIndex: 1,
         digit: 1,
       })
+      // 直近1週間の感染者数の合計
+      const sum7day = this.chartData[0]
+        .slice(this.chartData[0].length - 7, this.chartData[0].length)
+        .reduce((accumulator, currentValue) => {
+          return accumulator + currentValue
+        }, 0)
+
+      // 1週間あたりの対10万人を計算する 岩手県の人口は 1212201
       const lastDayDataPer100k =
-        // 1週間あたりの対10万人を計算する 岩手県の人口は 1212201
-        Math.round(((parseFloat(lastDayData) * 7.0 * 100000) / 1212201) * 10) /
-        10
+        Math.round(((sum7day * 100000) / 1212201) * 10) / 10
       return [
         {
           lText: lastDayData,
