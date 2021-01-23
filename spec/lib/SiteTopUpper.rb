@@ -15,6 +15,9 @@ def has_site_top_upper(locale: 'ja')
   # 電話相談をどうぞ
   expect(find('.MainPage > a:nth-child(2) > span:nth-child(1)').text).to eq locale_json['SiteTopUpper']['電話相談をどうぞ'].to_s
   expect(find('.MainPage > a:nth-child(2) > div.StaticInfo-Button > span').text).to eq locale_json['SiteTopUpper']['相談の手順を見る'].to_s
+  ALERT_ITEMS.each_with_index do |d, index|
+    expect(find(".MainPage > a:nth-child(#{index+3}).StaticInfo > span").text).to eq (d['text'][locale] ? d['text'][locale] : d['text']['ja'])
+  end
 
   if locale == 'ja'
     # time

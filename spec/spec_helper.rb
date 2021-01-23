@@ -32,10 +32,12 @@ DATA_JSON = JSON.parse(File.read(File.join(__dir__, '../data/data.json')))
 JA_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/ja.json')))
 EN_JSON = JSON.parse(File.read(File.join(__dir__, '../assets/locales/en.json')))
 NEWS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/news.json')))
+ALERT_JSON = JSON.parse(File.read(File.join(__dir__, '../data/alert.json')))
 PATIENT_MUNICIPALITIES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/patient_municipalities.json')))
 POSITIVE_RATE_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_rate.json')))
 POSITIVE_STATUS_JSON = JSON.parse(File.read(File.join(__dir__, '../data/positive_status.json')))
 SELF_DISCLOSURES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/self_disclosures.json')))
 
 NEWS_ITEMS = NEWS_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
+ALERT_ITEMS = ALERT_JSON['alertItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
 SELF_DISCLOSURES_ITEMS = SELF_DISCLOSURES_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
