@@ -54,4 +54,4 @@ jobs:
           yarn run start &
       - name: rspec
         run: |
-          bundle exec parallel_rspec
+          bundle exec parallel_rspec spec
