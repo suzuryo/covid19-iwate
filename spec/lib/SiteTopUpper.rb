@@ -30,6 +30,6 @@ def has_site_top_upper(locale: 'ja')
     expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime("%b %-d, %Y, %H:%M JST")
     # Annotation
     expect(find('.MainPage > .Header > .Annotation > span').text).to eq locale_json['SiteTopUpper']['注釈'].to_s
-    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq '/en/flow'
+    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq "/#{locale}/flow"
   end
 end
