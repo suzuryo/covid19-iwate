@@ -85,7 +85,7 @@ def has_confirmed_case_attributes_card
 
   # 注釈の中身をチェック
   JA_JSON['ConfirmedCasesAttributesCard']['notes'].each_with_index do |d, i|
-    expect(find("#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1+i})").text).to eq d
+    expect(find("#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1 + i})").text).to eq d
   end
 
   # 注釈を表示ボタンをクリックすると閉じる

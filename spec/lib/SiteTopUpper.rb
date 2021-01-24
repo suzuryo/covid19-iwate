@@ -17,7 +17,7 @@ def has_site_top_upper(lang:, data:)
   expect(find('.MainPage > a:nth-child(2) > div.StaticInfo-Button > span').text).to eq lang_json['SiteTopUpper']['相談の手順を見る'].to_s
   ALERT_ITEMS.each_with_index do |d, index|
     a = d['text'][lang.to_s] || d['text']['ja']
-    expect(find(".MainPage > a:nth-child(#{index+3}).StaticInfo > span").text).to eq a
+    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo > span").text).to eq a
   end
 
   if lang == :ja

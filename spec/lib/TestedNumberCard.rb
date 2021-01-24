@@ -14,7 +14,7 @@ def has_tested_number_card
 
   # グラフの凡例
   JA_JSON['TestedNumberCard']['legends'].each_with_index do |legend, i|
-    expect(find("#TestedNumberCard > div > div > div.DataView-Content > ul[class^=GraphLegend] > li:nth-child(#{i+1}) > button > span").text).to eq legend
+    expect(find("#TestedNumberCard > div > div > div.DataView-Content > ul[class^=GraphLegend] > li:nth-child(#{i + 1}) > button > span").text).to eq legend
   end
 
   # データを表示ボタンの文言
