@@ -91,8 +91,8 @@ def has_confirmed_case_attributes_card
   expect(page).to have_selector('#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  JA_JSON['ConfirmedCasesAttributesCard']['notes'].each_with_index do |d, i|
-    expect(find("#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1 + i})").text).to eq d
+  JA_JSON['ConfirmedCasesAttributesCard']['notes'].each_with_index do |item, i|
+    expect(find("#ConfirmedCasesAttributesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1 + i})").text).to eq item
   end
 
   # 注釈を表示ボタンをクリックすると閉じる
