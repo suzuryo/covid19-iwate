@@ -20,7 +20,6 @@ def has_confirmed_cases_details_card
   d = number_to_delimited(DATA_JSON['main_summary']['children'][0]['children'][1]['value'])
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(2) > div > span:nth-child(2) > strong').text).to eq "#{d}"
 
-
   # 自宅療養
   d = number_to_delimited(DATA_JSON['main_summary']['children'][0]['children'][2]['value'])
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(3) > div > span:nth-child(2) > strong').text).to eq "#{d}"
