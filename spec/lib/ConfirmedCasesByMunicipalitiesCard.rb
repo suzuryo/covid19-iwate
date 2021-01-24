@@ -10,19 +10,19 @@ def has_confirmed_cases_by_municipalities_card
 
   # テーブルの上から1行目をチェックする(市町村)
   d = PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['label']
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(ふりがな)
   d = PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['ruby']
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(陽性者数)
   d = number_to_delimited(PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count'])
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(陽性者数/人口)
   d = "#{PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count_per_population']}%"
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
 
   # ふりがなをクリックしてソートしたら、一番上は「いちのせきし」
   find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2)').click

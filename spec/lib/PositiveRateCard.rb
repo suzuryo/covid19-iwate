@@ -12,17 +12,17 @@ def has_positive_rate_card
 
   # 検査の陽性率
   d = number_to_delimited(page.evaluate_script("#{POSITIVE_RATE_JSON['data'].last['positive_rate']}.toFixed(1)"))
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # 検査の陽性率(実際に計算する)
   a = (DAILY_POSITIVE_DETAIL_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['count'].to_i } / 7.0)
   b = (POSITIVE_RATE_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i } / 7.0)
   d = number_to_delimited(page.evaluate_script("#{(a / b * 100).round(2)}.toFixed(1)"))
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # PCR検査の7日間移動平均(実際に計算する)
   d = number_to_delimited((POSITIVE_RATE_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i } / 7.0).round(1))
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq "#{d}"
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
   expect(find('#PositiveRateCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
@@ -34,31 +34,31 @@ def has_positive_rate_card
 
   # テーブルの上から4行目をチェックする(日付)
   d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime("%-m月%-d日")
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(PCR検査陽性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-4]['pcr_positive_count'].to_i)
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(抗原検査陽性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-4]['antigen_positive_count'].to_i)
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(3)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(PCR検査陰性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-4]['pcr_negative_count'].to_i)
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(4)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(4)').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(抗原検査陰性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-4]['antigen_negative_count'].to_i)
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(5)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(5)').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(検査件数 7-MA)
   d = number_to_delimited(page.evaluate_script("#{POSITIVE_RATE_JSON['data'][-4]['weekly_average_diagnosed_count']}.toFixed(1)"))
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(6)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(6)').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(陽性率)
   d = number_to_delimited(page.evaluate_script("#{POSITIVE_RATE_JSON['data'][-4]['positive_rate']}.toFixed(1)"))
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(7)').text).to eq "#{d}"
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > td:nth-child(7)').text).to eq d.to_s
 
   # データを表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel--active')

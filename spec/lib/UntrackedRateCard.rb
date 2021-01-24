@@ -10,11 +10,11 @@ def has_untracked_rate_card
 
   # 接触歴等不明者数(7日間移動平均)
   d = number_to_delimited(page.evaluate_script("#{DAILY_POSITIVE_DETAIL_JSON['data'].last['weekly_average_untracked_count']}.toFixed(1)"))
-  expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 接触歴等不明者数(7日間移動平均)(実際に計算してみる)
   d = number_to_delimited((DAILY_POSITIVE_DETAIL_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['missing_count'].to_i } / 7.0).round(1))
-  expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
   expect(find('#UntrackedRateCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
@@ -26,19 +26,19 @@ def has_untracked_rate_card
 
   # テーブルの上から3番目の値(日別)
   d = Date.parse(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['diagnosed_date']).strftime("%-m月%-d日")
-  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > th').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > th').text).to eq d.to_s
 
   # テーブルの上から3番目の値を確認(接触歴等判明者数)
   d = number_to_delimited(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['reported_count'].to_i)
-  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から3番目の値を確認(接触歴等不明者数)
   d = number_to_delimited(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['missing_count'].to_i)
-  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(3)').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から3番目の値を確認(接触歴等不明者数7日間移動平均)(実際に計算してみる)
   d = number_to_delimited((DAILY_POSITIVE_DETAIL_JSON['data'][-9..-3].reduce(0) { |sum, n| sum + n['missing_count'].to_i } / 7.0).round(1))
-  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(4)').text).to eq "#{d}"
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > td:nth-child(4)').text).to eq d.to_s
 
   # データを表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel--active')

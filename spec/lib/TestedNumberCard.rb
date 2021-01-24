@@ -10,7 +10,7 @@ def has_tested_number_card
 
   # 検査実施件数
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].last['pcr_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['antigen_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['pcr_negative_count'].to_i + POSITIVE_RATE_JSON['data'].last['antigen_negative_count'].to_i)
-  expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+  expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # グラフの凡例
   JA_JSON['TestedNumberCard']['legends'].each_with_index do |legend, i|
@@ -27,23 +27,23 @@ def has_tested_number_card
 
   # テーブルの上から2行目をチェックする(日付)
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime("%-m月%-d日")
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルの上から2行目をチェックする(PCR検査実施件数・日別)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].last['pcr_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['pcr_negative_count'].to_i)
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から2行目をチェックする(PCR検査実施件数・累計)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + + n['pcr_negative_count'].to_i })
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から2行目をチェックする(抗原検査実施件数・日別)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].last['antigen_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['antigen_negative_count'].to_i)
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq "#{d}"
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
 
   # テーブルの上から2行目をチェックする(抗原検査実施件数・累計)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].reduce(0) { |sum, n| sum + n['antigen_positive_count'].to_i + + n['antigen_negative_count'].to_i })
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq "#{d}"
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
 
   # データを表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')

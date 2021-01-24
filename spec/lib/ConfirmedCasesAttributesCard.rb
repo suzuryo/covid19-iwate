@@ -6,7 +6,7 @@ def has_confirmed_case_attributes_card
 
   # 陽性者の合計
   d = DATA_JSON['patients']['data'].size
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 陽性者の合計の日付
   d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime("%-m月%-d日")
@@ -14,7 +14,7 @@ def has_confirmed_case_attributes_card
 
   # テーブルの上から1行目をチェックする(通番)
   d = "事例#{DATA_JSON['patients']['data'].last['id'].to_s.rjust(4, '0')}"
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルのヘッダーをチェックする
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(1)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['通番']
@@ -27,12 +27,12 @@ def has_confirmed_case_attributes_card
   # テーブルの上から1行目をチェックする(url)
   d = DATA_JSON['patients']['data'].last['url']
   if d
-    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th > a')[:href]).to eq "#{d}"
+    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th > a')[:href]).to eq d.to_s
   end
 
   # テーブルの上から1行目をチェックする(確定日)
   d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime("%-m月%-d日")
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(発症日)
   if DATA_JSON['patients']['data'].last&.[]('無症状')
@@ -42,20 +42,20 @@ def has_confirmed_case_attributes_card
   else
     d = JA_JSON['ConfirmedCasesAttributesCard']['table']['不明']
   end
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(居住地)
   d = DATA_JSON['patients']['data'].last['居住地']
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(年代)
   d = DATA_JSON['patients']['data'].last['年代']
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(📺)
   d = DATA_JSON['patients']['data'].last['会見']
   if d
-    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6) > a')[:href]).to eq "#{d}"
+    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6) > a')[:href]).to eq d.to_s
   end
 
   # 最初は1ページあたり15件なので16番目のtrは無い
@@ -66,14 +66,15 @@ def has_confirmed_case_attributes_card
 
   # 項目中
   d = DATA_JSON['patients']['data'].last['id'].to_s
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq "#{JA_JSON['ConfirmedCasesAttributesCard']['footer'][1]}".gsub('{itemsLength}', d).gsub('{pageStart}', '1').gsub('{pageStop}', '15').rstrip
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq (JA_JSON['ConfirmedCasesAttributesCard']['footer'][1]).to_s.gsub('{itemsLength}', d).gsub('{pageStart}', '1').gsub('{pageStop}',
+                                                                                                                                                                                                                                                                           '15').rstrip
 
   # 次のページ
   find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 
   # 次のページの先頭は16番目の要素
   d = "事例#{DATA_JSON['patients']['data'][-16]['id'].to_s.rjust(4, '0')}"
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # 注釈を表示ボタンの文言
   expect(find('#ConfirmedCasesAttributesCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq JA_JSON['Common']['注']
