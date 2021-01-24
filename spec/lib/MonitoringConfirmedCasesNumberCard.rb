@@ -58,7 +58,7 @@ def has_monitoring_confirmed_cases_number_card
   end
   expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq JA_JSON['Common']['7MA']
 
-  JA_JSON['ConfirmedCasesNumberCard']['b'].each_with_index do |d, i |
+  JA_JSON['ConfirmedCasesNumberCard']['b'].each_with_index do |d, i|
     expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(#{1+i})").text).to eq d
   end
   expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(1) a").text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']
