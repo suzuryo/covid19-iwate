@@ -6,7 +6,7 @@ def has_monitoring_confirmed_cases_number_card
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
 
   # 日付
-  d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime("%-m月%-d日")
+  d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
   # 新規陽性者数の7日間移動平均
@@ -26,7 +26,7 @@ def has_monitoring_confirmed_cases_number_card
   expect(page).to have_selector('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # テーブルの上から2番目の値を確認(日付)
-  d = Date.parse(POSITIVE_RATE_JSON['data'][-2]['diagnosed_date']).strftime("%-m月%-d日")
+  d = Date.parse(POSITIVE_RATE_JSON['data'][-2]['diagnosed_date']).strftime('%-m月%-d日')
   expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > th').text).to eq d.to_s
 
   # テーブルの上から2番目の値を確認(陽性者数)
@@ -61,8 +61,8 @@ def has_monitoring_confirmed_cases_number_card
   JA_JSON['ConfirmedCasesNumberCard']['b'].each_with_index do |d, i|
     expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(#{1 + i})").text).to eq d
   end
-  expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(1) a").text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']
-  expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(2) a").text).to eq JA_JSON['ExtLink']['厚生労働省x696']['text']
+  expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(1) a').text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']
+  expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(2) a').text).to eq JA_JSON['ExtLink']['厚生労働省x696']['text']
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content')

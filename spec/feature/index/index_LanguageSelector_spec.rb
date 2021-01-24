@@ -3,7 +3,7 @@ require 'spec_helper'
 ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))
 en_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/en.json')))
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/]' do
     before do
       visit '/'

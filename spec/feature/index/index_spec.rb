@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/]' do
     before do
       visit '/'

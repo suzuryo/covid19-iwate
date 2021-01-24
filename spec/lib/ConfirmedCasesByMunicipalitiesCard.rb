@@ -5,7 +5,7 @@ def has_confirmed_cases_by_municipalities_card
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3').text).to eq '陽性患者数（市町村別）'
 
   # 日付
-  d = Date.parse(PATIENT_MUNICIPALITIES_JSON['date']).strftime("%-m月%-d日")
+  d = Date.parse(PATIENT_MUNICIPALITIES_JSON['date']).strftime('%-m月%-d日')
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq JA_JSON['Common']['{date}の累計'].gsub('{date}', d)
 
   # テーブルの上から1行目をチェックする(市町村)
@@ -39,10 +39,10 @@ def has_confirmed_cases_by_municipalities_card
   expect(page).to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)").text).to eq '前日までに報告された陽性者の居住地を元にした累計値'
-  expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)").text).to eq '意向により居住地が公表されない場合は累計に含まれない'
-  expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)").text).to eq '例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある'
-  expect(find("#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)").text).to eq '陽性者数/人口 は市町村の人口(令和2年10月1日現在)に対する陽性者数の割合'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)').text).to eq '前日までに報告された陽性者の居住地を元にした累計値'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)').text).to eq '意向により居住地が公表されない場合は累計に含まれない'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq '例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)').text).to eq '陽性者数/人口 は市町村の人口(令和2年10月1日現在)に対する陽性者数の割合'
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#ConfirmedCasesByMunicipalitiesCard .NotesExpansionPanel .v-expansion-panel-content')

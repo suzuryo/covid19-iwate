@@ -9,7 +9,7 @@ def has_confirmed_case_attributes_card
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 陽性者の合計の日付
-  d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime("%-m月%-d日")
+  d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime('%-m月%-d日')
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq JA_JSON['Common']['{date}の累計'].gsub('{date}', d)
 
   # テーブルの上から1行目をチェックする(通番)
@@ -31,7 +31,7 @@ def has_confirmed_case_attributes_card
   end
 
   # テーブルの上から1行目をチェックする(確定日)
-  d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime("%-m月%-d日")
+  d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime('%-m月%-d日')
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(発症日)

@@ -6,7 +6,7 @@ def has_site_top_upper(lang:, data:)
   lang_json = data[:json]
 
   # h2
-  expect(find('.MainPage > .Header > .header > h2.pageTitle').text).to eq lang_json['Common']["岩手の最新感染動向"].to_s
+  expect(find('.MainPage > .Header > .header > h2.pageTitle').text).to eq lang_json['Common']['岩手の最新感染動向'].to_s
   expect(page).to have_selector('.MainPage > .Header > .header > h2.pageTitle span.v-icon svg')
 
   # UpdatedAt
@@ -22,13 +22,13 @@ def has_site_top_upper(lang:, data:)
 
   if lang == :ja
     # time
-    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime("%Y年%-m月%-d日 %H:%M JST")
+    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%Y年%-m月%-d日 %H:%M JST')
     # Annotation
     expect(page).not_to have_selector('.MainPage > .Header > .Annotation')
     expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq '/flow'
   else
     # time
-    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime("%b %-d, %Y, %H:%M JST")
+    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%b %-d, %Y, %H:%M JST')
     # Annotation
     expect(find('.MainPage > .Header > .Annotation > span').text).to eq lang_json['SiteTopUpper']['注釈'].to_s
     expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq "/#{lang}/flow"

@@ -9,7 +9,7 @@ def has_hospitalized_number_card
   expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 入院と宿泊療養の日付
-  d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime("%-m月%-d日")
+  d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime('%-m月%-d日')
   expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to eq "#{d}の合計"
 
   # データを表示ボタンの文言
@@ -21,7 +21,7 @@ def has_hospitalized_number_card
   expect(page).to have_selector('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # テーブルの上から1行目をチェックする(日付)
-  d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime("%-m月%-d日")
+  d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime('%-m月%-d日')
   expect(find('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(入院)
@@ -51,7 +51,7 @@ def has_hospitalized_number_card
   expect(page).to have_selector('#HospitalizedNumberCard .NotesExpansionPanel .v-expansion-panel--active')
 
   # 注釈の中身をチェック
-  expect(find("#HospitalizedNumberCard .NotesExpansionPanel .v-expansion-panel-content table[class^=beds] > caption").text).to eq '岩手県の病床確保計画'
+  expect(find('#HospitalizedNumberCard .NotesExpansionPanel .v-expansion-panel-content table[class^=beds] > caption').text).to eq '岩手県の病床確保計画'
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#HospitalizedNumberCard .NotesExpansionPanel .v-expansion-panel--active')

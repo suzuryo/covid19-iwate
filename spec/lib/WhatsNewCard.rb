@@ -2,7 +2,7 @@ require 'spec_helper'
 
 def has_whats_new_card
   # h3
-  expect(find('#WhatsNewCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['WhatsNew']["title"].to_s
+  expect(find('#WhatsNewCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['WhatsNew']['title'].to_s
 
   # テーブルの中身
   NEWS_ITEMS.each_with_index do |d, index|
@@ -15,6 +15,6 @@ def has_whats_new_card
     end
 
     # テーブルの上からi行目をチェックする(日付)
-    expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime("%-m月%-d日").to_s
+    expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
   end
 end

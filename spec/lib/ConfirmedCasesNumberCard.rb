@@ -5,7 +5,7 @@ def has_confirmed_cases_number_card
   expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '報告日別による陽性者数の推移'
 
   # 日付
-  d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime("%-m月%-d日")
+  d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime('%-m月%-d日')
   expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} 日別値"
 
   # 陽性者数
@@ -21,7 +21,7 @@ def has_confirmed_cases_number_card
   expect(page).to have_selector('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # テーブルの最上部の値(日付)
-  d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime("%-m月%-d日")
+  d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime('%-m月%-d日')
   expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルの最上部の値(陽性者・日別)

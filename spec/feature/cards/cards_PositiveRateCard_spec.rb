@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/PositiveRateCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/cards/positive-rate]' do
     before do
       visit '/cards/positive-rate'

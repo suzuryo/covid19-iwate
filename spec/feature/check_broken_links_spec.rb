@@ -7,7 +7,7 @@ require 'typhoeus'
 # 3. href を GET してみて、 status code が 200 を確認
 # なぜなら、盛岡市の個別事例ページがよく URL が変更になって 404 になるから。
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/]' do
     urls = []
 

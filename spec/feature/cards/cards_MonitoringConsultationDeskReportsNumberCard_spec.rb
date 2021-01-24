@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/MonitoringConsultationDeskReportsNumberCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/cards/monitoring-number-of-reports-to-covid19-consultation-desk]' do
     before do
       visit '/cards/monitoring-number-of-reports-to-covid19-consultation-desk'
