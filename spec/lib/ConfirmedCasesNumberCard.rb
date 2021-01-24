@@ -29,7 +29,7 @@ def has_confirmed_cases_number_card
   expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
 
   # テーブルの最上部の値(陽性者・累計)
-  d = number_to_delimited(DATA_JSON['patients_summary']['data'].reduce(0){|sum, n| sum + n['小計'].to_i})
+  d = number_to_delimited(DATA_JSON['patients_summary']['data'].reduce(0) {|sum, n| sum + n['小計'].to_i})
   expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
 
   # テーブルの最上部の値(陽性者・累計)(idからチェック)
