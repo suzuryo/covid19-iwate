@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 ja_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/ja.json')))

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 def has_monitoring_consultation_desk_reports_number_card
