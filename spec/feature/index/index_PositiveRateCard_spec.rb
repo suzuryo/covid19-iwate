@@ -4,7 +4,6 @@ require_relative '../../lib/PositiveRateCard'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
-
     before do
       visit '/'
       render_lazy_contents

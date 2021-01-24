@@ -4,7 +4,6 @@ require_relative '../../lib/ConfirmedCasesDetailsCard'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/cards/details-of-confirmed-cases]' do
-
     before do
       visit '/cards/details-of-confirmed-cases'
       render_lazy_contents
@@ -17,6 +16,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_breadcrumbs(id: '#ConfirmedCasesDetailsCard', title: '検査陽性者の状況')
       end
     end
-
   end
 end

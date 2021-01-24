@@ -5,7 +5,6 @@ en_json = JSON.parse(File.read(File.join(__dir__, '../../../assets/locales/en.js
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
-
     before do
       visit '/'
       render_lazy_contents
@@ -36,6 +35,5 @@ describe "iPhone 6/7/8", type: :feature do
         expect(find('#app > div > div.appContainer > main > div > div > div.MainPage > div.Header.mb-3 > div.header > h2').text).to eq "#{ja_json['Common']['岩手の最新感染動向']}"
       end
     end
-
   end
 end

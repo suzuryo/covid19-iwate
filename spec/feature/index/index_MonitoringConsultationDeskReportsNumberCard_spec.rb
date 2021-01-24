@@ -4,7 +4,6 @@ require_relative '../../lib/MonitoringConsultationDeskReportsNumberCard'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
-
     before do
       visit '/'
       render_lazy_contents
@@ -17,6 +16,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_no_breadcrumbs(id: '#MonitoringConsultationDeskReportsNumberCard')
       end
     end
-
   end
 end

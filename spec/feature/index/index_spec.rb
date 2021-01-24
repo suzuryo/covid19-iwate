@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/]' do
-
     before do
       visit '/'
       render_lazy_contents
@@ -30,6 +29,5 @@ describe "iPhone 6/7/8", type: :feature do
       find('ul.MenuList > li:nth-child(7) > a').click
       expect(find('h2.pageTitle').text).to eq '当サイトについて'
     end
-
   end
 end

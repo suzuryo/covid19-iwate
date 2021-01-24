@@ -4,7 +4,6 @@ require_relative '../../lib/MonitoringConfirmedCasesNumberCard'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/cards/monitoring-number-of-confirmed-cases]' do
-
     before do
       visit '/cards/monitoring-number-of-confirmed-cases'
       render_lazy_contents
@@ -17,6 +16,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_breadcrumbs(id: '#MonitoringConfirmedCasesNumberCard', title: '新規陽性者数の7日間移動平均')
       end
     end
-
   end
 end

@@ -50,6 +50,5 @@ describe "iPhone 6/7/8", type: :feature do
         expect(request.response.response_code).to eq 200
       end
     end
-
   end
 end

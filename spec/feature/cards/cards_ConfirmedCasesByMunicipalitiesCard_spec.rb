@@ -4,7 +4,6 @@ require_relative '../../lib/ConfirmedCasesByMunicipalitiesCard'
 
 describe "iPhone 6/7/8", type: :feature do
   context 'page [/cards/number-of-confirmed-cases-by-municipalities]' do
-
     before do
       visit '/cards/number-of-confirmed-cases-by-municipalities'
       render_lazy_contents
@@ -17,6 +16,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_breadcrumbs(id: '#ConfirmedCasesByMunicipalitiesCard', title: '陽性患者数（市町村別）')
       end
     end
-
   end
 end
