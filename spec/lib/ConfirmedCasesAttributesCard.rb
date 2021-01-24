@@ -27,7 +27,9 @@ def has_confirmed_case_attributes_card
   # テーブルの上から1行目をチェックする(url)
   d = DATA_JSON['patients']['data'].last['url']
   if d
-    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th > a')[:href]).to eq d.to_s
+    expect(
+      find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th > a')[:href]
+    ).to eq d.to_s
   end
 
   # テーブルの上から1行目をチェックする(確定日)
@@ -55,7 +57,9 @@ def has_confirmed_case_attributes_card
   # テーブルの上から1行目をチェックする(📺)
   d = DATA_JSON['patients']['data'].last['会見']
   if d
-    expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6) > a')[:href]).to eq d.to_s
+    expect(
+      find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6) > a')[:href]
+    ).to eq d.to_s
   end
 
   # 最初は1ページあたり15件なので16番目のtrは無い
