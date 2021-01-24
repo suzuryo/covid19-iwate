@@ -39,13 +39,13 @@ def has_confirmed_case_attributes_card
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(発症日)
-  if DATA_JSON['patients']['data'].last&.[]('無症状')
-    d = JA_JSON['ConfirmedCasesAttributesCard']['table']['無症状']
-  elsif DATA_JSON['patients']['data'].last&.[]('発症日')
-    d = "#{(Date.parse(DATA_JSON['patients']['data'].last&.[]('確定日')) - Date.parse(DATA_JSON['patients']['data'].last&.[]('発症日'))).to_i}日前"
-  else
-    d = JA_JSON['ConfirmedCasesAttributesCard']['table']['不明']
-  end
+  d = if DATA_JSON['patients']['data'].last&.[]('無症状')
+        JA_JSON['ConfirmedCasesAttributesCard']['table']['無症状']
+      elsif DATA_JSON['patients']['data'].last&.[]('発症日')
+        "#{(Date.parse(DATA_JSON['patients']['data'].last&.[]('確定日')) - Date.parse(DATA_JSON['patients']['data'].last&.[]('発症日'))).to_i}日前"
+      else
+        JA_JSON['ConfirmedCasesAttributesCard']['table']['不明']
+      end
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(居住地)
