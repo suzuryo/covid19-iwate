@@ -10,11 +10,11 @@ def has_monitoring_confirmed_cases_number_card
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
   # 新規陽性者数の7日間移動平均
-  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..-1].reduce(0) {|sum, n| sum + n['小計'].to_i} / 7.0).round(1))
+  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..-1].reduce(0) { |sum, n| sum + n['小計'].to_i } / 7.0).round(1))
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq "#{d}"
 
   # 直近1週間の新規患者数（対人口10万人）
-  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..-1].reduce(0) {|sum, n| sum + n['小計'].to_i} * 100000.0 / 1212201.0).round(1))
+  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..-1].reduce(0) { |sum, n| sum + n['小計'].to_i } * 100000.0 / 1212201.0).round(1))
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq "#{d}"
 
   # データを表示ボタンの文言
@@ -34,7 +34,7 @@ def has_monitoring_confirmed_cases_number_card
   expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > td:nth-child(2)').text).to eq "#{d}"
 
   # テーブルの上から2番目の値を確認(7日間移動平均)
-  d = number_to_delimited((POSITIVE_RATE_JSON['data'][-8..-2].reduce(0) {|sum, n| sum + n['positive_count'].to_i} / 7.0).round(1))
+  d = number_to_delimited((POSITIVE_RATE_JSON['data'][-8..-2].reduce(0) { |sum, n| sum + n['positive_count'].to_i } / 7.0).round(1))
   expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > td:nth-child(3)').text).to eq "#{d}"
 
   # データを表示ボタンをクリックすると閉じる

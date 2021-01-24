@@ -29,7 +29,7 @@ def has_telephone_advisory_reports_number_card
   expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
 
   # テーブルの上から1行目をチェックする(一般相談 受付件数・累計)
-  d = number_to_delimited(DATA_JSON['contacts']['data'].reduce(0) {|sum, n| sum + n['小計'].to_i})
+  d = number_to_delimited(DATA_JSON['contacts']['data'].reduce(0) { |sum, n| sum + n['小計'].to_i })
   expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
 
   # データを表示ボタンをクリックすると閉じる
