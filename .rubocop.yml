@@ -1,0 +1,11 @@
+AllCops:
+  NewCops: enable
+
+inherit_from: .rubocop_todo.yml
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'spec/spec_helper.rb'
