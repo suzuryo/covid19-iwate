@@ -47,7 +47,7 @@ describe 'iPhone 6/7/8', type: :feature do
 
       hydra.run
 
-      responses = requests.map do |request|
+      requests.map do |request|
         p "#{request.response.response_code} #{request.response.redirect_count} #{request.base_url}"
         expect(request.response.response_code).to eq 200
       end
