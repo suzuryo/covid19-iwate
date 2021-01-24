@@ -53,4 +53,4 @@ LOCALES = {
     path: '/en',
     json: EN_JSON
   }
-}
+}.freeze
