@@ -13,7 +13,7 @@ def has_untracked_rate_card
   expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 接触歴等不明者数(7日間移動平均)(実際に計算してみる)
-  d = number_to_delimited((DAILY_POSITIVE_DETAIL_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['missing_count'].to_i } / 7.0).round(1))
+  d = number_to_delimited((DAILY_POSITIVE_DETAIL_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['missing_count'].to_i } / 7.0).round(1))
   expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言

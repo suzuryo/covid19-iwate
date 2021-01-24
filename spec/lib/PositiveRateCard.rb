@@ -15,13 +15,13 @@ def has_positive_rate_card
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # 検査の陽性率(実際に計算する)
-  a = (DAILY_POSITIVE_DETAIL_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['count'].to_i } / 7.0)
-  b = (POSITIVE_RATE_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i } / 7.0)
+  a = (DAILY_POSITIVE_DETAIL_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['count'].to_i } / 7.0)
+  b = (POSITIVE_RATE_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i } / 7.0)
   d = number_to_delimited(page.evaluate_script("#{(a / b * 100).round(2)}.toFixed(1)"))
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # PCR検査の7日間移動平均(実際に計算する)
-  d = number_to_delimited((POSITIVE_RATE_JSON['data'][-7..-1].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i } / 7.0).round(1))
+  d = number_to_delimited((POSITIVE_RATE_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + n['pcr_negative_count'].to_i } / 7.0).round(1))
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
