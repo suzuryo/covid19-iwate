@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 def has_telephone_advisory_reports_number_card
@@ -5,12 +7,12 @@ def has_telephone_advisory_reports_number_card
   expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '一般相談 受付件数'
 
   # 日付
-  d = Date.parse(DATA_JSON['contacts']['data'].last['日付']).strftime("%-m月%-d日")
+  d = Date.parse(DATA_JSON['contacts']['data'].last['日付']).strftime('%-m月%-d日')
   expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} 実績値"
 
   # 一般相談 受付件数
   d = number_to_delimited(DATA_JSON['contacts']['data'].last['小計'].to_i)
-  expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq "#{d}"
+  expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
   expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
@@ -21,16 +23,16 @@ def has_telephone_advisory_reports_number_card
   expect(page).to have_selector('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # テーブルの上から1行目をチェックする(日付)
-  d = Date.parse(DATA_JSON['contacts']['data'].last['日付']).strftime("%-m月%-d日")
-  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq "#{d}"
+  d = Date.parse(DATA_JSON['contacts']['data'].last['日付']).strftime('%-m月%-d日')
+  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(一般相談 受付件数・日別)
   d = number_to_delimited(DATA_JSON['contacts']['data'].last['小計'].to_i)
-  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq "#{d}"
+  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(一般相談 受付件数・累計)
-  d = number_to_delimited(DATA_JSON['contacts']['data'].reduce(0){|sum, n| sum + n['小計'].to_i})
-  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq "#{d}"
+  d = number_to_delimited(DATA_JSON['contacts']['data'].reduce(0) { |sum, n| sum + n['小計'].to_i })
+  expect(find('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
   # データを表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#TelephoneAdvisoryReportsNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
@@ -47,10 +49,10 @@ def has_telephone_advisory_reports_number_card
   expect(page).to have_selector('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  expect(find("#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)").text).to eq '「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上'
-  expect(find("#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)").text).to eq 'コールセンター・各保健所等への受付件数の合計'
-  expect(find("#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)").text).to eq '窓口を開設した2020年1月21日からのデータを表示'
-  expect(find("#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)").text).to eq '岩手県の発表漏れによりデータの存在しない日がある'
+  expect(find('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)').text).to eq '「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上'
+  expect(find('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)').text).to eq 'コールセンター・各保健所等への受付件数の合計'
+  expect(find('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq '窓口を開設した2020年1月21日からのデータを表示'
+  expect(find('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)').text).to eq '岩手県の発表漏れによりデータの存在しない日がある'
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#TelephoneAdvisoryReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content')

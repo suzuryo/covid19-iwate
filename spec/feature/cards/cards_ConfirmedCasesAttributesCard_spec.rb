@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/ConfirmedCasesAttributesCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/cards/attributes-of-confirmed-cases]' do
-
     before do
       visit '/cards/attributes-of-confirmed-cases'
       render_lazy_contents
@@ -17,6 +18,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_breadcrumbs(id: '#ConfirmedCasesAttributesCard', title: JA_JSON['ConfirmedCasesAttributesCard']['title'])
       end
     end
-
   end
 end

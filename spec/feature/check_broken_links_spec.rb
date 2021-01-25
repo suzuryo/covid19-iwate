@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'json'
 require 'typhoeus'
@@ -7,7 +9,7 @@ require 'typhoeus'
 # 3. href を GET してみて、 status code が 200 を確認
 # なぜなら、盛岡市の個別事例ページがよく URL が変更になって 404 になるから。
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/]' do
     urls = []
 
@@ -45,11 +47,10 @@ describe "iPhone 6/7/8", type: :feature do
 
       hydra.run
 
-      responses = requests.map do |request|
+      requests.map do |request|
         p "#{request.response.response_code} #{request.response.redirect_count} #{request.base_url}"
         expect(request.response.response_code).to eq 200
       end
     end
-
   end
 end
