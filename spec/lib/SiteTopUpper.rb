@@ -22,7 +22,7 @@ def has_site_top_upper(lang:, data:)
 
   if lang == :ja
     # time
-    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%Y年%-m月%-d日 %H:%M JST')
+    expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%Y年%-m月%-d日 %-H:%M JST')
     # Annotation
     expect(page).not_to have_selector('.MainPage > .Header > .Annotation')
     expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq '/flow'
