@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/TestedNumberCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/cards/number-of-tested]' do
-
     before do
       visit '/cards/number-of-tested'
       render_lazy_contents
@@ -17,6 +18,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_breadcrumbs(id: '#TestedNumberCard', title: '検査実施件数')
       end
     end
-
   end
 end

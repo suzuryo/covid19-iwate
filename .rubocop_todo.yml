@@ -1,0 +1,20 @@
+Metrics/AbcSize:
+  Max: 300
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 100
+
+Metrics/PerceivedComplexity:
+  Max: 11
+
+Naming/FileName:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 291

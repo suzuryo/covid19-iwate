@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/UntrackedRateCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/]' do
-
     before do
       visit '/'
       render_lazy_contents
@@ -17,6 +18,5 @@ describe "iPhone 6/7/8", type: :feature do
         has_no_breadcrumbs(id: '#UntrackedRateCard')
       end
     end
-
   end
 end

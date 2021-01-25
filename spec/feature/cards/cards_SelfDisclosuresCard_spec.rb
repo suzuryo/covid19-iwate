@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/SelfDisclosuresCard'
 
-describe "iPhone 6/7/8", type: :feature do
+describe 'iPhone 6/7/8', type: :feature do
   context 'page [/cards/self-disclosures]' do
     before do
       visit '/cards/self-disclosures'

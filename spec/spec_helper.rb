@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/all'
 require 'capybara/rspec'
 require 'capybara/dsl'
@@ -21,7 +23,7 @@ Capybara.default_driver = :emulated_chrome_ios
 Capybara.app_host = 'http://localhost:3000'
 
 def render_lazy_contents
-  [0, 300, 600, 1200, 2400, 6000, 10000, 0, 10000].each do |i|
+  [0, 300, 600, 1200, 2400, 6000, 10_000, 0, 10_000].each do |i|
     sleep 0.1
     page.evaluate_script "window.scroll(0,#{i})"
   end
@@ -41,3 +43,14 @@ SELF_DISCLOSURES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/self_di
 NEWS_ITEMS = NEWS_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
 ALERT_ITEMS = ALERT_JSON['alertItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
 SELF_DISCLOSURES_ITEMS = SELF_DISCLOSURES_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
+
+LOCALES = {
+  ja: {
+    path: '/',
+    json: JA_JSON
+  },
+  en: {
+    path: '/en',
+    json: EN_JSON
+  }
+}.freeze
