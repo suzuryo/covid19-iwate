@@ -12,7 +12,8 @@ def has_monitoring_confirmed_cases_number_card
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > div > small').text).to match "^#{d} の数値"
 
   # 新規陽性者数の7日間移動平均
-  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } / 7.0).round(1))
+  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } / 7.0))
+  d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # 直近1週間の新規患者数（対人口10万人）
