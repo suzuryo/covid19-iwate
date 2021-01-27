@@ -256,8 +256,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         }, 0)
 
       // 1週間あたりの対10万人を計算する 岩手県の人口は 1212201
-      const lastDayDataPer100k =
-        Math.round(((sum7day * 100000) / 1212201) * 10) / 10
+      const lastDayDataPer100k = ((sum7day * 100000) / 1212201).toFixed(1)
       return [
         {
           lText: lastDayData,
