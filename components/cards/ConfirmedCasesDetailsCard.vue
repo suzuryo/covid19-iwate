@@ -2,16 +2,18 @@
   <v-col id="ConfirmedCasesDetailsCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <data-view
-        :title="$t('Details.a[0]')"
+        :title="$t('ConfirmedCasesDetailsCard.title')"
         :title-id="'details-of-confirmed-cases'"
         :date="updatedAt"
       >
         <confirmed-cases-details-table
-          :aria-label="$t('Details.a[0]')"
+          :aria-label="$t('ConfirmedCasesDetailsCard.title')"
           v-bind="confirmedCases"
         />
         <template #dataSetPanel>
-          <data-view-data-set-panel :title="$t('Details.a[0]')" />
+          <data-view-data-set-panel
+            :title="$t('ConfirmedCasesDetailsCard.title')"
+          />
         </template>
       </data-view>
       <slot name="breadCrumb" />
