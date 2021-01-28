@@ -50,7 +50,7 @@ LOCALES = {
     json: JA_JSON
   },
   en: {
-    path: '/en',
+    path: '/en/',
     json: EN_JSON
   }
 }.freeze

@@ -63,7 +63,7 @@ export default {
         break
       case 'details-of-confirmed-cases':
         cardComponent = 'confirmed-cases-details-card'
-        cardTitle = this.$t('Details.a[0]')
+        cardTitle = this.$t('ConfirmedCasesDetailsCard.title')
         break
       case 'number-of-confirmed-cases':
         cardComponent = 'confirmed-cases-number-card'

@@ -43,9 +43,9 @@
       "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
     }
   },
-  "Details": {
-    "a": [
-      "検査陽性者の状況",
+  "ConfirmedCasesDetailsCard": {
+    "title": "検査陽性者の状況",
+    "legends": [
       "自宅療養",
       "入院・療養等調整中",
       "退院等",
