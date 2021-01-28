@@ -43,9 +43,9 @@
       "url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/028/231/20200806_04_1_1.pdf#page=2"
     }
   },
-  "Details": {
-    "a": [
-      "Status of Positive cases",
+  "ConfirmedCasesDetailsCard": {
+    "title": "Status of Positive cases",
+    "legends": [
       "Recuperating at home",
       "Hospitalization / Medical treatment, etc.",
       "Discharged,etc.",

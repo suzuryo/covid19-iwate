@@ -40,7 +40,7 @@
         </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
-            <span>{{ $t('Details.a[1]') }}</span>
+            <span>{{ $t('ConfirmedCasesDetailsCard.legends[0]') }}</span>
             <span>
               <strong>{{ 自宅療養.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('Common.人') }}</span>
@@ -49,7 +49,7 @@
         </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
-            <span>{{ $t('Details.a[2]') }}</span>
+            <span>{{ $t('ConfirmedCasesDetailsCard.legends[1]') }}</span>
             <span>
               <strong>{{ 入院療養等調整中.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('Common.人') }}</span>
@@ -58,7 +58,7 @@
         </li>
         <li :class="$style.box">
           <div :class="$style.content">
-            <span>{{ $t('Details.a[3]') }}</span>
+            <span>{{ $t('ConfirmedCasesDetailsCard.legends[2]') }}</span>
             <span>
               <strong>{{ 退院.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('Common.人') }}</span>
@@ -67,7 +67,7 @@
         </li>
         <li :class="$style.box">
           <div :class="$style.content">
-            <span>{{ $t('Details.a[4]') }}</span>
+            <span>{{ $t('ConfirmedCasesDetailsCard.legends[3]') }}</span>
             <span>
               <span :class="$style.perTestPositive">
                 ({{ perTestPositive(this.死亡) }}{{ $t('Common.%') }})
