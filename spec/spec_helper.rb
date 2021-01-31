@@ -52,8 +52,16 @@ RSpec.configure do |config|
 end
 
 def render_lazy_contents
-  [0, 300, 600, 1200, 2400, 6000, 10_000, 0, 10_000].each do |i|
-    sleep 0.1
+  # div.v-lazy の中に div.row が2つまたは1つ入って min-height が 550
+  # div.rowの数 * 550 までスクロールする
+  h = 550
+  i = 0
+  loop do
+    m = page.all('div.v-lazy').count * 2
+    i = i > h * m ? 0 : i + h
+    c = page.all('div.v-lazy > div.row > div.DataCard').count
+    break if [m - 1, m].include?(c)
+
     page.evaluate_script "window.scroll(0,#{i})"
   end
 end
