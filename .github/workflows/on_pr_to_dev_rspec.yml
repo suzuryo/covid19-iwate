@@ -55,3 +55,10 @@ jobs:
       - name: rspec
         run: |
           bundle exec parallel_rspec spec
+      - name: upload rspec screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: rspec-screenshots
+          path: spec/screenshot
+          retention-days: 3
