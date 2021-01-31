@@ -22,9 +22,46 @@ end
 Capybara.default_driver = :emulated_chrome_ios
 Capybara.app_host = 'http://localhost:3000'
 
+RSpec.configure do |config|
+  config.color = true
+  config.tty = true
+  # config.default_formatter = 'doc'
+
+  config.expect_with :rspec do |expectations|
+    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end
+
+  config.mock_with :rspec do |mocks|
+    mocks.verify_partial_doubles = true
+  end
+
+  config.after do |example|
+    if example.exception
+      # width = page.evaluate_script("window.innerWidth")
+      # height = page.evaluate_script("document.body.scrollHeight")
+      # page.driver.browser.manage.window.resize_to(width, height)
+
+      meta = example.metadata
+      filename = File.basename(meta[:file_path])
+      line_number = meta[:line_number]
+      screenshot_name = "#{filename}-#{line_number}-#{Time.now.strftime('%Y%m%d%H%M%S%3N').to_i}.png"
+      screenshot_path = "spec/screenshot/#{screenshot_name}"
+      page.save_screenshot(screenshot_path)
+    end
+  end
+end
+
 def render_lazy_contents
-  [0, 300, 600, 1200, 2400, 6000, 10_000, 0, 10_000].each do |i|
-    sleep 0.1
+  # div.v-lazy の中に div.row が2つまたは1つ入って min-height が 550
+  # div.rowの数 * 550 までスクロールする
+  h = 550
+  i = 0
+  loop do
+    m = page.all('div.v-lazy').count * 2
+    i = i > h * m ? 0 : i + h
+    c = page.all('div.v-lazy > div.row > div.DataCard').count
+    break if [m - 1, m].include?(c)
+
     page.evaluate_script "window.scroll(0,#{i})"
   end
 end
