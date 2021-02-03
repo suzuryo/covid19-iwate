@@ -1,0 +1,65 @@
+name: on_pr_from_renovate_rspec
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  rspec:
+    if: contains(github.ref, 'refs/heads/renovate/')
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Setup Timezone
+        run: |
+          sudo timedatectl set-timezone Asia/Tokyo
+      - uses: actions/checkout@v2
+        with:
+          ref: development
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.15.4'
+      - name: restore node_modules
+        uses: actions/cache@v2
+        id: node-modules-cache
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-node-14-node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: restore yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-14-yarn-${{ hashFiles('**/yarn.lock') }}
+      - name: yarn install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+      - name: yarn run generate:deploy for rspec
+        run: |
+          yarn run generate:deploy --fail-on-page-error
+        env:
+          TZ: Asia/Tokyo
+      - name: run localhost:3000
+        run: |
+          yarn run start &
+      - name: rspec
+        run: |
+          bundle exec parallel_rspec spec
+      - name: upload rspec screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: rspec-screenshots
+          path: spec/screenshot
+          retention-days: 3

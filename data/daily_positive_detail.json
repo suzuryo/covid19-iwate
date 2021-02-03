@@ -1,5 +1,5 @@
 {
-  "date": "2021-01-31T15:08:33+09:00",
+  "date": "2021-02-03T18:41:36+09:00",
   "data": [
     {
       "diagnosed_date": "2020-02-13T00:00:00+09:00",
@@ -3883,6 +3883,39 @@
       "weekly_average_count": 1.14,
       "weekly_average_untracked_count": 0.29,
       "weekly_average_untracked_increse_percent": 33.7
+    },
+    {
+      "diagnosed_date": "2021-01-31T00:00:00+09:00",
+      "count": 0,
+      "missing_count": 0,
+      "reported_count": 0,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 1.14,
+      "weekly_average_untracked_count": 0.29,
+      "weekly_average_untracked_increse_percent": 33.7
+    },
+    {
+      "diagnosed_date": "2021-02-01T00:00:00+09:00",
+      "count": 3,
+      "missing_count": 2,
+      "reported_count": 1,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 1.43,
+      "weekly_average_untracked_count": 0.43,
+      "weekly_average_untracked_increse_percent": 60.6
+    },
+    {
+      "diagnosed_date": "2021-02-02T00:00:00+09:00",
+      "count": 6,
+      "missing_count": 1,
+      "reported_count": 5,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 1.43,
+      "weekly_average_untracked_count": 0.57,
+      "weekly_average_untracked_increse_percent": 100.0
     }
   ]
 }
