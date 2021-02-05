@@ -1,13 +1,12 @@
 name: on_pr_from_renovate_rspec
 
 on:
-  pull_request:
+  push:
     branches:
-      - development
+      - 'renovate/**'
 
 jobs:
   rspec:
-    if: startsWith(github.ref, 'refs/heads/renovate/')
     runs-on: ubuntu-20.04
     steps:
       - name: Setup Timezone
