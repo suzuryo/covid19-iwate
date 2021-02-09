@@ -14,7 +14,8 @@ jobs:
           sudo timedatectl set-timezone Asia/Tokyo
       - uses: actions/checkout@v2
         with:
-          ref: development
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
