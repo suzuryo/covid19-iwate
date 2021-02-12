@@ -44,3 +44,10 @@ img {
   display: block !important;
   visibility: visible !important;
 }
+
+@media print {
+  .naviContainer,
+  .MainPage {
+    display: none !important;
+  }
+}
