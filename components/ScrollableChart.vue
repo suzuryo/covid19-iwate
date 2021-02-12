@@ -31,7 +31,6 @@ type Computed = {
 }
 type Props = {
   displayData: DisplayData
-  isWeekly: boolean
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
@@ -45,11 +44,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayData: {
       type: Object as PropType<DisplayData>,
       required: true,
-    },
-    isWeekly: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
   data() {
@@ -76,11 +70,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       this.chartWidth = this.calcChartWidth(containerWidth, this.labelCount)
     },
     calcChartWidth(containerWidth, labelCount) {
-      const dates = 60
-      const weeks = 24
       const yaxisWidth = 38
-      const chartWidth = containerWidth - yaxisWidth
-      const barWidth = chartWidth / (this.isWeekly ? weeks : dates)
+      const barWidth = this.$nuxt.$vuetify.breakpoint.smAndDown ? 4 : 6
       const calcWidth = barWidth * labelCount + yaxisWidth
       return Math.max(calcWidth, containerWidth)
     },
