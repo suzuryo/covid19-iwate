@@ -31,7 +31,6 @@ type Computed = {
 }
 type Props = {
   displayData: DisplayData
-  isWeekly: boolean
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
@@ -45,11 +44,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayData: {
       type: Object as PropType<DisplayData>,
       required: true,
-    },
-    isWeekly: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
   data() {
