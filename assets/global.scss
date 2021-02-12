@@ -44,3 +44,16 @@ img {
   display: block !important;
   visibility: visible !important;
 }
+
+@media print {
+  .naviContainer,
+  .MainPage {
+    display: none !important;
+  }
+  .v-data-table__wrapper {
+    height: 100% !important;
+  }
+  .DataCard {
+    page-break-after: always !important;
+  }
+}
