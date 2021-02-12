@@ -91,10 +91,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     window.addEventListener('resize', this.handleResize)
     // タブ切り替え時にグラフ幅を再計算
     EventBus.$on(TOGGLE_EVENT, () => setTimeout(() => this.adjustChartWidth()))
+    window.matchMedia('print').addEventListener('change', () => {
+      this.scrollRightSide()
+    })
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize)
     EventBus.$off(TOGGLE_EVENT)
+    window.matchMedia('print').removeEventListener('change', () => {
+      this.scrollRightSide()
+    })
   },
 }
 
