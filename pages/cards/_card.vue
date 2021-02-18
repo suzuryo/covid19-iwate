@@ -71,7 +71,7 @@ export default {
         break
       case 'number-of-confirmed-cases-by-municipalities':
         cardComponent = 'confirmed-cases-by-municipalities-card'
-        cardTitle = this.$t('陽性患者数（市町村別）')
+        cardTitle = this.$t('ConfirmedCasesByMunicipalitiesCard.title')
         break
       case 'attributes-of-confirmed-cases':
         cardComponent = 'confirmed-cases-attributes-card'
