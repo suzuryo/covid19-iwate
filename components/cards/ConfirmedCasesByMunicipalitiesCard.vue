@@ -15,25 +15,11 @@
       >
         <template #notes>
           <ul>
-            <li>
-              {{ $t('前日までに報告された陽性者の居住地を元にした累計値') }}
-            </li>
-            <li>
-              {{ $t('意向により居住地が公表されない場合は累計に含まれない') }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '例えば、県外や他地域在住であるが、盛岡市の検査で陽性になった場合、盛岡市として集計される場合がある'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '陽性者数/人口 は市町村の人口(令和2年10月1日現在)に対する陽性者数の割合'
-                )
-              }}
+            <li
+              v-for="note in $t('ConfirmedCasesByMunicipalitiesCard.notes')"
+              :key="note"
+            >
+              {{ note }}
             </li>
           </ul>
         </template>
@@ -68,11 +54,21 @@ export default {
 
     // ヘッダーを設定
     municipalitiesTable.headers = [
-      { text: this.$t('市町村'), value: 'label' },
-      { text: this.$t('ふりがな'), value: 'ruby' },
-      { text: this.$t('Common.陽性者数'), value: 'count', align: 'end' },
       {
-        text: this.$t('陽性者数/人口'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[0]'),
+        value: 'label',
+      },
+      {
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[1]'),
+        value: 'ruby',
+      },
+      {
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[2]'),
+        value: 'count',
+        align: 'end',
+      },
+      {
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[3]'),
         value: 'count_per_population',
         align: 'end',
       },
