@@ -7,7 +7,7 @@
   >
     <client-only>
       <confirmed-cases-by-municipalities-table
-        :title="$t('陽性患者数（市町村別）')"
+        :title="$t('ConfirmedCasesByMunicipalitiesCard.title')"
         :title-id="'number-of-confirmed-cases-by-municipalities'"
         :chart-data="municipalitiesTable"
         :date="date"
