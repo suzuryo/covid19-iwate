@@ -280,7 +280,7 @@
       "Positive cases",
       "Positive / Population",
       "Past week",
-      "Past week per 10k population"
+      "Past week per 100,000 population"
     ],
     "notes": [
       "Cumulative value based on the residence of positive cases reported in the previous day.",
@@ -377,7 +377,7 @@
   "ConfirmedCasesNumberCard": {
     "title": [
       "Average Daily Cases in Last 7 Days",
-      "Number of Positive Cases per 100k in Last 7 Days"
+      "Number of Positive Cases per 100,000 population in Last 7 Days"
     ],
     "a": [
       "Including examinations at medical institutions"
