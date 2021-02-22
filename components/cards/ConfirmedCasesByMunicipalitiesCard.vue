@@ -116,7 +116,7 @@ export default {
       },
       {
         text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[5]'),
-        value: 'last7_per_10k',
+        value: 'last7_per_100k',
         align: 'end',
       },
     ]
@@ -151,7 +151,7 @@ export default {
       return d === '県外' ? '' : last7.length
     }
 
-    const getLast7DaysPer10k = (d) => {
+    const getLast7DaysPer100k = (d) => {
       return d === '県外'
         ? ''
         : Number(((getLast7days(d) * 100000) / population[d]).toFixed(1))
@@ -167,7 +167,7 @@ export default {
           count: d.count,
           count_per_population: getCountPerPopulation(d.count_per_population),
           last7days: getLast7days(d.label),
-          last7_per_10k: getLast7DaysPer10k(d.label),
+          last7_per_100k: getLast7DaysPer100k(d.label),
         }
       })
 
