@@ -1,5 +1,5 @@
 {
-  "date": "2021-02-21T15:07:50+09:00",
+  "date": "2021-02-25T15:05:55+09:00",
   "data": [
     {
       "date": "2020-02-13T00:00:00+09:00",
@@ -2250,6 +2250,30 @@
       "hospital": 19,
       "hotel": 11,
       "hospitalized": 30
+    },
+    {
+      "date": "2021-02-22T00:00:00+09:00",
+      "hospital": 17,
+      "hotel": 13,
+      "hospitalized": 30
+    },
+    {
+      "date": "2021-02-23T00:00:00+09:00",
+      "hospital": 14,
+      "hotel": 14,
+      "hospitalized": 28
+    },
+    {
+      "date": "2021-02-24T00:00:00+09:00",
+      "hospital": 13,
+      "hotel": 13,
+      "hospitalized": 26
+    },
+    {
+      "date": "2021-02-25T00:00:00+09:00",
+      "hospital": 13,
+      "hotel": 13,
+      "hospitalized": 26
     }
   ]
 }
