@@ -154,7 +154,7 @@ export default {
     const getLast7DaysPer100k = (d) => {
       return d === '県外'
         ? ''
-        : Number(((getLast7days(d) * 100000) / population[d]).toFixed(1))
+        : ((getLast7days(d) * 100000) / population[d]).toFixed(1)
     }
 
     // データを追加
