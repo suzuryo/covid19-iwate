@@ -234,7 +234,8 @@
     ],
     "b": [
       "Rate of Test Positives : Moving average of test positive patients /Moving average of Tested people (as test positive + negative cases)",
-      "Preliminary value. May be modified later"
+      "Preliminary value. May be modified later",
+      "11月に盛岡市が実施した1713件分の検査件数について計上漏れがあったと県より発表あり。その報告ミスの検査件数が2/27の検査件数として一括計上された。したがって11月の該当日時(不明)と2/27周辺の・検査の陽性率・PCR検査数の7日間移動平均などが、実際には正しく計算することができない。本来は実際に検査を実施した11月の該当日時に遡って検査件数を正しく訂正すべきなのに、その公表が無い。"
     ],
     "c": [
       "The number of PCR tests available per day in Iwate Pref is 864.",
