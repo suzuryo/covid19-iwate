@@ -87,6 +87,7 @@ def has_positive_rate_card
   expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(2)').text).to eq JA_JSON['Common']['7MA']
   expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(3)').text).to eq JA_JSON['Common']['検査結果の判明日を基準とする']
   expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(4)').text).to eq JA_JSON['PositiveRateCard']['b'][1]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(5)').text).to eq JA_JSON['PositiveRateCard']['b'][2]
 
   expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(1) > strong').text).to eq JA_JSON['PositiveRateCard']['c'][0]
   expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(2)').text).to eq JA_JSON['PositiveRateCard']['c'][1]
