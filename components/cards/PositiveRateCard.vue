@@ -32,6 +32,9 @@
               <li>
                 {{ $t('PositiveRateCard.b[1]') }}
               </li>
+              <li>
+                {{ $t('PositiveRateCard.b[2]') }}
+              </li>
             </ul>
             <hr />
             <div :class="$style.newScenarioSummarry">
