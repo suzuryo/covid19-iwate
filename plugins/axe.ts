@@ -1,11 +1,12 @@
 import Vue from 'vue'
-const VueAxe = () => import('vue-axe')
-const AXE_LOCALE_JA = () => import('axe-core/locales/ja.json')
 
 const NODE_ENV = process.env.NODE_ENV
 const VUE_AXE = process.env.VUE_AXE
 
 if (NODE_ENV === 'development' && VUE_AXE === 'true') {
+  const VueAxe = () => import('vue-axe')
+  const AXE_LOCALE_JA = () => import('axe-core/locales/ja.json')
+
   Vue.use(VueAxe, {
     config: {
       locale: AXE_LOCALE_JA,
