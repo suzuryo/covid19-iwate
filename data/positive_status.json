@@ -1,5 +1,5 @@
 {
-  "date": "2021-03-01T15:51:20+09:00",
+  "date": "2021-03-07T15:18:38+09:00",
   "data": [
     {
       "date": "2020-02-13T00:00:00+09:00",
@@ -2298,6 +2298,42 @@
       "hospital": 8,
       "hotel": 0,
       "hospitalized": 8
+    },
+    {
+      "date": "2021-03-02T00:00:00+09:00",
+      "hospital": 7,
+      "hotel": 0,
+      "hospitalized": 7
+    },
+    {
+      "date": "2021-03-03T00:00:00+09:00",
+      "hospital": 2,
+      "hotel": 0,
+      "hospitalized": 2
+    },
+    {
+      "date": "2021-03-04T00:00:00+09:00",
+      "hospital": 2,
+      "hotel": 0,
+      "hospitalized": 2
+    },
+    {
+      "date": "2021-03-05T00:00:00+09:00",
+      "hospital": 1,
+      "hotel": 0,
+      "hospitalized": 1
+    },
+    {
+      "date": "2021-03-06T00:00:00+09:00",
+      "hospital": 2,
+      "hotel": 0,
+      "hospitalized": 2
+    },
+    {
+      "date": "2021-03-07T00:00:00+09:00",
+      "hospital": 2,
+      "hotel": 0,
+      "hospitalized": 2
     }
   ]
 }
