@@ -4,7 +4,7 @@ require 'spec_helper'
 
 def has_monitoring_consultation_desk_reports_number_card
   # h3
-  expect(find('#MonitoringConsultationDeskReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '受診・相談センター 受付件数'
+  expect(find('#MonitoringConsultationDeskReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq JA_JSON['MonitoringConsultationDeskReportsNumberCard']['title']
 
   # 日付
   d = Date.parse(DATA_JSON['querents']['data'].last['日付']).strftime('%-m月%-d日')
@@ -49,11 +49,9 @@ def has_monitoring_consultation_desk_reports_number_card
   expect(page).to have_selector('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  expect(find('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)').text).to eq '2021年2月4日を最後に岩手県がこのデータの公表を止めたため、このグラフの更新が止まっている'
-  expect(find('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)').text).to eq '主に「症状がある方からの受診等に関する相談」を計上'
-  expect(find('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq 'コールセンター・各保健所等への受付件数の合計'
-  expect(find('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)').text).to eq '窓口を開設した2020年2月8日からのデータを表示'
-  expect(find('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(5)').text).to eq '岩手県の発表漏れによりデータの存在しない日がある'
+  JA_JSON['MonitoringConsultationDeskReportsNumberCard']['notes'].each_with_index do |item, i|
+    expect(find("#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{1 + i})").text).to eq item
+  end
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#MonitoringConsultationDeskReportsNumberCard .NotesExpansionPanel .v-expansion-panel-content')

@@ -83,7 +83,7 @@ export default {
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         cardComponent = 'telephone-advisory-reports-number-card'
-        cardTitle = this.$t('一般相談 受付件数')
+        cardTitle = this.$t('TelephoneAdvisoryReportsNumberCard.title')
         break
       case 'positive-number-by-diagnosed-date':
         cardComponent = 'positive-number-by-diagnosed-date-card'
@@ -110,7 +110,7 @@ export default {
         break
       case 'monitoring-number-of-reports-to-covid19-consultation-desk':
         cardComponent = 'monitoring-consultation-desk-reports-number-card'
-        cardTitle = this.$t('受診・相談センター 受付件数')
+        cardTitle = this.$t('MonitoringConsultationDeskReportsNumberCard.title')
         break
       case 'positive-number-by-developed-date':
         cardComponent = 'positive-number-by-developed-date-card'
