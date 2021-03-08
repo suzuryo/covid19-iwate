@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$slots.notes" class="NotesExpansionPanel">
+  <div v-if="$slots.notes" class="NotesExpansionPanel">
     <v-expansion-panels v-if="showDetails" flat>
       <v-expansion-panel>
         <v-expansion-panel-header
