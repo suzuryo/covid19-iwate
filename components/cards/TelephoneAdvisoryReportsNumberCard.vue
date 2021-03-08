@@ -7,7 +7,7 @@
   >
     <client-only>
       <time-bar-chart
-        :title="$t('一般相談 受付件数')"
+        :title="$t('TelephoneAdvisoryReportsNumberCard.title')"
         :title-id="'number-of-reports-to-covid19-telephone-advisory-center'"
         :chart-id="'time-bar-chart-contacts'"
         :chart-data="contactsGraph"
@@ -17,21 +17,13 @@
         <!-- 件.reports = 窓口相談件数 -->
         <template #notes>
           <ul>
-            <li>
-              {{
-                $t(
-                  '「新型コロナウイルス感染症に関する疑問や心配事がある方からの一般相談」を計上'
-                )
-              }}
-            </li>
-            <li>
-              {{ $t('コールセンター・各保健所等への受付件数の合計') }}
-            </li>
-            <li>
-              {{ $t('窓口を開設した2020年1月21日からのデータを表示') }}
-            </li>
-            <li>
-              {{ $t('岩手県の発表漏れによりデータの存在しない日がある') }}
+            <li
+              v-for="(note, i) in $t(
+                'TelephoneAdvisoryReportsNumberCard.notes'
+              )"
+              :key="i"
+            >
+              {{ note }}
             </li>
           </ul>
         </template>
