@@ -7,7 +7,7 @@
   >
     <client-only>
       <time-bar-chart
-        :title="$t('受診・相談センター 受付件数')"
+        :title="$t('MonitoringConsultationDeskReportsNumberCard.title')"
         title-id="monitoring-number-of-reports-to-covid19-consultation-desk"
         chart-id="monitoring-consultation-desk-report-chart"
         :chart-data="querentsGraph"
@@ -16,17 +16,13 @@
       >
         <template #notes>
           <ul>
-            <li>
-              {{ $t('主に「症状がある方からの受診等に関する相談」を計上') }}
-            </li>
-            <li>
-              {{ $t('コールセンター・各保健所等への受付件数の合計') }}
-            </li>
-            <li>
-              {{ $t('窓口を開設した2020年2月8日からのデータを表示') }}
-            </li>
-            <li>
-              {{ $t('岩手県の発表漏れによりデータの存在しない日がある') }}
+            <li
+              v-for="(note, i) in $t(
+                'MonitoringConsultationDeskReportsNumberCard.notes'
+              )"
+              :key="i"
+            >
+              {{ note }}
             </li>
           </ul>
         </template>
