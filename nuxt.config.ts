@@ -68,10 +68,6 @@ const config: NuxtConfig = {
       src: '@/plugins/vue-chart.ts',
       ssr: true,
     },
-    {
-      src: '@/plugins/axe',
-      ssr: true,
-    },
   ],
   /*
    ** Nuxt.js dev-modules
