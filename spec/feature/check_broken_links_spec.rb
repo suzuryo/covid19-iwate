@@ -39,6 +39,18 @@ describe 'iPhone 6/7/8', type: :feature do
       page.all('a').each do |a|
         urls << URI(a['href'])
       end
+
+      visit '/about'
+      render_lazy_contents
+      page.all('a').each do |a|
+        urls << URI(a['href'])
+      end
+
+      visit '/flow'
+      render_lazy_contents
+      page.all('a').each do |a|
+        urls << URI(a['href']) unless a['href'].match(/^tel:/)
+      end
     end
 
     it 'has no broken links' do
