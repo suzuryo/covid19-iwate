@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'activesupport'
-gem 'capybara', '>= 2.15'
+gem 'capybara'
 gem 'parallel_tests'
 gem 'rspec'
 gem 'selenium-webdriver'
