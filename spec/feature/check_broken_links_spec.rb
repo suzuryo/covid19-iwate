@@ -24,6 +24,12 @@ describe 'iPhone 6/7/8', type: :feature do
       urls << URI(item['url']['en']) unless item['url']['en'].blank?
     end
 
+    # alert.json の 個別ページのURL は直接読み込む
+    ALERT_JSON['alertItems'].each do |item|
+      urls << URI(item['url']['ja']) unless item['url']['ja'].blank?
+      urls << URI(item['url']['en']) unless item['url']['en'].blank?
+    end
+
     # SELF_DISCLOSURES_JSON.url は、ページが削除されても記録として 404になってもよいとする
 
     before do
@@ -32,6 +38,18 @@ describe 'iPhone 6/7/8', type: :feature do
       render_lazy_contents
       page.all('a').each do |a|
         urls << URI(a['href'])
+      end
+
+      visit '/about'
+      render_lazy_contents
+      page.all('a').each do |a|
+        urls << URI(a['href'])
+      end
+
+      visit '/flow'
+      render_lazy_contents
+      page.all('a').each do |a|
+        urls << URI(a['href']) unless a['href'].match(/^tel:/)
       end
     end
 
