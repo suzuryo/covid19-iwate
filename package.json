@@ -42,7 +42,7 @@
     "cross-env": "7.0.3",
     "dayjs": "1.10.4",
     "nuxt": "2.14.12",
-    "nuxt-i18n": "6.20.6",
+    "nuxt-i18n": "6.21.0",
     "vue": "2.6.12",
     "vue-chartjs": "3.5.1",
     "vue-meta": "2.4.0",
@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.12.17",
     "@babel/runtime-corejs3": "7.13.10",
     "@mdi/js": "5.9.55",
     "@nuxt/typescript-build": "2.1.0",
