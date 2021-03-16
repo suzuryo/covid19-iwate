@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 import CardRow from '@/components/cards/CardRow.vue'
 
 type Data = {
