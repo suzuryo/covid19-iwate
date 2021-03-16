@@ -27,7 +27,6 @@ import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
 import { getDayjsObject } from '@/utils/formatDate.ts'
-// import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 export default {
@@ -48,7 +47,6 @@ export default {
     TelephoneAdvisoryReportsNumberCard,
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
-    // PositiveNumberByDevelopedDateCard,
   },
   data() {
     let title, updatedAt, cardComponent, cardTitle
@@ -112,9 +110,6 @@ export default {
         cardComponent = 'monitoring-consultation-desk-reports-number-card'
         cardTitle = this.$t('MonitoringConsultationDeskReportsNumberCard.title')
         break
-      case 'positive-number-by-developed-date':
-        cardComponent = 'positive-number-by-developed-date-card'
-        cardTitle = this.$t('発症日別による陽性者数の推移')
     }
 
     const breadCrumb = {
