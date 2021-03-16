@@ -1,5 +1,5 @@
 {
-  "date": "2021-03-10T19:46:37+09:00",
+  "date": "2021-03-15T20:49:39+09:00",
   "data": [
     {
       "diagnosed_date": "2020-02-13T00:00:00+09:00",
@@ -4301,6 +4301,61 @@
       "weekly_average_count": 0.14,
       "weekly_average_untracked_count": 0.14,
       "weekly_average_untracked_increse_percent": null
+    },
+    {
+      "diagnosed_date": "2021-03-10T00:00:00+09:00",
+      "count": 2,
+      "missing_count": 2,
+      "reported_count": 0,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.43,
+      "weekly_average_untracked_increse_percent": null
+    },
+    {
+      "diagnosed_date": "2021-03-11T00:00:00+09:00",
+      "count": 1,
+      "missing_count": 0,
+      "reported_count": 1,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 0.43,
+      "weekly_average_untracked_count": 0.29,
+      "weekly_average_untracked_increse_percent": 207.1
+    },
+    {
+      "diagnosed_date": "2021-03-12T00:00:00+09:00",
+      "count": 3,
+      "missing_count": 0,
+      "reported_count": 3,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 0.86,
+      "weekly_average_untracked_count": 0.29,
+      "weekly_average_untracked_increse_percent": 207.1
+    },
+    {
+      "diagnosed_date": "2021-03-13T00:00:00+09:00",
+      "count": 3,
+      "missing_count": 0,
+      "reported_count": 3,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 1.29,
+      "weekly_average_untracked_count": 0.29,
+      "weekly_average_untracked_increse_percent": 207.1
+    },
+    {
+      "diagnosed_date": "2021-03-14T00:00:00+09:00",
+      "count": 1,
+      "missing_count": 0,
+      "reported_count": 1,
+      "weekly_gain_ratio": null,
+      "untracked_percent": null,
+      "weekly_average_count": 1.43,
+      "weekly_average_untracked_count": 0.29,
+      "weekly_average_untracked_increse_percent": 207.1
     }
   ]
 }
