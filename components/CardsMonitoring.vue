@@ -39,9 +39,6 @@ const TelephoneAdvisoryReportsNumberCard = () =>
   import('@/components/cards/TelephoneAdvisoryReportsNumberCard.vue')
 // // 重症患者数
 // const SevereCaseCard = () => import('@/components/cards/SevereCaseCard.vue')
-// // 発症日別による陽性者数の推移
-// const PositiveNumberByDevelopedDateCard = () =>
-//   import('@/components/cards/PositiveNumberByDevelopedDateCard.vue')
 // // 確定日別による陽性者数の推移
 // const PositiveNumberByDiagnosedDateCard = () =>
 //   import('@/components/cards/PositiveNumberByDiagnosedDateCard.vue')

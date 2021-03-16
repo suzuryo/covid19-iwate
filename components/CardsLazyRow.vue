@@ -10,21 +10,22 @@
       min-height="550"
       min-width="50%"
     >
-      <lazy-card-row v-if="actives[i]">
+      <card-row v-if="actives[i]">
         <component
           :is="component"
           v-for="(component, j) in row"
           :key="j"
           md="6"
         />
-      </lazy-card-row>
+      </card-row>
     </v-lazy>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+
+import CardRow from '@/components/cards/CardRow.vue'
 
 type Data = {
   actives: boolean[]
@@ -42,13 +43,11 @@ type Computed = {}
 type Props = {
   rows: Vue[][]
 }
-const options: ThisTypedComponentOptionsWithRecordProps<
-  Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = {
+
+export default Vue.extend<Data, Methods, Computed, Props>({
+  components: {
+    CardRow,
+  },
   props: {
     rows: {
       type: Array,
@@ -73,8 +72,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       this.$set(this.actives, 1, true)
     },
   },
-}
-export default options
+})
 </script>
 
 <style lang="scss" scoped>
