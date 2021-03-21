@@ -45,6 +45,7 @@ def has_confirmed_cases_details_card(lang:, lang_json:)
 
   # 死亡
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(1)').text).to eq lang_json['ConfirmedCasesDetailsCard']['legends'][3].to_s
+  expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(2) > span:nth-child(1)').text).to eq per_test_positive(DATA_JSON['main_summary']['children'][0]['children'][4]['value'])
   d = number_to_delimited(DATA_JSON['main_summary']['children'][0]['children'][4]['value'])
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(2) > strong').text).to eq d.to_s
 end
