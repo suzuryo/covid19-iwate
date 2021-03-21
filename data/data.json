@@ -1,6 +1,6 @@
 {
   "contacts": {
-    "date": "2021-03-17T15:08:13+09:00",
+    "date": "2021-03-21T05:01:52+09:00",
     "data": [
       {
         "日付": "2020-02-15T00:00:00+09:00",
@@ -1429,7 +1429,7 @@
     ]
   },
   "querents": {
-    "date": "2021-03-17T15:08:13+09:00",
+    "date": "2021-03-21T05:01:52+09:00",
     "data": [
       {
         "日付": "2020-02-15T00:00:00+09:00",
@@ -2858,7 +2858,7 @@
     ]
   },
   "patients": {
-    "date": "2021-03-17T15:08:13+09:00",
+    "date": "2021-03-21T05:01:52+09:00",
     "data": [
       {
         "id": 1,
@@ -8513,67 +8513,207 @@
       {
         "id": 566,
         "確定日": "2021-03-16T00:00:00+09:00",
-        "発症日": null,
+        "発症日": "2021-03-14T00:00:00+09:00",
         "無症状": false,
         "年代": "50代",
         "居住地": "盛岡市",
-        "url": null,
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1032217/1034411.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
       },
       {
         "id": 567,
         "確定日": "2021-03-16T00:00:00+09:00",
-        "発症日": null,
+        "発症日": "2021-03-10T00:00:00+09:00",
         "無症状": false,
         "年代": "50代",
         "居住地": "盛岡市",
-        "url": null,
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1032217/1034412.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
       },
       {
         "id": 568,
         "確定日": "2021-03-16T00:00:00+09:00",
-        "発症日": null,
+        "発症日": "2021-03-15T00:00:00+09:00",
         "無症状": false,
         "年代": "50代",
         "居住地": "宮古保健所管内",
-        "url": null,
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038826.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
       },
       {
         "id": 569,
         "確定日": "2021-03-16T00:00:00+09:00",
         "発症日": null,
-        "無症状": false,
+        "無症状": true,
         "年代": "10歳未満",
         "居住地": "久慈市",
-        "url": null,
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038827.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
       },
       {
         "id": 570,
         "確定日": "2021-03-16T00:00:00+09:00",
         "発症日": null,
-        "無症状": false,
+        "無症状": true,
         "年代": "10歳未満",
         "居住地": "久慈市",
-        "url": null,
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038828.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
       },
       {
         "id": 571,
         "確定日": "2021-03-16T00:00:00+09:00",
-        "発症日": null,
+        "発症日": "2021-03-15T00:00:00+09:00",
         "無症状": false,
         "年代": "30代",
         "居住地": "久慈市",
-        "url": null,
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038829.html",
         "会見": "https://www.youtube.com/watch?v=meg9qngynAU"
+      },
+      {
+        "id": 572,
+        "確定日": "2021-03-17T00:00:00+09:00",
+        "発症日": null,
+        "無症状": true,
+        "年代": "40代",
+        "居住地": "滝沢市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038871.html",
+        "会見": "https://www.youtube.com/watch?v=E69dm84RzDI"
+      },
+      {
+        "id": 573,
+        "確定日": "2021-03-17T00:00:00+09:00",
+        "発症日": "2021-03-10T00:00:00+09:00",
+        "無症状": false,
+        "年代": "40代",
+        "居住地": "矢巾町",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038872.html",
+        "会見": "https://www.youtube.com/watch?v=E69dm84RzDI"
+      },
+      {
+        "id": 574,
+        "確定日": "2021-03-17T00:00:00+09:00",
+        "発症日": "2021-03-15T00:00:00+09:00",
+        "無症状": false,
+        "年代": "60代",
+        "居住地": "田野畑村",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038874.html",
+        "会見": "https://www.youtube.com/watch?v=E69dm84RzDI"
+      },
+      {
+        "id": 575,
+        "確定日": "2021-03-17T00:00:00+09:00",
+        "発症日": "2021-03-17T00:00:00+09:00",
+        "無症状": false,
+        "年代": "50代",
+        "居住地": "久慈市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038875.html",
+        "会見": "https://www.youtube.com/watch?v=E69dm84RzDI"
+      },
+      {
+        "id": 576,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": null,
+        "無症状": true,
+        "年代": "50代",
+        "居住地": "盛岡市",
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1032217/1034435.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 577,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-10T00:00:00+09:00",
+        "無症状": false,
+        "年代": "70代",
+        "居住地": "盛岡市",
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1032217/1034436.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 578,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-12T00:00:00+09:00",
+        "無症状": false,
+        "年代": "30代",
+        "居住地": "県外",
+        "url": "http://www.city.morioka.iwate.jp/kenkou/kenko/1031971/1032075/1032217/1034437.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 579,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-11T00:00:00+09:00",
+        "無症状": false,
+        "年代": "40代",
+        "居住地": "滝沢市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038933.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 580,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-13T00:00:00+09:00",
+        "無症状": false,
+        "年代": "10代",
+        "居住地": "滝沢市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038934.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 581,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-12T00:00:00+09:00",
+        "無症状": false,
+        "年代": "10代",
+        "居住地": "滝沢市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038935.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 582,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-12T00:00:00+09:00",
+        "無症状": false,
+        "年代": "10代",
+        "居住地": "滝沢市",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038936.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 583,
+        "確定日": "2021-03-18T00:00:00+09:00",
+        "発症日": "2021-03-09T00:00:00+09:00",
+        "無症状": false,
+        "年代": "40代",
+        "居住地": "矢巾町",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1038938.html",
+        "会見": "https://www.youtube.com/watch?v=xi4Exf5EqfA"
+      },
+      {
+        "id": 584,
+        "確定日": "2021-03-19T00:00:00+09:00",
+        "発症日": "2021-03-18T00:00:00+09:00",
+        "無症状": false,
+        "年代": "50代",
+        "居住地": "田野畑村",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1039746.html",
+        "会見": null
+      },
+      {
+        "id": 585,
+        "確定日": "2021-03-19T00:00:00+09:00",
+        "発症日": null,
+        "無症状": true,
+        "年代": "50代",
+        "居住地": "久慈保健所管内",
+        "url": "https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037921/1039747.html",
+        "会見": null
       }
     ]
   },
   "patients_summary": {
-    "date": "2021-03-17T15:08:13+09:00",
+    "date": "2021-03-21T05:01:52+09:00",
     "data": [
       {
         "日付": "2020-02-15T08:00:00+09:00",
@@ -10162,22 +10302,34 @@
       {
         "日付": "2021-03-17T08:00:00+09:00",
         "小計": 6
+      },
+      {
+        "日付": "2021-03-18T08:00:00+09:00",
+        "小計": 4
+      },
+      {
+        "日付": "2021-03-19T08:00:00+09:00",
+        "小計": 8
+      },
+      {
+        "日付": "2021-03-20T08:00:00+09:00",
+        "小計": 2
       }
     ]
   },
-  "lastUpdate": "2021-03-17T15:08:13+09:00",
+  "lastUpdate": "2021-03-21T05:01:52+09:00",
   "main_summary": {
     "attr": "検査実施件数",
-    "date": "2021-03-17T15:08:13+09:00",
-    "value": 571,
+    "date": "2021-03-21T05:01:52+09:00",
+    "value": 585,
     "children": [
       {
         "attr": "陽性患者数",
-        "value": 571,
+        "value": 585,
         "children": [
           {
             "attr": "入院中",
-            "value": 16,
+            "value": 22,
             "children": [
               {
                 "attr": "軽症・中等症",
@@ -10195,7 +10347,7 @@
           },
           {
             "attr": "宿泊療養",
-            "value": 0
+            "value": 3
           },
           {
             "attr": "自宅療養",
@@ -10211,7 +10363,7 @@
           },
           {
             "attr": "退院",
-            "value": 525
+            "value": 530
           }
         ]
       }
