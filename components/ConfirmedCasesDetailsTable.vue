@@ -60,6 +60,9 @@
           <div :class="$style.content">
             <span>{{ $t('ConfirmedCasesDetailsCard.legends[2]') }}</span>
             <span>
+              <span :class="$style.perTestPositive">
+                ({{ perTestPositive(this.退院) }}{{ $t('Common.%') }})
+              </span>
               <strong>{{ 退院.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('Common.人') }}</span>
             </span>
