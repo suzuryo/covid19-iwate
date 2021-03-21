@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'bigdecimal'
 require 'spec_helper'
 
 def has_confirmed_cases_details_card(lang:, lang_json:)
@@ -38,11 +39,18 @@ def has_confirmed_cases_details_card(lang:, lang_json:)
 
   # 退院等
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(5) > div > span:nth-child(1)').text).to eq lang_json['ConfirmedCasesDetailsCard']['legends'][2].to_s
+  expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(5) > div > span:nth-child(2) > span:nth-child(1)').text).to eq per_test_positive(DATA_JSON['main_summary']['children'][0]['children'][5]['value'])
   d = number_to_delimited(DATA_JSON['main_summary']['children'][0]['children'][5]['value'])
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(5) > div > span:nth-child(2) > strong').text).to eq d.to_s
 
   # 死亡
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(1)').text).to eq lang_json['ConfirmedCasesDetailsCard']['legends'][3].to_s
+  expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(2) > span:nth-child(1)').text).to eq per_test_positive(DATA_JSON['main_summary']['children'][0]['children'][4]['value'])
   d = number_to_delimited(DATA_JSON['main_summary']['children'][0]['children'][4]['value'])
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > ul > li:nth-child(6) > div > span:nth-child(2) > strong').text).to eq d.to_s
+end
+
+def per_test_positive(num)
+  d = (BigDecimal(num.to_s, 4) / BigDecimal(POSITIVE_RATE_JSON['data'].map { |i| i['positive_count'] }.sum.to_s, 4) * BigDecimal(100, 4)).round(1)
+  "(#{d}%)"
 end
