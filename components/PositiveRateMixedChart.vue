@@ -98,12 +98,14 @@
         :l-text="displayInfo[0].lText"
         :s-text="displayInfo[0].sText"
         :unit="displayInfo[0].unit"
+        :card-path="`/cards/${titleId}`"
       />
       <data-view-data-set-panel
         :title="infoTitles[1]"
         :l-text="displayInfo[1].lText"
         :s-text="displayInfo[1].sText"
         :unit="displayInfo[1].unit"
+        :card-path="`/cards/${titleId}`"
       />
     </template>
   </data-view>
@@ -402,7 +404,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .reverse()
     },
     displayOption() {
-      const self = this
       const unit = this.unit
       const options: Chart.ChartOptions = {
         tooltips: {
@@ -422,9 +423,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
               return label
             },
-            title(tooltipItem, data) {
+            title: (tooltipItem, data) => {
               const label = data.labels![tooltipItem[0].index!].toString()
-              return self.$d(new Date(label), 'dateWithoutYear')
+              return this.$d(new Date(label), 'dateWithoutYear')
             },
           },
         },

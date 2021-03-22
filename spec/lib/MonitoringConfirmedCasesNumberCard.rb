@@ -6,6 +6,10 @@ def has_monitoring_confirmed_cases_number_card
   # h3
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '新規陽性者数の7日間移動平均'
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
+  d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases'
+  d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases'
 
   # 日付
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
@@ -56,12 +60,12 @@ def has_monitoring_confirmed_cases_number_card
 
   # 注釈の中身をチェック
   expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)').text).to eq JA_JSON['Common']['検査結果の判明日を基準とする']
-  JA_JSON['ConfirmedCasesNumberCard']['a'].each_with_index do |item, i|
+  JA_JSON['MonitoringConfirmedCasesNumberCard']['a'].each_with_index do |item, i|
     expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{2 + i})").text).to eq item
   end
   expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq JA_JSON['Common']['7MA']
 
-  JA_JSON['ConfirmedCasesNumberCard']['b'].each_with_index do |item, i|
+  JA_JSON['MonitoringConfirmedCasesNumberCard']['b'].each_with_index do |item, i|
     expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(#{1 + i})").text).to eq item
   end
   expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(1) a').text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']

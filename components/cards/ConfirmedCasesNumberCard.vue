@@ -2,7 +2,7 @@
   <v-col id="ConfirmedCasesNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <time-bar-chart
-        :title="$t('報告日別による陽性者数の推移')"
+        :title="$t('ConfirmedCasesNumberCard.title')"
         :title-id="'number-of-confirmed-cases'"
         :chart-id="'time-bar-chart-patients'"
         :chart-data="patientsGraph"

@@ -2,14 +2,14 @@
   <v-col id="SelfDisclosuresCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <whats-new
-        :title="$t('SelfDisclosures.a[0]')"
+        :title="$t('SelfDisclosuresCard.title')"
         :title-id="'self-disclosures'"
         :date="date"
         :items="newsItems.newsItems"
       >
         <template #notes>
           <ul>
-            <li v-for="note in $t('SelfDisclosures.notes')" :key="note">
+            <li v-for="note in $t('SelfDisclosuresCard.notes')" :key="note">
               {{ note }}
             </li>
           </ul>

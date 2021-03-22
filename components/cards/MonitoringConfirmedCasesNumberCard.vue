@@ -9,8 +9,8 @@
       <monitoring-confirmed-cases-chart
         title-id="monitoring-number-of-confirmed-cases"
         :info-titles="[
-          $t('ConfirmedCasesNumberCard.title[0]'),
-          $t('ConfirmedCasesNumberCard.title[1]'),
+          $t('MonitoringConfirmedCasesNumberCard.titles[0]'),
+          $t('MonitoringConfirmedCasesNumberCard.titles[1]'),
         ]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
@@ -26,7 +26,10 @@
             <li>
               {{ $t('Common.検査結果の判明日を基準とする') }}
             </li>
-            <li v-for="(item, i) in $t('ConfirmedCasesNumberCard.a')" :key="i">
+            <li
+              v-for="(item, i) in $t('MonitoringConfirmedCasesNumberCard.a')"
+              :key="i"
+            >
               {{ item }}
             </li>
             <li>
@@ -36,7 +39,10 @@
           <div :class="$style.newScenario">
             <hr />
             <div :class="$style.newScenarioSummarry">
-              <p v-for="(item, i) in $t('ConfirmedCasesNumberCard.b')" :key="i">
+              <p
+                v-for="(item, i) in $t('MonitoringConfirmedCasesNumberCard.b')"
+                :key="i"
+              >
                 {{ item }}
               </p>
             </div>

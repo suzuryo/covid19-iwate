@@ -6,6 +6,9 @@ require 'spec_helper'
 def has_confirmed_cases_details_card(lang:, lang_json:)
   # h3
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Header > div > div > h3').text).to eq lang_json['ConfirmedCasesDetailsCard']['title'].to_s
+  d = find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
+  lang_prefix = lang == :ja ? '' : "/#{lang}"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/details-of-confirmed-cases"
 
   # 陽性者数（累計）
   expect(find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Content > ul > li > div > span:nth-child(1)').text).to eq "#{lang_json['Common']['陽性者数']} (#{lang_json['Common']['累計']})"
