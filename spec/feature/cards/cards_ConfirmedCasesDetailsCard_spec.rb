@@ -13,6 +13,12 @@ describe 'iPhone 6/7/8', type: :feature do
         page.scroll_to('.ConfirmedCasesDetailsCard')
       end
 
+      describe 'meta' do
+        it 'title' do
+          expect(title).to eq "#{LOCALES[lang][:json]['ConfirmedCasesDetailsCard']['title']} | #{LOCALES[lang][:json]['Common']['岩手県']} #{LOCALES[lang][:json]['Common']['新型コロナウイルス感染症']}#{LOCALES[lang][:json]['Common']['対策サイト']}"
+        end
+      end
+
       describe '検査陽性者の状況(ConfirmedCasesDetailsCard)' do
         it '項目の値' do
           has_confirmed_cases_details_card(lang: lang, lang_json: data[:json])
