@@ -101,6 +101,7 @@
         :l-text="displayInfo[0].lText"
         :s-text="displayInfo[0].sText"
         :unit="displayInfo[0].unit"
+        :card-path="`/cards/${titleId}`"
       />
       <!--
       <data-view-data-set-panel
@@ -108,6 +109,7 @@
         :l-text="displayInfo[1].lText"
         :s-text="displayInfo[1].sText"
         :unit="displayInfo[1].unit"
+        :card-path="`/cards/${titleId}`"
       />
       -->
     </template>
