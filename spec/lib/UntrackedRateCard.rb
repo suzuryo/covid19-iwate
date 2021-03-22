@@ -5,6 +5,8 @@ require 'spec_helper'
 def has_untracked_rate_card
   # h3
   expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3').text).to eq '接触歴等不明者数(7日間移動平均)'
+  d = find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/untracked-rate'
 
   # 日付
   d = Date.parse(DAILY_POSITIVE_DETAIL_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
@@ -57,10 +59,10 @@ def has_untracked_rate_card
   expect(page).to have_selector('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  expect(find('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(1)').text).to eq '新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである'
-  expect(find('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(2)').text).to eq '公表時点での接触歴の有無であり、公表後の追加調査で判明する場合があるが、それは反映されていない'
-  expect(find('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq JA_JSON['Common']['7MA']
-  expect(find('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)').text).to eq '前週比は１週間前の接触歴等不明者数（移動平均値）との比較、サンプル数が少ないので断続的'
+  JA_JSON['UntrackedRateCard']['notes'].each_with_index do |item, index|
+    expect(find("#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{index + 1})").text).to eq item
+  end
+  expect(find('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(4)').text).to eq JA_JSON['Common']['7MA']
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#UntrackedRateCard .NotesExpansionPanel .v-expansion-panel-content')

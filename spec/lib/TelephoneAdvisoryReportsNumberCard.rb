@@ -5,6 +5,8 @@ require 'spec_helper'
 def has_telephone_advisory_reports_number_card
   # h3
   expect(find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq JA_JSON['TelephoneAdvisoryReportsNumberCard']['title']
+  d = find('#TelephoneAdvisoryReportsNumberCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/number-of-reports-to-covid19-telephone-advisory-center'
 
   # 日付
   d = Date.parse(DATA_JSON['contacts']['data'].last['日付']).strftime('%-m月%-d日')

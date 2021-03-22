@@ -62,6 +62,7 @@
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
+        :card-path="`/cards/${titleId}`"
       />
       <slot v-if="dataKind === 'cumulative'" name="additionalInfoPanel" />
     </template>
@@ -281,22 +282,21 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const self = this
       const unit = this.unit
       const scaledTicksYAxisMax = this.scaledTicksYAxisMax
       const options: Chart.ChartOptions = {
         tooltips: {
           displayColors: false,
           callbacks: {
-            label(tooltipItem) {
+            label: (tooltipItem) => {
               const labelText = `${parseInt(
                 tooltipItem.value!
               ).toLocaleString()} ${unit}`
               return labelText
             },
-            title(tooltipItem, data) {
+            title: (tooltipItem, data) => {
               const label = data.labels![tooltipItem[0].index!] as string
-              return self.$d(getComplementedDate(label), 'dateWithoutYear')
+              return this.$d(getComplementedDate(label), 'dateWithoutYear')
             },
           },
         },

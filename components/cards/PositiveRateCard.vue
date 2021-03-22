@@ -4,8 +4,8 @@
       <positive-rate-mixed-chart
         :title-id="'positive-rate'"
         :info-titles="[
-          $t('PositiveRateCard.a[0]'),
-          $t('PositiveRateCard.a[1]'),
+          $t('PositiveRateCard.titles[0]'),
+          $t('PositiveRateCard.titles[1]'),
         ]"
         :chart-id="'positive-rate-chart'"
         :chart-data="positiveRateGraph"

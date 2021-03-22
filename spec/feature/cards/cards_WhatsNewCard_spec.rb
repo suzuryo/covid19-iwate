@@ -12,10 +12,16 @@ describe 'iPhone 6/7/8', type: :feature do
       page.scroll_to('#WhatsNewCard')
     end
 
+    describe 'meta' do
+      it 'title' do
+        expect(title).to eq "#{JA_JSON['WhatsNewCard']['title']} | #{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
+      end
+    end
+
     describe '最新のお知らせ(WhatsNewCard)' do
       it '項目の値' do
         has_whats_new_card
-        has_breadcrumbs(id: '#WhatsNewCard', title: JA_JSON['WhatsNew']['title'])
+        has_breadcrumbs(id: '#WhatsNewCard', title: JA_JSON['WhatsNewCard']['title'])
       end
     end
   end

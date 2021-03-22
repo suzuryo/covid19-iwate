@@ -82,6 +82,7 @@
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
+        :card-path="`/cards/${titleId}`"
       />
     </template>
   </data-view>
@@ -322,7 +323,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .reverse()
     },
     displayOption() {
-      const self = this
       const unit = this.unit
       const sumArray = this.eachArraySum(this.chartData)
       const data = this.chartData
@@ -358,9 +358,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
               return label
             },
-            title(tooltipItem, data) {
+            title: (tooltipItem, data) => {
               const label = data.labels![tooltipItem[0].index!] as string
-              return self.$d(getComplementedDate(label), 'dateWithoutYear')
+              return this.$d(getComplementedDate(label), 'dateWithoutYear')
             },
           },
         },

@@ -12,6 +12,12 @@ describe 'iPhone 6/7/8', type: :feature do
       page.scroll_to('#ConfirmedCasesAttributesCard')
     end
 
+    describe 'meta' do
+      it 'title' do
+        expect(title).to eq "#{JA_JSON['ConfirmedCasesAttributesCard']['title']} | #{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
+      end
+    end
+
     describe '陽性者の属性(ConfirmedCasesAttributesCard)' do
       it '項目の値' do
         has_confirmed_case_attributes_card

@@ -5,6 +5,8 @@ require 'spec_helper'
 def has_confirmed_cases_number_card
   # h3
   expect(find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '報告日別による陽性者数の推移'
+  d = find('#ConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/number-of-confirmed-cases'
 
   # 日付
   d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime('%-m月%-d日')

@@ -5,6 +5,8 @@ require 'spec_helper'
 def has_confirmed_cases_by_municipalities_card
   # h3
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3').text).to eq '陽性患者数（市町村別）'
+  d = find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/number-of-confirmed-cases-by-municipalities'
 
   # 日付
   d = Date.parse(PATIENT_MUNICIPALITIES_JSON['date']).strftime('%-m月%-d日')

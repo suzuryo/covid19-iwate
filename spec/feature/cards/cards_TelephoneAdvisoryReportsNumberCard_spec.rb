@@ -12,6 +12,12 @@ describe 'iPhone 6/7/8', type: :feature do
       page.scroll_to('#TelephoneAdvisoryReportsNumberCard')
     end
 
+    describe 'meta' do
+      it 'title' do
+        expect(title).to eq "#{JA_JSON['TelephoneAdvisoryReportsNumberCard']['title']} | #{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
+      end
+    end
+
     describe '一般相談 受付件数(TelephoneAdvisoryReportsNumberCard)' do
       it '項目の値' do
         has_telephone_advisory_reports_number_card

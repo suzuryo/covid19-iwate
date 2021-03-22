@@ -34,7 +34,6 @@
 import { mdiChartTimelineVariant } from '@mdi/js'
 import dayjs from 'dayjs'
 import Vue from 'vue'
-import { MetaInfo } from 'vue-meta'
 
 import PageHeader from '@/components/PageHeader.vue'
 import Alert from '@/data/alert.json'
@@ -71,11 +70,6 @@ export default Vue.extend({
       },
       lastUpdate,
       alertItems,
-    }
-  },
-  head(): MetaInfo {
-    return {
-      title: this.$t('Common.岩手の最新感染動向') as string,
     }
   },
   computed: {
