@@ -6,6 +6,10 @@ def has_positive_rate_card
   # h3
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '検査の陽性率'
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq 'PCR検査の7日間移動平均'
+  d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/positive-rate'
+  d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/positive-rate'
 
   # 日付
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')

@@ -6,6 +6,10 @@ def has_monitoring_confirmed_cases_number_card
   # h3
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '新規陽性者数の7日間移動平均'
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
+  d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases'
+  d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
+  expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases'
 
   # 日付
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
