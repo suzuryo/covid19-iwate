@@ -404,7 +404,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .reverse()
     },
     displayOption() {
-      const self = this
       const unit = this.unit
       const options: Chart.ChartOptions = {
         tooltips: {
@@ -424,9 +423,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
               return label
             },
-            title(tooltipItem, data) {
+            title: (tooltipItem, data) => {
               const label = data.labels![tooltipItem[0].index!].toString()
-              return self.$d(new Date(label), 'dateWithoutYear')
+              return this.$d(new Date(label), 'dateWithoutYear')
             },
           },
         },
