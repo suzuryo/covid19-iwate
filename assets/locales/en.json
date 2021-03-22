@@ -181,9 +181,7 @@
     "title": "What's new"
   },
   "SelfDisclosures": {
-    "a": [
-      "Self Disclosures"
-    ],
+    "title": "Self Disclosures",
     "notes": [
       "There is no legal obligation for voluntary disclosure. Fear of rumors and harmful rumors, protection of personal information, social responsibility as an organization, risk management and BCP, disclosure under the FIEA, loss of reputation due to later discovery, and providing peace of mind to customers and the community through prompt disclosure of facts. Information that was voluntarily disclosed on each website with courage after worrying about whether to disclose it for various reasons 👏",
       "Identified only"
@@ -222,6 +220,10 @@
   "医療機関等が行った検査も含む": "Including examinations at medical institutions",
   "接触歴等不明者数（７日間移動平均）": "Unlinked 7-MA",
   "PositiveRateCard": {
+    "title": [
+      "Positive Test Percentage",
+      "Number of PCR tests (7-MA)"
+    ],
     "a": [
       "Positive Test Percentage",
       "Number of PCR tests (7-MA)",
@@ -391,7 +393,7 @@
   "感染症病床に余裕がある": "Infectious disease beds are almost available in all medical institutions.",
   "陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請": "If the number of positive cases remains at 4.4 persons/day (31 persons/week) (effective reproduction R1.7) for 3 days, a request for self-restraint will be made.",
   "ConfirmedCasesNumberCard": {
-    "title": [
+    "titles": [
       "Average Daily Cases in Last 7 Days",
       "Number of Positive Cases per 100,000 population in Last 7 Days"
     ],
@@ -443,15 +445,24 @@
       "{pageStart} - {pageStop} of {itemsLength} indexes"
     ]
   },
-  "新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである": "The new positive cases are classified into those with unlink (unknown contact history) or with link (known contact history) as of the date of publication.",
-  "接触歴等不明者数(7日間移動平均)": "Number of Unlinked 7-MA (Positive cases with unknown routes of infection) ",
-  "公表時点での接触歴の有無であり、公表後の追加調査で判明する場合があるが、それは反映されていない": "It does not reflect the existence of contact history at the time of publication, which may be revealed by additional investigation after publication.",
+  "UntrackedRateCard": {
+    "titles": [
+      "Number of Unlinked 7-MA (Positive cases with unknown routes of infection) ",
+      "Week-over-week change"
+    ],
+    "notes": [
+      "The new positive cases are classified into those with unlink (unknown contact history) or with link (known contact history) as of the date of publication.",
+      "It does not reflect the existence of contact history at the time of publication, which may be revealed by additional investigation after publication.",
+      "Week-over-week change is a comparison with the number of people with unlink, one week earlier (moving average). Intermittent due to small sample count."
+    ]
+  },
   "陽性者数/人口": "Number of positive cases/Population",
-  "入院と宿泊療養の推移": "Changes in the number of hospitalized patients and hotel care patients",
+  "HospitalizedNumberCard": {
+    "title": "Changes in the number of hospitalized patients and hotel care patients"
+  },
   "県内": "Inside Iwate",
   "このサイトの内容物は{creativeCommons}の下に提供されています。": "Content on This Site is Licensed Under a {creativeCommons}",
   "前週比": "Week-over-week change",
-  "前週比は１週間前の接触歴等不明者数（移動平均値）との比較、サンプル数が少ないので断続的": "Week-over-week change is a comparison with the number of people with unlink, one week earlier (moving average). Intermittent due to small sample count.",
   "指標": "Indexes",
   "計": "Total",
   "床": " beds",

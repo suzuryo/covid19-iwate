@@ -12,6 +12,12 @@ describe 'iPhone 6/7/8', type: :feature do
       page.scroll_to('#PositiveRateCard')
     end
 
+    describe 'meta' do
+      it 'title' do
+        expect(title).to eq "#{JA_JSON['PositiveRateCard']['titles'].join(',')} | #{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
+      end
+    end
+
     describe '検査の陽性率(PositiveRateCard)' do
       it '項目の値' do
         has_positive_rate_card

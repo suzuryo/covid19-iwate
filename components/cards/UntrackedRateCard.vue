@@ -3,7 +3,10 @@
     <client-only>
       <untracked-rate-mixed-chart
         :title-id="'untracked-rate'"
-        :info-titles="[$t('接触歴等不明者数(7日間移動平均)'), $t('前週比')]"
+        :info-titles="[
+          $t('UntrackedRateCard.titles[0]'),
+          $t('UntrackedRateCard.titles[1]'),
+        ]"
         :chart-id="'untracked-rate-chart'"
         :chart-data="graphData"
         :get-formatter="getFormatter"
@@ -15,29 +18,11 @@
       >
         <template #notes>
           <ul>
-            <li>
-              {{
-                $t(
-                  '新規陽性者について、公表日時点の接触歴等の不明者、判明者に区分したものである'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '公表時点での接触歴の有無であり、公表後の追加調査で判明する場合があるが、それは反映されていない'
-                )
-              }}
+            <li v-for="(note, i) in $t('UntrackedRateCard.notes')" :key="i">
+              {{ note }}
             </li>
             <li>
               {{ $t('Common.7MA') }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '前週比は１週間前の接触歴等不明者数（移動平均値）との比較、サンプル数が少ないので断続的'
-                )
-              }}
             </li>
           </ul>
         </template>
@@ -87,13 +72,13 @@ export default {
     const dataLabels = [
       this.$t('接触歴等判明者数'),
       this.$t('接触歴等不明者数'),
-      this.$t('接触歴等不明者数（７日間移動平均）'),
+      this.$t('UntrackedRateCard.titles[0]'),
       this.$t('前週比'),
     ]
     const tableLabels = [
       this.$t('接触歴等判明者数'),
       this.$t('接触歴等不明者数'),
-      this.$t('接触歴等不明者数（７日間移動平均）'),
+      this.$t('UntrackedRateCard.titles[0]'),
       this.$t('前週比'),
     ]
 

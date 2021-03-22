@@ -2,7 +2,7 @@
   <v-col id="HospitalizedNumberCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <hospitalized-time-stacked-bar-chart
-        :title="$t('入院と宿泊療養の推移')"
+        :title="$t('HospitalizedNumberCard.title')"
         :title-id="'number-of-hospitalized'"
         :chart-id="'time-stacked-bar-chart-hospitalized'"
         :chart-data="hospitalizedGraph"

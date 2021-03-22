@@ -53,11 +53,11 @@ export default {
     switch (this.$route.params.card) {
       case 'whats-new':
         cardComponent = 'whats-new-card'
-        cardTitle = this.$t('WhatsNew.title')
+        cardTitle = this.$t('WhatsNewCard.title')
         break
       case 'self-disclosures':
         cardComponent = 'self-disclosures-card'
-        cardTitle = this.$t('SelfDisclosures.a')
+        cardTitle = this.$t('SelfDisclosuresCard.title')
         break
       case 'details-of-confirmed-cases':
         cardComponent = 'confirmed-cases-details-card'
@@ -65,7 +65,7 @@ export default {
         break
       case 'number-of-confirmed-cases':
         cardComponent = 'confirmed-cases-number-card'
-        cardTitle = this.$t('報告日別による陽性者数の推移')
+        cardTitle = this.$t('ConfirmedCasesNumberCard.title')
         break
       case 'number-of-confirmed-cases-by-municipalities':
         cardComponent = 'confirmed-cases-by-municipalities-card'
@@ -93,18 +93,18 @@ export default {
         break
       case 'monitoring-number-of-confirmed-cases':
         cardComponent = 'monitoring-confirmed-cases-number-card'
-        cardTitle = this.$t('ConfirmedCasesNumberCard.title[0]')
+        cardTitle = this.$t('MonitoringConfirmedCasesNumberCard.titles[0]')
         break
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'
-        cardTitle = this.$t('接触歴等不明者数(7日間移動平均)')
+        cardTitle = this.$t('UntrackedRateCard.titles[0]')
         break
       // case 'positive-status-severe-case':
       //   cardComponent = 'severe-case-card'
       //   break
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
-        cardTitle = this.$t('入院と宿泊療養の推移')
+        cardTitle = this.$t('HospitalizedNumberCard.title')
         break
       case 'monitoring-number-of-reports-to-covid19-consultation-desk':
         cardComponent = 'monitoring-consultation-desk-reports-number-card'

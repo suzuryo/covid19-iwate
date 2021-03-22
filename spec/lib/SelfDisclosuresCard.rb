@@ -4,7 +4,7 @@ require 'spec_helper'
 
 def has_self_disclosures_card
   # h3
-  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['SelfDisclosures']['a'][0].to_s
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['SelfDisclosuresCard']['title'].to_s
   d = find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
   expect(URI.parse(d).path).to eq '/cards/self-disclosures'
 
