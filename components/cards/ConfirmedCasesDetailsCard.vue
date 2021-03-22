@@ -13,6 +13,7 @@
         <template #dataSetPanel>
           <data-view-data-set-panel
             :title="$t('ConfirmedCasesDetailsCard.title')"
+            :card-path="`/cards/details-of-confirmed-cases`"
           />
         </template>
       </data-view>

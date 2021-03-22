@@ -1,7 +1,12 @@
 <template>
   <div class="DataView-DataSet">
     <h3 class="DataView-DataSet-title">
-      {{ title }}
+      <app-link
+        :to="localePath(cardPath)"
+        class="DataView-DataSet-title-HeaderLink"
+      >
+        {{ title }}
+      </app-link>
     </h3>
     <div class="DataView-DataSet-DataInfo">
       <span v-if="lText !== ''" class="DataView-DataSet-DataInfo-summary">
@@ -23,7 +28,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import AppLink from '@/components/AppLink.vue'
+
 export default Vue.extend({
+  components: {
+    AppLink,
+  },
   props: {
     title: {
       type: String,
@@ -45,6 +55,10 @@ export default Vue.extend({
       required: false,
       default: '',
     },
+    cardPath: {
+      type: String,
+      required: true,
+    },
   },
 })
 </script>
@@ -59,8 +73,14 @@ export default Vue.extend({
     &-title {
       font-size: 2rem;
       font-weight: normal;
-      color: $gray-2;
       flex: 1 1 auto;
+      &-HeaderLink {
+        text-decoration: none;
+        color: $gray-2 !important;
+        &:hover {
+          color: $green-1 !important;
+        }
+      }
     }
 
     &-DataInfo {

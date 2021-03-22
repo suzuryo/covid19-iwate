@@ -44,7 +44,10 @@
       </notes-expansion-panel>
     </template>
     <template #dataSetPanel>
-      <data-view-data-set-panel :title="title" />
+      <data-view-data-set-panel
+        :title="title"
+        :card-path="`/cards/${titleId}`"
+      />
     </template>
   </data-view>
 </template>

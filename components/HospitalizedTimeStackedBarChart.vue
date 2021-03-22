@@ -77,6 +77,7 @@
         :l-text="displayInfo.lText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
+        :card-path="`/cards/${titleId}`"
       />
     </template>
   </data-view>
