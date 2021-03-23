@@ -25,5 +25,11 @@ module.exports = {
     'tsdoc/syntax': 'error',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['./', '../'],
+      },
+    ],
   },
 }

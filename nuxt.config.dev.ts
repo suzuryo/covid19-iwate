@@ -2,6 +2,7 @@ import { NuxtConfig } from '@nuxt/types'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 
+// eslint-disable-next-line no-restricted-imports
 import i18n from './nuxt-i18n.config'
 const environment = process.env.NODE_ENV || 'development'
 
