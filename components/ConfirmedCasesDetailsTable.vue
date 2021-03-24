@@ -137,8 +137,8 @@ export default Vue.extend({
     },
   },
   methods: {
-    perTestPositive(a: number): number {
-      return Math.round((a / this.陽性者数) * 100 * 10) / 10
+    perTestPositive(a: number): string {
+      return ((a / this.陽性者数) * 100).toFixed(1)
     },
   },
 })
