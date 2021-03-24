@@ -55,5 +55,6 @@ end
 
 def per_test_positive(num)
   d = (BigDecimal(num.to_s, 4) / BigDecimal(POSITIVE_RATE_JSON['data'].map { |i| i['positive_count'] }.sum.to_s, 4) * BigDecimal(100, 4)).round(1)
+  d = page.evaluate_script("#{d}.toFixed(1)")
   "(#{d}%)"
 end
