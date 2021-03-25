@@ -20,10 +20,6 @@ Please check [Code of conduct for developers](./CODE_OF_CONDUCT.md) for details.
 ## License
 This software is released under [the MIT License](./../../LICENSE.txt).
 
-## For Translators
-
-Please check [How to translate](./../../TRANSLATION.md) doc.
-
 ## For Developers
 
 Please check [For Developers](./FOR_DEVELOPERS.md) doc.
