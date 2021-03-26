@@ -117,12 +117,12 @@ export default {
         {
           text: this.$t('Common.ホーム'),
           disabled: false,
-          href: this.localePath('/'),
+          to: this.localePath('/'),
         },
         {
           text: cardTitle,
           disabled: false,
-          href: this.$route.path,
+          to: this.$route.path,
         },
       ],
     }
