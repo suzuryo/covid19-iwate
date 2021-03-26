@@ -10,8 +10,8 @@
     "モニタリング項目": "Summary of Monitorings",
     "お知らせ・参考資料": "Other Indexes",
     "陽性者数": "Positive cases",
-    "{date}の累計": " Cumulative {date}",
     "累計": "Cumulative",
+    "{date}の累計": " Cumulative {date}",
     "人": " persons",
     "%": "%",
     "入院": "Hospitalized",
@@ -177,10 +177,10 @@
   "前日比": "Day-over-day change",
   "合計": " Total",
   "{date}の合計": " Total of %{date}",
-  "WhatsNew": {
+  "WhatsNewCard": {
     "title": "What's new"
   },
-  "SelfDisclosures": {
+  "SelfDisclosuresCard": {
     "title": "Self Disclosures",
     "notes": [
       "There is no legal obligation for voluntary disclosure. Fear of rumors and harmful rumors, protection of personal information, social responsibility as an organization, risk management and BCP, disclosure under the FIEA, loss of reputation due to later discovery, and providing peace of mind to customers and the community through prompt disclosure of facts. Information that was voluntarily disclosed on each website with courage after worrying about whether to disclose it for various reasons 👏",
@@ -220,7 +220,7 @@
   "医療機関等が行った検査も含む": "Including examinations at medical institutions",
   "接触歴等不明者数（７日間移動平均）": "Unlinked 7-MA",
   "PositiveRateCard": {
-    "title": [
+    "titles": [
       "Positive Test Percentage",
       "Number of PCR tests (7-MA)"
     ],
@@ -286,7 +286,6 @@
   "発症日別による陽性者数の推移": "Transition of Positive cases by outbreak date",
   "各保健所から報告があった患者の発生情報を、発症日別に整理したものである": "The outbreak information of patients reported by each health center organized by outbreak date",
   "発症日不明者 {num} 人を除く": "Except {num} people with unknown date of outbreak",
-  "報告日別による陽性者数の推移": "Transition of Positive cases by reported date",
   "各保健所から報告があった患者の発生情報を、検査により陽性であることを医師が確認した日別（確定日別）に整理したものである": "The occurrence of infected people reported from health centers are organized by the confirmed date (the date confirmed positive by their doctors)",
   "ConfirmedCasesByMunicipalitiesCard": {
     "title": "Positive cases by area",
@@ -393,6 +392,9 @@
   "感染症病床に余裕がある": "Infectious disease beds are almost available in all medical institutions.",
   "陽性者数が4.4人/日 (31人/週) (実効再生産数 R1.7) の状態が 3日間 続いたら、社会への協力要請": "If the number of positive cases remains at 4.4 persons/day (31 persons/week) (effective reproduction R1.7) for 3 days, a request for self-restraint will be made.",
   "ConfirmedCasesNumberCard": {
+    "title": "Transition of Positive cases by reported date"
+  },
+  "MonitoringConfirmedCasesNumberCard": {
     "titles": [
       "Average Daily Cases in Last 7 Days",
       "Number of Positive Cases per 100,000 population in Last 7 Days"
