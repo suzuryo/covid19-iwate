@@ -13,11 +13,15 @@ def has_site_top_upper(lang:, data:)
   expect(find('.MainPage > .Header > .UpdatedAt > span').text).to eq lang_json['SiteTopUpper']['最終更新'].to_s
 
   # 電話相談をどうぞ
-  expect(find('.MainPage > a:nth-child(2) > span:nth-child(1)').text).to eq lang_json['SiteTopUpper']['電話相談をどうぞ'].to_s
-  expect(find('.MainPage > a:nth-child(2) > div.StaticInfo-Button > span').text).to eq lang_json['SiteTopUpper']['相談の手順を見る'].to_s
+  expect(find('.MainPage > a:nth-child(2).StaticInfo.Link').text).to eq "#{lang_json['SiteTopUpper']['電話相談をどうぞ']}\n#{lang_json['SiteTopUpper']['相談の手順を見る']}"
+  expect(find('.MainPage > a:nth-child(2).StaticInfo.Link > div.StaticInfo-Button > button').text).to eq lang_json['SiteTopUpper']['相談の手順を見る'].to_s
   ALERT_ITEMS.each_with_index do |d, index|
     a = d['text'][lang.to_s] || d['text']['ja']
-    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo > span").text).to eq a
+    b = d['url'][lang.to_s] || d['url']['ja']
+    # 外部URLの時は .ExternalLink、内部URLの時は .Link
+    c = URI.parse(b).hostname.nil? ? 'Link' : 'ExternalLink'
+    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}").text).to eq a
+    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}")['href']).to eq b
   end
 
   if lang == :ja
@@ -25,12 +29,12 @@ def has_site_top_upper(lang:, data:)
     expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%Y年%-m月%-d日 %-H:%M JST')
     # Annotation
     expect(page).not_to have_selector('.MainPage > .Header > .Annotation')
-    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq '/flow'
+    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq '/flow'
   else
     # time
     expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%b %-d, %Y, %H:%M JST')
     # Annotation
     expect(find('.MainPage > .Header > .Annotation > span').text).to eq lang_json['SiteTopUpper']['注釈'].to_s
-    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo')['href']).path).to eq "/#{lang}/flow"
+    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq "/#{lang}/flow"
   end
 end
