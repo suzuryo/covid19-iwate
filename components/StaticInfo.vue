@@ -1,43 +1,35 @@
 <template>
-  <component :is="linkTag" v-bind="linkAttrs">
-    <span>{{ text }}</span>
+  <app-link :to="url" :show-icon="false" class="StaticInfo">
+    {{ text }}
     <div v-if="btnText" class="StaticInfo-Button">
-      <span>
+      <button>
         {{ btnText }}
-      </span>
+      </button>
     </div>
-  </component>
+  </app-link>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
+import AppLink from '@/components/AppLink.vue'
+
 export default Vue.extend({
+  components: { AppLink },
   props: {
     url: {
       type: String,
       default: '',
+      required: true,
     },
     text: {
       type: String,
       default: '',
+      required: true,
     },
     btnText: {
       type: String,
       default: '',
-    },
-  },
-  computed: {
-    linkTag(): string {
-      return this.isInternalLink ? 'nuxt-link' : 'a'
-    },
-    linkAttrs(): any {
-      return this.isInternalLink
-        ? { to: this.url, class: 'StaticInfo' }
-        : { href: this.url, class: 'StaticInfo' }
-    },
-    isInternalLink(): boolean {
-      return !/^https?:\/\//.test(this.url)
     },
   },
 })
@@ -61,7 +53,7 @@ export default Vue.extend({
     flex: 1 0 auto;
     text-align: right;
 
-    > span {
+    > button {
       @include button-text('sm');
     }
 
