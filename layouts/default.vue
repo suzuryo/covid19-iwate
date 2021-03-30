@@ -291,15 +291,6 @@ export default Vue.extend({
       ],
     }
   },
-  created() {
-    if (process.client) {
-      navigator.serviceWorker.getRegistrations().then(function (registrations) {
-        for (const registration of registrations) {
-          registration.unregister()
-        }
-      })
-    }
-  },
   mounted() {
     this.loading = false
     this.getMatchMedia().addListener(this.closeNavigation)
