@@ -31,12 +31,6 @@ const ConfirmedCasesByMunicipalitiesCard = () =>
   import('@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue')
 // 検査実施件数
 const TestedNumberCard = () => import('@/components/cards/TestedNumberCard.vue')
-// 受診・相談センター 受付件数
-const MonitoringConsultationDeskReportsNumberCard = () =>
-  import('@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue')
-// 一般相談 受付件数
-const TelephoneAdvisoryReportsNumberCard = () =>
-  import('@/components/cards/TelephoneAdvisoryReportsNumberCard.vue')
 // // 重症患者数
 // const SevereCaseCard = () => import('@/components/cards/SevereCaseCard.vue')
 // // 確定日別による陽性者数の推移
@@ -52,8 +46,7 @@ export default Vue.extend({
         [MonitoringConfirmedCasesNumberCard, UntrackedRateCard],
         [PositiveRateCard, HospitalizedNumberCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
-        [TestedNumberCard, MonitoringConsultationDeskReportsNumberCard],
-        [TelephoneAdvisoryReportsNumberCard],
+        [TestedNumberCard],
       ],
     }
   },
