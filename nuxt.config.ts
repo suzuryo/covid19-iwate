@@ -182,7 +182,9 @@ const config: NuxtConfig = {
       short_name: '岩手COVID19',
       lang: 'ja',
     },
-    workbox: false,
+    workbox: {
+      enabled: false,
+    },
   },
   generate: {
     fallback: true,
