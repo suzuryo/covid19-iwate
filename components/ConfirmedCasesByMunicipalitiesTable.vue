@@ -79,12 +79,43 @@ export default Vue.extend({
     customSort(items: Object[], index: string[], isDesc: boolean[]) {
       items.sort((a: any, b: any) => {
         let comparison: number
-        if (index[0] === 'label') {
-          // 「市町村(label)」(漢字)でソートすると、実は「ふりがな(ruby)」(ひらがな)でソートされる
-          comparison = a.ruby < b.ruby ? -1 : 1
-        } else {
-          // 市町村(label)以外は、それ自身でソート
-          comparison = a[index[0]] < b[index[0]] ? -1 : 1
+
+        // 「県外」は常に一番下にする
+        if (a.label === '県外') {
+          return Number.MAX_VALUE
+        }
+
+        switch (index[0]) {
+          case 'label':
+            // 「市町村(label)」(漢字)でソートすると、実は「ふりがな(ruby)」(ひらがな)でソートされる
+            comparison = a.ruby < b.ruby ? -1 : 1
+            break
+          case 'count':
+            // 「陽性者数」はIntとしてソートする
+            comparison = parseInt(a.count) < parseInt(b.count) ? -1 : 1
+            break
+          case 'count_per_population':
+            // 「対人口」は%を取り除いてFloatとしてソートする
+            comparison =
+              parseFloat(a.count_per_population) <
+              parseFloat(b.count_per_population)
+                ? -1
+                : 1
+            break
+          case 'last7days':
+            // 「直近1週間」はIntとしてソートする
+            comparison = parseInt(a.last7days) < parseInt(b.last7days) ? -1 : 1
+            break
+          case 'last7_per_100k':
+            // 「直近1週間対人口10万人」はFloatとしてソートする
+            comparison =
+              parseFloat(a.last7_per_100k) < parseFloat(b.last7_per_100k)
+                ? -1
+                : 1
+            break
+          default:
+            comparison = a[index[0]] < b[index[0]] ? -1 : 1
+            break
         }
         return isDesc[0] ? comparison * -1 : comparison
       })
