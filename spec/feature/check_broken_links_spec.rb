@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'json'
 require 'typhoeus'
 
 # 1. Vue.js を chrome (mobile emulation iPhone 6/7/8) で解釈する

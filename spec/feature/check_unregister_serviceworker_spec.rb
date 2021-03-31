@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'json'
 
 # sw.js で ServiceWorkerのunregisterをする
 
