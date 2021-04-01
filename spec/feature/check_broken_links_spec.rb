@@ -57,6 +57,8 @@ describe 'iPhone 6/7/8', type: :feature do
 
       # すべての href に対して
       requests = urls.uniq.map do |url|
+        # http から始まらない場合はHOST名を補完
+        url = "https://iwate.stopcovid19.jp#{url}" if !/^http/.match(url.to_s)
         request = Typhoeus::Request.new(
           url,
           headers: {

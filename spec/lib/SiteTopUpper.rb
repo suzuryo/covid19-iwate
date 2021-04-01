@@ -20,6 +20,8 @@ def has_site_top_upper(lang:, data:)
     b = d['url'][lang.to_s] || d['url']['ja']
     # 外部URLの時は .ExternalLink、内部URLの時は .Link
     c = URI.parse(b).hostname.nil? ? 'Link' : 'ExternalLink'
+    # url が http から始まらない /card/ のような場合はホスト名を補完
+    b = "#{Capybara.app_host}#{b}" if c === 'Link'
     expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}").text).to eq a
     expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}")['href']).to eq b
   end
