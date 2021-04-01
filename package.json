@@ -33,14 +33,14 @@
     }
   },
   "dependencies": {
-    "@nuxt/types": "2.15.3",
+    "@nuxt/types": "2.15.4",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/sitemap": "2.4.0",
     "chart.js": "2.9.4",
     "cross-env": "7.0.3",
     "dayjs": "1.10.4",
-    "nuxt": "2.15.3",
+    "nuxt": "2.15.4",
     "nuxt-i18n": "6.22.3",
     "vue": "2.6.12",
     "vue-chartjs": "3.5.1",
