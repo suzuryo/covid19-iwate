@@ -57,7 +57,14 @@ describe 'iPhone 6/7/8', type: :feature do
 
       # すべての href に対して
       requests = urls.uniq.map do |url|
-        request = Typhoeus::Request.new(url, method: :head, followlocation: true)
+        request = Typhoeus::Request.new(
+          url,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15 '
+          },
+          method: :head,
+          followlocation: true
+        )
         hydra.queue(request)
         request
       end
