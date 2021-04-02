@@ -62,9 +62,7 @@ export default {
   data() {
     // 検査陽性者の状況
 
-    const updatedAt = dayjs(MainSummary.date).format(
-      'YYYY/MM/DD HH:mm'
-    )
+    const updatedAt = dayjs(MainSummary.date).format('YYYY/MM/DD HH:mm')
 
     return {
       MainSummary,
