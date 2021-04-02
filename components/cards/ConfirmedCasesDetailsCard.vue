@@ -8,8 +8,25 @@
       >
         <confirmed-cases-details-table
           :aria-label="$t('ConfirmedCasesDetailsCard.title')"
-          v-bind="confirmedCases"
+          v-bind="MainSummary"
         />
+        <template #notes>
+          <notes-expansion-panel
+            class="DataView-ExpansionPanel"
+            :expansion-panel-text="$t('Common.注')"
+          >
+            <template #notes>
+              <ul>
+                <li
+                  v-for="note in $t('ConfirmedCasesDetailsCard.notes')"
+                  :key="note"
+                >
+                  {{ note }}
+                </li>
+              </ul>
+            </template>
+          </notes-expansion-panel>
+        </template>
         <template #dataSetPanel>
           <data-view-data-set-panel
             :title="$t('ConfirmedCasesDetailsCard.title')"
@@ -28,8 +45,7 @@ import dayjs from 'dayjs'
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
-import Data from '@/data/data.json'
-import formatConfirmedCases from '@/utils/formatConfirmedCases'
+import MainSummary from '@/data/main_summary.json'
 
 export default {
   components: {
@@ -45,15 +61,11 @@ export default {
   },
   data() {
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
 
-    const updatedAt = dayjs(Data.main_summary.children[0].date).format(
-      'YYYY/MM/DD HH:mm'
-    )
+    const updatedAt = dayjs(MainSummary.date).format('YYYY/MM/DD HH:mm')
 
     return {
-      Data,
-      confirmedCases,
+      MainSummary,
       updatedAt,
     }
   },

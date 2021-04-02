@@ -4,8 +4,12 @@
       <div :class="$style.content">
         <span> {{ $t('Common.陽性者数') }} ({{ $t('Common.累計') }}) </span>
         <span>
-          <strong>{{ 陽性者数.toLocaleString() }}</strong>
-          <span :class="$style.unit">{{ $t('Common.人') }}</span>
+          <strong>
+            {{ 陽性者数.toLocaleString() }}
+          </strong>
+          <span :class="$style.dailyDiff">
+            [ {{ dailyDiff(陽性者数前日差) }} ]
+          </span>
         </span>
       </div>
       <ul :class="$style.group">
@@ -13,8 +17,12 @@
           <div :class="$style.content">
             <span>{{ $t('Common.入院') }}</span>
             <span>
-              <strong>{{ 入院中.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 入院.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(入院前日差) }} ]
+              </span>
             </span>
           </div>
           <ul :class="$style.group">
@@ -22,8 +30,12 @@
               <div :class="$style.content">
                 <span>{{ $t('Common.重症') }}</span>
                 <span>
-                  <strong>{{ 重症.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('Common.人') }}</span>
+                  <strong>
+                    {{ 重症.toLocaleString() }}
+                  </strong>
+                  <span :class="$style.dailyDiff">
+                    [ {{ dailyDiff(重症前日差) }} ]
+                  </span>
                 </span>
               </div>
             </li>
@@ -33,8 +45,12 @@
           <div :class="$style.content">
             <span>{{ $t('Common.宿泊療養') }}</span>
             <span>
-              <strong>{{ 宿泊療養.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 宿泊療養.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(宿泊療養前日差) }} ]
+              </span>
             </span>
           </div>
         </li>
@@ -42,8 +58,12 @@
           <div :class="$style.content">
             <span>{{ $t('ConfirmedCasesDetailsCard.legends[0]') }}</span>
             <span>
-              <strong>{{ 自宅療養.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 自宅療養.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(自宅療養前日差) }} ]
+              </span>
             </span>
           </div>
         </li>
@@ -51,8 +71,12 @@
           <div :class="$style.content">
             <span>{{ $t('ConfirmedCasesDetailsCard.legends[1]') }}</span>
             <span>
-              <strong>{{ 入院療養等調整中.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 調整中.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(調整中前日差) }} ]
+              </span>
             </span>
           </div>
         </li>
@@ -61,10 +85,14 @@
             <span>{{ $t('ConfirmedCasesDetailsCard.legends[2]') }}</span>
             <span>
               <span :class="$style.perTestPositive">
-                ({{ perTestPositive(this.退院) }}{{ $t('Common.%') }})
+                ({{ perTestPositive(this.退院等) }}{{ $t('Common.%') }})
               </span>
-              <strong>{{ 退院.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 退院等.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(退院等前日差) }} ]
+              </span>
             </span>
           </div>
         </li>
@@ -75,8 +103,12 @@
               <span :class="$style.perTestPositive">
                 ({{ perTestPositive(this.死亡) }}{{ $t('Common.%') }})
               </span>
-              <strong>{{ 死亡.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('Common.人') }}</span>
+              <strong>
+                {{ 死亡.toLocaleString() }}
+              </strong>
+              <span :class="$style.dailyDiff">
+                [ {{ dailyDiff(死亡前日差) }} ]
+              </span>
             </span>
           </div>
         </li>
@@ -91,23 +123,23 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
-    検査実施人数: {
-      type: Number,
+    date: {
+      type: String,
       required: true,
     },
     陽性者数: {
       type: Number,
       required: true,
     },
-    入院中: {
+    陽性者数前日差: {
       type: Number,
       required: true,
     },
-    軽症中等症: {
+    入院: {
       type: Number,
       required: true,
     },
-    不明: {
+    入院前日差: {
       type: Number,
       required: true,
     },
@@ -115,11 +147,23 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
+    宿泊療養前日差: {
+      type: Number,
+      required: true,
+    },
     自宅療養: {
       type: Number,
       required: true,
     },
-    入院療養等調整中: {
+    自宅療養前日差: {
+      type: Number,
+      required: true,
+    },
+    調整中: {
+      type: Number,
+      required: true,
+    },
+    調整中前日差: {
       type: Number,
       required: true,
     },
@@ -127,11 +171,23 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
+    重症前日差: {
+      type: Number,
+      required: true,
+    },
     死亡: {
       type: Number,
       required: true,
     },
-    退院: {
+    死亡前日差: {
+      type: Number,
+      required: true,
+    },
+    退院等: {
+      type: Number,
+      required: true,
+    },
+    退院等前日差: {
       type: Number,
       required: true,
     },
@@ -139,6 +195,15 @@ export default Vue.extend({
   methods: {
     perTestPositive(a: number): string {
       return ((a / this.陽性者数) * 100).toFixed(1)
+    },
+    dailyDiff(a: number): string {
+      if (a > 0) {
+        return `+${a}`
+      } else if (a === 0) {
+        return `±${a}`
+      } else {
+        return `${a}`
+      }
     },
   },
 })
@@ -210,11 +275,14 @@ $default-boxdiff: 35px;
   }
 
   span.perTestPositive {
-    margin-right: 0.5rem;
+    margin-right: 1em;
+    @include font-size(11);
   }
 
-  span.unit {
-    @include font-size(14);
+  span.dailyDiff {
+    display: inline-block;
+    width: 3em;
+    @include font-size(11);
   }
 }
 
@@ -281,10 +349,6 @@ $default-boxdiff: 35px;
 
     strong {
       @include font-size($fz + 2);
-    }
-
-    span.unit {
-      @include font-size($fz);
     }
   }
 
