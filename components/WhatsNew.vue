@@ -49,6 +49,7 @@
         :card-path="`/cards/${titleId}`"
       />
     </template>
+    <slot name="self_disclosure_form" />
   </data-view>
 </template>
 
