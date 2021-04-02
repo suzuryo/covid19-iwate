@@ -50,6 +50,10 @@
       "Hospitalization / Medical treatment, etc.",
       "Discharged,etc.",
       "Deaths"
+    ],
+    "notes": [
+      "( ) is the percentage of the total number of positive cases.",
+      "[ ] is the difference from the yesterday."
     ]
   },
   "件": {
