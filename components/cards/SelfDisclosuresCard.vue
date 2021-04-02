@@ -14,6 +14,13 @@
             </li>
           </ul>
         </template>
+        <template #self_disclosure_form>
+          <div class="self_disclosure_form">
+            <app-link to="https://forms.gle/JHB4HJ2c4NnPcmy69">
+              情報提供フォーム
+            </app-link>
+          </div>
+        </template>
       </whats-new>
       <slot name="breadCrumb" />
     </client-only>
@@ -25,6 +32,7 @@ import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
+import AppLink from '@/components/AppLink.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import Data from '@/data/self_disclosures.json'
 
@@ -51,6 +59,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Props
 > = {
   components: {
+    AppLink,
     WhatsNew,
   },
   props: {
@@ -99,3 +108,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 
 export default Vue.extend(options)
 </script>
+
+<style lang="scss" scoped>
+.self_disclosure_form {
+  margin-top: 1rem;
+  text-align: right;
+}
+</style>

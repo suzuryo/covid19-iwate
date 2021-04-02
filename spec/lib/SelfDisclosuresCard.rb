@@ -21,4 +21,7 @@ def has_self_disclosures_card
     # テーブルの上からi行目をチェックする(日付)
     expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
   end
+
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div.self_disclosure_form > a').text).to eq '情報提供フォーム'
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div.self_disclosure_form > a')[:href]).to eq 'https://forms.gle/JHB4HJ2c4NnPcmy69'
 end
