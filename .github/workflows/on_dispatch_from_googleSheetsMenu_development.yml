@@ -59,6 +59,7 @@ jobs:
           curl -o data/news.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/news.json
           curl -o data/alert.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/alert.json
           curl -o data/self_disclosures.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/self_disclosures.json
+          curl -o data/main_summary.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/main_summary.json
       - name: Commit JSON files to development
         run: |
           git config --local user.email "action@github.com"
