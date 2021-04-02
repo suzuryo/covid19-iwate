@@ -281,7 +281,9 @@ $default-boxdiff: 35px;
 
   span.dailyDiff {
     display: inline-block;
-    width: 3em;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 4rem;
     @include font-size(11);
   }
 }
