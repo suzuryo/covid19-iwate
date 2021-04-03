@@ -925,14 +925,14 @@
       }
     },
     {
-      "date": "2021-04-01T00:00:00+09:00",
+      "date": "2021-04-03T00:00:00+09:00",
       "icon": "📄",
       "url": {
-        "ja": "https://top.dhc.co.jp/dshop/store/info/info_2021extra.pdf",
+        "ja": "http://www.nanko-hp.net/media/3/210403_covid-19.pdf",
         "en": null
       },
       "text": {
-        "ja": "DHC直営店 イオンモール盛岡南 (盛岡市)",
+        "ja": "岩手県立南光病院 (一関市)",
         "en": null
       }
     }
