@@ -13,14 +13,14 @@
       }
     },
     {
-      "date": "2021-03-18T00:00:00+09:00",
+      "date": "2021-04-05T00:00:00+09:00",
       "icon": "📄",
       "url": {
-        "ja": "https://www.pref.miyagi.jp/site/covid-19/",
+        "ja": "https://www.pref.miyagi.jp/uploaded/attachment/845605.pdf",
         "en": null
       },
       "text": {
-        "ja": "宮城県・仙台市が独自の緊急事態宣言",
+        "ja": "宮城県が「まん延防止等重点措置」「独自の緊急事態宣言」",
         "en": "Miyagi Prefecture and Sendai City declare their own state of emergency"
       }
     },
@@ -32,7 +32,7 @@
         "en": null
       },
       "text": {
-        "ja": "山形県・山形市が独自の緊急事態宣言",
+        "ja": "山形県が「独自の緊急事態宣言」",
         "en": "Yamagata Prefecture and Yamagata City Declare Their Own State of Emergency"
       }
     },
@@ -56,7 +56,7 @@
         "en": "/en/cards/monitoring-number-of-confirmed-cases"
       },
       "text": {
-        "ja": "岩手県の陽性者数が増加傾向 (変異株2件•教育保育施設クラスター・スポーツ活動クラスターx2・職場クラスター)",
+        "ja": "岩手県の陽性者数が増加傾向 (変異株2例•教育保育施設クラスター・スポーツ活動クラスターx2・職場クラスター)",
         "en": "The number of positive cases in Iwate Prefecture is increasing."
       }
     },
