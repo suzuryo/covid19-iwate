@@ -904,11 +904,107 @@
       "date": "2021-04-01T00:00:00+09:00",
       "icon": "📄",
       "url": {
-        "ja": "https://top.dhc.co.jp/dshop/store/info/info_2021extra.pdf",
+        "ja": "https://www.nmm.jx-group.co.jp/information/2021/20210402_02.html",
         "en": null
       },
       "text": {
-        "ja": "DHC直営店 [立寄り消毒] (イオンモール南) (盛岡市)",
+        "ja": "ＪＸ金属プレシジョンテクノロジー 江刺工場 (奥州市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-01T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "https://www.matsumoto-3.co.jp/pages/1/detail=1/b_id=100/r_id=25#block100-25",
+        "en": null
+      },
+      "text": {
+        "ja": "マツモト (奥州市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-03T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "http://www.nanko-hp.net/media/3/210403_covid-19.pdf",
+        "en": null
+      },
+      "text": {
+        "ja": "岩手県立南光病院 (一関市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-03T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "https://www.ichinoseki.ac.jp/news/news_oshirase.html?id=1480",
+        "en": null
+      },
+      "text": {
+        "ja": "一関工業高等専門学校 (一関市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-02T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "https://www.universe.co.jp/new/store/post_649.html",
+        "en": null
+      },
+      "text": {
+        "ja": "ユニバース 鉈屋町店 (盛岡市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-04T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": null,
+        "en": null
+      },
+      "text": {
+        "ja": "二戸農林振興センター (二戸市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-04T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": null,
+        "en": null
+      },
+      "text": {
+        "ja": "岩手県庁 農林水産部 農村建設課 (盛岡市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-02T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "http://www.tochinai2.com/img/important2021.pdf",
+        "en": null
+      },
+      "text": {
+        "ja": "栃内第二病院 (滝沢市)",
+        "en": null
+      }
+    },
+    {
+      "date": "2021-04-05T00:00:00+09:00",
+      "icon": "📄",
+      "url": {
+        "ja": "https://www.ichinoseki-gakuin.jp/news/news_2021/2021_4_2/2021_04_05_info2.pdf",
+        "en": null
+      },
+      "text": {
+        "ja": "一関学院高等学校 (一関市)",
         "en": null
       }
     }

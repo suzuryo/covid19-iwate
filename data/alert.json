@@ -16,8 +16,8 @@
       "date": "2021-03-18T00:00:00+09:00",
       "icon": "📄",
       "url": {
-        "ja": "https://www.pref.miyagi.jp/uploaded/attachment/840122.pdf",
-        "en": "https://www.pref.miyagi.jp/uploaded/attachment/840229.pdf"
+        "ja": "https://www.pref.miyagi.jp/site/covid-19/",
+        "en": null
       },
       "text": {
         "ja": "宮城県・仙台市が独自の緊急事態宣言",
@@ -44,7 +44,7 @@
         "en": "https://stopcovid19.pref.aomori.lg.jp/en/"
       },
       "text": {
-        "ja": "青森県の陽性者数が増加傾向 (施設クラスター)",
+        "ja": "青森県の陽性者数が増加傾向",
         "en": "The number of positive cases in Aomori Prefecture is increasing."
       }
     },
@@ -56,7 +56,7 @@
         "en": "/en/cards/monitoring-number-of-confirmed-cases"
       },
       "text": {
-        "ja": "岩手県の陽性者数が増加傾向 (施設クラスター・スポーツ活動クラスター)",
+        "ja": "岩手県の陽性者数が増加傾向 (変異株2件•教育保育施設クラスター・スポーツ活動クラスターx2・職場クラスター)",
         "en": "The number of positive cases in Iwate Prefecture is increasing."
       }
     },
