@@ -12,6 +12,7 @@ const headers: Header[] = [
   { text: '発症日', value: 'ConfirmedCasesAttributesCard.table.発症日' },
   { text: '居住地', value: 'ConfirmedCasesAttributesCard.table.居住地' },
   { text: '年代', value: 'ConfirmedCasesAttributesCard.table.年代' },
+  { text: '接触歴', value: 'ConfirmedCasesAttributesCard.table.接触歴' },
   { text: '📺', value: 'ConfirmedCasesAttributesCard.table.📺' },
 ]
 
@@ -23,6 +24,7 @@ type DataType = {
   発症日: string | null
   居住地: string | null
   年代: string | null
+  接触歴: string | null
   会見URL: string | null
   [key: string]: any
 }
@@ -35,6 +37,7 @@ type TableDataType = {
   発症日: DataType['発症日']
   居住地: DataType['居住地']
   年代: DataType['年代']
+  接触歴: DataType['接触歴']
   会見URL: DataType['会見URL']
 }
 
@@ -71,6 +74,7 @@ export default function (data: DataType[]): TableDateType {
         発症日: occurrenceConfirmedDateDiff(),
         居住地: d['居住地'] ?? '調査中',
         年代: d['年代'] ?? '不明',
+        接触歴: d['接触歴'],
         会見URL: d['会見'],
       }
     })

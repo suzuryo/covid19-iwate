@@ -94,6 +94,13 @@ export default {
           `ConfirmedCasesAttributesCard.table.${row['年代']}`
         )
       }
+
+      // 接触歴
+      if (row['接触歴'] === '判明') {
+        row['接触歴'] = ''
+      } else {
+        row['接触歴'] = this.$t('ConfirmedCasesAttributesCard.table.無')
+      }
     }
 
     return {
