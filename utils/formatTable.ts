@@ -17,7 +17,7 @@ const headers: Header[] = [
 
 type DataType = {
   id: number
-  通番: string
+  通番: number
   通番URL: string | null
   確定日: string
   発症日: string | null
@@ -65,7 +65,7 @@ export default function (data: DataType[]): TableDateType {
       }
       return {
         id: d.id,
-        通番: `${d.id}`.padStart(4, '0'),
+        通番: d.id,
         通番URL: d.url,
         確定日: positiveConfirmedDate,
         発症日: occurrenceConfirmedDateDiff(),

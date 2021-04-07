@@ -17,7 +17,7 @@ def has_confirmed_case_attributes_card
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq JA_JSON['Common']['{date}の累計'].gsub('{date}', d)
 
   # テーブルの上から1行目をチェックする(通番)
-  d = "事例#{DATA_JSON['patients']['data'].last['id'].to_s.rjust(4, '0')}"
+  d = DATA_JSON['patients']['data'].last['id'].to_s
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルのヘッダーをチェックする
@@ -81,7 +81,7 @@ def has_confirmed_case_attributes_card
   find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 
   # 次のページの先頭は16番目の要素
-  d = "事例#{DATA_JSON['patients']['data'][-16]['id'].to_s.rjust(4, '0')}"
+  d = DATA_JSON['patients']['data'][-16]['id'].to_s
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # 注釈を表示ボタンの文言
