@@ -428,7 +428,8 @@
   "ConfirmedCasesAttributesCard": {
     "title": "Details of test positives",
     "notes": [
-      "Outbreak date is the number of relative days to the confirmed date."
+      "Outbreak date is the number of relative days to the confirmed date.",
+      "It does not reflect the existence of contact route at the time of publication, which may be revealed by additional investigation after publication."
     ],
     "table": {
       "通番": "Case Number",
@@ -436,13 +437,14 @@
       "発症日": "Outbreak date",
       "居住地": "Area",
       "年代": "Age",
+      "接触歴": "Contact route",
       "📺": "📺",
       "調査中": "Investigating",
       "10歳未満": "Under 10's",
       "90歳以上": "Over 90's",
-      "事例{tsuban}": "Case {tsuban}",
       "無症状": "No symptoms",
       "不明": "Unknown",
+      "無": "No",
       "daysbefore": "Zero-day|{d} day before|{d} days before",
       "{age}代": " {age}'s"
     },

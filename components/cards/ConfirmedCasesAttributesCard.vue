@@ -64,11 +64,6 @@ export default {
 
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
-      // 通番
-      row['通番'] = this.$t('ConfirmedCasesAttributesCard.table.事例{tsuban}', {
-        tsuban: row['通番'],
-      })
-
       row['陽性確定日'] = dayjs(date).isValid()
         ? this.$d(dayjs(row['陽性確定日']).toDate(), 'dateWithoutYear')
         : '不明'
@@ -98,6 +93,13 @@ export default {
         row['年代'] = this.$t(
           `ConfirmedCasesAttributesCard.table.${row['年代']}`
         )
+      }
+
+      // 接触歴
+      if (row['接触歴'] === '判明') {
+        row['接触歴'] = ''
+      } else {
+        row['接触歴'] = this.$t('ConfirmedCasesAttributesCard.table.無')
       }
     }
 

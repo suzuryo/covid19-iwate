@@ -17,7 +17,7 @@ def has_confirmed_case_attributes_card
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq JA_JSON['Common']['{date}の累計'].gsub('{date}', d)
 
   # テーブルの上から1行目をチェックする(通番)
-  d = "事例#{DATA_JSON['patients']['data'].last['id'].to_s.rjust(4, '0')}"
+  d = DATA_JSON['patients']['data'].last['id'].to_s
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # テーブルのヘッダーをチェックする
@@ -26,7 +26,8 @@ def has_confirmed_case_attributes_card
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(3)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['発症日']
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(4)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['居住地']
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(5)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['年代']
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(6)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['📺']
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(6)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['接触歴']
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > thead > tr > th:nth-child(7)').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['table']['📺']
 
   # テーブルの上から1行目をチェックする(url)
   d = DATA_JSON['patients']['data'].last['url']
@@ -58,11 +59,15 @@ def has_confirmed_case_attributes_card
   d = DATA_JSON['patients']['data'].last['年代']
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
 
+  # テーブルの上から1行目をチェックする(接触)
+  d = DATA_JSON['patients']['data'].last['接触歴'] == '判明' ? '' : '無'
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6)').text).to eq d.to_s
+
   # テーブルの上から1行目をチェックする(📺)
   d = DATA_JSON['patients']['data'].last['会見']
   if d
     expect(
-      find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(6) > a')[:href]
+      find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(7) > a')[:href]
     ).to eq d.to_s
   end
 
@@ -81,7 +86,7 @@ def has_confirmed_case_attributes_card
   find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 
   # 次のページの先頭は16番目の要素
-  d = "事例#{DATA_JSON['patients']['data'][-16]['id'].to_s.rjust(4, '0')}"
+  d = DATA_JSON['patients']['data'][-16]['id'].to_s
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
 
   # 注釈を表示ボタンの文言

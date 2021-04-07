@@ -35,6 +35,7 @@
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
+            <td class="text-start">{{ item['接触歴'] }}</td>
             <td class="text-start">
               <template v-if="item['会見URL']">
                 <app-link :to="item['会見URL']" :show-icon="false">
