@@ -5,7 +5,7 @@
         :ref="'displayedTable'"
         :items="items"
         :height="350"
-        :items-per-page="100"
+        :items-per-page="200"
         :mobile-breakpoint="0"
         hide-default-header
         hide-default-footer
