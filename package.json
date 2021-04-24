@@ -60,7 +60,7 @@
     "@nuxtjs/vuetify": "1.11.3",
     "@types/chart.js": "2.9.32",
     "axe-core": "4.1.4",
-    "core-js": "3.10.2",
+    "core-js": "3.11.0",
     "eslint": "7.25.0",
     "eslint-config-prettier": "8.2.0",
     "eslint-plugin-prettier": "3.4.0",
