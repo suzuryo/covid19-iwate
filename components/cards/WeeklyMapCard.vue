@@ -7,6 +7,7 @@
         :date="date"
         :map-data="mapData"
         :info="info"
+        :last7-days-sum="last7DaysSum"
       >
         <template #notes>
           <ul>
@@ -186,6 +187,8 @@ export default Vue.extend({
       },
     }
 
+    let last7DaysSum = 0
+
     Data.patients.data
       .filter((a: any) =>
         dayjs(a.確定日).isAfter(
@@ -202,9 +205,11 @@ export default Vue.extend({
         )
         if (areas.length === 0) {
           // 居住地が市町村での発表の場合
+          last7DaysSum++
           cities[patient.居住地].count++
         } else {
           // 居住地が保健所管内での発表の場合
+          last7DaysSum++
           areas.forEach((a) => {
             cities[a].count++
           })
@@ -235,6 +240,7 @@ export default Vue.extend({
       date,
       mapData,
       info,
+      last7DaysSum,
     }
   },
 })
