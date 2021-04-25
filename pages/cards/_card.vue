@@ -22,6 +22,7 @@ import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
+import WeeklyMapCard from '@/components/cards/WeeklyMapCard.vue'
 import WhatsNewCard from '@/components/cards/WhatsNewCard.vue'
 import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
@@ -31,6 +32,7 @@ import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 export default {
   components: {
+    WeeklyMapCard,
     Breadcrumb,
     WhatsNewCard,
     SelfDisclosuresCard,
@@ -51,6 +53,10 @@ export default {
   data() {
     let title, updatedAt, cardComponent, cardTitle
     switch (this.$route.params.card) {
+      case 'weekly-map':
+        cardComponent = 'weekly-map-card'
+        cardTitle = '直近1週間の陽性数マップ'
+        break
       case 'whats-new':
         cardComponent = 'whats-new-card'
         cardTitle = this.$t('WhatsNewCard.title')

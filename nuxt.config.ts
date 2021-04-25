@@ -191,6 +191,7 @@ const config: NuxtConfig = {
     routes() {
       const locales = ['en']
       const pages = [
+        '/cards/weekly-map',
         '/cards/whats-new',
         '/cards/self-disclosures',
         '/cards/details-of-confirmed-cases',
@@ -237,6 +238,12 @@ const config: NuxtConfig = {
           url: '/',
           changefreq: 'daily',
           priority: 1.0,
+          lastmod: now,
+        },
+        {
+          url: '/cards/weekly-map/',
+          changefreq: 'daily',
+          priority: 0.8,
           lastmod: now,
         },
         {

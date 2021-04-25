@@ -31,6 +31,7 @@ const ConfirmedCasesByMunicipalitiesCard = () =>
   import('@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue')
 // 検査実施件数
 const TestedNumberCard = () => import('@/components/cards/TestedNumberCard.vue')
+const WeeklyMapCard = () => import('@/components/cards/WeeklyMapCard.vue')
 // // 重症患者数
 // const SevereCaseCard = () => import('@/components/cards/SevereCaseCard.vue')
 // // 確定日別による陽性者数の推移
@@ -42,11 +43,11 @@ export default Vue.extend({
   data() {
     return {
       rows: [
-        [ConfirmedCasesDetailsCard, ConfirmedCasesNumberCard],
-        [MonitoringConfirmedCasesNumberCard, UntrackedRateCard],
-        [PositiveRateCard, HospitalizedNumberCard],
+        [ConfirmedCasesDetailsCard, MonitoringConfirmedCasesNumberCard],
+        [HospitalizedNumberCard, WeeklyMapCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
-        [TestedNumberCard],
+        [ConfirmedCasesNumberCard, UntrackedRateCard],
+        [PositiveRateCard, TestedNumberCard],
       ],
     }
   },

@@ -10,6 +10,9 @@
     </h3>
     <div class="DataView-DataSet-DataInfo">
       <span v-if="lText !== ''" class="DataView-DataSet-DataInfo-summary">
+        <span class="lTextBefore">
+          {{ lTextBefore }}
+        </span>
         <strong>
           {{ lText }}
         </strong>
@@ -38,6 +41,11 @@ export default Vue.extend({
     title: {
       type: String,
       required: true,
+      default: '',
+    },
+    lTextBefore: {
+      type: String,
+      required: false,
       default: '',
     },
     lText: {
@@ -94,6 +102,10 @@ export default Vue.extend({
         font-style: normal;
         line-height: 30px;
         @include font-size(30);
+
+        .lTextBefore {
+          @include font-size(15);
+        }
 
         strong {
           font-weight: 600;
