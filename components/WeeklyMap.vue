@@ -62,6 +62,10 @@ export default Vue.extend({
       required: true,
       type: Object,
     },
+    last7DaysSum: {
+      required: true,
+      type: Number,
+    },
   },
   data() {
     const dataSetPanel = {
@@ -74,15 +78,10 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.dataSetPanel.lText = `${this.last7DaySum()}`
+    this.dataSetPanel.lText = `${this.last7DaysSum}`
     this.renderMap()
   },
   methods: {
-    last7DaySum() {
-      return this.mapData
-        .map((a: any) => a.last7days)
-        .reduce((a: number, c: number) => a + c)
-    },
     last7days(city: string) {
       return (this.mapData.find((a: any) => a.label === city) as MapDataItem)
         .last7days
@@ -109,7 +108,7 @@ export default Vue.extend({
         // 市町村以外の部分をクリックしたら県全域
         d3.select('#weekly_map_canvas').on('click', (event) => {
           this.dataSetPanel.lTextBefore = `岩手県全域`
-          this.dataSetPanel.lText = `${this.last7DaySum()}`
+          this.dataSetPanel.lText = `${this.last7DaysSum}`
           this.dataSetPanel.sText = '居住が県外で県内滞在も含む'
           event.stopPropagation()
         })
@@ -129,7 +128,7 @@ export default Vue.extend({
             const last7days = this.last7days(d.properties.N03_004)
             const color = d3
               .scaleSequential(d3.interpolateReds)
-              .domain([0, this.last7DaySum() * 0.7]) // 最大値の最適値がよくわからないので、とりあえず0.7
+              .domain([0, this.last7DaysSum * 0.7]) // 最大値の最適値がよくわからないので、とりあえず0.7
             return color(last7days)
           })
           .attr('data-count', (d: any) => {
