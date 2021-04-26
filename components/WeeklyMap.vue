@@ -113,6 +113,28 @@ export default Vue.extend({
           event.stopPropagation()
         })
 
+        // 色生成のdomainの準備
+        const colorDomain = [...Array(9)].map((_v, i) =>
+          Math.floor((i * Math.max(this.last7DaysSum, 30)) / 10)
+        )
+
+        // iwateMapColor() の作成
+        // d3.interpolateReds をカスタムして、0は#fffにする
+        const iwateMapColor = d3
+          .scaleLinear<d3.RGBColor>()
+          .domain(colorDomain)
+          .range([
+            d3.rgb('#ffffff'),
+            d3.rgb('#fee0d2'),
+            d3.rgb('#fcbba1'),
+            d3.rgb('#fc9272'),
+            d3.rgb('#fb6a4a'),
+            d3.rgb('#ef3b2c'),
+            d3.rgb('#cb181d'),
+            d3.rgb('#a50f15'),
+            d3.rgb('#67000d'),
+          ])
+
         // SVGの生成
         svg
           .attr('preserveAspectRatio', 'xMinYMin meet') // レスポンシブ用
@@ -126,10 +148,7 @@ export default Vue.extend({
           .attr('fill', (d: any) => {
             // 直近1週間の陽性数に応じて色を変える
             const last7days = this.last7days(d.properties.N03_004)
-            const color = d3
-              .scaleSequential(d3.interpolateReds)
-              .domain([0, this.last7DaysSum * 0.7]) // 最大値の最適値がよくわからないので、とりあえず0.7
-            return color(last7days)
+            return `${iwateMapColor(last7days)}`
           })
           .attr('data-count', (d: any) => {
             // 直近1週間の陽性数
