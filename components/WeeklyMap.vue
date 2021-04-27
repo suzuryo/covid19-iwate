@@ -181,10 +181,18 @@ export default Vue.extend({
           .append('path')
           .attr('d', path as any)
           .on('mouseenter', function () {
-            d3.select(this).attr('opacity', 0.7)
+            d3.select(this)
+              .attr('stroke', '#999')
+              .attr('stroke-width', '2px')
+              .each(function () {
+                const gElement = this.parentNode as Node & globalThis.ParentNode
+                const svgElement = gElement.parentNode as Node &
+                  globalThis.ParentNode
+                svgElement.appendChild(gElement)
+              })
           })
           .on('mouseout', function () {
-            d3.select(this).attr('opacity', 1)
+            d3.select(this).attr('stroke', '#aaa').attr('stroke-width', '1px')
           })
           .append('svg:title')
           .text((d: any) => {
