@@ -90,6 +90,18 @@ export default Vue.extend({
       return (this.mapData.find((a: any) => a.label === city) as MapDataItem)
         .area
     },
+    updateDataSetPanel(event: any) {
+      // 市町村がクリックされたらその地域の情報を表示
+      // DataViewDataSetPanelに渡す
+      const t = d3.select(event.currentTarget)
+      const name = t.attr('data-name')
+      const count = t.attr('data-count')
+      const area = t.attr('data-area')
+      this.dataSetPanel.lTextBefore = name
+      this.dataSetPanel.lText = count
+      this.dataSetPanel.sText = `${area}を含む`
+      event.stopPropagation()
+    },
     renderMap() {
       d3.json('/03_city.l.topo.json').then((iwate: any) => {
         const svg = d3.select('#weekly_map_canvas svg')
@@ -166,17 +178,13 @@ export default Vue.extend({
             // 管轄保健所
             return `${this.lastArea(d.properties.N03_004)}`
           })
+          .on('mouseenter', (event, _d) => {
+            this.updateDataSetPanel(event)
+          })
           .on('click', (event, _d) => {
             // 市町村がクリックされたらその地域の情報を表示
             // DataViewDataSetPanelに渡す
-            const t = d3.select(event.currentTarget)
-            const name = t.attr('data-name')
-            const count = t.attr('data-count')
-            const area = t.attr('data-area')
-            this.dataSetPanel.lTextBefore = name
-            this.dataSetPanel.lText = count
-            this.dataSetPanel.sText = `${area}を含む`
-            event.stopPropagation()
+            this.updateDataSetPanel(event)
           })
           .append('path')
           .attr('d', path as any)
