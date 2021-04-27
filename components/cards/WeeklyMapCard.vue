@@ -232,7 +232,7 @@ export default Vue.extend({
     const date = dayjs(PatientMunicipalities.date).format('YYYY/MM/DD HH:mm')
 
     const info = {
-      lText: '0',
+      lText: `${last7DaysSum}`,
       lTextBefore: '岩手県全域',
       sText: '居住が県外で県内滞在も含む',
     }
