@@ -163,8 +163,8 @@ export default Vue.extend({
           .attr('d', path as any)
           .on('mouseenter', function () {
             d3.select(this)
-              .attr('stroke', '#666')
-              .attr('stroke-width', '3px')
+              .attr('stroke', '#999')
+              .attr('stroke-width', '2px')
               .each(function () {
                 const gElement = this.parentNode as Node & globalThis.ParentNode
                 const svgElement = gElement.parentNode as Node &
