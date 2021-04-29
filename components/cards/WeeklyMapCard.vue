@@ -2,7 +2,7 @@
   <v-col id="WeeklyMapCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <weekly-map
-        :title="`直近1週間の陽性数`"
+        :title="$t('直近1週間の陽性例マップ')"
         :title-id="'weekly-map'"
         :date="date"
         :map-data="mapData"
@@ -12,13 +12,25 @@
         <template #notes>
           <ul>
             <li>
-              直近1週間の新規陽性者数を、居住地の市町村ごとに分類し、色を加えたもの
+              {{
+                $t(
+                  '直近1週間の新規陽性者数を、居住地の市町村ごとに分類し、色を加えたもの'
+                )
+              }}
             </li>
             <li>
-              直近1週間の新規陽性者数が多い地域は色が濃く、少ない地域は色が薄い
+              {{
+                $t(
+                  '直近1週間の新規陽性者数が多い地域は色が濃く、少ない地域は色が薄い'
+                )
+              }}
             </li>
             <li>
-              居住地が市町村名ではなく「〇〇保健所管内」と発表された場合は、その管内の市町村すべてに+1する
+              {{
+                $t(
+                  '居住地が市町村名ではなく「〇〇保健所管内」と発表された場合は、その管内の市町村すべてに+1する'
+                )
+              }}
             </li>
           </ul>
         </template>
@@ -221,8 +233,8 @@ export default Vue.extend({
       .filter((d: any) => d.label !== '小計')
       .map((d: any) => {
         return {
-          ruby: this.$t(d.ruby),
-          label: this.$t(d.label),
+          ruby: d.ruby,
+          label: d.label,
           count: d.count,
           area: cities[d.label].area,
           last7days: cities[d.label].count,
@@ -233,8 +245,8 @@ export default Vue.extend({
 
     const info = {
       lText: `${last7DaysSum}`,
-      lTextBefore: '岩手県全域',
-      sText: '居住が県外で県内滞在も含む',
+      lTextBefore: this.$t('岩手県全域'),
+      sText: this.$t('居住地が県外で県内滞在も含む'),
     }
     return {
       date,

@@ -104,6 +104,7 @@ export default Vue.extend({
         @include font-size(30);
 
         .lTextBefore {
+          margin-right: 0.5rem;
           @include font-size(15);
         }
 
