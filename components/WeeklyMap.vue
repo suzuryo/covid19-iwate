@@ -19,7 +19,7 @@
         :l-text-before="dataSetPanel.lTextBefore"
         :l-text="dataSetPanel.lText"
         :s-text="dataSetPanel.sText"
-        unit="人"
+        :unit="$t('例')"
         :card-path="`/cards/${titleId}`"
       />
     </template>
@@ -94,12 +94,12 @@ export default Vue.extend({
       // 市町村がクリックされたらその地域の情報を表示
       // DataViewDataSetPanelに渡す
       const t = d3.select(event.currentTarget)
-      const name = t.attr('data-name')
+      const name = this.$t(t.attr('data-name'))
       const count = t.attr('data-count')
-      const area = t.attr('data-area')
+      const area = this.$t(t.attr('data-area'))
       this.dataSetPanel.lTextBefore = name
       this.dataSetPanel.lText = count
-      this.dataSetPanel.sText = `${area}を含む`
+      this.dataSetPanel.sText = this.$t('{area}を含む', { area })
       event.stopPropagation()
     },
     renderMap() {
@@ -119,9 +119,9 @@ export default Vue.extend({
 
         // 市町村以外の部分をクリックしたら県全域
         d3.select('#weekly_map_canvas').on('click', (event) => {
-          this.dataSetPanel.lTextBefore = `岩手県全域`
+          this.dataSetPanel.lTextBefore = this.$t('岩手県全域')
           this.dataSetPanel.lText = `${this.last7DaysSum}`
-          this.dataSetPanel.sText = '居住が県外で県内滞在も含む'
+          this.dataSetPanel.sText = this.$t('居住地が県外で県内滞在も含む')
           event.stopPropagation()
         })
 
@@ -205,7 +205,11 @@ export default Vue.extend({
           .append('svg:title')
           .text((d: any) => {
             const last7days = this.last7days(d.properties.N03_004)
-            return `${d.properties.N03_004} (管轄保健所管内含む) ${last7days} 人`
+            const city = this.$t(d.properties.N03_004)
+            return this.$t('{city} (管轄保健所管内含む) {last7days} 例', {
+              city,
+              last7days,
+            }) as string
           })
       })
     },
@@ -228,5 +232,26 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@include lessThan($small) {
+  #WeeklyMapCard {
+    .DataView {
+      &-DataSet {
+        flex-flow: column;
+        &-title {
+          margin-bottom: 6px;
+        }
+        //width: 100%;
+        &-DataInfo {
+          text-align: right;
+          &-date {
+            height: 3em;
+            //background-color: #f00;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
