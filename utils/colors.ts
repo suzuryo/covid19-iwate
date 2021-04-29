@@ -42,7 +42,7 @@ const surfaceStyleG: SurfaceStyle = {
 
 const surfaceStyleH: SurfaceStyle = {
   strokeColor: '#aaaaaa',
-  fillColor: '#aaaaaa',
+  fillColor: '#caf0ca',
 }
 
 export function getGraphSeriesStyle(seriesLength: number) {
@@ -51,6 +51,8 @@ export function getGraphSeriesStyle(seriesLength: number) {
       return [surfaceStyleB]
     case 2:
       return [surfaceStyleA, surfaceStyleC]
+    case 3:
+      return [surfaceStyleA, surfaceStyleC, surfaceStyleH]
     case 4:
       return [surfaceStyleA, surfaceStyleB, surfaceStyleC, surfaceStyleG]
     default:

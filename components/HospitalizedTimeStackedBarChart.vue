@@ -223,8 +223,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data: () => ({
     dataKind: 'transition',
-    displayLegends: [true, true],
-    colors: getGraphSeriesStyle(2),
+    displayLegends: [true, true, true],
+    colors: getGraphSeriesStyle(3),
     canvas: true,
     isSmall: false,
   }),
@@ -260,7 +260,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         ...(this.tableLabels as string[]).map((text, i) => {
           return { text, value: String(i), align: 'end' }
         }),
-        { text: this.$t('計'), value: '2', align: 'end' },
+        { text: this.$t('計'), value: '3', align: 'end' },
       ]
     },
     tableData() {
@@ -283,8 +283,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }
             }),
             {
-              // j=2で合計を計算
-              2: this.chartData[0][i] + this.chartData[1][i],
+              // j=3で合計を計算
+              3:
+                this.chartData[0][i] +
+                this.chartData[1][i] +
+                this.chartData[2][i],
             }
           )
         })
@@ -389,7 +392,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       for (const i in this.displayData.datasets[0].data) {
         const current =
           this.displayData.datasets[0].data[i] +
-          this.displayData.datasets[1].data[i]
+          this.displayData.datasets[1].data[i] +
+          this.displayData.datasets[2].data[i]
         if (current > max) {
           max = current
           n = Number(i)
@@ -405,6 +409,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           },
           {
             data: [this.displayData.datasets[1].data[n]],
+            backgroundColor: 'transparent',
+            borderWidth: 0,
+          },
+          {
+            data: [this.displayData.datasets[2].data[n]],
             backgroundColor: 'transparent',
             borderWidth: 0,
           },

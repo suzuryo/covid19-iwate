@@ -17,6 +17,7 @@
     "入院": "Hospitalized",
     "重症": "Severe cases",
     "宿泊療養": "Recovering at designated hotels",
+    "調整中": "Waiting",
     "７日間移動平均": "7 Day Moving Average",
     "7MA": "7-MA : Since daily results fluctuate due to outbreaks of mass infections and variations in values depending on the day of the week, the results are calculated based on the Moving Average of the past 7 days in order to equalize such variations and see the overall trend (for example, Aug 7 is the average of the values from Aug 1 to Aug 7).",
     "検査結果の判明日を基準とする": "Based on the date when the test result is confirmed",
@@ -471,7 +472,7 @@
   },
   "陽性者数/人口": "Number of positive cases/Population",
   "HospitalizedNumberCard": {
-    "title": "Changes in the number of hospitalized patients and hotel care patients"
+    "title": "Changes in the number of hospitalized patients and hotel care patients and waiting"
   },
   "県内": "Inside Iwate",
   "このサイトの内容物は{creativeCommons}の下に提供されています。": "Content on This Site is Licensed Under a {creativeCommons}",
