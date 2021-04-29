@@ -12,6 +12,7 @@ Capybara.register_driver :emulated_chrome_ios do |app|
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--headless')
   options.add_argument('--disable-gpu')
+  options.add_argument('--host-resolver-rules=MAP www.google-analytics.com 127.0.0.1, MAP www.googletagmanager.com 127.0.0.1')
   options.add_emulation(device_name: 'iPhone 6/7/8')
 
   Capybara::Selenium::Driver.new(app,
