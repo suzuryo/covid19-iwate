@@ -38,6 +38,7 @@ describe 'iPhone 6/7/8', type: :feature do
 
         # MenuList 新型コロナウイルス感染症対策本部
         expect(find('nav.SideNavigation-Menu > ul.MenuList > li.MenuList-Item:nth-child(6) > a > span.MenuList-Title').text).to eq data[:json]['SideNavigation']['a'][9]
+        expect(find('nav.SideNavigation-Menu > ul.MenuList > li.MenuList-Item:nth-child(6) > a')[:href]).to eq 'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1035134.html'
 
         # MenuList 当サイトについて
         expect(find('nav.SideNavigation-Menu > ul.MenuList > li.MenuList-Item:nth-child(7) > a > span.MenuList-Title').text).to eq data[:json]['Common']['当サイトについて']

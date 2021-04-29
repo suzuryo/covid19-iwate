@@ -179,7 +179,7 @@ export default Vue.extend({
         {
           title: this.$t('SideNavigation.a[9]'),
           link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1028231.html',
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1035134.html',
         },
         {
           title: this.$t('Common.当サイトについて'),
