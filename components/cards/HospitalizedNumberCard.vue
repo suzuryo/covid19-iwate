@@ -126,12 +126,14 @@ export default {
     const { data } = PositiveStatus
     const hospital = data.map((data) => data.hospital)
     const hotel = data.map((data) => data.hotel)
+    const waiting = data.map((data) => data.waiting)
 
-    const hospitalizedGraph = [hospital, hotel]
+    const hospitalizedGraph = [hospital, hotel, waiting]
 
     const hospitalizedItems = [
       this.$t('Common.入院'),
       this.$t('Common.宿泊療養'),
+      this.$t('Common.調整中'),
     ]
 
     const hospitalizedLabels = data.map((data) => data.date)

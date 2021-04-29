@@ -4,12 +4,12 @@ require 'spec_helper'
 
 def has_hospitalized_number_card
   # h3
-  expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '入院と宿泊療養の推移'
+  expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '入院と宿泊療養と調整中の推移'
   d = find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
   expect(URI.parse(d).path).to eq '/cards/number-of-hospitalized'
 
   # 入院と宿泊療養の合計
-  d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hospital'].to_i + POSITIVE_STATUS_JSON['data'].last['hotel'].to_i)
+  d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hospital'].to_i + POSITIVE_STATUS_JSON['data'].last['hotel'].to_i + POSITIVE_STATUS_JSON['data'].last['waiting'].to_i)
   expect(find('#HospitalizedNumberCard > div > div > div.DataView-Header > div > div > div > span > strong').text).to eq d.to_s
 
   # 入院と宿泊療養の日付
@@ -36,9 +36,13 @@ def has_hospitalized_number_card
   d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hotel'].to_i)
   expect(find('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
 
-  # テーブルの上から1行目をチェックする(計)
-  d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hospitalized'].to_i)
+  # テーブルの上から1行目をチェックする(調整中)
+  d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['waiting'].to_i)
   expect(find('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
+
+  # テーブルの上から1行目をチェックする(計)
+  d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hospital'].to_i + POSITIVE_STATUS_JSON['data'].last['hotel'].to_i + POSITIVE_STATUS_JSON['data'].last['waiting'].to_i)
+  expect(find('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
 
   # データを表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel--active')
