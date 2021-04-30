@@ -121,18 +121,6 @@ export default {
       },
     ]
 
-    // データをソート
-    PatientMunicipalities.datasets.data.sort((a, b) => {
-      // 全体をcodeでソート
-      if (a.code === b.code) {
-        return 0
-      } else if (a.code > b.code) {
-        return 1
-      } else {
-        return -1
-      }
-    })
-
     const getCountPerPopulation = (d) => {
       return d === null ? '' : `${d}%`
     }
@@ -162,6 +150,7 @@ export default {
       .filter((d) => d.label !== '小計')
       .map((d) => {
         return {
+          code: d.code,
           ruby: this.$t(d.ruby),
           label: this.$t(d.label),
           count: d.count,

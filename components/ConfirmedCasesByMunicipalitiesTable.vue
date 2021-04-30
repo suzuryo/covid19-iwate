@@ -114,7 +114,7 @@ export default Vue.extend({
                 : 1
             break
           default:
-            comparison = a[index[0]] < b[index[0]] ? -1 : 1
+            comparison = parseInt(a.code) - parseInt(b.code)
             break
         }
         return isDesc[0] ? comparison * -1 : comparison
