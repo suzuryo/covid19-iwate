@@ -81,8 +81,11 @@ export default Vue.extend({
         let comparison: number
 
         // 「県外」は常に一番下にする
-        if (a.ruby === 'けんがい') {
-          return Number.MAX_VALUE
+        if (a.code === '999999') {
+          return 1
+        }
+        if (b.code === '999999') {
+          return -1
         }
 
         switch (index[0]) {
