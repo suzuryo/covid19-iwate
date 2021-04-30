@@ -97,41 +97,25 @@ export default {
       },
       {
         text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[1]'),
-        value: 'ruby',
-      },
-      {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[2]'),
         value: 'count',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[3]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[2]'),
         value: 'count_per_population',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[4]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[3]'),
         value: 'last7days',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[5]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[4]'),
         value: 'last7_per_100k',
         align: 'end',
       },
     ]
-
-    // データをソート
-    PatientMunicipalities.datasets.data.sort((a, b) => {
-      // 全体をcodeでソート
-      if (a.code === b.code) {
-        return 0
-      } else if (a.code > b.code) {
-        return 1
-      } else {
-        return -1
-      }
-    })
 
     const getCountPerPopulation = (d) => {
       return d === null ? '' : `${d}%`
@@ -162,6 +146,7 @@ export default {
       .filter((d) => d.label !== '小計')
       .map((d) => {
         return {
+          code: d.code,
           ruby: this.$t(d.ruby),
           label: this.$t(d.label),
           count: d.count,

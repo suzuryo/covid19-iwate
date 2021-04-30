@@ -21,17 +21,13 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
   d = PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['label']
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq lang_json[d]
 
-  # テーブルの上から1行目をチェックする(ふりがな)
-  d = PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['ruby']
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq lang_json[d]
-
   # テーブルの上から1行目をチェックする(陽性者数)
   d = number_to_delimited(PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count'])
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d.to_s
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(対人口)
   d = "#{PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count_per_population']}%"
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d
 
   # テーブルの上から1行目をチェックする(直近1週間)
   d = number_to_delimited(
@@ -40,7 +36,7 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
       .select { |item| Date.parse(item['確定日']) > Date.parse(DATA_JSON['patients_summary']['data'].last['日付']) - 8 }
       .count
   )
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(直近1週間対人口10万人)
   d = DATA_JSON['patients']['data']
@@ -48,99 +44,100 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
         .select { |item| Date.parse(item['確定日']) > Date.parse(DATA_JSON['patients_summary']['data'].last['日付']) - 8 }
         .count * 100000.0 / 291320.0 # 盛岡市の場合
   d = page.evaluate_script("#{d}.toFixed(1)")
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(6)').text).to eq d.to_s
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)').text).to eq d.to_s
 
-  # ふりがなをクリックしてソートしたら、一番上は「いちのせきし」
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2).text-start.sortable.active.asc'
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq lang_json['一関市']
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq lang_json['いちのせきし']
-
-  # 市町村を2回クリックしても、一番下は常に「県外」
+  # 市町村を1回目クリックしても、一番下は常に「県外」
   find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1)').click
   expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1).text-start.sortable.active.asc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
+
+  # 市町村を2回目クリックしても、一番下は常に「県外」
   find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1)').click
   expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1).text-start.sortable.active.desc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
 
+  # 市町村を3回目クリックしても、一番下は常に「県外」
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1)').click
+  expect(page).not_to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1).text-start.sortable.active'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
+
   # 陽性者数を1回目クリックしたら昇順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3).text-end.sortable.active.asc'
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2).text-end.sortable.active.asc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(3)").text
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(3)").text
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(2)").text
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(2)").text
     expect(a.to_i <= b.to_i).to be true
   end
 
   # 陽性者数を2回目クリックしたら降順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3).text-end.sortable.active.desc'
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2).text-end.sortable.active.desc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(3)").text
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(3)").text
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(2)").text
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(2)").text
     expect(a.to_i >= b.to_i).to be true
   end
 
   # 対人口を1回目クリックしたら昇順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4).text-end.sortable.active.asc'
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3).text-end.sortable.active.asc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(4)").text.gsub('%', '')
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(4)").text.gsub('%', '')
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(3)").text.gsub('%', '')
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(3)").text.gsub('%', '')
     expect(a.to_f <= b.to_f).to be true
   end
 
   # 対人口を2回目クリックしたら降順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4).text-end.sortable.active.desc'
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3).text-end.sortable.active.desc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(4)").text.gsub('%', '')
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(4)").text.gsub('%', '')
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(3)").text.gsub('%', '')
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(3)").text.gsub('%', '')
     expect(a.to_f >= b.to_f).to be true
   end
 
   # 直近1週間を1回目クリックしたら昇順に並んでいる。県外は常に一番下
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4).text-end.sortable.active.asc'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
+  32.times do |i|
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(4)").text
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(4)").text
+    expect(a.to_i <= b.to_i).to be true
+  end
+
+  # 直近1週間を2回目クリックしたら降順に並んでいる。県外は常に一番下
+  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4)').click
+  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4).text-end.sortable.active.desc'
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
+  32.times do |i|
+    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(4)").text
+    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(4)").text
+    expect(a.to_i >= b.to_i).to be true
+  end
+
+  # 直近1週間対人口10万人を1回目クリックしたら昇順に並んでいる。県外は常に一番下
   find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(5)').click
   expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(5).text-end.sortable.active.asc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
     a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(5)").text
     b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(5)").text
-    expect(a.to_i <= b.to_i).to be true
+    expect(a.to_f <= b.to_f).to be true
   end
 
-  # 直近1週間を2回目クリックしたら降順に並んでいる。県外は常に一番下
+  # 直近1週間対人口10万人を2回目クリックしたら昇順に並んでいる。県外は常に一番下
   find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(5)').click
   expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(5).text-end.sortable.active.desc'
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
   32.times do |i|
     a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(5)").text
     b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(5)").text
-    expect(a.to_i >= b.to_i).to be true
-  end
-
-  # 直近1週間を1回目クリックしたら昇順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(6)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(6).text-end.sortable.active.asc'
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
-  32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(6)").text
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(6)").text
-    expect(a.to_f <= b.to_f).to be true
-  end
-
-  # 直近1週間を1回目クリックしたら昇順に並んでいる。県外は常に一番下
-  find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(6)').click
-  expect(page).to have_selector '#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(6).text-end.sortable.active.desc'
-  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(34) > td:nth-child(1)').text).to eq lang_json['県外']
-  32.times do |i|
-    a = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 1}) > td:nth-child(6)").text
-    b = find("#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(#{i + 2}) > td:nth-child(6)").text
     expect(a.to_f >= b.to_f).to be true
   end
 

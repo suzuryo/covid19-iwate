@@ -81,8 +81,11 @@ export default Vue.extend({
         let comparison: number
 
         // 「県外」は常に一番下にする
-        if (a.ruby === 'けんがい') {
-          return Number.MAX_VALUE
+        if (a.code === '999999') {
+          return 1
+        }
+        if (b.code === '999999') {
+          return -1
         }
 
         switch (index[0]) {
@@ -114,7 +117,7 @@ export default Vue.extend({
                 : 1
             break
           default:
-            comparison = a[index[0]] < b[index[0]] ? -1 : 1
+            comparison = parseInt(a.code) - parseInt(b.code)
             break
         }
         return isDesc[0] ? comparison * -1 : comparison
