@@ -97,25 +97,21 @@ export default {
       },
       {
         text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[1]'),
-        value: 'ruby',
-      },
-      {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[2]'),
         value: 'count',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[3]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[2]'),
         value: 'count_per_population',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[4]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[3]'),
         value: 'last7days',
         align: 'end',
       },
       {
-        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[5]'),
+        text: this.$t('ConfirmedCasesByMunicipalitiesCard.legends[4]'),
         value: 'last7_per_100k',
         align: 'end',
       },
