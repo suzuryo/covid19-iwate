@@ -90,6 +90,12 @@ export default Vue.extend({
       return (this.mapData.find((a: any) => a.label === city) as MapDataItem)
         .area
     },
+    resetDataSetPanel(event: any) {
+      this.dataSetPanel.lTextBefore = this.$t('岩手県全域')
+      this.dataSetPanel.lText = `${this.last7DaysSum}`
+      this.dataSetPanel.sText = this.$t('居住地が県外で県内滞在も含む')
+      event.stopPropagation()
+    },
     updateDataSetPanel(event: any) {
       // 市町村がクリックされたらその地域の情報を表示
       // DataViewDataSetPanelに渡す
@@ -119,10 +125,7 @@ export default Vue.extend({
 
         // 市町村以外の部分をクリックしたら県全域
         d3.select('#weekly_map_canvas').on('click', (event) => {
-          this.dataSetPanel.lTextBefore = this.$t('岩手県全域')
-          this.dataSetPanel.lText = `${this.last7DaysSum}`
-          this.dataSetPanel.sText = this.$t('居住地が県外で県内滞在も含む')
-          event.stopPropagation()
+          this.resetDataSetPanel(event)
         })
 
         // 色生成のdomainの準備
@@ -151,6 +154,9 @@ export default Vue.extend({
         svg
           .attr('preserveAspectRatio', 'xMinYMin meet') // レスポンシブ用
           .attr('viewBox', `0 0 ${width} ${width}`) // レスポンシブ用
+          .on('mouseover', (event, _d) => {
+            this.resetDataSetPanel(event)
+          })
           .selectAll('g')
           .data(data)
           .enter()
@@ -232,6 +238,9 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   left: 0;
+  g {
+    cursor: pointer;
+  }
 }
 
 @include lessThan($small) {
