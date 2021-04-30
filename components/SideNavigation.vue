@@ -113,6 +113,7 @@ import {
   mdiClose,
   mdiDomain,
   mdiMenu,
+  mdiNeedle,
 } from '@mdi/js'
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
@@ -145,6 +146,7 @@ export default Vue.extend({
     return {
       mdiClose,
       mdiMenu,
+      mdiNeedle,
     }
   },
   computed: {
@@ -159,6 +161,12 @@ export default Vue.extend({
           svg: 'CovidIcon',
           title: this.$t('SideNavigation.a[4]'),
           link: this.localePath('/flow'),
+        },
+        {
+          iconPath: mdiNeedle,
+          title: this.$t('SideNavigation.a[10]'),
+          link:
+            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037252.html',
         },
         {
           iconPath: mdiAccountMultiple,
