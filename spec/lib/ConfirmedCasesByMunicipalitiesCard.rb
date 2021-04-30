@@ -18,18 +18,22 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > div > small').text).to eq lang_json['Common']['{date}の累計'].gsub('{date}', d).gsub(/^ /, '')
 
   # テーブルの上から1行目をチェックする(市町村)
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(1)').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['legends'][0]
   d = PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['label']
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').text).to eq lang_json[d]
 
   # テーブルの上から1行目をチェックする(陽性者数)
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(2)').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['legends'][1]
   d = number_to_delimited(PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count'])
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(対人口)
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(3)').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['legends'][2]
   d = "#{PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['count_per_population']}%"
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3)').text).to eq d
 
   # テーブルの上から1行目をチェックする(直近1週間)
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(4)').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['legends'][3]
   d = number_to_delimited(
     DATA_JSON['patients']['data']
       .select { | item | item['居住地'] == PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['label'] }
@@ -39,6 +43,7 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)').text).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(直近1週間対人口10万人)
+  expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Content > div > div > table > thead > tr > th:nth-child(5)').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['legends'][4]
   d = DATA_JSON['patients']['data']
         .select { | item | item['居住地'] == PATIENT_MUNICIPALITIES_JSON['datasets']['data'].first['label'] }
         .select { |item| Date.parse(item['確定日']) > Date.parse(DATA_JSON['patients_summary']['data'].last['日付']) - 8 }
