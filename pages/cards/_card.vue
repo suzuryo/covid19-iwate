@@ -184,7 +184,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          template: (title) => `${this.title || title} | ${defaultTitle}`,
+          template: (title) => defaultTitle,
           content: '',
         },
         {

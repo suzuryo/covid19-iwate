@@ -259,7 +259,7 @@ export default Vue.extend({
           property: 'og:title',
           content: `${this.$t('Common.岩手県')} ${this.$t(
             'Common.新型コロナウイルス感染症'
-          )} ${this.$t('Common.対策サイト')}`,
+          )}${this.$t('Common.対策サイト')}`,
         },
         {
           hid: 'og:description',
