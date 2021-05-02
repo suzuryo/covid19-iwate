@@ -142,12 +142,16 @@ export default {
   },
   head() {
     const url = 'https://iwate.stopcovid19.jp'
+
     const timestamp = new Date().getTime()
+
     const ogpImage =
       this.$i18n.locale === 'ja'
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
+
     const date = Data.patients_summary.data.slice(-1)[0].日付
+
     const description = `${this.$t('{date}', {
       date: this.$d(getDayjsObject(date).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
@@ -162,6 +166,7 @@ export default {
     }${this.$t(
       '人です。陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
     )}`
+
     const defaultTitle = `${this.$t('Common.岩手県')} ${this.$t(
       'Common.新型コロナウイルス感染症'
     )}${this.$t('Common.対策サイト')}`
@@ -184,7 +189,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          template: (title) => `${this.title || title} | ${defaultTitle}`,
+          template: () => defaultTitle,
           content: '',
         },
         {

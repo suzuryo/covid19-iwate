@@ -76,6 +76,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     const { htmlAttrs, meta } = this.$nuxtI18nSeo()
+
     const ogLocale =
       meta && meta.length > 0
         ? meta[0]
@@ -86,6 +87,7 @@ export default Vue.extend({
           }
 
     let linksAlternate: LinkPropertyHref[] = []
+
     const basename = this.getRouteBaseName()
     // 404 エラーなどのときは this.getRouteBaseName() が null になるため除外
     if (basename) {
@@ -95,7 +97,9 @@ export default Vue.extend({
         this.$i18n.defaultLocale
       )
     }
+
     const date = Data.patients_summary.data.slice(-1)[0].日付
+
     const descriptionToday = `${this.$t('{date}', {
       date: this.$d(getDayjsObject(date).toDate(), 'date'),
     })}${this.$t('は陽性が')}${
@@ -108,9 +112,14 @@ export default Vue.extend({
     }${this.$t('件・現在の入院患者は')}${
       PositiveStatus.data.slice(-1)[0].hospitalized
     }${this.$t('人です。')}`
+
     const description = `${descriptionToday}${this.$t(
       '陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。'
     )}`
+
+    const defaultTitle = `${this.$t('Common.岩手県')} ${this.$t(
+      'Common.新型コロナウイルス感染症'
+    )}${this.$t('Common.対策サイト')}`
 
     return {
       htmlAttrs,
@@ -244,9 +253,7 @@ export default Vue.extend({
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: `${this.$t('Common.岩手県')} ${this.$t(
-            'Common.新型コロナウイルス感染症'
-          )} ${this.$t('Common.対策サイト')}`,
+          content: defaultTitle,
         },
         {
           hid: 'og:url',
@@ -257,9 +264,7 @@ export default Vue.extend({
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$t('Common.岩手県')} ${this.$t(
-            'Common.新型コロナウイルス感染症'
-          )} ${this.$t('Common.対策サイト')}`,
+          content: defaultTitle,
         },
         {
           hid: 'og:description',
@@ -274,9 +279,7 @@ export default Vue.extend({
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
-          content: `${this.$t('Common.岩手県')} ${this.$t(
-            'Common.新型コロナウイルス感染症'
-          )} ${this.$t('Common.対策サイト')}`,
+          content: defaultTitle,
         },
         {
           hid: 'twitter:image',

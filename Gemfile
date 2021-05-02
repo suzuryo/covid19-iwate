@@ -7,6 +7,7 @@ ruby '3.0.1'
 
 gem 'activesupport'
 gem 'capybara'
+gem 'nokogiri'
 gem 'parallel_tests'
 gem 'rspec'
 gem 'selenium-webdriver'

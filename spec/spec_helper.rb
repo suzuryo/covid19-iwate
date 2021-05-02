@@ -4,6 +4,8 @@ require 'active_support/all'
 require 'capybara/rspec'
 require 'capybara/dsl'
 require 'json'
+require 'nokogiri'
+require 'open-uri'
 require 'selenium-webdriver'
 
 include ActiveSupport::NumberHelper

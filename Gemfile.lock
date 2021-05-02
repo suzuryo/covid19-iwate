@@ -71,6 +71,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   capybara
+  nokogiri
   parallel_tests
   rspec
   selenium-webdriver
