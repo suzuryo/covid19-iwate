@@ -1,6 +1,6 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
-    <div class="WhatsNew-Content">
+    <div class="SelfDisclosures-Content">
       <v-data-table
         :ref="'displayedTable'"
         :items="items"
@@ -49,6 +49,7 @@
         :card-path="`/cards/${titleId}`"
       />
     </template>
+    <slot name="self_disclosure_form" />
   </data-view>
 </template>
 
@@ -123,7 +124,7 @@ export default Vue.extend(options)
 </script>
 
 <style lang="scss">
-.WhatsNew {
+.SelfDisclosures {
   &-Content {
     .cardTable {
       table {

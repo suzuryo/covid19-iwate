@@ -1,7 +1,7 @@
 <template>
   <v-col id="SelfDisclosuresCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <whats-new
+      <self-disclosures
         :title="$t('SelfDisclosuresCard.title')"
         :title-id="'self-disclosures'"
         :date="date"
@@ -21,7 +21,7 @@
             </app-link>
           </div>
         </template>
-      </whats-new>
+      </self-disclosures>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
@@ -33,7 +33,7 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
 import AppLink from '@/components/AppLink.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
+import SelfDisclosures from '@/components/SelfDisclosures.vue'
 import Data from '@/data/self_disclosures.json'
 
 type NewsItem = {
@@ -60,7 +60,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   components: {
     AppLink,
-    WhatsNew,
+    SelfDisclosures,
   },
   props: {
     md: {
