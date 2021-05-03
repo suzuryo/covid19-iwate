@@ -24,6 +24,10 @@
     "注": "Notes",
     "データを表示": "Show Data Table"
   },
+  "DataView_Footer": [
+    "Items per page",
+    "{pageStart} - {pageStop} of {itemsLength} indexes"
+  ],
   "SiteTopUpper": {
     "最終更新": "Last update",
     "注釈": "This is a provisional translation. Please be aware that there may be mistranslations.",
@@ -463,11 +467,7 @@
       "無": "No",
       "daysbefore": "Zero-day|{d} day before|{d} days before",
       "{age}代": " {age}'s"
-    },
-    "footer": [
-      "Items per page",
-      "{pageStart} - {pageStop} of {itemsLength} indexes"
-    ]
+    }
   },
   "UntrackedRateCard": {
     "titles": [

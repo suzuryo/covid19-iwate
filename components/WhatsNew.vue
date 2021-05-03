@@ -4,12 +4,13 @@
       <v-data-table
         :ref="'displayedTable'"
         :items="items"
-        :height="350"
-        :items-per-page="200"
         :mobile-breakpoint="0"
         hide-default-header
-        hide-default-footer
         class="cardTable"
+        :footer-props="{
+          'items-per-page-options': [10, 30, 50, 100, 200, 300, -1],
+          'items-per-page-text': $t('DataView_Footer[0]'),
+        }"
       >
         <template #body="{ items }">
           <tbody>
@@ -30,6 +31,15 @@
               </td>
             </tr>
           </tbody>
+        </template>
+        <template slot="footer.page-text" slot-scope="props">
+          {{
+            $t('DataView_Footer[1]', {
+              itemsLength: props.itemsLength,
+              pageStart: props.pageStart,
+              pageStop: props.pageStop,
+            })
+          }}
         </template>
       </v-data-table>
     </div>

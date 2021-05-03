@@ -75,12 +75,11 @@ def has_confirmed_case_attributes_card
   expect(page.all('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(16)').empty?).to eq true
 
   # １ページあたり
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__select').text).to eq "#{JA_JSON['ConfirmedCasesAttributesCard']['footer'][0]}\n15"
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__select').text).to eq "#{JA_JSON['DataView_Footer'][0]}\n15"
 
   # 項目中
-  d = DATA_JSON['patients']['data'].last['id'].to_s
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq (JA_JSON['ConfirmedCasesAttributesCard']['footer'][1]).to_s.gsub('{itemsLength}', d).gsub('{pageStart}', '1').gsub('{pageStop}',
-                                                                                                                                                                                                                                                                           '15').rstrip
+  d = DATA_JSON['patients']['data'].last['id']
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq (JA_JSON['DataView_Footer'][1]).to_s.gsub('{itemsLength}', d.to_s).gsub('{pageStart}', '1').gsub('{pageStop}', d < 15 ? d.to_s : '15').rstrip
 
   # 次のページ
   find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
