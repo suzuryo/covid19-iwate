@@ -24,6 +24,10 @@
     "注": "注釈",
     "データを表示": "データを表示"
   },
+  "DataView_Footer": [
+    "1ページあたり",
+    "{itemsLength} 項目中 {pageStart} - {pageStop} "
+  ],
   "SiteTopUpper": {
     "最終更新": "最終更新",
     "注釈": "This is a provisional translation. Please be aware that there may be mistranslations.",
@@ -463,11 +467,7 @@
       "無": "無",
       "daysbefore": "{d}日前|{d}日前|{d}日前",
       "{age}代": "{age}代"
-    },
-    "footer": [
-      "1ページあたり",
-      "{itemsLength} 項目中 {pageStart} - {pageStop} "
-    ]
+    }
   },
   "UntrackedRateCard": {
     "titles": [

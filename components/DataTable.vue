@@ -12,7 +12,7 @@
       :custom-sort="customSort"
       :footer-props="{
         'items-per-page-options': [15, 30, 50, 100, 200, 300, -1],
-        'items-per-page-text': $t('ConfirmedCasesAttributesCard.footer[0]'),
+        'items-per-page-text': $t('DataView_Footer[0]'),
       }"
       class="cardTable"
     >
@@ -48,7 +48,7 @@
       </template>
       <template slot="footer.page-text" slot-scope="props">
         {{
-          $t('ConfirmedCasesAttributesCard.footer[1]', {
+          $t('DataView_Footer[1]', {
             itemsLength: props.itemsLength,
             pageStart: props.pageStart,
             pageStop: props.pageStop,

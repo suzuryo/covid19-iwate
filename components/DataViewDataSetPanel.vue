@@ -24,6 +24,14 @@
       <small v-if="sText !== ''" class="DataView-DataSet-DataInfo-date">
         {{ sText }}
       </small>
+      <div
+        v-if="selfDisclosureForm"
+        class="DataView-DataSet-DataInfo-SelfDisclosureForm"
+      >
+        <app-link to="https://forms.gle/JHB4HJ2c4NnPcmy69">
+          情報提供フォーム
+        </app-link>
+      </div>
     </div>
   </div>
 </template>
@@ -66,6 +74,11 @@ export default Vue.extend({
     cardPath: {
       type: String,
       required: true,
+    },
+    selfDisclosureForm: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 })
@@ -124,6 +137,15 @@ export default Vue.extend({
         color: $gray-3;
         line-height: initial;
         @include font-size(12);
+      }
+
+      &-SelfDisclosureForm {
+        > a {
+          height: 3rem;
+          line-height: 3rem;
+          display: inline-block;
+          @include font-size(11);
+        }
       }
     }
   }
