@@ -47,9 +47,9 @@
       <data-view-data-set-panel
         :title="title"
         :card-path="`/cards/${titleId}`"
+        :self-disclosure-form="true"
       />
     </template>
-    <slot name="self_disclosure_form" />
   </data-view>
 </template>
 

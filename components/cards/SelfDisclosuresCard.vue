@@ -14,13 +14,6 @@
             </li>
           </ul>
         </template>
-        <template #self_disclosure_form>
-          <div class="self_disclosure_form">
-            <app-link to="https://forms.gle/JHB4HJ2c4NnPcmy69">
-              情報提供フォーム
-            </app-link>
-          </div>
-        </template>
       </self-disclosures>
       <slot name="breadCrumb" />
     </client-only>
