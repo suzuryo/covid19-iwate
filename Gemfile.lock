@@ -40,6 +40,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     regexp_parser (2.1.1)
+    rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -73,6 +74,7 @@ DEPENDENCIES
   capybara
   nokogiri
   parallel_tests
+  rexml
   rspec
   selenium-webdriver
   typhoeus
