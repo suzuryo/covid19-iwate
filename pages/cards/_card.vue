@@ -55,7 +55,7 @@ export default {
     switch (this.$route.params.card) {
       case 'weekly-map':
         cardComponent = 'weekly-map-card'
-        cardTitle = this.$t('直近1週間の陽性例マップ')
+        cardTitle = this.$t('WeeklyMapCard.title')
         break
       case 'whats-new':
         cardComponent = 'whats-new-card'

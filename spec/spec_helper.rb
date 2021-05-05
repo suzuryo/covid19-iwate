@@ -7,6 +7,7 @@ require 'json'
 require 'nokogiri'
 require 'open-uri'
 require 'selenium-webdriver'
+require 'time'
 
 include ActiveSupport::NumberHelper
 
@@ -23,6 +24,21 @@ Capybara.register_driver :emulated_chrome_ios do |app|
 end
 
 Capybara.default_driver = :emulated_chrome_ios
+
+### Firefox
+# Capybara.register_driver :firefox do |app|
+#   browser_options = ::Selenium::WebDriver::Firefox::Options.new()
+#   # browser_options.args << '--headless'
+#
+#   Capybara::Selenium::Driver.new(
+#     app,
+#     browser: :firefox,
+#     options: browser_options
+#   )
+# end
+#
+# Capybara.default_driver = :firefox
+
 Capybara.app_host = 'http://localhost:3000'
 
 RSpec.configure do |config|

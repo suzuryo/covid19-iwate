@@ -392,13 +392,9 @@
   "二戸保健所管内": "Ninohe Area",
   "岩手県全域": "All areas of Iwate",
   "居住地が県外で県内滞在も含む": "Those whose residence is outside of Iwate but stay within Iwate is included",
-  "直近1週間の陽性例マップ": "Positive case map for the last week",
   "{area}を含む": "{area} local health center case included",
   "{city} (管轄保健所管内含む) {last7days} 例": "{city} {last7days} case (Including the area under the jurisdiction of local health center)",
   "例": "cases",
-  "直近1週間の新規陽性者数を、居住地の市町村ごとに分類し、色を加えたもの": "Number of new positives in the last week, categorized by city, town, or village of residence, with color added.",
-  "直近1週間の新規陽性者数が多い地域は色が濃く、少ない地域は色が薄い": "Areas with a high number of new positives in the last week are darker in color, and areas with a low number of positives are lighter in color.",
-  "居住地が市町村名ではなく「〇〇保健所管内」と発表された場合は、その管内の市町村すべてに+1する": "If it is announced as being within the jurisdiction of the local health department, +1 for all municipalities covered by the department.",
   "フェーズ": "Phase ",
   "宿泊療養部屋数": "Recovering rooms at designated hotels",
   "病床等計": "Number of beds for patients",
@@ -429,6 +425,14 @@
     "b": [
       "The medical care delivery system, etc. in Iwate Prefecture has been developed based on the \"new epidemic scenario\" of the Ministry of Health, Labor and Welfare.",
       "In the case of Iwate Prefecture, If the number of positive cases continues to be 4.4 persons/day (31 persons/week) (effective reproduction number R1.7) for 3 days, request for cooperation from society (request to refrain from going out, request to refrain from business, request to close schools, etc.)."
+    ]
+  },
+  "WeeklyMapCard": {
+    "title": "Positive case map for the last week",
+    "notes": [
+      "Number of new positives in the last week, categorized by city, town, or village of residence, with color added.",
+      "Areas with a high number of new positives in the last week are darker in color, and areas with a low number of positives are lighter in color.",
+      "If it is announced as being within the jurisdiction of the local health department, +1 for all municipalities covered by the department."
     ]
   },
   "岩手のCOVID-19が気になる有志": "Volunteers who are interested in COVID-19 in Iwate",

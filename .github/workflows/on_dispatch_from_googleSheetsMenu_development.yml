@@ -11,11 +11,6 @@ jobs:
       - name: Setup Timezone
         run: |
           sudo timedatectl set-timezone Asia/Tokyo
-      - name: install Cybertrust Japan Public CA G3 intermediate cert
-        run: |
-          sudo curl -o /usr/local/share/ca-certificates/Cybertrust_Japan_Public_CA_G3.crt https://www.cybertrust.co.jp/sureserver/download-ca/PUBCAG3_sha2.txt
-          openssl x509 -noout -fingerprint -sha256 -inform pem -in /usr/local/share/ca-certificates/Cybertrust_Japan_Public_CA_G3.crt
-          openssl verify /usr/local/share/ca-certificates/Cybertrust_Japan_Public_CA_G3.crt && sudo update-ca-certificates
       - uses: actions/checkout@v2
         with:
           ref: development

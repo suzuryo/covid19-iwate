@@ -78,7 +78,6 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.dataSetPanel.lText = `${this.last7DaysSum}`
     this.renderMap()
   },
   methods: {
@@ -96,16 +95,25 @@ export default Vue.extend({
       this.dataSetPanel.sText = this.$t('居住地が県外で県内滞在も含む')
       event.stopPropagation()
     },
-    updateDataSetPanel(event: any) {
+    updateDataSetPanel(gElement: any) {
       // 市町村がクリックされたらその地域の情報を表示
       // DataViewDataSetPanelに渡す
-      const t = d3.select(event.currentTarget)
-      const name = this.$t(t.attr('data-name'))
-      const count = t.attr('data-count')
-      const area = this.$t(t.attr('data-area'))
-      this.dataSetPanel.lTextBefore = name
-      this.dataSetPanel.lText = count
+      const name = this.$t(gElement.getAttribute('data-name'))
+      const count = gElement.getAttribute('data-count')
+      const area = this.$t(gElement.getAttribute('data-area'))
+      this.dataSetPanel.lTextBefore = this.$t(`${name}`)
+      this.dataSetPanel.lText = `${count}`
       this.dataSetPanel.sText = this.$t('{area}を含む', { area })
+    },
+    highlightPath(event: any) {
+      const pathElement = event.currentTarget
+      const gElement = pathElement.parentNode
+      const svgElement = gElement.parentNode
+      // d3.select(pathElement).attr('stroke', '#999').attr('stroke-width', '2px')
+      pathElement.setAttribute('stroke', '#999')
+      pathElement.setAttribute('stroke-width', '2px')
+      svgElement.insertBefore(gElement, null)
+      this.updateDataSetPanel(gElement)
       event.stopPropagation()
     },
     renderMap() {
@@ -161,13 +169,6 @@ export default Vue.extend({
           .data(data)
           .enter()
           .append('g')
-          .attr('stroke', '#aaa')
-          .attr('stroke-width', '1px')
-          .attr('fill', (d: any) => {
-            // 直近1週間の陽性数に応じて色を変える
-            const last7days = this.last7days(d.properties.N03_004)
-            return `${iwateMapColor(last7days)}`
-          })
           .attr('data-count', (d: any) => {
             // 直近1週間の陽性数
             return this.last7days(d.properties.N03_004)
@@ -184,30 +185,26 @@ export default Vue.extend({
             // 管轄保健所
             return `${this.lastArea(d.properties.N03_004)}`
           })
+          .append('path')
+          .attr('stroke', '#aaa')
+          .attr('stroke-width', '1px')
+          .attr('fill', (d: any) => {
+            // 直近1週間の陽性数に応じて色を変える
+            const last7days = this.last7days(d.properties.N03_004)
+            return `${iwateMapColor(last7days)}`
+          })
           .on('mouseenter', (event, _d) => {
-            this.updateDataSetPanel(event)
+            this.highlightPath(event)
           })
           .on('click', (event, _d) => {
-            // 市町村がクリックされたらその地域の情報を表示
-            // DataViewDataSetPanelに渡す
-            this.updateDataSetPanel(event)
+            this.highlightPath(event)
           })
-          .append('path')
+          .on('mouseout', (event, _d) => {
+            d3.select(event.currentTarget)
+              .attr('stroke', '#aaa')
+              .attr('stroke-width', '1px')
+          })
           .attr('d', path as any)
-          .on('mouseenter', function () {
-            d3.select(this)
-              .attr('stroke', '#999')
-              .attr('stroke-width', '2px')
-              .each(function () {
-                const gElement = this.parentNode as Node & globalThis.ParentNode
-                const svgElement = gElement.parentNode as Node &
-                  globalThis.ParentNode
-                svgElement.appendChild(gElement)
-              })
-          })
-          .on('mouseout', function () {
-            d3.select(this).attr('stroke', '#aaa').attr('stroke-width', '1px')
-          })
           .append('svg:title')
           .text((d: any) => {
             const last7days = this.last7days(d.properties.N03_004)
@@ -251,12 +248,10 @@ export default Vue.extend({
         &-title {
           margin-bottom: 6px;
         }
-        //width: 100%;
         &-DataInfo {
           text-align: right;
           &-date {
             height: 3em;
-            //background-color: #f00;
           }
         }
       }
