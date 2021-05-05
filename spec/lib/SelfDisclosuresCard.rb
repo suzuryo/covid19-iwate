@@ -2,25 +2,34 @@
 
 require 'spec_helper'
 
-def has_self_disclosures_card
+def has_self_disclosures_card(lang:, lang_json:)
   # h3
-  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['SelfDisclosuresCard']['title'].to_s
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq lang_json['SelfDisclosuresCard']['title'].to_s
   d = find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/self-disclosures'
+  lang_prefix = lang == :ja ? '' : "/#{lang}"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/self-disclosures"
 
   # テーブルの中身
   SELF_DISCLOSURES_ITEMS.each_with_index do |d, index|
     break if index > 9
+    text = d['text'][lang.to_s] || d['text']['ja']
+    url = d['url'][lang.to_s] || d['url']['ja']
+
     # テーブルの上から10行目までをチェックする(icon + text)
-    if d['url']['ja'].blank?
+    if url.blank?
       expect(page).not_to have_selector("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(1) > a")
-      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(1)").text).to eq (d['text']['ja']).to_s
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(1)").text).to eq text.to_s
     else
-      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(1) > a").text).to eq "#{d['icon']} #{d['text']['ja']}"
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(1) > a").text).to eq "#{d['icon']} #{text}".rstrip
     end
 
     # テーブルの上からi行目をチェックする(日付)
-    expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
+    if lang == :ja
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
+    end
+    if lang == :en
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%b %-d').to_s
+    end
   end
 
   # 情報提供フォームはDataSetPanelの中
@@ -32,10 +41,10 @@ def has_self_disclosures_card
 
   # 項目中
   d = SELF_DISCLOSURES_ITEMS.size
-  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq JA_JSON['DataView_Footer'][1].to_s.gsub('{itemsLength}', d.to_s).gsub('{pageStart}', '1').gsub('{pageStop}', d < 10 ? d.to_s : '10').rstrip
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__pagination').text).to eq lang_json['DataView_Footer'][1].to_s.gsub('{itemsLength}', d.to_s).gsub('{pageStart}', '1').gsub('{pageStop}', d < 10 ? d.to_s : '10').rstrip
 
   # １ページあたり10件
-  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__select').text).to eq "#{JA_JSON['DataView_Footer'][0]}\n10"
+  expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__select').text).to eq "#{lang_json['DataView_Footer'][0]}\n10"
 
   # 次のページ
   find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
