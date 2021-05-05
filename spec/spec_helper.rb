@@ -7,6 +7,7 @@ require 'json'
 require 'nokogiri'
 require 'open-uri'
 require 'selenium-webdriver'
+require 'time'
 
 include ActiveSupport::NumberHelper
 
