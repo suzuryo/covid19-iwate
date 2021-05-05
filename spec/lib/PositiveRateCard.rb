@@ -2,19 +2,25 @@
 
 require 'spec_helper'
 
-def has_positive_rate_card
+def has_positive_rate_card(lang:, lang_json:)
   # h3
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '検査の陽性率'
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq 'PCR検査の7日間移動平均'
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq lang_json['PositiveRateCard']['titles'][0]
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq lang_json['PositiveRateCard']['titles'][1]
+  lang_prefix = lang == :ja ? '' : "/#{lang}"
   d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/positive-rate'
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate"
   d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/positive-rate'
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate"
 
   # 日付
-  d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > small').text).to match "^#{d} の数値"
-  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > small').text).to match "^#{d} の数値"
+  if lang == :ja
+    d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
+  end
+  if lang == :en
+    d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%b %-d')
+  end
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > small').text).to match lang_json['{date} の数値'].gsub('{date}', d)
+  expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > small').text).to match lang_json['{date} の数値'].gsub('{date}', d)
 
   # 検査の陽性率
   d = number_to_delimited(page.evaluate_script("#{POSITIVE_RATE_JSON['data'].last['positive_rate']}.toFixed(1)"))
@@ -37,7 +43,7 @@ def has_positive_rate_card
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
-  expect(find('#PositiveRateCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
+  expect(find('#PositiveRateCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq lang_json['Common']['データを表示']
 
   # データを表示ボタンをクリックすると開く
   expect(page).not_to have_selector('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel--active')
@@ -45,7 +51,12 @@ def has_positive_rate_card
   expect(page).to have_selector('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # テーブルの上から4行目をチェックする(日付)
-  d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime('%-m月%-d日')
+  if lang == :ja
+    d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime('%-m月%-d日')
+  end
+  if lang == :en
+    d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime('%b %-d')
+  end
   expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th').text).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(PCR検査陽性者数)
@@ -78,7 +89,7 @@ def has_positive_rate_card
   expect(page).not_to have_selector('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel--active')
 
   # 注釈を表示ボタンの文言
-  expect(find('#PositiveRateCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq '注釈'
+  expect(find('#PositiveRateCard .NotesExpansionPanel button.v-expansion-panel-header').text).to eq lang_json['Common']['注']
 
   # 注釈を表示ボタンをクリックすると開く
   expect(page).not_to have_selector('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content')
@@ -87,15 +98,15 @@ def has_positive_rate_card
   expect(page).to have_selector('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content')
 
   # 注釈の中身をチェック
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(1)').text).to eq JA_JSON['PositiveRateCard']['b'][0]
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(2)').text).to eq JA_JSON['Common']['7MA']
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(3)').text).to eq JA_JSON['Common']['検査結果の判明日を基準とする']
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(4)').text).to eq JA_JSON['PositiveRateCard']['b'][1]
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(5)').text).to eq JA_JSON['PositiveRateCard']['b'][2]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(1)').text).to eq lang_json['PositiveRateCard']['b'][0]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(2)').text).to eq lang_json['Common']['7MA']
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(3)').text).to eq lang_json['Common']['検査結果の判明日を基準とする']
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(4)').text).to eq lang_json['PositiveRateCard']['b'][1]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenario] ul > li:nth-child(5)').text).to eq lang_json['PositiveRateCard']['b'][2]
 
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(1) > strong').text).to eq JA_JSON['PositiveRateCard']['c'][0]
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(2)').text).to eq JA_JSON['PositiveRateCard']['c'][1]
-  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] a').text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(1) > strong').text).to eq lang_json['PositiveRateCard']['c'][0]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(2)').text).to eq lang_json['PositiveRateCard']['c'][1]
+  expect(find('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] a').text).to eq lang_json['ExtLink']['岩手県17_2']['text']
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#PositiveRateCard .NotesExpansionPanel .v-expansion-panel-content')

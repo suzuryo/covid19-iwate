@@ -22,7 +22,7 @@ describe 'iPhone 6/7/8', type: :feature do
           # JS解釈したog:title
           expect(find('head meta[property="og:title"]', visible: false)[:content]).to eq "#{LOCALES[lang][:json]['Common']['岩手県']} #{LOCALES[lang][:json]['Common']['新型コロナウイルス感染症']}#{LOCALES[lang][:json]['Common']['対策サイト']}"
           # JS解釈しないog:title
-          expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}#{data[:path]}cards/whats-new").open).css('head meta[property="og:title"]').first['content']).to eq "#{LOCALES[lang][:json]['Common']['岩手県']} #{LOCALES[lang][:json]['Common']['新型コロナウイルス感染症']}#{LOCALES[lang][:json]['Common']['対策サイト']}"
+          expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}#{data[:path]}cards/weekly-map").open).css('head meta[property="og:title"]').first['content']).to eq "#{LOCALES[lang][:json]['Common']['岩手県']} #{LOCALES[lang][:json]['Common']['新型コロナウイルス感染症']}#{LOCALES[lang][:json]['Common']['対策サイト']}"
         end
       end
 
