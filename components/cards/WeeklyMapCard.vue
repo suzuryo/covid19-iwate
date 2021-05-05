@@ -2,7 +2,7 @@
   <v-col id="WeeklyMapCard" cols="12" :md="md" class="DataCard">
     <client-only>
       <weekly-map
-        :title="$t('直近1週間の陽性例マップ')"
+        :title="$t('WeeklyMapCard.title')"
         :title-id="'weekly-map'"
         :date="date"
         :map-data="mapData"
@@ -11,26 +11,8 @@
       >
         <template #notes>
           <ul>
-            <li>
-              {{
-                $t(
-                  '直近1週間の新規陽性者数を、居住地の市町村ごとに分類し、色を加えたもの'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '直近1週間の新規陽性者数が多い地域は色が濃く、少ない地域は色が薄い'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '居住地が市町村名ではなく「〇〇保健所管内」と発表された場合は、その管内の市町村すべてに+1する'
-                )
-              }}
+            <li v-for="note in $t('WeeklyMapCard.notes')" :key="note">
+              {{ note }}
             </li>
           </ul>
         </template>
