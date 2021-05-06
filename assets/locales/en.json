@@ -260,16 +260,6 @@
   "感染したかもしれないと不安に思う方、感染予防法を知りたい方などは、下記、新型コロナウイルス感染症相談窓口にご相談ください。": "If you are worried that you may be infected, or would like to learn about preventative measures, call the Tokyo COVID-19 Call Center.",
   "新型コロナウイルス感染症相談窓口": "Number of calls in The COVID-19 Consultation Hotline",
   "9時～21時（土日祝含む）": "9:00 am - 10:00 pm (including weekends and holidays)",
-  "TelephoneAdvisoryReportsNumberCard": {
-    "title": "Number of hotline consultations by people with questions or concerns",
-    "notes": [
-      "This graph has not been updated since February 4, 2021, because Iwate Prefecture has stopped publishing this data.",
-      "\"General consultation from people who have questions or concerns about the new coronavirus infection\" is counted.",
-      "Total number of cases received at call centers, health centers, etc.",
-      "Data since the establishment of the consultation service (Jan 21, 2020)",
-      "Due to an omission in Iwate Prefecture's announcement, there are days for which no data exist."
-    ]
-  },
   "MonitoringConsultationDeskReportsNumberCard": {
     "title": "Number of hotline consultations by people with symptoms",
     "notes": [

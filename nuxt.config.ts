@@ -210,7 +210,6 @@ const config: NuxtConfig = {
         '/cards/number-of-confirmed-cases-by-municipalities',
         '/cards/number-of-tested',
         '/cards/monitoring-number-of-reports-to-covid19-consultation-desk',
-        '/cards/number-of-reports-to-covid19-telephone-advisory-center',
       ]
       const localizedPages = locales
         .map((locale) => pages.map((page) => `/${locale}${page}`))
@@ -321,12 +320,6 @@ const config: NuxtConfig = {
         {
           url:
             '/cards/monitoring-number-of-reports-to-covid19-consultation-desk/',
-          changefreq: 'weekly',
-          priority: 0.3,
-          lastmod: now,
-        },
-        {
-          url: '/cards/number-of-reports-to-covid19-telephone-advisory-center/',
           changefreq: 'weekly',
           priority: 0.3,
           lastmod: now,
