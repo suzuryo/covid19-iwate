@@ -1,7 +1,7 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
     <div id="weekly_map_canvas" ref="weekly_map_canvas">
-      <svg id="weekly_map" />
+      <svg id="weekly_map" :class="isOGP ? `isOGP` : ``" />
     </div>
     <template #notes>
       <notes-expansion-panel
@@ -73,8 +73,14 @@ export default Vue.extend({
       lText: this.info.lText,
       sText: this.info.sText,
     }
+
+    let isOGP = false
+    if (this.$route.query.ogp === 'true') {
+      isOGP = true
+    }
     return {
       dataSetPanel,
+      isOGP,
     }
   },
   mounted() {
@@ -228,7 +234,7 @@ export default Vue.extend({
   width: 100%;
   padding-bottom: 100%;
   vertical-align: top;
-  overflow: hidden;
+  overflow: visible;
 }
 #weekly_map {
   display: inline-block;
@@ -237,6 +243,14 @@ export default Vue.extend({
   left: 0;
   g {
     cursor: pointer;
+  }
+  &.isOGP {
+    top: -70px;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
