@@ -13,9 +13,6 @@ const WhatsNewCard = () => import('@/components/cards/WhatsNewCard.vue')
 // 自主公表
 const SelfDisclosuresCard = () =>
   import('@/components/cards/SelfDisclosuresCard.vue')
-// 受診・相談センター 受付件数
-const MonitoringConsultationDeskReportsNumberCard = () =>
-  import('@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue')
 
 export default Vue.extend({
   components: {
@@ -25,7 +22,6 @@ export default Vue.extend({
     return {
       rows: [
         [WhatsNewCard, SelfDisclosuresCard],
-        [MonitoringConsultationDeskReportsNumberCard],
       ],
     }
   },

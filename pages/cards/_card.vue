@@ -15,7 +15,6 @@ import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCar
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
-import MonitoringConsultationDeskReportsNumberCard from '@/components/cards/MonitoringConsultationDeskReportsNumberCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
@@ -37,7 +36,6 @@ export default {
     SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
     // SevereCaseCard,
-    MonitoringConsultationDeskReportsNumberCard,
     PositiveRateCard,
     UntrackedRateCard,
     ConfirmedCasesDetailsCard,
@@ -105,10 +103,6 @@ export default {
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
         cardTitle = this.$t('HospitalizedNumberCard.title')
-        break
-      case 'monitoring-number-of-reports-to-covid19-consultation-desk':
-        cardComponent = 'monitoring-consultation-desk-reports-number-card'
-        cardTitle = this.$t('MonitoringConsultationDeskReportsNumberCard.title')
         break
     }
 
