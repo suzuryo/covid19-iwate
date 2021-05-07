@@ -99,7 +99,7 @@
         </i18n>
         <br />
         <small class="SideNavigation-Copyright">
-          &copy; 2020 Meditation Duck
+          &copy; {{ copyrightYear }} Meditation Duck
         </small>
       </footer>
     </div>
@@ -150,6 +150,9 @@ export default Vue.extend({
     }
   },
   computed: {
+    copyrightYear(): number {
+      return new Date().getFullYear()
+    },
     items(): Item[] {
       return [
         {
@@ -197,10 +200,10 @@ export default Vue.extend({
     },
   },
   watch: {
-    $route: 'handleChageRoute',
+    $route: 'handleChangeRoute',
   },
   methods: {
-    handleChageRoute() {
+    handleChangeRoute() {
       // nuxt-link で遷移するとフォーカスが残り続けるので $route を監視して SideNavigation にフォーカスする
       return this.$nextTick().then(() => {
         const $Side = this.$refs.Side as HTMLEmbedElement | undefined

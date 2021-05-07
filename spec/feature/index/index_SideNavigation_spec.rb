@@ -58,6 +58,9 @@ describe 'iPhone 6/7/8', type: :feature do
         # MenuList GitHub
         expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(3)')[:href]).to eq 'https://github.com/MeditationDuck/covid19'
         expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(3) > picture > img')[:src]).to match %r{/github.png$}
+
+        # MenuList Copyright ©
+        expect(find('footer.SideNavigation-Footer > small.SideNavigation-Copyright + br + small.SideNavigation-Copyright').text).to eq "© #{Time.now.year} Meditation Duck"
       end
 
       describe 'ナビゲーション遷移後の画面のタイトル' do
