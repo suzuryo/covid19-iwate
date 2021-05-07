@@ -19,8 +19,6 @@ PATHS = {
     "/cards/attributes-of-confirmed-cases": (959, 480),
     "/cards/number-of-confirmed-cases-by-municipalities": (959, 480),
     "/cards/number-of-tested": (959, 520),
-    "/cards/monitoring-number-of-reports-to-covid19-consultation-desk": (959, 500),
-    "/cards/number-of-reports-to-covid19-telephone-advisory-center": (959, 500),
 }
 
 options = webdriver.ChromeOptions()
