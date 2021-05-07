@@ -168,8 +168,7 @@ export default Vue.extend({
         {
           iconPath: mdiNeedle,
           title: this.$t('SideNavigation.a[10]'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1037252.html',
+          link: this.localePath('/vaccine'),
         },
         {
           iconPath: mdiAccountMultiple,
