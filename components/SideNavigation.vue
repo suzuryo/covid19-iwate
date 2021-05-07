@@ -99,7 +99,7 @@
         </i18n>
         <br />
         <small class="SideNavigation-Copyright">
-          &copy; 2020 Meditation Duck
+          &copy; {{ copyrightYear }} Meditation Duck
         </small>
       </footer>
     </div>
@@ -150,6 +150,9 @@ export default Vue.extend({
     }
   },
   computed: {
+    copyrightYear(): number {
+      return new Date().getFullYear()
+    },
     items(): Item[] {
       return [
         {
