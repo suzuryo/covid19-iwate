@@ -27,8 +27,8 @@ def has_positive_rate_card(lang:, lang_json:)
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # 検査の陽性率(実際に計算する)
-  a = (DAILY_POSITIVE_DETAIL_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['count'].to_i } / 7.0)
-  b = (POSITIVE_RATE_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + (
+  a = DAILY_POSITIVE_DETAIL_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['count'].to_i }
+  b = POSITIVE_RATE_JSON['data'][-7..].reduce(0) { |sum, n| sum + n['pcr_positive_count'].to_i + (
     if Date.parse(n['diagnosed_date']) == Date.new(2021, 2, 14)
       # 2021/2/15 に発表された 2021/2/14 のデータについて
       # https://github.com/MeditationDuck/covid19/issues/1314
@@ -46,8 +46,8 @@ def has_positive_rate_card(lang:, lang_json:)
     else
       n['pcr_negative_count'].to_i
     end
-  ) + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i } / 7.0)
-  d = number_to_delimited(page.evaluate_script("#{(a / b * 100).round(2)}.toFixed(1)"))
+  ) + n['antigen_positive_count'].to_i + n['antigen_negative_count'].to_i }
+  d = number_to_delimited(page.evaluate_script("#{(a.to_f / b.to_f * 100.0).round(2)}.toFixed(1)"))
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # PCR検査の7日間移動平均(実際に計算する)
