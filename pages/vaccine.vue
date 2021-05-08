@@ -23,30 +23,20 @@
     </static-card>
     <static-card>
       <h3>
-        <app-link
-          to="https://www.cov19-vaccine.mhlw.go.jp/qa/"
-          :icon-size="24"
+        <app-link to="https://www.cov19-vaccine.mhlw.go.jp/qa/" :icon-size="24"
           >{{ $t('新型コロナワクチンQandA') }}
         </app-link>
       </h3>
       <p>
         {{
-          $t(
-            '新型コロナウイルスワクチンに関する、厚生労働省のWebサイトです。'
-          )
+          $t('新型コロナウイルスワクチンに関する、厚生労働省のWebサイトです。')
         }}
       </p>
     </static-card>
     <static-card>
       <h3>
-        <app-link
-          to="https://v-sys.mhlw.go.jp/"
-          :icon-size="24"
-          >{{
-            $t(
-              'コロナワクチンナビ'
-            )
-          }}
+        <app-link to="https://v-sys.mhlw.go.jp/" :icon-size="24"
+          >{{ $t('コロナワクチンナビ') }}
         </app-link>
       </h3>
       <p>
