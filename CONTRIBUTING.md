@@ -16,8 +16,8 @@
 * good first issue / help wanted / bug を優先して対応いただけると助かります
 
 ## コミュニケーションへの参加方法
-* Code for Japan の Slack アカウントを持っていない場合、[こちらから登録](https://cfjslackin.herokuapp.com/)してください
-* `#covid19` チャンネルにご参加ください。
+* Slackチャンネルがあります https://iwatedevelopersmeetup.slack.com/
+* `#covid19-iwate` チャンネルにご参加ください。
 
 ## 参加にあたって
 * 開発に参加する前に、[Principle/行動規範](./CODE_OF_CONDUCT.md) をご一読ください。
@@ -32,13 +32,7 @@
 ## 参考情報
 * [東京都 新型コロナウイルス対策サイトへの貢献方法を解説(Qiita)](https://qiita.com/FPC_COMMUNITY/items/b9cc072813dc2231b2b2)
 
-## CONTRIBUTORS.md への追加について
-ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/tokyo-metropolitan-gov/covid19/blob/development/CONTRIBUTORS.md) というファイルがあります。
-何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。
-[#654](https://github.com/tokyo-metropolitan-gov/covid19/issues/654) の Issue に、掲載名、リンク先（あれば）、役割をコメントください。
-
 ## 開発に関する情報
-* 開発サイト https://dev-covid19-iwate.netlify.app/
 * ステージングサイト https://staging-covid19-iwate.netlify.com/
 * 本番サイト https://iwate.stopcovid19.jp/
 * [デザイン](https://www.figma.com/file/V7vt80p2gauhdgTZeVNbgj/UI%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3?node-id=121%3A156)

@@ -1,5 +1,11 @@
 # 開発者向け情報
 
+## 0. Forked from
+
+This repo is begin developed based on [Tokyo repo](https://github.com/tokyo-metropolitan-gov/covid19).
+
+We have tried not to deviate too far from the Tokyo version, but we have adding [unique Iwate features]((https://github.com/MeditationDuck/covid19/issues?q=label%3A%E5%B2%A9%E6%89%8B%E7%8B%AC%E8%87%AA%E6%A9%9F%E8%83%BD+)).
+
 ## 1. 環境構築
 
 以下のアプリケーションを開発をおこなう環境へインストールします。
@@ -145,7 +151,7 @@ Pull Request を送る際のブランチは、以下のネーミングルール�
 
 | 目的 | ブランチ | 確認URL | Pull requestsを出せる人 | 備考 |
 | ---- | ---- | ---- | ---- | ---- |
-| 開発 | development | https://dev-covid19-iwate.netlify.app/ | 全開発者 | base branch。基本は、この`development`ブランチに Pull Requestを送ってください。 |
+| 開発 | development |  | 全開発者 | base branch。基本は、この`development`ブランチに Pull Requestを送ってください。 |
 | ステージング | staging | https://staging-covid19-iwate.netlify.app/ | 管理者のみ | 本番前の最終確認用。管理者以外の Pull Request は禁止です。 |
 | 本番 | master | https://iwate.stopcovid19.jp/ | 管理者のみ | 管理者以外の Pull Request は禁止です。 |
 
@@ -155,4 +161,3 @@ Pull Request を送る際のブランチは、以下のネーミングルール�
 | ---- | -------- | ---- | ---- |
 | 本番サイトHTML | production | https://iwate.stopcovid19.jp/ | 静的ビルドされたHTMLが置いてある場所 |
 | ステージングサイト HTML | gh-pages | https://staging-covid19-iwate.netlify.app/ | 静的ビルドされたHTMLが置いてある場所 |
-| OGP作業用 | deploy/new_ogp | なし | OGPの更新用 |

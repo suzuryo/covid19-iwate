@@ -1,5 +1,11 @@
 # For Developers
 
+## 0. Fork元
+
+[東京版](https://github.com/tokyo-metropolitan-gov/covid19) を元に開発しています。
+
+東京版から大きく外れないようにしつつ、[岩手独自の機能](https://github.com/MeditationDuck/covid19/issues?q=label%3A%E5%B2%A9%E6%89%8B%E7%8B%AC%E8%87%AA%E6%A9%9F%E8%83%BD+)を追加しています。
+
 ## 1. How to Set Up Environments
 
 Install the following application to the environment for development.
@@ -146,7 +152,7 @@ Please use the following naming rules for the branch when sending a Pull Request
 
 | Purpose | Branch | Confirmation URL | People who can make pull requests | Remarks |
 | ---- | ---- | ---- | ---- | ---- |
-| Development | development | https://dev-covid19-iwate.netlify.app/ | All developers | base branch. Basically send a Pull Request here |
+| Development | development |  | All developers | base branch. Basically send a Pull Request here |
 | Staging | staging | https://staging-covid19-iwate.netlify.app/ | Only administrators | For final confirmation before production. Non-admin pull requests are prohibited. |
 | Production | master | https://iwate.stopcovid19.jp/ | Only administrators | Pull Requests other than Administrators are prohibited |
 
@@ -156,10 +162,3 @@ Please use the following naming rules for the branch when sending a Pull Request
 | ---- | -------- | ---- | ---- |
 | Production site HTML | production | https://iwate.stopcovid19.jp/ | Location where statically built HTML is located |
 | Staging site HTML | gh-pages | https://staging-covid19-iwate.netlify.app/ | Where to find statically built HTML |
-| For OGP working directory | deploy / new_ogp | None | For updating OGP |
-
----
-
-### 6. Data
-
-* `data/data.json`: the last updated date of the page header is taken from the `lastUpdate` value in this file. The time zone of the `lastUpdate` value in this file is Japan Standard Time (JST; UTC+9). This file is periodically updated and its data is managed by the Tokyo Metropolitan Government. See [this issue comment](https://github.com/tokyo-metropolitan-gov/covid19/issues/1207#issuecomment-664172525) for more details.

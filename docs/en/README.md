@@ -1,12 +1,10 @@
-# Tokyo COVID-19 Task Force website
+# Iwate Stop COVID-19 JP (Unofficial)
 
-![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7374821d-e39b-4e39-97d5-76ed68318b9c/deploy-status)](https://app.netlify.com/sites/covid19-iwate/deploys)
 
-[![Tokyo COVID-19 Task Force website](https://user-images.githubusercontent.com/1301149/75629392-1d19d900-5c25-11ea-843d-2d4376e3a560.png)](https://iwate.stopcovid19.jp/)
+[![岩手県 新型コロナウイルス感染症対策サイト](https://raw.githubusercontent.com/MeditationDuck/covid19/development/static/ogp.png)](https://iwate.stopcovid19.jp/)
 
-
-### [日本語](./../../README.md) | English | [Español](./../es/README.md) | [한국어](./../ko/README.md) | [繁體中文](./../zh_TW/README.md) | [简体中文](./../zh_CN/README.md) | [Tiếng Việt](./../vi/README.md) | [ภาษาไทย](./../th/README.md) | [Français](./../fr/README.md) | [Português](./../pt_BR/README.md)
-
+### [日本語](./../../README.md) | English
 
 ## How to Contribute
 
