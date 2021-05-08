@@ -23,7 +23,7 @@
     <lazy-static-info
       v-for="(item, i) in alertItems"
       :key="i"
-      class="mb-4"
+      class="mb-4 alertItem"
       :url="item.url"
       :text="item.text"
     />
@@ -32,7 +32,6 @@
 
 <script lang="ts">
 import { mdiChartTimelineVariant } from '@mdi/js'
-import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import PageHeader from '@/components/PageHeader.vue'
@@ -47,21 +46,18 @@ export default Vue.extend({
   data() {
     const { lastUpdate } = Data
 
-    // 日付の新しいものが上
-    const alertItems = Alert.alertItems
-      .sort((a, b) => {
-        return dayjs(a.date).isBefore(dayjs(b.date)) ? 1 : -1
-      })
-      .map((d: any) => {
-        const _locale: string = this.$i18n.locale
-        const _text: string = d.text[_locale] ?? d.text.ja
-        const _url: string = d.url[_locale] ?? d.url.ja
+    // 日付でソートしない
+    // Google Sheets の行の順番で上から並ぶ
+    const alertItems = Alert.alertItems.map((d: any) => {
+      const _locale: string = this.$i18n.locale
+      const _text: string = d.text[_locale] ?? d.text.ja
+      const _url: string = d.url[_locale] ?? d.url.ja
 
-        return {
-          text: _text,
-          url: _url,
-        }
-      })
+      return {
+        text: _text,
+        url: _url,
+      }
+    })
 
     return {
       headerItem: {

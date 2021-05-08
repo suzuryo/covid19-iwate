@@ -20,9 +20,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [
-        [WhatsNewCard, SelfDisclosuresCard],
-      ],
+      rows: [[WhatsNewCard, SelfDisclosuresCard]],
     }
   },
 })
