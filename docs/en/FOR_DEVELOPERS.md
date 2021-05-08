@@ -1,10 +1,10 @@
 # For Developers
 
-## 0. Fork元
+## 0. Forked from
 
-[東京版](https://github.com/tokyo-metropolitan-gov/covid19) を元に開発しています。
+This repo is begin developed based on [Tokyo repo](https://github.com/tokyo-metropolitan-gov/covid19).
 
-東京版から大きく外れないようにしつつ、[岩手独自の機能](https://github.com/MeditationDuck/covid19/issues?q=label%3A%E5%B2%A9%E6%89%8B%E7%8B%AC%E8%87%AA%E6%A9%9F%E8%83%BD+)を追加しています。
+We have tried not to deviate too far from the Tokyo version, but we have adding [unique Iwate features]((https://github.com/MeditationDuck/covid19/issues?q=label%3A%E5%B2%A9%E6%89%8B%E7%8B%AC%E8%87%AA%E6%A9%9F%E8%83%BD+)).
 
 ## 1. How to Set Up Environments
 
