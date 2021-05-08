@@ -15,16 +15,6 @@ def has_site_top_upper(lang:, data:)
   # 電話相談をどうぞ
   expect(find('.MainPage > a:nth-child(2).StaticInfo.Link').text).to eq "#{lang_json['SiteTopUpper']['電話相談をどうぞ']}\n#{lang_json['SiteTopUpper']['相談の手順を見る']}"
   expect(find('.MainPage > a:nth-child(2).StaticInfo.Link > div.StaticInfo-Button > button').text).to eq lang_json['SiteTopUpper']['相談の手順を見る'].to_s
-  ALERT_ITEMS.each_with_index do |d, index|
-    a = d['text'][lang.to_s] || d['text']['ja']
-    b = d['url'][lang.to_s] || d['url']['ja']
-    # 外部URLの時は .ExternalLink、内部URLの時は .Link
-    c = URI.parse(b).hostname.nil? ? 'Link' : 'ExternalLink'
-    # url が http から始まらない /card/ のような場合はホスト名を補完
-    b = "#{Capybara.app_host}#{b}" if c === 'Link'
-    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}").text).to eq a
-    expect(find(".MainPage > a:nth-child(#{index + 3}).StaticInfo.#{c}")['href']).to eq b
-  end
 
   if lang == :ja
     # time
@@ -38,5 +28,30 @@ def has_site_top_upper(lang:, data:)
     # Annotation
     expect(find('.MainPage > .Header > .Annotation > span').text).to eq lang_json['SiteTopUpper']['注釈'].to_s
     expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq "/#{lang}/flow"
+  end
+
+  # 初期表示の時のALERT_ITEMSの順番
+  check_alert_items(lang)
+
+  # 検査要請者の状況の /cards/details-of-confirmed-cases に移動して
+  find('#ConfirmedCasesDetailsCard > div > div > div.DataView-Header > div > div > h3 > a').click
+
+  # その後に左上のログをクリックして / に戻ったら
+  find('#app > div > div.appContainer > div > div > header > h1 > a').click
+
+  # それでもALERT_ITEMSの順番が保たれている
+  check_alert_items(lang)
+end
+
+def check_alert_items(lang)
+  ALERT_ITEMS.each_with_index do |d, index|
+    a = d['text'][lang.to_s] || d['text']['ja']
+    b = d['url'][lang.to_s] || d['url']['ja']
+    # 外部URLの時は .ExternalLink、内部URLの時は .Link
+    c = URI.parse(b).hostname.nil? ? 'Link' : 'ExternalLink'
+    # url が http から始まらない /card/ のような場合はホスト名を補完
+    b = "#{Capybara.app_host}#{b}" if c === 'Link'
+    expect(find(".MainPage > a.alertItem:nth-child(#{index + 3}).StaticInfo.#{c}").text).to eq a
+    expect(find(".MainPage > a.alertItem:nth-child(#{index + 3}).StaticInfo.#{c}")['href']).to eq b
   end
 end

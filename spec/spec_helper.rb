@@ -98,7 +98,7 @@ SELF_DISCLOSURES_JSON = JSON.parse(File.read(File.join(__dir__, '../data/self_di
 MAIN_SUMMARY_JSON = JSON.parse(File.read(File.join(__dir__, '../data/main_summary.json')))
 
 NEWS_ITEMS = NEWS_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
-ALERT_ITEMS = ALERT_JSON['alertItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
+ALERT_ITEMS = ALERT_JSON['alertItems']
 SELF_DISCLOSURES_ITEMS = SELF_DISCLOSURES_JSON['newsItems'].sort_by.with_index { |v, i| [Date.parse(v['date']), i] }.reverse
 
 LOCALES = {
