@@ -71,7 +71,8 @@ describe 'iPhone 6/7/8', type: :feature do
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15 '
           },
           method: :head,
-          followlocation: true
+          followlocation: true,
+          timeout: 3
         )
         hydra.queue(request)
         request
