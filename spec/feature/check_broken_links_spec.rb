@@ -72,7 +72,7 @@ describe 'iPhone 6/7/8', type: :feature do
           },
           method: :head,
           followlocation: true,
-          timeout: 3
+          timeout: 10
         )
         hydra.queue(request)
         request
