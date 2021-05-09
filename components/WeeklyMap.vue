@@ -251,6 +251,11 @@ export default Vue.extend({
     height: 50%;
     margin-left: auto;
     margin-right: auto;
+    > g {
+      path {
+        stroke-width: 3px;
+      }
+    }
   }
 }
 
