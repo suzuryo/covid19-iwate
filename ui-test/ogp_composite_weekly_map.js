@@ -5,10 +5,10 @@ const sharp = require('sharp')
 // ogp元画像の所定の位置に貼り付けて ogp.png として書き出す
 sharp(path.join(__dirname, '../ogp/weekly-map.png'))
   .extract({
-    left: 657,
-    top: 67,
-    width: 600,
-    height: 925,
+    left: 328,
+    top: 33,
+    width: 300,
+    height: 463,
   })
   .resize(340)
   .png()
@@ -18,10 +18,4 @@ sharp(path.join(__dirname, '../ogp/weekly-map.png'))
       .composite([{ input: data, top: 55, left: 140 }])
       .png({ compressionLevel: 9, palette: true })
       .toFile(path.join(__dirname, '../static/ogp.png'))
-      .then((info) => {
-        console.log(info)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
   })
