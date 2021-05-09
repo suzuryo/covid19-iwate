@@ -60,15 +60,18 @@ jobs:
           TZ: Asia/Tokyo
       - name: install selenium
         run: pip3 install selenium
-      - name: generate ogp
-        run: (python3 -m http.server --directory ./dist 8000 &) ; python3 ./ui-test/ogp_screenshot.py
+      - name: generate ogp with weekly-map
+        run: |
+          python3 -m http.server --directory ./dist 8000 &
+          python3 ./ui-test/ogp_screenshot.py
+          node ./ui-test/ogp_composite_weekly_map.js
       - name: Commit OGP & JSON files to master
         run: |
           cp -rp ogp dist/
           cp -rp ogp static/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git status | grep modified && git add data static && git commit -v -m "[Bot] update data/*.json and static/ogp at $(date +'%Y-%m-%dT%H:%M:%S%z')"
+          git status | grep modified && git add data static && git commit -v -m "[Bot] update data/*.json and static at $(date +'%Y-%m-%dT%H:%M:%S%z')"
       - name: Push changes to master
         uses: ad-m/github-push-action@master
         with:
