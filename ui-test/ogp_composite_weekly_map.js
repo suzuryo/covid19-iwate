@@ -11,10 +11,17 @@ sharp(path.join(__dirname, '../ogp/weekly-map.png'))
     height: 925,
   })
   .resize(340)
+  .png()
   .toBuffer({ resolveWithObject: true })
   .then(({ data, _info }) => {
     sharp(path.join(__dirname, '../static/ogp-original.png'))
       .composite([{ input: data, top: 55, left: 140 }])
       .png({ compressionLevel: 9, palette: true })
       .toFile(path.join(__dirname, '../static/ogp.png'))
+      .then((info) => {
+        console.log(info)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   })
