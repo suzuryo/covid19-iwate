@@ -67,6 +67,7 @@ jobs:
           node ./ui-test/ogp_composite_weekly_map.js
       - name: Commit OGP & JSON files to master
         run: |
+          cp -f static/ogp.png dist/ogp.png
           cp -rp ogp dist/
           cp -rp ogp static/
           git config --local user.email "action@github.com"
