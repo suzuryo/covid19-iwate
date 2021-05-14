@@ -13,32 +13,9 @@
       <h3 ref="upperTrigger" :class="$style.conHeading">
         {{ $t('新型コロナウイルス感染症にかかる相談窓口について') }}
       </h3>
-      <nav ref="nav" :class="$style.anchor">
-        <ul :class="$style.anchorList">
-          <li :class="$style.anchorItem">
-            <a
-              href="#sy"
-              :class="$style.anchorLink"
-              @click.prevent="onClickAnchor"
-            >
-              <span>{{ $t('症状のある方') }}</span>
-              <fig-cond-sy :class="$style.fig" aria-hidden="true" />
-            </a>
-          </li>
-          <li :class="$style.anchorItem">
-            <a
-              href="#anx"
-              :class="$style.anchorLink"
-              @click.prevent="onClickAnchor"
-            >
-              <span>{{ $t('不安に思う方') }}</span>
-              <fig-cond-anx :class="$style.fig" aria-hidden="true" />
-            </a>
-          </li>
-        </ul>
-      </nav>
       <div id="sy" :class="$style.section">
         <h4 :class="$style.sxnHeading">
+          <fig-cond-sy :class="$style.fig" aria-hidden="true" />
           {{ $t('次の症状がある方') }}
         </h4>
         <ul :class="$style.boxes">
@@ -128,6 +105,7 @@
       </div>
       <div id="anx" ref="lowerTrigger" :class="$style.section">
         <h4 :class="$style.sxnHeading">
+          <fig-cond-anx :class="$style.fig" aria-hidden="true" />
           {{ $t('不安に思う方') }}
         </h4>
         <p :class="$style.sxnText">
@@ -188,8 +166,8 @@
 <script lang="ts">
 import { mdiOpenInNew } from '@mdi/js'
 import Vue from 'vue'
+import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
-import VueScrollTo from 'vue-scrollto'
 
 import AppLink from '@/components/AppLink.vue'
 import PageHeader from '@/components/PageHeader.vue'
@@ -199,24 +177,18 @@ import FigCondAnx from '@/static/flow/cond_anx.svg'
 import FigCondSy from '@/static/flow/cond_sy.svg'
 import IconPhone from '@/static/flow/phone.svg'
 
-type LocalData = {
-  nav: HTMLElement | null // アンカーリンクコンテナ（フローティング対象）
-  upperTrigger: HTMLElement | null // フローティング判定上側トリガ（代替余白付与対象）
-  lowerTrigger: HTMLElement | null // フローティング判定下側トリガ
-  buttons: HTMLElement[] | null // アンカーリンクボタン
-  sections: HTMLElement[] | null // アンカーリンクの飛び先
-  navW: number // アンカーリンクコンテナの幅（upperTriggerの幅を使用）
-  navH: number // アンカーリンクコンテナの高さ（navW指定後のnavの高さ）
-  navOffsetTop: number // アンカーリンクコンテナ上端の表示領域上端からのオフセット量
-  upperTriggerOffsetTop: number // upperTrigger要素下端の表示領域上端からのオフセット量
-  lowerTriggerOffsetTop: number // lowerTrigger要素下端の表示領域上端からのオフセット量
-  floatingOffset: number // フローティング時のオフセット量
-  forceFloating: boolean // ボタン押下時の強制フローティングフラグ
-  timerId: number // scrollイベントのdebounce用タイマーID
-  mdiOpenInNew: string
-}
+type Data = {}
+type Methods = {}
+type Computed = {}
+type Props = {}
 
-export default Vue.extend({
+const options: ThisTypedComponentOptionsWithRecordProps<
+  Vue,
+  Data,
+  Methods,
+  Computed,
+  Props
+> = {
   name: 'Flow',
   components: {
     CovidIcon,
@@ -227,35 +199,8 @@ export default Vue.extend({
     FigCondAnx,
     IconPhone,
   },
-  data(): LocalData {
-    const nav = null
-    const upperTrigger = null
-    const lowerTrigger = null
-    const buttons = null
-    const sections = null
-    const navW = 0
-    const navH = 0
-    const navOffsetTop = 0
-    const upperTriggerOffsetTop = 0
-    const lowerTriggerOffsetTop = 0
-    const floatingOffset = 0
-    const forceFloating = false
-    const timerId = 0
-
+  data() {
     return {
-      nav,
-      upperTrigger,
-      lowerTrigger,
-      buttons,
-      sections,
-      navW,
-      navH,
-      navOffsetTop,
-      upperTriggerOffsetTop,
-      lowerTriggerOffsetTop,
-      floatingOffset,
-      forceFloating,
-      timerId,
       mdiOpenInNew,
     }
   },
@@ -265,139 +210,9 @@ export default Vue.extend({
       title,
     }
   },
-  mounted() {
-    const self = this
-    this.nav = this.$refs.nav as HTMLElement
-    this.buttons = Array.prototype.slice.call(
-      document.getElementsByClassName(this.$style.anchorLink)
-    )
-    this.sections = Array.prototype.slice.call(
-      document.querySelectorAll(`.${this.$style.section}[id]`)
-    )
-    this.upperTrigger = this.$refs.upperTrigger as HTMLElement
-    this.lowerTrigger = this.$refs.lowerTrigger as HTMLElement
-    window.addEventListener('scroll', function () {
-      // debounce
-      if (self.timerId) {
-        window.clearTimeout(self.timerId)
-      }
-      self.timerId = window.setTimeout(self.onBrowserRender, 100)
-    })
-    window.addEventListener('resize', this.onBrowserRender)
+}
 
-    // 初期化
-    this.onBrowserRender()
-
-    // ハッシュ付きアクセス処理
-    const hash = this.$route.hash
-    if (hash !== '') {
-      if (hash !== '#sydr') {
-        this.startFloating()
-      }
-      document // eslint-disable-line no-unused-expressions
-        .querySelector(`a.${this.$style.anchorLink}[href='${hash}']`)
-        ?.classList.add(this.$style.active)
-      VueScrollTo.scrollTo(hash, 300, {
-        offset: -(this.navH + this.floatingOffset + 1), // +1はIE11用サブピクセル対策
-      })
-    }
-  },
-  methods: {
-    onBrowserRender(): void {
-      const self = this
-      this.timerId = 0
-
-      if (this.forceFloating) {
-        return
-      }
-
-      // 整形
-      const navRect = this.nav!.getBoundingClientRect()
-      const upperTriggerRect = this.upperTrigger!.getBoundingClientRect()
-      const bottomTriggerRect = this.lowerTrigger!.getBoundingClientRect()
-      this.navOffsetTop = navRect!.top
-      this.navW = this.upperTrigger!.clientWidth
-      this.navH = this.nav!.offsetHeight
-      this.lowerTriggerOffsetTop = bottomTriggerRect.bottom
-      if (matchMedia('(max-width: 600px)').matches) {
-        this.floatingOffset = 64 // NOTE: nuxt.config.tsのoffsetから余白を抜いたもの
-      } else {
-        this.floatingOffset = 0
-      }
-      this.upperTriggerOffsetTop = upperTriggerRect.bottom - this.floatingOffset
-
-      // 表示切替
-      if (
-        this.upperTriggerOffsetTop <= 0 + 2 && // +2はサブピクセル対策
-        this.lowerTriggerOffsetTop >= this.navH + this.floatingOffset
-      ) {
-        this.startFloating()
-
-        // 表示位置追従カレント処理
-        this.sections!.forEach(function (ele: HTMLElement, idx: number) {
-          const rect = ele.getBoundingClientRect()
-          if (
-            rect.top <= self.navH + self.floatingOffset + 10 &&
-            rect.bottom >= self.navH + self.floatingOffset - 10
-          ) {
-            self.buttons![idx].classList.add(self.$style.active)
-          } else if (
-            self.buttons![idx].classList.contains(self.$style.active)
-          ) {
-            self.buttons![idx].classList.remove(self.$style.active)
-          }
-        })
-      } else {
-        this.stopFloating()
-        this.resetNavCurrent()
-      }
-    },
-    onClickAnchor(event: Event): void {
-      const self = this
-      const target = event.target as HTMLAnchorElement
-      const hash = target.hash
-      this.forceFloating = true
-      if (hash !== '#sydr') {
-        this.startFloating()
-      }
-      this.resetNavCurrent()
-      target.classList.add(this.$style.active)
-      VueScrollTo.scrollTo(hash, 1000, {
-        offset: -(this.navH + this.floatingOffset + 1), // +1はIE11用サブピクセル対策
-        onDone() {
-          self.forceFloating = false
-          self.onBrowserRender()
-        },
-        onCancel() {
-          self.forceFloating = false
-          self.onBrowserRender()
-        },
-      })
-    },
-    startFloating(): void {
-      if (!this.nav!.classList.contains(this.$style.floating)) {
-        this.nav!.classList.add(this.$style.floating) // eslint-disable-line no-unused-expressions
-      }
-      this.upperTrigger!.style.marginBottom = this.navH + 'px'
-      this.nav!.style.width = this.navW + 'px'
-    },
-    stopFloating(): void {
-      if (this.nav!.classList.contains(this.$style.floating)) {
-        this.nav!.classList.remove(this.$style.floating) // eslint-disable-line no-unused-expressions
-      }
-      this.upperTrigger!.style.marginBottom = ''
-      this.nav!.style.width = ''
-    },
-    resetNavCurrent(): void {
-      const self = this
-      this.buttons!.forEach(function (ele: HTMLElement) {
-        if (ele.classList.contains(self.$style.active)) {
-          ele.classList.remove(self.$style.active)
-        }
-      })
-    },
-  },
-})
+export default options
 </script>
 
 <style lang="scss" module>
@@ -445,116 +260,11 @@ $margin: 20;
   > .conHeading {
     @include font-size($fzHeading);
   }
-  > .anchorLead {
-    margin-top: $margin * 1.5px;
-    color: $green-1;
-    font-weight: bold;
-    text-align: center;
-    @include font-size($fzHuge);
-  }
   ul {
     padding-left: 0; // override Vuetify style
   }
   p {
     margin-bottom: 0; // override Vuetify style
-  }
-}
-.anchor {
-  padding-top: $margin * 1px;
-  padding-bottom: $margin * 1px;
-  background-color: $white;
-  position: relative;
-  .anchorList {
-    margin: 0 -6px;
-    display: flex;
-  }
-  .anchorItem {
-    display: flex;
-    width: (100% / 2);
-    padding: 0 6px;
-    flex: 0 0 auto;
-  }
-  .anchorLink {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1 0 auto;
-    position: relative;
-    padding: 20px 20px 40px;
-    width: 100%;
-    border: 4px solid $green-1;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: inherit;
-    color: $gray-2;
-    transition: color 0.2s;
-    z-index: 2;
-    > * {
-      display: block;
-      max-width: 100%;
-      pointer-events: none;
-    }
-    > span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1 0 auto;
-    }
-    > svg {
-      flex: 0 0 auto;
-      margin-top: 20px;
-      max-width: 120px;
-      max-height: 120px;
-      width: 100%;
-    }
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 50%;
-      bottom: 20px;
-      transform: translate(-50%, 50%);
-      width: 0;
-      height: 0;
-      border-width: 9.5px 6.3px 0 6.3px;
-      border-style: solid;
-      border-color: $green-1 transparent transparent transparent;
-      transition: border-color 0.2s;
-    }
-    &.active,
-    &:hover {
-      background-color: $green-1;
-      color: $white;
-      > svg path {
-        fill: $white;
-      }
-    }
-    &.active {
-      &::after {
-        bottom: -1px;
-        transform: translate(-50%, 100%);
-        border-width: 19.5px 12.99px 0 12.99px;
-        transition: none;
-      }
-    }
-    &:not(.active) {
-      &:hover {
-        &::after {
-          border-top-color: $white;
-        }
-      }
-    }
-  }
-  &.floating {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    .fig {
-      display: none;
-    }
   }
 }
 .section {
@@ -576,12 +286,13 @@ $margin: 20;
   > .sxnHeading {
     text-align: center;
     font-weight: bold;
+    > svg.fig {
+      margin-top: 1px;
+      max-width: 80px;
+      max-height: 80px;
+      vertical-align: middle;
+    }
     @include font-size($fzHeadingL);
-  }
-  > .sxnHeadingSmall {
-    text-align: center;
-    font-weight: bold;
-    @include font-size($fzHuge);
   }
   > .sxnText {
     margin-top: 20px;
@@ -594,9 +305,6 @@ $margin: 20;
     padding-top: $margin * 1.5px;
     border-top: 1px solid $gray-2;
   }
-}
-.anchor + .section {
-  margin-top: 0;
 }
 .boxes {
   display: flex;
@@ -706,20 +414,6 @@ $margin: 20;
 .boxes > .box {
   width: calc(50% - 10px);
 }
-.iconBed {
-  max-width: 37px;
-  max-height: 37px; // for IE11
-  width: 100%;
-}
-.overrideExternalLink {
-  i {
-    font-size: 1em !important;
-    &::before {
-      color: $white;
-      margin-right: 0.2em;
-    }
-  }
-}
 .tel {
   font-weight: bold;
   vertical-align: baseline;
@@ -764,20 +458,6 @@ $margin: 20;
 
 // 960
 @include lessThan(960) {
-  .anchor {
-    padding-top: 2px;
-    .anchorLink {
-      padding: 10px 10px 20px;
-      > svg {
-        margin-top: 1px;
-        max-width: 80px;
-        max-height: 80px;
-      }
-      &::after {
-        bottom: 5px;
-      }
-    }
-  }
   .boxes {
     display: block;
   }
@@ -800,33 +480,6 @@ $margin: 20;
     > .conHeading {
       font-size: px2vw($fzHeading);
     }
-    > .anchorLead {
-      margin-top: px2vw($margin * 1.5);
-      font-size: px2vw($fzHuge);
-    }
-  }
-  .anchor {
-    padding-top: px2vw($margin);
-    .anchorLink {
-      padding: px2vw(20) px2vw(20) px2vw(40);
-      border-width: px2vw(4);
-      border-radius: px2vw(10);
-      > svg {
-        margin-top: px2vw(20);
-      }
-      &::after {
-        bottom: px2vw(20);
-        border-width: px2vw(9.5) px2vw(6.3) 0 px2vw(6.3);
-      }
-      &.active {
-        &::after {
-          border-width: px2vw(19.5) px2vw(12.99) 0 px2vw(12.99);
-        }
-      }
-    }
-    &.floating {
-      top: 64px; // NOTE: nuxt.config.tsのoffsetから余白を抜いたもの
-    }
   }
   .section {
     //margin-top: px2vw($margin * 1.5);
@@ -844,9 +497,11 @@ $margin: 20;
     }
     > .sxnHeading {
       font-size: px2vw($fzHeadingL);
-    }
-    > .sxnHeadingSmall {
-      font-size: px2vw($fzHuge);
+      > svg.fig {
+        margin-top: 1px;
+        max-width: 80px;
+        max-height: 80px;
+      }
     }
     > .sxnText {
       font-size: px2vw($fzMedium);
