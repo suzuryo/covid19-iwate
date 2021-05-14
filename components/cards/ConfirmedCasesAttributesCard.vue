@@ -75,9 +75,11 @@ export default {
         row['発症日'] = this.$t('ConfirmedCasesAttributesCard.table.不明')
       } else {
         const d = row['発症日'].replace('日前', '')
-        row[
-          '発症日'
-        ] = this.$tc('ConfirmedCasesAttributesCard.table.daysbefore', d, { d })
+        row['発症日'] = this.$tc(
+          'ConfirmedCasesAttributesCard.table.daysbefore',
+          d,
+          { d }
+        )
       }
 
       // 居住地

@@ -173,8 +173,7 @@ export default Vue.extend({
         {
           iconPath: mdiAccountMultiple,
           title: this.$t('SideNavigation.a[5]'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028768.html',
+          link: 'https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1028768.html',
         },
         {
           iconPath: mdiDomain,
@@ -188,8 +187,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('SideNavigation.a[9]'),
-          link:
-            'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1035134.html',
+          link: 'https://www.pref.iwate.jp/kurashikankyou/iryou/kenkou/jouhou/1035134.html',
         },
         {
           title: this.$t('Common.当サイトについて'),

@@ -50,8 +50,7 @@ const config: NuxtConfig = {
     ],
     script: [
       {
-        src:
-          'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
+        src: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
         defer: true,
       },
     ],
@@ -97,7 +96,6 @@ const config: NuxtConfig = {
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
-    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
     '@nuxtjs/sitemap',
   ],
   /*

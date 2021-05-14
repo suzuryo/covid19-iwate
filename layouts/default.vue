@@ -188,22 +188,19 @@ export default Vue.extend({
                 '@type': 'ListItem',
                 position: 2,
                 name: '陽性者の状況',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/details-of-confirmed-cases/',
+                item: 'https://iwate.stopcovid19.jp/cards/details-of-confirmed-cases/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: '日別陽性者数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/number-of-confirmed-cases/',
+                item: 'https://iwate.stopcovid19.jp/cards/number-of-confirmed-cases/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: '陽性者数グラフ',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/monitoring-number-of-confirmed-cases/',
+                item: 'https://iwate.stopcovid19.jp/cards/monitoring-number-of-confirmed-cases/',
               },
               {
                 '@type': 'ListItem',
@@ -215,15 +212,13 @@ export default Vue.extend({
                 '@type': 'ListItem',
                 position: 2,
                 name: '入院患者数',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/number-of-hospitalized/',
+                item: 'https://iwate.stopcovid19.jp/cards/number-of-hospitalized/',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: '陽性者の属性',
-                item:
-                  'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
+                item: 'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
               },
             ],
           },
