@@ -13,7 +13,7 @@
           <h1 class="PrintMeta-Heading">
             {{ $t('Common.新型コロナウイルス感染症') }}
             <br />
-            {{ $t('Common.対策サイト非公式') }}
+            {{ $t('Common.対策サイト') }}
           </h1>
         </div>
         <div class="PrintMeta-QRWrapper">
