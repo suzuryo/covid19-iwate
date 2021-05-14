@@ -302,9 +302,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           displayColors: false,
           callbacks: {
             label: (tooltipItem) => {
-              const cases = data[tooltipItem.datasetIndex!][
-                tooltipItem.index!
-              ].toLocaleString()
+              const cases =
+                data[tooltipItem.datasetIndex!][
+                  tooltipItem.index!
+                ].toLocaleString()
 
               return `${
                 this.dataLabels[tooltipItem.datasetIndex!]

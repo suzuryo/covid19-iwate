@@ -47,8 +47,7 @@ const config: NuxtConfig = {
     ],
     script: [
       {
-        src:
-          'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
+        src: 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver',
         defer: true,
       },
     ],
