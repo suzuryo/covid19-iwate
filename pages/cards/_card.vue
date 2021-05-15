@@ -1,9 +1,11 @@
 <template>
-  <component :is="cardComponent" md="12">
-    <template #breadCrumb>
-      <breadcrumb :items="breadCrumb.items" />
-    </template>
-  </component>
+  <div class="DataBlock">
+    <component :is="cardComponent" md="12">
+      <template #breadCrumb>
+        <breadcrumb :items="breadCrumb.items" />
+      </template>
+    </component>
+  </div>
 </template>
 
 <script>
@@ -207,3 +209,17 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.DataBlock {
+  .DataCard {
+    padding: 0;
+    @include lessThan(960) {
+      padding: 0;
+      &:nth-child(2n) {
+        padding: 0 12px 12px 12px;
+      }
+    }
+  }
+}
+</style>
