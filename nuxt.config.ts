@@ -189,23 +189,26 @@ const config: NuxtConfig = {
       enabled: false,
     },
   },
+  router: {
+    trailingSlash: true,
+  },
   generate: {
     fallback: true,
     routes() {
       const locales = ['en']
       const pages = [
-        '/cards/weekly-map',
-        '/cards/whats-new',
-        '/cards/self-disclosures',
-        '/cards/details-of-confirmed-cases',
-        '/cards/number-of-confirmed-cases',
-        '/cards/monitoring-number-of-confirmed-cases',
-        '/cards/untracked-rate',
-        '/cards/positive-rate',
-        '/cards/number-of-hospitalized',
-        '/cards/attributes-of-confirmed-cases',
-        '/cards/number-of-confirmed-cases-by-municipalities',
-        '/cards/number-of-tested',
+        '/cards/weekly-map/',
+        '/cards/whats-new/',
+        '/cards/self-disclosures/',
+        '/cards/details-of-confirmed-cases/',
+        '/cards/number-of-confirmed-cases/',
+        '/cards/monitoring-number-of-confirmed-cases/',
+        '/cards/untracked-rate/',
+        '/cards/positive-rate/',
+        '/cards/number-of-hospitalized/',
+        '/cards/attributes-of-confirmed-cases/',
+        '/cards/number-of-confirmed-cases-by-municipalities/',
+        '/cards/number-of-tested/',
       ]
       const localizedPages = locales
         .map((locale) => pages.map((page) => `/${locale}${page}`))
@@ -224,6 +227,7 @@ const config: NuxtConfig = {
   sitemap: {
     hostname: 'https://iwate.stopcovid19.jp/',
     gzip: true,
+    trailingSlash: true,
     exclude: [
       '**/about',
       '**/contacts',
