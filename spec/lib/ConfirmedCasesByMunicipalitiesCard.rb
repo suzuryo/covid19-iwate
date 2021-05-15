@@ -7,7 +7,7 @@ def has_confirmed_cases_by_municipalities_card(lang:, lang_json:)
   expect(find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3').text).to eq lang_json['ConfirmedCasesByMunicipalitiesCard']['title']
   d = find('#ConfirmedCasesByMunicipalitiesCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
   lang_prefix = lang == :ja ? '' : "/#{lang}"
-  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/number-of-confirmed-cases-by-municipalities"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/number-of-confirmed-cases-by-municipalities/"
 
   # 日付
   d = if lang == :ja

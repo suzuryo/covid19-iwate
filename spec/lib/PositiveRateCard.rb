@@ -8,9 +8,9 @@ def has_positive_rate_card(lang:, lang_json:)
   expect(find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq lang_json['PositiveRateCard']['titles'][1]
   lang_prefix = lang == :ja ? '' : "/#{lang}"
   d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate/"
   d = find('#PositiveRateCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/positive-rate/"
 
   # 日付
   if lang == :ja

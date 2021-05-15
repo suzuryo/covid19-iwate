@@ -21,13 +21,13 @@ def has_site_top_upper(lang:, data:)
     expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%Y年%-m月%-d日 %-H:%M JST')
     # Annotation
     expect(page).not_to have_selector('.MainPage > .Header > .Annotation')
-    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq '/flow'
+    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq '/flow/'
   else
     # time
     expect(find('.MainPage > .Header > .UpdatedAt > time').text).to eq Time.parse(DATA_JSON['lastUpdate']).strftime('%b %-d, %Y, %H:%M JST')
     # Annotation
     expect(find('.MainPage > .Header > .Annotation > span').text).to eq lang_json['SiteTopUpper']['注釈'].to_s
-    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq "/#{lang}/flow"
+    expect(URI(find('.MainPage > a:nth-child(2).StaticInfo.Link')['href']).path).to eq "/#{lang}/flow/"
   end
 
   # 初期表示の時のALERT_ITEMSの順番

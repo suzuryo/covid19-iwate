@@ -7,7 +7,7 @@ def has_self_disclosures_card(lang:, lang_json:)
   expect(find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq lang_json['SelfDisclosuresCard']['title'].to_s
   d = find('#SelfDisclosuresCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
   lang_prefix = lang == :ja ? '' : "/#{lang}"
-  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/self-disclosures"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/self-disclosures/"
 
   # テーブルの中身
   SELF_DISCLOSURES_ITEMS.each_with_index do |d, index|

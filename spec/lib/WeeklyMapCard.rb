@@ -7,7 +7,7 @@ def has_weekly_map_card(lang:, lang_json:)
   expect(find('#WeeklyMapCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq lang_json['WeeklyMapCard']['title'].to_s
   d = find('#WeeklyMapCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
   lang_prefix = lang == :ja ? '' : "/#{lang}"
-  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/weekly-map"
+  expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/weekly-map/"
 
   # div id="weekly_map_canvas"
   expect(page).to have_selector'#WeeklyMapCard > div > div > div.DataView-Content > div#weekly_map_canvas', count: 1
