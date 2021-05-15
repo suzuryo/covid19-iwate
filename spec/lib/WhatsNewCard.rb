@@ -6,7 +6,7 @@ def has_whats_new_card
   # h3
   expect(find('#WhatsNewCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq JA_JSON['WhatsNewCard']['title'].to_s
   d = find('#WhatsNewCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/whats-new'
+  expect(URI.parse(d).path).to eq '/cards/whats-new/'
 
   # テーブルの中身
   NEWS_ITEMS.each_with_index do |d, index|

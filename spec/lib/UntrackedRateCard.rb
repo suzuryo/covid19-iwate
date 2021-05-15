@@ -6,7 +6,7 @@ def has_untracked_rate_card
   # h3
   expect(find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3').text).to eq '接触歴等不明者数(7日間移動平均)'
   d = find('#UntrackedRateCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/untracked-rate'
+  expect(URI.parse(d).path).to eq '/cards/untracked-rate/'
 
   # 日付
   d = Date.parse(DAILY_POSITIVE_DETAIL_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')

@@ -6,7 +6,7 @@ describe 'iPhone 6/7/8', type: :feature do
   LOCALES.each do |lang, data|
     context "page #{data[:path]}" do
       before do
-        visit "#{data[:path]}vaccine"
+        visit "#{data[:path]}vaccine/"
       end
 
       it 'title' do

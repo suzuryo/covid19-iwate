@@ -39,19 +39,19 @@ describe 'iPhone 6/7/8', type: :feature do
         urls << URI(a['href'])
       end
 
-      visit '/about'
+      visit '/about/'
       render_lazy_contents
       page.all('a').each do |a|
         urls << URI(a['href'])
       end
 
-      visit '/flow'
+      visit '/flow/'
       render_lazy_contents
       page.all('a').each do |a|
         urls << URI(a['href']) unless a['href'].match(/^tel:/)
       end
 
-      visit '/vaccine'
+      visit '/vaccine/'
       render_lazy_contents
       page.all('a').each do |a|
         urls << URI(a['href'])

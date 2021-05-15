@@ -6,7 +6,7 @@ def has_confirmed_case_attributes_card
   # h3
   expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > h3').text).to eq JA_JSON['ConfirmedCasesAttributesCard']['title']
   d = find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/attributes-of-confirmed-cases'
+  expect(URI.parse(d).path).to eq '/cards/attributes-of-confirmed-cases/'
 
   # 陽性者の合計
   d = DATA_JSON['patients']['data'].size

@@ -5,9 +5,9 @@ require_relative '../../lib/BreadCrumbs'
 require_relative '../../lib/MonitoringConfirmedCasesNumberCard'
 
 describe 'iPhone 6/7/8', type: :feature do
-  context 'page [/cards/monitoring-number-of-confirmed-cases]' do
+  context 'page [/cards/monitoring-number-of-confirmed-cases/]' do
     before do
-      visit '/cards/monitoring-number-of-confirmed-cases'
+      visit '/cards/monitoring-number-of-confirmed-cases/'
       render_lazy_contents
       page.scroll_to('#MonitoringConfirmedCasesNumberCard')
     end
@@ -21,7 +21,7 @@ describe 'iPhone 6/7/8', type: :feature do
         # JS解釈したog:title
         expect(find('head meta[property="og:title"]', visible: false)[:content]).to eq "#{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
         # JS解釈しないog:title
-        expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}/cards/monitoring-number-of-confirmed-cases").open).css('head meta[property="og:title"]').first['content']).to eq "#{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
+        expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}/cards/monitoring-number-of-confirmed-cases/").open).css('head meta[property="og:title"]').first['content']).to eq "#{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
       end
     end
 

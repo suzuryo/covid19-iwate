@@ -6,7 +6,7 @@ def has_tested_number_card
   # h3
   expect(find('#TestedNumberCard > div > div > div.DataView-Header > div > div > h3').text).to eq '検査実施件数'
   d = find('#TestedNumberCard > div > div > div.DataView-Header > div > div > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/number-of-tested'
+  expect(URI.parse(d).path).to eq '/cards/number-of-tested/'
 
   # 日付
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
