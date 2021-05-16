@@ -161,7 +161,7 @@ export default Vue.extend({
     padding: 22px;
     height: 100%;
     @include lessThan($small) {
-      padding: 20px 15px;
+      padding: 15px 12px;
     }
   }
 
