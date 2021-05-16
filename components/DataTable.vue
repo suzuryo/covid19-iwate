@@ -209,32 +209,41 @@ export default Vue.extend({
     box-shadow: 0 -20px 12px -12px #0003 inset;
   }
   .v-data-footer {
+    padding: 0 !important;
     margin-right: 0 !important;
     justify-content: flex-end;
-    @include font-size(12);
+    @include font-size(11);
     &__select {
-      margin-right: 6px !important;
-      > .v-select {
-        margin-left: 12px !important;
+      margin: 0 !important;
+      > .v-input.v-select {
+        margin-left: 1rem !important;
         @include lessThan($small) {
           margin-left: 6px !important;
         }
       }
     }
     &__pagination {
-      margin: 0 10px !important;
+      margin: 0 !important;
     }
-    &__icons-before,
-    &__icons-after {
-      button.v-btn--icon {
-        width: 30px !important;
+    &__icons-before {
+      flex-basis: 26px;
+      > button.v-btn.v-btn--icon {
+        width: 26px !important;
         height: 30px !important;
         margin: 0 0 0 6px !important;
       }
     }
+    &__icons-after {
+      flex-basis: 26px;
+      > button.v-btn.v-btn--icon {
+        width: 26px !important;
+        height: 30px !important;
+        margin: 0 !important;
+      }
+    }
   }
   .v-data-footer__select .v-select__selections .v-select__selection--comma {
-    font-size: 1.2rem;
+    @include font-size(11);
   }
 }
 .v-menu__content {
