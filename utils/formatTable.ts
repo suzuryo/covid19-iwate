@@ -12,8 +12,16 @@ const headers: Header[] = [
   { text: '発症日', value: 'ConfirmedCasesAttributesCard.table.発症日' },
   { text: '居住地', value: 'ConfirmedCasesAttributesCard.table.居住地' },
   { text: '年代', value: 'ConfirmedCasesAttributesCard.table.年代' },
-  { text: '接触歴', value: 'ConfirmedCasesAttributesCard.table.接触歴' },
-  { text: '📺', value: 'ConfirmedCasesAttributesCard.table.📺' },
+  {
+    text: '接触歴',
+    value: 'ConfirmedCasesAttributesCard.table.接触歴',
+    align: 'center',
+  },
+  {
+    text: '📺',
+    value: 'ConfirmedCasesAttributesCard.table.📺',
+    align: 'center',
+  },
 ]
 
 type DataType = {
