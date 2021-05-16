@@ -153,6 +153,9 @@ export default Vue.extend({
 <style lang="scss">
 .cardTable {
   &.v-data-table {
+    table {
+      border-collapse: collapse;
+    }
     th {
       padding: 8px 10px !important;
       height: auto !important;
@@ -169,18 +172,24 @@ export default Vue.extend({
       tr {
         color: $gray-1;
         th {
+          border-right: 1px dotted #dfdfdf;
           font-weight: normal;
+          @include lessThan($small) {
+            padding: 8px 2px !important;
+          }
         }
         td {
           padding: 8px 10px !important;
           height: auto !important;
+          border-right: 1px dotted #dfdfdf;
           @include font-size(12, true);
-
+          @include lessThan($small) {
+            padding: 8px 4px !important;
+          }
           &.text-center {
             text-align: center;
           }
         }
-
         &:nth-child(odd) {
           th,
           td {
