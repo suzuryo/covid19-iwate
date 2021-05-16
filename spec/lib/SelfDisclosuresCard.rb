@@ -49,14 +49,16 @@ def has_self_disclosures_card(lang:, lang_json:)
   # 次のページ
   find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 
-  # 次のページの先頭は11番目の要素
-  d = "#{SELF_DISCLOSURES_ITEMS[10]['icon']} #{SELF_DISCLOSURES_ITEMS[10]['text']['ja']}"
+  # 次のページの先頭は11番目の要素。enがなければja
+  text = SELF_DISCLOSURES_ITEMS[10]['text'][lang.to_s] || SELF_DISCLOSURES_ITEMS[10]['text']['ja']
+  d = "#{SELF_DISCLOSURES_ITEMS[10]['icon']} #{text}"
   expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td.text-start').text).to eq d.to_s
 
   # さらに次のページ
   find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-footer > div.v-data-footer__icons-after > button').click
 
-  # さらに次のページの先頭は21番目の要素
-  d = "#{SELF_DISCLOSURES_ITEMS[20]['icon']} #{SELF_DISCLOSURES_ITEMS[20]['text']['ja']}"
+  # さらに次のページの先頭は21番目の要素。enがなければja
+  text = SELF_DISCLOSURES_ITEMS[20]['text'][lang.to_s] || SELF_DISCLOSURES_ITEMS[20]['text']['ja']
+  d = "#{SELF_DISCLOSURES_ITEMS[20]['icon']} #{text}"
   expect(find('#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td.text-start').text).to eq d.to_s
 end
