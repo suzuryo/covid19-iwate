@@ -5,6 +5,23 @@ import utc from 'dayjs/plugin/utc'
 // eslint-disable-next-line no-restricted-imports
 import i18n from './nuxt-i18n.config'
 const environment = process.env.NODE_ENV || 'development'
+dayjs.extend(utc)
+const now = dayjs().utc().format()
+
+const pages = [
+  '/cards/weekly-map/',
+  '/cards/whats-new/',
+  '/cards/self-disclosures/',
+  '/cards/details-of-confirmed-cases/',
+  '/cards/number-of-confirmed-cases/',
+  '/cards/monitoring-number-of-confirmed-cases/',
+  '/cards/untracked-rate/',
+  '/cards/positive-rate/',
+  '/cards/number-of-hospitalized/',
+  '/cards/attributes-of-confirmed-cases/',
+  '/cards/number-of-confirmed-cases-by-municipalities/',
+  '/cards/number-of-tested/',
+]
 
 const config: NuxtConfig = {
   server: {
@@ -203,20 +220,6 @@ const config: NuxtConfig = {
     fallback: true,
     routes() {
       const locales = ['en']
-      const pages = [
-        '/cards/weekly-map/',
-        '/cards/whats-new/',
-        '/cards/self-disclosures/',
-        '/cards/details-of-confirmed-cases/',
-        '/cards/number-of-confirmed-cases/',
-        '/cards/monitoring-number-of-confirmed-cases/',
-        '/cards/untracked-rate/',
-        '/cards/positive-rate/',
-        '/cards/number-of-hospitalized/',
-        '/cards/attributes-of-confirmed-cases/',
-        '/cards/number-of-confirmed-cases-by-municipalities/',
-        '/cards/number-of-tested/',
-      ]
       const localizedPages = locales
         .map((locale) => pages.map((page) => `/${locale}${page}`))
         .reduce((a, b) => [...a, ...b], [])
@@ -236,95 +239,31 @@ const config: NuxtConfig = {
     gzip: true,
     trailingSlash: true,
     exclude: [
+      // @nuxtjs/sitemapがpagesしかi18n対応していないので、自動生成される分をexcludeで全て外しておいて、
+      // routes()で手動で管理することで多言語対応のhreflang付きのsitemapを生成するworkaround
+      '/',
+      '/en/',
       '**/about',
-      '**/contacts',
       '**/flow',
+      '**/vaccine/',
       '**/worker',
       '**/print/flow',
     ],
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: now,
+    },
     routes() {
-      dayjs.extend(utc)
-      const now = dayjs().utc().format()
-      return [
-        {
-          url: '/',
-          changefreq: 'daily',
-          priority: 1.0,
-          lastmod: now,
-        },
-        {
-          url: '/cards/weekly-map/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/whats-new/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/self-disclosures/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/details-of-confirmed-cases/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/number-of-confirmed-cases/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/monitoring-number-of-confirmed-cases/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/untracked-rate/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/positive-rate/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/number-of-hospitalized/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/attributes-of-confirmed-cases/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/number-of-confirmed-cases-by-municipalities/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-        {
-          url: '/cards/number-of-tested/',
-          changefreq: 'daily',
-          priority: 0.8,
-          lastmod: now,
-        },
-      ]
+      return ['/', '/about/', '/flow/', '/vaccine/', '/worker/', ...pages].map(
+        (page) => ({
+          url: `${page}`,
+          links: [
+            { lang: 'ja', url: `${page}` },
+            { lang: 'en', url: `/en${page}` },
+          ],
+        })
+      )
     },
   },
 }
