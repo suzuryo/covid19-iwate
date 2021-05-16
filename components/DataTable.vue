@@ -35,8 +35,8 @@
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
             <td class="text-start">{{ item['年代'] }}</td>
-            <td class="text-start">{{ item['接触歴'] }}</td>
-            <td class="text-start">
+            <td class="text-center">{{ item['接触歴'] }}</td>
+            <td class="text-center">
               <template v-if="item['会見URL']">
                 <app-link :to="item['会見URL']" :show-icon="false">
                   📺
@@ -153,6 +153,9 @@ export default Vue.extend({
 <style lang="scss">
 .cardTable {
   &.v-data-table {
+    table {
+      border-collapse: collapse;
+    }
     th {
       padding: 8px 10px !important;
       height: auto !important;
@@ -169,18 +172,24 @@ export default Vue.extend({
       tr {
         color: $gray-1;
         th {
+          border-right: 1px dotted #dfdfdf;
           font-weight: normal;
+          @include lessThan($small) {
+            padding: 8px 2px !important;
+          }
         }
         td {
           padding: 8px 10px !important;
           height: auto !important;
+          border-right: 1px dotted #dfdfdf;
           @include font-size(12, true);
-
+          @include lessThan($small) {
+            padding: 8px 4px !important;
+          }
           &.text-center {
             text-align: center;
           }
         }
-
         &:nth-child(odd) {
           th,
           td {
@@ -200,32 +209,41 @@ export default Vue.extend({
     box-shadow: 0 -20px 12px -12px #0003 inset;
   }
   .v-data-footer {
+    padding: 0 !important;
     margin-right: 0 !important;
     justify-content: flex-end;
-    @include font-size(12);
+    @include font-size(11);
     &__select {
-      margin-right: 6px !important;
-      > .v-select {
-        margin-left: 12px !important;
+      margin: 0 !important;
+      > .v-input.v-select {
+        margin-left: 1rem !important;
         @include lessThan($small) {
           margin-left: 6px !important;
         }
       }
     }
     &__pagination {
-      margin: 0 10px !important;
+      margin: 0 !important;
     }
-    &__icons-before,
-    &__icons-after {
-      button.v-btn--icon {
-        width: 30px !important;
+    &__icons-before {
+      flex-basis: 26px;
+      > button.v-btn.v-btn--icon {
+        width: 26px !important;
         height: 30px !important;
         margin: 0 0 0 6px !important;
       }
     }
+    &__icons-after {
+      flex-basis: 26px;
+      > button.v-btn.v-btn--icon {
+        width: 26px !important;
+        height: 30px !important;
+        margin: 0 !important;
+      }
+    }
   }
   .v-data-footer__select .v-select__selections .v-select__selection--comma {
-    font-size: 1.2rem;
+    @include font-size(11);
   }
 }
 .v-menu__content {
