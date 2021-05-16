@@ -37,26 +37,6 @@
         }}
       </p>
     </static-card>
-    <static-card>
-      <h3>
-        <app-link
-          to="https://www.pref.iwate.jp/kurashikankyou/iryou/seido/1031487.html"
-          :icon-size="24"
-          >{{
-            $t(
-              '岩手県新型コロナウイルス感染症対応従事者慰労金交付事業のお知らせ'
-            )
-          }}
-        </app-link>
-      </h3>
-      <p>
-        {{
-          $t(
-            '新型コロナウイルス感染症に対する医療提供に関し、岩手県から役割を設定された医療機関等に勤務し患者と接する医療従事者や職員に対し、慰労金として最大20万円を給付します。'
-          )
-        }}
-      </p>
-    </static-card>
   </div>
 </template>
 
