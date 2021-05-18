@@ -23,6 +23,13 @@ describe 'iPhone 6/7/8', type: :feature do
         # JS解釈しないog:title
         expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}/cards/number-of-confirmed-cases/").open).css('head meta[property="og:title"]').first['content']).to eq "#{JA_JSON['Common']['岩手県']} #{JA_JSON['Common']['新型コロナウイルス感染症']}#{JA_JSON['Common']['対策サイト']}"
       end
+
+      it 'og:url' do
+        # JS解釈したog:url
+        expect(find('head meta[property="og:url"]', visible: false)[:content]).to eq "https://iwate.stopcovid19.jp/cards/number-of-confirmed-cases/"
+        # JS解釈しないog:url
+        expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}/cards/number-of-confirmed-cases/").open).css('head meta[property="og:url"]').first['content']).to eq "https://iwate.stopcovid19.jp/cards/number-of-confirmed-cases/"
+      end
     end
 
     describe '報告日別による陽性者数の推移(ConfirmedCasesNumberCard)' do
