@@ -8,7 +8,7 @@ const dateTimeFormatsCommon: DateTimeFormat = {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    hour12: false,
+    hourCycle: 'h23',
   },
   date: {
     year: 'numeric',
