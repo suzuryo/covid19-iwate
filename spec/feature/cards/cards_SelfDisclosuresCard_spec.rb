@@ -24,6 +24,13 @@ describe 'iPhone 6/7/8', type: :feature do
           # JS解釈しないog:title
           expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}#{data[:path]}cards/self-disclosures/").open).css('head meta[property="og:title"]').first['content']).to eq "#{LOCALES[lang][:json]['Common']['岩手県']} #{LOCALES[lang][:json]['Common']['新型コロナウイルス感染症']}#{LOCALES[lang][:json]['Common']['対策サイト']}"
         end
+
+        it 'og:url' do
+          # JS解釈したog:url
+          expect(find('head meta[property="og:url"]', visible: false)[:content]).to eq "https://iwate.stopcovid19.jp#{data[:path]}cards/self-disclosures/"
+          # JS解釈しないog:url
+          expect(Nokogiri::HTML(URI.parse("#{Capybara.app_host}#{data[:path]}cards/self-disclosures/").open).css('head meta[property="og:url"]').first['content']).to eq "https://iwate.stopcovid19.jp#{data[:path]}cards/self-disclosures/"
+        end
       end
 
       describe '自主公表(SelfDisclosuresCard)' do
