@@ -27,11 +27,11 @@
     <div class="legend2">
       <div>
         <span class="Bed phase2" />
-        実線枠はフェーズ2の確保病床 (軽中症 220 / 重症 30)
+        実線枠はフェーズ2の確保病床 (軽中症220 + 重症30 = 250床)
       </div>
       <div>
         <span class="Bed phase3" />
-        点線枠はフェーズ3の確保病床 (軽中症 305 / 重症 45)
+        点線枠はフェーズ3の確保病床 (軽中症305 + 重症45 = 350床)
       </div>
       <div v-if="bedSummary.hospital + bedSummary.waiting > 350">
         <span class="Bed overflowed" />
