@@ -109,8 +109,10 @@ export default Vue.extend({
       (PositiveRate.data.slice(-1)[0].pcr_negative_count ?? 0) +
       (PositiveRate.data.slice(-1)[0].antigen_positive_count ?? 0) +
       (PositiveRate.data.slice(-1)[0].antigen_negative_count ?? 0)
-    }${this.$t('件・現在の入院患者は')}${
-      PositiveStatus.data.slice(-1)[0].hospitalized
+    }${this.$t('件・療養中は')}${
+      PositiveStatus.data.slice(-1)[0].hospital +
+      PositiveStatus.data.slice(-1)[0].hotel +
+      PositiveStatus.data.slice(-1)[0].waiting
     }${this.$t('人です。')}`
 
     const description = `${descriptionToday}${this.$t(

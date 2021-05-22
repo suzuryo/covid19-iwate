@@ -420,7 +420,7 @@
   "{date}": "{date}",
   "は陽性が": ", positive ",
   "件・検査が": ", test ",
-  "件・現在の入院患者は": ", hospitalized ",
+  "件・療養中は": ", under medical care ",
   "人です。陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。": ". Various data and historical graphs, such as attributes of positive patients, positive test rates, number of hospital beds, number of positive patients by municipality, and number of consultations.",
   "陽性者の属性、検査の陽性率、病床数、市町村別陽性者数、相談件数などの各種データや過去の推移グラフはこちら。": " Various data and historical graphs, such as attributes of positive patients, positive test rates, number of hospital beds, number of positive patients by municipality, and number of consultations.",
   "県外": "Outside Iwate",
