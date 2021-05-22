@@ -143,6 +143,8 @@ $bed_size: 16px;
     height: $bed_size - 2px;
     width: $bed_size - 2px;
     text-align: center;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: 0;
     @include font-size(7);
   }
   &.phase2 {
