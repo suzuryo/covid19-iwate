@@ -217,6 +217,18 @@ export default Vue.extend({
               {
                 '@type': 'ListItem',
                 position: 2,
+                name: '入院病床の状況',
+                item: 'https://iwate.stopcovid19.jp/cards/hospital-capacity/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: '宿泊療養の状況',
+                item: 'https://iwate.stopcovid19.jp/cards/hotel-capacity/',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
                 name: '陽性者の属性',
                 item: 'https://iwate.stopcovid19.jp/cards/attributes-of-confirmed-cases/',
               },
