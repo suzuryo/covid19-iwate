@@ -22,6 +22,7 @@ const pages = [
   '/cards/number-of-confirmed-cases-by-municipalities/',
   '/cards/number-of-tested/',
   '/cards/hospital-capacity/',
+  '/cards/hotel-capacity/',
 ]
 
 const config: NuxtConfig = {
