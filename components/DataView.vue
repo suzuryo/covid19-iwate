@@ -189,6 +189,18 @@ export default Vue.extend({
 
   &-Content {
     margin: 10px 0;
+    a:link {
+      color: $link;
+    }
+    a:visited {
+      color: $link-visited;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:active {
+      text-decoration: none;
+    }
   }
 
   &-Space {
