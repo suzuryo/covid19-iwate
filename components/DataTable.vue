@@ -153,6 +153,9 @@ export default Vue.extend({
 <style lang="scss">
 .cardTable {
   &.v-data-table {
+    a:visited {
+      color: #896692;
+    }
     table {
       border-collapse: collapse;
     }
