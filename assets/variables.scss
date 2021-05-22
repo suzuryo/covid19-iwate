@@ -1,7 +1,7 @@
 // ==================
 // font
 $font-size-root: 10px;
-$body-font-family: "Roboto", "Helvetica Neue", "Arial", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "YuGothic", "Yu Gothic", "Meiryo", sans-serif;
+$body-font-family: -apple-system, "BlinkMacSystemFont", "Roboto", "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 
 // ==================
 // color
@@ -15,7 +15,8 @@ $gray-3: #707070;
 $gray-4: #d9d9d9;
 $gray-5: #fbfbfb;
 $white: #fff;
-$link: #006399;
+$link: #2083b9;
+$link-visited: #337;
 $emergency: #FFE200;
 $alert: #AD2121;
 
