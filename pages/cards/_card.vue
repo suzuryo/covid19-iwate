@@ -14,6 +14,7 @@ import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttri
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import HospitalCapacityCard from '@/components/cards/HospitalCapacityCard.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
@@ -47,6 +48,7 @@ export default {
     TestedNumberCard,
     PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
+    HospitalCapacityCard,
   },
   data() {
     let title, updatedAt, cardComponent, cardTitle
@@ -105,6 +107,10 @@ export default {
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
         cardTitle = this.$t('HospitalizedNumberCard.title')
+        break
+      case 'hospital-capacity':
+        cardComponent = 'hospital-capacity-card'
+        cardTitle = this.$t('HospitalCapacityCard.title')
         break
     }
 

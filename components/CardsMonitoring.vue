@@ -23,6 +23,9 @@ const PositiveRateCard = () => import('@/components/cards/PositiveRateCard.vue')
 // 入院と宿泊療養の推移
 const HospitalizedNumberCard = () =>
   import('@/components/cards/HospitalizedNumberCard.vue')
+// 入院病床の状況
+const HospitalCapacityCard = () =>
+  import('@/components/cards/HospitalCapacityCard.vue')
 // 陽性者の属性
 const ConfirmedCasesAttributesCard = () =>
   import('@/components/cards/ConfirmedCasesAttributesCard.vue')
@@ -43,6 +46,7 @@ export default Vue.extend({
   data() {
     return {
       rows: [
+        [HospitalCapacityCard],
         [ConfirmedCasesDetailsCard, MonitoringConfirmedCasesNumberCard],
         [HospitalizedNumberCard, WeeklyMapCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
