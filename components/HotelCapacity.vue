@@ -13,25 +13,25 @@
     <div class="legend1">
       <div>
         <span class="Bed inuse" />
-        療養中
+        {{ $t('HotelCapacityCard.療養中') }}
       </div>
       <div>
         <span class="Bed" />
-        空き
+        {{ $t('HotelCapacityCard.空き') }}
       </div>
     </div>
     <div class="legend2">
       <div>
         <span class="Bed phase2" />
-        実線枠はフェーズ2の確保部屋 (85室)
+        {{ $t('HotelCapacityCard.phase2') }}
       </div>
       <div>
         <span class="Bed phase3" />
-        点線枠はフェーズ3の確保部屋 (300室)
+        {{ $t('HotelCapacityCard.phase3') }}
       </div>
       <div v-if="bedSummary.hotel > 300">
         <span class="Bed overflowed" />
-        赤線枠はフェーズ3で確保予定の病床を超えた分
+        {{ $t('HotelCapacityCard.overflowed') }}
       </div>
     </div>
     <template #notes>
