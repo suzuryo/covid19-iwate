@@ -30,19 +30,19 @@ def has_hotel_capacity_card(lang:, lang_json:)
 
   # 凡例1
   expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1) > span.Bed.inuse', count:1)
-  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1)').text).to eq '療養中'
+  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1)').text).to eq lang_json['HotelCapacityCard']['療養中']
   expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2) > span.Bed', count:1)
-  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2)').text).to eq '空き'
+  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2)').text).to eq lang_json['HotelCapacityCard']['空き']
 
   # 凡例2
   expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1) > span.Bed.phase2', count:1)
-  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1)').text).to eq '実線枠はフェーズ2の確保部屋 (85室)'
+  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1)').text).to eq lang_json['HotelCapacityCard']['phase2']
   expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2) > span.Bed.phase3', count:1)
-  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2)').text).to eq '点線枠はフェーズ3の確保部屋 (300室)'
+  expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2)').text).to eq lang_json['HotelCapacityCard']['phase3']
 
   if MAIN_SUMMARY_JSON['宿泊療養'] > 300
     expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3) > span.Bed.overflowed', count:1)
-    expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3)').text).to eq '赤線枠はフェーズ3で確保予定の病床を超えた分'
+    expect(find('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3)').text).to eq lang_json['HotelCapacityCard']['overflowed']
   else
     expect(page).to have_selector('#HotelCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3) > span.Bed.overflowed', count:0)
   end

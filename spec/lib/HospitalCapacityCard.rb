@@ -35,21 +35,21 @@ def has_hospital_capacity_card(lang:, lang_json:)
 
   # 凡例1
   expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1) > span.Bed.inuse', count:1)
-  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1)').text).to eq '入院中'
+  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(1)').text).to eq lang_json['HospitalCapacityCard']['入院中']
   expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2) > span.Bed.waiting', count:1)
-  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2)').text).to eq '入院療養等調整中'
+  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(2)').text).to eq lang_json['HospitalCapacityCard']['入院療養等調整中']
   expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(3) > span.Bed', count:1)
-  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(3)').text).to eq '空き'
+  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend1 > div:nth-child(3)').text).to eq lang_json['HospitalCapacityCard']['空き']
 
   # 凡例2
   expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1) > span.Bed.phase2', count:1)
-  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1)').text).to eq '実線枠はフェーズ2の確保病床 (軽中症220 + 重症30 = 250床)'
+  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(1)').text).to eq lang_json['HospitalCapacityCard']['phase2']
   expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2) > span.Bed.phase3', count:1)
-  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2)').text).to eq '点線枠はフェーズ3の確保病床 (軽中症305 + 重症45 = 350床)'
+  expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(2)').text).to eq lang_json['HospitalCapacityCard']['phase3']
 
   if MAIN_SUMMARY_JSON['入院'] + MAIN_SUMMARY_JSON['調整中'] > 350
     expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3) > span.Bed.overflowed', count:1)
-    expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3)').text).to eq '赤線枠はフェーズ3で確保予定の病床を超えた分'
+    expect(find('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3)').text).to eq lang_json['HospitalCapacityCard']['overflowed']
   else
     expect(page).to have_selector('#HospitalCapacityCard > div > div > div.DataView-Content > div.legend2 > div:nth-child(3) > span.Bed.overflowed', count:0)
   end
