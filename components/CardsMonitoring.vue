@@ -50,8 +50,8 @@ export default Vue.extend({
     return {
       rows: [
         [ConfirmedCasesDetailsCard, MonitoringConfirmedCasesNumberCard],
-        [HospitalCapacityCard, HotelCapacityCard],
         [HospitalizedNumberCard, WeeklyMapCard],
+        [HospitalCapacityCard, HotelCapacityCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
         [ConfirmedCasesNumberCard, UntrackedRateCard],
         [PositiveRateCard, TestedNumberCard],
