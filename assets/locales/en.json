@@ -289,7 +289,7 @@
     "notes": [
       "Cumulative value based on the residence of positive cases reported in the previous day.",
       "If the place of residence is not disclosed due to the patient's wishes, it is not included in the cumulative total.",
-      "For example, if their live outside of the iwate prefecture or in another area, but test positive in Morioka City, they may be counted as Morioka City.",
+      "For example, if their live outside of the iwate prefecture or in another area, but test positive in Morioka City, they may be not counted as Morioka City.",
       "Number of positive cases/Population is the ratio of the number of positive cases to the population of the municipality (as of Oct 1, 2020)."
     ]
   },
