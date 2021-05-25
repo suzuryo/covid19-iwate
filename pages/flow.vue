@@ -16,44 +16,8 @@
       <div id="sy" :class="$style.section">
         <h4 :class="$style.sxnHeading">
           <fig-cond-sy :class="$style.fig" aria-hidden="true" />
-          {{ $t('次の症状がある方') }}
+          {{ $t('症状のある方') }}
         </h4>
-        <ul :class="$style.boxes">
-          <li :class="[$style.box, $style.border]">
-            <i18n
-              path="発熱や咳などの{minorSymptom}がある"
-              :class="$style.boxLead"
-            >
-              <template #minorSymptom>
-                <span :class="$style.underline">
-                  {{ $t('比較的軽い風邪の症状') }}
-                </span>
-              </template>
-            </i18n>
-            <span :class="$style.alignLeft">{{
-              $t(
-                '妊娠中の方、重症化しやすい方（高齢者、糖尿病、心不全、呼吸器疾患（COPD等）等の基礎疾患がある方や透析を受けている方、免疫抑制剤や抗がん剤等を用いている方）はすぐに、それ以外の方は症状が４日以上続いた場合は必ず、相談してください。'
-              )
-            }}</span>
-          </li>
-          <li :class="[$style.box, $style.border]">
-            <i18n
-              path="息苦しさ（呼吸困難）、強いだるさ（倦怠感）、高熱等の{majorSymptom}がある"
-              :class="$style.boxLead"
-            >
-              <template #majorSymptom>
-                <span :class="$style.underline">
-                  {{ $t('強い症状') }}
-                </span>
-              </template>
-            </i18n>
-            <span :class="$style.alignLeft">{{
-              $t(
-                '症状には個人差がありますので、強い症状と思う場合にはすぐに相談してください。解熱剤などを飲み続けなければならない方も同様です。'
-              )
-            }}</span>
-          </li>
-        </ul>
         <div :class="[$style.box, $style.bgYellow]">
           <h5 :class="$style.boxHeading">
             {{
@@ -306,10 +270,6 @@ $margin: 20;
     border-top: 1px solid $gray-2;
   }
 }
-.boxes {
-  display: flex;
-  justify-content: space-between;
-}
 .box {
   margin-top: $margin * 1px;
   display: flex;
@@ -320,9 +280,6 @@ $margin: 20;
   padding: $padding * 1px;
   text-align: center;
   line-height: 1.65;
-  &.border {
-    border: 2px solid $gray-3;
-  }
   &.bgGray {
     background-color: $gray-2;
     color: $white;
@@ -336,20 +293,6 @@ $margin: 20;
   > .boxHeading {
     font-weight: bold;
     @include font-size($fzLarge);
-  }
-  > .boxLead {
-    font-weight: bold;
-    @include font-size($fzMedium);
-  }
-  > .large {
-    font-weight: bold;
-    @include font-size($fzHuge);
-  }
-  > .small {
-    @include font-size($fzSmall);
-  }
-  > .alignLeft {
-    text-align: left;
   }
   > .grow {
     flex: 1 0 auto;
@@ -404,15 +347,9 @@ $margin: 20;
       }
     }
   }
-  .underline {
-    text-decoration: underline;
-  }
 }
 .container .box a {
   color: inherit; // for IE11
-}
-.boxes > .box {
-  width: calc(50% - 10px);
 }
 .tel {
   font-weight: bold;
@@ -453,16 +390,6 @@ $margin: 20;
       margin-left: 2px;
       color: $green-1 !important;
     }
-  }
-}
-
-// 960
-@include lessThan(960) {
-  .boxes {
-    display: block;
-  }
-  .boxes > .box {
-    width: auto;
   }
 }
 
@@ -520,15 +447,6 @@ $margin: 20;
     }
     > .boxHeading {
       font-size: px2vw($fzLarge);
-    }
-    > .boxLead {
-      font-size: px2vw($fzMedium);
-    }
-    > .large {
-      font-size: px2vw($fzHuge);
-    }
-    > .small {
-      font-size: px2vw($fzSmall);
     }
     > *:not(:first-child) {
       margin-top: px2vw($margin * 0.75);
