@@ -193,20 +193,25 @@ export default Vue.extend({
         )
       )
       .forEach((patient) => {
-        // 居住地が保健所管内での発表の場合は対象の市町村を取得
-        const areas = Object.keys(cities).filter(
-          (key) => cities[key].area === patient.居住地
-        )
-        if (areas.length === 0) {
-          // 居住地が市町村での発表の場合
-          last7DaysSum++
+        last7DaysSum++
+        if (patient.居住地 in cities) {
+          // 居住地が市町村で発表の場合
           cities[patient.居住地].count++
         } else {
-          // 居住地が保健所管内での発表の場合
-          last7DaysSum++
-          areas.forEach((a) => {
-            cities[a].count++
-          })
+          // 居住地が市町村リストに存在しない場合
+          // 保健所管内を取得
+          const areas = Object.keys(cities).filter(
+            (key) => cities[key].area === patient.居住地
+          )
+          if (areas.length > 0) {
+            // 保健所管内が存在する場合は配下の市町村全て+1する
+            areas.forEach((a) => {
+              cities[a].count++
+            })
+          } else {
+            // 居住地が管内にも存在しない場合は県外として処理しておく
+            cities['県外'].count++
+          }
         }
       })
 
