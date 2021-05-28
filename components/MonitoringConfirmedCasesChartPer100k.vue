@@ -132,10 +132,6 @@ type Computed = {
       lText: string
       sText: string
       unit: string
-    },
-    {
-      lText: string
-      unit: string
     }
   ]
   displayData: DisplayData
@@ -248,25 +244,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         dataIndex: 1,
         digit: 1,
       })
-      // 直近1週間の感染者数の合計
-      const sum7day = this.chartData[0]
-        .slice(this.chartData[0].length - 7, this.chartData[0].length)
-        .reduce((accumulator, currentValue) => {
-          return accumulator + currentValue
-        }, 0)
-
-      // 1週間あたりの対10万人を計算する 岩手県の人口は 1212201
-      const lastDayDataPer100k = ((sum7day * 100000) / 1212201).toFixed(1)
       return [
         {
           lText: lastDayData,
           sText: `${this.$t('{date} の数値', {
             date: this.$d(lastDay, 'dateWithoutYear'),
           })}（${this.$t('前日比')}: ${dayBeforeRatio} ${this.unit}）`,
-          unit: this.unit,
-        },
-        {
-          lText: `${lastDayDataPer100k}`,
           unit: this.unit,
         },
       ]
@@ -519,7 +502,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     scaledTicksYAxisMax() {
-      return this.chartData.reduce((max, data) => Math.max(max, ...data), 0)
+      return this.chartData.reduce((max, data) => Math.max(max, ...data), 0) + 5
     },
   },
   methods: {
