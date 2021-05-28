@@ -8,7 +8,7 @@
     <client-only>
       <monitoring-confirmed-cases-chart-per-100k
         title-id="monitoring-number-of-confirmed-cases-per-100k"
-        :info-titles="[$t('盛岡市の直近1週間の新規患者数（対人口10万人）')]"
+        :info-titles="[$t('MonitoringConfirmedCasesNumberPer100kCard.title')]"
         chart-id="monitoring-confirmed-cases-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
@@ -20,8 +20,13 @@
       >
         <template #notes>
           <ul>
-            <li>
-              {{ $t('盛岡市の人口を291,320人として計算') }}
+            <li
+              v-for="(note, i) in $t(
+                'MonitoringConfirmedCasesNumberPer100kCard.notes'
+              )"
+              :key="i"
+            >
+              {{ note }}
             </li>
           </ul>
         </template>
@@ -74,8 +79,14 @@ export default {
     })
 
     const chartData = [patientsCount, sevenDayMoveAveragesPer10k]
-    const dataLabels = [this.$t('陽性者数'), this.$t('直近1週間対人口10万人')]
-    const tableLabels = [this.$t('陽性者数'), this.$t('直近1週間対人口10万人')]
+    const dataLabels = [
+      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[0]'),
+      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[1]'),
+    ]
+    const tableLabels = [
+      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[0]'),
+      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[1]'),
+    ]
     const date = DailyPositiveDetail.date
 
     const getFormatter = (columnIndex) => {

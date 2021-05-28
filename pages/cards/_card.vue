@@ -103,7 +103,7 @@ export default {
         break
       case 'monitoring-number-of-confirmed-cases-per-100k':
         cardComponent = 'monitoring-confirmed-cases-number-per-100k-card'
-        cardTitle = this.$t('盛岡市の直近1週間の新規患者数（対人口10万人）')
+        cardTitle = this.$t('MonitoringConfirmedCasesNumberPer100kCard.title')
         break
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'
