@@ -94,6 +94,7 @@
 
 <script lang="ts">
 import { Chart } from 'chart.js'
+import * as ChartAnnotation from 'chartjs-plugin-annotation'
 import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
@@ -111,6 +112,9 @@ import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesColor, SurfaceStyle } from '@/utils/colors'
 import { calcDayBeforeRatio } from '@/utils/formatDayBeforeRatio'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
+
+// Register ChartAnnotation Plugin
+Chart.pluginService?.register(ChartAnnotation)
 
 type Data = {
   canvas: boolean
@@ -391,6 +395,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           ],
           yAxes: [
             {
+              id: 'number-of-confirmed-cases-per-100k',
               position: 'left',
               gridLines: {
                 display: true,
@@ -403,6 +408,30 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 fontColor: '#808080', // #808080
                 suggestedMax: this.scaledTicksYAxisMax,
               },
+            },
+          ],
+        },
+        // ステージ3とステージ4に横線を引く
+        annotation: {
+          drawTime: 'afterDatasetsDraw',
+          annotations: [
+            {
+              id: 'stage3', // optional
+              type: 'line',
+              mode: 'horizontal',
+              scaleID: 'number-of-confirmed-cases-per-100k',
+              value: '15',
+              borderColor: '#cc6666',
+              borderWidth: 1,
+            },
+            {
+              id: 'stage4',
+              type: 'line',
+              mode: 'horizontal',
+              scaleID: 'number-of-confirmed-cases-per-100k',
+              value: '25',
+              borderColor: '#cc6666',
+              borderWidth: 1,
             },
           ],
         },
