@@ -1,6 +1,6 @@
 <template>
   <v-col
-    id="MonitoringConfirmedCasesNumberCard"
+    id="MonitoringConfirmedCasesNumberPer100kCard"
     cols="12"
     md="12"
     class="DataCard"
