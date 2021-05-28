@@ -15,6 +15,7 @@ PATHS = {
     "/cards/details-of-confirmed-cases": (959, 520),
     "/cards/number-of-confirmed-cases": (959, 500),
     "/cards/monitoring-number-of-confirmed-cases": (959, 500),
+    "/cards/monitoring-number-of-confirmed-cases-per-100k": (959, 500),
     "/cards/untracked-rate": (959, 500),
     "/cards/positive-rate": (959, 500),
     "/cards/number-of-hospitalized": (959, 500),
