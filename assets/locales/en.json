@@ -400,6 +400,18 @@
       "In the case of Iwate Prefecture, If the number of positive cases continues to be 4.4 persons/day (31 persons/week) (effective reproduction number R1.7) for 3 days, request for cooperation from society (request to refrain from going out, request to refrain from business, request to close schools, etc.)."
     ]
   },
+  "MonitoringConfirmedCasesNumberPer100kCard": {
+    "title": "Morioka : Number of Positive Cases per 100,000 population in last 7 Days",
+    "legends": [
+      "Positive cases",
+      "per 100,000 population in last 7 days"
+    ],
+    "notes": [
+      "Stage 3 index is 15",
+      "Stage 4 index is 25",
+      "Calculated assuming the population of Morioka City is 291,320."
+    ]
+  },
   "WeeklyMapCard": {
     "title": "Positive case map for the last week",
     "notes": [
