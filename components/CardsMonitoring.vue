@@ -15,6 +15,9 @@ const ConfirmedCasesNumberCard = () =>
 // 新規陽性者数の7日間移動平均
 const MonitoringConfirmedCasesNumberCard = () =>
   import('@/components/cards/MonitoringConfirmedCasesNumberCard.vue')
+// 新規陽性者数の7日間移動平均
+const MonitoringConfirmedCasesNumberPer100kCard = () =>
+  import('@/components/cards/MonitoringConfirmedCasesNumberPer100kCard.vue')
 // 接触歴等不明者数(7日間移動平均)・前週比
 const UntrackedRateCard = () =>
   import('@/components/cards/UntrackedRateCard.vue')
@@ -49,6 +52,7 @@ export default Vue.extend({
   data() {
     return {
       rows: [
+        [MonitoringConfirmedCasesNumberPer100kCard],
         [ConfirmedCasesDetailsCard, MonitoringConfirmedCasesNumberCard],
         [HospitalizedNumberCard, WeeklyMapCard],
         [HospitalCapacityCard, HotelCapacityCard],

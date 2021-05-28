@@ -19,6 +19,7 @@ import HospitalCapacityCard from '@/components/cards/HospitalCapacityCard.vue'
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue'
 import HotelCapacityCard from '@/components/cards/HotelCapacityCard.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
+import MonitoringConfirmedCasesNumberPer100kCard from '@/components/cards/MonitoringConfirmedCasesNumberPer100kCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import SelfDisclosuresCard from '@/components/cards/SelfDisclosuresCard.vue'
@@ -39,6 +40,7 @@ export default {
     WhatsNewCard,
     SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
+    MonitoringConfirmedCasesNumberPer100kCard,
     // SevereCaseCard,
     PositiveRateCard,
     UntrackedRateCard,
@@ -98,6 +100,10 @@ export default {
       case 'monitoring-number-of-confirmed-cases':
         cardComponent = 'monitoring-confirmed-cases-number-card'
         cardTitle = this.$t('MonitoringConfirmedCasesNumberCard.titles[0]')
+        break
+      case 'monitoring-number-of-confirmed-cases-per-100k':
+        cardComponent = 'monitoring-confirmed-cases-number-per-100k-card'
+        cardTitle = this.$t('盛岡市の直近1週間の新規患者数（対人口10万人）')
         break
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'
