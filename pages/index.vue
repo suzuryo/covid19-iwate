@@ -10,6 +10,8 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { MetaInfo } from 'vue-meta'
 
+import SiteTopUpper from '@/components/index/SiteTopUpper.vue'
+
 type Data = {}
 type Methods = {}
 type Computed = {}
@@ -22,6 +24,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Computed,
   Props
 > = {
+  components: {
+    SiteTopUpper,
+  },
   head(): MetaInfo {
     return {
       title: this.$t('Common.岩手の最新感染動向') as string,
