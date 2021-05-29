@@ -134,7 +134,7 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-import PageHeader from '@/components/PageHeader.vue'
+import PageHeader from '@/components/_shared/PageHeader.vue'
 import PrinterButton from '@/components/PrinterButton.vue'
 import CovidIcon from '@/static/covid.svg'
 import FigCondAnx from '@/static/flow/cond_anx.svg'

@@ -57,7 +57,7 @@ import { MetaInfo } from 'vue-meta'
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import StaticCard from '@/components/_shared/StaticCard.vue'
-import PageHeader from '@/components/PageHeader.vue'
+import PageHeader from '@/components/_shared/PageHeader.vue'
 
 export default Vue.extend({
   name: 'Vaccine',

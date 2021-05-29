@@ -34,7 +34,7 @@
 import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 
-import PageHeader from '@/components/PageHeader.vue'
+import PageHeader from '@/components/_shared/PageHeader.vue'
 import Alert from '@/data/alert.json'
 import Data from '@/data/data.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
