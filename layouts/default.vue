@@ -37,7 +37,7 @@ import { LinkPropertyHref, MetaInfo } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 
 import NoScript from '@/components/_shared/NoScript.vue'
-import SideNavigation from '@/components/SideNavigation.vue'
+import SideNavigation from '@/components/_shared/SideNavigation.vue'
 import Data from '@/data/data.json'
 import PositiveRate from '@/data/positive_rate.json'
 import PositiveStatus from '@/data/positive_status.json'
