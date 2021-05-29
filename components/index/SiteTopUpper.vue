@@ -14,19 +14,24 @@
         <span>{{ $t('SiteTopUpper.注釈') }}</span>
       </div>
     </div>
-    <lazy-static-info
-      class="mb-4"
-      :url="localePath('/flow')"
-      :text="$t('SiteTopUpper.電話相談をどうぞ')"
-      :btn-text="$t('SiteTopUpper.相談の手順を見る')"
-    />
-    <lazy-static-info
-      v-for="(item, i) in alertItems"
-      :key="i"
-      class="mb-4 alertItem"
-      :url="item.url"
-      :text="item.text"
-    />
+    <v-lazy>
+      <transition-group>
+        <static-info
+          :key="$t('SiteTopUpper.電話相談をどうぞ')"
+          class="mb-4"
+          :url="localePath('/flow')"
+          :text="$t('SiteTopUpper.電話相談をどうぞ')"
+          :btn-text="$t('SiteTopUpper.相談の手順を見る')"
+        />
+        <static-info
+          v-for="item in alertItems"
+          :key="item.text"
+          class="mb-4 alertItem"
+          :url="item.url"
+          :text="item.text"
+        />
+      </transition-group>
+    </v-lazy>
   </div>
 </template>
 
@@ -35,6 +40,7 @@ import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 
 import PageHeader from '@/components/_shared/PageHeader.vue'
+import StaticInfo from '@/components/index/SiteTopUpper/StaticInfo.vue'
 import Alert from '@/data/alert.json'
 import Data from '@/data/data.json'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
@@ -42,6 +48,7 @@ import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 export default Vue.extend({
   components: {
     PageHeader,
+    StaticInfo,
   },
   data() {
     const { lastUpdate } = Data
