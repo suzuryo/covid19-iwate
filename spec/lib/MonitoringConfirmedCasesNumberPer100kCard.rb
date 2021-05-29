@@ -11,7 +11,7 @@ def has_monitoring_confirmed_cases_number_per_100k_card(lang:, lang_json:)
 
   # DataSet
   # 盛岡市の直近1週間対人口10万人あたりを算出
-  d = DATA_JSON['patients']['data'].filter{|i| i['居住地'] == '盛岡市'}.filter{|i| Time.parse(i['確定日']) > Time.parse(DATA_JSON['patients']['data'].last['確定日']).days_ago(7)}.size * 100000.0 / 291320
+  d = DATA_JSON['patients']['data'].filter{|i| i['居住地'] == '盛岡市'}.filter{|i| Time.parse(i['確定日']) > Time.parse(DATA_JSON['patients']['data'].last['確定日']).days_ago(7)}.size * 100000.0 / 289893
   d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
   expect(find('#MonitoringConfirmedCasesNumberPer100kCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > strong').text).to eq d
   expect(find('#MonitoringConfirmedCasesNumberPer100kCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span > small').text).to eq lang_json['Common']['人'].gsub(' ', '')

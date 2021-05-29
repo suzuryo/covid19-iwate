@@ -73,8 +73,8 @@ export default {
       const i = index - 6 < 0 ? 0 : index - 6
       const p = patientsCount.slice(i, index + 1)
       sevenDayMoveAveragesPer10k.push(
-        // 盛岡市の人口を 291320 人 とする
-        (p.reduce((a, b) => a + b, 0) * 100000) / 291320
+        // 盛岡市の人口を 289893 人 とする
+        (p.reduce((a, b) => a + b, 0) * 100000) / 289893
       )
     })
 
