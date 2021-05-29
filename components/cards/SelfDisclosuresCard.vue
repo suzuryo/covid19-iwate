@@ -25,7 +25,7 @@ import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import SelfDisclosures from '@/components/SelfDisclosures.vue'
 import Data from '@/data/self_disclosures.json'
 

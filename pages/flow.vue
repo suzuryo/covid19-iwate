@@ -133,7 +133,7 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import PrinterButton from '@/components/PrinterButton.vue'
 import CovidIcon from '@/static/covid.svg'

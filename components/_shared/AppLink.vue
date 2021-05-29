@@ -19,7 +19,7 @@
 import { mdiOpenInNew } from '@mdi/js'
 import Vue from 'vue'
 
-import { isExternal } from '@/utils/urls'
+import { isExternal } from '~/utils/urls'
 
 type InternalAttr = {
   to: String

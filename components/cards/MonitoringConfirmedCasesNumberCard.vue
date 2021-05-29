@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import MonitoringConfirmedCasesChart from '@/components/MonitoringConfirmedCasesChart.vue'
 import Data from '@/data/daily_positive_detail.json'
 import {

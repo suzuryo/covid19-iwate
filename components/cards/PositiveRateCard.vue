@@ -66,7 +66,7 @@
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import PositiveRateMixedChart from '@/components/PositiveRateMixedChart'
 import PositiveRate from '@/data/positive_rate.json'
 import {

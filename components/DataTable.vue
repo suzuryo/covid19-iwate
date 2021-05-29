@@ -81,7 +81,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
