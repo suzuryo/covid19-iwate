@@ -7,7 +7,6 @@ import Vue from 'vue'
 
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue' // 陽性者の属性
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue' // 陽性患者数（市町村別）
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue' // 検査陽性者の状況
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue' // 報告日別による陽性者数の推移
 import HospitalCapacityCard from '@/components/cards/HospitalCapacityCard.vue' // 入院病床の状況
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue' // 入院と宿泊療養の推移
@@ -17,6 +16,7 @@ import TestedNumberCard from '@/components/cards/TestedNumberCard.vue' // 検査
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue' // 接触歴等不明者数(7日間移動平均)・前週比
 import WeeklyMapCard from '@/components/cards/WeeklyMapCard.vue' // 直近1週間の陽性例マップ
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
+import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue' // 検査陽性者の状況
 import MonitoringConfirmedCasesNumberPer100kCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumberPer100k/Card.vue' // 新規陽性者数の7日間移動平均対人口10万人
 import PositiveRateCard from '~/components/cards/PositiveRateCard.vue' // 検査の陽性率・PCR検査の7日間移動平均
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue' // 重症患者数
