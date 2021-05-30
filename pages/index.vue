@@ -1,7 +1,9 @@
 <template>
   <div>
     <site-top-upper />
-    <lazy-cards-tab />
+    <v-lazy>
+      <cards-tab />
+    </v-lazy>
   </div>
 </template>
 
@@ -9,6 +11,9 @@
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { MetaInfo } from 'vue-meta'
+
+import CardsTab from '@/components/index/CardsTab.vue'
+import SiteTopUpper from '@/components/index/SiteTopUpper.vue'
 
 type Data = {}
 type Methods = {}
@@ -22,6 +27,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Computed,
   Props
 > = {
+  components: {
+    CardsTab,
+    SiteTopUpper,
+  },
   head(): MetaInfo {
     return {
       title: this.$t('Common.岩手の最新感染動向') as string,

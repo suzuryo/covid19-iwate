@@ -76,7 +76,7 @@ def render_lazy_contents
   h = 550
   i = 0
   loop do
-    m = page.all('div.v-lazy').count * 2
+    m = page.all('div.DataBlock > div.v-lazy').count * 2
     i = i > h * m ? 0 : i + h
     c = page.all('div.v-lazy > div.row > div.DataCard').count
     break if [m - 1, m].include?(c)
