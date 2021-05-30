@@ -24,10 +24,9 @@
 import { mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 
+import CardsMonitoring from '@/components/CardsMonitoring.vue'
+import CardsReference from '@/components/CardsReference.vue'
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus'
-
-const CardsMonitoring = () => import('@/components/CardsMonitoring.vue')
-const CardsReference = () => import('@/components/CardsReference.vue')
 
 export default Vue.extend({
   components: {
