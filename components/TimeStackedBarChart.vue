@@ -95,7 +95,7 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
-import DataSelector from '@/components/DataSelector.vue'
+import DataSelector from '@/components/_shared/DataSelector.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataViewTable, {
