@@ -1,7 +1,7 @@
 <template>
   <v-col id="WeeklyMapCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <weekly-map
+      <weekly-map-iwate
         :title="$t('WeeklyMapCard.title')"
         :title-id="'weekly-map'"
         :date="date"
@@ -16,7 +16,7 @@
             </li>
           </ul>
         </template>
-      </weekly-map>
+      </weekly-map-iwate>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
@@ -26,14 +26,14 @@
 import dayjs from 'dayjs'
 import Vue from 'vue'
 
-import WeeklyMap from '@/components/WeeklyMap.vue'
+import WeeklyMapIwate from '@/components/index/CardsMonitoring/WeeklyMap/Iwate.vue'
 import Data from '@/data/data.json'
 import PatientMunicipalities from '@/data/patient_municipalities.json'
 import { Cities, MapData } from '@/types/weekly-map'
 
 export default Vue.extend({
   components: {
-    WeeklyMap,
+    WeeklyMapIwate,
   },
   props: {
     md: {
