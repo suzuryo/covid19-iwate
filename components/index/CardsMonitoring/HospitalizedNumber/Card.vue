@@ -107,7 +107,7 @@
 
 <script>
 import AppLink from '@/components/_shared/AppLink.vue'
-import HospitalizedTimeStackedBarChart from '@/components/HospitalizedTimeStackedBarChart.vue'
+import HospitalizedTimeStackedBarChart from '@/components/index/CardsMonitoring/HospitalizedNumber/Chart.vue'
 import PositiveStatus from '@/data/positive_status.json'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters.ts'
 
