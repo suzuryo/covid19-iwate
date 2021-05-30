@@ -13,11 +13,11 @@ import HospitalCapacityCard from '@/components/cards/HospitalCapacityCard.vue' /
 import HospitalizedNumberCard from '@/components/cards/HospitalizedNumberCard.vue' // 入院と宿泊療養の推移
 import HotelCapacityCard from '@/components/cards/HotelCapacityCard.vue' // 宿泊療養の状況
 import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue' // 新規陽性者数の7日間移動平均
-import MonitoringConfirmedCasesNumberPer100kCard from '@/components/cards/MonitoringConfirmedCasesNumberPer100kCard.vue' // 新規陽性者数の7日間移動平均対人口10万人
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue' // 検査実施件数
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue' // 接触歴等不明者数(7日間移動平均)・前週比
 import WeeklyMapCard from '@/components/cards/WeeklyMapCard.vue' // 直近1週間の陽性例マップ
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
+import MonitoringConfirmedCasesNumberPer100kCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumberPer100k/Card.vue' // 新規陽性者数の7日間移動平均対人口10万人
 import PositiveRateCard from '~/components/cards/PositiveRateCard.vue' // 検査の陽性率・PCR検査の7日間移動平均
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue' // 重症患者数
 // import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue' // 確定日別による陽性者数の推移

@@ -6,7 +6,7 @@
     class="DataCard"
   >
     <client-only>
-      <monitoring-confirmed-cases-chart-per-100k
+      <monitoring-confirmed-cases-chart-per-100k-chart
         title-id="monitoring-number-of-confirmed-cases-per-100k"
         :info-titles="[$t('MonitoringConfirmedCasesNumberPer100kCard.title')]"
         chart-id="monitoring-confirmed-cases-chart"
@@ -30,14 +30,14 @@
             </li>
           </ul>
         </template>
-      </monitoring-confirmed-cases-chart-per-100k>
+      </monitoring-confirmed-cases-chart-per-100k-chart>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>
 
 <script>
-import MonitoringConfirmedCasesChartPer100k from '@/components/MonitoringConfirmedCasesChartPer100k.vue'
+import MonitoringConfirmedCasesChartPer100kChart from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumberPer100k/Chart.vue'
 import DailyPositiveDetail from '@/data/daily_positive_detail.json'
 import Data from '@/data/data.json'
 import {
@@ -47,7 +47,7 @@ import {
 
 export default {
   components: {
-    MonitoringConfirmedCasesChartPer100k,
+    MonitoringConfirmedCasesChartPer100kChart,
   },
   props: {
     md: {
