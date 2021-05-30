@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Breadcrumb from '@/components/Breadcrumb.vue'
+import Breadcrumb from '@/components/_shared/Breadcrumb.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
