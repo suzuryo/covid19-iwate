@@ -11,7 +11,6 @@
 <script>
 import Breadcrumb from '@/components/_shared/Breadcrumb.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
-import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/ConfirmedCasesAttributes/Card.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue'
@@ -23,6 +22,7 @@ import HospitalizedNumberCard from '@/components/index/CardsMonitoring/Hospitali
 import HotelCapacityCard from '@/components/index/CardsMonitoring/HotelCapacity/Card.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
 import MonitoringConfirmedCasesNumberPer100kCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumberPer100k/Card.vue'
+import PositiveRateCard from '@/components/index/CardsMonitoring/PositiveRate/Card.vue'
 import UntrackedRateCard from '@/components/index/CardsMonitoring/UntrackedRate/Card.vue'
 import WeeklyMapCard from '@/components/index/CardsMonitoring/WeeklyMap/Card.vue'
 import SelfDisclosuresCard from '@/components/index/CardsReference/SelfDisclosures/Card.vue'
