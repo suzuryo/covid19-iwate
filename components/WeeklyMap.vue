@@ -31,8 +31,8 @@ import * as d3 from 'd3'
 import * as topojson from 'topojson-client'
 import Vue from 'vue'
 
-import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataView from '@/components/index/_shared/DataView.vue'
+import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import { MapDataItem } from '@/types/weekly-map'
 

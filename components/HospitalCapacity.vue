@@ -60,8 +60,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataView from '@/components/index/_shared/DataView.vue'
+import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 export default Vue.extend({
