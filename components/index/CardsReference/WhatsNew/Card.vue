@@ -1,7 +1,7 @@
 <template>
   <v-col id="WhatsNewCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <whats-new
+      <whats-new-table
         :title="$t('WhatsNewCard.title')"
         :title-id="'whats-new'"
         :date="date"
@@ -17,7 +17,7 @@ import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
-import WhatsNew from '@/components/WhatsNew.vue'
+import WhatsNewTable from '@/components/index/CardsReference/WhatsNew/Table.vue'
 import Data from '@/data/news.json'
 
 type NewsItem = {
@@ -43,7 +43,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   Props
 > = {
   components: {
-    WhatsNew,
+    WhatsNewTable,
   },
   props: {
     md: {
