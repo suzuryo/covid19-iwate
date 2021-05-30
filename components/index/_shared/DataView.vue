@@ -24,12 +24,12 @@
       </div>
 
       <div class="DataView-Description DataView-Description--Additional">
-        <data-view-expansion-panel
+        <expansion-panel
           v-if="$slots.dataTable"
           class="DataView-ExpansionPanel"
         >
           <slot name="dataTable" />
-        </data-view-expansion-panel>
+        </expansion-panel>
       </div>
 
       <div class="DataView-Description DataView-Description--Additional">
@@ -69,12 +69,12 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 
-import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
+import ExpansionPanel from '@/components/index/_shared/DataView/ExpansionPanel.vue'
 import Share from '@/components/index/_shared/DataView/Share.vue'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
-  components: { DataViewExpansionPanel, Share },
+  components: { ExpansionPanel, Share },
   props: {
     title: {
       type: String,
