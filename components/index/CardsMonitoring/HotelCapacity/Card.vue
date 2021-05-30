@@ -1,7 +1,7 @@
 <template>
   <v-col id="HotelCapacityCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <hotel-capacity
+      <hotel-capacity-beds
         :title="$t('HotelCapacityCard.title')"
         title-id="hotel-capacity"
         :date="date"
@@ -16,13 +16,13 @@
 import dayjs from 'dayjs'
 import Vue from 'vue'
 
-import HotelCapacity from '@/components/HotelCapacity.vue'
+import HotelCapacityBeds from '@/components/index/CardsMonitoring/HotelCapacity/Beds.vue'
 import MainSummary from '@/data/main_summary.json'
 import PositiveStatus from '@/data/positive_status.json'
 
 export default Vue.extend({
   components: {
-    HotelCapacity,
+    HotelCapacityBeds,
   },
   props: {
     md: {
