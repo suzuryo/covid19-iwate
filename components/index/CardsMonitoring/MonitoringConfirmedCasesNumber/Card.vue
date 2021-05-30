@@ -6,7 +6,7 @@
     class="DataCard"
   >
     <client-only>
-      <monitoring-confirmed-cases-chart
+      <monitoring-confirmed-cases-number-chart
         title-id="monitoring-number-of-confirmed-cases"
         :info-titles="[
           $t('MonitoringConfirmedCasesNumberCard.titles[0]'),
@@ -60,7 +60,7 @@
             </div>
           </div>
         </template>
-      </monitoring-confirmed-cases-chart>
+      </monitoring-confirmed-cases-number-chart>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
@@ -68,7 +68,7 @@
 
 <script>
 import AppLink from '@/components/_shared/AppLink.vue'
-import MonitoringConfirmedCasesChart from '@/components/MonitoringConfirmedCasesChart.vue'
+import MonitoringConfirmedCasesNumberChart from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Chart.vue'
 import Data from '@/data/daily_positive_detail.json'
 import {
   getNumberToFixedFunction,
@@ -77,7 +77,7 @@ import {
 
 export default {
   components: {
-    MonitoringConfirmedCasesChart,
+    MonitoringConfirmedCasesNumberChart,
     AppLink,
   },
   props: {
