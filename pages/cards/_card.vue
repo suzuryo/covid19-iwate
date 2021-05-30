@@ -16,7 +16,6 @@ import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitori
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
 import HospitalCapacityCard from '@/components/index/CardsMonitoring/HospitalCapacity/Card.vue'
-// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'
 import HospitalizedNumberCard from '@/components/index/CardsMonitoring/HospitalizedNumber/Card.vue'
 import HotelCapacityCard from '@/components/index/CardsMonitoring/HotelCapacity/Card.vue'
 import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
@@ -41,7 +40,6 @@ export default {
     SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
     MonitoringConfirmedCasesNumberPer100kCard,
-    // SevereCaseCard,
     PositiveRateCard,
     UntrackedRateCard,
     ConfirmedCasesDetailsCard,
@@ -109,9 +107,6 @@ export default {
         cardComponent = 'untracked-rate-card'
         cardTitle = this.$t('UntrackedRateCard.titles[0]')
         break
-      // case 'positive-status-severe-case':
-      //   cardComponent = 'severe-case-card'
-      //   break
       case 'number-of-hospitalized':
         cardComponent = 'hospitalized-number-card'
         cardTitle = this.$t('HospitalizedNumberCard.title')

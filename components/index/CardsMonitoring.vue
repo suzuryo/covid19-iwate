@@ -19,7 +19,6 @@ import PositiveRateCard from '@/components/index/CardsMonitoring/PositiveRate/Ca
 import TestedNumberCard from '@/components/index/CardsMonitoring/TestedNumber/Card.vue' // 検査実施件数
 import UntrackedRateCard from '@/components/index/CardsMonitoring/UntrackedRate/Card.vue' // 接触歴等不明者数(7日間移動平均)・前週比
 import WeeklyMapCard from '@/components/index/CardsMonitoring/WeeklyMap/Card.vue' // 直近1週間の陽性例マップ
-// import SevereCaseCard from '@/components/cards/SevereCaseCard.vue' // 重症患者数
 // import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue' // 確定日別による陽性者数の推移
 
 export default Vue.extend({
