@@ -1,7 +1,7 @@
 <template>
   <v-col id="SelfDisclosuresCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <self-disclosures
+      <self-disclosures-table
         :title="$t('SelfDisclosuresCard.title')"
         :title-id="'self-disclosures'"
         :date="date"
@@ -14,7 +14,7 @@
             </li>
           </ul>
         </template>
-      </self-disclosures>
+      </self-disclosures-table>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
@@ -26,7 +26,7 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-import SelfDisclosures from '@/components/SelfDisclosures.vue'
+import SelfDisclosuresTable from '@/components/index/CardsReference/SelfDisclosures/Table.vue'
 import Data from '@/data/self_disclosures.json'
 
 type NewsItem = {
@@ -53,7 +53,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 > = {
   components: {
     AppLink,
-    SelfDisclosures,
+    SelfDisclosuresTable,
   },
   props: {
     md: {
