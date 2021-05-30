@@ -5,7 +5,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import CardsLazyRow from '@/components/_shared/CardsLazyRow.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue' // 陽性者の属性
 import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue' // 陽性患者数（市町村別）
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue' // 検査陽性者の状況
@@ -18,6 +17,7 @@ import MonitoringConfirmedCasesNumberPer100kCard from '@/components/cards/Monito
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue' // 検査実施件数
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue' // 接触歴等不明者数(7日間移動平均)・前週比
 import WeeklyMapCard from '@/components/cards/WeeklyMapCard.vue' // 直近1週間の陽性例マップ
+import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 import PositiveRateCard from '~/components/cards/PositiveRateCard.vue' // 検査の陽性率・PCR検査の7日間移動平均
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue' // 重症患者数
 // import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue' // 確定日別による陽性者数の推移
