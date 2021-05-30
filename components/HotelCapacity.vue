@@ -7,7 +7,9 @@
         :class="bedInUse(bed)"
         :title="bed + 1"
       >
-        <span v-if="bed % 50 === 49">{{ bed + 1 }}</span>
+        <span v-if="bed % 50 === 49 || bed === 84 || bed === 246">{{
+          bed + 1
+        }}</span>
       </div>
     </div>
     <div class="legend1">
@@ -32,6 +34,11 @@
       <div v-if="bedSummary.hotel > 300">
         <span class="Bed overflowed" />
         {{ $t('HotelCapacityCard.overflowed') }}
+      </div>
+    </div>
+    <div class="legend3">
+      <div v-for="note in $t('HotelCapacityCard.legends3')" :key="note">
+        {{ note }}
       </div>
     </div>
     <template #notes>
@@ -176,5 +183,9 @@ $bed_size: 16px;
     margin: 1px 0;
     flex-wrap: wrap;
   }
+}
+.legend3 {
+  margin-top: 20px;
+  @include font-size(12);
 }
 </style>
