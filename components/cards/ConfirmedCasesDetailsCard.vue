@@ -44,12 +44,14 @@ import dayjs from 'dayjs'
 
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
 import DataView from '@/components/index/_shared/DataView.vue'
+import NotesExpansionPanel from '@/components/index/_shared/DataView/NotesExpansionPanel.vue'
 import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import MainSummary from '@/data/main_summary.json'
 
 export default {
   components: {
     DataView,
+    NotesExpansionPanel,
     DataViewDataSetPanel,
     ConfirmedCasesDetailsTable,
   },
