@@ -6,7 +6,7 @@
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 import Vue from 'vue'
 
-import CardsLazyRow from '@/components/CardsLazyRow.vue'
+import CardsLazyRow from '@/components/_shared/CardsLazyRow.vue'
 
 // 最新のお知らせ
 const WhatsNewCard = () => import('@/components/cards/WhatsNewCard.vue')
