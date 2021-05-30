@@ -43,8 +43,8 @@
 import dayjs from 'dayjs'
 
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
-import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+import DataView from '@/components/index/_shared/DataView.vue'
 import MainSummary from '@/data/main_summary.json'
 
 export default {

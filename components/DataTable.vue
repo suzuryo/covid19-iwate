@@ -82,8 +82,8 @@
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+import DataView from '@/components/index/_shared/DataView.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import { getDayjsObject } from '@/utils/formatDate'
 
