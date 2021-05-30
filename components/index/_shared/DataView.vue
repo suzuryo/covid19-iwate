@@ -54,7 +54,7 @@
           </div>
         </div>
 
-        <data-view-share
+        <share
           v-if="$route.query.embed != 'true'"
           :title="title"
           :title-id="titleId"
@@ -70,11 +70,11 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 
 import DataViewExpansionPanel from '@/components/DataViewExpansionPanel.vue'
-import DataViewShare from '@/components/DataViewShare.vue'
+import Share from '@/components/index/_shared/DataView/Share.vue'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
-  components: { DataViewExpansionPanel, DataViewShare },
+  components: { DataViewExpansionPanel, Share },
   props: {
     title: {
       type: String,
