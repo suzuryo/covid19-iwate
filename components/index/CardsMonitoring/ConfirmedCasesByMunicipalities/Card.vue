@@ -32,9 +32,9 @@
 <script>
 import dayjs from 'dayjs'
 
+import ConfirmedCasesByMunicipalitiesTable from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Table.vue'
 import Data from '@/data/data.json'
 import PatientMunicipalities from '@/data/patient_municipalities.json'
-import ConfirmedCasesByMunicipalitiesTable from '~/components/ConfirmedCasesByMunicipalitiesTable.vue'
 
 const population = {
   盛岡市: 289893,

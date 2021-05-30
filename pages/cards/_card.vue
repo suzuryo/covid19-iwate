@@ -10,13 +10,13 @@
 
 <script>
 import Breadcrumb from '@/components/_shared/Breadcrumb.vue'
-import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import PositiveRateCard from '@/components/cards/PositiveRateCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/ConfirmedCasesAttributes/Card.vue'
+import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue'
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 import HospitalCapacityCard from '@/components/index/CardsMonitoring/HospitalCapacity/Card.vue'
 // import SevereCaseCard from '@/components/cards/SevereCaseCard.vue'

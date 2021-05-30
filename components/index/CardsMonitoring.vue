@@ -5,12 +5,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue' // 陽性患者数（市町村別）
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue' // 報告日別による陽性者数の推移
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue' // 検査実施件数
 import UntrackedRateCard from '@/components/cards/UntrackedRateCard.vue' // 接触歴等不明者数(7日間移動平均)・前週比
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/ConfirmedCasesAttributes/Card.vue' // 陽性者の属性
+import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue' // 陽性患者数（市町村別）
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue' // 検査陽性者の状況
 import HospitalCapacityCard from '@/components/index/CardsMonitoring/HospitalCapacity/Card.vue' // 入院病床の状況
 import HospitalizedNumberCard from '@/components/index/CardsMonitoring/HospitalizedNumber/Card.vue' // 入院と宿泊療養の推移
