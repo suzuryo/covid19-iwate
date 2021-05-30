@@ -38,8 +38,8 @@
 import Vue from 'vue'
 
 import DataView from '@/components/index/_shared/DataView.vue'
+import NotesExpansionPanel from '@/components/index/_shared/DataView/NotesExpansionPanel.vue'
 import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
-import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 export default Vue.extend({
   components: { DataView, DataViewDataSetPanel, NotesExpansionPanel },

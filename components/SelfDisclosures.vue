@@ -69,8 +69,8 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import DataView from '@/components/index/_shared/DataView.vue'
+import NotesExpansionPanel from '@/components/index/_shared/DataView/NotesExpansionPanel.vue'
 import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
-import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 
 type Data = {}
 type Methods = {}

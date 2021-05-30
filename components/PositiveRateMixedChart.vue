@@ -119,13 +119,13 @@ import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
 import DataView from '@/components/index/_shared/DataView.vue'
+import NotesExpansionPanel from '@/components/index/_shared/DataView/NotesExpansionPanel.vue'
 import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import DataViewTable, {
   TableHeader,
   TableItem,
 } from '@/components/index/_shared/DataViewTable.vue'
 import ScrollableChart from '@/components/index/_shared/ScrollableChart.vue'
-import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
 import {
   DisplayData,
   yAxesBgPlugin,
