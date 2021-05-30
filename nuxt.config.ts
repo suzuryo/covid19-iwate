@@ -28,7 +28,7 @@ const pages = [
 
 const config: NuxtConfig = {
   target: 'static',
-  components: true,
+  components: false, // disable components auto import
   /*
    ** Headers of the page
    */
