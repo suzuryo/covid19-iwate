@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import TimeBarChart from '@/components/TimeBarChart.vue'
+import TimeBarChart from '@/components/index/_shared/TimeBarChart.vue'
 import Data from '@/data/positive_by_diagnosed.json'
 import { calcDayBeforeRatio } from '@/utils/formatDayBeforeRatio'
 import formatGraph from '@/utils/formatGraph'
