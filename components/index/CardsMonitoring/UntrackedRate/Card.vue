@@ -1,7 +1,7 @@
 <template>
   <v-col id="UntrackedRateCard" cols="12" :md="md" class="DataCard">
     <client-only>
-      <untracked-rate-mixed-chart
+      <untracked-rate-chart
         :title-id="'untracked-rate'"
         :info-titles="[
           $t('UntrackedRateCard.titles[0]'),
@@ -26,14 +26,14 @@
             </li>
           </ul>
         </template>
-      </untracked-rate-mixed-chart>
+      </untracked-rate-chart>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
 </template>
 
 <script>
-import UntrackedRateMixedChart from '@/components/UntrackedRateMixedChart'
+import UntrackedRateChart from '@/components/index/CardsMonitoring/UntrackedRate/Chart'
 import Data from '@/data/daily_positive_detail.json'
 import {
   getNumberToFixedFunction,
@@ -42,7 +42,7 @@ import {
 
 export default {
   components: {
-    UntrackedRateMixedChart,
+    UntrackedRateChart,
   },
   props: {
     md: {
