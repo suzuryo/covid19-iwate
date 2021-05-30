@@ -10,7 +10,6 @@
 
 <script>
 import Breadcrumb from '@/components/_shared/Breadcrumb.vue'
-import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/ConfirmedCasesAttributes/Card.vue'
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue'
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
@@ -47,7 +46,6 @@ export default {
     ConfirmedCasesAttributesCard,
     ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
-    PositiveNumberByDiagnosedDateCard,
     HospitalizedNumberCard,
     HospitalCapacityCard,
     HotelCapacityCard,
@@ -86,10 +84,6 @@ export default {
       case 'number-of-tested':
         cardComponent = 'tested-number-card'
         cardTitle = this.$t('TestedNumberCard.title')
-        break
-      case 'positive-number-by-diagnosed-date':
-        cardComponent = 'positive-number-by-diagnosed-date-card'
-        cardTitle = this.$t('確定日別による陽性者数の推移')
         break
       case 'positive-rate':
         cardComponent = 'positive-rate-card'
