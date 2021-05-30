@@ -25,7 +25,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import CardRow from '@/components/_shared/CardRow.vue'
+import CardRow from '@/components/index/_shared/CardRow.vue'
 
 type Data = {
   actives: boolean[]
