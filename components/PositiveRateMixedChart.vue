@@ -118,6 +118,7 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
+import ScrollableChart from '@/components/_shared/ScrollableChart.vue'
 import DataView from '@/components/DataView.vue'
 import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
 import DataViewTable, {
@@ -125,7 +126,6 @@ import DataViewTable, {
   TableItem,
 } from '@/components/DataViewTable.vue'
 import NotesExpansionPanel from '@/components/NotesExpansionPanel.vue'
-import ScrollableChart from '@/components/ScrollableChart.vue'
 import {
   DisplayData,
   yAxesBgPlugin,
