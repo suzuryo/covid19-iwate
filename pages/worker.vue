@@ -1,10 +1,6 @@
 <template>
   <div class="Worker">
-    <page-header class="mb-3" :icon-path="headerItem.iconPath">
-      <template #pageHeader>
-        {{ headerItem.title }}
-      </template>
-    </page-header>
+    <page-header :title="headerItem.title" :icon-path="headerItem.iconPath" />
     <static-card>
       <h3>
         <app-link

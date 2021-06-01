@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require_relative '../../lib/SiteTopUpper'
+require_relative '../../lib/PageHeader'
 
 describe 'iPhone 6/7/8', type: :feature do
   LOCALES.each do |lang, data|
@@ -9,12 +9,12 @@ describe 'iPhone 6/7/8', type: :feature do
       before do
         visit data[:path]
         render_lazy_contents
-        page.scroll_to('.SiteTopUpper')
+        page.scroll_to('.PageHeader')
       end
 
-      describe 'ページ上部 (SiteTopUpper)' do
+      describe 'ページ上部 (PageHeader)' do
         it '項目の値' do
-          has_site_top_upper(lang: lang, data: data)
+          has_page_header(lang: lang, data: data)
         end
       end
     end
