@@ -21,7 +21,8 @@ def has_monitoring_confirmed_cases_number_card
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
 
   # 直近1週間の新規患者数（対人口10万人） 岩手県の人口を 1211206 とする
-  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } * 100000.0 / 1211206.0).round(1))
+  d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } * 100000.0 / 1211206.0).round(2))
+  d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
