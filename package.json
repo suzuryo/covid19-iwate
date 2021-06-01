@@ -39,7 +39,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/sitemap": "2.4.0",
     "chart.js": "2.9.4",
-    "chartjs-plugin-annotation": "0.5.7",
+    "chartjs-plugin-annotation": "1.0.2",
     "cross-env": "7.0.3",
     "d3": "6.7.0",
     "dayjs": "1.10.5",
