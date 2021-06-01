@@ -1,10 +1,6 @@
 <template>
   <div class="About">
-    <page-header class="mb-3">
-      <template #pageHeader>
-        {{ $t('Common.当サイトについて') }}
-      </template>
-    </page-header>
+    <page-header :title="headerItem.title" />
     <static-card>
       <p v-for="(item, idx) in $t('About.a')" :key="idx">
         {{ item }}
@@ -96,6 +92,13 @@ export default Vue.extend({
     PageHeader,
     StaticCard,
     AppLink,
+  },
+  data() {
+    return {
+      headerItem: {
+        title: this.$t('Common.当サイトについて') as string,
+      },
+    }
   },
   head(): MetaInfo {
     return {

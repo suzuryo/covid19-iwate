@@ -1,13 +1,19 @@
 <template>
   <div>
     <div :class="$style.title">
-      <covid-icon aria-hidden="true" />
-      <page-header :class="$style.text">
-        <template #pageHeader>
-          {{ $t('SideNavigation.a[4]') }}
+      <page-header :title="headerItem.title">
+        <template #SvgIcon>
+          <span class="v-icon notranslate mr-2 theme--light">
+            <covid-icon aria-hidden="true" />
+          </span>
+        </template>
+        <template #PrinterButton>
+          <printer-button
+            :wrapper-class="$style.printerButton"
+            to="/print/flow"
+          />
         </template>
       </page-header>
-      <printer-button :wrapper-class="$style.printerButton" to="/print/flow" />
     </div>
     <div :class="$style.container">
       <h3 ref="upperTrigger" :class="$style.conHeading">
@@ -128,10 +134,8 @@
 </template>
 
 <script lang="ts">
-import { mdiOpenInNew } from '@mdi/js'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
-import { TranslateResult } from 'vue-i18n'
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import PageHeader from '@/components/_shared/PageHeader.vue'
@@ -141,7 +145,11 @@ import FigCondAnx from '@/static/flow/cond_anx.svg'
 import FigCondSy from '@/static/flow/cond_sy.svg'
 import IconPhone from '@/static/flow/phone.svg'
 
-type Data = {}
+type Data = {
+  headerItem: {
+    title: string
+  }
+}
 type Methods = {}
 type Computed = {}
 type Props = {}
@@ -165,13 +173,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   data() {
     return {
-      mdiOpenInNew,
+      headerItem: {
+        title: this.$t('SideNavigation.a[4]') as string,
+      },
     }
   },
   head(): any {
-    const title: TranslateResult = this.$t('SideNavigation.a[4]')
     return {
-      title,
+      title: this.$t('SideNavigation.a[4]') as string,
     }
   },
 }
@@ -194,21 +203,12 @@ $padding: 20;
 $margin: 20;
 
 .title {
-  display: flex;
-  align-items: center;
-  margin-bottom: $margin * 1px;
-  > svg {
-    width: 30px;
-    height: 30px;
-    > path:not(:first-of-type) {
-      fill: $gray-2;
-    }
-  }
-  .text {
-    margin-left: 8px;
-  }
   .printerButton {
     margin: 0 0 0 auto;
+    a {
+      color: $green-1;
+      @include font-size(14);
+    }
   }
 }
 .container {
