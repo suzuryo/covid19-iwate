@@ -2,6 +2,7 @@
 @font-face { font-family: "Yu Gothic"; src: local("Yu Gothic Bold")  , local("YuGothic-Bold")  ; font-weight: bold; }
 
 body {
+  font-family: $body-font-family;
   background-color: $gray-5;
   font-feature-settings: "palt";
   letter-spacing: .2px;
