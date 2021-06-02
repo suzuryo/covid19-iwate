@@ -32,6 +32,7 @@
 
 <script lang="ts">
 import dayjs from 'dayjs'
+import PullToRefresh from 'pulltorefreshjs'
 import Vue from 'vue'
 import { LinkPropertyHref, MetaInfo } from 'vue-meta'
 import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
@@ -306,9 +307,19 @@ export default Vue.extend({
   mounted() {
     this.loading = false
     this.getMatchMedia().addListener(this.closeNavigation)
+    PullToRefresh.init({
+      mainElement: 'body',
+      instructionsPullToRefresh: this.$t('Pull down to refresh') as string,
+      instructionsReleaseToRefresh: this.$t('Release to refresh') as string,
+      instructionsRefreshing: this.$t('Refreshing') as string,
+      onRefresh() {
+        window.location.reload()
+      },
+    })
   },
   beforeDestroy() {
     this.getMatchMedia().removeListener(this.closeNavigation)
+    PullToRefresh.destroyAll()
   },
   methods: {
     openNavigation(): void {
