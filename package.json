@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@nuxt/types": "2.15.6",
+    "@nuxt/types": "2.15.7",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/gtm": "2.4.0",
     "@nuxtjs/pwa": "3.3.5",
@@ -43,7 +43,7 @@
     "cross-env": "7.0.3",
     "d3": "6.7.0",
     "dayjs": "1.10.5",
-    "nuxt": "2.15.6",
+    "nuxt": "2.15.7",
     "nuxt-i18n": "6.27.0",
     "pulltorefreshjs": "0.1.22",
     "topojson-client": "3.1.0",
