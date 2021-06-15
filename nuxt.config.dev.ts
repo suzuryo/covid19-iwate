@@ -31,6 +31,7 @@ const config: NuxtConfig = {
     host: '0.0.0.0',
   },
   target: 'static',
+  ssr: false,
   components: false, // disable components auto import
   /*
    ** Headers of the page
