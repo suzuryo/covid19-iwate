@@ -207,7 +207,7 @@
   "2次元コード": "QR Code",
   "※最新の情報はWebページをご覧ください": "* Please check the latest information from the website.",
   "ogp": {
-    "og:image": "https://iwate.stopcovid19.jp/ogp/en/ogp-image.png"
+    "og:image": "https://iwate.stopcovid19.jp/ogp.png"
   },
   "{title}のグラフをシェア": "Share the graph of {title}",
   "閉じる": "Close",
