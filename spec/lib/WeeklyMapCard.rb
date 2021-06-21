@@ -17,7 +17,7 @@ def has_weekly_map_card(lang:, lang_json:)
   # DataSetPanelの初期状態は岩手県全域の状況
   expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > span.lTextBefore').text).to eq lang_json['岩手県全域']
   # 直近1週間の養成者数
-  d = DATA_JSON['patients']['data'].filter{|i| Time.parse(i['確定日']) > Time.parse(DATA_JSON['patients']['data'].last['確定日']).days_ago(7)}.size
+  d = DATA_JSON['patients']['data'].filter{|i| Time.parse(i['確定日']) > Time.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).days_ago(7)}.size
   expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > strong').text).to eq d.to_s
   expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > small.DataView-DataSet-DataInfo-summary-unit').text).to eq lang_json['例']
   expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > small.DataView-DataSet-DataInfo-date').text).to eq lang_json['居住地が県外で県内滞在も含む']
@@ -84,7 +84,7 @@ def has_weekly_map_card(lang:, lang_json:)
     # DataSetPanelの値が変わる
     expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > span.lTextBefore').text).to eq lang_json[city[0]]
     # 直近1週間の陽性者数
-    d = DATA_JSON['patients']['data'].filter{|i| i['居住地'] == city[0] || i['居住地'] == city[1]}.filter{|i| Time.parse(i['確定日']) > Time.parse(DATA_JSON['patients']['data'].last['確定日']).days_ago(7)}.size
+    d = DATA_JSON['patients']['data'].filter{|i| i['居住地'] == city[0] || i['居住地'] == city[1]}.filter{|i| Time.parse(i['確定日']) > Time.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).days_ago(7)}.size
     expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > strong').text).to eq d.to_s
     expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > small.DataView-DataSet-DataInfo-summary-unit').text).to eq lang_json['例']
     expect(find('#WeeklyMapCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > small.DataView-DataSet-DataInfo-date').text).to eq "#{lang_json[city[1]]}#{lang_json['{area}を含む'].gsub('{area}', '')}"
