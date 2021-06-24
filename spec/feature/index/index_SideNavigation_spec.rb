@@ -48,19 +48,19 @@ describe 'iPhone 6/7/8', type: :feature do
         expect(find('nav.SideNavigation-Menu > ul.MenuList > li.MenuList-Item:nth-child(8) > a > span.MenuList-Title').text).to eq data[:json]['Common']['当サイトについて']
 
         # MenuList LINE
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(1)')[:href]).to eq 'https://line.me/R/ti/p/%40566kxdol'
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(1) > picture > img')[:src]).to match %r{/line.png$}
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(1) > a')[:href]).to eq 'https://line.me/R/ti/p/%40566kxdol'
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(1) > a > picture > img')[:src]).to match %r{/line.png$}
 
         # MenuList Twitter
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(2)')[:href]).to eq 'https://twitter.com/iwatevscovid19'
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(2) > picture > img')[:src]).to match %r{/twitter.png$}
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(2) > a')[:href]).to eq 'https://twitter.com/iwatevscovid19'
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(2) > a > picture > img')[:src]).to match %r{/twitter.png$}
 
         # MenuList GitHub
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(3)')[:href]).to eq 'https://github.com/MeditationDuck/covid19'
-        expect(find('footer.SideNavigation-Footer > div.SideNavigation-Social > a:nth-child(3) > picture > img')[:src]).to match %r{/github.png$}
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(3) > a')[:href]).to eq 'https://github.com/MeditationDuck/covid19'
+        expect(find('footer.SideNavigation-Footer > ul.SideNavigation-Social > li.SideNavigation-SocialLink-ListItem:nth-child(3) > a > picture > img')[:src]).to match %r{/github.png$}
 
         # MenuList Copyright ©
-        expect(find('footer.SideNavigation-Footer > small.SideNavigation-Copyright + br + small.SideNavigation-Copyright').text).to eq "© #{Time.now.year} Meditation Duck"
+        expect(find('footer.SideNavigation-Footer > small.SideNavigation-Copyright + small.SideNavigation-Copyright').text).to eq "© #{Time.now.year} Meditation Duck"
       end
 
       describe 'ナビゲーション遷移後の画面のタイトル' do

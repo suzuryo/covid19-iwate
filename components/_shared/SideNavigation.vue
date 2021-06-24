@@ -50,38 +50,44 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <div class="SideNavigation-Social">
-          <app-link
-            to="https://line.me/R/ti/p/%40566kxdol"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" alt="LINE" width="30" height="30" />
-            </picture>
-          </app-link>
-          <app-link
-            to="https://twitter.com/iwatevscovid19"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" alt="Twitter" width="30" height="30" />
-            </picture>
-          </app-link>
-          <app-link
-            to="https://github.com/MeditationDuck/covid19"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/github.webp" type="image/webp" />
-              <img src="/github.png" alt="GitHub" width="30" height="30" />
-            </picture>
-          </app-link>
-        </div>
+        <ul class="SideNavigation-Social">
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://line.me/R/ti/p/%40566kxdol"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/line.webp" type="image/webp" />
+                <img src="/line.png" alt="LINE" width="30" height="30" />
+              </picture>
+            </app-link>
+          </li>
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://twitter.com/iwatevscovid19"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/twitter.webp" type="image/webp" />
+                <img src="/twitter.png" alt="Twitter" width="30" height="30" />
+              </picture>
+            </app-link>
+          </li>
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://github.com/MeditationDuck/covid19"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/github.webp" type="image/webp" />
+                <img src="/github.png" alt="GitHub" width="30" height="30" />
+              </picture>
+            </app-link>
+          </li>
+        </ul>
         <i18n
           tag="small"
           path="このサイトの内容物は{creativeCommons}の下に提供されています。"
@@ -97,7 +103,6 @@
             </app-link>
           </template>
         </i18n>
-        <br />
         <small class="SideNavigation-Copyright">
           &copy; {{ copyrightYear }} Meditation Duck
         </small>
@@ -359,39 +364,40 @@ export default Vue.extend({
 
 .SideNavigation-Footer {
   padding-top: 20px;
-}
-
-.SideNavigation-Social {
-  display: flex;
-}
-
-.SideNavigation-SocialLink {
-  border: 1px dotted transparent;
-  border-radius: 30px;
-  color: $gray-3;
-  margin-bottom: 15px;
-
-  &:link,
-  &:hover,
-  &:visited,
-  &:active {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  &:focus {
-    color: inherit;
-    text-decoration: none;
-    border: 1px dotted $gray-3;
-    outline: none;
-  }
-
-  & + & {
-    margin-left: 10px;
-  }
-
-  img {
-    width: 30px;
+  .SideNavigation-Social {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    .SideNavigation-SocialLink-ListItem {
+      .SideNavigation-SocialLink {
+        display: block;
+        border: 1px dotted transparent;
+        border-radius: 15px;
+        color: $gray-3;
+        &:link,
+        &:hover,
+        &:visited,
+        &:active {
+          color: inherit;
+          text-decoration: none;
+        }
+        &:focus {
+          color: inherit;
+          text-decoration: none;
+          border: 1px dotted $gray-3;
+          outline: none;
+        }
+        picture {
+          img {
+            width: 30px;
+          }
+        }
+      }
+      & + .SideNavigation-SocialLink-ListItem {
+        margin-left: 10px;
+      }
+    }
   }
 }
 
