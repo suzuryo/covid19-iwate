@@ -15,7 +15,11 @@
           @close-navigation="closeNavigation"
         />
       </div>
-      <main class="mainContainer" :class="{ open: isOpenNavigation }">
+      <main
+        ref="Main"
+        class="mainContainer"
+        :class="{ hidden: isOpenNavigation }"
+      >
         <v-container class="px-4 py-8">
           <nuxt />
         </v-container>
@@ -323,10 +327,18 @@ export default Vue.extend({
   },
   methods: {
     openNavigation(): void {
-      this.isOpenNavigation = true
+      this.$data.isOpenNavigation = true
+      const $Main = this.$refs.Main as HTMLElement | undefined
+      if ($Main) {
+        $Main.setAttribute('aria-hidden', 'true')
+      }
     },
     closeNavigation(): void {
-      this.isOpenNavigation = false
+      this.$data.isOpenNavigation = false
+      const $Main = this.$refs.Main as HTMLElement | undefined
+      if ($Main) {
+        $Main.removeAttribute('aria-hidden')
+      }
     },
     getMatchMedia(): MediaQueryList {
       return window.matchMedia('(min-width: 601px)')
@@ -365,6 +377,13 @@ export default Vue.extend({
 }
 .naviContainer {
   background-color: $white;
+  .open {
+    height: 100vh;
+    @include largerThan($small) {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
 }
 @include lessThan($small) {
   .naviContainer {
@@ -393,13 +412,6 @@ export default Vue.extend({
     width: 325px;
   }
 }
-.open {
-  height: 100vh;
-  @include largerThan($small) {
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-}
 .mainContainer {
   grid-column: 2/3;
   overflow: hidden;
@@ -407,6 +419,9 @@ export default Vue.extend({
     .container {
       padding-top: 16px;
     }
+  }
+  &.hidden {
+    visibility: hidden;
   }
 }
 .loader {
