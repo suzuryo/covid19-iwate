@@ -25,11 +25,12 @@ def has_self_disclosures_card(lang:, lang_json:)
 
     # テーブルの上からi行目をチェックする(日付)
     if lang == :ja
-      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2) > time").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
     end
     if lang == :en
-      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%b %-d').to_s
+      expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2) > time").text).to eq Date.parse(d['date']).strftime('%b %-d').to_s
     end
+    expect(find("#SelfDisclosuresCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2) > time")['datetime']).to eq Date.parse(d['date']).strftime('%Y-%m-%d').to_s
   end
 
   # 情報提供フォームはDataSetPanelの中

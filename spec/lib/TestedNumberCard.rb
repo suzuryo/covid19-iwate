@@ -31,7 +31,10 @@ def has_tested_number_card
 
   # テーブルの上から2行目をチェックする(日付)
   d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%-m月%-d日')
-  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time').text).to eq d.to_s
+
+  d = Date.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).strftime('%Y-%m-%d')
+  expect(find('#TestedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time')['datetime']).to eq d.to_s
 
   # テーブルの上から2行目をチェックする(PCR検査実施件数・日別)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'].last['pcr_positive_count'].to_i + POSITIVE_RATE_JSON['data'].last['pcr_negative_count'].to_i)

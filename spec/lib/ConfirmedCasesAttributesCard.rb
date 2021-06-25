@@ -39,7 +39,10 @@ def has_confirmed_case_attributes_card
 
   # テーブルの上から1行目をチェックする(確定日)
   d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime('%-m月%-d日')
-  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2)').text).to eq d.to_s
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2) > time').text).to eq d.to_s
+
+  d = Date.parse(DATA_JSON['patients']['data'].last['確定日']).strftime('%Y-%m-%d')
+  expect(find('#ConfirmedCasesAttributesCard > div > div > div.DataView-Content > div > div.v-data-table__wrapper > table > tbody > tr:nth-child(1) > td:nth-child(2) > time')['datetime']).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(発症日)
   d = if DATA_JSON['patients']['data'].last&.[]('無症状')

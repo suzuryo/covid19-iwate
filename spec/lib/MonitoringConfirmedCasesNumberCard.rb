@@ -35,7 +35,10 @@ def has_monitoring_confirmed_cases_number_card
 
   # テーブルの上から2番目の値を確認(日付)
   d = Date.parse(POSITIVE_RATE_JSON['data'][-2]['diagnosed_date']).strftime('%-m月%-d日')
-  expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > th').text).to eq d.to_s
+  expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > th > time').text).to eq d.to_s
+
+  d = Date.parse(POSITIVE_RATE_JSON['data'][-2]['diagnosed_date']).strftime('%Y-%m-%d')
+  expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(2) > th > time')['datetime']).to eq d.to_s
 
   # テーブルの上から2番目の値を確認(陽性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-2]['positive_count'].to_i)

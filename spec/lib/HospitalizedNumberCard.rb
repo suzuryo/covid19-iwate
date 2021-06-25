@@ -26,7 +26,10 @@ def has_hospitalized_number_card
 
   # テーブルの上から1行目をチェックする(日付)
   d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime('%-m月%-d日')
-  expect(find('#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
+  expect(find("#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time").text).to eq d.to_s
+
+  d = Date.parse(POSITIVE_STATUS_JSON['data'].last['date']).strftime('%Y-%m-%d')
+  expect(find("#HospitalizedNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time")['datetime']).to eq d.to_s
 
   # テーブルの上から1行目をチェックする(入院)
   d = number_to_delimited(POSITIVE_STATUS_JSON['data'].last['hospital'].to_i)
