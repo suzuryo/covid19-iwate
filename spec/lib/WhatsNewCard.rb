@@ -20,7 +20,8 @@ def has_whats_new_card
     end
 
     # テーブルの上からi行目をチェックする(日付)
-    expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2)").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
+    expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2) > time").text).to eq Date.parse(d['date']).strftime('%-m月%-d日').to_s
+    expect(find("#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(#{1 + index}) > td:nth-child(2) > time")['datetime']).to eq Date.parse(d['date']).strftime('%Y-%m-%d').to_s
 
     # 最初は1ページあたり10件なので11番目のtrは無い
     expect(page.all('#WhatsNewCard > div > div > div.DataView-Content > div > div > div > table > tbody > tr:nth-child(11)').empty?).to eq true

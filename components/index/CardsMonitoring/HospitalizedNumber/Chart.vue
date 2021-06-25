@@ -268,7 +268,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .map((label, i) => {
           return Object.assign(
             {
-              text: this.$d(getDayjsObject(label).toDate(), 'dateWithoutYear'),
+              text: label,
             },
             ...this.chartData.map((_, j) => {
               // j=0が入院, j=1が宿泊療養

@@ -87,7 +87,10 @@ def has_positive_rate_card(lang:, lang_json:)
   if lang == :en
     d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime('%b %-d')
   end
-  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th').text).to eq d.to_s
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th > time').text).to eq d.to_s
+
+  d = Date.parse(POSITIVE_RATE_JSON['data'][-4]['diagnosed_date']).strftime('%Y-%m-%d')
+  expect(find('#PositiveRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(4) > th > time')['datetime']).to eq d.to_s
 
   # テーブルの上から4行目をチェックする(PCR検査陽性者数)
   d = number_to_delimited(POSITIVE_RATE_JSON['data'][-4]['pcr_positive_count'].to_i)

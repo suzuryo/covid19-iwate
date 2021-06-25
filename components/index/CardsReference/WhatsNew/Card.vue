@@ -63,7 +63,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       })
       .map((d: any) => {
         const _locale: string = this.$i18n.locale
-        const _date: string = this.$d(dayjs(d.date).toDate(), 'dateWithoutYear')
+        const _date: string = d.date
         const _icon: string = d.icon
         const _text: string = d.text[_locale] ?? d.text.ja
         const _url: string = d.url[_locale] ?? d.url.ja

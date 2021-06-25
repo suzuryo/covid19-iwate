@@ -27,7 +27,9 @@
                 </template>
               </td>
               <td class="text-end text-no-wrap">
-                <span>{{ item.date }}</span>
+                <time :datetime="formatDateTime(item.date)">{{
+                  formatDate(item.date)
+                }}</time>
               </td>
             </tr>
           </tbody>
@@ -70,9 +72,13 @@ import AppLink from '@/components/_shared/AppLink.vue'
 import DataView from '@/components/index/_shared/DataView.vue'
 import NotesExpansionPanel from '@/components/index/_shared/DataView/NotesExpansionPanel.vue'
 import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
+import { getDayjsObject } from '@/utils/formatDate'
 
 type Data = {}
-type Methods = {}
+type Methods = {
+  formatDate: (dateString: string) => string
+  formatDateTime: (dateString: string) => string
+}
 type Computed = {}
 type Props = {
   title: string
@@ -124,6 +130,20 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     nodes.forEach((table: HTMLElement) => {
       table.setAttribute('tabindex', '0')
     })
+  },
+  methods: {
+    formatDate(dateString: string): string {
+      const date = getDayjsObject(dateString)
+      if (date.isValid()) {
+        return this.$d(date.toDate(), 'dateWithoutYear')
+      } else {
+        return dateString
+      }
+    },
+    formatDateTime(dateString: string): string {
+      const date = getDayjsObject(dateString)
+      return date.format('YYYY-MM-DD')
+    },
   },
 }
 

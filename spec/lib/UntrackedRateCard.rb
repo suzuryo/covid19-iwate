@@ -30,7 +30,10 @@ def has_untracked_rate_card
 
   # テーブルの上から3番目の値(日別)
   d = Date.parse(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['diagnosed_date']).strftime('%-m月%-d日')
-  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > th').text).to eq d.to_s
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > th > time').text).to eq d.to_s
+
+  d = Date.parse(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['diagnosed_date']).strftime('%Y-%m-%d')
+  expect(find('#UntrackedRateCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(3) > th > time')['datetime']).to eq d.to_s
 
   # テーブルの上から3番目の値を確認(接触歴等判明者数)
   d = number_to_delimited(DAILY_POSITIVE_DETAIL_JSON['data'][-3]['reported_count'].to_i)

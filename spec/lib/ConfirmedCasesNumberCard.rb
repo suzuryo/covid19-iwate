@@ -26,7 +26,10 @@ def has_confirmed_cases_number_card
 
   # テーブルの最上部の値(日付)
   d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime('%-m月%-d日')
-  expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th').text).to eq d.to_s
+  expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time').text).to eq d.to_s
+
+  d = Date.parse(DATA_JSON['patients_summary']['data'].last['日付']).strftime('%Y-%m-%d')
+  expect(find('#ConfirmedCasesNumberCard .DataViewExpansionPanel .v-expansion-panel-content table > tbody > tr:nth-child(1) > th > time')['datetime']).to eq d.to_s
 
   # テーブルの最上部の値(陽性者・日別)
   d = number_to_delimited(DATA_JSON['patients_summary']['data'].last['小計'])
