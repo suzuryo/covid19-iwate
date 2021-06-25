@@ -16,7 +16,9 @@
       <tbody>
         <tr v-for="(item, i) in items" :key="i">
           <th scope="row" class="cardTable-header">
-            {{ formatDate(item[headerKey]) }}
+            <time :datetime="formatDateTime(item[headerKey])">{{
+              formatDate(item[headerKey])
+            }}</time>
           </th>
           <td v-for="(dataKey, j) in dataKeys" :key="j" class="text-end">
             {{ item[dataKey] }}
@@ -48,6 +50,7 @@ export type TableItem = {
 type Data = {}
 type Methods = {
   formatDate: (dateString: string) => string
+  formatDateTime: (dateString: string) => string
 }
 type Computed = {
   dataKeys: string[]
@@ -104,6 +107,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       } else {
         return dateString
       }
+    },
+    formatDateTime(dateString: string): string {
+      const date = getDayjsObject(dateString)
+      return date.format('YYYY-MM-DD')
     },
   },
 }

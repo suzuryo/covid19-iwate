@@ -30,7 +30,9 @@
               </template>
             </th>
             <td class="text-start">
-              {{ positiveConfirmedDate(item['確定日']) }}
+              <time :datetime="formatDateTime(item['確定日'])">{{
+                positiveConfirmedDate(item['確定日'])
+              }}</time>
             </td>
             <td class="text-start">{{ item['発症日'] }}</td>
             <td class="text-start">{{ item['居住地'] }}</td>
@@ -150,6 +152,10 @@ export default Vue.extend({
   methods: {
     positiveConfirmedDate(day: string) {
       return this.$d(getDayjsObject(day).toDate(), 'dateWithoutYear')
+    },
+    formatDateTime(dateString: string): string {
+      const date = getDayjsObject(dateString)
+      return date.format('YYYY-MM-DD')
     },
   },
 })
