@@ -42,7 +42,7 @@
     "chartjs-plugin-annotation": "0.5.7",
     "cross-env": "7.0.3",
     "d3": "6.7.0",
-    "dayjs": "1.10.5",
+    "dayjs": "1.10.6",
     "nuxt": "2.15.7",
     "nuxt-i18n": "6.27.2",
     "pulltorefreshjs": "0.1.22",
