@@ -1978,10 +1978,10 @@
   resolved "https://registry.yarnpkg.com/@types/pug/-/pug-2.0.4.tgz#8772fcd0418e3cd2cc171555d73007415051f4b2"
   integrity sha1-h3L80EGOPNLMFxVV1zAHQVBR9LI=
 
-"@types/pulltorefreshjs@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@types/pulltorefreshjs/-/pulltorefreshjs-0.1.4.tgz#a8d3a0c98ac5638944a7c88df6b8528741b3bb5b"
-  integrity sha512-3wgOJyU5ukQL6ybQO0jYUnToimJbNesvaGA7E25PqcAQkykO6ah9IVkiypiUmtijQWTbd5PzYecPY3Hkd2lA+g==
+"@types/pulltorefreshjs@0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@types/pulltorefreshjs/-/pulltorefreshjs-0.1.5.tgz#f15c9dbc91b8fdd8135093d81ece9e9d4d2324d7"
+  integrity sha512-/VRTgBettvBg1KI8mGnA9oeWs359tTXQ7qsxLuXnksL88jvK6ZNMStG5T9x9vUO9O7jLsgREB0cElz/BWFfdew==
 
 "@types/q@^1.5.1":
   version "1.5.4"
