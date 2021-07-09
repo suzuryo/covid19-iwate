@@ -94,7 +94,6 @@
 
 <script lang="ts">
 import { Chart } from 'chart.js'
-import * as ChartAnnotation from 'chartjs-plugin-annotation'
 import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
@@ -112,9 +111,6 @@ import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesColor, SurfaceStyle } from '@/utils/colors'
 import { calcDayBeforeRatio } from '@/utils/formatDayBeforeRatio'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
-
-// Register ChartAnnotation Plugin
-Chart.pluginService?.register(ChartAnnotation)
 
 type Data = {
   canvas: boolean
