@@ -10,8 +10,8 @@ def has_monitoring_confirmed_cases_number_per_100k_card(lang:, lang_json:)
   expect(URI.parse(d).path).to eq "#{lang_prefix}/cards/monitoring-number-of-confirmed-cases-per-100k/"
 
   # DataSet
-  # 盛岡市の直近1週間対人口10万人あたりを算出
-  d = DATA_JSON['patients']['data'].filter{|i| i['居住地'] == '盛岡市'}.filter{|i| Time.parse(i['確定日']) > Time.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).days_ago(7)}.size * 100000.0 / 289893
+  # 中部保健所管内の直近1週間対人口10万人あたりを算出
+  d = DATA_JSON['patients']['data'].filter{|i| ['中部保健所管内', '花巻市', '遠野市', '北上市', '西和賀町'].include?i['居住地']}.filter{|i| Time.parse(i['確定日']) > Time.parse(POSITIVE_RATE_JSON['data'].last['diagnosed_date']).days_ago(7)}.size * 100000.0 / 216841
   d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
   expect(find('#MonitoringConfirmedCasesNumberPer100kCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span.DataView-DataSet-DataInfo-summary > strong').text).to eq d
   expect(find('#MonitoringConfirmedCasesNumberPer100kCard > div.DataView > div.DataView-Inner > div.DataView-Header > div.DataView-DataSetPanel > div.DataView-DataSet > div.DataView-DataSet-DataInfo > span > small').text).to eq lang_json['Common']['人'].gsub(' ', '')
