@@ -1,9 +1,10 @@
 import { Plugin } from '@nuxt/types'
 import { Chart, ChartData, ChartOptions } from 'chart.js'
+import ChartJsAnnotation from 'chartjs-plugin-annotation'
 import Vue, { PropType } from 'vue'
 import { Bar, Doughnut, Line, mixins } from 'vue-chartjs'
 
-import { useDayjsAdapter } from '@/plugins//chartjs-adapter-dayjs'
+import { useDayjsAdapter } from '@/plugins/chartjs-adapter-dayjs'
 
 type ChartVCData = { chartData: ChartData }
 type ChartVCMethod = {
@@ -61,8 +62,12 @@ const createCustomChart = () => {
         setTimeout(() => this.$data._chart.resize())
         this.$parent.$emit('update-width')
       },
+      chartData() {
+        setTimeout(() => this.renderChart(this.chartData, this.options))
+      },
     },
     mounted() {
+      Chart.pluginService?.register(ChartJsAnnotation)
       setTimeout(() => this.renderChart(this.chartData, this.options))
     },
   })

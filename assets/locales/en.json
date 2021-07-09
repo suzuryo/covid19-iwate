@@ -406,7 +406,7 @@
     ]
   },
   "MonitoringConfirmedCasesNumberPer100kCard": {
-    "title": "Morioka : Number of Positive Cases per 100,000 population in last 7 Days",
+    "title": "Number of Positive Cases per 100,000 population in last 7 Days",
     "legends": [
       "Positive cases",
       "per 100,000 population in last 7 days"
@@ -414,7 +414,7 @@
     "notes": [
       "Stage 3 index is 15",
       "Stage 4 index is 25",
-      "Calculated assuming the population of Morioka City is 291,320."
+      "Calculated using the preliminary population values from the 2020 national census."
     ]
   },
   "WeeklyMapCard": {
