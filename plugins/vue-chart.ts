@@ -62,6 +62,9 @@ const createCustomChart = () => {
         setTimeout(() => this.$data._chart.resize())
         this.$parent.$emit('update-width')
       },
+      chartData() {
+        setTimeout(() => this.renderChart(this.chartData, this.options))
+      },
     },
     mounted() {
       Chart.pluginService?.register(ChartJsAnnotation)
