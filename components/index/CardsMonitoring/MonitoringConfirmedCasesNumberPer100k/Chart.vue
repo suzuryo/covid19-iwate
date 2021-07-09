@@ -5,6 +5,9 @@
     :date="date"
     :head-title="title + infoTitles.join(',')"
   >
+    <v-col cols="12">
+      <slot name="selectCity" />
+    </v-col>
     <ul
       :class="$style.GraphLegend"
       :style="{ display: canvas ? 'block' : 'none' }"
