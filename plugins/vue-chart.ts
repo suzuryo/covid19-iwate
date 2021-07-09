@@ -4,7 +4,7 @@ import ChartJsAnnotation from 'chartjs-plugin-annotation'
 import Vue, { PropType } from 'vue'
 import { Bar, Doughnut, Line, mixins } from 'vue-chartjs'
 
-import { useDayjsAdapter } from '@/plugins//chartjs-adapter-dayjs'
+import { useDayjsAdapter } from '@/plugins/chartjs-adapter-dayjs'
 
 type ChartVCData = { chartData: ChartData }
 type ChartVCMethod = {
