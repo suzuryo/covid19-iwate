@@ -9,7 +9,7 @@
       <monitoring-confirmed-cases-chart-per-100k-chart
         title-id="monitoring-number-of-confirmed-cases-per-100k"
         :info-titles="[$t('MonitoringConfirmedCasesNumberPer100kCard.title')]"
-        chart-id="monitoring-confirmed-cases-chart"
+        chart-id="monitoring-number-of-confirmed-cases-per-100k-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
         :date="date"
