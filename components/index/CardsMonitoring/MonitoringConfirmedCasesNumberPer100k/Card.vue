@@ -120,6 +120,7 @@ const populations: { [chr: string]: number } = {
 }
 
 const hokenArea: { [char: string]: string[] } = {
+  岩手県全域: Object.keys(populations),
   盛岡市保健所管内: ['盛岡市'],
   県央保健所管内: [
     '八幡平市',
@@ -138,7 +139,6 @@ const hokenArea: { [char: string]: string[] } = {
   宮古保健所管内: ['宮古市', '山田町', '岩泉町', '田野畑村'],
   久慈保健所管内: ['久慈市', '普代村', '野田村', '洋野町'],
   二戸保健所管内: ['二戸市', '軽米町', '九戸村', '一戸町'],
-  岩手県全域: Object.keys(populations),
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
