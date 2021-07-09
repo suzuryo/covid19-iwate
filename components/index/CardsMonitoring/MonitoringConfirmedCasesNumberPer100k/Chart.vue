@@ -385,7 +385,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 suggestedMin: 0,
                 maxTicksLimit: 8,
                 fontColor: '#808080', // #808080
-                suggestedMax: this.scaledTicksYAxisMax,
+                min: 0,
+                max: this.scaledTicksYAxisMax,
               },
             },
           ],
@@ -502,7 +503,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 suggestedMin: 0,
                 maxTicksLimit: 8,
                 fontColor: '#808080', // #808080
-                suggestedMax: this.scaledTicksYAxisMax,
+                min: 0,
+                max: this.scaledTicksYAxisMax,
               },
             },
           ],
@@ -512,7 +514,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       return options
     },
     scaledTicksYAxisMax() {
-      return this.chartData.reduce((max, data) => Math.max(max, ...data), 0) + 5
+      // return this.chartData.reduce((max, data) => {
+      //   return Math.max(max, ...data.map((a) => Math.ceil(a))) + 10
+      // }, 0)
+      return 35
     },
   },
   methods: {
