@@ -1605,10 +1605,10 @@
   dependencies:
     moment "^2.10.2"
 
-"@types/chartjs-plugin-annotation@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@types/chartjs-plugin-annotation/-/chartjs-plugin-annotation-0.5.1.tgz#f560fc9e2dc15aa595b6b6043c7f7789dc890a90"
-  integrity sha512-ruMXTjRVQwwbOtuNfFBHbqbhj497+D/VRmMPZiHv/GCupGwUf2l1TL7S1BTRYlP1Hengx798UwaOpAO+3+Sczw==
+"@types/chartjs-plugin-annotation@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@types/chartjs-plugin-annotation/-/chartjs-plugin-annotation-0.5.2.tgz#559447274c3c7b1fdbde343babf9d5767001b409"
+  integrity sha512-dg7v6xQyi6T0/lmgRqIlJGc4Y52MvYYrqDAQgNu6nD2G/3VXfAV0TSFIbs7VbqINmnxZSWIYbHz7rzemRM/TeQ==
   dependencies:
     "@types/chart.js" "*"
     moment "^2.10.2"
