@@ -412,9 +412,21 @@
       "per 100,000 population in last 7 days"
     ],
     "notes": [
+      "Normally, this \"per 100,000 population index\" is used for \"prefecture\" units.",
       "Stage 3 index is 15",
       "Stage 4 index is 25",
-      "Calculated using the preliminary population values from the 2020 national census."
+      "Calculated using the preliminary population values from the 2020 national census.",
+      "Iwate Prefecture: 1,211,206 people",
+      "Morioka Area (Morioka) = 289,893 people",
+      "Iwate Central Area (Hachimantai/Takizawa/Shizukuishi/Kuzumaki/Iwate/Shiwa/Yahaba) = 173,558 people",
+      "Iwate Mid Central Area (Hanamaki/Tōno/Kitakami/Nishiwaga) = 216,841 people",
+      "Ōshū Area (Ōshū/Kanegasaki) = 128,572 people",
+      "Ichinoseki Area (Ichinoseki/Hiraizumi) = 119,228 people",
+      "Ōfunato Area (Ōfunato/Rikuzentakata/Sumita) = 58,060 people",
+      "Kamaishi Area (Kamaishi/Ōtsuchi) = 43,109 people",
+      "Miyako Area (Miyako/Yamada/Iwaizumi/Tanohata) = 76,524 people",
+      "Kuji Area (Kuji/Fudai/Noda/Hirono) = 54,588 people",
+      "Ninohe Area (Ninohe/Karumai/Kunohe/Ichinohe) = 50,833 people"
     ]
   },
   "WeeklyMapCard": {
