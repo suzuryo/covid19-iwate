@@ -1,22 +1,21 @@
 <template>
   <v-col
-    id="MonitoringConfirmedCasesNumberPer100kCard"
+    id="EffectiveReproductionNumberCard"
     cols="12"
     :md="md"
     class="DataCard"
   >
     <client-only>
-      <monitoring-confirmed-cases-chart-per-100k-chart
-        title-id="monitoring-number-of-confirmed-cases-per-100k"
-        :info-titles="[$t('MonitoringConfirmedCasesNumberPer100kCard.title')]"
-        chart-id="monitoring-number-of-confirmed-cases-per-100k-chart"
+      <effective-reproduction-number-chart
+        title-id="effective-reproduction-number"
+        :info-titles="[$t('EffectiveReproductionNumberCard.title')]"
+        chart-id="effective-reproduction-number-chart"
         :chart-data="chartData"
         :get-formatter="getFormatter"
         :date="date"
         :labels="labels"
         :data-labels="dataLabels"
         :table-labels="tableLabels"
-        :unit="$t('Common.人')"
       >
         <template #selectCity>
           <v-select
@@ -28,17 +27,28 @@
         </template>
         <template #notes>
           <ul>
+            <li>
+              {{ $t('NIID 国立感染症研究所') }}
+              <app-link
+                to="https://www.niid.go.jp/niid/ja/diseases/ka/corona-virus/2019-ncov/2502-idsc/iasr-in/10465-496d04.html"
+              >
+                {{
+                  $t(
+                    'COVID-19感染報告者数に基づく簡易実効再生産数推定方法(IASR Vol.42 p128-129: 2021年6月号)'
+                  )
+                }}
+              </app-link>
+              {{ $t('を用いて計算') }}
+            </li>
             <li
-              v-for="(note, i) in $t(
-                'MonitoringConfirmedCasesNumberPer100kCard.notes'
-              )"
+              v-for="(note, i) in $t('EffectiveReproductionNumberCard.notes')"
               :key="i"
             >
               {{ note }}
             </li>
           </ul>
         </template>
-      </monitoring-confirmed-cases-chart-per-100k-chart>
+      </effective-reproduction-number-chart>
       <slot name="breadCrumb" />
     </client-only>
   </v-col>
@@ -49,13 +59,11 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
-import MonitoringConfirmedCasesChartPer100kChart from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumberPer100k/Chart.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
+import EffectiveReproductionNumberChart from '@/components/index/CardsMonitoring/EffectiveReproductionNumber/Chart.vue'
 import DailyPositiveDetail from '@/data/daily_positive_detail.json'
 import Data from '@/data/data.json'
-import {
-  getNumberToFixedFunction,
-  getNumberToLocaleStringFunction,
-} from '@/utils/monitoringStatusValueFormatters'
+import { getNumberToFixedFunction } from '@/utils/monitoringStatusValueFormatters'
 
 type SelectItem = {
   text: string
@@ -78,49 +86,12 @@ type MethodsType = {
 type ComputedType = {
   labels: string[]
   chartData: number[][]
-  population: number
 }
 
 type PropsType = {}
 
-const populations: { [chr: string]: number } = {
-  盛岡市: 289893,
-  宮古市: 50401,
-  大船渡市: 34739,
-  花巻市: 93234,
-  北上市: 93089,
-  久慈市: 33063,
-  遠野市: 25381,
-  一関市: 111970,
-  陸前高田市: 18271,
-  釜石市: 32096,
-  二戸市: 25528,
-  八幡平市: 24042,
-  奥州市: 113027,
-  滝沢市: 55600,
-  雫石町: 15742,
-  葛巻町: 5638,
-  岩手町: 12294,
-  紫波町: 32166,
-  矢巾町: 28076,
-  西和賀町: 5137,
-  金ケ崎町: 15545,
-  平泉町: 7258,
-  住田町: 5050,
-  大槌町: 11013,
-  山田町: 14332,
-  岩泉町: 8732,
-  田野畑村: 3059,
-  普代村: 2489,
-  軽米町: 8423,
-  野田村: 3938,
-  九戸村: 5376,
-  洋野町: 15098,
-  一戸町: 11506,
-}
-
 const hokenArea: { [char: string]: string[] } = {
-  岩手県全域: Object.keys(populations),
+  岩手県全域: ['岩手県全域'],
   盛岡市保健所管内: ['盛岡市'],
   県央保健所管内: [
     '八幡平市',
@@ -149,7 +120,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   PropsType
 > = {
   components: {
-    MonitoringConfirmedCasesChartPer100kChart,
+    AppLink,
+    EffectiveReproductionNumberChart,
   },
   props: {
     md: {
@@ -158,28 +130,19 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
   },
   data() {
-    const dataLabels = [
-      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[0]'),
-      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[1]'),
-    ]
-    const tableLabels = [
-      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[0]'),
-      this.$t('MonitoringConfirmedCasesNumberPer100kCard.legends[1]'),
-    ]
+    const dataLabels = [this.$t('EffectiveReproductionNumberCard.legends[0]')]
+    const tableLabels = [this.$t('EffectiveReproductionNumberCard.legends[0]')]
     const date = DailyPositiveDetail.date
 
-    const getFormatter = (columnIndex: number) => {
+    const getFormatter = () => {
       // 新規陽性者数の7日間移動平均は小数点第1位まで表示する。
-      if (columnIndex === 1) {
-        return getNumberToFixedFunction(1)
-      }
-      return getNumberToLocaleStringFunction()
+      return getNumberToFixedFunction(1)
     }
 
     // ここが初期表示される項目
     const select = {
-      text: '中部保健所管内 (花巻市/遠野市/北上市/西和賀町)',
-      value: '中部保健所管内',
+      text: '岩手県全域',
+      value: '岩手県全域',
     }
     const items = Object.entries(hokenArea).map((a) => {
       // 岩手県全域の場合は市町村を()に入れない
@@ -221,28 +184,44 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         return patients.filter((b) => b.確定日 === a).length
       })
 
-      // 1週間あたり10万人あたりの陽性者数
-      const sevenDayMoveAveragesPer10k: number[] = []
+      // 実効再生産数(推定値)の計算
+      // https://www.niid.go.jp/niid/ja/diseases/ka/corona-virus/2019-ncov/2502-idsc/iasr-in/10465-496d04.html
+      // 世代時間を5日とする
+      // 20210711 m1
+      // 20210710 m1
+      // 20210709 m1
+      // 20210708 m1
+      // 20210707 m1
+      // 20210706 m1 m2
+      // 20210705 m1 m2
+      // 20210704    m2
+      // 20210703    m2
+      // 20210702    m2
+      // 20210701    m2
+      // 20210630    m2
+      const effectiveReproductionNumber: number[] = []
       labels.forEach((_currentValue, index, _array) => {
-        const i = index - 6 < 0 ? 0 : index - 6
-        const p = patientsCount.slice(i, index + 1)
-        sevenDayMoveAveragesPer10k.push(
-          (p.reduce((a, b) => a + b, 0) * 100000) / this.population
-        )
+        let rt = 0
+        // データの前半は0にする
+        if (index >= 11) {
+          const i1 = index - 6
+          const m1 = patientsCount.slice(i1, index + 1)
+          const i2 = index - 6 - 5
+          const m2 = patientsCount.slice(i2, index + 1 - 5)
+          const m1sum = m1.reduce((a, b) => a + b, 0)
+          const m2sum = m2.reduce((a, b) => a + b, 0)
+          // 0での割り算の場合は0とする
+          if (m2sum !== 0) {
+            rt = m1sum / m2sum
+          }
+        }
+        effectiveReproductionNumber.push(rt)
       })
 
-      return [patientsCount, sevenDayMoveAveragesPer10k]
+      return [effectiveReproductionNumber]
     },
     labels() {
       return DailyPositiveDetail.data.map((a) => a.diagnosed_date)
-    },
-    population() {
-      return Object.keys(populations)
-        .filter((a) => hokenArea[this.select.value].includes(a))
-        .map((a) => populations[a])
-        .reduce((accumulator, currentValue, _index, _array) => {
-          return accumulator + currentValue
-        }, 0)
     },
   },
   methods: {

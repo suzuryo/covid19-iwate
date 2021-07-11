@@ -7,21 +7,22 @@ if not os.path.exists("ogp"):
     os.mkdir("ogp")
 
 PATHS = {
-    "/cards/hospital-capacity": (959, 520),
-    "/cards/hotel-capacity": (959, 520),
-    "/cards/weekly-map": (959, 520),
-    "/cards/whats-new": (959, 520),
-    "/cards/self-disclosures": (959, 520),
-    "/cards/details-of-confirmed-cases": (959, 520),
-    "/cards/number-of-confirmed-cases": (959, 500),
-    "/cards/monitoring-number-of-confirmed-cases": (959, 500),
-    "/cards/monitoring-number-of-confirmed-cases-per-100k": (959, 500),
-    "/cards/untracked-rate": (959, 500),
-    "/cards/positive-rate": (959, 500),
-    "/cards/number-of-hospitalized": (959, 500),
-    "/cards/attributes-of-confirmed-cases": (959, 480),
-    "/cards/number-of-confirmed-cases-by-municipalities": (959, 480),
-    "/cards/number-of-tested": (959, 520),
+    "/cards/hospital-capacity/": (959, 520),
+    "/cards/hotel-capacity/": (959, 520),
+    "/cards/weekly-map/": (959, 520),
+    "/cards/whats-new/": (959, 520),
+    "/cards/self-disclosures/": (959, 520),
+    "/cards/details-of-confirmed-cases/": (959, 520),
+    "/cards/number-of-confirmed-cases/": (959, 500),
+    "/cards/monitoring-number-of-confirmed-cases/": (959, 500),
+    "/cards/monitoring-number-of-confirmed-cases-per-100k/": (959, 500),
+    "/cards/effective-reproduction-number/": (959, 500),
+    "/cards/untracked-rate/": (959, 500),
+    "/cards/positive-rate/": (959, 500),
+    "/cards/number-of-hospitalized/": (959, 500),
+    "/cards/attributes-of-confirmed-cases/": (959, 480),
+    "/cards/number-of-confirmed-cases-by-municipalities/": (959, 480),
+    "/cards/number-of-tested/": (959, 520),
 }
 
 options = webdriver.ChromeOptions()
