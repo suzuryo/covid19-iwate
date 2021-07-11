@@ -10,6 +10,7 @@ import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/Con
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue' // 陽性患者数（市町村別）
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue' // 検査陽性者の状況
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue' // 報告日別による陽性者数の推移
+import EffectiveReproductionNumberCard from '@/components/index/CardsMonitoring/EffectiveReproductionNumber/Card.vue' // 実効再生産数
 import HospitalCapacityCard from '@/components/index/CardsMonitoring/HospitalCapacity/Card.vue' // 入院病床の状況
 import HospitalizedNumberCard from '@/components/index/CardsMonitoring/HospitalizedNumber/Card.vue' // 入院と宿泊療養の推移
 import HotelCapacityCard from '@/components/index/CardsMonitoring/HotelCapacity/Card.vue' // 宿泊療養の状況
@@ -27,7 +28,10 @@ export default Vue.extend({
   data() {
     return {
       rows: [
-        [MonitoringConfirmedCasesNumberPer100kCard],
+        [
+          MonitoringConfirmedCasesNumberPer100kCard,
+          EffectiveReproductionNumberCard,
+        ],
         [ConfirmedCasesDetailsCard, WeeklyMapCard],
         [HospitalizedNumberCard, MonitoringConfirmedCasesNumberCard],
         [HospitalCapacityCard, HotelCapacityCard],

@@ -16,6 +16,7 @@ const pages = [
   '/cards/number-of-confirmed-cases/',
   '/cards/monitoring-number-of-confirmed-cases/',
   '/cards/monitoring-number-of-confirmed-cases-per-100k/',
+  '/cards/effective-reproduction-number/',
   '/cards/untracked-rate/',
   '/cards/positive-rate/',
   '/cards/number-of-hospitalized/',

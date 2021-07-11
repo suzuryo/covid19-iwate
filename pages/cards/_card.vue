@@ -14,6 +14,7 @@ import ConfirmedCasesAttributesCard from '@/components/index/CardsMonitoring/Con
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsMonitoring/ConfirmedCasesByMunicipalities/Card.vue'
 import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
+import EffectiveReproductionNumberCard from '@/components/index/CardsMonitoring/EffectiveReproductionNumber/Card.vue'
 import HospitalCapacityCard from '@/components/index/CardsMonitoring/HospitalCapacity/Card.vue'
 import HospitalizedNumberCard from '@/components/index/CardsMonitoring/HospitalizedNumber/Card.vue'
 import HotelCapacityCard from '@/components/index/CardsMonitoring/HotelCapacity/Card.vue'
@@ -39,6 +40,7 @@ export default {
     SelfDisclosuresCard,
     MonitoringConfirmedCasesNumberCard,
     MonitoringConfirmedCasesNumberPer100kCard,
+    EffectiveReproductionNumberCard,
     PositiveRateCard,
     UntrackedRateCard,
     ConfirmedCasesDetailsCard,
@@ -96,6 +98,10 @@ export default {
       case 'monitoring-number-of-confirmed-cases-per-100k':
         cardComponent = 'monitoring-confirmed-cases-number-per-100k-card'
         cardTitle = this.$t('MonitoringConfirmedCasesNumberPer100kCard.title')
+        break
+      case 'effective-reproduction-number':
+        cardComponent = 'effective-reproduction-number-card'
+        cardTitle = this.$t('EffectiveReproductionNumberCard.title')
         break
       case 'untracked-rate':
         cardComponent = 'untracked-rate-card'

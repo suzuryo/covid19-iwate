@@ -429,6 +429,19 @@
       "Ninohe Area (Ninohe/Karumai/Kunohe/Ichinohe) = 50,833 people"
     ]
   },
+  "EffectiveReproductionNumberCard": {
+    "title": "Effective Reproduction Number (estimated)",
+    "legends": [
+      "Effective Reproduction Number (estimated)"
+    ],
+    "notes": [
+      "If the effective reproduction number is less than 1 for a long period of time, the infection is coming to an end.",
+      "When the number of positive individuals is small, a difference of a few individuals can cause a large variation in the effective reproduction number."
+    ]
+  },
+  "NIID 国立感染症研究所": "NIID National Institute of Infectious Diseases",
+  "COVID-19感染報告者数に基づく簡易実効再生産数推定方法(IASR Vol.42 p128-129: 2021年6月号)": "COVID-19感染報告者数に基づく簡易実効再生産数推定方法(IASR Vol.42 p128-129: 2021年6月号)",
+  "を用いて計算": "",
   "WeeklyMapCard": {
     "title": "Positive case map for the last week",
     "notes": [
