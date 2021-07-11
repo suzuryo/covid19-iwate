@@ -1,5 +1,6 @@
 import os
 import time
+import re
 
 from selenium import webdriver
 
@@ -42,7 +43,7 @@ for lang in ("ja", "en"):
                 path if lang == "ja" else "/{}{}".format(lang, path)
             )
         )
-        path = path.replace("/cards/", "").replace("/", "_")
+        path = re.sub(r"_$", "", path.replace("/cards/", "").replace("/", "_"))
         driver.save_screenshot(
             "ogp/{}.png".format(
                 path if lang == "ja" else "{}/{}".format(lang, path)
