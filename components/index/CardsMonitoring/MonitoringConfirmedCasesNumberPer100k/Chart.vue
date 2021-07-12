@@ -97,6 +97,7 @@
 
 <script lang="ts">
 import { Chart } from 'chart.js'
+import ChartJsAnnotation from 'chartjs-plugin-annotation'
 import dayjs from 'dayjs'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
@@ -125,6 +126,10 @@ type Methods = {
   onClickLegend: (i: number) => void
 }
 
+type ChartJsAnnotationOptions = Chart.ChartOptions & {
+  annotation: ChartJsAnnotation.AnnotationConfig
+}
+
 type Computed = {
   displayInfo: [
     {
@@ -134,7 +139,7 @@ type Computed = {
     }
   ]
   displayData: DisplayData
-  displayOption: Chart.ChartOptions
+  displayOption: ChartJsAnnotationOptions
   displayDataHeader: DisplayData
   displayOptionHeader: Chart.ChartOptions
   scaledTicksYAxisMax: number
@@ -306,7 +311,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     displayOption() {
       const unit = this.unit
-      const options: Chart.ChartOptions = {
+      const options: ChartJsAnnotationOptions = {
         tooltips: {
           displayColors: false,
           callbacks: {

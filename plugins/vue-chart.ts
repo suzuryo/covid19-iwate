@@ -67,7 +67,10 @@ const createCustomChart = () => {
       },
     },
     mounted() {
-      Chart.pluginService?.register(ChartJsAnnotation)
+      Chart.pluginService?.register(
+        ChartJsAnnotation as Chart.PluginServiceGlobalRegistration &
+          Chart.PluginServiceRegistrationOptions
+      )
       setTimeout(() => this.renderChart(this.chartData, this.options))
     },
   })
