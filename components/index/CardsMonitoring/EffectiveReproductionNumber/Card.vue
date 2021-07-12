@@ -135,8 +135,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     const date = DailyPositiveDetail.date
 
     const getFormatter = () => {
-      // 新規陽性者数の7日間移動平均は小数点第1位まで表示する。
-      return getNumberToFixedFunction(1)
+      // 実効再生産数(推定値)は小数点第2位まで表示する。
+      return getNumberToFixedFunction(2)
     }
 
     // ここが初期表示される項目
@@ -186,7 +186,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 
       // 実効再生産数(推定値)の計算
       // https://www.niid.go.jp/niid/ja/diseases/ka/corona-virus/2019-ncov/2502-idsc/iasr-in/10465-496d04.html
-      // 世代時間を5日とする
       // 20210711 m1
       // 20210710 m1
       // 20210709 m1
@@ -199,6 +198,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       // 20210702    m2
       // 20210701    m2
       // 20210630    m2
+      // 世代時間を5日とする
+      const gt = 5
       const effectiveReproductionNumber: number[] = []
       labels.forEach((_currentValue, index, _array) => {
         let rt = 0
@@ -206,8 +207,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         if (index >= 11) {
           const i1 = index - 6
           const m1 = patientsCount.slice(i1, index + 1)
-          const i2 = index - 6 - 5
-          const m2 = patientsCount.slice(i2, index + 1 - 5)
+          const i2 = index - 6 - gt
+          const m2 = patientsCount.slice(i2, index + 1 - gt)
           const m1sum = m1.reduce((a, b) => a + b, 0)
           const m2sum = m2.reduce((a, b) => a + b, 0)
           // 0での割り算の場合は0とする
