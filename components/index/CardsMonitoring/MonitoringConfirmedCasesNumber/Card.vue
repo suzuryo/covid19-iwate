@@ -36,29 +36,6 @@
               {{ $t('Common.7MA') }}
             </li>
           </ul>
-          <div :class="$style.newScenario">
-            <hr />
-            <div :class="$style.newScenarioSummarry">
-              <p
-                v-for="(item, i) in $t('MonitoringConfirmedCasesNumberCard.b')"
-                :key="i"
-              >
-                {{ item }}
-              </p>
-            </div>
-            <div :class="$style.newScenarioExternalLink">
-              <div>
-                <app-link :to="$t('ExtLink.岩手県17_2.url')">
-                  {{ $t('ExtLink.岩手県17_2.text') }}
-                </app-link>
-              </div>
-              <div>
-                <app-link :to="$t('ExtLink.厚生労働省x696.url')">
-                  {{ $t('ExtLink.厚生労働省x696.text') }}
-                </app-link>
-              </div>
-            </div>
-          </div>
         </template>
       </monitoring-confirmed-cases-number-chart>
       <slot name="breadCrumb" />
@@ -67,7 +44,6 @@
 </template>
 
 <script>
-import AppLink from '@/components/_shared/AppLink.vue'
 import MonitoringConfirmedCasesNumberChart from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Chart.vue'
 import Data from '@/data/daily_positive_detail.json'
 import {
@@ -78,7 +54,6 @@ import {
 export default {
   components: {
     MonitoringConfirmedCasesNumberChart,
-    AppLink,
   },
   props: {
     md: {
@@ -126,23 +101,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" module>
-.newScenario {
-  hr {
-    border-top: none;
-    border-right: none;
-    border-bottom: 1px solid $gray-4;
-    border-left: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .newScenarioExternalLink {
-    margin-bottom: 10px;
-    text-align: right;
-  }
-  .newScenarioSummarry {
-    color: red;
-  }
-}
-</style>
