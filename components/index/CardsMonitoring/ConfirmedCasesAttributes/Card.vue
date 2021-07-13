@@ -27,8 +27,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-
 import DataTable from '@/components/index/CardsMonitoring/ConfirmedCasesAttributes/DataTable.vue'
 import Data from '@/data/data.json'
 import { getDayjsObject } from '@/utils/formatDate'
@@ -64,10 +62,6 @@ export default {
 
     // 陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
-      row['陽性確定日'] = dayjs(date).isValid()
-        ? this.$d(dayjs(row['陽性確定日']).toDate(), 'dateWithoutYear')
-        : '不明'
-
       // 相対発症日・無症状・不明
       if (row['発症日'] === '無症状') {
         row['発症日'] = this.$t('ConfirmedCasesAttributesCard.table.無症状')
@@ -138,70 +132,41 @@ export default {
       const lt90 = this.$t(
         'ConfirmedCasesAttributesCard.table.90歳以上'
       ).toString()
-      const unknown = this.$t(
-        'ConfirmedCasesAttributesCard.table.不明'
-      ).toString()
-      const investigating = this.$t(
-        'ConfirmedCasesAttributesCard.table.調査中'
-      ).toString()
+
       items.sort((a, b) => {
-        // 両者が等しい場合は 0 を返す
-        if (a[index[0]] === b[index[0]]) {
-          return 0
-        }
-
         let comparison = 0
-
-        // '10歳未満' < '10代' ... '80代' < '90歳以上' となるようにソートする
-        // 「10歳未満」同士を比較する場合、と「90歳以上」同士を比較する場合、更にそうでない場合に場合分け
-        if (
-          index[0] === '年代' &&
-          (a[index[0]] === lt10 || b[index[0]] === lt10)
-        ) {
-          comparison = a[index[0]] === lt10 ? -1 : 1
-        } else if (
-          index[0] === '年代' &&
-          (a[index[0]] === lt90 || b[index[0]] === lt90)
-        ) {
-          comparison = a[index[0]] === lt90 ? 1 : -1
-        } else {
-          comparison = String(a[index[0]]) < String(b[index[0]]) ? -1 : 1
+        switch (index[0]) {
+          case 'ConfirmedCasesAttributesCard.table.通番':
+            comparison = parseInt(a.id) < parseInt(b.id) ? -1 : 1
+            break
+          case 'ConfirmedCasesAttributesCard.table.確定日':
+            comparison = new Date(a[index[0]]) < new Date(b[index[0]]) ? -1 : 1
+            break
+          case 'ConfirmedCasesAttributesCard.table.発症日':
+            comparison = String(a.発症日) < String(b.発症日) ? -1 : 1
+            break
+          case 'ConfirmedCasesAttributesCard.table.居住地':
+            comparison = String(a.居住地) < String(b.居住地) ? -1 : 1
+            break
+          case 'ConfirmedCasesAttributesCard.table.年代':
+            if (a.年代 === lt10 || b.年代 === lt10) {
+              comparison = a.年代 === lt10 ? -1 : 1
+            } else if (a.年代 === lt90 || b.年代 === lt90) {
+              comparison = a.年代 === lt90 ? 1 : -1
+            } else {
+              comparison = String(a.年代) < String(b.年代) ? -1 : 1
+            }
+            break
+          case 'ConfirmedCasesAttributesCard.table.接触歴':
+            comparison = String(a.接触歴) < String(b.接触歴) ? -1 : 1
+            break
+          case 'ConfirmedCasesAttributesCard.table.📺':
+            comparison = String(a.yt) < String(b.yt) ? -1 : 1
+            break
+          default:
+            comparison = parseInt(a.id) > parseInt(b.id) ? -1 : 1
+            break
         }
-
-        // 公表日のソートを正しくする
-        if (index[0] === '陽性確定日') {
-          // 2/29と3/1が正しくソートできないため、以下は使えない。
-          // 公表日に年まで含む場合は以下が使用可能になり、逆に今使用しているコードが使用不可能となる。
-          // comparison = new Date(a[index[0]]) < new Date(b[index[0]]) ? -1 : 1
-
-          const aDate = a[index[0]].split('/').map((d) => {
-            return parseInt(d)
-          })
-          const bDate = b[index[0]].split('/').map((d) => {
-            return parseInt(d)
-          })
-          comparison = aDate[1] > bDate[1] ? 1 : -1
-          if (aDate[0] > bDate[0]) {
-            comparison = 1
-          } else if (aDate[0] < bDate[0]) {
-            comparison = -1
-          }
-        }
-
-        // 「調査中」は年代に限らず、居住地にも存在するので、年代ソートの外に置いている。
-        // 内容としては、「不明」の次に高い(大きい)ものとして扱う。
-        // 日本語の場合、「調査中」は「不明」より低い(小さい)ものとして扱われるが、
-        // 他言語の場合はそうではないため、ここで統一している。
-        if (a[index[0]] === investigating || b[index[0]] === investigating) {
-          comparison = a[index[0]] === investigating ? 1 : -1
-        }
-
-        // 「不明」は年代に限らず、性別にも存在するので、年代ソートの外に置いている。
-        // 内容としては一番高い(大きい)ものとして扱う。
-        if (a[index[0]] === unknown || b[index[0]] === unknown) {
-          comparison = a[index[0]] === unknown ? 1 : -1
-        }
-
         return isDesc[0] ? comparison * -1 : comparison
       })
       return items
