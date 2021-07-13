@@ -52,11 +52,8 @@ jobs:
           curl -o data/main_summary.json https://raw.githubusercontent.com/suzuryo/covid19-iwate-data-bot/gh-pages/main_summary.json
       - name: yarn run generate:deploy for generate OGP
         run: |
-          echo "GOOGLE_ANALYTICS_ID=${GOOGLE_ANALYTICS_ID}" >> .env.production
-          cat .env.production
           yarn run generate:deploy --fail-on-page-error
         env:
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
           TZ: Asia/Tokyo
       - name: install selenium
         run: pip3 install selenium
