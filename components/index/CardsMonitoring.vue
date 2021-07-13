@@ -33,11 +33,11 @@ export default Vue.extend({
           MonitoringConfirmedCasesNumberPer100kCard,
           EffectiveReproductionNumberCard,
         ],
-        [HospitalizedNumberCard, MonitoringConfirmedCasesNumberCard],
+        [ConfirmedCasesNumberCard, MonitoringConfirmedCasesNumberCard],
         [HospitalCapacityCard, HotelCapacityCard],
-        [ConfirmedCasesNumberCard, UntrackedRateCard],
+        [HospitalizedNumberCard, UntrackedRateCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
-        [PositiveRateCard, TestedNumberCard],
+        [PositiveRateCard, TestedNumberCard]
       ],
     }
   },

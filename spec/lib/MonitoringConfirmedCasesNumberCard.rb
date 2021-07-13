@@ -5,10 +5,7 @@ require 'spec_helper'
 def has_monitoring_confirmed_cases_number_card
   # h3
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3').text).to eq '新規陽性者数の7日間移動平均'
-  expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3').text).to eq '直近1週間の新規患者数（対人口10万人）'
   d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > h3 > a')[:href]
-  expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases/'
-  d = find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > h3 > a')[:href]
   expect(URI.parse(d).path).to eq '/cards/monitoring-number-of-confirmed-cases/'
 
   # 日付
@@ -19,11 +16,6 @@ def has_monitoring_confirmed_cases_number_card
   d = number_to_delimited((DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } / 7.0))
   d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
   expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(1) > div > span > strong').text).to eq d.to_s
-
-  # 直近1週間の新規患者数（対人口10万人） 岩手県の人口を 1211206 とする
-  d = number_to_delimited(DATA_JSON['patients_summary']['data'][-7..].reduce(0) { |sum, n| sum + n['小計'].to_i } * 100000.0 / 1211206.0)
-  d = number_to_delimited(page.evaluate_script("#{d}.toFixed(1)"))
-  expect(find('#MonitoringConfirmedCasesNumberCard > div > div > div.DataView-Header > div > div:nth-child(2) > div > span > strong').text).to eq d.to_s
 
   # データを表示ボタンの文言
   expect(find('#MonitoringConfirmedCasesNumberCard .DataViewExpansionPanel button.v-expansion-panel-header').text).to eq 'データを表示'
@@ -68,12 +60,6 @@ def has_monitoring_confirmed_cases_number_card
     expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(#{2 + i})").text).to eq item
   end
   expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content ul > li:nth-child(3)').text).to eq JA_JSON['Common']['7MA']
-
-  JA_JSON['MonitoringConfirmedCasesNumberCard']['b'].each_with_index do |item, i|
-    expect(find("#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioSummarry] > p:nth-child(#{1 + i})").text).to eq item
-  end
-  expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(1) a').text).to eq JA_JSON['ExtLink']['岩手県17_2']['text']
-  expect(find('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content div[class^=newScenarioExternalLink] div:nth-child(2) a').text).to eq JA_JSON['ExtLink']['厚生労働省x696']['text']
 
   # 注釈を表示ボタンをクリックすると閉じる
   expect(page).to have_selector('#MonitoringConfirmedCasesNumberCard .NotesExpansionPanel .v-expansion-panel-content')
