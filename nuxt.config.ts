@@ -97,7 +97,6 @@ const config: NuxtConfig = {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
-    '@nuxtjs/google-analytics',
     '@nuxtjs/gtm',
     'nuxt-purgecss',
   ],
@@ -120,9 +119,6 @@ const config: NuxtConfig = {
     optionsPath: './plugins/vuetify.options.ts',
     treeShake: true,
     defaultAssets: false,
-  },
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID, // .env.production などに設定してください。
   },
   gtm: {
     id: 'GTM-WQK97B9',
