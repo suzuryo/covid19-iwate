@@ -27,13 +27,8 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-import duration from 'dayjs/plugin/duration'
-
 import TimeStackedBarChart from '@/components/index/_shared/TimeStackedBarChart.vue'
 import PositiveRate from '@/data/positive_rate.json'
-import { getDayjsObject } from '@/utils/formatDate'
-dayjs.extend(duration)
 
 export default {
   components: {
@@ -58,9 +53,7 @@ export default {
       this.$t('TestedNumberCard.legends[0]'),
       this.$t('TestedNumberCard.legends[1]'),
     ]
-    const inspectionsLabels = PositiveRate.data.map((d) => {
-      return getDayjsObject(d.diagnosed_date).format('YYYY-MM-DD')
-    })
+    const inspectionsLabels = PositiveRate.data.map((d) => d.diagnosed_date)
     const inspectionsDataLabels = [
       this.$t('TestedNumberCard.legends[0]'),
       this.$t('TestedNumberCard.legends[1]'),

@@ -22,11 +22,11 @@
             <th class="text-start" scope="row">
               <template v-if="item['通番URL']">
                 <app-link :to="item['通番URL']" :show-icon="false">
-                  {{ item['通番'] }}
+                  {{ item['id'] }}
                 </app-link>
               </template>
               <template v-else>
-                {{ item['通番'] }}
+                {{ item['id'] }}
               </template>
             </th>
             <td class="text-start">
@@ -112,24 +112,6 @@ export default Vue.extend({
     },
     customSort: {
       type: Function,
-      default(items: Object[], index: string[], isDesc: boolean[]) {
-        items.sort((a: any, b: any) => {
-          let comparison = 0
-          if (String(a[index[0]]) < String(b[index[0]])) {
-            comparison = -1
-          } else if (String(b[index[0]]) < String(a[index[0]])) {
-            comparison = 1
-          }
-          // a と b が等しい場合は上記のif文を両方とも通過するので 0 のままとなる
-
-          // 降順指定の場合は符号を反転
-          if (comparison !== 0) {
-            comparison = isDesc[0] ? comparison * -1 : comparison
-          }
-          return comparison
-        })
-        return items
-      },
     },
   },
   mounted() {

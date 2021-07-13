@@ -26,7 +26,6 @@ const headers: Header[] = [
 
 type DataType = {
   id: number
-  通番: number
   通番URL: string | null
   確定日: string
   発症日: string | null
@@ -39,7 +38,6 @@ type DataType = {
 
 type TableDataType = {
   id: DataType['id']
-  通番: DataType['通番']
   通番URL: DataType['通番URL']
   確定日: DataType['確定日']
   発症日: DataType['発症日']
@@ -62,7 +60,6 @@ type TableDateType = {
 export default function (data: DataType[]): TableDateType {
   const datasets = data
     .map((d) => {
-      const positiveConfirmedDate = d['確定日'] ? d['確定日'] : '不明'
       const occurrenceConfirmedDateDiff = () => {
         if (d['無症状'] === true && d['発症日'] === null) {
           return '無症状'
@@ -76,9 +73,8 @@ export default function (data: DataType[]): TableDateType {
       }
       return {
         id: d.id,
-        通番: d.id,
         通番URL: d.url,
-        確定日: positiveConfirmedDate,
+        確定日: d['確定日'] ? d['確定日'] : '不明',
         発症日: occurrenceConfirmedDateDiff(),
         居住地: d['居住地'] ?? '調査中',
         年代: d['年代'] ?? '不明',
