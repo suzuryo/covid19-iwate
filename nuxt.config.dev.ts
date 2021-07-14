@@ -149,12 +149,18 @@ const config: NuxtConfig = {
   build: {
     // analyze: true,
     babel: {
-      presets() {
+      presets({ envName }) {
+        const envTargets = {
+          client: { browsers: ['last 2 versions'], ie: 11 },
+          server: { node: 'current' },
+          modern: true,
+        }
         return [
           [
             '@nuxt/babel-preset-app',
             {
               corejs: { version: '3.14' },
+              targets: envTargets[envName],
             },
           ],
         ]
