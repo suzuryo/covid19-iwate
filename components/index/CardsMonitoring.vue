@@ -37,7 +37,7 @@ export default Vue.extend({
         [HospitalCapacityCard, HotelCapacityCard],
         [HospitalizedNumberCard, UntrackedRateCard],
         [ConfirmedCasesAttributesCard, ConfirmedCasesByMunicipalitiesCard],
-        [PositiveRateCard, TestedNumberCard]
+        [PositiveRateCard, TestedNumberCard],
       ],
     }
   },

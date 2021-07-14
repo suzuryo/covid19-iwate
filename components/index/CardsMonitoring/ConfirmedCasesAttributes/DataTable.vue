@@ -112,6 +112,7 @@ export default Vue.extend({
     },
     customSort: {
       type: Function,
+      default: () => {},
     },
   },
   mounted() {
